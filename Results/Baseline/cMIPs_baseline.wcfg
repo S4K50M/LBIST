@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_cMIPS_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="commonpckg" />
+            <top_module name="p_exception" />
+            <top_module name="p_memory" />
+            <top_module name="p_uart" />
+            <top_module name="p_wires" />
+            <top_module name="sdcardpckg" />
+            <top_module name="tb_cMIPS" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="607.738 ns"></ZoomEndTime>
+      <Cursor1Time time="0.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="161"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="154" />
+   <wvobject fp_name="/tb_cMIPS/clock_50mhz" type="logic">
+      <obj_property name="ElementShortName">clock_50mhz</obj_property>
+      <obj_property name="ObjectShortName">clock_50mhz</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/clkin" type="logic">
+      <obj_property name="ElementShortName">clkin</obj_property>
+      <obj_property name="ObjectShortName">clkin</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/clk4x" type="logic">
+      <obj_property name="ElementShortName">clk4x</obj_property>
+      <obj_property name="ObjectShortName">clk4x</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/clk4x0" type="logic">
+      <obj_property name="ElementShortName">clk4x0</obj_property>
+      <obj_property name="ObjectShortName">clk4x0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/clk4x180" type="logic">
+      <obj_property name="ElementShortName">clk4x180</obj_property>
+      <obj_property name="ObjectShortName">clk4x180</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/clk2x" type="logic">
+      <obj_property name="ElementShortName">clk2x</obj_property>
+      <obj_property name="ObjectShortName">clk2x</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/phi0" type="logic">
+      <obj_property name="ElementShortName">phi0</obj_property>
+      <obj_property name="ObjectShortName">phi0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/phi1" type="logic">
+      <obj_property name="ElementShortName">phi1</obj_property>
+      <obj_property name="ObjectShortName">phi1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/phi2" type="logic">
+      <obj_property name="ElementShortName">phi2</obj_property>
+      <obj_property name="ObjectShortName">phi2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/phi3" type="logic">
+      <obj_property name="ElementShortName">phi3</obj_property>
+      <obj_property name="ObjectShortName">phi3</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/phi0in" type="logic">
+      <obj_property name="ElementShortName">phi0in</obj_property>
+      <obj_property name="ObjectShortName">phi0in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/phi1in" type="logic">
+      <obj_property name="ElementShortName">phi1in</obj_property>
+      <obj_property name="ObjectShortName">phi1in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/phi2in" type="logic">
+      <obj_property name="ElementShortName">phi2in</obj_property>
+      <obj_property name="ObjectShortName">phi2in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/phi3in" type="logic">
+      <obj_property name="ElementShortName">phi3in</obj_property>
+      <obj_property name="ObjectShortName">phi3in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/phi2_dlyd" type="logic">
+      <obj_property name="ElementShortName">phi2_dlyd</obj_property>
+      <obj_property name="ObjectShortName">phi2_dlyd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/ic_reset" type="logic">
+      <obj_property name="ElementShortName">ic_reset</obj_property>
+      <obj_property name="ObjectShortName">ic_reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/a_rst1" type="logic">
+      <obj_property name="ElementShortName">a_rst1</obj_property>
+      <obj_property name="ObjectShortName">a_rst1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/a_rst2" type="logic">
+      <obj_property name="ElementShortName">a_rst2</obj_property>
+      <obj_property name="ObjectShortName">a_rst2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/a_rst3" type="logic">
+      <obj_property name="ElementShortName">a_rst3</obj_property>
+      <obj_property name="ObjectShortName">a_rst3</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/cpu_reset" type="logic">
+      <obj_property name="ElementShortName">cpu_reset</obj_property>
+      <obj_property name="ObjectShortName">cpu_reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/a_reset" type="logic">
+      <obj_property name="ElementShortName">a_reset</obj_property>
+      <obj_property name="ObjectShortName">a_reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/async_reset" type="logic">
+      <obj_property name="ElementShortName">async_reset</obj_property>
+      <obj_property name="ObjectShortName">async_reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/cpu_i_aVal" type="logic">
+      <obj_property name="ElementShortName">cpu_i_aVal</obj_property>
+      <obj_property name="ObjectShortName">cpu_i_aVal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/cpu_i_wait" type="logic">
+      <obj_property name="ElementShortName">cpu_i_wait</obj_property>
+      <obj_property name="ObjectShortName">cpu_i_wait</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/wr" type="logic">
+      <obj_property name="ElementShortName">wr</obj_property>
+      <obj_property name="ObjectShortName">wr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/cpu_d_aVal" type="logic">
+      <obj_property name="ElementShortName">cpu_d_aVal</obj_property>
+      <obj_property name="ObjectShortName">cpu_d_aVal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/cpu_d_wait" type="logic">
+      <obj_property name="ElementShortName">cpu_d_wait</obj_property>
+      <obj_property name="ObjectShortName">cpu_d_wait</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/busFree" type="logic">
+      <obj_property name="ElementShortName">busFree</obj_property>
+      <obj_property name="ObjectShortName">busFree</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/nmi" type="logic">
+      <obj_property name="ElementShortName">nmi</obj_property>
+      <obj_property name="ObjectShortName">nmi</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/i_busError" type="logic">
+      <obj_property name="ElementShortName">i_busError</obj_property>
+      <obj_property name="ObjectShortName">i_busError</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/d_busError" type="logic">
+      <obj_property name="ElementShortName">d_busError</obj_property>
+      <obj_property name="ObjectShortName">d_busError</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/irq" type="array">
+      <obj_property name="ElementShortName">irq[5:0]</obj_property>
+      <obj_property name="ObjectShortName">irq[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/inst_aVal" type="logic">
+      <obj_property name="ElementShortName">inst_aVal</obj_property>
+      <obj_property name="ObjectShortName">inst_aVal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/inst_wait" type="logic">
+      <obj_property name="ElementShortName">inst_wait</obj_property>
+      <obj_property name="ObjectShortName">inst_wait</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/rom_rdy" type="logic">
+      <obj_property name="ElementShortName">rom_rdy</obj_property>
+      <obj_property name="ObjectShortName">rom_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/data_aVal" type="logic">
+      <obj_property name="ElementShortName">data_aVal</obj_property>
+      <obj_property name="ObjectShortName">data_aVal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/data_wait" type="logic">
+      <obj_property name="ElementShortName">data_wait</obj_property>
+      <obj_property name="ObjectShortName">data_wait</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/ram_rdy" type="logic">
+      <obj_property name="ElementShortName">ram_rdy</obj_property>
+      <obj_property name="ObjectShortName">ram_rdy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/mem_wr" type="logic">
+      <obj_property name="ElementShortName">mem_wr</obj_property>
+      <obj_property name="ObjectShortName">mem_wr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/sdram_aVal" type="logic">
+      <obj_property name="ElementShortName">sdram_aVal</obj_property>
+      <obj_property name="ObjectShortName">sdram_aVal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/sdram_wait" type="logic">
+      <obj_property name="ElementShortName">sdram_wait</obj_property>
+      <obj_property name="ObjectShortName">sdram_wait</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/sdram_wr" type="logic">
+      <obj_property name="ElementShortName">sdram_wr</obj_property>
+      <obj_property name="ObjectShortName">sdram_wr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/cpu_xfer" type="array">
+      <obj_property name="ElementShortName">cpu_xfer[3:0]</obj_property>
+      <obj_property name="ObjectShortName">cpu_xfer[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/mem_xfer" type="array">
+      <obj_property name="ElementShortName">mem_xfer[3:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_xfer[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/dev_select" type="array">
+      <obj_property name="ElementShortName">dev_select[3:0]</obj_property>
+      <obj_property name="ObjectShortName">dev_select[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/dev_select_ram" type="array">
+      <obj_property name="ElementShortName">dev_select_ram[3:0]</obj_property>
+      <obj_property name="ObjectShortName">dev_select_ram[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/dev_select_io" type="array">
+      <obj_property name="ElementShortName">dev_select_io[3:0]</obj_property>
+      <obj_property name="ObjectShortName">dev_select_io[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/dev_select_sdram" type="array">
+      <obj_property name="ElementShortName">dev_select_sdram[3:0]</obj_property>
+      <obj_property name="ObjectShortName">dev_select_sdram[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/io_print_sel" type="logic">
+      <obj_property name="ElementShortName">io_print_sel</obj_property>
+      <obj_property name="ObjectShortName">io_print_sel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/io_stdout_sel" type="logic">
+      <obj_property name="ElementShortName">io_stdout_sel</obj_property>
+      <obj_property name="ObjectShortName">io_stdout_sel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/io_stdin_sel" type="logic">
+      <obj_property name="ElementShortName">io_stdin_sel</obj_property>
+      <obj_property name="ObjectShortName">io_stdin_sel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/io_write_sel" type="logic">
+      <obj_property name="ElementShortName">io_write_sel</obj_property>
+      <obj_property name="ObjectShortName">io_write_sel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/io_read_sel" type="logic">
+      <obj_property name="ElementShortName">io_read_sel</obj_property>
+      <obj_property name="ObjectShortName">io_read_sel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/io_counter_sel" type="logic">
+      <obj_property name="ElementShortName">io_counter_sel</obj_property>
+      <obj_property name="ObjectShortName">io_counter_sel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/io_uart_sel" type="logic">
+      <obj_property name="ElementShortName">io_uart_sel</obj_property>
+      <obj_property name="ObjectShortName">io_uart_sel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/io_sstats_sel" type="logic">
+      <obj_property name="ElementShortName">io_sstats_sel</obj_property>
+      <obj_property name="ObjectShortName">io_sstats_sel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/io_7seg_sel" type="logic">
+      <obj_property name="ElementShortName">io_7seg_sel</obj_property>
+      <obj_property name="ObjectShortName">io_7seg_sel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/io_keys_sel" type="logic">
+      <obj_property name="ElementShortName">io_keys_sel</obj_property>
+      <obj_property name="ObjectShortName">io_keys_sel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/io_fpu_sel" type="logic">
+      <obj_property name="ElementShortName">io_fpu_sel</obj_property>
+      <obj_property name="ObjectShortName">io_fpu_sel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/io_fpu_wait" type="logic">
+      <obj_property name="ElementShortName">io_fpu_wait</obj_property>
+      <obj_property name="ObjectShortName">io_fpu_wait</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/io_lcd_sel" type="logic">
+      <obj_property name="ElementShortName">io_lcd_sel</obj_property>
+      <obj_property name="ObjectShortName">io_lcd_sel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/io_lcd_wait" type="logic">
+      <obj_property name="ElementShortName">io_lcd_wait</obj_property>
+      <obj_property name="ObjectShortName">io_lcd_wait</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/io_sdc_sel" type="logic">
+      <obj_property name="ElementShortName">io_sdc_sel</obj_property>
+      <obj_property name="ObjectShortName">io_sdc_sel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/io_sdc_wait" type="logic">
+      <obj_property name="ElementShortName">io_sdc_wait</obj_property>
+      <obj_property name="ObjectShortName">io_sdc_wait</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/io_dma_sel" type="logic">
+      <obj_property name="ElementShortName">io_dma_sel</obj_property>
+      <obj_property name="ObjectShortName">io_dma_sel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/d_cache_d_out" type="array">
+      <obj_property name="ElementShortName">d_cache_d_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">d_cache_d_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/stdin_d_out" type="array">
+      <obj_property name="ElementShortName">stdin_d_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">stdin_d_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/read_d_out" type="array">
+      <obj_property name="ElementShortName">read_d_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">read_d_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/counter_d_out" type="array">
+      <obj_property name="ElementShortName">counter_d_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">counter_d_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/fpu_d_out" type="array">
+      <obj_property name="ElementShortName">fpu_d_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">fpu_d_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/uart_d_out" type="array">
+      <obj_property name="ElementShortName">uart_d_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">uart_d_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/sstats_d_out" type="array">
+      <obj_property name="ElementShortName">sstats_d_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">sstats_d_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/keybd_d_out" type="array">
+      <obj_property name="ElementShortName">keybd_d_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">keybd_d_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/lcd_d_out" type="array">
+      <obj_property name="ElementShortName">lcd_d_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">lcd_d_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/sdc_d_out" type="array">
+      <obj_property name="ElementShortName">sdc_d_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">sdc_d_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/sdram_d_out" type="array">
+      <obj_property name="ElementShortName">sdram_d_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">sdram_d_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/dma_d_out" type="array">
+      <obj_property name="ElementShortName">dma_d_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dma_d_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/counter_irq" type="logic">
+      <obj_property name="ElementShortName">counter_irq</obj_property>
+      <obj_property name="ObjectShortName">counter_irq</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/io_wait" type="logic">
+      <obj_property name="ElementShortName">io_wait</obj_property>
+      <obj_property name="ObjectShortName">io_wait</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/not_waiting" type="logic">
+      <obj_property name="ElementShortName">not_waiting</obj_property>
+      <obj_property name="ObjectShortName">not_waiting</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/i_addr" type="array">
+      <obj_property name="ElementShortName">i_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i_addr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/d_addr" type="array">
+      <obj_property name="ElementShortName">d_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">d_addr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/p_addr" type="array">
+      <obj_property name="ElementShortName">p_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">p_addr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/datrom" type="array">
+      <obj_property name="ElementShortName">datrom[31:0]</obj_property>
+      <obj_property name="ObjectShortName">datrom[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/datram_inp" type="array">
+      <obj_property name="ElementShortName">datram_inp[31:0]</obj_property>
+      <obj_property name="ObjectShortName">datram_inp[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/datram_out" type="array">
+      <obj_property name="ElementShortName">datram_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">datram_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/cpu_instr" type="array">
+      <obj_property name="ElementShortName">cpu_instr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">cpu_instr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/cpu_data_inp" type="array">
+      <obj_property name="ElementShortName">cpu_data_inp[31:0]</obj_property>
+      <obj_property name="ObjectShortName">cpu_data_inp[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/cpu_data_out" type="array">
+      <obj_property name="ElementShortName">cpu_data_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">cpu_data_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/cpu_data" type="array">
+      <obj_property name="ElementShortName">cpu_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">cpu_data[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/mem_i_sel" type="logic">
+      <obj_property name="ElementShortName">mem_i_sel</obj_property>
+      <obj_property name="ObjectShortName">mem_i_sel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/mem_d_sel" type="logic">
+      <obj_property name="ElementShortName">mem_d_sel</obj_property>
+      <obj_property name="ObjectShortName">mem_d_sel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/mem_i_addr" type="array">
+      <obj_property name="ElementShortName">mem_i_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_i_addr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/mem_addr" type="array">
+      <obj_property name="ElementShortName">mem_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_addr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/mem_d_addr" type="array">
+      <obj_property name="ElementShortName">mem_d_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_d_addr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/cnt_i_ref" type="other">
+      <obj_property name="ElementShortName">cnt_i_ref</obj_property>
+      <obj_property name="ObjectShortName">cnt_i_ref</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/cnt_i_hit" type="other">
+      <obj_property name="ElementShortName">cnt_i_hit</obj_property>
+      <obj_property name="ObjectShortName">cnt_i_hit</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/cnt_d_ref" type="other">
+      <obj_property name="ElementShortName">cnt_d_ref</obj_property>
+      <obj_property name="ObjectShortName">cnt_d_ref</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/cnt_d_rd_hit" type="other">
+      <obj_property name="ElementShortName">cnt_d_rd_hit</obj_property>
+      <obj_property name="ObjectShortName">cnt_d_rd_hit</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/cnt_d_wr_hit" type="other">
+      <obj_property name="ElementShortName">cnt_d_wr_hit</obj_property>
+      <obj_property name="ObjectShortName">cnt_d_wr_hit</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/cnt_d_flush" type="other">
+      <obj_property name="ElementShortName">cnt_d_flush</obj_property>
+      <obj_property name="ObjectShortName">cnt_d_flush</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/dump_ram" type="logic">
+      <obj_property name="ElementShortName">dump_ram</obj_property>
+      <obj_property name="ObjectShortName">dump_ram</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/bit_rt" type="array">
+      <obj_property name="ElementShortName">bit_rt[2:0]</obj_property>
+      <obj_property name="ObjectShortName">bit_rt[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/disp0" type="array">
+      <obj_property name="ElementShortName">disp0[7:0]</obj_property>
+      <obj_property name="ObjectShortName">disp0[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/disp1" type="array">
+      <obj_property name="ElementShortName">disp1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">disp1[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/key" type="array">
+      <obj_property name="ElementShortName">key[11:0]</obj_property>
+      <obj_property name="ObjectShortName">key[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/sw" type="array">
+      <obj_property name="ElementShortName">sw[3:0]</obj_property>
+      <obj_property name="ObjectShortName">sw[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/led_r" type="logic">
+      <obj_property name="ElementShortName">led_r</obj_property>
+      <obj_property name="ObjectShortName">led_r</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/led_g" type="logic">
+      <obj_property name="ElementShortName">led_g</obj_property>
+      <obj_property name="ObjectShortName">led_g</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/led_b" type="logic">
+      <obj_property name="ElementShortName">led_b</obj_property>
+      <obj_property name="ObjectShortName">led_b</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/LCD_D" type="array">
+      <obj_property name="ElementShortName">LCD_D[7:0]</obj_property>
+      <obj_property name="ObjectShortName">LCD_D[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/LCD_RS" type="logic">
+      <obj_property name="ElementShortName">LCD_RS</obj_property>
+      <obj_property name="ObjectShortName">LCD_RS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/LCD_RW" type="logic">
+      <obj_property name="ElementShortName">LCD_RW</obj_property>
+      <obj_property name="ObjectShortName">LCD_RW</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/LCD_EN" type="logic">
+      <obj_property name="ElementShortName">LCD_EN</obj_property>
+      <obj_property name="ObjectShortName">LCD_EN</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/LCD_BACKLIGHT" type="logic">
+      <obj_property name="ElementShortName">LCD_BACKLIGHT</obj_property>
+      <obj_property name="ObjectShortName">LCD_BACKLIGHT</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/uart_txd" type="logic">
+      <obj_property name="ElementShortName">uart_txd</obj_property>
+      <obj_property name="ObjectShortName">uart_txd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/uart_rxd" type="logic">
+      <obj_property name="ElementShortName">uart_rxd</obj_property>
+      <obj_property name="ObjectShortName">uart_rxd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/uart_rts" type="logic">
+      <obj_property name="ElementShortName">uart_rts</obj_property>
+      <obj_property name="ObjectShortName">uart_rts</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/uart_cts" type="logic">
+      <obj_property name="ElementShortName">uart_cts</obj_property>
+      <obj_property name="ObjectShortName">uart_cts</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/uart_irq" type="logic">
+      <obj_property name="ElementShortName">uart_irq</obj_property>
+      <obj_property name="ObjectShortName">uart_irq</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/sdc_cs" type="logic">
+      <obj_property name="ElementShortName">sdc_cs</obj_property>
+      <obj_property name="ObjectShortName">sdc_cs</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/sdc_clk" type="logic">
+      <obj_property name="ElementShortName">sdc_clk</obj_property>
+      <obj_property name="ObjectShortName">sdc_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/sdc_mosi_o" type="logic">
+      <obj_property name="ElementShortName">sdc_mosi_o</obj_property>
+      <obj_property name="ObjectShortName">sdc_mosi_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/sdc_miso_i" type="logic">
+      <obj_property name="ElementShortName">sdc_miso_i</obj_property>
+      <obj_property name="ObjectShortName">sdc_miso_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/sdcke" type="logic">
+      <obj_property name="ElementShortName">sdcke</obj_property>
+      <obj_property name="ObjectShortName">sdcke</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/sdscs" type="logic">
+      <obj_property name="ElementShortName">sdscs</obj_property>
+      <obj_property name="ObjectShortName">sdscs</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/sdras" type="logic">
+      <obj_property name="ElementShortName">sdras</obj_property>
+      <obj_property name="ObjectShortName">sdras</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/sdcas" type="logic">
+      <obj_property name="ElementShortName">sdcas</obj_property>
+      <obj_property name="ObjectShortName">sdcas</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/sdwe" type="logic">
+      <obj_property name="ElementShortName">sdwe</obj_property>
+      <obj_property name="ObjectShortName">sdwe</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/sddqm0" type="logic">
+      <obj_property name="ElementShortName">sddqm0</obj_property>
+      <obj_property name="ObjectShortName">sddqm0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/sddqm1" type="logic">
+      <obj_property name="ElementShortName">sddqm1</obj_property>
+      <obj_property name="ObjectShortName">sddqm1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/sdba0" type="logic">
+      <obj_property name="ElementShortName">sdba0</obj_property>
+      <obj_property name="ObjectShortName">sdba0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/sdba1" type="logic">
+      <obj_property name="ElementShortName">sdba1</obj_property>
+      <obj_property name="ObjectShortName">sdba1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/sdaddr" type="array">
+      <obj_property name="ElementShortName">sdaddr[11:0]</obj_property>
+      <obj_property name="ObjectShortName">sdaddr[11:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/sddata" type="array">
+      <obj_property name="ElementShortName">sddata[15:0]</obj_property>
+      <obj_property name="ObjectShortName">sddata[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/hDinp" type="array">
+      <obj_property name="ElementShortName">hDinp[31:0]</obj_property>
+      <obj_property name="ObjectShortName">hDinp[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/hDout" type="array">
+      <obj_property name="ElementShortName">hDout[31:0]</obj_property>
+      <obj_property name="ObjectShortName">hDout[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/dma_addr" type="array">
+      <obj_property name="ElementShortName">dma_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dma_addr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/dma_dinp" type="array">
+      <obj_property name="ElementShortName">dma_dinp[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dma_dinp[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/dma_dout" type="array">
+      <obj_property name="ElementShortName">dma_dout[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dma_dout[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/ram_addr" type="array">
+      <obj_property name="ElementShortName">ram_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ram_addr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/ram_inp" type="array">
+      <obj_property name="ElementShortName">ram_inp[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ram_inp[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/dma_wr" type="logic">
+      <obj_property name="ElementShortName">dma_wr</obj_property>
+      <obj_property name="ObjectShortName">dma_wr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/ram_wr" type="logic">
+      <obj_property name="ElementShortName">ram_wr</obj_property>
+      <obj_property name="ObjectShortName">ram_wr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/dma_aval" type="logic">
+      <obj_property name="ElementShortName">dma_aval</obj_property>
+      <obj_property name="ObjectShortName">dma_aval</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/dma_irq" type="logic">
+      <obj_property name="ElementShortName">dma_irq</obj_property>
+      <obj_property name="ObjectShortName">dma_irq</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/ram_sel" type="logic">
+      <obj_property name="ElementShortName">ram_sel</obj_property>
+      <obj_property name="ObjectShortName">ram_sel</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/dma_type" type="array">
+      <obj_property name="ElementShortName">dma_type[3:0]</obj_property>
+      <obj_property name="ObjectShortName">dma_type[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/ram_xfer" type="array">
+      <obj_property name="ElementShortName">ram_xfer[3:0]</obj_property>
+      <obj_property name="ObjectShortName">ram_xfer[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/busReq" type="logic">
+      <obj_property name="ElementShortName">busReq</obj_property>
+      <obj_property name="ObjectShortName">busReq</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/busFree_dly" type="logic">
+      <obj_property name="ElementShortName">busFree_dly</obj_property>
+      <obj_property name="ObjectShortName">busFree_dly</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_cMIPS/dma_grant" type="logic">
+      <obj_property name="ElementShortName">dma_grant</obj_property>
+      <obj_property name="ObjectShortName">dma_grant</obj_property>
+   </wvobject>
+</wave_config>
