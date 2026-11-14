@@ -1,0 +1,102 @@
+[*]
+[*] GTKWave Analyzer v3.3.37 (w)1999-2012 BSI
+[*] Thu Jun 15 15:20:19 2017
+[*]
+[dumpfile] "/home/roberto/cMIPS/cMIPS.vcd"
+[dumpfile_mtime] "Thu Jun 15 15:12:27 2017"
+[dumpfile_size] 45866610
+[savefile] "/home/roberto/cMIPS/cop0.sav"
+[timestart] 5337900000
+[size] 1493 907
+[pos] -1 110
+*-26.000000 1980000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] u_core.
+[treeopen] u_core.u_alu.
+[sst_width] 210
+[signals_width] 208
+[sst_expanded] 1
+[sst_vpaned_height] 289
+@28
+clk
+@22
+u_core.pc[31:0]
+@28
+u_core.exception_taken
+u_core.interrupt_taken
+u_core.annul_twice
+@200
+-    decode, reg fetch
+@22
+u_core.rf_instruction[31:0]
+u_core.eq_fwd_a[31:0]
+u_core.eq_fwd_b[31:0]
+@200
+-    exec
+@22
+u_core.alu_inp_a[31:0]
+u_core.alu_inp_b[31:0]
+[color] 2
+u_core.result[31:0]
+@24
+[color] 2
+u_core.ex_a_c[4:0]
+@22
+u_core.hi[31:0]
+u_core.lo[31:0]
+[color] 5
+u_core.v_addr[31:0]
+@28
+[color] 6
+u_core.ex_aval_cond
+@200
+-   COP-0
+@24
+u_core.exccode[4:0]
+@22
+[color] 5
+u_core.cause[31:0]
+u_core.status[31:0]
+[color] 6
+u_core.epc[31:0]
+u_core.badvaddr[31:0]
+u_core.count[31:0]
+u_core.compare[31:0]
+@28
+u_core.count_eq_compare
+u_interrupt_counter.irq
+@200
+-    memory
+@28
+u_data_addr_dec.cpu_d_aval
+u_core.b_sel[3:0]
+@22
+u_core.data_inp[31:0]
+u_core.data_out[31:0]
+[color] 5
+d_addr[31:0]
+@28
+cpu_d_aval
+wr
+@200
+-    write-back
+@22
+u_core.wb_cop0_val[31:0]
+@28
+u_core.wb_muxc[2:0]
+@29
+[color] 1
+u_core.wb_wreg
+@24
+[color] 2
+u_core.wb_a_c[4:0]
+@22
+[color] 3
+u_core.wb_c[31:0]
+@200
+-  counter
+@28
+counter_irq
+@22
+u_interrupt_counter.q[29:0]
+[pattern_trace] 1
+[pattern_trace] 0
