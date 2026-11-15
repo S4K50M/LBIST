@@ -1,0 +1,2 @@
+Case,Testbench,Group,ExpectedNegative,Result,CompletionTime,Capture,WDBBytes
+regression_tb_plpf_dynamic,tb_plpf_dynamic,Core_Integration,0,PASS,8199100 ps,0,0

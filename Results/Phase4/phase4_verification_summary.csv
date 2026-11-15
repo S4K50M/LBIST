@@ -1,0 +1,23 @@
+Case,Testbench,Group,ExpectedNegative,Result,CompletionTime,Capture,WDBBytes,ScanWidth,EnabledScanShifts,MainPatterns,ScanEnableBehavior,FunctionalEquivalence,CaptureUnload
+scan_unit_invalid_patterns,tb_reg_IF_RF_scan,IF_RF,1,PASS,0 ps,0,0,64,NA,NA,configuration rejection,NA,NA
+scan_unit_seed12345,tb_reg_IF_RF_scan,IF_RF,0,PASS,33676200 ps,1,600570,64,16577,256,scan overrides load; pause with ld=1,PASS: original register compared,PASS
+scan_unit_seed67890,tb_reg_IF_RF_scan,IF_RF,0,PASS,33676200 ps,0,0,64,16577,256,scan overrides load; pause with ld=1,PASS: original register compared,PASS
+real_plpf_B0_P256,tb_if_rf_plpf_integration,PLPF_Integration,0,PASS,32906100 ps,0,0,64,16448,256,common enabled edge; capture does not advance generators,PASS: independent 64-bit reference,PASS
+real_plpf_B16_P256,tb_if_rf_plpf_integration,PLPF_Integration,0,PASS,32906100 ps,0,0,64,16448,256,common enabled edge; capture does not advance generators,PASS: independent 64-bit reference,PASS
+real_plpf_B20_P1024,tb_if_rf_plpf_integration,PLPF_Integration,0,PASS,131210100 ps,1,3876997,64,65600,1024,common enabled edge; capture does not advance generators,PASS: independent 64-bit reference,PASS
+real_plpf_B36_P256,tb_if_rf_plpf_integration,PLPF_Integration,0,PASS,32906100 ps,0,0,64,16448,256,common enabled edge; capture does not advance generators,PASS: independent 64-bit reference,PASS
+real_plpf_invalid_beta,tb_if_rf_plpf_integration,PLPF_Integration,1,PASS,0 ps,0,0,64,NA,NA,configuration rejection,NA,NA
+baseline_lwsw,tb_cMIPS,Core_Integration,0,PASS,1670000 ps,0,0,NA,NA,NA,prior-phase regression,NA,NA
+core_scan_lwsw,tb_core_scan_regression,Core_Integration,0,PASS,1670000 ps,1,643228,64,0,NA,disabled throughout processor test,PASS: original core compared,NOT_TESTED at processor level
+core_scan_stalls,tb_core_scan_regression,Core_Integration,0,PASS,1730000 ps,0,0,64,0,NA,disabled throughout processor test,PASS: original core compared,NOT_TESTED at processor level
+regression_tb_basic_controller,tb_basic_controller,Core_Integration,0,PASS,32803100 ps,0,0,NA,NA,NA,prior-phase regression,NA,NA
+regression_tb_basic_integration,tb_basic_integration,Core_Integration,0,PASS,131457100 ps,0,0,NA,NA,NA,prior-phase regression,NA,NA
+regression_tb_lfsr_16,tb_lfsr_16,Core_Integration,0,PASS,131081200 ps,0,0,NA,NA,NA,prior-phase regression,NA,NA
+regression_tb_moving_controller,tb_moving_controller,Core_Integration,0,PASS,32801100 ps,0,0,NA,NA,NA,prior-phase regression,NA,NA
+regression_tb_moving_integration,tb_moving_integration,Core_Integration,0,PASS,131457100 ps,0,0,NA,NA,NA,prior-phase regression,NA,NA
+regression_tb_phase2_integration,tb_phase2_integration,Core_Integration,0,PASS,131455100 ps,0,0,NA,NA,NA,prior-phase regression,NA,NA
+regression_tb_phase_shifter,tb_phase_shifter,Core_Integration,0,PASS,8264736 ps,0,0,NA,NA,NA,prior-phase regression,NA,NA
+regression_tb_plpf_dynamic,tb_plpf_dynamic,Core_Integration,0,PASS,8199100 ps,0,0,NA,NA,NA,prior-phase regression,NA,NA
+regression_tb_plpf_optimized,tb_plpf_optimized,Core_Integration,0,PASS,393209010 ps,0,0,NA,NA,NA,prior-phase regression,NA,NA
+regression_tb_swap_controller,tb_swap_controller,Core_Integration,0,PASS,32801100 ps,0,0,NA,NA,NA,prior-phase regression,NA,NA
+regression_tb_swap_integration,tb_swap_integration,Core_Integration,0,PASS,131457100 ps,0,0,NA,NA,NA,prior-phase regression,NA,NA

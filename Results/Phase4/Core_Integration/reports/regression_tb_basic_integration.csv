@@ -1,0 +1,2 @@
+Case,Testbench,Group,ExpectedNegative,Result,CompletionTime,Capture,WDBBytes
+regression_tb_basic_integration,tb_basic_integration,Core_Integration,0,PASS,131457100 ps,0,0

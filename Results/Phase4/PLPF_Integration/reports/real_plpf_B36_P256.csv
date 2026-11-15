@@ -1,0 +1,2 @@
+Case,Testbench,Group,ExpectedNegative,Result,CompletionTime,Capture,WDBBytes
+real_plpf_B36_P256,tb_if_rf_plpf_integration,PLPF_Integration,0,PASS,32906100 ps,0,0

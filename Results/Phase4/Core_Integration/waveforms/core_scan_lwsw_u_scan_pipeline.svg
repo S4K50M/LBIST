@@ -1,0 +1,517 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="526" viewBox="0 0 1600 526">
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="20" y="28" font-family="sans-serif" font-size="20">U_SCAN - actual pipeline and write controls</text>
+<text x="20" y="51" font-family="sans-serif" font-size="13">00 = PLPF n=3 (low toggle) | 11 = PLPF n=1 (unfiltered) | Edge capture uses PRE-edge mode; POST-edge mode prepares the next shift.</text>
+<line x1="220.0" x2="220.0" y1="110" y2="496" stroke="#e6eaf0"/>
+<text x="220.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">0.00 ns</text>
+<line x1="385.0" x2="385.0" y1="110" y2="496" stroke="#e6eaf0"/>
+<text x="385.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">208.75 ns</text>
+<line x1="550.0" x2="550.0" y1="110" y2="496" stroke="#e6eaf0"/>
+<text x="550.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">417.50 ns</text>
+<line x1="715.0" x2="715.0" y1="110" y2="496" stroke="#e6eaf0"/>
+<text x="715.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">626.25 ns</text>
+<line x1="880.0" x2="880.0" y1="110" y2="496" stroke="#e6eaf0"/>
+<text x="880.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">835.00 ns</text>
+<line x1="1045.0" x2="1045.0" y1="110" y2="496" stroke="#e6eaf0"/>
+<text x="1045.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">1043.75 ns</text>
+<line x1="1210.0" x2="1210.0" y1="110" y2="496" stroke="#e6eaf0"/>
+<text x="1210.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">1252.50 ns</text>
+<line x1="1375.0" x2="1375.0" y1="110" y2="496" stroke="#e6eaf0"/>
+<text x="1375.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">1461.25 ns</text>
+<line x1="1540.0" x2="1540.0" y1="110" y2="496" stroke="#e6eaf0"/>
+<text x="1540.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">1670.00 ns</text>
+<text x="12" y="156" font-family="monospace" font-size="14">PC</text>
+<rect x="220.000" y="137" width="3.952" height="28" fill="#ffe5e8" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, 0.000..5.000 ns</title></rect>
+<rect x="223.952" y="137" width="90.898" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 0, 5.000..120.000 ns</title></rect>
+<text x="269.401" y="156" text-anchor="middle" font-family="monospace" font-size="13">0</text>
+<rect x="314.850" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 100, 120.000..140.000 ns</title></rect>
+<rect x="330.659" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 1000, 140.000..160.000 ns</title></rect>
+<rect x="346.467" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 1100, 160.000..180.000 ns</title></rect>
+<rect x="362.275" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 10000, 180.000..200.000 ns</title></rect>
+<rect x="378.084" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 10100, 200.000..220.000 ns</title></rect>
+<rect x="393.892" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 11000, 220.000..240.000 ns</title></rect>
+<rect x="409.701" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 11100, 240.000..260.000 ns</title></rect>
+<rect x="425.509" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 100000, 260.000..280.000 ns</title></rect>
+<rect x="441.317" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 100100, 280.000..300.000 ns</title></rect>
+<rect x="457.126" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 101000, 300.000..320.000 ns</title></rect>
+<rect x="472.934" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 101100, 320.000..340.000 ns</title></rect>
+<rect x="488.743" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 110000, 340.000..360.000 ns</title></rect>
+<rect x="504.551" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 11000, 360.000..380.000 ns</title></rect>
+<rect x="520.359" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 11100, 380.000..400.000 ns</title></rect>
+<rect x="536.168" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 100000, 400.000..420.000 ns</title></rect>
+<rect x="551.976" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 100100, 420.000..440.000 ns</title></rect>
+<rect x="567.784" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 101000, 440.000..460.000 ns</title></rect>
+<rect x="583.593" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 101100, 460.000..480.000 ns</title></rect>
+<rect x="599.401" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 110000, 480.000..500.000 ns</title></rect>
+<rect x="615.210" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 11000, 500.000..520.000 ns</title></rect>
+<rect x="631.018" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 11100, 520.000..540.000 ns</title></rect>
+<rect x="646.826" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 100000, 540.000..560.000 ns</title></rect>
+<rect x="662.635" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 100100, 560.000..580.000 ns</title></rect>
+<rect x="678.443" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 101000, 580.000..600.000 ns</title></rect>
+<rect x="694.251" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 101100, 600.000..620.000 ns</title></rect>
+<rect x="710.060" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 110000, 620.000..640.000 ns</title></rect>
+<rect x="725.868" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 11000, 640.000..660.000 ns</title></rect>
+<rect x="741.677" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 11100, 660.000..680.000 ns</title></rect>
+<rect x="757.485" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 100000, 680.000..700.000 ns</title></rect>
+<rect x="773.293" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 100100, 700.000..720.000 ns</title></rect>
+<rect x="789.102" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 101000, 720.000..740.000 ns</title></rect>
+<rect x="804.910" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 101100, 740.000..760.000 ns</title></rect>
+<rect x="820.719" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 110000, 760.000..780.000 ns</title></rect>
+<rect x="836.527" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 11000, 780.000..800.000 ns</title></rect>
+<rect x="852.335" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 11100, 800.000..820.000 ns</title></rect>
+<rect x="868.144" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 100000, 820.000..840.000 ns</title></rect>
+<rect x="883.952" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 100100, 840.000..860.000 ns</title></rect>
+<rect x="899.760" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 101000, 860.000..880.000 ns</title></rect>
+<rect x="915.569" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 101100, 880.000..900.000 ns</title></rect>
+<rect x="931.377" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 110000, 900.000..920.000 ns</title></rect>
+<rect x="947.186" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 11000, 920.000..940.000 ns</title></rect>
+<rect x="962.994" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 11100, 940.000..960.000 ns</title></rect>
+<rect x="978.802" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 100000, 960.000..980.000 ns</title></rect>
+<rect x="994.611" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 100100, 980.000..1000.000 ns</title></rect>
+<rect x="1010.419" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 101000, 1000.000..1020.000 ns</title></rect>
+<rect x="1026.228" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 101100, 1020.000..1040.000 ns</title></rect>
+<rect x="1042.036" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 110000, 1040.000..1060.000 ns</title></rect>
+<rect x="1057.844" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 11000, 1060.000..1080.000 ns</title></rect>
+<rect x="1073.653" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 11100, 1080.000..1100.000 ns</title></rect>
+<rect x="1089.461" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 100000, 1100.000..1120.000 ns</title></rect>
+<rect x="1105.269" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 100100, 1120.000..1140.000 ns</title></rect>
+<rect x="1121.078" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 101000, 1140.000..1160.000 ns</title></rect>
+<rect x="1136.886" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 101100, 1160.000..1180.000 ns</title></rect>
+<rect x="1152.695" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 110000, 1180.000..1200.000 ns</title></rect>
+<rect x="1168.503" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 11000, 1200.000..1220.000 ns</title></rect>
+<rect x="1184.311" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 11100, 1220.000..1240.000 ns</title></rect>
+<rect x="1200.120" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 100000, 1240.000..1260.000 ns</title></rect>
+<rect x="1215.928" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 100100, 1260.000..1280.000 ns</title></rect>
+<rect x="1231.737" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 101000, 1280.000..1300.000 ns</title></rect>
+<rect x="1247.545" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 101100, 1300.000..1320.000 ns</title></rect>
+<rect x="1263.353" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 110000, 1320.000..1340.000 ns</title></rect>
+<rect x="1279.162" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 11000, 1340.000..1360.000 ns</title></rect>
+<rect x="1294.970" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 11100, 1360.000..1380.000 ns</title></rect>
+<rect x="1310.778" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 100000, 1380.000..1400.000 ns</title></rect>
+<rect x="1326.587" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 100100, 1400.000..1420.000 ns</title></rect>
+<rect x="1342.395" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 101000, 1420.000..1440.000 ns</title></rect>
+<rect x="1358.204" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 101100, 1440.000..1460.000 ns</title></rect>
+<rect x="1374.012" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 110000, 1460.000..1480.000 ns</title></rect>
+<rect x="1389.820" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 11000, 1480.000..1500.000 ns</title></rect>
+<rect x="1405.629" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 11100, 1500.000..1520.000 ns</title></rect>
+<rect x="1421.437" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 100000, 1520.000..1540.000 ns</title></rect>
+<rect x="1437.246" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 100100, 1540.000..1560.000 ns</title></rect>
+<rect x="1453.054" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 101000, 1560.000..1580.000 ns</title></rect>
+<rect x="1468.862" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 101100, 1580.000..1600.000 ns</title></rect>
+<rect x="1484.671" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 110000, 1600.000..1620.000 ns</title></rect>
+<rect x="1500.479" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 110100, 1620.000..1640.000 ns</title></rect>
+<rect x="1516.287" y="137" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 111000, 1640.000..1660.000 ns</title></rect>
+<rect x="1532.096" y="137" width="7.904" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/PC = 111100, 1660.000..1670.000 ns</title></rect>
+<text x="12" y="204" font-family="monospace" font-size="14">IF_RF_ld</text>
+<path d="M 220.000 211 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/IF_RF_ld = 0, 0.000..1670.000 ns</title></path>
+<text x="12" y="252" font-family="monospace" font-size="14">RF_PCincd</text>
+<rect x="220.000" y="233" width="3.952" height="28" fill="#ffe5e8" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, 0.000..5.000 ns</title></rect>
+<rect x="223.952" y="233" width="90.898" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 0, 5.000..120.000 ns</title></rect>
+<text x="269.401" y="252" text-anchor="middle" font-family="monospace" font-size="13">0</text>
+<rect x="314.850" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 100, 120.000..140.000 ns</title></rect>
+<rect x="330.659" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 1000, 140.000..160.000 ns</title></rect>
+<rect x="346.467" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 1100, 160.000..180.000 ns</title></rect>
+<rect x="362.275" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 10000, 180.000..200.000 ns</title></rect>
+<rect x="378.084" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 10100, 200.000..220.000 ns</title></rect>
+<rect x="393.892" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 11000, 220.000..240.000 ns</title></rect>
+<rect x="409.701" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 11100, 240.000..260.000 ns</title></rect>
+<rect x="425.509" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 100000, 260.000..280.000 ns</title></rect>
+<rect x="441.317" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 100100, 280.000..300.000 ns</title></rect>
+<rect x="457.126" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 101000, 300.000..320.000 ns</title></rect>
+<rect x="472.934" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 101100, 320.000..340.000 ns</title></rect>
+<rect x="488.743" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 110000, 340.000..360.000 ns</title></rect>
+<rect x="504.551" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 110100, 360.000..380.000 ns</title></rect>
+<rect x="520.359" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 11100, 380.000..400.000 ns</title></rect>
+<rect x="536.168" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 100000, 400.000..420.000 ns</title></rect>
+<rect x="551.976" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 100100, 420.000..440.000 ns</title></rect>
+<rect x="567.784" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 101000, 440.000..460.000 ns</title></rect>
+<rect x="583.593" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 101100, 460.000..480.000 ns</title></rect>
+<rect x="599.401" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 110000, 480.000..500.000 ns</title></rect>
+<rect x="615.210" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 110100, 500.000..520.000 ns</title></rect>
+<rect x="631.018" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 11100, 520.000..540.000 ns</title></rect>
+<rect x="646.826" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 100000, 540.000..560.000 ns</title></rect>
+<rect x="662.635" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 100100, 560.000..580.000 ns</title></rect>
+<rect x="678.443" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 101000, 580.000..600.000 ns</title></rect>
+<rect x="694.251" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 101100, 600.000..620.000 ns</title></rect>
+<rect x="710.060" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 110000, 620.000..640.000 ns</title></rect>
+<rect x="725.868" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 110100, 640.000..660.000 ns</title></rect>
+<rect x="741.677" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 11100, 660.000..680.000 ns</title></rect>
+<rect x="757.485" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 100000, 680.000..700.000 ns</title></rect>
+<rect x="773.293" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 100100, 700.000..720.000 ns</title></rect>
+<rect x="789.102" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 101000, 720.000..740.000 ns</title></rect>
+<rect x="804.910" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 101100, 740.000..760.000 ns</title></rect>
+<rect x="820.719" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 110000, 760.000..780.000 ns</title></rect>
+<rect x="836.527" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 110100, 780.000..800.000 ns</title></rect>
+<rect x="852.335" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 11100, 800.000..820.000 ns</title></rect>
+<rect x="868.144" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 100000, 820.000..840.000 ns</title></rect>
+<rect x="883.952" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 100100, 840.000..860.000 ns</title></rect>
+<rect x="899.760" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 101000, 860.000..880.000 ns</title></rect>
+<rect x="915.569" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 101100, 880.000..900.000 ns</title></rect>
+<rect x="931.377" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 110000, 900.000..920.000 ns</title></rect>
+<rect x="947.186" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 110100, 920.000..940.000 ns</title></rect>
+<rect x="962.994" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 11100, 940.000..960.000 ns</title></rect>
+<rect x="978.802" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 100000, 960.000..980.000 ns</title></rect>
+<rect x="994.611" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 100100, 980.000..1000.000 ns</title></rect>
+<rect x="1010.419" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 101000, 1000.000..1020.000 ns</title></rect>
+<rect x="1026.228" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 101100, 1020.000..1040.000 ns</title></rect>
+<rect x="1042.036" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 110000, 1040.000..1060.000 ns</title></rect>
+<rect x="1057.844" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 110100, 1060.000..1080.000 ns</title></rect>
+<rect x="1073.653" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 11100, 1080.000..1100.000 ns</title></rect>
+<rect x="1089.461" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 100000, 1100.000..1120.000 ns</title></rect>
+<rect x="1105.269" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 100100, 1120.000..1140.000 ns</title></rect>
+<rect x="1121.078" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 101000, 1140.000..1160.000 ns</title></rect>
+<rect x="1136.886" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 101100, 1160.000..1180.000 ns</title></rect>
+<rect x="1152.695" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 110000, 1180.000..1200.000 ns</title></rect>
+<rect x="1168.503" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 110100, 1200.000..1220.000 ns</title></rect>
+<rect x="1184.311" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 11100, 1220.000..1240.000 ns</title></rect>
+<rect x="1200.120" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 100000, 1240.000..1260.000 ns</title></rect>
+<rect x="1215.928" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 100100, 1260.000..1280.000 ns</title></rect>
+<rect x="1231.737" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 101000, 1280.000..1300.000 ns</title></rect>
+<rect x="1247.545" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 101100, 1300.000..1320.000 ns</title></rect>
+<rect x="1263.353" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 110000, 1320.000..1340.000 ns</title></rect>
+<rect x="1279.162" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 110100, 1340.000..1360.000 ns</title></rect>
+<rect x="1294.970" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 11100, 1360.000..1380.000 ns</title></rect>
+<rect x="1310.778" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 100000, 1380.000..1400.000 ns</title></rect>
+<rect x="1326.587" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 100100, 1400.000..1420.000 ns</title></rect>
+<rect x="1342.395" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 101000, 1420.000..1440.000 ns</title></rect>
+<rect x="1358.204" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 101100, 1440.000..1460.000 ns</title></rect>
+<rect x="1374.012" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 110000, 1460.000..1480.000 ns</title></rect>
+<rect x="1389.820" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 110100, 1480.000..1500.000 ns</title></rect>
+<rect x="1405.629" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 11100, 1500.000..1520.000 ns</title></rect>
+<rect x="1421.437" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 100000, 1520.000..1540.000 ns</title></rect>
+<rect x="1437.246" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 100100, 1540.000..1560.000 ns</title></rect>
+<rect x="1453.054" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 101000, 1560.000..1580.000 ns</title></rect>
+<rect x="1468.862" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 101100, 1580.000..1600.000 ns</title></rect>
+<rect x="1484.671" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 110000, 1600.000..1620.000 ns</title></rect>
+<rect x="1500.479" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 110100, 1620.000..1640.000 ns</title></rect>
+<rect x="1516.287" y="233" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 111000, 1640.000..1660.000 ns</title></rect>
+<rect x="1532.096" y="233" width="7.904" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_PCincd = 111100, 1660.000..1670.000 ns</title></rect>
+<text x="12" y="300" font-family="monospace" font-size="14">RF_instruction</text>
+<rect x="220.000" y="281" width="3.952" height="28" fill="#ffe5e8" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, 0.000..5.000 ns</title></rect>
+<rect x="223.952" y="281" width="90.898" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 0, 5.000..120.000 ns</title></rect>
+<text x="269.401" y="300" text-anchor="middle" font-family="monospace" font-size="13">0</text>
+<rect x="314.850" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 111100000011110000000000000100, 120.000..140.000 ns</title></rect>
+<rect x="330.659" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 110101111011110000000000010000, 140.000..160.000 ns</title></rect>
+<rect x="346.467" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 111100000100000011110000000000, 160.000..180.000 ns</title></rect>
+<rect x="362.275" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 100000000000111111111111110110, 180.000..200.000 ns</title></rect>
+<rect x="378.084" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 110100000001010000000000000100, 200.000..220.000 ns</title></rect>
+<rect x="393.892" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 0, 220.000..240.000 ns</title></rect>
+<rect x="409.701" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10101101111000110000000000000100, 240.000..260.000 ns</title></rect>
+<rect x="425.509" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 100000011000110000000000000001, 260.000..280.000 ns</title></rect>
+<rect x="441.317" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10001101111001000000000000000100, 280.000..300.000 ns</title></rect>
+<rect x="457.126" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 1111001010111100000100000, 300.000..320.000 ns</title></rect>
+<rect x="472.934" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10101110000001000000000000000000, 320.000..340.000 ns</title></rect>
+<rect x="488.743" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10100011000001111111111111010, 340.000..360.000 ns</title></rect>
+<rect x="504.551" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 0, 360.000..380.000 ns</title></rect>
+<rect x="520.359" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10101101111000110000000000000100, 380.000..400.000 ns</title></rect>
+<rect x="536.168" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 100000011000110000000000000001, 400.000..420.000 ns</title></rect>
+<rect x="551.976" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10001101111001000000000000000100, 420.000..440.000 ns</title></rect>
+<rect x="567.784" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 1111001010111100000100000, 440.000..460.000 ns</title></rect>
+<rect x="583.593" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10101110000001000000000000000000, 460.000..480.000 ns</title></rect>
+<rect x="599.401" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10100011000001111111111111010, 480.000..500.000 ns</title></rect>
+<rect x="615.210" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 0, 500.000..520.000 ns</title></rect>
+<rect x="631.018" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10101101111000110000000000000100, 520.000..540.000 ns</title></rect>
+<rect x="646.826" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 100000011000110000000000000001, 540.000..560.000 ns</title></rect>
+<rect x="662.635" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10001101111001000000000000000100, 560.000..580.000 ns</title></rect>
+<rect x="678.443" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 1111001010111100000100000, 580.000..600.000 ns</title></rect>
+<rect x="694.251" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10101110000001000000000000000000, 600.000..620.000 ns</title></rect>
+<rect x="710.060" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10100011000001111111111111010, 620.000..640.000 ns</title></rect>
+<rect x="725.868" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 0, 640.000..660.000 ns</title></rect>
+<rect x="741.677" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10101101111000110000000000000100, 660.000..680.000 ns</title></rect>
+<rect x="757.485" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 100000011000110000000000000001, 680.000..700.000 ns</title></rect>
+<rect x="773.293" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10001101111001000000000000000100, 700.000..720.000 ns</title></rect>
+<rect x="789.102" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 1111001010111100000100000, 720.000..740.000 ns</title></rect>
+<rect x="804.910" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10101110000001000000000000000000, 740.000..760.000 ns</title></rect>
+<rect x="820.719" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10100011000001111111111111010, 760.000..780.000 ns</title></rect>
+<rect x="836.527" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 0, 780.000..800.000 ns</title></rect>
+<rect x="852.335" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10101101111000110000000000000100, 800.000..820.000 ns</title></rect>
+<rect x="868.144" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 100000011000110000000000000001, 820.000..840.000 ns</title></rect>
+<rect x="883.952" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10001101111001000000000000000100, 840.000..860.000 ns</title></rect>
+<rect x="899.760" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 1111001010111100000100000, 860.000..880.000 ns</title></rect>
+<rect x="915.569" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10101110000001000000000000000000, 880.000..900.000 ns</title></rect>
+<rect x="931.377" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10100011000001111111111111010, 900.000..920.000 ns</title></rect>
+<rect x="947.186" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 0, 920.000..940.000 ns</title></rect>
+<rect x="962.994" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10101101111000110000000000000100, 940.000..960.000 ns</title></rect>
+<rect x="978.802" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 100000011000110000000000000001, 960.000..980.000 ns</title></rect>
+<rect x="994.611" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10001101111001000000000000000100, 980.000..1000.000 ns</title></rect>
+<rect x="1010.419" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 1111001010111100000100000, 1000.000..1020.000 ns</title></rect>
+<rect x="1026.228" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10101110000001000000000000000000, 1020.000..1040.000 ns</title></rect>
+<rect x="1042.036" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10100011000001111111111111010, 1040.000..1060.000 ns</title></rect>
+<rect x="1057.844" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 0, 1060.000..1080.000 ns</title></rect>
+<rect x="1073.653" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10101101111000110000000000000100, 1080.000..1100.000 ns</title></rect>
+<rect x="1089.461" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 100000011000110000000000000001, 1100.000..1120.000 ns</title></rect>
+<rect x="1105.269" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10001101111001000000000000000100, 1120.000..1140.000 ns</title></rect>
+<rect x="1121.078" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 1111001010111100000100000, 1140.000..1160.000 ns</title></rect>
+<rect x="1136.886" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10101110000001000000000000000000, 1160.000..1180.000 ns</title></rect>
+<rect x="1152.695" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10100011000001111111111111010, 1180.000..1200.000 ns</title></rect>
+<rect x="1168.503" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 0, 1200.000..1220.000 ns</title></rect>
+<rect x="1184.311" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10101101111000110000000000000100, 1220.000..1240.000 ns</title></rect>
+<rect x="1200.120" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 100000011000110000000000000001, 1240.000..1260.000 ns</title></rect>
+<rect x="1215.928" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10001101111001000000000000000100, 1260.000..1280.000 ns</title></rect>
+<rect x="1231.737" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 1111001010111100000100000, 1280.000..1300.000 ns</title></rect>
+<rect x="1247.545" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10101110000001000000000000000000, 1300.000..1320.000 ns</title></rect>
+<rect x="1263.353" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10100011000001111111111111010, 1320.000..1340.000 ns</title></rect>
+<rect x="1279.162" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 0, 1340.000..1360.000 ns</title></rect>
+<rect x="1294.970" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10101101111000110000000000000100, 1360.000..1380.000 ns</title></rect>
+<rect x="1310.778" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 100000011000110000000000000001, 1380.000..1400.000 ns</title></rect>
+<rect x="1326.587" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10001101111001000000000000000100, 1400.000..1420.000 ns</title></rect>
+<rect x="1342.395" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 1111001010111100000100000, 1420.000..1440.000 ns</title></rect>
+<rect x="1358.204" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10101110000001000000000000000000, 1440.000..1460.000 ns</title></rect>
+<rect x="1374.012" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10100011000001111111111111010, 1460.000..1480.000 ns</title></rect>
+<rect x="1389.820" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 0, 1480.000..1500.000 ns</title></rect>
+<rect x="1405.629" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10101101111000110000000000000100, 1500.000..1520.000 ns</title></rect>
+<rect x="1421.437" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 100000011000110000000000000001, 1520.000..1540.000 ns</title></rect>
+<rect x="1437.246" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10001101111001000000000000000100, 1540.000..1560.000 ns</title></rect>
+<rect x="1453.054" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 1111001010111100000100000, 1560.000..1580.000 ns</title></rect>
+<rect x="1468.862" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10101110000001000000000000000000, 1580.000..1600.000 ns</title></rect>
+<rect x="1484.671" y="281" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 10100011000001111111111111010, 1600.000..1620.000 ns</title></rect>
+<rect x="1500.479" y="281" width="31.617" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 0, 1620.000..1660.000 ns</title></rect>
+<text x="1516.287" y="300" text-anchor="middle" font-family="monospace" font-size="13">0</text>
+<rect x="1532.096" y="281" width="7.904" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/RF_instruction = 1000010000000000000000000100000, 1660.000..1670.000 ns</title></rect>
+<text x="12" y="348" font-family="monospace" font-size="14">WB_C</text>
+<rect x="220.000" y="329" width="126.467" height="28" fill="#ffe5e8" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, 0.000..160.000 ns</title></rect>
+<rect x="346.467" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 0, 160.000..180.000 ns</title></rect>
+<rect x="362.275" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 1000000000000000000, 180.000..200.000 ns</title></rect>
+<rect x="378.084" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 1000000000000010000, 200.000..220.000 ns</title></rect>
+<rect x="393.892" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 111100000000000000000000000000, 220.000..240.000 ns</title></rect>
+<rect x="409.701" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 11111111111111111111111111110110, 240.000..260.000 ns</title></rect>
+<rect x="425.509" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 100, 260.000..280.000 ns</title></rect>
+<rect x="441.317" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 0, 280.000..300.000 ns</title></rect>
+<rect x="457.126" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 1000000000000010100, 300.000..320.000 ns</title></rect>
+<rect x="472.934" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 11111111111111111111111111110111, 320.000..340.000 ns</title></rect>
+<rect x="488.743" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 11111111111111111111111111110110, 340.000..360.000 ns</title></rect>
+<rect x="504.551" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 1000000000000010100, 360.000..380.000 ns</title></rect>
+<rect x="520.359" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 111100000000000000000000000000, 380.000..400.000 ns</title></rect>
+<rect x="536.168" y="329" width="15.808" height="28" fill="#ffe5e8" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = x, 400.000..420.000 ns</title></rect>
+<rect x="551.976" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 0, 420.000..440.000 ns</title></rect>
+<rect x="567.784" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 1000000000000011000, 440.000..460.000 ns</title></rect>
+<rect x="583.593" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 11111111111111111111111111111000, 460.000..480.000 ns</title></rect>
+<rect x="599.401" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 11111111111111111111111111110111, 480.000..500.000 ns</title></rect>
+<rect x="615.210" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 1000000000000011000, 500.000..520.000 ns</title></rect>
+<rect x="631.018" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 111100000000000000000000000000, 520.000..540.000 ns</title></rect>
+<rect x="646.826" y="329" width="15.808" height="28" fill="#ffe5e8" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = x, 540.000..560.000 ns</title></rect>
+<rect x="662.635" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 0, 560.000..580.000 ns</title></rect>
+<rect x="678.443" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 1000000000000011100, 580.000..600.000 ns</title></rect>
+<rect x="694.251" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 11111111111111111111111111111001, 600.000..620.000 ns</title></rect>
+<rect x="710.060" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 11111111111111111111111111111000, 620.000..640.000 ns</title></rect>
+<rect x="725.868" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 1000000000000011100, 640.000..660.000 ns</title></rect>
+<rect x="741.677" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 111100000000000000000000000000, 660.000..680.000 ns</title></rect>
+<rect x="757.485" y="329" width="15.808" height="28" fill="#ffe5e8" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = x, 680.000..700.000 ns</title></rect>
+<rect x="773.293" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 0, 700.000..720.000 ns</title></rect>
+<rect x="789.102" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 1000000000000100000, 720.000..740.000 ns</title></rect>
+<rect x="804.910" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 11111111111111111111111111111010, 740.000..760.000 ns</title></rect>
+<rect x="820.719" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 11111111111111111111111111111001, 760.000..780.000 ns</title></rect>
+<rect x="836.527" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 1000000000000100000, 780.000..800.000 ns</title></rect>
+<rect x="852.335" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 111100000000000000000000000000, 800.000..820.000 ns</title></rect>
+<rect x="868.144" y="329" width="15.808" height="28" fill="#ffe5e8" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = x, 820.000..840.000 ns</title></rect>
+<rect x="883.952" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 0, 840.000..860.000 ns</title></rect>
+<rect x="899.760" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 1000000000000100100, 860.000..880.000 ns</title></rect>
+<rect x="915.569" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 11111111111111111111111111111011, 880.000..900.000 ns</title></rect>
+<rect x="931.377" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 11111111111111111111111111111010, 900.000..920.000 ns</title></rect>
+<rect x="947.186" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 1000000000000100100, 920.000..940.000 ns</title></rect>
+<rect x="962.994" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 111100000000000000000000000000, 940.000..960.000 ns</title></rect>
+<rect x="978.802" y="329" width="15.808" height="28" fill="#ffe5e8" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = x, 960.000..980.000 ns</title></rect>
+<rect x="994.611" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 0, 980.000..1000.000 ns</title></rect>
+<rect x="1010.419" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 1000000000000101000, 1000.000..1020.000 ns</title></rect>
+<rect x="1026.228" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 11111111111111111111111111111100, 1020.000..1040.000 ns</title></rect>
+<rect x="1042.036" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 11111111111111111111111111111011, 1040.000..1060.000 ns</title></rect>
+<rect x="1057.844" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 1000000000000101000, 1060.000..1080.000 ns</title></rect>
+<rect x="1073.653" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 111100000000000000000000000000, 1080.000..1100.000 ns</title></rect>
+<rect x="1089.461" y="329" width="15.808" height="28" fill="#ffe5e8" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = x, 1100.000..1120.000 ns</title></rect>
+<rect x="1105.269" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 0, 1120.000..1140.000 ns</title></rect>
+<rect x="1121.078" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 1000000000000101100, 1140.000..1160.000 ns</title></rect>
+<rect x="1136.886" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 11111111111111111111111111111101, 1160.000..1180.000 ns</title></rect>
+<rect x="1152.695" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 11111111111111111111111111111100, 1180.000..1200.000 ns</title></rect>
+<rect x="1168.503" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 1000000000000101100, 1200.000..1220.000 ns</title></rect>
+<rect x="1184.311" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 111100000000000000000000000000, 1220.000..1240.000 ns</title></rect>
+<rect x="1200.120" y="329" width="15.808" height="28" fill="#ffe5e8" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = x, 1240.000..1260.000 ns</title></rect>
+<rect x="1215.928" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 0, 1260.000..1280.000 ns</title></rect>
+<rect x="1231.737" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 1000000000000110000, 1280.000..1300.000 ns</title></rect>
+<rect x="1247.545" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 11111111111111111111111111111110, 1300.000..1320.000 ns</title></rect>
+<rect x="1263.353" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 11111111111111111111111111111101, 1320.000..1340.000 ns</title></rect>
+<rect x="1279.162" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 1000000000000110000, 1340.000..1360.000 ns</title></rect>
+<rect x="1294.970" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 111100000000000000000000000000, 1360.000..1380.000 ns</title></rect>
+<rect x="1310.778" y="329" width="15.808" height="28" fill="#ffe5e8" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = x, 1380.000..1400.000 ns</title></rect>
+<rect x="1326.587" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 0, 1400.000..1420.000 ns</title></rect>
+<rect x="1342.395" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 1000000000000110100, 1420.000..1440.000 ns</title></rect>
+<rect x="1358.204" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 11111111111111111111111111111111, 1440.000..1460.000 ns</title></rect>
+<rect x="1374.012" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 11111111111111111111111111111110, 1460.000..1480.000 ns</title></rect>
+<rect x="1389.820" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 1000000000000110100, 1480.000..1500.000 ns</title></rect>
+<rect x="1405.629" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 111100000000000000000000000000, 1500.000..1520.000 ns</title></rect>
+<rect x="1421.437" y="329" width="15.808" height="28" fill="#ffe5e8" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = x, 1520.000..1540.000 ns</title></rect>
+<rect x="1437.246" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 0, 1540.000..1560.000 ns</title></rect>
+<rect x="1453.054" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 1000000000000111000, 1560.000..1580.000 ns</title></rect>
+<rect x="1468.862" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 0, 1580.000..1600.000 ns</title></rect>
+<rect x="1484.671" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 11111111111111111111111111111111, 1600.000..1620.000 ns</title></rect>
+<rect x="1500.479" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 1000000000000111000, 1620.000..1640.000 ns</title></rect>
+<rect x="1516.287" y="329" width="15.808" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = 111100000000000000000000000000, 1640.000..1660.000 ns</title></rect>
+<rect x="1532.096" y="329" width="7.904" height="28" fill="#ffe5e8" stroke="#5e789c"><title>/tb_core_scan_regression/U_SCAN/WB_C = x, 1660.000..1670.000 ns</title></rect>
+<text x="12" y="396" font-family="monospace" font-size="14">WB_wreg</text>
+<path d="M 220.000 391 H 223.952" stroke="#c02a35" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = x, 0.000..5.000 ns</title></path>
+<path d="M 223.952 379 H 346.467" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 1, 5.000..160.000 ns</title></path>
+<path d="M 223.952 391 V 379" stroke="#126e60" fill="none"/>
+<path d="M 346.467 403 H 457.126" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 0, 160.000..300.000 ns</title></path>
+<path d="M 346.467 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 457.126 379 H 472.934" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 1, 300.000..320.000 ns</title></path>
+<path d="M 457.126 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 472.934 403 H 520.359" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 0, 320.000..380.000 ns</title></path>
+<path d="M 472.934 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 520.359 379 H 551.976" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 1, 380.000..420.000 ns</title></path>
+<path d="M 520.359 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 551.976 403 H 567.784" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 0, 420.000..440.000 ns</title></path>
+<path d="M 551.976 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 567.784 379 H 583.593" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 1, 440.000..460.000 ns</title></path>
+<path d="M 567.784 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 583.593 403 H 631.018" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 0, 460.000..520.000 ns</title></path>
+<path d="M 583.593 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 631.018 379 H 662.635" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 1, 520.000..560.000 ns</title></path>
+<path d="M 631.018 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 662.635 403 H 678.443" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 0, 560.000..580.000 ns</title></path>
+<path d="M 662.635 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 678.443 379 H 694.251" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 1, 580.000..600.000 ns</title></path>
+<path d="M 678.443 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 694.251 403 H 741.677" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 0, 600.000..660.000 ns</title></path>
+<path d="M 694.251 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 741.677 379 H 773.293" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 1, 660.000..700.000 ns</title></path>
+<path d="M 741.677 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 773.293 403 H 789.102" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 0, 700.000..720.000 ns</title></path>
+<path d="M 773.293 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 789.102 379 H 804.910" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 1, 720.000..740.000 ns</title></path>
+<path d="M 789.102 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 804.910 403 H 852.335" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 0, 740.000..800.000 ns</title></path>
+<path d="M 804.910 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 852.335 379 H 883.952" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 1, 800.000..840.000 ns</title></path>
+<path d="M 852.335 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 883.952 403 H 899.760" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 0, 840.000..860.000 ns</title></path>
+<path d="M 883.952 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 899.760 379 H 915.569" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 1, 860.000..880.000 ns</title></path>
+<path d="M 899.760 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 915.569 403 H 962.994" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 0, 880.000..940.000 ns</title></path>
+<path d="M 915.569 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 962.994 379 H 994.611" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 1, 940.000..980.000 ns</title></path>
+<path d="M 962.994 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 994.611 403 H 1010.419" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 0, 980.000..1000.000 ns</title></path>
+<path d="M 994.611 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 1010.419 379 H 1026.228" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 1, 1000.000..1020.000 ns</title></path>
+<path d="M 1010.419 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 1026.228 403 H 1073.653" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 0, 1020.000..1080.000 ns</title></path>
+<path d="M 1026.228 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 1073.653 379 H 1105.269" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 1, 1080.000..1120.000 ns</title></path>
+<path d="M 1073.653 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 1105.269 403 H 1121.078" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 0, 1120.000..1140.000 ns</title></path>
+<path d="M 1105.269 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 1121.078 379 H 1136.886" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 1, 1140.000..1160.000 ns</title></path>
+<path d="M 1121.078 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 1136.886 403 H 1184.311" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 0, 1160.000..1220.000 ns</title></path>
+<path d="M 1136.886 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 1184.311 379 H 1215.928" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 1, 1220.000..1260.000 ns</title></path>
+<path d="M 1184.311 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 1215.928 403 H 1231.737" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 0, 1260.000..1280.000 ns</title></path>
+<path d="M 1215.928 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 1231.737 379 H 1247.545" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 1, 1280.000..1300.000 ns</title></path>
+<path d="M 1231.737 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 1247.545 403 H 1294.970" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 0, 1300.000..1360.000 ns</title></path>
+<path d="M 1247.545 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 1294.970 379 H 1326.587" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 1, 1360.000..1400.000 ns</title></path>
+<path d="M 1294.970 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 1326.587 403 H 1342.395" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 0, 1400.000..1420.000 ns</title></path>
+<path d="M 1326.587 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 1342.395 379 H 1358.204" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 1, 1420.000..1440.000 ns</title></path>
+<path d="M 1342.395 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 1358.204 403 H 1405.629" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 0, 1440.000..1500.000 ns</title></path>
+<path d="M 1358.204 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 1405.629 379 H 1437.246" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 1, 1500.000..1540.000 ns</title></path>
+<path d="M 1405.629 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 1437.246 403 H 1453.054" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 0, 1540.000..1560.000 ns</title></path>
+<path d="M 1437.246 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 1453.054 379 H 1468.862" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 1, 1560.000..1580.000 ns</title></path>
+<path d="M 1453.054 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 1468.862 403 H 1516.287" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 0, 1580.000..1640.000 ns</title></path>
+<path d="M 1468.862 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 1516.287 379 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/WB_wreg = 1, 1640.000..1670.000 ns</title></path>
+<path d="M 1516.287 403 V 379" stroke="#126e60" fill="none"/>
+<text x="12" y="444" font-family="monospace" font-size="14">MM_wrmem</text>
+<path d="M 220.000 439 H 223.952" stroke="#c02a35" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = x, 0.000..5.000 ns</title></path>
+<path d="M 223.952 427 H 441.317" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 1, 5.000..280.000 ns</title></path>
+<path d="M 223.952 439 V 427" stroke="#126e60" fill="none"/>
+<path d="M 441.317 451 H 457.126" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 0, 280.000..300.000 ns</title></path>
+<path d="M 441.317 427 V 451" stroke="#126e60" fill="none"/>
+<path d="M 457.126 427 H 504.551" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 1, 300.000..360.000 ns</title></path>
+<path d="M 457.126 451 V 427" stroke="#126e60" fill="none"/>
+<path d="M 504.551 451 H 520.359" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 0, 360.000..380.000 ns</title></path>
+<path d="M 504.551 427 V 451" stroke="#126e60" fill="none"/>
+<path d="M 520.359 427 H 551.976" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 1, 380.000..420.000 ns</title></path>
+<path d="M 520.359 451 V 427" stroke="#126e60" fill="none"/>
+<path d="M 551.976 451 H 567.784" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 0, 420.000..440.000 ns</title></path>
+<path d="M 551.976 427 V 451" stroke="#126e60" fill="none"/>
+<path d="M 567.784 427 H 615.210" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 1, 440.000..500.000 ns</title></path>
+<path d="M 567.784 451 V 427" stroke="#126e60" fill="none"/>
+<path d="M 615.210 451 H 631.018" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 0, 500.000..520.000 ns</title></path>
+<path d="M 615.210 427 V 451" stroke="#126e60" fill="none"/>
+<path d="M 631.018 427 H 662.635" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 1, 520.000..560.000 ns</title></path>
+<path d="M 631.018 451 V 427" stroke="#126e60" fill="none"/>
+<path d="M 662.635 451 H 678.443" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 0, 560.000..580.000 ns</title></path>
+<path d="M 662.635 427 V 451" stroke="#126e60" fill="none"/>
+<path d="M 678.443 427 H 725.868" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 1, 580.000..640.000 ns</title></path>
+<path d="M 678.443 451 V 427" stroke="#126e60" fill="none"/>
+<path d="M 725.868 451 H 741.677" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 0, 640.000..660.000 ns</title></path>
+<path d="M 725.868 427 V 451" stroke="#126e60" fill="none"/>
+<path d="M 741.677 427 H 773.293" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 1, 660.000..700.000 ns</title></path>
+<path d="M 741.677 451 V 427" stroke="#126e60" fill="none"/>
+<path d="M 773.293 451 H 789.102" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 0, 700.000..720.000 ns</title></path>
+<path d="M 773.293 427 V 451" stroke="#126e60" fill="none"/>
+<path d="M 789.102 427 H 836.527" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 1, 720.000..780.000 ns</title></path>
+<path d="M 789.102 451 V 427" stroke="#126e60" fill="none"/>
+<path d="M 836.527 451 H 852.335" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 0, 780.000..800.000 ns</title></path>
+<path d="M 836.527 427 V 451" stroke="#126e60" fill="none"/>
+<path d="M 852.335 427 H 883.952" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 1, 800.000..840.000 ns</title></path>
+<path d="M 852.335 451 V 427" stroke="#126e60" fill="none"/>
+<path d="M 883.952 451 H 899.760" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 0, 840.000..860.000 ns</title></path>
+<path d="M 883.952 427 V 451" stroke="#126e60" fill="none"/>
+<path d="M 899.760 427 H 947.186" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 1, 860.000..920.000 ns</title></path>
+<path d="M 899.760 451 V 427" stroke="#126e60" fill="none"/>
+<path d="M 947.186 451 H 962.994" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 0, 920.000..940.000 ns</title></path>
+<path d="M 947.186 427 V 451" stroke="#126e60" fill="none"/>
+<path d="M 962.994 427 H 994.611" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 1, 940.000..980.000 ns</title></path>
+<path d="M 962.994 451 V 427" stroke="#126e60" fill="none"/>
+<path d="M 994.611 451 H 1010.419" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 0, 980.000..1000.000 ns</title></path>
+<path d="M 994.611 427 V 451" stroke="#126e60" fill="none"/>
+<path d="M 1010.419 427 H 1057.844" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 1, 1000.000..1060.000 ns</title></path>
+<path d="M 1010.419 451 V 427" stroke="#126e60" fill="none"/>
+<path d="M 1057.844 451 H 1073.653" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 0, 1060.000..1080.000 ns</title></path>
+<path d="M 1057.844 427 V 451" stroke="#126e60" fill="none"/>
+<path d="M 1073.653 427 H 1105.269" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 1, 1080.000..1120.000 ns</title></path>
+<path d="M 1073.653 451 V 427" stroke="#126e60" fill="none"/>
+<path d="M 1105.269 451 H 1121.078" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 0, 1120.000..1140.000 ns</title></path>
+<path d="M 1105.269 427 V 451" stroke="#126e60" fill="none"/>
+<path d="M 1121.078 427 H 1168.503" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 1, 1140.000..1200.000 ns</title></path>
+<path d="M 1121.078 451 V 427" stroke="#126e60" fill="none"/>
+<path d="M 1168.503 451 H 1184.311" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 0, 1200.000..1220.000 ns</title></path>
+<path d="M 1168.503 427 V 451" stroke="#126e60" fill="none"/>
+<path d="M 1184.311 427 H 1215.928" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 1, 1220.000..1260.000 ns</title></path>
+<path d="M 1184.311 451 V 427" stroke="#126e60" fill="none"/>
+<path d="M 1215.928 451 H 1231.737" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 0, 1260.000..1280.000 ns</title></path>
+<path d="M 1215.928 427 V 451" stroke="#126e60" fill="none"/>
+<path d="M 1231.737 427 H 1279.162" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 1, 1280.000..1340.000 ns</title></path>
+<path d="M 1231.737 451 V 427" stroke="#126e60" fill="none"/>
+<path d="M 1279.162 451 H 1294.970" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 0, 1340.000..1360.000 ns</title></path>
+<path d="M 1279.162 427 V 451" stroke="#126e60" fill="none"/>
+<path d="M 1294.970 427 H 1326.587" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 1, 1360.000..1400.000 ns</title></path>
+<path d="M 1294.970 451 V 427" stroke="#126e60" fill="none"/>
+<path d="M 1326.587 451 H 1342.395" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 0, 1400.000..1420.000 ns</title></path>
+<path d="M 1326.587 427 V 451" stroke="#126e60" fill="none"/>
+<path d="M 1342.395 427 H 1389.820" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 1, 1420.000..1480.000 ns</title></path>
+<path d="M 1342.395 451 V 427" stroke="#126e60" fill="none"/>
+<path d="M 1389.820 451 H 1405.629" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 0, 1480.000..1500.000 ns</title></path>
+<path d="M 1389.820 427 V 451" stroke="#126e60" fill="none"/>
+<path d="M 1405.629 427 H 1437.246" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 1, 1500.000..1540.000 ns</title></path>
+<path d="M 1405.629 451 V 427" stroke="#126e60" fill="none"/>
+<path d="M 1437.246 451 H 1453.054" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 0, 1540.000..1560.000 ns</title></path>
+<path d="M 1437.246 427 V 451" stroke="#126e60" fill="none"/>
+<path d="M 1453.054 427 H 1500.479" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 1, 1560.000..1620.000 ns</title></path>
+<path d="M 1453.054 451 V 427" stroke="#126e60" fill="none"/>
+<path d="M 1500.479 451 H 1516.287" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 0, 1620.000..1640.000 ns</title></path>
+<path d="M 1500.479 427 V 451" stroke="#126e60" fill="none"/>
+<path d="M 1516.287 427 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_regression/U_SCAN/MM_wrmem = 1, 1640.000..1670.000 ns</title></path>
+<path d="M 1516.287 451 V 427" stroke="#126e60" fill="none"/>
+<text x="20" y="516" font-family="sans-serif" font-size="11">Source: core_scan_lwsw.vcd; no expected-schedule signal reconstruction. Buses are hexadecimal; counters/region lengths are decimal.</text></svg>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="scan_unit_seed12345.wdb" id="1">
+         <top_modules>
+            <top_module name="p_wires" />
+            <top_module name="phase2_tb_pkg" />
+            <top_module name="tb_reg_IF_RF_scan" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="180.000 ns"></ZoomEndTime>
+   </zoom_setting>
+   <column_width_setting>
+   </column_width_setting>
+   <WVObjectSize size="16" />
+   <wvobject fp_name="/tb_reg_IF_RF_scan/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_reg_IF_RF_scan/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_reg_IF_RF_scan/ld" type="logic">
+      <obj_property name="ElementShortName">ld</obj_property>
+      <obj_property name="ObjectShortName">ld</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_reg_IF_RF_scan/scan_enable" type="logic">
+      <obj_property name="ElementShortName">scan_enable</obj_property>
+      <obj_property name="ObjectShortName">scan_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_reg_IF_RF_scan/scan_in" type="logic">
+      <obj_property name="ElementShortName">scan_in</obj_property>
+      <obj_property name="ObjectShortName">scan_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_reg_IF_RF_scan/scan_out" type="logic">
+      <obj_property name="ElementShortName">scan_out</obj_property>
+      <obj_property name="ObjectShortName">scan_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_reg_IF_RF_scan/scan_feedback" type="logic">
+      <obj_property name="ElementShortName">scan_feedback</obj_property>
+      <obj_property name="ObjectShortName">scan_feedback</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_reg_IF_RF_scan/pc_d" type="array">
+      <obj_property name="ElementShortName">pc_d[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_d[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_reg_IF_RF_scan/instr" type="array">
+      <obj_property name="ElementShortName">instr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instr[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_reg_IF_RF_scan/pc_q" type="array">
+      <obj_property name="ElementShortName">pc_q[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_q[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_reg_IF_RF_scan/rf_instr" type="array">
+      <obj_property name="ElementShortName">rf_instr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rf_instr[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_reg_IF_RF_scan/q" type="array">
+      <obj_property name="ElementShortName">q[63:0]</obj_property>
+      <obj_property name="ObjectShortName">q[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_reg_IF_RF_scan/reference_q" type="array">
+      <obj_property name="ElementShortName">reference_q[63:0]</obj_property>
+      <obj_property name="ObjectShortName">reference_q[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_reg_IF_RF_scan/event_id" type="array">
+      <obj_property name="ElementShortName">event_id[7:0]</obj_property>
+      <obj_property name="ObjectShortName">event_id[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_reg_IF_RF_scan/scan_feedback" type="logic">
+      <obj_property name="ElementShortName">scan_feedback</obj_property>
+      <obj_property name="ObjectShortName">scan_feedback</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_reg_IF_RF_scan/scan_out" type="logic">
+      <obj_property name="ElementShortName">scan_out</obj_property>
+      <obj_property name="ObjectShortName">scan_out</obj_property>
+   </wvobject>
+</wave_config>
+

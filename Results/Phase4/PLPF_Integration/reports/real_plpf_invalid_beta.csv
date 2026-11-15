@@ -1,0 +1,2 @@
+Case,Testbench,Group,ExpectedNegative,Result,CompletionTime,Capture,WDBBytes
+real_plpf_invalid_beta,tb_if_rf_plpf_integration,PLPF_Integration,1,PASS,0 ps,0,0

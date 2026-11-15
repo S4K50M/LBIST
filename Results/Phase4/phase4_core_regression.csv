@@ -1,0 +1,4 @@
+Case,Result,CompletionNS,ScanEnabled,PipelineSamples,StallSamples,OutputWords,BaselineOutputMatch,ExitPC,FunctionalEquivalence,ProcessorScanIsolation
+baseline_lwsw,PASS,1670,False,0,0,10,PASS,00000038,baseline reproduced,INCOMPLETE; scan-disabled functional test only
+core_scan_lwsw,PASS,1670,False,313,0,10,PASS,00000038,PASS,INCOMPLETE; scan-disabled functional test only
+core_scan_stalls,PASS,1730,False,325,12,10,PASS,00000038,PASS,INCOMPLETE; scan-disabled functional test only

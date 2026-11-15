@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="670" viewBox="0 0 1600 670">
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="20" y="28" font-family="sans-serif" font-size="20">scan_unit_seed12345 - enter scan</text>
+<text x="20" y="51" font-family="sans-serif" font-size="13">00 = PLPF n=3 (low toggle) | 11 = PLPF n=1 (unfiltered) | Edge capture uses PRE-edge mode; POST-edge mode prepares the next shift.</text>
+<line x1="820.0" x2="820.0" y1="110" y2="640" stroke="#a33" stroke-dasharray="4 4"/>
+<text x="20" y="76" font-family="sans-serif" font-size="13" fill="#922">enter scan (actual event) @ 518.100 ns</text>
+<line x1="220.0" x2="220.0" y1="110" y2="640" stroke="#e6eaf0"/>
+<text x="220.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">508.10 ns</text>
+<line x1="385.0" x2="385.0" y1="110" y2="640" stroke="#e6eaf0"/>
+<text x="385.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">510.85 ns</text>
+<line x1="550.0" x2="550.0" y1="110" y2="640" stroke="#e6eaf0"/>
+<text x="550.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">513.60 ns</text>
+<line x1="715.0" x2="715.0" y1="110" y2="640" stroke="#e6eaf0"/>
+<text x="715.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">516.35 ns</text>
+<line x1="880.0" x2="880.0" y1="110" y2="640" stroke="#e6eaf0"/>
+<text x="880.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">519.10 ns</text>
+<line x1="1045.0" x2="1045.0" y1="110" y2="640" stroke="#e6eaf0"/>
+<text x="1045.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">521.85 ns</text>
+<line x1="1210.0" x2="1210.0" y1="110" y2="640" stroke="#e6eaf0"/>
+<text x="1210.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">524.60 ns</text>
+<line x1="1375.0" x2="1375.0" y1="110" y2="640" stroke="#e6eaf0"/>
+<text x="1375.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">527.35 ns</text>
+<line x1="1540.0" x2="1540.0" y1="110" y2="640" stroke="#e6eaf0"/>
+<text x="1540.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">530.10 ns</text>
+<text x="12" y="156" font-family="monospace" font-size="14">clk</text>
+<path d="M 220.000 163 H 274.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/clk = 0, 508.100..509.000 ns</title></path>
+<path d="M 274.000 139 H 334.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/clk = 1, 509.000..510.000 ns</title></path>
+<path d="M 274.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 334.000 163 H 394.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/clk = 0, 510.000..511.000 ns</title></path>
+<path d="M 334.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 394.000 139 H 454.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/clk = 1, 511.000..512.000 ns</title></path>
+<path d="M 394.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 454.000 163 H 514.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/clk = 0, 512.000..513.000 ns</title></path>
+<path d="M 454.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 514.000 139 H 574.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/clk = 1, 513.000..514.000 ns</title></path>
+<path d="M 514.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 574.000 163 H 634.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/clk = 0, 514.000..515.000 ns</title></path>
+<path d="M 574.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 634.000 139 H 694.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/clk = 1, 515.000..516.000 ns</title></path>
+<path d="M 634.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 694.000 163 H 754.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/clk = 0, 516.000..517.000 ns</title></path>
+<path d="M 694.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 754.000 139 H 814.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/clk = 1, 517.000..518.000 ns</title></path>
+<path d="M 754.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 814.000 163 H 874.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/clk = 0, 518.000..519.000 ns</title></path>
+<path d="M 814.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 874.000 139 H 934.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/clk = 1, 519.000..520.000 ns</title></path>
+<path d="M 874.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 934.000 163 H 994.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/clk = 0, 520.000..521.000 ns</title></path>
+<path d="M 934.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 994.000 139 H 1054.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/clk = 1, 521.000..522.000 ns</title></path>
+<path d="M 994.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1054.000 163 H 1114.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/clk = 0, 522.000..523.000 ns</title></path>
+<path d="M 1054.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1114.000 139 H 1174.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/clk = 1, 523.000..524.000 ns</title></path>
+<path d="M 1114.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1174.000 163 H 1234.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/clk = 0, 524.000..525.000 ns</title></path>
+<path d="M 1174.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1234.000 139 H 1294.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/clk = 1, 525.000..526.000 ns</title></path>
+<path d="M 1234.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1294.000 163 H 1354.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/clk = 0, 526.000..527.000 ns</title></path>
+<path d="M 1294.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1354.000 139 H 1414.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/clk = 1, 527.000..528.000 ns</title></path>
+<path d="M 1354.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1414.000 163 H 1474.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/clk = 0, 528.000..529.000 ns</title></path>
+<path d="M 1414.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1474.000 139 H 1534.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/clk = 1, 529.000..530.000 ns</title></path>
+<path d="M 1474.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1534.000 163 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/clk = 0, 530.000..530.100 ns</title></path>
+<path d="M 1534.000 139 V 163" stroke="#126e60" fill="none"/>
+<text x="12" y="204" font-family="monospace" font-size="14">rst</text>
+<path d="M 220.000 187 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/rst = 1, 508.100..530.100 ns</title></path>
+<text x="12" y="252" font-family="monospace" font-size="14">ld</text>
+<path d="M 220.000 259 H 340.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/ld = 0, 508.100..510.100 ns</title></path>
+<path d="M 340.000 235 H 460.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/ld = 1, 510.100..512.100 ns</title></path>
+<path d="M 340.000 259 V 235" stroke="#126e60" fill="none"/>
+<path d="M 460.000 259 H 700.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/ld = 0, 512.100..516.100 ns</title></path>
+<path d="M 460.000 235 V 259" stroke="#126e60" fill="none"/>
+<path d="M 700.000 235 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/ld = 1, 516.100..530.100 ns</title></path>
+<path d="M 700.000 259 V 235" stroke="#126e60" fill="none"/>
+<text x="12" y="300" font-family="monospace" font-size="14">scan_enable</text>
+<path d="M 220.000 307 H 820.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/scan_enable = 0, 508.100..518.100 ns</title></path>
+<path d="M 820.000 283 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/scan_enable = 1, 518.100..530.100 ns</title></path>
+<path d="M 820.000 307 V 283" stroke="#126e60" fill="none"/>
+<text x="12" y="348" font-family="monospace" font-size="14">scan_in</text>
+<path d="M 220.000 355 H 820.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/scan_in = 0, 508.100..518.100 ns</title></path>
+<path d="M 820.000 331 H 940.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/scan_in = 1, 518.100..520.100 ns</title></path>
+<path d="M 820.000 355 V 331" stroke="#126e60" fill="none"/>
+<path d="M 940.000 355 H 1060.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/scan_in = 0, 520.100..522.100 ns</title></path>
+<path d="M 940.000 331 V 355" stroke="#126e60" fill="none"/>
+<path d="M 1060.000 331 H 1180.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/scan_in = 1, 522.100..524.100 ns</title></path>
+<path d="M 1060.000 355 V 331" stroke="#126e60" fill="none"/>
+<path d="M 1180.000 355 H 1420.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/scan_in = 0, 524.100..528.100 ns</title></path>
+<path d="M 1180.000 331 V 355" stroke="#126e60" fill="none"/>
+<path d="M 1420.000 331 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/scan_in = 1, 528.100..530.100 ns</title></path>
+<path d="M 1420.000 355 V 331" stroke="#126e60" fill="none"/>
+<text x="12" y="396" font-family="monospace" font-size="14">scan_out</text>
+<path d="M 220.000 403 H 274.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/scan_out = 0, 508.100..509.000 ns</title></path>
+<path d="M 274.000 379 H 994.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/scan_out = 1, 509.000..521.000 ns</title></path>
+<path d="M 274.000 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 994.000 403 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/scan_out = 0, 521.000..530.100 ns</title></path>
+<path d="M 994.000 379 V 403" stroke="#126e60" fill="none"/>
+<text x="12" y="444" font-family="monospace" font-size="14">scan_feedback</text>
+<path d="M 220.000 451 H 274.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/scan_feedback = 0, 508.100..509.000 ns</title></path>
+<path d="M 274.000 427 H 514.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/scan_feedback = 1, 509.000..513.000 ns</title></path>
+<path d="M 274.000 451 V 427" stroke="#126e60" fill="none"/>
+<path d="M 514.000 451 H 634.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/scan_feedback = 0, 513.000..515.000 ns</title></path>
+<path d="M 514.000 427 V 451" stroke="#126e60" fill="none"/>
+<path d="M 634.000 427 H 994.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/scan_feedback = 1, 515.000..521.000 ns</title></path>
+<path d="M 634.000 451 V 427" stroke="#126e60" fill="none"/>
+<path d="M 994.000 451 H 1114.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/scan_feedback = 0, 521.000..523.000 ns</title></path>
+<path d="M 994.000 427 V 451" stroke="#126e60" fill="none"/>
+<path d="M 1114.000 427 H 1234.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/scan_feedback = 1, 523.000..525.000 ns</title></path>
+<path d="M 1114.000 451 V 427" stroke="#126e60" fill="none"/>
+<path d="M 1234.000 451 H 1474.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/scan_feedback = 0, 525.000..529.000 ns</title></path>
+<path d="M 1234.000 427 V 451" stroke="#126e60" fill="none"/>
+<path d="M 1474.000 427 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_reg_IF_RF_scan/scan_feedback = 1, 529.000..530.100 ns</title></path>
+<path d="M 1474.000 451 V 427" stroke="#126e60" fill="none"/>
+<text x="12" y="492" font-family="monospace" font-size="14">pc_d</text>
+<rect x="220.000" y="473" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_reg_IF_RF_scan/pc_d = 11001111011111111000001111001010, 508.100..510.100 ns</title></rect>
+<text x="280.000" y="492" text-anchor="middle" font-family="monospace" font-size="13">CF7F83CA</text>
+<rect x="340.000" y="473" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_reg_IF_RF_scan/pc_d = 11011011011110011011010111110001, 510.100..512.100 ns</title></rect>
+<text x="400.000" y="492" text-anchor="middle" font-family="monospace" font-size="13">DB79B5F1</text>
+<rect x="460.000" y="473" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_reg_IF_RF_scan/pc_d = 10000111001010111010100010011010, 512.100..514.100 ns</title></rect>
+<text x="520.000" y="492" text-anchor="middle" font-family="monospace" font-size="13">872BA89A</text>
+<rect x="580.000" y="473" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_reg_IF_RF_scan/pc_d = 11000001010000000010100100100111, 514.100..516.100 ns</title></rect>
+<text x="640.000" y="492" text-anchor="middle" font-family="monospace" font-size="13">C1402927</text>
+<rect x="700.000" y="473" width="840.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_reg_IF_RF_scan/pc_d = 1001001001011010111101110010110, 516.100..530.100 ns</title></rect>
+<text x="1120.000" y="492" text-anchor="middle" font-family="monospace" font-size="13">492D7B96</text>
+<text x="12" y="540" font-family="monospace" font-size="14">instr</text>
+<rect x="220.000" y="521" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_reg_IF_RF_scan/instr = 11011111110111010101010101101001, 508.100..510.100 ns</title></rect>
+<text x="280.000" y="540" text-anchor="middle" font-family="monospace" font-size="13">DFDD5569</text>
+<rect x="340.000" y="521" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_reg_IF_RF_scan/instr = 1010101001110111000000101010010, 510.100..512.100 ns</title></rect>
+<text x="400.000" y="540" text-anchor="middle" font-family="monospace" font-size="13">553B8152</text>
+<rect x="460.000" y="521" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_reg_IF_RF_scan/instr = 10110101001010101010000101000110, 512.100..514.100 ns</title></rect>
+<text x="520.000" y="540" text-anchor="middle" font-family="monospace" font-size="13">B52AA146</text>
+<rect x="580.000" y="521" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_reg_IF_RF_scan/instr = 1001000111100011100100110110101, 514.100..516.100 ns</title></rect>
+<text x="640.000" y="540" text-anchor="middle" font-family="monospace" font-size="13">48F1C9B5</text>
+<rect x="700.000" y="521" width="840.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_reg_IF_RF_scan/instr = 101101101001101101111110011001, 516.100..530.100 ns</title></rect>
+<text x="1120.000" y="540" text-anchor="middle" font-family="monospace" font-size="13">2DA6DF99</text>
+<text x="12" y="588" font-family="monospace" font-size="14">q</text>
+<rect x="220.000" y="569" width="54.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_reg_IF_RF_scan/q = 0001110101000011011111010001100000101110111010001100100101101000, 508.100..509.000 ns</title></rect>
+<rect x="274.000" y="569" width="240.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_reg_IF_RF_scan/q = 1100111101111111100000111100101011011111110111010101010101101001, 509.000..513.000 ns</title></rect>
+<text x="394.000" y="588" text-anchor="middle" font-family="monospace" font-size="13">CF7F83CADFDD5569</text>
+<rect x="514.000" y="569" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_reg_IF_RF_scan/q = 1000011100101011101010001001101010110101001010101010000101000110, 513.000..515.000 ns</title></rect>
+<rect x="634.000" y="569" width="240.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_reg_IF_RF_scan/q = 1100000101000000001010010010011101001000111100011100100110110101, 515.000..519.000 ns</title></rect>
+<text x="754.000" y="588" text-anchor="middle" font-family="monospace" font-size="13">C140292748F1C9B5</text>
+<rect x="874.000" y="569" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_reg_IF_RF_scan/q = 1000001010000000010100100100111010010001111000111001001101101011, 519.000..521.000 ns</title></rect>
+<rect x="994.000" y="569" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_reg_IF_RF_scan/q = 10100000000101001001001110100100011110001110010011011010110, 521.000..523.000 ns</title></rect>
+<rect x="1114.000" y="569" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_reg_IF_RF_scan/q = 101000000001010010010011101001000111100011100100110110101101, 523.000..525.000 ns</title></rect>
+<rect x="1234.000" y="569" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_reg_IF_RF_scan/q = 1010000000010100100100111010010001111000111001001101101011010, 525.000..527.000 ns</title></rect>
+<rect x="1354.000" y="569" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_reg_IF_RF_scan/q = 10100000000101001001001110100100011110001110010011011010110100, 527.000..529.000 ns</title></rect>
+<rect x="1474.000" y="569" width="66.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_reg_IF_RF_scan/q = 101000000001010010010011101001000111100011100100110110101101001, 529.000..530.100 ns</title></rect>
+<text x="20" y="660" font-family="sans-serif" font-size="11">Source: scan_unit_seed12345.vcd; no expected-schedule signal reconstruction. Buses are hexadecimal; counters/region lengths are decimal.</text></svg>

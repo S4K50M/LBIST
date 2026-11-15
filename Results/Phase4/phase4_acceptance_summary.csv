@@ -1,0 +1,10 @@
+Check,Count,Result
+SimulationCases,22,PASS
+NormalCompletions,20,PASS
+ExpectedRejections,2,PASS
+CapturedDataPythonTests,6,PASS
+NativeWaveformPairs,3,PASS
+VerifiedWaveformSVGs,23,PASS
+OriginalFilesUnchanged,995,PASS
+ProcessorWideScanIsolation,NA,INCOMPLETE: deliberately excluded
+RemainingPipelineBitsConverted,0,NOT_ATTEMPTED

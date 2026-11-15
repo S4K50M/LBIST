@@ -1,0 +1,2 @@
+Case,Testbench,Group,ExpectedNegative,Result,CompletionTime,Capture,WDBBytes
+regression_tb_plpf_optimized,tb_plpf_optimized,Core_Integration,0,PASS,393209010 ps,0,0

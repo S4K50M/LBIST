@@ -1,0 +1,2 @@
+Case,Testbench,Group,ExpectedNegative,Result,CompletionTime,Capture,WDBBytes
+baseline_lwsw,tb_cMIPS,Core_Integration,0,PASS,1670000 ps,0,0

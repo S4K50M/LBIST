@@ -1,0 +1,2 @@
+Case,Testbench,Group,ExpectedNegative,Result,CompletionTime,Capture,WDBBytes
+scan_unit_seed12345,tb_reg_IF_RF_scan,IF_RF,0,PASS,33676200 ps,1,600570

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="real_plpf_B20_P1024.wdb" id="1">
+         <top_modules>
+            <top_module name="p_wires" />
+            <top_module name="phase2_tb_pkg" />
+            <top_module name="tb_if_rf_plpf_integration" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="180.000 ns"></ZoomEndTime>
+   </zoom_setting>
+   <column_width_setting>
+   </column_width_setting>
+   <WVObjectSize size="25" />
+   <wvobject fp_name="/tb_if_rf_plpf_integration/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_if_rf_plpf_integration/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_if_rf_plpf_integration/ld" type="logic">
+      <obj_property name="ElementShortName">ld</obj_property>
+      <obj_property name="ObjectShortName">ld</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_if_rf_plpf_integration/scan_enable" type="logic">
+      <obj_property name="ElementShortName">scan_enable</obj_property>
+      <obj_property name="ObjectShortName">scan_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_if_rf_plpf_integration/scan_in" type="logic">
+      <obj_property name="ElementShortName">scan_in</obj_property>
+      <obj_property name="ObjectShortName">scan_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_if_rf_plpf_integration/scan_out" type="logic">
+      <obj_property name="ElementShortName">scan_out</obj_property>
+      <obj_property name="ObjectShortName">scan_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_if_rf_plpf_integration/scan_feedback" type="logic">
+      <obj_property name="ElementShortName">scan_feedback</obj_property>
+      <obj_property name="ObjectShortName">scan_feedback</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_if_rf_plpf_integration/pc_d" type="array">
+      <obj_property name="ElementShortName">pc_d[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_d[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_if_rf_plpf_integration/instr" type="array">
+      <obj_property name="ElementShortName">instr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instr[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_if_rf_plpf_integration/pc_q" type="array">
+      <obj_property name="ElementShortName">pc_q[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_q[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_if_rf_plpf_integration/rf_instr" type="array">
+      <obj_property name="ElementShortName">rf_instr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rf_instr[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_if_rf_plpf_integration/q" type="array">
+      <obj_property name="ElementShortName">q[63:0]</obj_property>
+      <obj_property name="ObjectShortName">q[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_if_rf_plpf_integration/event_id" type="array">
+      <obj_property name="ElementShortName">event_id[7:0]</obj_property>
+      <obj_property name="ObjectShortName">event_id[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_if_rf_plpf_integration/generator_rst" type="logic">
+      <obj_property name="ElementShortName">generator_rst</obj_property>
+      <obj_property name="ObjectShortName">generator_rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_if_rf_plpf_integration/shift_count_v" type="array">
+      <obj_property name="ElementShortName">shift_count_v[15:0]</obj_property>
+      <obj_property name="ObjectShortName">shift_count_v[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_if_rf_plpf_integration/state" type="array">
+      <obj_property name="ElementShortName">state[15:0]</obj_property>
+      <obj_property name="ObjectShortName">state[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_if_rf_plpf_integration/c" type="logic">
+      <obj_property name="ElementShortName">c</obj_property>
+      <obj_property name="ObjectShortName">c</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_if_rf_plpf_integration/f1" type="logic">
+      <obj_property name="ElementShortName">f1</obj_property>
+      <obj_property name="ObjectShortName">f1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_if_rf_plpf_integration/f2" type="logic">
+      <obj_property name="ElementShortName">f2</obj_property>
+      <obj_property name="ObjectShortName">f2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_if_rf_plpf_integration/mode_select" type="array">
+      <obj_property name="ElementShortName">mode_select[1:0]</obj_property>
+      <obj_property name="ObjectShortName">mode_select[1:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_if_rf_plpf_integration/active_mode" type="array">
+      <obj_property name="ElementShortName">active_mode[1:0]</obj_property>
+      <obj_property name="ObjectShortName">active_mode[1:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_if_rf_plpf_integration/mode_valid" type="logic">
+      <obj_property name="ElementShortName">mode_valid</obj_property>
+      <obj_property name="ObjectShortName">mode_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_if_rf_plpf_integration/pattern_done" type="logic">
+      <obj_property name="ElementShortName">pattern_done</obj_property>
+      <obj_property name="ObjectShortName">pattern_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_if_rf_plpf_integration/scan_feedback" type="logic">
+      <obj_property name="ElementShortName">scan_feedback</obj_property>
+      <obj_property name="ObjectShortName">scan_feedback</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_if_rf_plpf_integration/scan_out" type="logic">
+      <obj_property name="ElementShortName">scan_out</obj_property>
+      <obj_property name="ObjectShortName">scan_out</obj_property>
+   </wvobject>
+</wave_config>
+

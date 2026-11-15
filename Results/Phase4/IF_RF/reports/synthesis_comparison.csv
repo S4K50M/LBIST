@@ -1,0 +1,3 @@
+Top,FlipFlops,LUTs,Latches,FFPrimitiveTypes,Result
+reg_IF_RF,64,2,0,FDCE,PASS
+reg_IF_RF_scan,64,66,0,FDCE,PASS

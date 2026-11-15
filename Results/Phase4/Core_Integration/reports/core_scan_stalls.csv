@@ -1,0 +1,2 @@
+Case,Testbench,Group,ExpectedNegative,Result,CompletionTime,Capture,WDBBytes
+core_scan_stalls,tb_core_scan_regression,Core_Integration,0,PASS,1730000 ps,0,0

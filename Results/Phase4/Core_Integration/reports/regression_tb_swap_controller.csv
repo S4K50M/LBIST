@@ -1,0 +1,2 @@
+Case,Testbench,Group,ExpectedNegative,Result,CompletionTime,Capture,WDBBytes
+regression_tb_swap_controller,tb_swap_controller,Core_Integration,0,PASS,32801100 ps,0,0

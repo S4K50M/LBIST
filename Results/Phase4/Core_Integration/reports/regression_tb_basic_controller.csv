@@ -1,0 +1,2 @@
+Case,Testbench,Group,ExpectedNegative,Result,CompletionTime,Capture,WDBBytes
+regression_tb_basic_controller,tb_basic_controller,Core_Integration,0,PASS,32803100 ps,0,0

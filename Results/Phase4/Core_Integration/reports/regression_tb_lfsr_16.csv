@@ -1,0 +1,2 @@
+Case,Testbench,Group,ExpectedNegative,Result,CompletionTime,Capture,WDBBytes
+regression_tb_lfsr_16,tb_lfsr_16,Core_Integration,0,PASS,131081200 ps,0,0

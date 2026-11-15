@@ -1,0 +1,222 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1054" viewBox="0 0 1600 1054">
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="20" y="28" font-family="sans-serif" font-size="20">real_plpf_B20_P1024 - functional capture</text>
+<text x="20" y="51" font-family="sans-serif" font-size="13">00 = PLPF n=3 (low toggle) | 11 = PLPF n=1 (unfiltered) | Edge capture uses PRE-edge mode; POST-edge mode prepares the next shift.</text>
+<line x1="820.0" x2="820.0" y1="110" y2="1024" stroke="#a33" stroke-dasharray="4 4"/>
+<text x="20" y="76" font-family="sans-serif" font-size="13" fill="#922">functional capture (actual event) @ 131081.000 ns</text>
+<line x1="220.0" x2="220.0" y1="110" y2="1024" stroke="#e6eaf0"/>
+<text x="220.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">131071.00 ns</text>
+<line x1="385.0" x2="385.0" y1="110" y2="1024" stroke="#e6eaf0"/>
+<text x="385.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">131073.75 ns</text>
+<line x1="550.0" x2="550.0" y1="110" y2="1024" stroke="#e6eaf0"/>
+<text x="550.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">131076.50 ns</text>
+<line x1="715.0" x2="715.0" y1="110" y2="1024" stroke="#e6eaf0"/>
+<text x="715.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">131079.25 ns</text>
+<line x1="880.0" x2="880.0" y1="110" y2="1024" stroke="#e6eaf0"/>
+<text x="880.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">131082.00 ns</text>
+<line x1="1045.0" x2="1045.0" y1="110" y2="1024" stroke="#e6eaf0"/>
+<text x="1045.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">131084.75 ns</text>
+<line x1="1210.0" x2="1210.0" y1="110" y2="1024" stroke="#e6eaf0"/>
+<text x="1210.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">131087.50 ns</text>
+<line x1="1375.0" x2="1375.0" y1="110" y2="1024" stroke="#e6eaf0"/>
+<text x="1375.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">131090.25 ns</text>
+<line x1="1540.0" x2="1540.0" y1="110" y2="1024" stroke="#e6eaf0"/>
+<text x="1540.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">131093.00 ns</text>
+<text x="12" y="156" font-family="monospace" font-size="14">clk</text>
+<path d="M 220.000 139 H 280.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/clk = 1, 131071.000..131072.000 ns</title></path>
+<path d="M 280.000 163 H 340.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/clk = 0, 131072.000..131073.000 ns</title></path>
+<path d="M 280.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 340.000 139 H 400.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/clk = 1, 131073.000..131074.000 ns</title></path>
+<path d="M 340.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 400.000 163 H 460.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/clk = 0, 131074.000..131075.000 ns</title></path>
+<path d="M 400.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 460.000 139 H 520.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/clk = 1, 131075.000..131076.000 ns</title></path>
+<path d="M 460.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 520.000 163 H 580.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/clk = 0, 131076.000..131077.000 ns</title></path>
+<path d="M 520.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 580.000 139 H 640.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/clk = 1, 131077.000..131078.000 ns</title></path>
+<path d="M 580.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 640.000 163 H 700.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/clk = 0, 131078.000..131079.000 ns</title></path>
+<path d="M 640.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 700.000 139 H 760.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/clk = 1, 131079.000..131080.000 ns</title></path>
+<path d="M 700.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 760.000 163 H 820.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/clk = 0, 131080.000..131081.000 ns</title></path>
+<path d="M 760.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 820.000 139 H 880.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/clk = 1, 131081.000..131082.000 ns</title></path>
+<path d="M 820.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 880.000 163 H 940.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/clk = 0, 131082.000..131083.000 ns</title></path>
+<path d="M 880.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 940.000 139 H 1000.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/clk = 1, 131083.000..131084.000 ns</title></path>
+<path d="M 940.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1000.000 163 H 1060.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/clk = 0, 131084.000..131085.000 ns</title></path>
+<path d="M 1000.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1060.000 139 H 1120.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/clk = 1, 131085.000..131086.000 ns</title></path>
+<path d="M 1060.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1120.000 163 H 1180.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/clk = 0, 131086.000..131087.000 ns</title></path>
+<path d="M 1120.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1180.000 139 H 1240.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/clk = 1, 131087.000..131088.000 ns</title></path>
+<path d="M 1180.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1240.000 163 H 1300.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/clk = 0, 131088.000..131089.000 ns</title></path>
+<path d="M 1240.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1300.000 139 H 1360.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/clk = 1, 131089.000..131090.000 ns</title></path>
+<path d="M 1300.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1360.000 163 H 1420.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/clk = 0, 131090.000..131091.000 ns</title></path>
+<path d="M 1360.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1420.000 139 H 1480.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/clk = 1, 131091.000..131092.000 ns</title></path>
+<path d="M 1420.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1480.000 163 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/clk = 0, 131092.000..131093.000 ns</title></path>
+<path d="M 1480.000 139 V 163" stroke="#126e60" fill="none"/>
+<text x="12" y="204" font-family="monospace" font-size="14">rst</text>
+<path d="M 220.000 187 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/rst = 1, 131071.000..131093.000 ns</title></path>
+<text x="12" y="252" font-family="monospace" font-size="14">ld</text>
+<path d="M 220.000 235 H 766.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/ld = 1, 131071.000..131080.100 ns</title></path>
+<path d="M 766.000 259 H 886.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/ld = 0, 131080.100..131082.100 ns</title></path>
+<path d="M 766.000 235 V 259" stroke="#126e60" fill="none"/>
+<path d="M 886.000 235 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/ld = 1, 131082.100..131093.000 ns</title></path>
+<path d="M 886.000 259 V 235" stroke="#126e60" fill="none"/>
+<text x="12" y="300" font-family="monospace" font-size="14">scan_enable</text>
+<path d="M 220.000 283 H 766.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/scan_enable = 1, 131071.000..131080.100 ns</title></path>
+<path d="M 766.000 307 H 886.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/scan_enable = 0, 131080.100..131082.100 ns</title></path>
+<path d="M 766.000 283 V 307" stroke="#126e60" fill="none"/>
+<path d="M 886.000 283 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/scan_enable = 1, 131082.100..131093.000 ns</title></path>
+<path d="M 886.000 307 V 283" stroke="#126e60" fill="none"/>
+<text x="12" y="348" font-family="monospace" font-size="14">scan_in</text>
+<path d="M 220.000 355 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/scan_in = 0, 131071.000..131093.000 ns</title></path>
+<text x="12" y="396" font-family="monospace" font-size="14">scan_out</text>
+<path d="M 220.000 403 H 1180.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/scan_out = 0, 131071.000..131087.000 ns</title></path>
+<path d="M 1180.000 379 H 1300.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/scan_out = 1, 131087.000..131089.000 ns</title></path>
+<path d="M 1180.000 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 1300.000 403 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/scan_out = 0, 131089.000..131093.000 ns</title></path>
+<path d="M 1300.000 379 V 403" stroke="#126e60" fill="none"/>
+<text x="12" y="444" font-family="monospace" font-size="14">scan_feedback</text>
+<path d="M 220.000 451 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/scan_feedback = 0, 131071.000..131093.000 ns</title></path>
+<text x="12" y="492" font-family="monospace" font-size="14">pc_d</text>
+<rect x="220.000" y="473" width="546.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/pc_d = 00000000000000000000000000000000, 131071.000..131080.100 ns</title></rect>
+<text x="493.000" y="492" text-anchor="middle" font-family="monospace" font-size="13">0</text>
+<rect x="766.000" y="473" width="774.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/pc_d = 10010001101001010101111001101, 131080.100..131093.000 ns</title></rect>
+<text x="1153.000" y="492" text-anchor="middle" font-family="monospace" font-size="13">1234ABCD</text>
+<text x="12" y="540" font-family="monospace" font-size="14">instr</text>
+<rect x="220.000" y="521" width="546.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/instr = 00000000000000000000000000000000, 131071.000..131080.100 ns</title></rect>
+<text x="493.000" y="540" text-anchor="middle" font-family="monospace" font-size="13">0</text>
+<rect x="766.000" y="521" width="774.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/instr = 10001001111011110101011001110000, 131080.100..131093.000 ns</title></rect>
+<text x="1153.000" y="540" text-anchor="middle" font-family="monospace" font-size="13">89EF5670</text>
+<text x="12" y="588" font-family="monospace" font-size="14">q</text>
+<rect x="220.000" y="569" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/q = 0000000000000000000000000001010000100100100001111111111000000000, 131071.000..131073.000 ns</title></rect>
+<text x="280.000" y="588" text-anchor="middle" font-family="monospace" font-size="13">142487FE00</text>
+<rect x="340.000" y="569" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/q = 10100001001001000011111111110000000000, 131073.000..131075.000 ns</title></rect>
+<text x="400.000" y="588" text-anchor="middle" font-family="monospace" font-size="13">28490FFC00</text>
+<rect x="460.000" y="569" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/q = 101000010010010000111111111100000000000, 131075.000..131077.000 ns</title></rect>
+<text x="520.000" y="588" text-anchor="middle" font-family="monospace" font-size="13">50921FF800</text>
+<rect x="580.000" y="569" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/q = 1010000100100100001111111111000000000000, 131077.000..131079.000 ns</title></rect>
+<text x="640.000" y="588" text-anchor="middle" font-family="monospace" font-size="13">A1243FF000</text>
+<rect x="700.000" y="569" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/q = 10100001001001000011111111110000000000000, 131079.000..131081.000 ns</title></rect>
+<text x="760.000" y="588" text-anchor="middle" font-family="monospace" font-size="13">142487FE000</text>
+<rect x="820.000" y="569" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/q = 1001000110100101010111100110110001001111011110101011001110000, 131081.000..131083.000 ns</title></rect>
+<rect x="940.000" y="569" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/q = 10010001101001010101111001101100010011110111101010110011100000, 131083.000..131085.000 ns</title></rect>
+<rect x="1060.000" y="569" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/q = 100100011010010101011110011011000100111101111010101100111000000, 131085.000..131087.000 ns</title></rect>
+<rect x="1180.000" y="569" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/q = 1001000110100101010111100110110001001111011110101011001110000000, 131087.000..131089.000 ns</title></rect>
+<rect x="1300.000" y="569" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/q = 10001101001010101111001101100010011110111101010110011100000000, 131089.000..131091.000 ns</title></rect>
+<rect x="1420.000" y="569" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/q = 100011010010101011110011011000100111101111010101100111000000000, 131091.000..131093.000 ns</title></rect>
+<text x="12" y="636" font-family="monospace" font-size="14">shift_count_v</text>
+<rect x="220.000" y="617" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/shift_count_v = 0000000000111100, 131071.000..131073.000 ns</title></rect>
+<text x="280.000" y="636" text-anchor="middle" font-family="monospace" font-size="13">60</text>
+<rect x="340.000" y="617" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/shift_count_v = 111101, 131073.000..131075.000 ns</title></rect>
+<text x="400.000" y="636" text-anchor="middle" font-family="monospace" font-size="13">61</text>
+<rect x="460.000" y="617" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/shift_count_v = 111110, 131075.000..131077.000 ns</title></rect>
+<text x="520.000" y="636" text-anchor="middle" font-family="monospace" font-size="13">62</text>
+<rect x="580.000" y="617" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/shift_count_v = 111111, 131077.000..131079.000 ns</title></rect>
+<text x="640.000" y="636" text-anchor="middle" font-family="monospace" font-size="13">63</text>
+<rect x="700.000" y="617" width="240.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/shift_count_v = 0, 131079.000..131083.000 ns</title></rect>
+<text x="820.000" y="636" text-anchor="middle" font-family="monospace" font-size="13">0</text>
+<rect x="940.000" y="617" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/shift_count_v = 1, 131083.000..131085.000 ns</title></rect>
+<text x="1000.000" y="636" text-anchor="middle" font-family="monospace" font-size="13">1</text>
+<rect x="1060.000" y="617" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/shift_count_v = 10, 131085.000..131087.000 ns</title></rect>
+<text x="1120.000" y="636" text-anchor="middle" font-family="monospace" font-size="13">2</text>
+<rect x="1180.000" y="617" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/shift_count_v = 11, 131087.000..131089.000 ns</title></rect>
+<text x="1240.000" y="636" text-anchor="middle" font-family="monospace" font-size="13">3</text>
+<rect x="1300.000" y="617" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/shift_count_v = 100, 131089.000..131091.000 ns</title></rect>
+<text x="1360.000" y="636" text-anchor="middle" font-family="monospace" font-size="13">4</text>
+<rect x="1420.000" y="617" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/shift_count_v = 101, 131091.000..131093.000 ns</title></rect>
+<text x="1480.000" y="636" text-anchor="middle" font-family="monospace" font-size="13">5</text>
+<text x="12" y="684" font-family="monospace" font-size="14">state</text>
+<rect x="220.000" y="665" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/state = 0101010101010000, 131071.000..131073.000 ns</title></rect>
+<text x="280.000" y="684" text-anchor="middle" font-family="monospace" font-size="13">5550</text>
+<rect x="340.000" y="665" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/state = 1010101010101000, 131073.000..131075.000 ns</title></rect>
+<text x="400.000" y="684" text-anchor="middle" font-family="monospace" font-size="13">AAA8</text>
+<rect x="460.000" y="665" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/state = 101010101010100, 131075.000..131077.000 ns</title></rect>
+<text x="520.000" y="684" text-anchor="middle" font-family="monospace" font-size="13">5554</text>
+<rect x="580.000" y="665" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/state = 1010101010101010, 131077.000..131079.000 ns</title></rect>
+<text x="640.000" y="684" text-anchor="middle" font-family="monospace" font-size="13">AAAA</text>
+<rect x="700.000" y="665" width="240.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/state = 101010101010101, 131079.000..131083.000 ns</title></rect>
+<text x="820.000" y="684" text-anchor="middle" font-family="monospace" font-size="13">5555</text>
+<rect x="940.000" y="665" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/state = 10101010101010, 131083.000..131085.000 ns</title></rect>
+<text x="1000.000" y="684" text-anchor="middle" font-family="monospace" font-size="13">2AAA</text>
+<rect x="1060.000" y="665" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/state = 1001010101010101, 131085.000..131087.000 ns</title></rect>
+<text x="1120.000" y="684" text-anchor="middle" font-family="monospace" font-size="13">9555</text>
+<rect x="1180.000" y="665" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/state = 1100101010101010, 131087.000..131089.000 ns</title></rect>
+<text x="1240.000" y="684" text-anchor="middle" font-family="monospace" font-size="13">CAAA</text>
+<rect x="1300.000" y="665" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/state = 1110010101010101, 131089.000..131091.000 ns</title></rect>
+<text x="1360.000" y="684" text-anchor="middle" font-family="monospace" font-size="13">E555</text>
+<rect x="1420.000" y="665" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/state = 111001010101010, 131091.000..131093.000 ns</title></rect>
+<text x="1480.000" y="684" text-anchor="middle" font-family="monospace" font-size="13">72AA</text>
+<text x="12" y="732" font-family="monospace" font-size="14">c</text>
+<path d="M 220.000 739 H 700.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/c = 0, 131071.000..131079.000 ns</title></path>
+<path d="M 700.000 715 H 940.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/c = 1, 131079.000..131083.000 ns</title></path>
+<path d="M 700.000 739 V 715" stroke="#126e60" fill="none"/>
+<path d="M 940.000 739 H 1060.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/c = 0, 131083.000..131085.000 ns</title></path>
+<path d="M 940.000 715 V 739" stroke="#126e60" fill="none"/>
+<path d="M 1060.000 715 H 1180.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/c = 1, 131085.000..131087.000 ns</title></path>
+<path d="M 1060.000 739 V 715" stroke="#126e60" fill="none"/>
+<path d="M 1180.000 739 H 1300.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/c = 0, 131087.000..131089.000 ns</title></path>
+<path d="M 1180.000 715 V 739" stroke="#126e60" fill="none"/>
+<path d="M 1300.000 715 H 1420.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/c = 1, 131089.000..131091.000 ns</title></path>
+<path d="M 1300.000 739 V 715" stroke="#126e60" fill="none"/>
+<path d="M 1420.000 739 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/c = 0, 131091.000..131093.000 ns</title></path>
+<path d="M 1420.000 715 V 739" stroke="#126e60" fill="none"/>
+<text x="12" y="780" font-family="monospace" font-size="14">f1</text>
+<path d="M 220.000 787 H 580.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/f1 = 0, 131071.000..131077.000 ns</title></path>
+<path d="M 580.000 763 H 700.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/f1 = 1, 131077.000..131079.000 ns</title></path>
+<path d="M 580.000 787 V 763" stroke="#126e60" fill="none"/>
+<path d="M 700.000 787 H 940.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/f1 = 0, 131079.000..131083.000 ns</title></path>
+<path d="M 700.000 763 V 787" stroke="#126e60" fill="none"/>
+<path d="M 940.000 763 H 1060.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/f1 = 1, 131083.000..131085.000 ns</title></path>
+<path d="M 940.000 787 V 763" stroke="#126e60" fill="none"/>
+<path d="M 1060.000 787 H 1180.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/f1 = 0, 131085.000..131087.000 ns</title></path>
+<path d="M 1060.000 763 V 787" stroke="#126e60" fill="none"/>
+<path d="M 1180.000 763 H 1300.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/f1 = 1, 131087.000..131089.000 ns</title></path>
+<path d="M 1180.000 787 V 763" stroke="#126e60" fill="none"/>
+<path d="M 1300.000 787 H 1420.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/f1 = 0, 131089.000..131091.000 ns</title></path>
+<path d="M 1300.000 763 V 787" stroke="#126e60" fill="none"/>
+<path d="M 1420.000 763 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/f1 = 1, 131091.000..131093.000 ns</title></path>
+<path d="M 1420.000 787 V 763" stroke="#126e60" fill="none"/>
+<text x="12" y="828" font-family="monospace" font-size="14">f2</text>
+<path d="M 220.000 835 H 460.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/f2 = 0, 131071.000..131075.000 ns</title></path>
+<path d="M 460.000 811 H 580.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/f2 = 1, 131075.000..131077.000 ns</title></path>
+<path d="M 460.000 835 V 811" stroke="#126e60" fill="none"/>
+<path d="M 580.000 835 H 700.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/f2 = 0, 131077.000..131079.000 ns</title></path>
+<path d="M 580.000 811 V 835" stroke="#126e60" fill="none"/>
+<path d="M 700.000 811 H 940.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/f2 = 1, 131079.000..131083.000 ns</title></path>
+<path d="M 700.000 835 V 811" stroke="#126e60" fill="none"/>
+<path d="M 940.000 835 H 1060.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/f2 = 0, 131083.000..131085.000 ns</title></path>
+<path d="M 940.000 811 V 835" stroke="#126e60" fill="none"/>
+<path d="M 1060.000 811 H 1180.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/f2 = 1, 131085.000..131087.000 ns</title></path>
+<path d="M 1060.000 835 V 811" stroke="#126e60" fill="none"/>
+<path d="M 1180.000 835 H 1300.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/f2 = 0, 131087.000..131089.000 ns</title></path>
+<path d="M 1180.000 811 V 835" stroke="#126e60" fill="none"/>
+<path d="M 1300.000 811 H 1420.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/f2 = 1, 131089.000..131091.000 ns</title></path>
+<path d="M 1300.000 835 V 811" stroke="#126e60" fill="none"/>
+<path d="M 1420.000 835 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/f2 = 0, 131091.000..131093.000 ns</title></path>
+<path d="M 1420.000 811 V 835" stroke="#126e60" fill="none"/>
+<text x="12" y="876" font-family="monospace" font-size="14">mode_select</text>
+<rect x="220.000" y="857" width="1320.000" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/mode_select = 00, 131071.000..131093.000 ns</title></rect>
+<text x="880.000" y="876" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<text x="12" y="924" font-family="monospace" font-size="14">active_mode</text>
+<rect x="220.000" y="905" width="1320.000" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_if_rf_plpf_integration/active_mode = 00, 131071.000..131093.000 ns</title></rect>
+<text x="880.000" y="924" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<text x="12" y="972" font-family="monospace" font-size="14">pattern_done</text>
+<path d="M 220.000 979 H 700.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/pattern_done = 0, 131071.000..131079.000 ns</title></path>
+<path d="M 700.000 955 H 820.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/pattern_done = 1, 131079.000..131081.000 ns</title></path>
+<path d="M 700.000 979 V 955" stroke="#126e60" fill="none"/>
+<path d="M 820.000 979 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_if_rf_plpf_integration/pattern_done = 0, 131081.000..131093.000 ns</title></path>
+<path d="M 820.000 955 V 979" stroke="#126e60" fill="none"/>
+<text x="20" y="1044" font-family="sans-serif" font-size="11">Source: real_plpf_B20_P1024.vcd; no expected-schedule signal reconstruction. Buses are hexadecimal; counters/region lengths are decimal.</text></svg>

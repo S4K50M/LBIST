@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="core_scan_lwsw.wdb" id="1">
+         <top_modules>
+            <top_module name="commonpckg" />
+            <top_module name="p_exception" />
+            <top_module name="p_memory" />
+            <top_module name="p_uart" />
+            <top_module name="p_wires" />
+            <top_module name="sdcardpckg" />
+            <top_module name="tb_core_scan_regression" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="180.000 ns"></ZoomEndTime>
+   </zoom_setting>
+   <column_width_setting>
+   </column_width_setting>
+   <WVObjectSize size="50" />
+   <wvobject fp_name="/tb_core_scan_regression/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/scan_enable" type="logic">
+      <obj_property name="ElementShortName">scan_enable</obj_property>
+      <obj_property name="ObjectShortName">scan_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/scan_in" type="logic">
+      <obj_property name="ElementShortName">scan_in</obj_property>
+      <obj_property name="ObjectShortName">scan_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/scan_out" type="logic">
+      <obj_property name="ElementShortName">scan_out</obj_property>
+      <obj_property name="ObjectShortName">scan_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/scan_feedback" type="logic">
+      <obj_property name="ElementShortName">scan_feedback</obj_property>
+      <obj_property name="ObjectShortName">scan_feedback</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/cpu_reset" type="logic">
+      <obj_property name="ElementShortName">cpu_reset</obj_property>
+      <obj_property name="ObjectShortName">cpu_reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/cpu_i_wait" type="logic">
+      <obj_property name="ElementShortName">cpu_i_wait</obj_property>
+      <obj_property name="ObjectShortName">cpu_i_wait</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/cpu_d_wait" type="logic">
+      <obj_property name="ElementShortName">cpu_d_wait</obj_property>
+      <obj_property name="ObjectShortName">cpu_d_wait</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/i_addr" type="array">
+      <obj_property name="ElementShortName">i_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i_addr[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/d_addr" type="array">
+      <obj_property name="ElementShortName">d_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">d_addr[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/wr" type="logic">
+      <obj_property name="ElementShortName">wr</obj_property>
+      <obj_property name="ObjectShortName">wr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/cpu_i_aVal" type="logic">
+      <obj_property name="ElementShortName">cpu_i_aVal</obj_property>
+      <obj_property name="ObjectShortName">cpu_i_aVal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/cpu_d_aVal" type="logic">
+      <obj_property name="ElementShortName">cpu_d_aVal</obj_property>
+      <obj_property name="ObjectShortName">cpu_d_aVal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/cpu_instr" type="array">
+      <obj_property name="ElementShortName">cpu_instr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">cpu_instr[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/cpu_data" type="array">
+      <obj_property name="ElementShortName">cpu_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">cpu_data[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/cpu_data_inp" type="array">
+      <obj_property name="ElementShortName">cpu_data_inp[31:0]</obj_property>
+      <obj_property name="ObjectShortName">cpu_data_inp[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/cpu_xfer" type="array">
+      <obj_property name="ElementShortName">cpu_xfer[3:0]</obj_property>
+      <obj_property name="ObjectShortName">cpu_xfer[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/busFree" type="logic">
+      <obj_property name="ElementShortName">busFree</obj_property>
+      <obj_property name="ObjectShortName">busFree</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/scan_wr" type="logic">
+      <obj_property name="ElementShortName">scan_wr</obj_property>
+      <obj_property name="ObjectShortName">scan_wr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/scan_i_addr" type="array">
+      <obj_property name="ElementShortName">scan_i_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">scan_i_addr[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/scan_d_addr" type="array">
+      <obj_property name="ElementShortName">scan_d_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">scan_d_addr[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/scan_i_aval" type="logic">
+      <obj_property name="ElementShortName">scan_i_aval</obj_property>
+      <obj_property name="ObjectShortName">scan_i_aval</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/scan_d_aval" type="logic">
+      <obj_property name="ElementShortName">scan_d_aval</obj_property>
+      <obj_property name="ObjectShortName">scan_d_aval</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/scan_data" type="array">
+      <obj_property name="ElementShortName">scan_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">scan_data[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/scan_xfer" type="array">
+      <obj_property name="ElementShortName">scan_xfer[3:0]</obj_property>
+      <obj_property name="ObjectShortName">scan_xfer[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/scan_busfree" type="logic">
+      <obj_property name="ElementShortName">scan_busfree</obj_property>
+      <obj_property name="ObjectShortName">scan_busfree</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/scan_feedback" type="logic">
+      <obj_property name="ElementShortName">scan_feedback</obj_property>
+      <obj_property name="ObjectShortName">scan_feedback</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/scan_out" type="logic">
+      <obj_property name="ElementShortName">scan_out</obj_property>
+      <obj_property name="ObjectShortName">scan_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/equivalent" type="logic">
+      <obj_property name="ElementShortName">equivalent</obj_property>
+      <obj_property name="ObjectShortName">equivalent</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/U_CORE/RF_PCincd" type="array">
+      <obj_property name="ElementShortName">RF_PCincd[31:0]</obj_property>
+      <obj_property name="ObjectShortName">RF_PCincd[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/U_CORE/RF_instruction" type="array">
+      <obj_property name="ElementShortName">RF_instruction[31:0]</obj_property>
+      <obj_property name="ObjectShortName">RF_instruction[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/U_CORE/IF_RF_ld" type="logic">
+      <obj_property name="ElementShortName">IF_RF_ld</obj_property>
+      <obj_property name="ObjectShortName">IF_RF_ld</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/U_CORE/EX_A" type="array">
+      <obj_property name="ElementShortName">EX_A[31:0]</obj_property>
+      <obj_property name="ObjectShortName">EX_A[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/U_CORE/EX_B" type="array">
+      <obj_property name="ElementShortName">EX_B[31:0]</obj_property>
+      <obj_property name="ObjectShortName">EX_B[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/U_CORE/MM_result" type="array">
+      <obj_property name="ElementShortName">MM_result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MM_result[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/U_CORE/WB_C" type="array">
+      <obj_property name="ElementShortName">WB_C[31:0]</obj_property>
+      <obj_property name="ObjectShortName">WB_C[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/U_CORE/WB_wreg" type="logic">
+      <obj_property name="ElementShortName">WB_wreg</obj_property>
+      <obj_property name="ObjectShortName">WB_wreg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/U_CORE/MM_wrmem" type="logic">
+      <obj_property name="ElementShortName">MM_wrmem</obj_property>
+      <obj_property name="ObjectShortName">MM_wrmem</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/U_CORE/PC" type="array">
+      <obj_property name="ElementShortName">PC[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PC[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/U_SCAN/RF_PCincd" type="array">
+      <obj_property name="ElementShortName">RF_PCincd[31:0]</obj_property>
+      <obj_property name="ObjectShortName">RF_PCincd[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/U_SCAN/RF_instruction" type="array">
+      <obj_property name="ElementShortName">RF_instruction[31:0]</obj_property>
+      <obj_property name="ObjectShortName">RF_instruction[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/U_SCAN/IF_RF_ld" type="logic">
+      <obj_property name="ElementShortName">IF_RF_ld</obj_property>
+      <obj_property name="ObjectShortName">IF_RF_ld</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/U_SCAN/EX_A" type="array">
+      <obj_property name="ElementShortName">EX_A[31:0]</obj_property>
+      <obj_property name="ObjectShortName">EX_A[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/U_SCAN/EX_B" type="array">
+      <obj_property name="ElementShortName">EX_B[31:0]</obj_property>
+      <obj_property name="ObjectShortName">EX_B[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/U_SCAN/MM_result" type="array">
+      <obj_property name="ElementShortName">MM_result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MM_result[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/U_SCAN/WB_C" type="array">
+      <obj_property name="ElementShortName">WB_C[31:0]</obj_property>
+      <obj_property name="ObjectShortName">WB_C[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/U_SCAN/WB_wreg" type="logic">
+      <obj_property name="ElementShortName">WB_wreg</obj_property>
+      <obj_property name="ObjectShortName">WB_wreg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/U_SCAN/MM_wrmem" type="logic">
+      <obj_property name="ElementShortName">MM_wrmem</obj_property>
+      <obj_property name="ObjectShortName">MM_wrmem</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_core_scan_regression/U_SCAN/PC" type="array">
+      <obj_property name="ElementShortName">PC[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PC[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+</wave_config>
+

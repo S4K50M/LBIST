@@ -1,0 +1,43 @@
+--- original cMIPS/vhdl/core.vhd
++++ new lbist/core_scan/core_scan.vhd
+@@ -27,7 +27,7 @@
+ use work.p_exception.all;
+ 
+ 
+-entity core is
++entity core_scan is
+   port (
+     rst    : in    std_logic;
+     clk    : in    std_logic;
+@@ -49,10 +49,12 @@
+     nmi      : in  std_logic;
+     irq      : in  reg6;
+     i_busErr : in  std_logic;
+-    d_busErr : in  std_logic);
+-end core;
+-
+-architecture rtl of core is
++    d_busErr : in  std_logic;
++    scan_enable,scan_in : in std_logic;
++    scan_out,scan_feedback : out std_logic);
++end core_scan;
++
++architecture rtl of core_scan is
+ 
+   -- control pipeline registers ------------ 
+   component reg_excp_IF_RF is
+@@ -794,9 +796,12 @@
+                                  else NULL_INSTRUCTION(31 downto 26); -- x"fc";
+ 
+   
+-  PIPESTAGE_IF_RF: reg_IF_RF
++  -- Phase 4: only this 64-bit pipeline bank has scan selection.
++  -- Scan ports do NOT isolate the rest of the processor.
++  PIPESTAGE_IF_RF: entity work.reg_IF_RF_scan
+     port map (clk,rst, IF_RF_ld, PCincd, RF_PCincd,
+-              instr_fetched, RF_instruction);
++              instr_fetched, RF_instruction,
++              scan_enable,scan_in,scan_out,scan_feedback);
+ 
+ 
+   -- INSTRUCTION DECODE AND REGISTER FETCH -----------------

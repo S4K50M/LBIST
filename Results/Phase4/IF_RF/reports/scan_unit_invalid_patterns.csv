@@ -1,0 +1,2 @@
+Case,Testbench,Group,ExpectedNegative,Result,CompletionTime,Capture,WDBBytes
+scan_unit_invalid_patterns,tb_reg_IF_RF_scan,IF_RF,1,PASS,0 ps,0,0

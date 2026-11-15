@@ -1,0 +1,4 @@
+Testbench,EnabledScanShifts,FunctionalLoads,Result
+tb_reg_IF_RF_scan,16577,172,PASS
+tb_if_rf_plpf_integration,65600,1,PASS
+tb_core_scan_regression,0,79,PASS
