@@ -1,0 +1,6 @@
+Testbench,Result,CompletionTime
+tb_lfsr_16,PASS,131081200 ps
+tb_phase_shifter,PASS,8264736 ps
+tb_plpf_optimized,PASS,393209010 ps
+tb_plpf_dynamic,PASS,8199100 ps
+tb_phase2_integration,PASS,131455100 ps

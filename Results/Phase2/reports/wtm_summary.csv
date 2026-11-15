@@ -1,0 +1,5 @@
+Testbench,Mode,ChainLength,CompletePatterns,NormalizedScanInWTM,ActualChainToggleFraction,WeightedTransitions
+tb_phase2_integration,1,64,256,5.006348e-01,4.997187e-01,266578
+tb_phase2_integration,2,64,256,1.683706e-01,1.671095e-01,89654
+tb_phase2_integration,3,64,256,7.243465e-02,7.166672e-02,38570
+tb_phase2_integration,4,64,256,2.521935e-01,2.494459e-01,134288

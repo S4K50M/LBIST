@@ -1,0 +1,9 @@
+Time resolution is 1 ps
+Note: [PASS] reset, configurable seed, zero seed fallback
+Time: 100 ps  Iteration: 0  Process: /tb_lfsr_16/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_lfsr_16.vhd
+Note: [PASS] 65535 unique nonzero states, independent recurrence, output distribution 32768/65535
+Time: 131069100 ps  Iteration: 0  Process: /tb_lfsr_16/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_lfsr_16.vhd
+Note: [PASS] hold, resume, mid-sequence reset
+Time: 131081200 ps  Iteration: 0  Process: /tb_lfsr_16/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_lfsr_16.vhd
+Note: [TB_COMPLETE] tb_lfsr_16 at 131081200 ps
+Time: 131081200 ps  Iteration: 0  Process: /tb_lfsr_16/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_lfsr_16.vhd

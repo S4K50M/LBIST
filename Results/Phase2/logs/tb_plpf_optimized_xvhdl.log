@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/plpf_optimized.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'plpf_optimized'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_plpf_optimized.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_plpf_optimized'

@@ -1,0 +1,8 @@
+Testbench,Mode,ExpectedRate,MeasuredRate,ErrorPercentagePoints,Patterns,Transitions,Result
+tb_plpf_optimized,1,5.000000e-01,5.000153e-01,1.525925e-03,65535,32768,PASS
+tb_plpf_optimized,2,1.666667e-01,1.666616e-01,5.086418e-04,65535,10922,PASS
+tb_plpf_optimized,3,7.142857e-02,7.138279e-02,4.577776e-03,65535,4678,PASS
+tb_phase2_integration,1,5.000000e-01,5.007019e-01,7.019471e-02,16384,8203,PASS
+tb_phase2_integration,2,1.666667e-01,1.674297e-01,7.629860e-02,16384,2743,PASS
+tb_phase2_integration,3,7.142857e-02,7.172069e-02,2.921146e-02,16384,1175,PASS
+tb_phase2_integration,dynamic,NA,2.499542e-01,NA,16384,4095,PASS
