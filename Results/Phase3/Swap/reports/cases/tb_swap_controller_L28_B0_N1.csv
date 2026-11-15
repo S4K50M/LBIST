@@ -1,0 +1,2 @@
+Case,Testbench,ExpectedNegative,Regression,Capture,Result,CompletionTime,WDBBytes
+tb_swap_controller_L28_B0_N1,tb_swap_controller,0,0,0,PASS,14363100 ps,0

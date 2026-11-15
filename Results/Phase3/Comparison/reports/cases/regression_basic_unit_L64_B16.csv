@@ -1,0 +1,2 @@
+Case,Testbench,ExpectedNegative,Regression,Capture,Result,CompletionTime,WDBBytes
+regression_basic_unit_L64_B16,tb_basic_controller,0,1,0,PASS,32803100 ps,0

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_moving_integration_L64_B16_N4.wdb" id="1">
+         <top_modules>
+            <top_module name="phase2_tb_pkg" />
+            <top_module name="phase3_tb_pkg" />
+            <top_module name="tb_moving_integration" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="180.000 ns"></ZoomEndTime>
+   </zoom_setting>
+   <column_width_setting>
+   </column_width_setting>
+   <WVObjectSize size="26" />
+   <wvobject fp_name="/tb_moving_integration/engine/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_moving_integration/engine/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_moving_integration/engine/scan_enable" type="logic">
+      <obj_property name="ElementShortName">scan_enable</obj_property>
+      <obj_property name="ObjectShortName">scan_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_moving_integration/engine/shift_count_v" type="array">
+      <obj_property name="ElementShortName">shift_count_v[15:0]</obj_property>
+      <obj_property name="ObjectShortName">shift_count_v[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_moving_integration/engine/pattern_index" type="array">
+      <obj_property name="ElementShortName">pattern_index[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pattern_index[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_moving_integration/engine/moving_position_v" type="array">
+      <obj_property name="ElementShortName">moving_position_v[15:0]</obj_property>
+      <obj_property name="ObjectShortName">moving_position_v[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_moving_integration/engine/alpha_0" type="array">
+      <obj_property name="ElementShortName">alpha_0[15:0]</obj_property>
+      <obj_property name="ObjectShortName">alpha_0[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_moving_integration/engine/beta_v" type="array">
+      <obj_property name="ElementShortName">beta_v[15:0]</obj_property>
+      <obj_property name="ObjectShortName">beta_v[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_moving_integration/engine/gamma_0" type="array">
+      <obj_property name="ElementShortName">gamma_0[15:0]</obj_property>
+      <obj_property name="ObjectShortName">gamma_0[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_moving_integration/engine/mode_0" type="array">
+      <obj_property name="ElementShortName">mode_0[1:0]</obj_property>
+      <obj_property name="ObjectShortName">mode_0[1:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_moving_integration/engine/mode_1" type="array">
+      <obj_property name="ElementShortName">mode_1[1:0]</obj_property>
+      <obj_property name="ObjectShortName">mode_1[1:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_moving_integration/engine/mode_2" type="array">
+      <obj_property name="ElementShortName">mode_2[1:0]</obj_property>
+      <obj_property name="ObjectShortName">mode_2[1:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_moving_integration/engine/mode_3" type="array">
+      <obj_property name="ElementShortName">mode_3[1:0]</obj_property>
+      <obj_property name="ObjectShortName">mode_3[1:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_moving_integration/engine/mode_select" type="array">
+      <obj_property name="ElementShortName">mode_select[7:0]</obj_property>
+      <obj_property name="ObjectShortName">mode_select[7:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_moving_integration/engine/pattern_done" type="logic">
+      <obj_property name="ElementShortName">pattern_done</obj_property>
+      <obj_property name="ObjectShortName">pattern_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_moving_integration/engine/alpha_debug" type="array">
+      <obj_property name="ElementShortName">alpha_debug[63:0]</obj_property>
+      <obj_property name="ObjectShortName">alpha_debug[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_moving_integration/engine/gamma_debug" type="array">
+      <obj_property name="ElementShortName">gamma_debug[63:0]</obj_property>
+      <obj_property name="ObjectShortName">gamma_debug[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_moving_integration/engine/state" type="array">
+      <obj_property name="ElementShortName">state[15:0]</obj_property>
+      <obj_property name="ObjectShortName">state[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_moving_integration/engine/current_bits" type="array">
+      <obj_property name="ElementShortName">current_bits[3:0]</obj_property>
+      <obj_property name="ObjectShortName">current_bits[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_moving_integration/engine/future1_bits" type="array">
+      <obj_property name="ElementShortName">future1_bits[3:0]</obj_property>
+      <obj_property name="ObjectShortName">future1_bits[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_moving_integration/engine/future2_bits" type="array">
+      <obj_property name="ElementShortName">future2_bits[3:0]</obj_property>
+      <obj_property name="ObjectShortName">future2_bits[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_moving_integration/engine/active_mode" type="array">
+      <obj_property name="ElementShortName">active_mode[7:0]</obj_property>
+      <obj_property name="ObjectShortName">active_mode[7:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_moving_integration/engine/mode_valid" type="array">
+      <obj_property name="ElementShortName">mode_valid[3:0]</obj_property>
+      <obj_property name="ObjectShortName">mode_valid[3:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_moving_integration/engine/scan_in" type="array">
+      <obj_property name="ElementShortName">scan_in[3:0]</obj_property>
+      <obj_property name="ObjectShortName">scan_in[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_moving_integration/engine/past_bits" type="array">
+      <obj_property name="ElementShortName">past_bits[3:0]</obj_property>
+      <obj_property name="ObjectShortName">past_bits[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_moving_integration/engine/chain_flat" type="array">
+      <obj_property name="ElementShortName">chain_flat[255:0]</obj_property>
+      <obj_property name="ObjectShortName">chain_flat[255:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+</wave_config>
+

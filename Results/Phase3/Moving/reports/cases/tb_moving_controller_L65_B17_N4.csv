@@ -1,0 +1,2 @@
+Case,Testbench,ExpectedNegative,Regression,Capture,Result,CompletionTime,WDBBytes
+tb_moving_controller_L65_B17_N4,tb_moving_controller,0,0,0,PASS,33313100 ps,0

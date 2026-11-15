@@ -1,0 +1,12 @@
+Check,Result,Count
+Simulation cases,PASS,69
+Normal completions,PASS,55
+Expected configuration rejections,PASS,14
+Comparison measurements,PASS,75
+Additional integration measurements,PASS,6
+Python tests,PASS,22
+Native waveform pairs,PASS,17
+Captured event timestamps,PASS,50
+Saved waveform SVG checks,PASS,44
+Protected original files unchanged,PASS,555
+Authorized waveform and doc updates,PASS,8

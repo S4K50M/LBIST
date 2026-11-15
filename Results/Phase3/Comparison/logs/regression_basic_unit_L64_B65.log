@@ -1,0 +1,4 @@
+Time resolution is 1 ps
+Failure: [CONFIG_ERROR] low regions must be >=14 bits
+Time: 0 ps  Iteration: 0  Process: /tb_basic_controller/controller/line__34  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/basic_controller.vhd
+$finish called at time : 0 fs : File "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/basic_controller.vhd" Line 34

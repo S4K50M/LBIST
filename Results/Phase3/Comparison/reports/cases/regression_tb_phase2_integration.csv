@@ -1,0 +1,2 @@
+Case,Testbench,ExpectedNegative,Regression,Capture,Result,CompletionTime,WDBBytes
+regression_tb_phase2_integration,tb_phase2_integration,0,1,0,PASS,131455100 ps,0

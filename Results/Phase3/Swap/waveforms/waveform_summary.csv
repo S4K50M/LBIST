@@ -1,0 +1,3 @@
+Case,Testbench,Beta,CompletionTime,WDBBytes,VCDWindow,Result
+tb_swap_controller_L64_B16_N4,tb_swap_controller,16,32801100 ps,316226,0..12000 ns,PASS
+tb_swap_integration_L64_B16_N4,tb_swap_integration,16,131457100 ps,5585003,0..12000 ns,PASS

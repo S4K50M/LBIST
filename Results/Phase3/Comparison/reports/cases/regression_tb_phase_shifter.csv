@@ -1,0 +1,2 @@
+Case,Testbench,ExpectedNegative,Regression,Capture,Result,CompletionTime,WDBBytes
+regression_tb_phase_shifter,tb_phase_shifter,0,1,0,PASS,8264736 ps,0

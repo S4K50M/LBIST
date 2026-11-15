@@ -1,0 +1,2 @@
+Case,Testbench,ExpectedNegative,Regression,Capture,Result,CompletionTime,WDBBytes
+tb_swap_integration_L64_B16_N4,tb_swap_integration,0,0,1,PASS,131457100 ps,5585003

@@ -1,0 +1,29 @@
+Vivado Simulator v2025.1.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -generic_top CHAIN_LENGTH=200 -generic_top NUM_CHAINS=4 -generic_top PATTERNS=1024 -generic_top TARGET_PERCENT=30 -generic_top BASIC_BETA=106 -generic_top SWAP_BETA=86 -generic_top MOVING_BETA=107 -L xil_defaultlib -L secureip --snapshot tb_phase3_comparison_behav xil_defaultlib.tb_phase3_comparison -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package xil_defaultlib.phase2_tb_pkg
+Compiling package xil_defaultlib.phase3_tb_pkg
+Compiling architecture rtl of entity xil_defaultlib.plpf_dynamic [plpf_dynamic_default]
+Compiling architecture rtl of entity xil_defaultlib.lfsr_16 [lfsr_16_default]
+Compiling architecture rtl of entity xil_defaultlib.multi_chain_phase_shifter [multi_chain_phase_shifter_defaul...]
+Compiling architecture test of entity xil_defaultlib.phase3_integration_check [\phase3_integration_check(app=0,...]
+Compiling architecture test of entity xil_defaultlib.phase3_integration_check [\phase3_integration_check(app=1,...]
+Compiling architecture rtl of entity xil_defaultlib.basic_controller [\basic_controller(chain_length=2...]
+Compiling architecture test of entity xil_defaultlib.phase3_integration_check [\phase3_integration_check(app=2,...]
+Compiling architecture rtl of entity xil_defaultlib.swap_controller [\swap_controller(chain_length=20...]
+Compiling architecture test of entity xil_defaultlib.phase3_integration_check [\phase3_integration_check(chain_...]
+Compiling architecture rtl of entity xil_defaultlib.moving_controller [\moving_controller(chain_length=...]
+Compiling architecture test of entity xil_defaultlib.phase3_integration_check [\phase3_integration_check(app=4,...]
+Compiling architecture test of entity xil_defaultlib.tb_phase3_comparison
+Built simulation snapshot tb_phase3_comparison_behav

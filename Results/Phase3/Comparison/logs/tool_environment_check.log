@@ -1,0 +1,37 @@
+
+****** Vivado v2025.1.1 (64-bit)
+  **** SW Build 6233196 on Thu Sep 11 21:27:30 MDT 2025
+  **** IP Build 6232796 on Fri Sep 12 01:46:16 MDT 2025
+  **** SharedData Build 6233195 on Thu Sep 11 17:56:43 MDT 2025
+  **** Start of session at: Sun Nov 15 19:26:20 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source Results/Phase3/Comparison/work/check_environment.tcl
+# foreach key {LOCALAPPDATA PYTHONHOME PYTHONPATH} {
+#     if {[info exists ::env($key)]} {puts "PYTHON ENV $key=$::env($key)"}
+# }
+PYTHON ENV LOCALAPPDATA=C:\Users\Saksham Setia\AppData\Local
+PYTHON ENV PYTHONHOME=E:/2025.1.1/Vivado\tps\win64\python-3.13.0
+PYTHON ENV PYTHONPATH=E:/2025.1.1/Vivado\tps\win64\python-3.13.0;E:/2025.1.1/Vivado\tps\win64\python-3.13.0\bin;E:/2025.1.1/Vivado\tps\win64\python-3.13.0\lib;E:/2025.1.1/Vivado\tps\win64\python-3.13.0\lib\site-packages;E:/2025.1.1/Vivado/lib/win64.o;
+# set python {C:/Users/Saksham Setia/AppData/Local/Programs/Python/Python313/python.exe}
+# foreach options [list {} {-E}] {
+#     set result [catch {exec $python {*}$options -c {import sys; print(sys.executable); import matplotlib,numpy; print(matplotlib.__file__)}} message]
+#     puts "PYTHON OPTIONS=$options RESULT=$result MESSAGE=$message"
+# }
+PYTHON OPTIONS= RESULT=1 MESSAGE=C:\Users\Saksham Setia\AppData\Local\Programs\Python\Python313\python.exe
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import sys; print(sys.executable); import matplotlib,numpy; print(matplotlib.__file__)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'matplotlib'
+PYTHON OPTIONS=-E RESULT=0 MESSAGE=C:\Users\Saksham Setia\AppData\Local\Programs\Python\Python313\python.exe
+C:\Users\Saksham Setia\AppData\Local\Programs\Python\Python313\Lib\site-packages\matplotlib\__init__.py
+# set root [file normalize [file join [file dirname [info script]] ../../../..]]
+# foreach script [glob [file join $root lbist scripts *.tcl]] {
+#     set f [open $script r];set body [read $f];close $f
+#     if {![info complete $body]} {error "Incomplete Tcl script: $script"}
+# }
+# puts "TCL STATIC COMPLETENESS: PASS"
+TCL STATIC COMPLETENESS: PASS
+INFO: [Common 17-206] Exiting Vivado at Sun Nov 15 19:26:23 2026...

@@ -1,0 +1,9 @@
+Time resolution is 1 ps
+Note: [METRIC] 64,32,0,32,NA,7.142857e-02,7.141442e-02,1.415211e-03,7.138170e-02,7.135701e-02,1024,65536,131457100 ps
+Time: 131457100 ps  Iteration: 0  Process: /tb_basic_integration/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_basic_integration.vhd
+Note: [PASS] 1024 patterns, every shift/mode/scan bit, no X/U, feedback, rollover, pause/resume
+Time: 131457100 ps  Iteration: 0  Process: /tb_basic_integration/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_basic_integration.vhd
+Note: [PASS] independent WTM cross-check and 2 pp error limit; three metrics kept separate
+Time: 131457100 ps  Iteration: 0  Process: /tb_basic_integration/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_basic_integration.vhd
+Note: [TB_COMPLETE] tb_basic_integration at 131457100 ps
+Time: 131457100 ps  Iteration: 0  Process: /tb_basic_integration/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_basic_integration.vhd

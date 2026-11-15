@@ -1,0 +1,27 @@
+Time resolution is 1 ps
+Note: [METRIC] tb_phase2_integration,1,5.000000e-01,5.007019e-01,7.019471e-02,16384,8203
+Time: 32863100 ps  Iteration: 0  Process: /tb_phase2_integration/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase2_integration.vhd
+Note: [WTM] 1,64,256,5.006348e-01,4.997187e-01,266578
+Time: 32863100 ps  Iteration: 0  Process: /tb_phase2_integration/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase2_integration.vhd
+Note: [PASS] integration epoch 1: serial metrics, WTM, full-chain scoreboarding, pause/resume
+Time: 32863100 ps  Iteration: 0  Process: /tb_phase2_integration/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase2_integration.vhd
+Note: [METRIC] tb_phase2_integration,2,1.666667e-01,1.674297e-01,7.629860e-02,16384,2743
+Time: 65727100 ps  Iteration: 0  Process: /tb_phase2_integration/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase2_integration.vhd
+Note: [WTM] 2,64,256,1.683706e-01,1.671095e-01,89654
+Time: 65727100 ps  Iteration: 0  Process: /tb_phase2_integration/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase2_integration.vhd
+Note: [PASS] integration epoch 2: serial metrics, WTM, full-chain scoreboarding, pause/resume
+Time: 65727100 ps  Iteration: 0  Process: /tb_phase2_integration/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase2_integration.vhd
+Note: [METRIC] tb_phase2_integration,3,7.142857e-02,7.172069e-02,2.921146e-02,16384,1175
+Time: 98591100 ps  Iteration: 0  Process: /tb_phase2_integration/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase2_integration.vhd
+Note: [WTM] 3,64,256,7.243465e-02,7.166672e-02,38570
+Time: 98591100 ps  Iteration: 0  Process: /tb_phase2_integration/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase2_integration.vhd
+Note: [PASS] integration epoch 3: serial metrics, WTM, full-chain scoreboarding, pause/resume
+Time: 98591100 ps  Iteration: 0  Process: /tb_phase2_integration/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase2_integration.vhd
+Note: [METRIC] tb_phase2_integration,dynamic,NA,2.499542e-01,NA,16384,4095
+Time: 131455100 ps  Iteration: 0  Process: /tb_phase2_integration/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase2_integration.vhd
+Note: [WTM] 4,64,256,2.521935e-01,2.494459e-01,134288
+Time: 131455100 ps  Iteration: 0  Process: /tb_phase2_integration/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase2_integration.vhd
+Note: [PASS] integration epoch 4: serial metrics, WTM, full-chain scoreboarding, pause/resume
+Time: 131455100 ps  Iteration: 0  Process: /tb_phase2_integration/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase2_integration.vhd
+Note: [TB_COMPLETE] tb_phase2_integration at 131455100 ps
+Time: 131455100 ps  Iteration: 0  Process: /tb_phase2_integration/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase2_integration.vhd

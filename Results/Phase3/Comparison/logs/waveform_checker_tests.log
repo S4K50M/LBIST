@@ -1,0 +1,12 @@
+test_counter_corruption_fails (__main__.WaveTests.test_counter_corruption_fails) ... ok
+test_mode_corruption_fails (__main__.WaveTests.test_mode_corruption_fails) ... ok
+test_preview_cannot_exceed_recorded_time (__main__.WaveTests.test_preview_cannot_exceed_recorded_time) ... ok
+test_real_moving_wrap_and_exposure (__main__.WaveTests.test_real_moving_wrap_and_exposure) ... ok
+test_real_swap_boundaries (__main__.WaveTests.test_real_swap_boundaries) ... ok
+test_saved_preview_corruption_fails (__main__.WaveTests.test_saved_preview_corruption_fails) ... ok
+test_scan_data_corruption_fails (__main__.WaveTests.test_scan_data_corruption_fails) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 2.277s
+
+OK

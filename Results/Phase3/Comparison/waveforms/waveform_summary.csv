@@ -1,0 +1,2 @@
+Case,Testbench,Beta,CompletionTime,WDBBytes,VCDWindow,Result
+tb_phase3_comparison_L64_T20,tb_phase3_comparison,NA,131457100 ps,30496985,0..12000 ns,PASS

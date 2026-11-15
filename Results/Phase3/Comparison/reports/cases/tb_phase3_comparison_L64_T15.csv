@@ -1,0 +1,2 @@
+Case,Testbench,ExpectedNegative,Regression,Capture,Result,CompletionTime,WDBBytes
+tb_phase3_comparison_L64_T15,tb_phase3_comparison,0,0,0,PASS,131457100 ps,0

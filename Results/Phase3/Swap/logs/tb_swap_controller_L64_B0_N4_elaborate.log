@@ -1,0 +1,20 @@
+Vivado Simulator v2025.1.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -generic_top CHAIN_LENGTH=64 -generic_top BETA=0 -generic_top NUM_CHAINS=4 -generic_top INITIAL_POSITION=0 -L xil_defaultlib -L secureip --snapshot tb_swap_controller_behav xil_defaultlib.tb_swap_controller -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package xil_defaultlib.phase2_tb_pkg
+Compiling package xil_defaultlib.phase3_tb_pkg
+Compiling architecture rtl of entity xil_defaultlib.swap_controller [\swap_controller(beta=0)\]
+Compiling architecture test of entity xil_defaultlib.phase3_controller_check [\phase3_controller_check(beta=0)...]
+Compiling architecture test of entity xil_defaultlib.tb_swap_controller
+Built simulation snapshot tb_swap_controller_behav

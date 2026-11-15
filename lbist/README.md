@@ -136,3 +136,30 @@ optional `xsim_control.tcl` is XSim-only (set `TOP` before sourcing it).
 Actual logs, durations, rates, and verification status are in
 [Results/Phase2](../Results/Phase2/README.md). Test success is never inferred solely
 from the return of `run`.
+
+
+# Phase 3 controllers and comparison
+
+Phase 2 above remains the verified baseline. Phase 3 adds swap_controller.vhd,
+moving_controller.vhd and multi_chain_phase_shifter.vhd without changing the
+existing RTL APIs. The Basic controller remains unchanged.
+
+Chain c uses mode_select(2*c+1 downto 2*c): 00=n=3, 11=n=1. Controller reset is
+synchronous active-high. The unchanged LFSR reset is asynchronous; hold common
+reset through a clock edge to align controller and modeled scan storage.
+Distinct chain phases are 0,257,514,771, each with separate scan-stage feedback.
+
+Documentation:
+- [Swap order and architecture](../docs/swap_control.md)
+- [Moving range, wrap and reach](../docs/moving_control.md)
+- [Comparison and exact WTM selection](../docs/phase3_comparison.md)
+- [Waveform workflow](../docs/waveforms.md)
+- [Measured comparison results](../Results/Phase3/Comparison/README.md)
+
+~~~powershell
+& 'E:/2025.1.1/Vivado/bin/vivado.bat' -mode batch -source ./lbist/scripts/run_all_phase3.tcl
+~~~
+
+Dedicated runners exist for each unit/integration top and comparison. Old
+regressions execute into new folders; prior summaries and captures are preserved.
+No processor scan insertion, capture, MISR, area or fault simulation is included.

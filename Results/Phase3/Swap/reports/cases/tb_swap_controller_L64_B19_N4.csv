@@ -1,0 +1,2 @@
+Case,Testbench,ExpectedNegative,Regression,Capture,Result,CompletionTime,WDBBytes
+tb_swap_controller_L64_B19_N4,tb_swap_controller,1,0,0,PASS,0 ns,0

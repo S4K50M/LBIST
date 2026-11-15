@@ -1,0 +1,4 @@
+Time resolution is 1 ps
+Failure: [CONFIG_ERROR] NUM_CHAINS must be 1..16
+Time: 0 ps  Iteration: 0  Process: /tb_swap_controller/engine/swap_dut/dut/line__25  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/swap_controller.vhd
+$finish called at time : 0 fs : File "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/swap_controller.vhd" Line 25

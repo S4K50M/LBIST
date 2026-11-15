@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="670" viewBox="0 0 1600 670">
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="20" y="28" font-family="sans-serif" font-size="20">basic_beta20 - first switch</text>
+<text x="20" y="51" font-family="sans-serif" font-size="13">00 = PLPF n=3 (low toggle) | 11 = PLPF n=1 (unfiltered) | Edge capture uses PRE-edge mode; POST-edge mode prepares the next shift.</text>
+<line x1="880.0" x2="880.0" y1="110" y2="640" stroke="#a33" stroke-dasharray="4 4"/>
+<text x="20" y="76" font-family="sans-serif" font-size="13" fill="#922">first switch (post-edge) @ 45.000 ns</text>
+<line x1="220.0" x2="220.0" y1="110" y2="640" stroke="#e6eaf0"/>
+<text x="220.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">35.00 ns</text>
+<line x1="385.0" x2="385.0" y1="110" y2="640" stroke="#e6eaf0"/>
+<text x="385.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">37.50 ns</text>
+<line x1="550.0" x2="550.0" y1="110" y2="640" stroke="#e6eaf0"/>
+<text x="550.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">40.00 ns</text>
+<line x1="715.0" x2="715.0" y1="110" y2="640" stroke="#e6eaf0"/>
+<text x="715.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">42.50 ns</text>
+<line x1="880.0" x2="880.0" y1="110" y2="640" stroke="#e6eaf0"/>
+<text x="880.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">45.00 ns</text>
+<line x1="1045.0" x2="1045.0" y1="110" y2="640" stroke="#e6eaf0"/>
+<text x="1045.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">47.50 ns</text>
+<line x1="1210.0" x2="1210.0" y1="110" y2="640" stroke="#e6eaf0"/>
+<text x="1210.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">50.00 ns</text>
+<line x1="1375.0" x2="1375.0" y1="110" y2="640" stroke="#e6eaf0"/>
+<text x="1375.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">52.50 ns</text>
+<line x1="1540.0" x2="1540.0" y1="110" y2="640" stroke="#e6eaf0"/>
+<text x="1540.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">55.00 ns</text>
+<text x="12" y="156" font-family="monospace" font-size="14">clk</text>
+<path d="M 220.000 139 H 286.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase3_comparison/basic_engine/clk = 1, 35.000..36.000 ns</title></path>
+<path d="M 286.000 163 H 352.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase3_comparison/basic_engine/clk = 0, 36.000..37.000 ns</title></path>
+<path d="M 286.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 352.000 139 H 418.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase3_comparison/basic_engine/clk = 1, 37.000..38.000 ns</title></path>
+<path d="M 352.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 418.000 163 H 484.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase3_comparison/basic_engine/clk = 0, 38.000..39.000 ns</title></path>
+<path d="M 418.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 484.000 139 H 550.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase3_comparison/basic_engine/clk = 1, 39.000..40.000 ns</title></path>
+<path d="M 484.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 550.000 163 H 616.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase3_comparison/basic_engine/clk = 0, 40.000..41.000 ns</title></path>
+<path d="M 550.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 616.000 139 H 682.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase3_comparison/basic_engine/clk = 1, 41.000..42.000 ns</title></path>
+<path d="M 616.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 682.000 163 H 748.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase3_comparison/basic_engine/clk = 0, 42.000..43.000 ns</title></path>
+<path d="M 682.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 748.000 139 H 814.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase3_comparison/basic_engine/clk = 1, 43.000..44.000 ns</title></path>
+<path d="M 748.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 814.000 163 H 880.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase3_comparison/basic_engine/clk = 0, 44.000..45.000 ns</title></path>
+<path d="M 814.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 880.000 139 H 946.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase3_comparison/basic_engine/clk = 1, 45.000..46.000 ns</title></path>
+<path d="M 880.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 946.000 163 H 1012.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase3_comparison/basic_engine/clk = 0, 46.000..47.000 ns</title></path>
+<path d="M 946.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1012.000 139 H 1078.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase3_comparison/basic_engine/clk = 1, 47.000..48.000 ns</title></path>
+<path d="M 1012.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1078.000 163 H 1144.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase3_comparison/basic_engine/clk = 0, 48.000..49.000 ns</title></path>
+<path d="M 1078.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1144.000 139 H 1210.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase3_comparison/basic_engine/clk = 1, 49.000..50.000 ns</title></path>
+<path d="M 1144.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1210.000 163 H 1276.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase3_comparison/basic_engine/clk = 0, 50.000..51.000 ns</title></path>
+<path d="M 1210.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1276.000 139 H 1342.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase3_comparison/basic_engine/clk = 1, 51.000..52.000 ns</title></path>
+<path d="M 1276.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1342.000 163 H 1408.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase3_comparison/basic_engine/clk = 0, 52.000..53.000 ns</title></path>
+<path d="M 1342.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1408.000 139 H 1474.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase3_comparison/basic_engine/clk = 1, 53.000..54.000 ns</title></path>
+<path d="M 1408.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1474.000 163 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase3_comparison/basic_engine/clk = 0, 54.000..55.000 ns</title></path>
+<path d="M 1474.000 139 V 163" stroke="#126e60" fill="none"/>
+<text x="12" y="204" font-family="monospace" font-size="14">rst</text>
+<path d="M 220.000 211 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase3_comparison/basic_engine/rst = 0, 35.000..55.000 ns</title></path>
+<text x="12" y="252" font-family="monospace" font-size="14">scan_enable</text>
+<path d="M 220.000 235 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase3_comparison/basic_engine/scan_enable = 1, 35.000..55.000 ns</title></path>
+<text x="12" y="300" font-family="monospace" font-size="14">shift_count_v</text>
+<rect x="220.000" y="281" width="132.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase3_comparison/basic_engine/shift_count_v = 0000000000010001, 35.000..37.000 ns</title></rect>
+<text x="286.000" y="300" text-anchor="middle" font-family="monospace" font-size="13">17</text>
+<rect x="352.000" y="281" width="132.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase3_comparison/basic_engine/shift_count_v = 10010, 37.000..39.000 ns</title></rect>
+<text x="418.000" y="300" text-anchor="middle" font-family="monospace" font-size="13">18</text>
+<rect x="484.000" y="281" width="132.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase3_comparison/basic_engine/shift_count_v = 10011, 39.000..41.000 ns</title></rect>
+<text x="550.000" y="300" text-anchor="middle" font-family="monospace" font-size="13">19</text>
+<rect x="616.000" y="281" width="132.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase3_comparison/basic_engine/shift_count_v = 10100, 41.000..43.000 ns</title></rect>
+<text x="682.000" y="300" text-anchor="middle" font-family="monospace" font-size="13">20</text>
+<rect x="748.000" y="281" width="132.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase3_comparison/basic_engine/shift_count_v = 10101, 43.000..45.000 ns</title></rect>
+<text x="814.000" y="300" text-anchor="middle" font-family="monospace" font-size="13">21</text>
+<rect x="880.000" y="281" width="132.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase3_comparison/basic_engine/shift_count_v = 10110, 45.000..47.000 ns</title></rect>
+<text x="946.000" y="300" text-anchor="middle" font-family="monospace" font-size="13">22</text>
+<rect x="1012.000" y="281" width="132.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase3_comparison/basic_engine/shift_count_v = 10111, 47.000..49.000 ns</title></rect>
+<text x="1078.000" y="300" text-anchor="middle" font-family="monospace" font-size="13">23</text>
+<rect x="1144.000" y="281" width="132.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase3_comparison/basic_engine/shift_count_v = 11000, 49.000..51.000 ns</title></rect>
+<text x="1210.000" y="300" text-anchor="middle" font-family="monospace" font-size="13">24</text>
+<rect x="1276.000" y="281" width="132.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase3_comparison/basic_engine/shift_count_v = 11001, 51.000..53.000 ns</title></rect>
+<text x="1342.000" y="300" text-anchor="middle" font-family="monospace" font-size="13">25</text>
+<rect x="1408.000" y="281" width="132.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase3_comparison/basic_engine/shift_count_v = 11010, 53.000..55.000 ns</title></rect>
+<text x="1474.000" y="300" text-anchor="middle" font-family="monospace" font-size="13">26</text>
+<text x="12" y="348" font-family="monospace" font-size="14">pattern_index</text>
+<rect x="220.000" y="329" width="1320.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase3_comparison/basic_engine/pattern_index = 00000000000000000000000000000000, 35.000..55.000 ns</title></rect>
+<text x="880.000" y="348" text-anchor="middle" font-family="monospace" font-size="13">0</text>
+<text x="12" y="396" font-family="monospace" font-size="14">mode_0</text>
+<rect x="220.000" y="377" width="660.000" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase3_comparison/basic_engine/mode_0 = 00, 35.000..45.000 ns</title></rect>
+<text x="550.000" y="396" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="880.000" y="377" width="660.000" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase3_comparison/basic_engine/mode_0 = 11, 45.000..55.000 ns</title></rect>
+<text x="1210.000" y="396" text-anchor="middle" font-family="monospace" font-size="13">11</text>
+<text x="12" y="444" font-family="monospace" font-size="14">pattern_done</text>
+<path d="M 220.000 451 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase3_comparison/basic_engine/pattern_done = 0, 35.000..55.000 ns</title></path>
+<text x="12" y="492" font-family="monospace" font-size="14">alpha_0</text>
+<rect x="220.000" y="473" width="1320.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase3_comparison/basic_engine/alpha_0 = 0000000000010110, 35.000..55.000 ns</title></rect>
+<text x="880.000" y="492" text-anchor="middle" font-family="monospace" font-size="13">22</text>
+<text x="12" y="540" font-family="monospace" font-size="14">beta_v</text>
+<rect x="220.000" y="521" width="1320.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase3_comparison/basic_engine/beta_v = 0000000000010100, 35.000..55.000 ns</title></rect>
+<text x="880.000" y="540" text-anchor="middle" font-family="monospace" font-size="13">20</text>
+<text x="12" y="588" font-family="monospace" font-size="14">gamma_0</text>
+<rect x="220.000" y="569" width="1320.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase3_comparison/basic_engine/gamma_0 = 0000000000010110, 35.000..55.000 ns</title></rect>
+<text x="880.000" y="588" text-anchor="middle" font-family="monospace" font-size="13">22</text>
+<text x="20" y="660" font-family="sans-serif" font-size="11">Source: tb_phase3_comparison_L64_T20.vcd; no expected-schedule signal reconstruction. Buses are hexadecimal; counters/region lengths are decimal.</text></svg>

@@ -1,0 +1,1479 @@
+
+****** Vivado v2025.1.1 (64-bit)
+  **** SW Build 6233196 on Thu Sep 11 21:27:30 MDT 2025
+  **** IP Build 6232796 on Fri Sep 12 01:46:16 MDT 2025
+  **** SharedData Build 6233195 on Thu Sep 11 17:56:43 MDT 2025
+  **** Start of session at: Sun Nov 15 18:39:45 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/scripts/run_swap_controller.tcl}
+# source [file join [file dirname [file normalize [info script]]] phase3_common.tcl]
+## set phase3_script_dir [file dirname [file normalize [info script]]]
+## source [file join $phase3_script_dir waveforms_common.tcl]
+### set waveform_script_dir [file dirname [file normalize [info script]]]
+### proc generate_lbist_waveforms {selection} {
+###     global waveform_script_dir
+###     set root [file normalize [file join $waveform_script_dir ../..]]
+###     set project_dir [file join $root Results Phase2 work waveform_project]
+###     create_project -force lbist_waves $project_dir -part xc7a35tcpg236-1
+###     set_property target_language VHDL [current_project]
+###     foreach name {lfsr_16 phase_shifter plpf_optimized plpf_dynamic basic_controller} {
+###         add_files -fileset sources_1 [list [file join $root lbist rtl $name.vhd]]
+###     }
+###     foreach name {phase2_tb_pkg tb_lfsr_16 tb_phase_shifter tb_plpf_optimized tb_plpf_dynamic tb_phase2_integration tb_basic_controller tb_basic_integration} {
+###         add_files -fileset sim_1 [list [file join $root lbist tb $name.vhd]]
+###     }
+###     set_property file_type VHDL [get_files *.vhd]
+###     set_property xsim.simulate.runtime 0ns [get_filesets sim_1]
+###     set cases {}
+###     if {$selection ne "basic"} {
+###         foreach top {tb_lfsr_16 tb_phase_shifter tb_plpf_optimized tb_plpf_dynamic tb_phase2_integration} {
+###             lappend cases [list phase2 $top $top {}]
+###         }
+###     }
+###     if {$selection ne "phase2"} {
+###         lappend cases {basic tb_basic_controller tb_basic_controller_L64_B20 20}
+###         foreach beta {0 8 16 20 28 36} {
+###             lappend cases [list basic tb_basic_integration tb_basic_integration_L64_B${beta} $beta]
+###         }
+###     }
+###     set summaries [dict create]
+###     foreach phase {phase2 basic} {
+###         if {$phase eq "phase2"} {set folder [file join $root Results Phase2 waveforms]} else {
+###             set folder [file join $root Results Phase3 Basic waveforms]
+###         }
+###         file mkdir $folder
+###         if {($phase eq "phase2" && $selection ne "basic") || ($phase eq "basic" && $selection ne "phase2")} {
+###             set channel [open [file join $folder waveform_summary.csv] w]
+###             puts $channel "Case,Testbench,Beta,CompletionTime,WDBBytes,VCDWindow,Result"
+###             dict set summaries $phase $channel
+###         }
+###     }
+###     set failures 0
+###     foreach case $cases {
+###         lassign $case phase top tag beta
+###         if {$phase eq "phase2"} {set folder [file join $root Results Phase2 waveforms]} else {
+###             set folder [file join $root Results Phase3 Basic waveforms]
+###         }
+###         puts "=== WAVEFORM: $tag ==="
+###         set_property top $top [get_filesets sim_1]
+###         if {$beta ne ""} {set generics [list CHAIN_LENGTH=64 BETA=$beta]} else {set generics {}}
+###         set_property generic $generics [get_filesets sim_1]
+###         update_compile_order -fileset sim_1
+###         set simdir [file join $project_dir lbist_waves.sim sim_1 behav xsim]
+###         set simlog [file join $simdir simulate.log]
+###         if {[file exists $simlog]} {file delete $simlog}
+###         set wcfg [file join $folder $tag.wcfg]
+###         set problem [catch {
+###             launch_simulation -simset sim_1 -mode behavioral
+###             create_wave_config $tag
+###             switch $top {
+###                 tb_lfsr_16 {set signals {clk rst en state bit_out zero_state custom_state test_done}}
+###                 tb_phase_shifter {set signals {clk rst en state c f1 f2 manual selected test_done}}
+###                 tb_plpf_optimized {set signals {clk mode manual c f1 f2 past y valid chain test_done}}
+###                 tb_plpf_dynamic {set signals {clk rst en state c f1 f2 mode active valid chain y test_done}}
+###                 tb_phase2_integration {set signals {clk rst scan_enable state c f1 f2 mode active valid y chain test_done}}
+###                 tb_basic_controller {set signals {clk rst scan_enable count mode done test_done}}
+###                 tb_basic_integration {set signals {clk rst scan_enable count mode done state c f1 f2 active valid scan_in chain test_done}}
+###             }
+###             foreach name $signals {
+###                 set path /$top/$name
+###                 if {[llength [get_objects $path]] != 1} {error "Missing waveform signal: $path"}
+###                 set radix default
+###                 if {$name in {state zero_state custom_state selected chain}} {set radix hex}
+###                 if {$name in {mode active}} {set radix bin}
+###                 if {$name eq "count"} {set radix unsigned}
+###                 if {$radix eq "default"} {add_wave $path} else {add_wave -radix $radix $path}
+###                 log_wave $path
+###             }
+###             # A compact portable trace covers the initial few complete patterns.
+###             # Full-time activity remains available in the WDB.
+###             open_vcd [file join $folder $tag.vcd]
+###             foreach name $signals {if {$name ni {test_done manual count}} {log_vcd /$top/$name}}
+###             run 512 ns
+###             close_vcd
+###             set finished 0
+###             for {set step 0} {$step<2000} {incr step} {
+###                 set done [string tolower [get_value /$top/test_done]]
+###                 if {$done eq "true" || $done eq "1"} {set finished 1; break}
+###                 run 1 us
+###             }
+###             if {!$finished} {error "Waveform simulation timeout"}
+###             save_wave_config $wcfg
+###         } message]
+###         catch {close_vcd}
+###         catch {close_sim}
+###         set text ""
+###         if {[file exists $simlog]} {
+###             file copy -force $simlog [file join $folder $tag.log]
+###             set f [open $simlog r]; set text [read $f]; close $f
+###         }
+###         set complete [regexp [format {[[]TB_COMPLETE[]] %s at ([^[:cntrl:]]+)} $top] $text whole duration]
+###         set result FAIL
+###         set size 0
+###         if {!$problem && $complete && ![regexp {[[]FAIL[]]|Failure:|Fatal:|ERROR:} $text]} {
+###             set database [file join $simdir ${top}_behav.wdb]
+###             if {[file exists $database] && [file exists $wcfg]} {
+###                 file copy -force $database [file join $folder $tag.wdb]
+###                 set size [file size [file join $folder $tag.wdb]]
+###                 # Keep the WCFG/WDB pair relocatable together.
+###                 set f [open $wcfg r]; set cfg [read $f]; close $f
+###                 regsub -all {(<db_ref path=")[^"]*(")} $cfg [format {\1%s.wdb\2} $tag] cfg
+###                 # Full WDB is retained; start with a readable 300-ns view.
+###                 regsub {<zoom_setting>[^<]*</zoom_setting>} $cfg {<zoom_setting>
+###       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+###       <ZoomEndTime time="300.000 ns"></ZoomEndTime>
+###       <Cursor1Time time="0.000 ns"></Cursor1Time>
+###    </zoom_setting>} cfg
+###                 set f [open $wcfg w]; puts $f $cfg; close $f
+###                 set result PASS
+###             }
+###         }
+###         if {$result eq "FAIL"} {incr failures; set duration UNKNOWN; puts stderr "Waveform failed: $tag -- $message"}
+###         if {$beta eq ""} {set beta NA}
+###         set channel [dict get $summaries $phase]
+###         puts $channel "$tag,$top,$beta,$duration,$size,0..512 ns,$result"
+###         flush $channel
+###         puts "WAVEFORM RESULT: $result -- $tag ($size bytes)"
+###     }
+###     dict for {phase channel} $summaries {close $channel}
+###     close_project
+###     if {$failures} {error "$failures waveform simulations failed"}
+###     puts "WAVEFORM GENERATION: PASS ([llength $cases] captures)"
+### }
+### proc phase3_wave_begin {folder top tag} {
+###     file mkdir $folder
+###     create_wave_config $tag
+###     if {$top eq "tb_phase3_comparison"} {
+###         set prefixes [list /$top/direct_engine /$top/low_engine /$top/basic_engine /$top/swap_engine /$top/moving_engine]
+###     } else {set prefixes [list /$top/engine]}
+###     foreach prefix $prefixes {
+###         foreach name {clk rst scan_enable shift_count_v pattern_index moving_position_v alpha_0 beta_v gamma_0 mode_0 mode_1 mode_2 mode_3 mode_select pattern_done state current_bits future1_bits future2_bits scan_in past_bits chain_flat} {
+###             set path $prefix/$name
+###             if {[llength [get_objects $path]]==1} {
+###                 set radix hex
+###                 if {$name in {mode_0 mode_1 mode_2 mode_3 mode_select}} {set radix bin}
+###                 if {$name in {shift_count_v moving_position_v alpha_0 beta_v gamma_0 pattern_index}} {set radix unsigned}
+###                 add_wave -radix $radix $path
+###                 log_wave $path
+###             }
+###         }
+###     }
+###     open_vcd [file join $folder $tag.vcd]
+###     foreach prefix $prefixes {
+###         foreach name {clk rst scan_enable shift_count_v pattern_index moving_position_v alpha_0 beta_v gamma_0 mode_0 mode_1 mode_2 mode_3 mode_select pattern_done state current_bits future1_bits future2_bits scan_in past_bits chain_flat} {
+###             set path $prefix/$name
+###             if {[llength [get_objects $path]]==1} {log_vcd $path}
+###         }
+###     }
+###     run 12 us
+###     close_vcd
+### }
+### proc phase3_wave_finish {folder top tag simdir} {
+###     set dest [file join $folder $tag.wdb]
+###     file copy -force [file join $simdir [format "%s_behav.wdb" $top]] $dest
+###     set config [file join $folder $tag.wcfg]
+###     set f [open $config r]; set text [read $f]; close $f
+###     regsub -all {(<db_ref path=")[^"]*(")} $text [format {\1%s.wdb\2} $tag] text
+###     regsub {<zoom_setting>[^<]*</zoom_setting>} $text {<zoom_setting>
+###       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+###       <ZoomEndTime time="180.000 ns"></ZoomEndTime>
+###    </zoom_setting>} text
+###     set f [open $config w]; puts $f $text; close $f
+###     return [file size $dest]
+### }
+## proc phase3_run {selection} {
+##     global phase3_script_dir
+##     set root [file normalize [file join $phase3_script_dir ../..]]
+##     set python python
+##     if {[info exists ::env(PHASE3_PYTHON)]} {set python $::env(PHASE3_PYTHON)}
+##     puts [exec $python [file join $phase3_script_dir make_phase3_plan.py]]
+##     source [file join $root Results Phase3 Comparison work experiment_plan.tcl]
+##     set project_dir [file join $root Results Phase3 Comparison work project_$selection]
+##     create_project -force phase3 $project_dir -part xc7a35tcpg236-1
+##     set_property target_language VHDL [current_project]
+##     foreach file [glob [file join $root lbist rtl *.vhd]] {add_files -fileset sources_1 [list $file]}
+##     foreach name {phase2_tb_pkg phase3_tb_pkg phase3_controller_check phase3_integration_check tb_swap_controller tb_moving_controller tb_swap_integration tb_moving_integration tb_phase3_comparison tb_lfsr_16 tb_phase_shifter tb_plpf_optimized tb_plpf_dynamic tb_phase2_integration tb_basic_controller tb_basic_integration} {
+##         set file [file join $root lbist tb $name.vhd]
+##         if {[file exists $file]} {add_files -fileset sim_1 [list $file]}
+##     }
+##     set_property file_type VHDL [get_files *.vhd]
+##     set_property xsim.simulate.runtime 0ns [get_filesets sim_1]
+##     set failed 0; set executed 0
+##     foreach case $phase3_cases {
+##         lassign $case group top tag generics negative capture regression
+##         set selected [expr {$selection eq "all" || ($selection eq "regression" && $regression) || ($selection eq "waveforms" && $capture) || ($selection eq $top && !$regression)}]
+##         if {!$selected} {continue}
+##         incr executed
+##         set out [file join $root Results Phase3 $group]
+##         file mkdir [file join $out logs] [file join $out reports cases]
+##         set_property top $top [get_filesets sim_1]
+##         set_property generic $generics [get_filesets sim_1]
+##         update_compile_order -fileset sim_1
+##         set simdir [file join $project_dir phase3.sim sim_1 behav xsim]
+##         set simlog [file join $simdir simulate.log]
+##         if {[file exists $simlog]} {file delete $simlog}
+##         puts "=== PHASE 3: $tag ==="
+##         set size 0
+##         set problem [catch {
+##             launch_simulation -simset sim_1 -mode behavioral
+##             if {!$negative} {
+##                 if {$capture} {phase3_wave_begin [file join $out waveforms] $top $tag}
+##                 set finished 0
+##                 for {set step 0} {$step<20000} {incr step} {
+##                     if {[string tolower [get_value /$top/test_done]] in {true 1}} {set finished 1; break}
+##                     run 1 us
+##                 }
+##                 if {!$finished} {error "Simulation timeout without test_done"}
+##                 if {$capture} {save_wave_config [file join $out waveforms $tag.wcfg]}
+##             }
+##         } message]
+##         catch {close_vcd}
+##         catch {close_sim}
+##         set text ""
+##         if {[file exists $simlog]} {
+##             file copy -force $simlog [file join $out logs $tag.log]
+##             if {$capture} {file copy -force $simlog [file join $out waveforms $tag.log]}
+##             set f [open $simlog r]; set text [read $f]; close $f
+##         }
+##         foreach filename {xvhdl.log elaborate.log} {
+##             set src [file join $simdir $filename]
+##             if {[file exists $src]} {file copy -force $src [file join $out logs [format "%s_%s" $tag $filename]]}
+##         }
+##         set complete [regexp [format {[[]TB_COMPLETE[]] %s at ([^[:cntrl:]]+)} $top] $text whole duration]
+##         set result FAIL
+##         if {$negative} {
+##             set duration {0 ns}
+##             if {[regexp {[[]CONFIG_ERROR[]]} $text] && !$complete && ![regexp {[[]FAIL[]]} $text]} {set result PASS}
+##         } elseif {!$problem && $complete && ![regexp {[[]FAIL[]]|Failure:|Fatal:|ERROR:} $text]} {
+##             set result PASS
+##             if {$capture} {
+##                 if {[catch {set size [phase3_wave_finish [file join $out waveforms] $top $tag $simdir]} why]} {
+##                     set result FAIL; set message $why
+##                 }
+##             }
+##         }
+##         if {$result eq "FAIL"} {
+##             incr failed; set duration UNKNOWN
+##             set f [open [file join $out logs [format "%s_runner_error.log" $tag]] w]
+##             puts $f $message; close $f
+##             puts stderr "[format {FAIL: %s -- %s} $tag $message]"
+##         }
+##         set f [open [file join $out reports cases $tag.csv] w]
+##         puts $f "Case,Testbench,ExpectedNegative,Regression,Capture,Result,CompletionTime,WDBBytes"
+##         puts $f "$tag,$top,$negative,$regression,$capture,$result,$duration,$size"
+##         close $f
+##         puts "RESULT: $result -- $tag -- $duration"
+##     }
+##     close_project
+##     if {$failed} {error "$failed of $executed Phase 3 cases failed"}
+##     puts "PHASE 3 RESULT: PASS ($executed cases)"
+## }
+# if {[catch {phase3_run tb_swap_controller} message]} {
+#     puts stderr [format {[FAIL] %s} $message]
+#     if {[info exists ::env(PHASE3_GUI)]} {error $message} else {exit 1}
+# }
+Calculated 69 simulation cases from exact schedule optimization.
+## set phase3_cases {}
+## lappend phase3_cases [list Swap tb_swap_controller tb_swap_controller_L64_B0_N4 [list CHAIN_LENGTH=64 BETA=0 NUM_CHAINS=4 INITIAL_POSITION=0] 0 0 0]
+## lappend phase3_cases [list Swap tb_swap_controller tb_swap_controller_L64_B16_N4 [list CHAIN_LENGTH=64 BETA=16 NUM_CHAINS=4 INITIAL_POSITION=0] 0 1 0]
+## lappend phase3_cases [list Swap tb_swap_controller tb_swap_controller_L64_B18_N4 [list CHAIN_LENGTH=64 BETA=18 NUM_CHAINS=4 INITIAL_POSITION=0] 0 0 0]
+## lappend phase3_cases [list Swap tb_swap_controller tb_swap_controller_L128_B16_N4 [list CHAIN_LENGTH=128 BETA=16 NUM_CHAINS=4 INITIAL_POSITION=0] 0 0 0]
+## lappend phase3_cases [list Swap tb_swap_controller tb_swap_controller_L200_B32_N4 [list CHAIN_LENGTH=200 BETA=32 NUM_CHAINS=4 INITIAL_POSITION=0] 0 0 0]
+## lappend phase3_cases [list Swap tb_swap_controller tb_swap_controller_L28_B0_N1 [list CHAIN_LENGTH=28 BETA=0 NUM_CHAINS=1 INITIAL_POSITION=0] 0 0 0]
+## lappend phase3_cases [list Swap tb_swap_controller tb_swap_controller_L64_B16_N3 [list CHAIN_LENGTH=64 BETA=16 NUM_CHAINS=3 INITIAL_POSITION=0] 0 0 0]
+## lappend phase3_cases [list Swap tb_swap_controller tb_swap_controller_L65_B16_N4 [list CHAIN_LENGTH=65 BETA=16 NUM_CHAINS=4 INITIAL_POSITION=0] 1 0 0]
+## lappend phase3_cases [list Swap tb_swap_controller tb_swap_controller_L64_B19_N4 [list CHAIN_LENGTH=64 BETA=19 NUM_CHAINS=4 INITIAL_POSITION=0] 1 0 0]
+## lappend phase3_cases [list Swap tb_swap_controller tb_swap_controller_L64_B65_N4 [list CHAIN_LENGTH=64 BETA=65 NUM_CHAINS=4 INITIAL_POSITION=0] 1 0 0]
+## lappend phase3_cases [list Swap tb_swap_controller tb_swap_controller_L1_B0_N4 [list CHAIN_LENGTH=1 BETA=0 NUM_CHAINS=4 INITIAL_POSITION=0] 1 0 0]
+## lappend phase3_cases [list Swap tb_swap_controller tb_swap_controller_L64_B16_N17 [list CHAIN_LENGTH=64 BETA=16 NUM_CHAINS=17 INITIAL_POSITION=0] 1 0 0]
+## lappend phase3_cases [list Swap tb_swap_integration tb_swap_integration_L64_B16_N4 [list CHAIN_LENGTH=64 BETA=16 NUM_CHAINS=4 PATTERNS=1024] 0 1 0]
+## lappend phase3_cases [list Swap tb_swap_integration tb_swap_integration_L128_B16_N4 [list CHAIN_LENGTH=128 BETA=16 NUM_CHAINS=4 PATTERNS=1024] 0 0 0]
+## lappend phase3_cases [list Swap tb_swap_integration tb_swap_integration_L200_B32_N4 [list CHAIN_LENGTH=200 BETA=32 NUM_CHAINS=4 PATTERNS=1024] 0 0 0]
+## lappend phase3_cases [list Moving tb_moving_controller tb_moving_controller_L64_B0_N4 [list CHAIN_LENGTH=64 BETA=0 NUM_CHAINS=4 INITIAL_POSITION=0] 0 0 0]
+## lappend phase3_cases [list Moving tb_moving_controller tb_moving_controller_L64_B16_N4 [list CHAIN_LENGTH=64 BETA=16 NUM_CHAINS=4 INITIAL_POSITION=0] 0 1 0]
+## lappend phase3_cases [list Moving tb_moving_controller tb_moving_controller_L64_B36_N4 [list CHAIN_LENGTH=64 BETA=36 NUM_CHAINS=4 INITIAL_POSITION=0] 0 0 0]
+## lappend phase3_cases [list Moving tb_moving_controller tb_moving_controller_L128_B16_N4 [list CHAIN_LENGTH=128 BETA=16 NUM_CHAINS=4 INITIAL_POSITION=0] 0 0 0]
+## lappend phase3_cases [list Moving tb_moving_controller tb_moving_controller_L200_B32_N4 [list CHAIN_LENGTH=200 BETA=32 NUM_CHAINS=4 INITIAL_POSITION=0] 0 0 0]
+## lappend phase3_cases [list Moving tb_moving_controller tb_moving_controller_L28_B0_N1 [list CHAIN_LENGTH=28 BETA=0 NUM_CHAINS=1 INITIAL_POSITION=0] 0 0 0]
+## lappend phase3_cases [list Moving tb_moving_controller tb_moving_controller_L65_B17_N4 [list CHAIN_LENGTH=65 BETA=17 NUM_CHAINS=4 INITIAL_POSITION=0] 0 0 0]
+## lappend phase3_cases [list Moving tb_moving_controller tb_moving_controller_L64_B16_N4_I5 [list CHAIN_LENGTH=64 BETA=16 NUM_CHAINS=4 INITIAL_POSITION=5] 0 0 0]
+## lappend phase3_cases [list Moving tb_moving_controller tb_moving_controller_L64_B37_N4 [list CHAIN_LENGTH=64 BETA=37 NUM_CHAINS=4 INITIAL_POSITION=0] 1 0 0]
+## lappend phase3_cases [list Moving tb_moving_controller tb_moving_controller_L64_B65_N4 [list CHAIN_LENGTH=64 BETA=65 NUM_CHAINS=4 INITIAL_POSITION=0] 1 0 0]
+## lappend phase3_cases [list Moving tb_moving_controller tb_moving_controller_L1_B0_N4 [list CHAIN_LENGTH=1 BETA=0 NUM_CHAINS=4 INITIAL_POSITION=0] 1 0 0]
+## lappend phase3_cases [list Moving tb_moving_controller tb_moving_controller_L64_B16_N4_I21 [list CHAIN_LENGTH=64 BETA=16 NUM_CHAINS=4 INITIAL_POSITION=21] 1 0 0]
+## lappend phase3_cases [list Moving tb_moving_controller tb_moving_controller_L64_B16_N17 [list CHAIN_LENGTH=64 BETA=16 NUM_CHAINS=17 INITIAL_POSITION=0] 1 0 0]
+## lappend phase3_cases [list Moving tb_moving_integration tb_moving_integration_L64_B16_N4 [list CHAIN_LENGTH=64 BETA=16 NUM_CHAINS=4 PATTERNS=1024] 0 1 0]
+## lappend phase3_cases [list Moving tb_moving_integration tb_moving_integration_L128_B16_N4 [list CHAIN_LENGTH=128 BETA=16 NUM_CHAINS=4 PATTERNS=1024] 0 0 0]
+## lappend phase3_cases [list Moving tb_moving_integration tb_moving_integration_L200_B32_N4 [list CHAIN_LENGTH=200 BETA=32 NUM_CHAINS=4 PATTERNS=1024] 0 0 0]
+## lappend phase3_cases [list Comparison tb_phase3_comparison tb_phase3_comparison_L64_T10 [list CHAIN_LENGTH=64 NUM_CHAINS=4 PATTERNS=1024 TARGET_PERCENT=10 BASIC_BETA=4 SWAP_BETA=4 MOVING_BETA=4] 0 0 0]
+## lappend phase3_cases [list Comparison tb_phase3_comparison tb_phase3_comparison_L64_T15 [list CHAIN_LENGTH=64 NUM_CHAINS=4 PATTERNS=1024 TARGET_PERCENT=15 BASIC_BETA=12 SWAP_BETA=12 MOVING_BETA=12] 0 0 0]
+## lappend phase3_cases [list Comparison tb_phase3_comparison tb_phase3_comparison_L64_T20 [list CHAIN_LENGTH=64 NUM_CHAINS=4 PATTERNS=1024 TARGET_PERCENT=20 BASIC_BETA=20 SWAP_BETA=18 MOVING_BETA=19] 0 1 0]
+## lappend phase3_cases [list Comparison tb_phase3_comparison tb_phase3_comparison_L64_T25 [list CHAIN_LENGTH=64 NUM_CHAINS=4 PATTERNS=1024 TARGET_PERCENT=25 BASIC_BETA=26 SWAP_BETA=18 MOVING_BETA=27] 0 0 0]
+## lappend phase3_cases [list Comparison tb_phase3_comparison tb_phase3_comparison_L64_T30 [list CHAIN_LENGTH=64 NUM_CHAINS=4 PATTERNS=1024 TARGET_PERCENT=30 BASIC_BETA=34 SWAP_BETA=18 MOVING_BETA=34] 0 0 0]
+## lappend phase3_cases [list Comparison tb_phase3_comparison tb_phase3_comparison_L128_T10 [list CHAIN_LENGTH=128 NUM_CHAINS=4 PATTERNS=1024 TARGET_PERCENT=10 BASIC_BETA=8 SWAP_BETA=9 MOVING_BETA=9] 0 0 0]
+## lappend phase3_cases [list Comparison tb_phase3_comparison tb_phase3_comparison_L128_T15 [list CHAIN_LENGTH=128 NUM_CHAINS=4 PATTERNS=1024 TARGET_PERCENT=15 BASIC_BETA=24 SWAP_BETA=23 MOVING_BETA=23] 0 0 0]
+## lappend phase3_cases [list Comparison tb_phase3_comparison tb_phase3_comparison_L128_T20 [list CHAIN_LENGTH=128 NUM_CHAINS=4 PATTERNS=1024 TARGET_PERCENT=20 BASIC_BETA=38 SWAP_BETA=38 MOVING_BETA=38] 0 0 0]
+## lappend phase3_cases [list Comparison tb_phase3_comparison tb_phase3_comparison_L128_T25 [list CHAIN_LENGTH=128 NUM_CHAINS=4 PATTERNS=1024 TARGET_PERCENT=25 BASIC_BETA=54 SWAP_BETA=50 MOVING_BETA=53] 0 0 0]
+## lappend phase3_cases [list Comparison tb_phase3_comparison tb_phase3_comparison_L128_T30 [list CHAIN_LENGTH=128 NUM_CHAINS=4 PATTERNS=1024 TARGET_PERCENT=30 BASIC_BETA=68 SWAP_BETA=50 MOVING_BETA=68] 0 0 0]
+## lappend phase3_cases [list Comparison tb_phase3_comparison tb_phase3_comparison_L200_T10 [list CHAIN_LENGTH=200 NUM_CHAINS=4 PATTERNS=1024 TARGET_PERCENT=10 BASIC_BETA=14 SWAP_BETA=13 MOVING_BETA=13] 0 0 0]
+## lappend phase3_cases [list Comparison tb_phase3_comparison tb_phase3_comparison_L200_T15 [list CHAIN_LENGTH=200 NUM_CHAINS=4 PATTERNS=1024 TARGET_PERCENT=15 BASIC_BETA=36 SWAP_BETA=37 MOVING_BETA=37] 0 0 0]
+## lappend phase3_cases [list Comparison tb_phase3_comparison tb_phase3_comparison_L200_T20 [list CHAIN_LENGTH=200 NUM_CHAINS=4 PATTERNS=1024 TARGET_PERCENT=20 BASIC_BETA=60 SWAP_BETA=60 MOVING_BETA=60] 0 0 0]
+## lappend phase3_cases [list Comparison tb_phase3_comparison tb_phase3_comparison_L200_T25 [list CHAIN_LENGTH=200 NUM_CHAINS=4 PATTERNS=1024 TARGET_PERCENT=25 BASIC_BETA=84 SWAP_BETA=83 MOVING_BETA=83] 0 0 0]
+## lappend phase3_cases [list Comparison tb_phase3_comparison tb_phase3_comparison_L200_T30 [list CHAIN_LENGTH=200 NUM_CHAINS=4 PATTERNS=1024 TARGET_PERCENT=30 BASIC_BETA=106 SWAP_BETA=86 MOVING_BETA=107] 0 0 0]
+## lappend phase3_cases [list Comparison tb_lfsr_16 regression_tb_lfsr_16 [list ] 0 0 1]
+## lappend phase3_cases [list Comparison tb_phase_shifter regression_tb_phase_shifter [list ] 0 0 1]
+## lappend phase3_cases [list Comparison tb_plpf_optimized regression_tb_plpf_optimized [list ] 0 0 1]
+## lappend phase3_cases [list Comparison tb_plpf_dynamic regression_tb_plpf_dynamic [list ] 0 0 1]
+## lappend phase3_cases [list Comparison tb_phase2_integration regression_tb_phase2_integration [list ] 0 0 1]
+## lappend phase3_cases [list Comparison tb_basic_controller regression_basic_unit_L64_B0 [list CHAIN_LENGTH=64 BETA=0] 0 0 1]
+## lappend phase3_cases [list Comparison tb_basic_controller regression_basic_unit_L64_B8 [list CHAIN_LENGTH=64 BETA=8] 0 0 1]
+## lappend phase3_cases [list Comparison tb_basic_controller regression_basic_unit_L64_B16 [list CHAIN_LENGTH=64 BETA=16] 0 0 1]
+## lappend phase3_cases [list Comparison tb_basic_controller regression_basic_unit_L64_B20 [list CHAIN_LENGTH=64 BETA=20] 0 0 1]
+## lappend phase3_cases [list Comparison tb_basic_controller regression_basic_unit_L64_B28 [list CHAIN_LENGTH=64 BETA=28] 0 0 1]
+## lappend phase3_cases [list Comparison tb_basic_controller regression_basic_unit_L64_B36 [list CHAIN_LENGTH=64 BETA=36] 0 0 1]
+## lappend phase3_cases [list Comparison tb_basic_controller regression_basic_unit_L28_B0 [list CHAIN_LENGTH=28 BETA=0] 0 0 1]
+## lappend phase3_cases [list Comparison tb_basic_controller regression_basic_unit_L65_B21 [list CHAIN_LENGTH=65 BETA=21] 0 0 1]
+## lappend phase3_cases [list Comparison tb_basic_controller regression_basic_unit_L64_B1 [list CHAIN_LENGTH=64 BETA=1] 1 0 1]
+## lappend phase3_cases [list Comparison tb_basic_controller regression_basic_unit_L64_B65 [list CHAIN_LENGTH=64 BETA=65] 1 0 1]
+## lappend phase3_cases [list Comparison tb_basic_controller regression_basic_unit_L1_B0 [list CHAIN_LENGTH=1 BETA=0] 1 0 1]
+## lappend phase3_cases [list Comparison tb_basic_controller regression_basic_unit_L64_B38 [list CHAIN_LENGTH=64 BETA=38] 1 0 1]
+## lappend phase3_cases [list Comparison tb_basic_integration regression_basic_integration_B0 [list CHAIN_LENGTH=64 BETA=0] 0 0 1]
+## lappend phase3_cases [list Comparison tb_basic_integration regression_basic_integration_B8 [list CHAIN_LENGTH=64 BETA=8] 0 0 1]
+## lappend phase3_cases [list Comparison tb_basic_integration regression_basic_integration_B16 [list CHAIN_LENGTH=64 BETA=16] 0 0 1]
+## lappend phase3_cases [list Comparison tb_basic_integration regression_basic_integration_B20 [list CHAIN_LENGTH=64 BETA=20] 0 0 1]
+## lappend phase3_cases [list Comparison tb_basic_integration regression_basic_integration_B28 [list CHAIN_LENGTH=64 BETA=28] 0 0 1]
+## lappend phase3_cases [list Comparison tb_basic_integration regression_basic_integration_B36 [list CHAIN_LENGTH=64 BETA=36] 0 0 1]
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller'
+create_project: Time (s): cpu = 00:00:23 ; elapsed = 00:00:15 . Memory (MB): peak = 498.730 ; gain = 211.668
+update_compile_order: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 498.730 ; gain = 0.000
+=== PHASE 3: tb_swap_controller_L64_B0_N4 ===
+Command: launch_simulation  -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_swap_controller'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_swap_controller' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_swap_controller_vhdl.prj"
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/moving_controller.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'moving_controller'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase2_tb_pkg.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_tb_pkg.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/swap_controller.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'swap_controller'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'phase3_controller_check'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_swap_controller.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'tb_swap_controller'
+
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -generic_top "CHAIN_LENGTH=64" -generic_top "BETA=0" -generic_top "NUM_CHAINS=4" -generic_top "INITIAL_POSITION=0" -L xil_defaultlib -L secureip --snapshot tb_swap_controller_behav xil_defaultlib.tb_swap_controller -log elaborate.log"
+
+Vivado Simulator v2025.1.1
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -generic_top CHAIN_LENGTH=64 -generic_top BETA=0 -generic_top NUM_CHAINS=4 -generic_top INITIAL_POSITION=0 -L xil_defaultlib -L secureip --snapshot tb_swap_controller_behav xil_defaultlib.tb_swap_controller -log elaborate.log 
+
+Using 2 slave threads.
+
+Starting static elaboration
+
+Completed static elaboration
+
+Starting simulation data flow analysis
+
+Completed simulation data flow analysis
+
+Time Resolution for simulation is 1ps
+
+Compiling package std.standard
+
+Compiling package std.textio
+
+Compiling package ieee.std_logic_1164
+
+Compiling package ieee.numeric_std
+
+Compiling package xil_defaultlib.phase2_tb_pkg
+
+Compiling package xil_defaultlib.phase3_tb_pkg
+
+Compiling architecture rtl of entity xil_defaultlib.swap_controller [\swap_controller(beta=0)\]
+
+Compiling architecture test of entity xil_defaultlib.phase3_controller_check [\phase3_controller_check(beta=0)...]
+
+Compiling architecture test of entity xil_defaultlib.tb_swap_controller
+
+Built simulation snapshot tb_swap_controller_behav
+
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 504.398 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_swap_controller_behav -key {Behavioral:sim_1:Functional:tb_swap_controller} -tclbatch {tb_swap_controller.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_swap_controller.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_swap_controller_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:22 . Memory (MB): peak = 504.398 ; gain = 5.668
+Note: [PASS] swap SC01/MC01 reset and initial region
+Time: 1100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [PASS] SC02..SC09 / MC02..MC08 all modes, regions, odd/even patterns/chains, movement and wrap
+Time: 32787100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [PASS] SC10..SC12/SC14/SC15 / MC09/MC11/MC12/MC14/MC15 pause, 256 patterns, no extra cycles
+Time: 32787100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [PASS] SC11/MC10 synchronous mid-pattern reset
+Time: 32801100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [UNIT_COMPLETE] swap at 32801100 ps
+Time: 32801100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [TB_COMPLETE] tb_swap_controller at 32801100 ps
+Time: 32801100 ps  Iteration: 2  Process: /tb_swap_controller/completion  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_swap_controller.vhd
+INFO: [Simtcl 6-16] Simulation closed
+RESULT: PASS -- tb_swap_controller_L64_B0_N4 -- 32801100 ps
+update_compile_order: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 520.219 ; gain = 0.000
+=== PHASE 3: tb_swap_controller_L64_B16_N4 ===
+Command: launch_simulation  -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_swap_controller'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_swap_controller' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_swap_controller_vhdl.prj"
+
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -generic_top "CHAIN_LENGTH=64" -generic_top "BETA=16" -generic_top "NUM_CHAINS=4" -generic_top "INITIAL_POSITION=0" -L xil_defaultlib -L secureip --snapshot tb_swap_controller_behav xil_defaultlib.tb_swap_controller -log elaborate.log"
+
+Vivado Simulator v2025.1.1
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -generic_top CHAIN_LENGTH=64 -generic_top BETA=16 -generic_top NUM_CHAINS=4 -generic_top INITIAL_POSITION=0 -L xil_defaultlib -L secureip --snapshot tb_swap_controller_behav xil_defaultlib.tb_swap_controller -log elaborate.log 
+
+Using 2 slave threads.
+
+Starting static elaboration
+
+Completed static elaboration
+
+Starting simulation data flow analysis
+
+Completed simulation data flow analysis
+
+Time Resolution for simulation is 1ps
+
+Compiling package std.standard
+
+Compiling package std.textio
+
+Compiling package ieee.std_logic_1164
+
+Compiling package ieee.numeric_std
+
+Compiling package xil_defaultlib.phase2_tb_pkg
+
+Compiling package xil_defaultlib.phase3_tb_pkg
+
+Compiling architecture rtl of entity xil_defaultlib.swap_controller [swap_controller_default]
+
+Compiling architecture test of entity xil_defaultlib.phase3_controller_check [phase3_controller_check_default]
+
+Compiling architecture test of entity xil_defaultlib.tb_swap_controller
+
+Built simulation snapshot tb_swap_controller_behav
+
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 520.219 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_swap_controller_behav -key {Behavioral:sim_1:Functional:tb_swap_controller} -tclbatch {tb_swap_controller.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_swap_controller.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_swap_controller_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 520.219 ; gain = 0.000
+WARNING: [Simtcl 6-168] No object found for the given pattern.
+WARNING: [Simtcl 6-168] No object found for the given pattern.
+WARNING: [Simtcl 6-168] No object found for the given pattern.
+WARNING: [Simtcl 6-168] No object found for the given pattern.
+WARNING: [Simtcl 6-168] No object found for the given pattern.
+WARNING: [Simtcl 6-168] No object found for the given pattern.
+WARNING: [Simtcl 6-168] No object found for the given pattern.
+WARNING: [Simtcl 6-168] No object found for the given pattern.
+WARNING: [Simtcl 6-168] No object found for the given pattern.
+WARNING: [Simtcl 6-168] No object found for the given pattern.
+WARNING: [Simtcl 6-168] No object found for the given pattern.
+WARNING: [Simtcl 6-168] No object found for the given pattern.
+WARNING: [Simtcl 6-168] No object found for the given pattern.
+WARNING: [Simtcl 6-168] No object found for the given pattern.
+Note: [PASS] swap SC01/MC01 reset and initial region
+Time: 1100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [PASS] SC02..SC09 / MC02..MC08 all modes, regions, odd/even patterns/chains, movement and wrap
+Time: 32787100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [PASS] SC10..SC12/SC14/SC15 / MC09/MC11/MC12/MC14/MC15 pause, 256 patterns, no extra cycles
+Time: 32787100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [PASS] SC11/MC10 synchronous mid-pattern reset
+Time: 32801100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [UNIT_COMPLETE] swap at 32801100 ps
+Time: 32801100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [TB_COMPLETE] tb_swap_controller at 32801100 ps
+Time: 32801100 ps  Iteration: 2  Process: /tb_swap_controller/completion  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_swap_controller.vhd
+INFO: [Simtcl 6-16] Simulation closed
+RESULT: PASS -- tb_swap_controller_L64_B16_N4 -- 32801100 ps
+update_compile_order: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 520.219 ; gain = 0.000
+=== PHASE 3: tb_swap_controller_L64_B18_N4 ===
+Command: launch_simulation  -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_swap_controller'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_swap_controller' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_swap_controller_vhdl.prj"
+
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -generic_top "CHAIN_LENGTH=64" -generic_top "BETA=18" -generic_top "NUM_CHAINS=4" -generic_top "INITIAL_POSITION=0" -L xil_defaultlib -L secureip --snapshot tb_swap_controller_behav xil_defaultlib.tb_swap_controller -log elaborate.log"
+
+Vivado Simulator v2025.1.1
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -generic_top CHAIN_LENGTH=64 -generic_top BETA=18 -generic_top NUM_CHAINS=4 -generic_top INITIAL_POSITION=0 -L xil_defaultlib -L secureip --snapshot tb_swap_controller_behav xil_defaultlib.tb_swap_controller -log elaborate.log 
+
+Using 2 slave threads.
+
+Starting static elaboration
+
+Completed static elaboration
+
+Starting simulation data flow analysis
+
+Completed simulation data flow analysis
+
+Time Resolution for simulation is 1ps
+
+Compiling package std.standard
+
+Compiling package std.textio
+
+Compiling package ieee.std_logic_1164
+
+Compiling package ieee.numeric_std
+
+Compiling package xil_defaultlib.phase2_tb_pkg
+
+Compiling package xil_defaultlib.phase3_tb_pkg
+
+Compiling architecture rtl of entity xil_defaultlib.swap_controller [\swap_controller(beta=18)\]
+
+Compiling architecture test of entity xil_defaultlib.phase3_controller_check [\phase3_controller_check(beta=18...]
+
+Compiling architecture test of entity xil_defaultlib.tb_swap_controller
+
+Built simulation snapshot tb_swap_controller_behav
+
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 520.219 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_swap_controller_behav -key {Behavioral:sim_1:Functional:tb_swap_controller} -tclbatch {tb_swap_controller.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_swap_controller.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_swap_controller_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 520.219 ; gain = 0.000
+Note: [PASS] swap SC01/MC01 reset and initial region
+Time: 1100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [PASS] SC02..SC09 / MC02..MC08 all modes, regions, odd/even patterns/chains, movement and wrap
+Time: 32787100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [PASS] SC10..SC12/SC14/SC15 / MC09/MC11/MC12/MC14/MC15 pause, 256 patterns, no extra cycles
+Time: 32787100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [PASS] SC11/MC10 synchronous mid-pattern reset
+Time: 32801100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [UNIT_COMPLETE] swap at 32801100 ps
+Time: 32801100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [TB_COMPLETE] tb_swap_controller at 32801100 ps
+Time: 32801100 ps  Iteration: 2  Process: /tb_swap_controller/completion  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_swap_controller.vhd
+INFO: [Simtcl 6-16] Simulation closed
+RESULT: PASS -- tb_swap_controller_L64_B18_N4 -- 32801100 ps
+update_compile_order: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 520.219 ; gain = 0.000
+=== PHASE 3: tb_swap_controller_L128_B16_N4 ===
+Command: launch_simulation  -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_swap_controller'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_swap_controller' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_swap_controller_vhdl.prj"
+
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -generic_top "CHAIN_LENGTH=128" -generic_top "BETA=16" -generic_top "NUM_CHAINS=4" -generic_top "INITIAL_POSITION=0" -L xil_defaultlib -L secureip --snapshot tb_swap_controller_behav xil_defaultlib.tb_swap_controller -log elaborate.log"
+
+Vivado Simulator v2025.1.1
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -generic_top CHAIN_LENGTH=128 -generic_top BETA=16 -generic_top NUM_CHAINS=4 -generic_top INITIAL_POSITION=0 -L xil_defaultlib -L secureip --snapshot tb_swap_controller_behav xil_defaultlib.tb_swap_controller -log elaborate.log 
+
+Using 2 slave threads.
+
+Starting static elaboration
+
+Completed static elaboration
+
+Starting simulation data flow analysis
+
+Completed simulation data flow analysis
+
+Time Resolution for simulation is 1ps
+
+Compiling package std.standard
+
+Compiling package std.textio
+
+Compiling package ieee.std_logic_1164
+
+Compiling package ieee.numeric_std
+
+Compiling package xil_defaultlib.phase2_tb_pkg
+
+Compiling package xil_defaultlib.phase3_tb_pkg
+
+Compiling architecture rtl of entity xil_defaultlib.swap_controller [\swap_controller(chain_length=12...]
+
+Compiling architecture test of entity xil_defaultlib.phase3_controller_check [\phase3_controller_check(chain_l...]
+
+Compiling architecture test of entity xil_defaultlib.tb_swap_controller
+
+Built simulation snapshot tb_swap_controller_behav
+
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 520.219 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_swap_controller_behav -key {Behavioral:sim_1:Functional:tb_swap_controller} -tclbatch {tb_swap_controller.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_swap_controller.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_swap_controller_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 520.219 ; gain = 0.000
+Note: [PASS] swap SC01/MC01 reset and initial region
+Time: 1100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [PASS] SC02..SC09 / MC02..MC08 all modes, regions, odd/even patterns/chains, movement and wrap
+Time: 65555100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [PASS] SC10..SC12/SC14/SC15 / MC09/MC11/MC12/MC14/MC15 pause, 256 patterns, no extra cycles
+Time: 65555100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [PASS] SC11/MC10 synchronous mid-pattern reset
+Time: 65569100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [UNIT_COMPLETE] swap at 65569100 ps
+Time: 65569100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [TB_COMPLETE] tb_swap_controller at 65569100 ps
+Time: 65569100 ps  Iteration: 2  Process: /tb_swap_controller/completion  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_swap_controller.vhd
+INFO: [Simtcl 6-16] Simulation closed
+RESULT: PASS -- tb_swap_controller_L128_B16_N4 -- 65569100 ps
+update_compile_order: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 520.219 ; gain = 0.000
+=== PHASE 3: tb_swap_controller_L200_B32_N4 ===
+Command: launch_simulation  -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_swap_controller'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_swap_controller' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_swap_controller_vhdl.prj"
+
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -generic_top "CHAIN_LENGTH=200" -generic_top "BETA=32" -generic_top "NUM_CHAINS=4" -generic_top "INITIAL_POSITION=0" -L xil_defaultlib -L secureip --snapshot tb_swap_controller_behav xil_defaultlib.tb_swap_controller -log elaborate.log"
+
+Vivado Simulator v2025.1.1
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -generic_top CHAIN_LENGTH=200 -generic_top BETA=32 -generic_top NUM_CHAINS=4 -generic_top INITIAL_POSITION=0 -L xil_defaultlib -L secureip --snapshot tb_swap_controller_behav xil_defaultlib.tb_swap_controller -log elaborate.log 
+
+Using 2 slave threads.
+
+Starting static elaboration
+
+Completed static elaboration
+
+Starting simulation data flow analysis
+
+Completed simulation data flow analysis
+
+Time Resolution for simulation is 1ps
+
+Compiling package std.standard
+
+Compiling package std.textio
+
+Compiling package ieee.std_logic_1164
+
+Compiling package ieee.numeric_std
+
+Compiling package xil_defaultlib.phase2_tb_pkg
+
+Compiling package xil_defaultlib.phase3_tb_pkg
+
+Compiling architecture rtl of entity xil_defaultlib.swap_controller [\swap_controller(chain_length=20...]
+
+Compiling architecture test of entity xil_defaultlib.phase3_controller_check [\phase3_controller_check(chain_l...]
+
+Compiling architecture test of entity xil_defaultlib.tb_swap_controller
+
+Built simulation snapshot tb_swap_controller_behav
+
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 520.219 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_swap_controller_behav -key {Behavioral:sim_1:Functional:tb_swap_controller} -tclbatch {tb_swap_controller.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_swap_controller.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_swap_controller_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 520.219 ; gain = 0.000
+Note: [PASS] swap SC01/MC01 reset and initial region
+Time: 1100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [PASS] SC02..SC09 / MC02..MC08 all modes, regions, odd/even patterns/chains, movement and wrap
+Time: 102419100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [PASS] SC10..SC12/SC14/SC15 / MC09/MC11/MC12/MC14/MC15 pause, 256 patterns, no extra cycles
+Time: 102419100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [PASS] SC11/MC10 synchronous mid-pattern reset
+Time: 102433100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [UNIT_COMPLETE] swap at 102433100 ps
+Time: 102433100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [TB_COMPLETE] tb_swap_controller at 102433100 ps
+Time: 102433100 ps  Iteration: 2  Process: /tb_swap_controller/completion  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_swap_controller.vhd
+INFO: [Simtcl 6-16] Simulation closed
+RESULT: PASS -- tb_swap_controller_L200_B32_N4 -- 102433100 ps
+=== PHASE 3: tb_swap_controller_L28_B0_N1 ===
+Command: launch_simulation  -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_swap_controller'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_swap_controller' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_swap_controller_vhdl.prj"
+
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -generic_top "CHAIN_LENGTH=28" -generic_top "BETA=0" -generic_top "NUM_CHAINS=1" -generic_top "INITIAL_POSITION=0" -L xil_defaultlib -L secureip --snapshot tb_swap_controller_behav xil_defaultlib.tb_swap_controller -log elaborate.log"
+
+Vivado Simulator v2025.1.1
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -generic_top CHAIN_LENGTH=28 -generic_top BETA=0 -generic_top NUM_CHAINS=1 -generic_top INITIAL_POSITION=0 -L xil_defaultlib -L secureip --snapshot tb_swap_controller_behav xil_defaultlib.tb_swap_controller -log elaborate.log 
+
+Using 2 slave threads.
+
+Starting static elaboration
+
+Completed static elaboration
+
+Starting simulation data flow analysis
+
+Completed simulation data flow analysis
+
+Time Resolution for simulation is 1ps
+
+Compiling package std.standard
+
+Compiling package std.textio
+
+Compiling package ieee.std_logic_1164
+
+Compiling package ieee.numeric_std
+
+Compiling package xil_defaultlib.phase2_tb_pkg
+
+Compiling package xil_defaultlib.phase3_tb_pkg
+
+Compiling architecture rtl of entity xil_defaultlib.swap_controller [\swap_controller(chain_length=28...]
+
+Compiling architecture test of entity xil_defaultlib.phase3_controller_check [\phase3_controller_check(chain_l...]
+
+Compiling architecture test of entity xil_defaultlib.tb_swap_controller
+
+Built simulation snapshot tb_swap_controller_behav
+
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 520.219 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_swap_controller_behav -key {Behavioral:sim_1:Functional:tb_swap_controller} -tclbatch {tb_swap_controller.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_swap_controller.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_swap_controller_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 520.219 ; gain = 0.000
+Note: [PASS] swap SC01/MC01 reset and initial region
+Time: 1100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [PASS] SC02..SC09 / MC02..MC08 all modes, regions, odd/even patterns/chains, movement and wrap
+Time: 14349100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [PASS] SC10..SC12/SC14/SC15 / MC09/MC11/MC12/MC14/MC15 pause, 256 patterns, no extra cycles
+Time: 14349100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [PASS] SC11/MC10 synchronous mid-pattern reset
+Time: 14363100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [UNIT_COMPLETE] swap at 14363100 ps
+Time: 14363100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [TB_COMPLETE] tb_swap_controller at 14363100 ps
+Time: 14363100 ps  Iteration: 2  Process: /tb_swap_controller/completion  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_swap_controller.vhd
+INFO: [Simtcl 6-16] Simulation closed
+RESULT: PASS -- tb_swap_controller_L28_B0_N1 -- 14363100 ps
+update_compile_order: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 520.219 ; gain = 0.000
+=== PHASE 3: tb_swap_controller_L64_B16_N3 ===
+Command: launch_simulation  -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_swap_controller'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_swap_controller' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_swap_controller_vhdl.prj"
+
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -generic_top "CHAIN_LENGTH=64" -generic_top "BETA=16" -generic_top "NUM_CHAINS=3" -generic_top "INITIAL_POSITION=0" -L xil_defaultlib -L secureip --snapshot tb_swap_controller_behav xil_defaultlib.tb_swap_controller -log elaborate.log"
+
+Vivado Simulator v2025.1.1
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -generic_top CHAIN_LENGTH=64 -generic_top BETA=16 -generic_top NUM_CHAINS=3 -generic_top INITIAL_POSITION=0 -L xil_defaultlib -L secureip --snapshot tb_swap_controller_behav xil_defaultlib.tb_swap_controller -log elaborate.log 
+
+Using 2 slave threads.
+
+Starting static elaboration
+
+Completed static elaboration
+
+Starting simulation data flow analysis
+
+Completed simulation data flow analysis
+
+Time Resolution for simulation is 1ps
+
+Compiling package std.standard
+
+Compiling package std.textio
+
+Compiling package ieee.std_logic_1164
+
+Compiling package ieee.numeric_std
+
+Compiling package xil_defaultlib.phase2_tb_pkg
+
+Compiling package xil_defaultlib.phase3_tb_pkg
+
+Compiling architecture rtl of entity xil_defaultlib.swap_controller [\swap_controller(num_chains=3)\]
+
+Compiling architecture test of entity xil_defaultlib.phase3_controller_check [\phase3_controller_check(num_cha...]
+
+Compiling architecture test of entity xil_defaultlib.tb_swap_controller
+
+Built simulation snapshot tb_swap_controller_behav
+
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 520.219 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_swap_controller_behav -key {Behavioral:sim_1:Functional:tb_swap_controller} -tclbatch {tb_swap_controller.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_swap_controller.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_swap_controller_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 520.219 ; gain = 0.000
+Note: [PASS] swap SC01/MC01 reset and initial region
+Time: 1100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [PASS] SC02..SC09 / MC02..MC08 all modes, regions, odd/even patterns/chains, movement and wrap
+Time: 32787100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [PASS] SC10..SC12/SC14/SC15 / MC09/MC11/MC12/MC14/MC15 pause, 256 patterns, no extra cycles
+Time: 32787100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [PASS] SC11/MC10 synchronous mid-pattern reset
+Time: 32801100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [UNIT_COMPLETE] swap at 32801100 ps
+Time: 32801100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [TB_COMPLETE] tb_swap_controller at 32801100 ps
+Time: 32801100 ps  Iteration: 2  Process: /tb_swap_controller/completion  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_swap_controller.vhd
+INFO: [Simtcl 6-16] Simulation closed
+RESULT: PASS -- tb_swap_controller_L64_B16_N3 -- 32801100 ps
+update_compile_order: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 520.219 ; gain = 0.000
+=== PHASE 3: tb_swap_controller_L65_B16_N4 ===
+Command: launch_simulation  -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_swap_controller'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_swap_controller' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_swap_controller_vhdl.prj"
+
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -generic_top "CHAIN_LENGTH=65" -generic_top "BETA=16" -generic_top "NUM_CHAINS=4" -generic_top "INITIAL_POSITION=0" -L xil_defaultlib -L secureip --snapshot tb_swap_controller_behav xil_defaultlib.tb_swap_controller -log elaborate.log"
+
+Vivado Simulator v2025.1.1
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -generic_top CHAIN_LENGTH=65 -generic_top BETA=16 -generic_top NUM_CHAINS=4 -generic_top INITIAL_POSITION=0 -L xil_defaultlib -L secureip --snapshot tb_swap_controller_behav xil_defaultlib.tb_swap_controller -log elaborate.log 
+
+Using 2 slave threads.
+
+Starting static elaboration
+
+Completed static elaboration
+
+Starting simulation data flow analysis
+
+Completed simulation data flow analysis
+
+Time Resolution for simulation is 1ps
+
+Compiling package std.standard
+
+Compiling package std.textio
+
+Compiling package ieee.std_logic_1164
+
+Compiling package ieee.numeric_std
+
+Compiling package xil_defaultlib.phase2_tb_pkg
+
+Compiling package xil_defaultlib.phase3_tb_pkg
+
+Compiling architecture rtl of entity xil_defaultlib.swap_controller [\swap_controller(chain_length=65...]
+
+Compiling architecture test of entity xil_defaultlib.phase3_controller_check [\phase3_controller_check(chain_l...]
+
+Compiling architecture test of entity xil_defaultlib.tb_swap_controller
+
+Built simulation snapshot tb_swap_controller_behav
+
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 520.219 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_swap_controller_behav -key {Behavioral:sim_1:Functional:tb_swap_controller} -tclbatch {tb_swap_controller.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_swap_controller.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## run 0ns
+Failure: [CONFIG_ERROR] Swap requires even CHAIN_LENGTH in 28..4096
+Time: 0 ps  Iteration: 0  Process: /tb_swap_controller/engine/swap_dut/dut/line__22  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/swap_controller.vhd
+$finish called at time : 0 fs : File "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/swap_controller.vhd" Line 23
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_swap_controller_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:12 . Memory (MB): peak = 520.219 ; gain = 0.000
+INFO: [Simtcl 6-16] Simulation closed
+RESULT: PASS -- tb_swap_controller_L65_B16_N4 -- 0 ns
+update_compile_order: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 520.219 ; gain = 0.000
+=== PHASE 3: tb_swap_controller_L64_B19_N4 ===
+Command: launch_simulation  -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_swap_controller'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_swap_controller' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_swap_controller_vhdl.prj"
+
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -generic_top "CHAIN_LENGTH=64" -generic_top "BETA=19" -generic_top "NUM_CHAINS=4" -generic_top "INITIAL_POSITION=0" -L xil_defaultlib -L secureip --snapshot tb_swap_controller_behav xil_defaultlib.tb_swap_controller -log elaborate.log"
+
+Vivado Simulator v2025.1.1
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -generic_top CHAIN_LENGTH=64 -generic_top BETA=19 -generic_top NUM_CHAINS=4 -generic_top INITIAL_POSITION=0 -L xil_defaultlib -L secureip --snapshot tb_swap_controller_behav xil_defaultlib.tb_swap_controller -log elaborate.log 
+
+Using 2 slave threads.
+
+Starting static elaboration
+
+Completed static elaboration
+
+Starting simulation data flow analysis
+
+Completed simulation data flow analysis
+
+Time Resolution for simulation is 1ps
+
+Compiling package std.standard
+
+Compiling package std.textio
+
+Compiling package ieee.std_logic_1164
+
+Compiling package ieee.numeric_std
+
+Compiling package xil_defaultlib.phase2_tb_pkg
+
+Compiling package xil_defaultlib.phase3_tb_pkg
+
+Compiling architecture rtl of entity xil_defaultlib.swap_controller [\swap_controller(beta=19)\]
+
+Compiling architecture test of entity xil_defaultlib.phase3_controller_check [\phase3_controller_check(beta=19...]
+
+Compiling architecture test of entity xil_defaultlib.tb_swap_controller
+
+Built simulation snapshot tb_swap_controller_behav
+
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_swap_controller_behav -key {Behavioral:sim_1:Functional:tb_swap_controller} -tclbatch {tb_swap_controller.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_swap_controller.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## run 0ns
+Failure: [CONFIG_ERROR] Swap requires L/2-BETA>=14
+Time: 0 ps  Iteration: 0  Process: /tb_swap_controller/engine/swap_dut/dut/line__24  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/swap_controller.vhd
+$finish called at time : 0 fs : File "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/swap_controller.vhd" Line 24
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_swap_controller_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 520.219 ; gain = 0.000
+INFO: [Simtcl 6-16] Simulation closed
+RESULT: PASS -- tb_swap_controller_L64_B19_N4 -- 0 ns
+update_compile_order: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 520.219 ; gain = 0.000
+=== PHASE 3: tb_swap_controller_L64_B65_N4 ===
+Command: launch_simulation  -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_swap_controller'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_swap_controller' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_swap_controller_vhdl.prj"
+
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -generic_top "CHAIN_LENGTH=64" -generic_top "BETA=65" -generic_top "NUM_CHAINS=4" -generic_top "INITIAL_POSITION=0" -L xil_defaultlib -L secureip --snapshot tb_swap_controller_behav xil_defaultlib.tb_swap_controller -log elaborate.log"
+
+Vivado Simulator v2025.1.1
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -generic_top CHAIN_LENGTH=64 -generic_top BETA=65 -generic_top NUM_CHAINS=4 -generic_top INITIAL_POSITION=0 -L xil_defaultlib -L secureip --snapshot tb_swap_controller_behav xil_defaultlib.tb_swap_controller -log elaborate.log 
+
+Using 2 slave threads.
+
+Starting static elaboration
+
+Completed static elaboration
+
+Starting simulation data flow analysis
+
+Completed simulation data flow analysis
+
+Time Resolution for simulation is 1ps
+
+Compiling package std.standard
+
+Compiling package std.textio
+
+Compiling package ieee.std_logic_1164
+
+Compiling package ieee.numeric_std
+
+Compiling package xil_defaultlib.phase2_tb_pkg
+
+Compiling package xil_defaultlib.phase3_tb_pkg
+
+Compiling architecture rtl of entity xil_defaultlib.swap_controller [\swap_controller(beta=65)\]
+
+Compiling architecture test of entity xil_defaultlib.phase3_controller_check [\phase3_controller_check(beta=65...]
+
+Compiling architecture test of entity xil_defaultlib.tb_swap_controller
+
+Built simulation snapshot tb_swap_controller_behav
+
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 520.219 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_swap_controller_behav -key {Behavioral:sim_1:Functional:tb_swap_controller} -tclbatch {tb_swap_controller.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_swap_controller.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## run 0ns
+Failure: [CONFIG_ERROR] Swap requires L/2-BETA>=14
+Time: 0 ps  Iteration: 0  Process: /tb_swap_controller/engine/swap_dut/dut/line__24  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/swap_controller.vhd
+$finish called at time : 0 fs : File "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/swap_controller.vhd" Line 24
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_swap_controller_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 520.219 ; gain = 0.000
+INFO: [Simtcl 6-16] Simulation closed
+RESULT: PASS -- tb_swap_controller_L64_B65_N4 -- 0 ns
+update_compile_order: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 520.219 ; gain = 0.000
+=== PHASE 3: tb_swap_controller_L1_B0_N4 ===
+Command: launch_simulation  -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_swap_controller'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_swap_controller' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_swap_controller_vhdl.prj"
+
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -generic_top "CHAIN_LENGTH=1" -generic_top "BETA=0" -generic_top "NUM_CHAINS=4" -generic_top "INITIAL_POSITION=0" -L xil_defaultlib -L secureip --snapshot tb_swap_controller_behav xil_defaultlib.tb_swap_controller -log elaborate.log"
+
+Vivado Simulator v2025.1.1
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -generic_top CHAIN_LENGTH=1 -generic_top BETA=0 -generic_top NUM_CHAINS=4 -generic_top INITIAL_POSITION=0 -L xil_defaultlib -L secureip --snapshot tb_swap_controller_behav xil_defaultlib.tb_swap_controller -log elaborate.log 
+
+Using 2 slave threads.
+
+Starting static elaboration
+
+Completed static elaboration
+
+Starting simulation data flow analysis
+
+Completed simulation data flow analysis
+
+Time Resolution for simulation is 1ps
+
+Compiling package std.standard
+
+Compiling package std.textio
+
+Compiling package ieee.std_logic_1164
+
+Compiling package ieee.numeric_std
+
+Compiling package xil_defaultlib.phase2_tb_pkg
+
+Compiling package xil_defaultlib.phase3_tb_pkg
+
+Compiling architecture rtl of entity xil_defaultlib.swap_controller [\swap_controller(chain_length=1,...]
+
+Compiling architecture test of entity xil_defaultlib.phase3_controller_check [\phase3_controller_check(chain_l...]
+
+Compiling architecture test of entity xil_defaultlib.tb_swap_controller
+
+Built simulation snapshot tb_swap_controller_behav
+
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 520.219 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_swap_controller_behav -key {Behavioral:sim_1:Functional:tb_swap_controller} -tclbatch {tb_swap_controller.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_swap_controller.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## run 0ns
+Failure: [CONFIG_ERROR] Swap requires L/2-BETA>=14
+Time: 0 ps  Iteration: 0  Process: /tb_swap_controller/engine/swap_dut/dut/line__24  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/swap_controller.vhd
+$finish called at time : 0 fs : File "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/swap_controller.vhd" Line 24
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_swap_controller_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 520.219 ; gain = 0.000
+INFO: [Simtcl 6-16] Simulation closed
+RESULT: PASS -- tb_swap_controller_L1_B0_N4 -- 0 ns
+update_compile_order: Time (s): cpu = 00:00:00 ; elapsed = 00:02:45 . Memory (MB): peak = 520.219 ; gain = 0.000
+=== PHASE 3: tb_swap_controller_L64_B16_N17 ===
+Command: launch_simulation  -simset sim_1 -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_swap_controller'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_swap_controller' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_swap_controller_vhdl.prj"
+
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -generic_top "CHAIN_LENGTH=64" -generic_top "BETA=16" -generic_top "NUM_CHAINS=17" -generic_top "INITIAL_POSITION=0" -L xil_defaultlib -L secureip --snapshot tb_swap_controller_behav xil_defaultlib.tb_swap_controller -log elaborate.log"
+
+Vivado Simulator v2025.1.1
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -generic_top CHAIN_LENGTH=64 -generic_top BETA=16 -generic_top NUM_CHAINS=17 -generic_top INITIAL_POSITION=0 -L xil_defaultlib -L secureip --snapshot tb_swap_controller_behav xil_defaultlib.tb_swap_controller -log elaborate.log 
+
+Using 2 slave threads.
+
+Starting static elaboration
+
+Completed static elaboration
+
+Starting simulation data flow analysis
+
+Completed simulation data flow analysis
+
+Time Resolution for simulation is 1ps
+
+Compiling package std.standard
+
+Compiling package std.textio
+
+Compiling package ieee.std_logic_1164
+
+Compiling package ieee.numeric_std
+
+Compiling package xil_defaultlib.phase2_tb_pkg
+
+Compiling package xil_defaultlib.phase3_tb_pkg
+
+Compiling architecture rtl of entity xil_defaultlib.swap_controller [\swap_controller(num_chains=17)\]
+
+Compiling architecture test of entity xil_defaultlib.phase3_controller_check [\phase3_controller_check(num_cha...]
+
+Compiling architecture test of entity xil_defaultlib.tb_swap_controller
+
+Built simulation snapshot tb_swap_controller_behav
+
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 520.219 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/work/project_tb_swap_controller/phase3.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_swap_controller_behav -key {Behavioral:sim_1:Functional:tb_swap_controller} -tclbatch {tb_swap_controller.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_swap_controller.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## run 0ns
+Failure: [CONFIG_ERROR] NUM_CHAINS must be 1..16
+Time: 0 ps  Iteration: 0  Process: /tb_swap_controller/engine/swap_dut/dut/line__25  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/swap_controller.vhd
+$finish called at time : 0 fs : File "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/swap_controller.vhd" Line 25
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_swap_controller_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:13 . Memory (MB): peak = 520.219 ; gain = 0.000
+INFO: [Simtcl 6-16] Simulation closed
+RESULT: PASS -- tb_swap_controller_L64_B16_N17 -- 0 ns
+PHASE 3 RESULT: PASS (12 cases)
+INFO: [Common 17-206] Exiting Vivado at Sun Nov 15 18:47:11 2026...

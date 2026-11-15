@@ -1,0 +1,11 @@
+test_bad_lengths_and_timings (__main__.OptimizerTests.test_bad_lengths_and_timings) ... ok
+test_cli_units_and_rejection (__main__.OptimizerTests.test_cli_units_and_rejection) ... ok
+test_exact_weighted_sum_and_legal_enumeration (__main__.OptimizerTests.test_exact_weighted_sum_and_legal_enumeration) ... ok
+test_out_of_range (__main__.OptimizerTests.test_out_of_range) ... ok
+test_target_and_global_optimum (__main__.OptimizerTests.test_target_and_global_optimum) ... ok
+test_tie_chooses_smaller_beta (__main__.OptimizerTests.test_tie_chooses_smaller_beta) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 1.280s
+
+OK

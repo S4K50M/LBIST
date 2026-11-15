@@ -1,0 +1,2 @@
+Case,Testbench,ExpectedNegative,Regression,Capture,Result,CompletionTime,WDBBytes
+regression_tb_lfsr_16,tb_lfsr_16,0,1,0,PASS,131081200 ps,0

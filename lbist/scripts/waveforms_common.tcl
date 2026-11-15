@@ -130,3 +130,46 @@ proc generate_lbist_waveforms {selection} {
     if {$failures} {error "$failures waveform simulations failed"}
     puts "WAVEFORM GENERATION: PASS ([llength $cases] captures)"
 }
+
+# Phase 3 additions use new result folders; old captures are never regenerated here.
+proc phase3_wave_begin {folder top tag} {
+    file mkdir $folder
+    create_wave_config $tag
+    if {$top eq "tb_phase3_comparison"} {
+        set prefixes [list /$top/direct_engine /$top/low_engine /$top/basic_engine /$top/swap_engine /$top/moving_engine]
+    } else {set prefixes [list /$top/engine]}
+    foreach prefix $prefixes {
+        foreach name {clk rst scan_enable shift_count_v pattern_index moving_position_v alpha_0 beta_v gamma_0 mode_0 mode_1 mode_2 mode_3 mode_select pattern_done alpha_debug gamma_debug state current_bits future1_bits future2_bits active_mode mode_valid scan_in past_bits chain_flat} {
+            set path $prefix/$name
+            if {[llength [get_objects $path]]==1} {
+                set radix hex
+                if {$name in {mode_0 mode_1 mode_2 mode_3 mode_select active_mode mode_valid}} {set radix bin}
+                if {$name in {shift_count_v moving_position_v alpha_0 beta_v gamma_0 pattern_index}} {set radix unsigned}
+                add_wave -radix $radix $path
+                log_wave $path
+            }
+        }
+    }
+    open_vcd [file join $folder $tag.vcd]
+    foreach prefix $prefixes {
+        foreach name {clk rst scan_enable shift_count_v pattern_index moving_position_v alpha_0 beta_v gamma_0 mode_0 mode_1 mode_2 mode_3 mode_select pattern_done alpha_debug gamma_debug state current_bits future1_bits future2_bits active_mode mode_valid scan_in past_bits chain_flat} {
+            set path $prefix/$name
+            if {[llength [get_objects $path]]==1} {log_vcd $path}
+        }
+    }
+    run 12 us
+    close_vcd
+}
+proc phase3_wave_finish {folder top tag simdir} {
+    set dest [file join $folder $tag.wdb]
+    file copy -force [file join $simdir [format "%s_behav.wdb" $top]] $dest
+    set config [file join $folder $tag.wcfg]
+    set f [open $config r]; set text [read $f]; close $f
+    regsub -all {(<db_ref path=")[^"]*(")} $text [format {\1%s.wdb\2} $tag] text
+    regsub {<zoom_setting>[^<]*</zoom_setting>} $text {<zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="180.000 ns"></ZoomEndTime>
+   </zoom_setting>} text
+    set f [open $config w]; puts $f $text; close $f
+    return [file size $dest]
+}

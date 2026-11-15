@@ -4,11 +4,14 @@ param(
 )
 $repoRoot = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '../..')).Path
 $waveFolder = $null
-foreach ($relative in @('Results/Phase2/waveforms', 'Results/Phase3/Basic/waveforms')) {
+foreach ($relative in @('Results/Phase2/waveforms', 'Results/Phase3/Basic/waveforms', 'Results/Phase3/Swap/waveforms', 'Results/Phase3/Moving/waveforms', 'Results/Phase3/Comparison/waveforms')) {
     $candidate = Join-Path $repoRoot $relative
-    if (Test-Path -LiteralPath (Join-Path $candidate ($Case + '.wdb'))) { $waveFolder = $candidate; break }
+    foreach ($tag in @($Case, ($Case + '_N4'))) {
+        if (Test-Path -LiteralPath (Join-Path $candidate ($tag + '.wdb'))) { $waveFolder = $candidate; $Case = $tag; break }
+    }
+    if ($null -ne $waveFolder) { break }
 }
-if ($null -eq $waveFolder) { throw 'Wave database missing; run generate_waveforms.tcl first.' }
+if ($null -eq $waveFolder) { throw 'Wave database missing; run generate_phase3_waveforms.tcl for Phase 3 or generate_waveforms.tcl for legacy captures.' }
 $database = Join-Path $waveFolder ($Case + '.wdb')
 $layout = Join-Path $waveFolder ($Case + '.wcfg')
 if (-not (Test-Path -LiteralPath $layout)) { throw 'Saved waveform layout is missing.' }

@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="718" viewBox="0 0 1600 718">
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="20" y="28" font-family="sans-serif" font-size="20">moving_beta16 - first switch</text>
+<text x="20" y="51" font-family="sans-serif" font-size="13">00 = PLPF n=3 (low toggle) | 11 = PLPF n=1 (unfiltered) | Edge capture uses PRE-edge mode; POST-edge mode prepares the next shift.</text>
+<line x1="880.0" x2="880.0" y1="110" y2="688" stroke="#a33" stroke-dasharray="4 4"/>
+<text x="20" y="76" font-family="sans-serif" font-size="13" fill="#922">first switch (post-edge) @ 29.000 ns</text>
+<line x1="220.0" x2="220.0" y1="110" y2="688" stroke="#e6eaf0"/>
+<text x="220.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">19.00 ns</text>
+<line x1="385.0" x2="385.0" y1="110" y2="688" stroke="#e6eaf0"/>
+<text x="385.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">21.50 ns</text>
+<line x1="550.0" x2="550.0" y1="110" y2="688" stroke="#e6eaf0"/>
+<text x="550.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">24.00 ns</text>
+<line x1="715.0" x2="715.0" y1="110" y2="688" stroke="#e6eaf0"/>
+<text x="715.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">26.50 ns</text>
+<line x1="880.0" x2="880.0" y1="110" y2="688" stroke="#e6eaf0"/>
+<text x="880.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">29.00 ns</text>
+<line x1="1045.0" x2="1045.0" y1="110" y2="688" stroke="#e6eaf0"/>
+<text x="1045.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">31.50 ns</text>
+<line x1="1210.0" x2="1210.0" y1="110" y2="688" stroke="#e6eaf0"/>
+<text x="1210.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">34.00 ns</text>
+<line x1="1375.0" x2="1375.0" y1="110" y2="688" stroke="#e6eaf0"/>
+<text x="1375.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">36.50 ns</text>
+<line x1="1540.0" x2="1540.0" y1="110" y2="688" stroke="#e6eaf0"/>
+<text x="1540.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">39.00 ns</text>
+<text x="12" y="156" font-family="monospace" font-size="14">clk</text>
+<path d="M 220.000 139 H 286.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_moving_integration/engine/clk = 1, 19.000..20.000 ns</title></path>
+<path d="M 286.000 163 H 352.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_moving_integration/engine/clk = 0, 20.000..21.000 ns</title></path>
+<path d="M 286.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 352.000 139 H 418.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_moving_integration/engine/clk = 1, 21.000..22.000 ns</title></path>
+<path d="M 352.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 418.000 163 H 484.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_moving_integration/engine/clk = 0, 22.000..23.000 ns</title></path>
+<path d="M 418.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 484.000 139 H 550.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_moving_integration/engine/clk = 1, 23.000..24.000 ns</title></path>
+<path d="M 484.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 550.000 163 H 616.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_moving_integration/engine/clk = 0, 24.000..25.000 ns</title></path>
+<path d="M 550.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 616.000 139 H 682.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_moving_integration/engine/clk = 1, 25.000..26.000 ns</title></path>
+<path d="M 616.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 682.000 163 H 748.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_moving_integration/engine/clk = 0, 26.000..27.000 ns</title></path>
+<path d="M 682.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 748.000 139 H 814.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_moving_integration/engine/clk = 1, 27.000..28.000 ns</title></path>
+<path d="M 748.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 814.000 163 H 880.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_moving_integration/engine/clk = 0, 28.000..29.000 ns</title></path>
+<path d="M 814.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 880.000 139 H 946.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_moving_integration/engine/clk = 1, 29.000..30.000 ns</title></path>
+<path d="M 880.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 946.000 163 H 1012.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_moving_integration/engine/clk = 0, 30.000..31.000 ns</title></path>
+<path d="M 946.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1012.000 139 H 1078.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_moving_integration/engine/clk = 1, 31.000..32.000 ns</title></path>
+<path d="M 1012.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1078.000 163 H 1144.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_moving_integration/engine/clk = 0, 32.000..33.000 ns</title></path>
+<path d="M 1078.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1144.000 139 H 1210.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_moving_integration/engine/clk = 1, 33.000..34.000 ns</title></path>
+<path d="M 1144.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1210.000 163 H 1276.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_moving_integration/engine/clk = 0, 34.000..35.000 ns</title></path>
+<path d="M 1210.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1276.000 139 H 1342.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_moving_integration/engine/clk = 1, 35.000..36.000 ns</title></path>
+<path d="M 1276.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1342.000 163 H 1408.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_moving_integration/engine/clk = 0, 36.000..37.000 ns</title></path>
+<path d="M 1342.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1408.000 139 H 1474.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_moving_integration/engine/clk = 1, 37.000..38.000 ns</title></path>
+<path d="M 1408.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1474.000 163 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_moving_integration/engine/clk = 0, 38.000..39.000 ns</title></path>
+<path d="M 1474.000 139 V 163" stroke="#126e60" fill="none"/>
+<text x="12" y="204" font-family="monospace" font-size="14">rst</text>
+<path d="M 220.000 211 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_moving_integration/engine/rst = 0, 19.000..39.000 ns</title></path>
+<text x="12" y="252" font-family="monospace" font-size="14">scan_enable</text>
+<path d="M 220.000 235 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_moving_integration/engine/scan_enable = 1, 19.000..39.000 ns</title></path>
+<text x="12" y="300" font-family="monospace" font-size="14">shift_count_v</text>
+<rect x="220.000" y="281" width="132.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_moving_integration/engine/shift_count_v = 0000000000001001, 19.000..21.000 ns</title></rect>
+<text x="286.000" y="300" text-anchor="middle" font-family="monospace" font-size="13">9</text>
+<rect x="352.000" y="281" width="132.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_moving_integration/engine/shift_count_v = 1010, 21.000..23.000 ns</title></rect>
+<text x="418.000" y="300" text-anchor="middle" font-family="monospace" font-size="13">10</text>
+<rect x="484.000" y="281" width="132.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_moving_integration/engine/shift_count_v = 1011, 23.000..25.000 ns</title></rect>
+<text x="550.000" y="300" text-anchor="middle" font-family="monospace" font-size="13">11</text>
+<rect x="616.000" y="281" width="132.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_moving_integration/engine/shift_count_v = 1100, 25.000..27.000 ns</title></rect>
+<text x="682.000" y="300" text-anchor="middle" font-family="monospace" font-size="13">12</text>
+<rect x="748.000" y="281" width="132.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_moving_integration/engine/shift_count_v = 1101, 27.000..29.000 ns</title></rect>
+<text x="814.000" y="300" text-anchor="middle" font-family="monospace" font-size="13">13</text>
+<rect x="880.000" y="281" width="132.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_moving_integration/engine/shift_count_v = 1110, 29.000..31.000 ns</title></rect>
+<text x="946.000" y="300" text-anchor="middle" font-family="monospace" font-size="13">14</text>
+<rect x="1012.000" y="281" width="132.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_moving_integration/engine/shift_count_v = 1111, 31.000..33.000 ns</title></rect>
+<text x="1078.000" y="300" text-anchor="middle" font-family="monospace" font-size="13">15</text>
+<rect x="1144.000" y="281" width="132.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_moving_integration/engine/shift_count_v = 10000, 33.000..35.000 ns</title></rect>
+<text x="1210.000" y="300" text-anchor="middle" font-family="monospace" font-size="13">16</text>
+<rect x="1276.000" y="281" width="132.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_moving_integration/engine/shift_count_v = 10001, 35.000..37.000 ns</title></rect>
+<text x="1342.000" y="300" text-anchor="middle" font-family="monospace" font-size="13">17</text>
+<rect x="1408.000" y="281" width="132.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_moving_integration/engine/shift_count_v = 10010, 37.000..39.000 ns</title></rect>
+<text x="1474.000" y="300" text-anchor="middle" font-family="monospace" font-size="13">18</text>
+<text x="12" y="348" font-family="monospace" font-size="14">pattern_index</text>
+<rect x="220.000" y="329" width="1320.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_moving_integration/engine/pattern_index = 00000000000000000000000000000000, 19.000..39.000 ns</title></rect>
+<text x="880.000" y="348" text-anchor="middle" font-family="monospace" font-size="13">0</text>
+<text x="12" y="396" font-family="monospace" font-size="14">moving_position_v</text>
+<rect x="220.000" y="377" width="1320.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_moving_integration/engine/moving_position_v = 0000000000000000, 19.000..39.000 ns</title></rect>
+<text x="880.000" y="396" text-anchor="middle" font-family="monospace" font-size="13">0</text>
+<text x="12" y="444" font-family="monospace" font-size="14">mode_0</text>
+<rect x="220.000" y="425" width="660.000" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_moving_integration/engine/mode_0 = 00, 19.000..29.000 ns</title></rect>
+<text x="550.000" y="444" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="880.000" y="425" width="660.000" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_moving_integration/engine/mode_0 = 11, 29.000..39.000 ns</title></rect>
+<text x="1210.000" y="444" text-anchor="middle" font-family="monospace" font-size="13">11</text>
+<text x="12" y="492" font-family="monospace" font-size="14">pattern_done</text>
+<path d="M 220.000 499 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_moving_integration/engine/pattern_done = 0, 19.000..39.000 ns</title></path>
+<text x="12" y="540" font-family="monospace" font-size="14">alpha_0</text>
+<rect x="220.000" y="521" width="1320.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_moving_integration/engine/alpha_0 = 0000000000100010, 19.000..39.000 ns</title></rect>
+<text x="880.000" y="540" text-anchor="middle" font-family="monospace" font-size="13">34</text>
+<text x="12" y="588" font-family="monospace" font-size="14">beta_v</text>
+<rect x="220.000" y="569" width="1320.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_moving_integration/engine/beta_v = 0000000000010000, 19.000..39.000 ns</title></rect>
+<text x="880.000" y="588" text-anchor="middle" font-family="monospace" font-size="13">16</text>
+<text x="12" y="636" font-family="monospace" font-size="14">gamma_0</text>
+<rect x="220.000" y="617" width="1320.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_moving_integration/engine/gamma_0 = 0000000000001110, 19.000..39.000 ns</title></rect>
+<text x="880.000" y="636" text-anchor="middle" font-family="monospace" font-size="13">14</text>
+<text x="20" y="708" font-family="sans-serif" font-size="11">Source: tb_moving_integration_L64_B16_N4.vcd; no expected-schedule signal reconstruction. Buses are hexadecimal; counters/region lengths are decimal.</text></svg>

@@ -1,0 +1,749 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="574" viewBox="0 0 1600 574">
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="20" y="28" font-family="sans-serif" font-size="20">swap_beta16 - actual per-chain Swap variation</text>
+<text x="20" y="51" font-family="sans-serif" font-size="13">00 = PLPF n=3 (low toggle) | 11 = PLPF n=1 (unfiltered) | Edge capture uses PRE-edge mode; POST-edge mode prepares the next shift.</text>
+<line x1="220.0" x2="220.0" y1="110" y2="544" stroke="#e6eaf0"/>
+<text x="220.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">0.00 ns</text>
+<line x1="385.0" x2="385.0" y1="110" y2="544" stroke="#e6eaf0"/>
+<text x="385.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">33.12 ns</text>
+<line x1="550.0" x2="550.0" y1="110" y2="544" stroke="#e6eaf0"/>
+<text x="550.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">66.25 ns</text>
+<line x1="715.0" x2="715.0" y1="110" y2="544" stroke="#e6eaf0"/>
+<text x="715.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">99.38 ns</text>
+<line x1="880.0" x2="880.0" y1="110" y2="544" stroke="#e6eaf0"/>
+<text x="880.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">132.50 ns</text>
+<line x1="1045.0" x2="1045.0" y1="110" y2="544" stroke="#e6eaf0"/>
+<text x="1045.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">165.62 ns</text>
+<line x1="1210.0" x2="1210.0" y1="110" y2="544" stroke="#e6eaf0"/>
+<text x="1210.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">198.75 ns</text>
+<line x1="1375.0" x2="1375.0" y1="110" y2="544" stroke="#e6eaf0"/>
+<text x="1375.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">231.88 ns</text>
+<line x1="1540.0" x2="1540.0" y1="110" y2="544" stroke="#e6eaf0"/>
+<text x="1540.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">265.00 ns</text>
+<text x="12" y="156" font-family="monospace" font-size="14">clk</text>
+<path d="M 220.000 163 H 224.981" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 0.000..1.000 ns</title></path>
+<path d="M 224.981 139 H 229.962" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 1.000..2.000 ns</title></path>
+<path d="M 224.981 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 229.962 163 H 234.943" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 2.000..3.000 ns</title></path>
+<path d="M 229.962 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 234.943 139 H 239.925" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 3.000..4.000 ns</title></path>
+<path d="M 234.943 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 239.925 163 H 244.906" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 4.000..5.000 ns</title></path>
+<path d="M 239.925 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 244.906 139 H 249.887" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 5.000..6.000 ns</title></path>
+<path d="M 244.906 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 249.887 163 H 254.868" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 6.000..7.000 ns</title></path>
+<path d="M 249.887 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 254.868 139 H 259.849" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 7.000..8.000 ns</title></path>
+<path d="M 254.868 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 259.849 163 H 264.830" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 8.000..9.000 ns</title></path>
+<path d="M 259.849 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 264.830 139 H 269.811" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 9.000..10.000 ns</title></path>
+<path d="M 264.830 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 269.811 163 H 274.792" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 10.000..11.000 ns</title></path>
+<path d="M 269.811 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 274.792 139 H 279.774" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 11.000..12.000 ns</title></path>
+<path d="M 274.792 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 279.774 163 H 284.755" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 12.000..13.000 ns</title></path>
+<path d="M 279.774 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 284.755 139 H 289.736" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 13.000..14.000 ns</title></path>
+<path d="M 284.755 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 289.736 163 H 294.717" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 14.000..15.000 ns</title></path>
+<path d="M 289.736 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 294.717 139 H 299.698" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 15.000..16.000 ns</title></path>
+<path d="M 294.717 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 299.698 163 H 304.679" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 16.000..17.000 ns</title></path>
+<path d="M 299.698 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 304.679 139 H 309.660" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 17.000..18.000 ns</title></path>
+<path d="M 304.679 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 309.660 163 H 314.642" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 18.000..19.000 ns</title></path>
+<path d="M 309.660 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 314.642 139 H 319.623" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 19.000..20.000 ns</title></path>
+<path d="M 314.642 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 319.623 163 H 324.604" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 20.000..21.000 ns</title></path>
+<path d="M 319.623 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 324.604 139 H 329.585" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 21.000..22.000 ns</title></path>
+<path d="M 324.604 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 329.585 163 H 334.566" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 22.000..23.000 ns</title></path>
+<path d="M 329.585 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 334.566 139 H 339.547" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 23.000..24.000 ns</title></path>
+<path d="M 334.566 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 339.547 163 H 344.528" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 24.000..25.000 ns</title></path>
+<path d="M 339.547 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 344.528 139 H 349.509" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 25.000..26.000 ns</title></path>
+<path d="M 344.528 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 349.509 163 H 354.491" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 26.000..27.000 ns</title></path>
+<path d="M 349.509 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 354.491 139 H 359.472" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 27.000..28.000 ns</title></path>
+<path d="M 354.491 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 359.472 163 H 364.453" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 28.000..29.000 ns</title></path>
+<path d="M 359.472 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 364.453 139 H 369.434" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 29.000..30.000 ns</title></path>
+<path d="M 364.453 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 369.434 163 H 374.415" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 30.000..31.000 ns</title></path>
+<path d="M 369.434 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 374.415 139 H 379.396" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 31.000..32.000 ns</title></path>
+<path d="M 374.415 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 379.396 163 H 384.377" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 32.000..33.000 ns</title></path>
+<path d="M 379.396 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 384.377 139 H 389.358" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 33.000..34.000 ns</title></path>
+<path d="M 384.377 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 389.358 163 H 394.340" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 34.000..35.000 ns</title></path>
+<path d="M 389.358 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 394.340 139 H 399.321" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 35.000..36.000 ns</title></path>
+<path d="M 394.340 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 399.321 163 H 404.302" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 36.000..37.000 ns</title></path>
+<path d="M 399.321 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 404.302 139 H 409.283" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 37.000..38.000 ns</title></path>
+<path d="M 404.302 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 409.283 163 H 414.264" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 38.000..39.000 ns</title></path>
+<path d="M 409.283 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 414.264 139 H 419.245" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 39.000..40.000 ns</title></path>
+<path d="M 414.264 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 419.245 163 H 424.226" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 40.000..41.000 ns</title></path>
+<path d="M 419.245 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 424.226 139 H 429.208" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 41.000..42.000 ns</title></path>
+<path d="M 424.226 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 429.208 163 H 434.189" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 42.000..43.000 ns</title></path>
+<path d="M 429.208 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 434.189 139 H 439.170" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 43.000..44.000 ns</title></path>
+<path d="M 434.189 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 439.170 163 H 444.151" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 44.000..45.000 ns</title></path>
+<path d="M 439.170 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 444.151 139 H 449.132" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 45.000..46.000 ns</title></path>
+<path d="M 444.151 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 449.132 163 H 454.113" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 46.000..47.000 ns</title></path>
+<path d="M 449.132 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 454.113 139 H 459.094" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 47.000..48.000 ns</title></path>
+<path d="M 454.113 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 459.094 163 H 464.075" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 48.000..49.000 ns</title></path>
+<path d="M 459.094 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 464.075 139 H 469.057" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 49.000..50.000 ns</title></path>
+<path d="M 464.075 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 469.057 163 H 474.038" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 50.000..51.000 ns</title></path>
+<path d="M 469.057 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 474.038 139 H 479.019" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 51.000..52.000 ns</title></path>
+<path d="M 474.038 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 479.019 163 H 484.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 52.000..53.000 ns</title></path>
+<path d="M 479.019 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 484.000 139 H 488.981" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 53.000..54.000 ns</title></path>
+<path d="M 484.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 488.981 163 H 493.962" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 54.000..55.000 ns</title></path>
+<path d="M 488.981 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 493.962 139 H 498.943" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 55.000..56.000 ns</title></path>
+<path d="M 493.962 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 498.943 163 H 503.925" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 56.000..57.000 ns</title></path>
+<path d="M 498.943 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 503.925 139 H 508.906" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 57.000..58.000 ns</title></path>
+<path d="M 503.925 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 508.906 163 H 513.887" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 58.000..59.000 ns</title></path>
+<path d="M 508.906 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 513.887 139 H 518.868" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 59.000..60.000 ns</title></path>
+<path d="M 513.887 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 518.868 163 H 523.849" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 60.000..61.000 ns</title></path>
+<path d="M 518.868 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 523.849 139 H 528.830" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 61.000..62.000 ns</title></path>
+<path d="M 523.849 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 528.830 163 H 533.811" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 62.000..63.000 ns</title></path>
+<path d="M 528.830 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 533.811 139 H 538.792" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 63.000..64.000 ns</title></path>
+<path d="M 533.811 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 538.792 163 H 543.774" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 64.000..65.000 ns</title></path>
+<path d="M 538.792 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 543.774 139 H 548.755" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 65.000..66.000 ns</title></path>
+<path d="M 543.774 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 548.755 163 H 553.736" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 66.000..67.000 ns</title></path>
+<path d="M 548.755 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 553.736 139 H 558.717" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 67.000..68.000 ns</title></path>
+<path d="M 553.736 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 558.717 163 H 563.698" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 68.000..69.000 ns</title></path>
+<path d="M 558.717 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 563.698 139 H 568.679" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 69.000..70.000 ns</title></path>
+<path d="M 563.698 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 568.679 163 H 573.660" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 70.000..71.000 ns</title></path>
+<path d="M 568.679 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 573.660 139 H 578.642" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 71.000..72.000 ns</title></path>
+<path d="M 573.660 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 578.642 163 H 583.623" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 72.000..73.000 ns</title></path>
+<path d="M 578.642 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 583.623 139 H 588.604" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 73.000..74.000 ns</title></path>
+<path d="M 583.623 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 588.604 163 H 593.585" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 74.000..75.000 ns</title></path>
+<path d="M 588.604 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 593.585 139 H 598.566" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 75.000..76.000 ns</title></path>
+<path d="M 593.585 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 598.566 163 H 603.547" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 76.000..77.000 ns</title></path>
+<path d="M 598.566 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 603.547 139 H 608.528" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 77.000..78.000 ns</title></path>
+<path d="M 603.547 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 608.528 163 H 613.509" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 78.000..79.000 ns</title></path>
+<path d="M 608.528 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 613.509 139 H 618.491" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 79.000..80.000 ns</title></path>
+<path d="M 613.509 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 618.491 163 H 623.472" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 80.000..81.000 ns</title></path>
+<path d="M 618.491 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 623.472 139 H 628.453" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 81.000..82.000 ns</title></path>
+<path d="M 623.472 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 628.453 163 H 633.434" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 82.000..83.000 ns</title></path>
+<path d="M 628.453 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 633.434 139 H 638.415" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 83.000..84.000 ns</title></path>
+<path d="M 633.434 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 638.415 163 H 643.396" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 84.000..85.000 ns</title></path>
+<path d="M 638.415 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 643.396 139 H 648.377" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 85.000..86.000 ns</title></path>
+<path d="M 643.396 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 648.377 163 H 653.358" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 86.000..87.000 ns</title></path>
+<path d="M 648.377 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 653.358 139 H 658.340" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 87.000..88.000 ns</title></path>
+<path d="M 653.358 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 658.340 163 H 663.321" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 88.000..89.000 ns</title></path>
+<path d="M 658.340 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 663.321 139 H 668.302" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 89.000..90.000 ns</title></path>
+<path d="M 663.321 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 668.302 163 H 673.283" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 90.000..91.000 ns</title></path>
+<path d="M 668.302 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 673.283 139 H 678.264" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 91.000..92.000 ns</title></path>
+<path d="M 673.283 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 678.264 163 H 683.245" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 92.000..93.000 ns</title></path>
+<path d="M 678.264 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 683.245 139 H 688.226" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 93.000..94.000 ns</title></path>
+<path d="M 683.245 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 688.226 163 H 693.208" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 94.000..95.000 ns</title></path>
+<path d="M 688.226 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 693.208 139 H 698.189" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 95.000..96.000 ns</title></path>
+<path d="M 693.208 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 698.189 163 H 703.170" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 96.000..97.000 ns</title></path>
+<path d="M 698.189 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 703.170 139 H 708.151" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 97.000..98.000 ns</title></path>
+<path d="M 703.170 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 708.151 163 H 713.132" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 98.000..99.000 ns</title></path>
+<path d="M 708.151 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 713.132 139 H 718.113" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 99.000..100.000 ns</title></path>
+<path d="M 713.132 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 718.113 163 H 723.094" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 100.000..101.000 ns</title></path>
+<path d="M 718.113 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 723.094 139 H 728.075" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 101.000..102.000 ns</title></path>
+<path d="M 723.094 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 728.075 163 H 733.057" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 102.000..103.000 ns</title></path>
+<path d="M 728.075 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 733.057 139 H 738.038" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 103.000..104.000 ns</title></path>
+<path d="M 733.057 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 738.038 163 H 743.019" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 104.000..105.000 ns</title></path>
+<path d="M 738.038 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 743.019 139 H 748.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 105.000..106.000 ns</title></path>
+<path d="M 743.019 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 748.000 163 H 752.981" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 106.000..107.000 ns</title></path>
+<path d="M 748.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 752.981 139 H 757.962" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 107.000..108.000 ns</title></path>
+<path d="M 752.981 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 757.962 163 H 762.943" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 108.000..109.000 ns</title></path>
+<path d="M 757.962 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 762.943 139 H 767.925" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 109.000..110.000 ns</title></path>
+<path d="M 762.943 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 767.925 163 H 772.906" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 110.000..111.000 ns</title></path>
+<path d="M 767.925 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 772.906 139 H 777.887" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 111.000..112.000 ns</title></path>
+<path d="M 772.906 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 777.887 163 H 782.868" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 112.000..113.000 ns</title></path>
+<path d="M 777.887 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 782.868 139 H 787.849" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 113.000..114.000 ns</title></path>
+<path d="M 782.868 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 787.849 163 H 792.830" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 114.000..115.000 ns</title></path>
+<path d="M 787.849 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 792.830 139 H 797.811" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 115.000..116.000 ns</title></path>
+<path d="M 792.830 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 797.811 163 H 802.792" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 116.000..117.000 ns</title></path>
+<path d="M 797.811 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 802.792 139 H 807.774" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 117.000..118.000 ns</title></path>
+<path d="M 802.792 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 807.774 163 H 812.755" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 118.000..119.000 ns</title></path>
+<path d="M 807.774 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 812.755 139 H 817.736" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 119.000..120.000 ns</title></path>
+<path d="M 812.755 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 817.736 163 H 822.717" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 120.000..121.000 ns</title></path>
+<path d="M 817.736 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 822.717 139 H 827.698" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 121.000..122.000 ns</title></path>
+<path d="M 822.717 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 827.698 163 H 832.679" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 122.000..123.000 ns</title></path>
+<path d="M 827.698 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 832.679 139 H 837.660" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 123.000..124.000 ns</title></path>
+<path d="M 832.679 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 837.660 163 H 842.642" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 124.000..125.000 ns</title></path>
+<path d="M 837.660 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 842.642 139 H 847.623" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 125.000..126.000 ns</title></path>
+<path d="M 842.642 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 847.623 163 H 852.604" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 126.000..127.000 ns</title></path>
+<path d="M 847.623 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 852.604 139 H 857.585" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 127.000..128.000 ns</title></path>
+<path d="M 852.604 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 857.585 163 H 862.566" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 128.000..129.000 ns</title></path>
+<path d="M 857.585 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 862.566 139 H 867.547" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 129.000..130.000 ns</title></path>
+<path d="M 862.566 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 867.547 163 H 872.528" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 130.000..131.000 ns</title></path>
+<path d="M 867.547 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 872.528 139 H 877.509" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 131.000..132.000 ns</title></path>
+<path d="M 872.528 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 877.509 163 H 882.491" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 132.000..133.000 ns</title></path>
+<path d="M 877.509 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 882.491 139 H 887.472" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 133.000..134.000 ns</title></path>
+<path d="M 882.491 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 887.472 163 H 892.453" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 134.000..135.000 ns</title></path>
+<path d="M 887.472 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 892.453 139 H 897.434" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 135.000..136.000 ns</title></path>
+<path d="M 892.453 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 897.434 163 H 902.415" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 136.000..137.000 ns</title></path>
+<path d="M 897.434 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 902.415 139 H 907.396" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 137.000..138.000 ns</title></path>
+<path d="M 902.415 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 907.396 163 H 912.377" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 138.000..139.000 ns</title></path>
+<path d="M 907.396 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 912.377 139 H 917.358" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 139.000..140.000 ns</title></path>
+<path d="M 912.377 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 917.358 163 H 922.340" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 140.000..141.000 ns</title></path>
+<path d="M 917.358 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 922.340 139 H 927.321" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 141.000..142.000 ns</title></path>
+<path d="M 922.340 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 927.321 163 H 932.302" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 142.000..143.000 ns</title></path>
+<path d="M 927.321 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 932.302 139 H 937.283" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 143.000..144.000 ns</title></path>
+<path d="M 932.302 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 937.283 163 H 942.264" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 144.000..145.000 ns</title></path>
+<path d="M 937.283 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 942.264 139 H 947.245" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 145.000..146.000 ns</title></path>
+<path d="M 942.264 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 947.245 163 H 952.226" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 146.000..147.000 ns</title></path>
+<path d="M 947.245 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 952.226 139 H 957.208" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 147.000..148.000 ns</title></path>
+<path d="M 952.226 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 957.208 163 H 962.189" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 148.000..149.000 ns</title></path>
+<path d="M 957.208 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 962.189 139 H 967.170" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 149.000..150.000 ns</title></path>
+<path d="M 962.189 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 967.170 163 H 972.151" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 150.000..151.000 ns</title></path>
+<path d="M 967.170 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 972.151 139 H 977.132" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 151.000..152.000 ns</title></path>
+<path d="M 972.151 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 977.132 163 H 982.113" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 152.000..153.000 ns</title></path>
+<path d="M 977.132 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 982.113 139 H 987.094" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 153.000..154.000 ns</title></path>
+<path d="M 982.113 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 987.094 163 H 992.075" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 154.000..155.000 ns</title></path>
+<path d="M 987.094 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 992.075 139 H 997.057" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 155.000..156.000 ns</title></path>
+<path d="M 992.075 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 997.057 163 H 1002.038" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 156.000..157.000 ns</title></path>
+<path d="M 997.057 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1002.038 139 H 1007.019" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 157.000..158.000 ns</title></path>
+<path d="M 1002.038 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1007.019 163 H 1012.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 158.000..159.000 ns</title></path>
+<path d="M 1007.019 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1012.000 139 H 1016.981" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 159.000..160.000 ns</title></path>
+<path d="M 1012.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1016.981 163 H 1021.962" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 160.000..161.000 ns</title></path>
+<path d="M 1016.981 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1021.962 139 H 1026.943" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 161.000..162.000 ns</title></path>
+<path d="M 1021.962 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1026.943 163 H 1031.925" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 162.000..163.000 ns</title></path>
+<path d="M 1026.943 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1031.925 139 H 1036.906" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 163.000..164.000 ns</title></path>
+<path d="M 1031.925 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1036.906 163 H 1041.887" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 164.000..165.000 ns</title></path>
+<path d="M 1036.906 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1041.887 139 H 1046.868" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 165.000..166.000 ns</title></path>
+<path d="M 1041.887 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1046.868 163 H 1051.849" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 166.000..167.000 ns</title></path>
+<path d="M 1046.868 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1051.849 139 H 1056.830" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 167.000..168.000 ns</title></path>
+<path d="M 1051.849 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1056.830 163 H 1061.811" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 168.000..169.000 ns</title></path>
+<path d="M 1056.830 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1061.811 139 H 1066.792" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 169.000..170.000 ns</title></path>
+<path d="M 1061.811 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1066.792 163 H 1071.774" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 170.000..171.000 ns</title></path>
+<path d="M 1066.792 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1071.774 139 H 1076.755" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 171.000..172.000 ns</title></path>
+<path d="M 1071.774 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1076.755 163 H 1081.736" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 172.000..173.000 ns</title></path>
+<path d="M 1076.755 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1081.736 139 H 1086.717" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 173.000..174.000 ns</title></path>
+<path d="M 1081.736 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1086.717 163 H 1091.698" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 174.000..175.000 ns</title></path>
+<path d="M 1086.717 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1091.698 139 H 1096.679" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 175.000..176.000 ns</title></path>
+<path d="M 1091.698 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1096.679 163 H 1101.660" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 176.000..177.000 ns</title></path>
+<path d="M 1096.679 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1101.660 139 H 1106.642" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 177.000..178.000 ns</title></path>
+<path d="M 1101.660 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1106.642 163 H 1111.623" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 178.000..179.000 ns</title></path>
+<path d="M 1106.642 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1111.623 139 H 1116.604" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 179.000..180.000 ns</title></path>
+<path d="M 1111.623 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1116.604 163 H 1121.585" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 180.000..181.000 ns</title></path>
+<path d="M 1116.604 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1121.585 139 H 1126.566" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 181.000..182.000 ns</title></path>
+<path d="M 1121.585 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1126.566 163 H 1131.547" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 182.000..183.000 ns</title></path>
+<path d="M 1126.566 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1131.547 139 H 1136.528" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 183.000..184.000 ns</title></path>
+<path d="M 1131.547 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1136.528 163 H 1141.509" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 184.000..185.000 ns</title></path>
+<path d="M 1136.528 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1141.509 139 H 1146.491" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 185.000..186.000 ns</title></path>
+<path d="M 1141.509 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1146.491 163 H 1151.472" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 186.000..187.000 ns</title></path>
+<path d="M 1146.491 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1151.472 139 H 1156.453" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 187.000..188.000 ns</title></path>
+<path d="M 1151.472 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1156.453 163 H 1161.434" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 188.000..189.000 ns</title></path>
+<path d="M 1156.453 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1161.434 139 H 1166.415" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 189.000..190.000 ns</title></path>
+<path d="M 1161.434 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1166.415 163 H 1171.396" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 190.000..191.000 ns</title></path>
+<path d="M 1166.415 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1171.396 139 H 1176.377" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 191.000..192.000 ns</title></path>
+<path d="M 1171.396 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1176.377 163 H 1181.358" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 192.000..193.000 ns</title></path>
+<path d="M 1176.377 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1181.358 139 H 1186.340" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 193.000..194.000 ns</title></path>
+<path d="M 1181.358 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1186.340 163 H 1191.321" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 194.000..195.000 ns</title></path>
+<path d="M 1186.340 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1191.321 139 H 1196.302" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 195.000..196.000 ns</title></path>
+<path d="M 1191.321 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1196.302 163 H 1201.283" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 196.000..197.000 ns</title></path>
+<path d="M 1196.302 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1201.283 139 H 1206.264" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 197.000..198.000 ns</title></path>
+<path d="M 1201.283 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1206.264 163 H 1211.245" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 198.000..199.000 ns</title></path>
+<path d="M 1206.264 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1211.245 139 H 1216.226" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 199.000..200.000 ns</title></path>
+<path d="M 1211.245 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1216.226 163 H 1221.208" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 200.000..201.000 ns</title></path>
+<path d="M 1216.226 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1221.208 139 H 1226.189" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 201.000..202.000 ns</title></path>
+<path d="M 1221.208 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1226.189 163 H 1231.170" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 202.000..203.000 ns</title></path>
+<path d="M 1226.189 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1231.170 139 H 1236.151" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 203.000..204.000 ns</title></path>
+<path d="M 1231.170 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1236.151 163 H 1241.132" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 204.000..205.000 ns</title></path>
+<path d="M 1236.151 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1241.132 139 H 1246.113" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 205.000..206.000 ns</title></path>
+<path d="M 1241.132 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1246.113 163 H 1251.094" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 206.000..207.000 ns</title></path>
+<path d="M 1246.113 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1251.094 139 H 1256.075" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 207.000..208.000 ns</title></path>
+<path d="M 1251.094 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1256.075 163 H 1261.057" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 208.000..209.000 ns</title></path>
+<path d="M 1256.075 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1261.057 139 H 1266.038" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 209.000..210.000 ns</title></path>
+<path d="M 1261.057 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1266.038 163 H 1271.019" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 210.000..211.000 ns</title></path>
+<path d="M 1266.038 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1271.019 139 H 1276.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 211.000..212.000 ns</title></path>
+<path d="M 1271.019 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1276.000 163 H 1280.981" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 212.000..213.000 ns</title></path>
+<path d="M 1276.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1280.981 139 H 1285.962" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 213.000..214.000 ns</title></path>
+<path d="M 1280.981 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1285.962 163 H 1290.943" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 214.000..215.000 ns</title></path>
+<path d="M 1285.962 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1290.943 139 H 1295.925" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 215.000..216.000 ns</title></path>
+<path d="M 1290.943 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1295.925 163 H 1300.906" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 216.000..217.000 ns</title></path>
+<path d="M 1295.925 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1300.906 139 H 1305.887" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 217.000..218.000 ns</title></path>
+<path d="M 1300.906 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1305.887 163 H 1310.868" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 218.000..219.000 ns</title></path>
+<path d="M 1305.887 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1310.868 139 H 1315.849" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 219.000..220.000 ns</title></path>
+<path d="M 1310.868 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1315.849 163 H 1320.830" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 220.000..221.000 ns</title></path>
+<path d="M 1315.849 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1320.830 139 H 1325.811" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 221.000..222.000 ns</title></path>
+<path d="M 1320.830 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1325.811 163 H 1330.792" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 222.000..223.000 ns</title></path>
+<path d="M 1325.811 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1330.792 139 H 1335.774" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 223.000..224.000 ns</title></path>
+<path d="M 1330.792 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1335.774 163 H 1340.755" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 224.000..225.000 ns</title></path>
+<path d="M 1335.774 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1340.755 139 H 1345.736" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 225.000..226.000 ns</title></path>
+<path d="M 1340.755 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1345.736 163 H 1350.717" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 226.000..227.000 ns</title></path>
+<path d="M 1345.736 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1350.717 139 H 1355.698" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 227.000..228.000 ns</title></path>
+<path d="M 1350.717 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1355.698 163 H 1360.679" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 228.000..229.000 ns</title></path>
+<path d="M 1355.698 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1360.679 139 H 1365.660" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 229.000..230.000 ns</title></path>
+<path d="M 1360.679 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1365.660 163 H 1370.642" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 230.000..231.000 ns</title></path>
+<path d="M 1365.660 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1370.642 139 H 1375.623" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 231.000..232.000 ns</title></path>
+<path d="M 1370.642 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1375.623 163 H 1380.604" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 232.000..233.000 ns</title></path>
+<path d="M 1375.623 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1380.604 139 H 1385.585" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 233.000..234.000 ns</title></path>
+<path d="M 1380.604 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1385.585 163 H 1390.566" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 234.000..235.000 ns</title></path>
+<path d="M 1385.585 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1390.566 139 H 1395.547" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 235.000..236.000 ns</title></path>
+<path d="M 1390.566 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1395.547 163 H 1400.528" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 236.000..237.000 ns</title></path>
+<path d="M 1395.547 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1400.528 139 H 1405.509" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 237.000..238.000 ns</title></path>
+<path d="M 1400.528 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1405.509 163 H 1410.491" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 238.000..239.000 ns</title></path>
+<path d="M 1405.509 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1410.491 139 H 1415.472" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 239.000..240.000 ns</title></path>
+<path d="M 1410.491 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1415.472 163 H 1420.453" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 240.000..241.000 ns</title></path>
+<path d="M 1415.472 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1420.453 139 H 1425.434" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 241.000..242.000 ns</title></path>
+<path d="M 1420.453 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1425.434 163 H 1430.415" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 242.000..243.000 ns</title></path>
+<path d="M 1425.434 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1430.415 139 H 1435.396" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 243.000..244.000 ns</title></path>
+<path d="M 1430.415 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1435.396 163 H 1440.377" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 244.000..245.000 ns</title></path>
+<path d="M 1435.396 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1440.377 139 H 1445.358" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 245.000..246.000 ns</title></path>
+<path d="M 1440.377 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1445.358 163 H 1450.340" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 246.000..247.000 ns</title></path>
+<path d="M 1445.358 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1450.340 139 H 1455.321" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 247.000..248.000 ns</title></path>
+<path d="M 1450.340 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1455.321 163 H 1460.302" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 248.000..249.000 ns</title></path>
+<path d="M 1455.321 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1460.302 139 H 1465.283" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 249.000..250.000 ns</title></path>
+<path d="M 1460.302 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1465.283 163 H 1470.264" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 250.000..251.000 ns</title></path>
+<path d="M 1465.283 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1470.264 139 H 1475.245" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 251.000..252.000 ns</title></path>
+<path d="M 1470.264 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1475.245 163 H 1480.226" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 252.000..253.000 ns</title></path>
+<path d="M 1475.245 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1480.226 139 H 1485.208" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 253.000..254.000 ns</title></path>
+<path d="M 1480.226 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1485.208 163 H 1490.189" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 254.000..255.000 ns</title></path>
+<path d="M 1485.208 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1490.189 139 H 1495.170" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 255.000..256.000 ns</title></path>
+<path d="M 1490.189 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1495.170 163 H 1500.151" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 256.000..257.000 ns</title></path>
+<path d="M 1495.170 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1500.151 139 H 1505.132" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 257.000..258.000 ns</title></path>
+<path d="M 1500.151 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1505.132 163 H 1510.113" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 258.000..259.000 ns</title></path>
+<path d="M 1505.132 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1510.113 139 H 1515.094" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 259.000..260.000 ns</title></path>
+<path d="M 1510.113 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1515.094 163 H 1520.075" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 260.000..261.000 ns</title></path>
+<path d="M 1515.094 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1520.075 139 H 1525.057" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 261.000..262.000 ns</title></path>
+<path d="M 1520.075 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1525.057 163 H 1530.038" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 262.000..263.000 ns</title></path>
+<path d="M 1525.057 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1530.038 139 H 1535.019" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 1, 263.000..264.000 ns</title></path>
+<path d="M 1530.038 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1535.019 163 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/clk = 0, 264.000..265.000 ns</title></path>
+<path d="M 1535.019 139 V 163" stroke="#126e60" fill="none"/>
+<text x="12" y="204" font-family="monospace" font-size="14">shift_count_v</text>
+<rect x="220.000" y="185" width="14.943" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 0000000000000000, 0.000..3.000 ns</title></rect>
+<rect x="234.943" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 1, 3.000..5.000 ns</title></rect>
+<rect x="244.906" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 10, 5.000..7.000 ns</title></rect>
+<rect x="254.868" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 11, 7.000..9.000 ns</title></rect>
+<rect x="264.830" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 100, 9.000..11.000 ns</title></rect>
+<rect x="274.792" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 101, 11.000..13.000 ns</title></rect>
+<rect x="284.755" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 110, 13.000..15.000 ns</title></rect>
+<rect x="294.717" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 111, 15.000..17.000 ns</title></rect>
+<rect x="304.679" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 1000, 17.000..19.000 ns</title></rect>
+<rect x="314.642" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 1001, 19.000..21.000 ns</title></rect>
+<rect x="324.604" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 1010, 21.000..23.000 ns</title></rect>
+<rect x="334.566" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 1011, 23.000..25.000 ns</title></rect>
+<rect x="344.528" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 1100, 25.000..27.000 ns</title></rect>
+<rect x="354.491" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 1101, 27.000..29.000 ns</title></rect>
+<rect x="364.453" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 1110, 29.000..31.000 ns</title></rect>
+<rect x="374.415" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 1111, 31.000..33.000 ns</title></rect>
+<rect x="384.377" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 10000, 33.000..35.000 ns</title></rect>
+<rect x="394.340" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 10001, 35.000..37.000 ns</title></rect>
+<rect x="404.302" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 10010, 37.000..39.000 ns</title></rect>
+<rect x="414.264" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 10011, 39.000..41.000 ns</title></rect>
+<rect x="424.226" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 10100, 41.000..43.000 ns</title></rect>
+<rect x="434.189" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 10101, 43.000..45.000 ns</title></rect>
+<rect x="444.151" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 10110, 45.000..47.000 ns</title></rect>
+<rect x="454.113" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 10111, 47.000..49.000 ns</title></rect>
+<rect x="464.075" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 11000, 49.000..51.000 ns</title></rect>
+<rect x="474.038" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 11001, 51.000..53.000 ns</title></rect>
+<rect x="484.000" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 11010, 53.000..55.000 ns</title></rect>
+<rect x="493.962" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 11011, 55.000..57.000 ns</title></rect>
+<rect x="503.925" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 11100, 57.000..59.000 ns</title></rect>
+<rect x="513.887" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 11101, 59.000..61.000 ns</title></rect>
+<rect x="523.849" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 11110, 61.000..63.000 ns</title></rect>
+<rect x="533.811" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 11111, 63.000..65.000 ns</title></rect>
+<rect x="543.774" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 100000, 65.000..67.000 ns</title></rect>
+<rect x="553.736" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 100001, 67.000..69.000 ns</title></rect>
+<rect x="563.698" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 100010, 69.000..71.000 ns</title></rect>
+<rect x="573.660" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 100011, 71.000..73.000 ns</title></rect>
+<rect x="583.623" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 100100, 73.000..75.000 ns</title></rect>
+<rect x="593.585" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 100101, 75.000..77.000 ns</title></rect>
+<rect x="603.547" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 100110, 77.000..79.000 ns</title></rect>
+<rect x="613.509" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 100111, 79.000..81.000 ns</title></rect>
+<rect x="623.472" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 101000, 81.000..83.000 ns</title></rect>
+<rect x="633.434" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 101001, 83.000..85.000 ns</title></rect>
+<rect x="643.396" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 101010, 85.000..87.000 ns</title></rect>
+<rect x="653.358" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 101011, 87.000..89.000 ns</title></rect>
+<rect x="663.321" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 101100, 89.000..91.000 ns</title></rect>
+<rect x="673.283" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 101101, 91.000..93.000 ns</title></rect>
+<rect x="683.245" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 101110, 93.000..95.000 ns</title></rect>
+<rect x="693.208" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 101111, 95.000..97.000 ns</title></rect>
+<rect x="703.170" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 110000, 97.000..99.000 ns</title></rect>
+<rect x="713.132" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 110001, 99.000..101.000 ns</title></rect>
+<rect x="723.094" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 110010, 101.000..103.000 ns</title></rect>
+<rect x="733.057" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 110011, 103.000..105.000 ns</title></rect>
+<rect x="743.019" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 110100, 105.000..107.000 ns</title></rect>
+<rect x="752.981" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 110101, 107.000..109.000 ns</title></rect>
+<rect x="762.943" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 110110, 109.000..111.000 ns</title></rect>
+<rect x="772.906" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 110111, 111.000..113.000 ns</title></rect>
+<rect x="782.868" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 111000, 113.000..115.000 ns</title></rect>
+<rect x="792.830" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 111001, 115.000..117.000 ns</title></rect>
+<rect x="802.792" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 111010, 117.000..119.000 ns</title></rect>
+<rect x="812.755" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 111011, 119.000..121.000 ns</title></rect>
+<rect x="822.717" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 111100, 121.000..123.000 ns</title></rect>
+<rect x="832.679" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 111101, 123.000..125.000 ns</title></rect>
+<rect x="842.642" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 111110, 125.000..127.000 ns</title></rect>
+<rect x="852.604" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 111111, 127.000..129.000 ns</title></rect>
+<rect x="862.566" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 0, 129.000..131.000 ns</title></rect>
+<rect x="872.528" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 1, 131.000..133.000 ns</title></rect>
+<rect x="882.491" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 10, 133.000..135.000 ns</title></rect>
+<rect x="892.453" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 11, 135.000..137.000 ns</title></rect>
+<rect x="902.415" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 100, 137.000..139.000 ns</title></rect>
+<rect x="912.377" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 101, 139.000..141.000 ns</title></rect>
+<rect x="922.340" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 110, 141.000..143.000 ns</title></rect>
+<rect x="932.302" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 111, 143.000..145.000 ns</title></rect>
+<rect x="942.264" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 1000, 145.000..147.000 ns</title></rect>
+<rect x="952.226" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 1001, 147.000..149.000 ns</title></rect>
+<rect x="962.189" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 1010, 149.000..151.000 ns</title></rect>
+<rect x="972.151" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 1011, 151.000..153.000 ns</title></rect>
+<rect x="982.113" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 1100, 153.000..155.000 ns</title></rect>
+<rect x="992.075" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 1101, 155.000..157.000 ns</title></rect>
+<rect x="1002.038" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 1110, 157.000..159.000 ns</title></rect>
+<rect x="1012.000" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 1111, 159.000..161.000 ns</title></rect>
+<rect x="1021.962" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 10000, 161.000..163.000 ns</title></rect>
+<rect x="1031.925" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 10001, 163.000..165.000 ns</title></rect>
+<rect x="1041.887" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 10010, 165.000..167.000 ns</title></rect>
+<rect x="1051.849" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 10011, 167.000..169.000 ns</title></rect>
+<rect x="1061.811" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 10100, 169.000..171.000 ns</title></rect>
+<rect x="1071.774" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 10101, 171.000..173.000 ns</title></rect>
+<rect x="1081.736" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 10110, 173.000..175.000 ns</title></rect>
+<rect x="1091.698" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 10111, 175.000..177.000 ns</title></rect>
+<rect x="1101.660" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 11000, 177.000..179.000 ns</title></rect>
+<rect x="1111.623" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 11001, 179.000..181.000 ns</title></rect>
+<rect x="1121.585" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 11010, 181.000..183.000 ns</title></rect>
+<rect x="1131.547" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 11011, 183.000..185.000 ns</title></rect>
+<rect x="1141.509" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 11100, 185.000..187.000 ns</title></rect>
+<rect x="1151.472" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 11101, 187.000..189.000 ns</title></rect>
+<rect x="1161.434" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 11110, 189.000..191.000 ns</title></rect>
+<rect x="1171.396" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 11111, 191.000..193.000 ns</title></rect>
+<rect x="1181.358" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 100000, 193.000..195.000 ns</title></rect>
+<rect x="1191.321" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 100001, 195.000..197.000 ns</title></rect>
+<rect x="1201.283" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 100010, 197.000..199.000 ns</title></rect>
+<rect x="1211.245" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 100011, 199.000..201.000 ns</title></rect>
+<rect x="1221.208" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 100100, 201.000..203.000 ns</title></rect>
+<rect x="1231.170" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 100101, 203.000..205.000 ns</title></rect>
+<rect x="1241.132" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 100110, 205.000..207.000 ns</title></rect>
+<rect x="1251.094" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 100111, 207.000..209.000 ns</title></rect>
+<rect x="1261.057" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 101000, 209.000..211.000 ns</title></rect>
+<rect x="1271.019" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 101001, 211.000..213.000 ns</title></rect>
+<rect x="1280.981" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 101010, 213.000..215.000 ns</title></rect>
+<rect x="1290.943" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 101011, 215.000..217.000 ns</title></rect>
+<rect x="1300.906" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 101100, 217.000..219.000 ns</title></rect>
+<rect x="1310.868" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 101101, 219.000..221.000 ns</title></rect>
+<rect x="1320.830" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 101110, 221.000..223.000 ns</title></rect>
+<rect x="1330.792" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 101111, 223.000..225.000 ns</title></rect>
+<rect x="1340.755" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 110000, 225.000..227.000 ns</title></rect>
+<rect x="1350.717" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 110001, 227.000..229.000 ns</title></rect>
+<rect x="1360.679" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 110010, 229.000..231.000 ns</title></rect>
+<rect x="1370.642" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 110011, 231.000..233.000 ns</title></rect>
+<rect x="1380.604" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 110100, 233.000..235.000 ns</title></rect>
+<rect x="1390.566" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 110101, 235.000..237.000 ns</title></rect>
+<rect x="1400.528" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 110110, 237.000..239.000 ns</title></rect>
+<rect x="1410.491" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 110111, 239.000..241.000 ns</title></rect>
+<rect x="1420.453" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 111000, 241.000..243.000 ns</title></rect>
+<rect x="1430.415" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 111001, 243.000..245.000 ns</title></rect>
+<rect x="1440.377" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 111010, 245.000..247.000 ns</title></rect>
+<rect x="1450.340" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 111011, 247.000..249.000 ns</title></rect>
+<rect x="1460.302" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 111100, 249.000..251.000 ns</title></rect>
+<rect x="1470.264" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 111101, 251.000..253.000 ns</title></rect>
+<rect x="1480.226" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 111110, 253.000..255.000 ns</title></rect>
+<rect x="1490.189" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 111111, 255.000..257.000 ns</title></rect>
+<rect x="1500.151" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 0, 257.000..259.000 ns</title></rect>
+<rect x="1510.113" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 1, 259.000..261.000 ns</title></rect>
+<rect x="1520.075" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 10, 261.000..263.000 ns</title></rect>
+<rect x="1530.038" y="185" width="9.962" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/shift_count_v = 11, 263.000..265.000 ns</title></rect>
+<text x="12" y="252" font-family="monospace" font-size="14">pattern_index</text>
+<rect x="220.000" y="233" width="642.566" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/pattern_index = 00000000000000000000000000000000, 0.000..129.000 ns</title></rect>
+<text x="541.283" y="252" text-anchor="middle" font-family="monospace" font-size="13">0</text>
+<rect x="862.566" y="233" width="637.585" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/pattern_index = 1, 129.000..257.000 ns</title></rect>
+<text x="1181.358" y="252" text-anchor="middle" font-family="monospace" font-size="13">1</text>
+<rect x="1500.151" y="233" width="39.849" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_swap_integration/engine/pattern_index = 10, 257.000..265.000 ns</title></rect>
+<text x="1520.075" y="252" text-anchor="middle" font-family="monospace" font-size="13">2</text>
+<text x="12" y="300" font-family="monospace" font-size="14">mode_0</text>
+<rect x="220.000" y="281" width="323.774" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_swap_integration/engine/mode_0 = 00, 0.000..65.000 ns</title></rect>
+<text x="381.887" y="300" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="543.774" y="281" width="159.396" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_swap_integration/engine/mode_0 = 11, 65.000..97.000 ns</title></rect>
+<text x="623.472" y="300" text-anchor="middle" font-family="monospace" font-size="13">11</text>
+<rect x="703.170" y="281" width="318.792" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_swap_integration/engine/mode_0 = 0, 97.000..161.000 ns</title></rect>
+<text x="862.566" y="300" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="1021.962" y="281" width="159.396" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_swap_integration/engine/mode_0 = 11, 161.000..193.000 ns</title></rect>
+<text x="1101.660" y="300" text-anchor="middle" font-family="monospace" font-size="13">11</text>
+<rect x="1181.358" y="281" width="358.642" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_swap_integration/engine/mode_0 = 0, 193.000..265.000 ns</title></rect>
+<text x="1360.679" y="300" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<text x="12" y="348" font-family="monospace" font-size="14">mode_1</text>
+<rect x="220.000" y="329" width="164.377" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_swap_integration/engine/mode_1 = 00, 0.000..33.000 ns</title></rect>
+<text x="302.189" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="384.377" y="329" width="159.396" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_swap_integration/engine/mode_1 = 11, 33.000..65.000 ns</title></rect>
+<text x="464.075" y="348" text-anchor="middle" font-family="monospace" font-size="13">11</text>
+<rect x="543.774" y="329" width="637.585" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_swap_integration/engine/mode_1 = 0, 65.000..193.000 ns</title></rect>
+<text x="862.566" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="1181.358" y="329" width="159.396" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_swap_integration/engine/mode_1 = 11, 193.000..225.000 ns</title></rect>
+<text x="1261.057" y="348" text-anchor="middle" font-family="monospace" font-size="13">11</text>
+<rect x="1340.755" y="329" width="199.245" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_swap_integration/engine/mode_1 = 0, 225.000..265.000 ns</title></rect>
+<text x="1440.377" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<text x="12" y="396" font-family="monospace" font-size="14">mode_2</text>
+<rect x="220.000" y="377" width="323.774" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_swap_integration/engine/mode_2 = 00, 0.000..65.000 ns</title></rect>
+<text x="381.887" y="396" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="543.774" y="377" width="159.396" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_swap_integration/engine/mode_2 = 11, 65.000..97.000 ns</title></rect>
+<text x="623.472" y="396" text-anchor="middle" font-family="monospace" font-size="13">11</text>
+<rect x="703.170" y="377" width="318.792" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_swap_integration/engine/mode_2 = 0, 97.000..161.000 ns</title></rect>
+<text x="862.566" y="396" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="1021.962" y="377" width="159.396" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_swap_integration/engine/mode_2 = 11, 161.000..193.000 ns</title></rect>
+<text x="1101.660" y="396" text-anchor="middle" font-family="monospace" font-size="13">11</text>
+<rect x="1181.358" y="377" width="358.642" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_swap_integration/engine/mode_2 = 0, 193.000..265.000 ns</title></rect>
+<text x="1360.679" y="396" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<text x="12" y="444" font-family="monospace" font-size="14">mode_3</text>
+<rect x="220.000" y="425" width="164.377" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_swap_integration/engine/mode_3 = 00, 0.000..33.000 ns</title></rect>
+<text x="302.189" y="444" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="384.377" y="425" width="159.396" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_swap_integration/engine/mode_3 = 11, 33.000..65.000 ns</title></rect>
+<text x="464.075" y="444" text-anchor="middle" font-family="monospace" font-size="13">11</text>
+<rect x="543.774" y="425" width="637.585" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_swap_integration/engine/mode_3 = 0, 65.000..193.000 ns</title></rect>
+<text x="862.566" y="444" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="1181.358" y="425" width="159.396" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_swap_integration/engine/mode_3 = 11, 193.000..225.000 ns</title></rect>
+<text x="1261.057" y="444" text-anchor="middle" font-family="monospace" font-size="13">11</text>
+<rect x="1340.755" y="425" width="199.245" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_swap_integration/engine/mode_3 = 0, 225.000..265.000 ns</title></rect>
+<text x="1440.377" y="444" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<text x="12" y="492" font-family="monospace" font-size="14">pattern_done</text>
+<path d="M 220.000 487 H 224.981" stroke="#c02a35" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/pattern_done = x, 0.000..1.000 ns</title></path>
+<path d="M 224.981 499 H 862.566" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/pattern_done = 0, 1.000..129.000 ns</title></path>
+<path d="M 224.981 487 V 499" stroke="#126e60" fill="none"/>
+<path d="M 862.566 475 H 872.528" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/pattern_done = 1, 129.000..131.000 ns</title></path>
+<path d="M 862.566 499 V 475" stroke="#126e60" fill="none"/>
+<path d="M 872.528 499 H 1500.151" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/pattern_done = 0, 131.000..257.000 ns</title></path>
+<path d="M 872.528 475 V 499" stroke="#126e60" fill="none"/>
+<path d="M 1500.151 475 H 1510.113" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/pattern_done = 1, 257.000..259.000 ns</title></path>
+<path d="M 1500.151 499 V 475" stroke="#126e60" fill="none"/>
+<path d="M 1510.113 499 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_swap_integration/engine/pattern_done = 0, 259.000..265.000 ns</title></path>
+<path d="M 1510.113 475 V 499" stroke="#126e60" fill="none"/>
+<text x="20" y="564" font-family="sans-serif" font-size="11">Source: tb_swap_integration_L64_B16_N4.vcd; no expected-schedule signal reconstruction. Buses are hexadecimal; counters/region lengths are decimal.</text></svg>

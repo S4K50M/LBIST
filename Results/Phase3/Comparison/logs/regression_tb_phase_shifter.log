@@ -1,0 +1,7 @@
+Time resolution is 1 ps
+Note: [PASS] 4096 states, lookahead and consecutive-state relationship
+Time: 8191100 ps  Iteration: 0  Process: /tb_phase_shifter/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase_shifter.vhd
+Note: [PASS] reset, hold, all 65536 combinational inputs without a clock dependency
+Time: 8264736 ps  Iteration: 0  Process: /tb_phase_shifter/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase_shifter.vhd
+Note: [TB_COMPLETE] tb_phase_shifter at 8264736 ps
+Time: 8264736 ps  Iteration: 0  Process: /tb_phase_shifter/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase_shifter.vhd

@@ -1,0 +1,534 @@
+
+****** Vivado v2025.1.1 (64-bit)
+  **** SW Build 6233196 on Thu Sep 11 21:27:30 MDT 2025
+  **** IP Build 6232796 on Fri Sep 12 01:46:16 MDT 2025
+  **** SharedData Build 6233195 on Thu Sep 11 17:56:43 MDT 2025
+  **** Start of session at: Sun Nov 15 19:33:58 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source Results/Phase3/Comparison/work/final_audit.tcl
+# if {[catch {
+#     source {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/scripts/phase3_common.tcl}
+#     set python [phase3_python]
+#     puts [exec $python -E {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/scripts/collect_phase3_results.py} --require-all]
+#     # New captures were rerendered and their saved SVG intervals checked before this audit.
+#     source {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/scripts/verify_waveforms.tcl}
+#     foreach tag {tb_swap_integration_L64_B16 tb_moving_integration_L64_B16 tb_phase3_comparison_L64_T20 tb_basic_integration_L64_B20} {
+#         set ::WAVEFORM_CASE $tag
+#         source {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/scripts/open_lbist_waveforms.tcl}
+#         close_sim
+#         puts "WAVEFORM ALIAS: PASS -- $tag"
+#     }
+#     foreach script [glob {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/scripts/*.tcl}] {
+#         set f [open $script r];set text [read $f];close $f
+#         if {![info complete $text]} {error "Incomplete Tcl: $script"}
+#     }
+#     set f [open {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/scripts/generate_waveforms.tcl} r];set text [read $f];close $f
+#     foreach scope {phase3 legacy} {
+#         set slave [interp create]
+#         interp eval $slave {proc source args {set ::loaded [file tail [lindex $args 0]]};proc generate_lbist_waveforms selection {set ::legacy_selection $selection}}
+#         if {$scope eq "phase3"} {interp eval $slave {set ::WAVEFORM_SCOPE phase3}}
+#         interp eval $slave $text
+#         if {$scope eq "phase3"} {
+#             if {[interp eval $slave {set ::loaded}] ne "generate_phase3_waveforms.tcl"} {error "Wrong Phase 3 dispatcher"}
+#         } else {
+#             if {[interp eval $slave {set ::legacy_selection}] ne "all"} {error "Wrong legacy dispatcher"}
+#         }
+#         interp delete $slave
+#     }
+#     puts "TCL COMPLETENESS AND GENERATOR DISPATCH: PASS"
+#     puts "PHASE 3 FINAL ACCEPTANCE: PASS"
+# } message]} {puts stderr [format {[FAIL] %s} $message];exit 1}
+## set phase3_script_dir [file dirname [file normalize [info script]]]
+## source [file join $phase3_script_dir waveforms_common.tcl]
+### set waveform_script_dir [file dirname [file normalize [info script]]]
+### proc generate_lbist_waveforms {selection} {
+###     global waveform_script_dir
+###     set root [file normalize [file join $waveform_script_dir ../..]]
+###     set project_dir [file join $root Results Phase2 work waveform_project]
+###     create_project -force lbist_waves $project_dir -part xc7a35tcpg236-1
+###     set_property target_language VHDL [current_project]
+###     foreach name {lfsr_16 phase_shifter plpf_optimized plpf_dynamic basic_controller} {
+###         add_files -fileset sources_1 [list [file join $root lbist rtl $name.vhd]]
+###     }
+###     foreach name {phase2_tb_pkg tb_lfsr_16 tb_phase_shifter tb_plpf_optimized tb_plpf_dynamic tb_phase2_integration tb_basic_controller tb_basic_integration} {
+###         add_files -fileset sim_1 [list [file join $root lbist tb $name.vhd]]
+###     }
+###     set_property file_type VHDL [get_files *.vhd]
+###     set_property xsim.simulate.runtime 0ns [get_filesets sim_1]
+###     set cases {}
+###     if {$selection ne "basic"} {
+###         foreach top {tb_lfsr_16 tb_phase_shifter tb_plpf_optimized tb_plpf_dynamic tb_phase2_integration} {
+###             lappend cases [list phase2 $top $top {}]
+###         }
+###     }
+###     if {$selection ne "phase2"} {
+###         lappend cases {basic tb_basic_controller tb_basic_controller_L64_B20 20}
+###         foreach beta {0 8 16 20 28 36} {
+###             lappend cases [list basic tb_basic_integration tb_basic_integration_L64_B${beta} $beta]
+###         }
+###     }
+###     set summaries [dict create]
+###     foreach phase {phase2 basic} {
+###         if {$phase eq "phase2"} {set folder [file join $root Results Phase2 waveforms]} else {
+###             set folder [file join $root Results Phase3 Basic waveforms]
+###         }
+###         file mkdir $folder
+###         if {($phase eq "phase2" && $selection ne "basic") || ($phase eq "basic" && $selection ne "phase2")} {
+###             set channel [open [file join $folder waveform_summary.csv] w]
+###             puts $channel "Case,Testbench,Beta,CompletionTime,WDBBytes,VCDWindow,Result"
+###             dict set summaries $phase $channel
+###         }
+###     }
+###     set failures 0
+###     foreach case $cases {
+###         lassign $case phase top tag beta
+###         if {$phase eq "phase2"} {set folder [file join $root Results Phase2 waveforms]} else {
+###             set folder [file join $root Results Phase3 Basic waveforms]
+###         }
+###         puts "=== WAVEFORM: $tag ==="
+###         set_property top $top [get_filesets sim_1]
+###         if {$beta ne ""} {set generics [list CHAIN_LENGTH=64 BETA=$beta]} else {set generics {}}
+###         set_property generic $generics [get_filesets sim_1]
+###         update_compile_order -fileset sim_1
+###         set simdir [file join $project_dir lbist_waves.sim sim_1 behav xsim]
+###         set simlog [file join $simdir simulate.log]
+###         if {[file exists $simlog]} {file delete $simlog}
+###         set wcfg [file join $folder $tag.wcfg]
+###         set problem [catch {
+###             launch_simulation -simset sim_1 -mode behavioral
+###             create_wave_config $tag
+###             switch $top {
+###                 tb_lfsr_16 {set signals {clk rst en state bit_out zero_state custom_state test_done}}
+###                 tb_phase_shifter {set signals {clk rst en state c f1 f2 manual selected test_done}}
+###                 tb_plpf_optimized {set signals {clk mode manual c f1 f2 past y valid chain test_done}}
+###                 tb_plpf_dynamic {set signals {clk rst en state c f1 f2 mode active valid chain y test_done}}
+###                 tb_phase2_integration {set signals {clk rst scan_enable state c f1 f2 mode active valid y chain test_done}}
+###                 tb_basic_controller {set signals {clk rst scan_enable count mode done test_done}}
+###                 tb_basic_integration {set signals {clk rst scan_enable count mode done state c f1 f2 active valid scan_in chain test_done}}
+###             }
+###             foreach name $signals {
+###                 set path /$top/$name
+###                 if {[llength [get_objects $path]] != 1} {error "Missing waveform signal: $path"}
+###                 set radix default
+###                 if {$name in {state zero_state custom_state selected chain}} {set radix hex}
+###                 if {$name in {mode active}} {set radix bin}
+###                 if {$name eq "count"} {set radix unsigned}
+###                 if {$radix eq "default"} {add_wave $path} else {add_wave -radix $radix $path}
+###                 log_wave $path
+###             }
+###             # A compact portable trace covers the initial few complete patterns.
+###             # Full-time activity remains available in the WDB.
+###             open_vcd [file join $folder $tag.vcd]
+###             foreach name $signals {if {$name ni {test_done manual count}} {log_vcd /$top/$name}}
+###             run 512 ns
+###             close_vcd
+###             set finished 0
+###             for {set step 0} {$step<2000} {incr step} {
+###                 set done [string tolower [get_value /$top/test_done]]
+###                 if {$done eq "true" || $done eq "1"} {set finished 1; break}
+###                 run 1 us
+###             }
+###             if {!$finished} {error "Waveform simulation timeout"}
+###             save_wave_config $wcfg
+###         } message]
+###         catch {close_vcd}
+###         catch {close_sim}
+###         set text ""
+###         if {[file exists $simlog]} {
+###             file copy -force $simlog [file join $folder $tag.log]
+###             set f [open $simlog r]; set text [read $f]; close $f
+###         }
+###         set complete [regexp [format {[[]TB_COMPLETE[]] %s at ([^[:cntrl:]]+)} $top] $text whole duration]
+###         set result FAIL
+###         set size 0
+###         if {!$problem && $complete && ![regexp {[[]FAIL[]]|Failure:|Fatal:|ERROR:} $text]} {
+###             set database [file join $simdir ${top}_behav.wdb]
+###             if {[file exists $database] && [file exists $wcfg]} {
+###                 file copy -force $database [file join $folder $tag.wdb]
+###                 set size [file size [file join $folder $tag.wdb]]
+###                 # Keep the WCFG/WDB pair relocatable together.
+###                 set f [open $wcfg r]; set cfg [read $f]; close $f
+###                 regsub -all {(<db_ref path=")[^"]*(")} $cfg [format {\1%s.wdb\2} $tag] cfg
+###                 # Full WDB is retained; start with a readable 300-ns view.
+###                 regsub {<zoom_setting>[^<]*</zoom_setting>} $cfg {<zoom_setting>
+###       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+###       <ZoomEndTime time="300.000 ns"></ZoomEndTime>
+###       <Cursor1Time time="0.000 ns"></Cursor1Time>
+###    </zoom_setting>} cfg
+###                 set f [open $wcfg w]; puts $f $cfg; close $f
+###                 set result PASS
+###             }
+###         }
+###         if {$result eq "FAIL"} {incr failures; set duration UNKNOWN; puts stderr "Waveform failed: $tag -- $message"}
+###         if {$beta eq ""} {set beta NA}
+###         set channel [dict get $summaries $phase]
+###         puts $channel "$tag,$top,$beta,$duration,$size,0..512 ns,$result"
+###         flush $channel
+###         puts "WAVEFORM RESULT: $result -- $tag ($size bytes)"
+###     }
+###     dict for {phase channel} $summaries {close $channel}
+###     close_project
+###     if {$failures} {error "$failures waveform simulations failed"}
+###     puts "WAVEFORM GENERATION: PASS ([llength $cases] captures)"
+### }
+### proc phase3_wave_begin {folder top tag} {
+###     file mkdir $folder
+###     create_wave_config $tag
+###     if {$top eq "tb_phase3_comparison"} {
+###         set prefixes [list /$top/direct_engine /$top/low_engine /$top/basic_engine /$top/swap_engine /$top/moving_engine]
+###     } else {set prefixes [list /$top/engine]}
+###     foreach prefix $prefixes {
+###         foreach name {clk rst scan_enable shift_count_v pattern_index moving_position_v alpha_0 beta_v gamma_0 mode_0 mode_1 mode_2 mode_3 mode_select pattern_done alpha_debug gamma_debug state current_bits future1_bits future2_bits active_mode mode_valid scan_in past_bits chain_flat} {
+###             set path $prefix/$name
+###             if {[llength [get_objects $path]]==1} {
+###                 set radix hex
+###                 if {$name in {mode_0 mode_1 mode_2 mode_3 mode_select active_mode mode_valid}} {set radix bin}
+###                 if {$name in {shift_count_v moving_position_v alpha_0 beta_v gamma_0 pattern_index}} {set radix unsigned}
+###                 add_wave -radix $radix $path
+###                 log_wave $path
+###             }
+###         }
+###     }
+###     open_vcd [file join $folder $tag.vcd]
+###     foreach prefix $prefixes {
+###         foreach name {clk rst scan_enable shift_count_v pattern_index moving_position_v alpha_0 beta_v gamma_0 mode_0 mode_1 mode_2 mode_3 mode_select pattern_done alpha_debug gamma_debug state current_bits future1_bits future2_bits active_mode mode_valid scan_in past_bits chain_flat} {
+###             set path $prefix/$name
+###             if {[llength [get_objects $path]]==1} {log_vcd $path}
+###         }
+###     }
+###     run 12 us
+###     close_vcd
+### }
+### proc phase3_wave_finish {folder top tag simdir} {
+###     set dest [file join $folder $tag.wdb]
+###     file copy -force [file join $simdir [format "%s_behav.wdb" $top]] $dest
+###     set config [file join $folder $tag.wcfg]
+###     set f [open $config r]; set text [read $f]; close $f
+###     regsub -all {(<db_ref path=")[^"]*(")} $text [format {\1%s.wdb\2} $tag] text
+###     regsub {<zoom_setting>[^<]*</zoom_setting>} $text {<zoom_setting>
+###       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+###       <ZoomEndTime time="180.000 ns"></ZoomEndTime>
+###    </zoom_setting>} text
+###     set f [open $config w]; puts $f $text; close $f
+###     return [file size $dest]
+### }
+## proc phase3_python {} {
+##     if {[info exists ::phase3_selected_python]} {return $::phase3_selected_python}
+##     set candidates {}
+##     if {[info exists ::env(PHASE3_PYTHON)]} {
+##         lappend candidates $::env(PHASE3_PYTHON)
+##     } else {
+##         if {[info exists ::env(LOCALAPPDATA)]} {
+##             set installs [glob -nocomplain -directory [file join $::env(LOCALAPPDATA) Programs Python] Python*/python.exe]
+##             set candidates [lsort -decreasing $installs]
+##         }
+##         lappend candidates python3 python
+##     }
+##     foreach candidate $candidates {
+##         if {![catch {exec $candidate -E -c {import sys; assert sys.version_info >= (3,9); import matplotlib,numpy}}]} {
+##             set ::phase3_selected_python $candidate
+##             puts "PHASE 3 PYTHON: $candidate"
+##             return $candidate
+##         }
+##     }
+##     error "No Python 3.9+ with matplotlib/numpy found; install those packages and set PHASE3_PYTHON to its executable."
+## }
+## proc phase3_run {selection} {
+##     global phase3_script_dir
+##     set root [file normalize [file join $phase3_script_dir ../..]]
+##     set python [phase3_python]
+##     puts [exec $python -E [file join $phase3_script_dir make_phase3_plan.py]]
+##     source [file join $root Results Phase3 Comparison work experiment_plan.tcl]
+##     set project_dir [file join $root Results Phase3 Comparison work project_$selection]
+##     create_project -force phase3 $project_dir -part xc7a35tcpg236-1
+##     set_property target_language VHDL [current_project]
+##     foreach file [glob [file join $root lbist rtl *.vhd]] {add_files -fileset sources_1 [list $file]}
+##     foreach name {phase2_tb_pkg phase3_tb_pkg phase3_controller_check phase3_integration_check tb_swap_controller tb_moving_controller tb_swap_integration tb_moving_integration tb_phase3_comparison tb_lfsr_16 tb_phase_shifter tb_plpf_optimized tb_plpf_dynamic tb_phase2_integration tb_basic_controller tb_basic_integration} {
+##         set file [file join $root lbist tb $name.vhd]
+##         if {[file exists $file]} {add_files -fileset sim_1 [list $file]}
+##     }
+##     set_property file_type VHDL [get_files *.vhd]
+##     set_property xsim.simulate.runtime 0ns [get_filesets sim_1]
+##     set failed 0; set executed 0
+##     foreach case $phase3_cases {
+##         lassign $case group top tag generics negative capture regression
+##         set selected [expr {$selection eq "all" || ($selection eq "regression" && $regression) || ($selection eq "waveforms" && $capture) || ($selection eq $top && !$regression)}]
+##         if {!$selected} {continue}
+##         incr executed
+##         set out [file join $root Results Phase3 $group]
+##         file mkdir [file join $out logs] [file join $out reports cases]
+##         set_property top $top [get_filesets sim_1]
+##         set_property generic $generics [get_filesets sim_1]
+##         update_compile_order -fileset sim_1
+##         set simdir [file join $project_dir phase3.sim sim_1 behav xsim]
+##         set simlog [file join $simdir simulate.log]
+##         if {[file exists $simlog]} {file delete $simlog}
+##         puts "=== PHASE 3: $tag ==="
+##         set size 0
+##         set problem [catch {
+##             launch_simulation -simset sim_1 -mode behavioral
+##             if {!$negative} {
+##                 if {$capture} {phase3_wave_begin [file join $out waveforms] $top $tag}
+##                 set finished 0
+##                 for {set step 0} {$step<20000} {incr step} {
+##                     if {[string tolower [get_value /$top/test_done]] in {true 1}} {set finished 1; break}
+##                     run 1 us
+##                 }
+##                 if {!$finished} {error "Simulation timeout without test_done"}
+##                 if {$capture} {save_wave_config [file join $out waveforms $tag.wcfg]}
+##             }
+##         } message]
+##         catch {close_vcd}
+##         catch {close_sim}
+##         set text ""
+##         if {[file exists $simlog]} {
+##             file copy -force $simlog [file join $out logs $tag.log]
+##             if {$capture} {file copy -force $simlog [file join $out waveforms $tag.log]}
+##             set f [open $simlog r]; set text [read $f]; close $f
+##         }
+##         foreach filename {xvhdl.log elaborate.log} {
+##             set src [file join $simdir $filename]
+##             if {[file exists $src]} {file copy -force $src [file join $out logs [format "%s_%s" $tag $filename]]}
+##         }
+##         set complete [regexp [format {[[]TB_COMPLETE[]] %s at ([^[:cntrl:]]+)} $top] $text whole duration]
+##         set result FAIL
+##         if {$negative} {
+##             set duration {0 ns}
+##             if {[regexp {[[]CONFIG_ERROR[]]} $text] && !$complete && ![regexp {[[]FAIL[]]} $text]} {set result PASS}
+##         } elseif {!$problem && $complete && ![regexp {[[]FAIL[]]|Failure:|Fatal:|ERROR:} $text]} {
+##             set result PASS
+##             if {$capture} {
+##                 if {[catch {set size [phase3_wave_finish [file join $out waveforms] $top $tag $simdir]} why]} {
+##                     set result FAIL; set message $why
+##                 }
+##             }
+##         }
+##         if {$result eq "FAIL"} {
+##             incr failed; set duration UNKNOWN
+##             set f [open [file join $out logs [format "%s_runner_error.log" $tag]] w]
+##             puts $f $message; close $f
+##             puts stderr "[format {FAIL: %s -- %s} $tag $message]"
+##         }
+##         set f [open [file join $out reports cases $tag.csv] w]
+##         puts $f "Case,Testbench,ExpectedNegative,Regression,Capture,Result,CompletionTime,WDBBytes"
+##         puts $f "$tag,$top,$negative,$regression,$capture,$result,$duration,$size"
+##         close $f
+##         puts "RESULT: $result -- $tag -- $duration"
+##     }
+##     close_project
+##     if {$failed} {error "$failed of $executed Phase 3 cases failed"}
+##     puts "PHASE 3 RESULT: PASS ($executed cases)"
+## }
+## proc phase3_finalize {} {
+##     global phase3_script_dir
+##     set python [phase3_python]
+##     puts [exec $python -E [file join $phase3_script_dir collect_phase3_results.py] --require-all]
+##     puts [exec $python -E [file join $phase3_script_dir render_waveform_previews.py] --phase3]
+##     set ::WAVEFORM_VERIFY_SCOPE phase3
+##     source [file join $phase3_script_dir verify_waveforms.tcl]
+##     puts "PHASE 3 FINAL REPORTS AND WAVEFORM VERIFICATION: PASS"
+## }
+PHASE 3 PYTHON: C:/Users/Saksham Setia/AppData/Local/Programs/Python/Python313/python.exe
+Collected 69 PASS / 69 planned cases; 81 measured approach records.
+## set wave_verify_root [file normalize [file join [file dirname [info script]] ../..]]
+## set wave_checked 0
+## foreach relative {Results/Phase2/waveforms Results/Phase3/Basic/waveforms Results/Phase3/Swap/waveforms Results/Phase3/Moving/waveforms Results/Phase3/Comparison/waveforms} {
+##     if {[info exists ::WAVEFORM_VERIFY_SCOPE] && $::WAVEFORM_VERIFY_SCOPE eq "phase3" &&
+##         $relative in {Results/Phase2/waveforms Results/Phase3/Basic/waveforms}} {continue}
+##     set folder [file join $wave_verify_root $relative]
+##     if {![file exists [file join $folder waveform_summary.csv]]} {continue}
+##     set f [open [file join $folder waveform_summary.csv] r]
+##     set rows [split [string trim [read $f]] "\n"]; close $f
+##     foreach row [lrange $rows 1 end] {
+##         set fields [split [string trim $row] ,]
+##         lassign $fields tag top beta duration size window result
+##         if {$result ne "PASS"} {error "Capture has not passed: $tag"}
+##         set db [file join $folder $tag.wdb]
+##         set cfg [file join $folder $tag.wcfg]
+##         if {![file exists $db] || ![file exists $cfg]} {error "Missing WDB/WCFG for $tag; regenerate locally"}
+##         set cf [open $cfg r]; set cfg_text [read $cf]; close $cf
+##         if {![regexp {<db_ref path="([^"]+)"} $cfg_text whole referenced] || $referenced ne "$tag.wdb"} {error "Wrong WCFG database reference for $tag"}
+##         if {[file size $db] != $size} {error "Database byte count differs from capture manifest: $tag"}
+##         open_wave_database $db
+##         open_wave_config $cfg
+##         set prefixes [list /$top]
+##         if {$top in {tb_swap_controller tb_moving_controller tb_swap_integration tb_moving_integration}} {set prefixes [list /$top/engine]}
+##         if {$top eq "tb_phase3_comparison"} {
+##             set prefixes [list /$top/direct_engine /$top/low_engine /$top/basic_engine /$top/swap_engine /$top/moving_engine]
+##         }
+##         foreach prefix $prefixes {
+##             if {[llength [get_objects $prefix/clk]] != 1} {error "Missing clock in saved database: $tag"}
+##             if {$prefix ne "/$top"} {
+##                 foreach signal {rst scan_enable shift_count_v pattern_index moving_position_v mode_select pattern_done mode_0 mode_1 mode_2 mode_3 alpha_0 beta_v gamma_0 alpha_debug gamma_debug} {
+##                     if {[llength [get_objects $prefix/$signal]] != 1} {error "Missing saved signal: $prefix/$signal"}
+##                 }
+##                 if {$top ni {tb_swap_controller tb_moving_controller}} {
+##                     foreach signal {state current_bits future1_bits future2_bits active_mode mode_valid scan_in past_bits chain_flat} {
+##                         if {[llength [get_objects $prefix/$signal]] != 1} {error "Missing integration signal: $prefix/$signal"}
+##                     }
+##                 }
+##             }
+##         }
+##         if {[string match tb_basic* $top] && [llength [get_objects /$top/count]] != 1} {
+##             error "Missing integer shift counter in native database: $tag"
+##         }
+##         close_sim
+##         incr wave_checked
+##         puts "STATIC WAVEFORM CHECK: PASS -- $tag"
+##     }
+## }
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase2/waveforms\tb_lfsr_16.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+STATIC WAVEFORM CHECK: PASS -- tb_lfsr_16
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase2/waveforms\tb_phase_shifter.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+STATIC WAVEFORM CHECK: PASS -- tb_phase_shifter
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase2/waveforms\tb_plpf_optimized.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+STATIC WAVEFORM CHECK: PASS -- tb_plpf_optimized
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase2/waveforms\tb_plpf_dynamic.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+STATIC WAVEFORM CHECK: PASS -- tb_plpf_dynamic
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase2/waveforms\tb_phase2_integration.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+STATIC WAVEFORM CHECK: PASS -- tb_phase2_integration
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Basic/waveforms\tb_basic_controller_L64_B20.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+STATIC WAVEFORM CHECK: PASS -- tb_basic_controller_L64_B20
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Basic/waveforms\tb_basic_integration_L64_B0.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+STATIC WAVEFORM CHECK: PASS -- tb_basic_integration_L64_B0
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Basic/waveforms\tb_basic_integration_L64_B8.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+STATIC WAVEFORM CHECK: PASS -- tb_basic_integration_L64_B8
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Basic/waveforms\tb_basic_integration_L64_B16.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+STATIC WAVEFORM CHECK: PASS -- tb_basic_integration_L64_B16
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Basic/waveforms\tb_basic_integration_L64_B20.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+STATIC WAVEFORM CHECK: PASS -- tb_basic_integration_L64_B20
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Basic/waveforms\tb_basic_integration_L64_B28.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+STATIC WAVEFORM CHECK: PASS -- tb_basic_integration_L64_B28
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Basic/waveforms\tb_basic_integration_L64_B36.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+STATIC WAVEFORM CHECK: PASS -- tb_basic_integration_L64_B36
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Swap/waveforms\tb_swap_controller_L64_B16_N4.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+STATIC WAVEFORM CHECK: PASS -- tb_swap_controller_L64_B16_N4
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Swap/waveforms\tb_swap_integration_L64_B16_N4.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+STATIC WAVEFORM CHECK: PASS -- tb_swap_integration_L64_B16_N4
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Moving/waveforms\tb_moving_controller_L64_B16_N4.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+STATIC WAVEFORM CHECK: PASS -- tb_moving_controller_L64_B16_N4
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Moving/waveforms\tb_moving_integration_L64_B16_N4.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+STATIC WAVEFORM CHECK: PASS -- tb_moving_integration_L64_B16_N4
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/waveforms\tb_phase3_comparison_L64_T20.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+STATIC WAVEFORM CHECK: PASS -- tb_phase3_comparison_L64_T20
+## set minimum_captures 12
+## if {[file exists [file join $wave_verify_root Results Phase3 Comparison waveforms waveform_summary.csv]]} {set minimum_captures 17}
+## if {[info exists ::WAVEFORM_VERIFY_SCOPE] && $::WAVEFORM_VERIFY_SCOPE eq "phase3"} {set minimum_captures 5}
+## if {$wave_checked < $minimum_captures} {error "Insufficient native waveform captures: $wave_checked"}
+## if {[file exists [file join $wave_verify_root Results Phase3 Comparison reports phase3_waveform_summary.csv]]} {
+##     if {![llength [info commands phase3_python]]} {
+##         source [file join $wave_verify_root lbist scripts phase3_common.tcl]
+##     }
+##     set python [phase3_python]
+##     puts [exec $python -E [file join $wave_verify_root lbist scripts phase3_waveform_analysis.py] --verify-only]
+## }
+VCD TEMPORAL CHECK: PASS -- tb_swap_controller_L64_B16_N4
+VCD TEMPORAL CHECK: PASS -- tb_swap_integration_L64_B16_N4
+VCD TEMPORAL CHECK: PASS -- tb_moving_controller_L64_B16_N4
+VCD TEMPORAL CHECK: PASS -- tb_moving_integration_L64_B16_N4
+VCD TEMPORAL CHECK: PASS -- tb_phase3_comparison_L64_T20
+Verified 5 captured testbenches, 50 actual event timestamps and 44 saved waveform SVGs.
+## puts "STATIC WAVEFORM VALIDATION: PASS ($wave_checked captures)"
+STATIC WAVEFORM VALIDATION: PASS (17 captures)
+## if {![info exists ::WAVEFORM_CASE]} {set ::WAVEFORM_CASE tb_basic_integration_L64_B20}
+## set wave_root [file normalize [file join [file dirname [info script]] ../..]]
+## set wave_folder ""
+## foreach relative {Results/Phase2/waveforms Results/Phase3/Basic/waveforms Results/Phase3/Swap/waveforms Results/Phase3/Moving/waveforms Results/Phase3/Comparison/waveforms} {
+##     set candidate [file join $wave_root $relative]
+##     foreach tag [list $::WAVEFORM_CASE [format "%s_N4" $::WAVEFORM_CASE]] {
+##         if {[file exists [file join $candidate $tag.wdb]]} {
+##             set wave_folder $candidate; set ::WAVEFORM_CASE $tag; break
+##         }
+##     }
+##     if {$wave_folder ne ""} {break}
+## }
+## if {$wave_folder eq ""} {error "Waveform database is missing; run generate_phase3_waveforms.tcl for Phase 3 or generate_waveforms.tcl for legacy captures."}
+## open_wave_database [file join $wave_folder $::WAVEFORM_CASE.wdb]
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Swap/waveforms\tb_swap_integration_L64_B16_N4.wcfg}
+## open_wave_config [file join $wave_folder $::WAVEFORM_CASE.wcfg]
+## puts "Opened $::WAVEFORM_CASE; full trace in WDB; the saved layout sets the initial zoom."
+Opened tb_swap_integration_L64_B16_N4; full trace in WDB; the saved layout sets the initial zoom.
+INFO: [Simtcl 6-16] Simulation closed
+WAVEFORM ALIAS: PASS -- tb_swap_integration_L64_B16_N4
+## if {![info exists ::WAVEFORM_CASE]} {set ::WAVEFORM_CASE tb_basic_integration_L64_B20}
+## set wave_root [file normalize [file join [file dirname [info script]] ../..]]
+## set wave_folder ""
+## foreach relative {Results/Phase2/waveforms Results/Phase3/Basic/waveforms Results/Phase3/Swap/waveforms Results/Phase3/Moving/waveforms Results/Phase3/Comparison/waveforms} {
+##     set candidate [file join $wave_root $relative]
+##     foreach tag [list $::WAVEFORM_CASE [format "%s_N4" $::WAVEFORM_CASE]] {
+##         if {[file exists [file join $candidate $tag.wdb]]} {
+##             set wave_folder $candidate; set ::WAVEFORM_CASE $tag; break
+##         }
+##     }
+##     if {$wave_folder ne ""} {break}
+## }
+## if {$wave_folder eq ""} {error "Waveform database is missing; run generate_phase3_waveforms.tcl for Phase 3 or generate_waveforms.tcl for legacy captures."}
+## open_wave_database [file join $wave_folder $::WAVEFORM_CASE.wdb]
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Moving/waveforms\tb_moving_integration_L64_B16_N4.wcfg}
+## open_wave_config [file join $wave_folder $::WAVEFORM_CASE.wcfg]
+## puts "Opened $::WAVEFORM_CASE; full trace in WDB; the saved layout sets the initial zoom."
+Opened tb_moving_integration_L64_B16_N4; full trace in WDB; the saved layout sets the initial zoom.
+INFO: [Simtcl 6-16] Simulation closed
+WAVEFORM ALIAS: PASS -- tb_moving_integration_L64_B16_N4
+## if {![info exists ::WAVEFORM_CASE]} {set ::WAVEFORM_CASE tb_basic_integration_L64_B20}
+## set wave_root [file normalize [file join [file dirname [info script]] ../..]]
+## set wave_folder ""
+## foreach relative {Results/Phase2/waveforms Results/Phase3/Basic/waveforms Results/Phase3/Swap/waveforms Results/Phase3/Moving/waveforms Results/Phase3/Comparison/waveforms} {
+##     set candidate [file join $wave_root $relative]
+##     foreach tag [list $::WAVEFORM_CASE [format "%s_N4" $::WAVEFORM_CASE]] {
+##         if {[file exists [file join $candidate $tag.wdb]]} {
+##             set wave_folder $candidate; set ::WAVEFORM_CASE $tag; break
+##         }
+##     }
+##     if {$wave_folder ne ""} {break}
+## }
+## if {$wave_folder eq ""} {error "Waveform database is missing; run generate_phase3_waveforms.tcl for Phase 3 or generate_waveforms.tcl for legacy captures."}
+## open_wave_database [file join $wave_folder $::WAVEFORM_CASE.wdb]
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Comparison/waveforms\tb_phase3_comparison_L64_T20.wcfg}
+## open_wave_config [file join $wave_folder $::WAVEFORM_CASE.wcfg]
+## puts "Opened $::WAVEFORM_CASE; full trace in WDB; the saved layout sets the initial zoom."
+Opened tb_phase3_comparison_L64_T20; full trace in WDB; the saved layout sets the initial zoom.
+INFO: [Simtcl 6-16] Simulation closed
+WAVEFORM ALIAS: PASS -- tb_phase3_comparison_L64_T20
+## if {![info exists ::WAVEFORM_CASE]} {set ::WAVEFORM_CASE tb_basic_integration_L64_B20}
+## set wave_root [file normalize [file join [file dirname [info script]] ../..]]
+## set wave_folder ""
+## foreach relative {Results/Phase2/waveforms Results/Phase3/Basic/waveforms Results/Phase3/Swap/waveforms Results/Phase3/Moving/waveforms Results/Phase3/Comparison/waveforms} {
+##     set candidate [file join $wave_root $relative]
+##     foreach tag [list $::WAVEFORM_CASE [format "%s_N4" $::WAVEFORM_CASE]] {
+##         if {[file exists [file join $candidate $tag.wdb]]} {
+##             set wave_folder $candidate; set ::WAVEFORM_CASE $tag; break
+##         }
+##     }
+##     if {$wave_folder ne ""} {break}
+## }
+## if {$wave_folder eq ""} {error "Waveform database is missing; run generate_phase3_waveforms.tcl for Phase 3 or generate_waveforms.tcl for legacy captures."}
+## open_wave_database [file join $wave_folder $::WAVEFORM_CASE.wdb]
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Basic/waveforms\tb_basic_integration_L64_B20.wcfg}
+## open_wave_config [file join $wave_folder $::WAVEFORM_CASE.wcfg]
+## puts "Opened $::WAVEFORM_CASE; full trace in WDB; the saved layout sets the initial zoom."
+Opened tb_basic_integration_L64_B20; full trace in WDB; the saved layout sets the initial zoom.
+INFO: [Simtcl 6-16] Simulation closed
+WAVEFORM ALIAS: PASS -- tb_basic_integration_L64_B20
+TCL COMPLETENESS AND GENERATOR DISPATCH: PASS
+PHASE 3 FINAL ACCEPTANCE: PASS
+INFO: [Common 17-206] Exiting Vivado at Sun Nov 15 19:34:18 2026...

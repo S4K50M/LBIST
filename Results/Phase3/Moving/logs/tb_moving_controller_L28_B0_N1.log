@@ -1,0 +1,13 @@
+Time resolution is 1 ps
+Note: [PASS] moving SC01/MC01 reset and initial region
+Time: 1100 ps  Iteration: 0  Process: /tb_moving_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [PASS] SC02..SC09 / MC02..MC08 all modes, regions, odd/even patterns/chains, movement and wrap
+Time: 14349100 ps  Iteration: 0  Process: /tb_moving_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [PASS] SC10..SC12/SC14/SC15 / MC09/MC11/MC12/MC14/MC15 pause, 256 patterns, no extra cycles
+Time: 14349100 ps  Iteration: 0  Process: /tb_moving_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [PASS] SC11/MC10 synchronous mid-pattern reset
+Time: 14363100 ps  Iteration: 0  Process: /tb_moving_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [UNIT_COMPLETE] moving at 14363100 ps
+Time: 14363100 ps  Iteration: 0  Process: /tb_moving_controller/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [TB_COMPLETE] tb_moving_controller at 14363100 ps
+Time: 14363100 ps  Iteration: 2  Process: /tb_moving_controller/completion  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_moving_controller.vhd

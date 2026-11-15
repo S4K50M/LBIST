@@ -1,0 +1,17 @@
+Case,Group,Testbench,Regression,ExpectedNegative,Result,CompletionTime
+tb_moving_controller_L64_B0_N4,Moving,tb_moving_controller,False,False,PASS,32801100 ps
+tb_moving_controller_L64_B16_N4,Moving,tb_moving_controller,False,False,PASS,32801100 ps
+tb_moving_controller_L64_B36_N4,Moving,tb_moving_controller,False,False,PASS,32801100 ps
+tb_moving_controller_L128_B16_N4,Moving,tb_moving_controller,False,False,PASS,65569100 ps
+tb_moving_controller_L200_B32_N4,Moving,tb_moving_controller,False,False,PASS,102433100 ps
+tb_moving_controller_L28_B0_N1,Moving,tb_moving_controller,False,False,PASS,14363100 ps
+tb_moving_controller_L65_B17_N4,Moving,tb_moving_controller,False,False,PASS,33313100 ps
+tb_moving_controller_L64_B16_N4_I5,Moving,tb_moving_controller,False,False,PASS,32801100 ps
+tb_moving_controller_L64_B37_N4,Moving,tb_moving_controller,False,True,PASS,0 ns
+tb_moving_controller_L64_B65_N4,Moving,tb_moving_controller,False,True,PASS,0 ns
+tb_moving_controller_L1_B0_N4,Moving,tb_moving_controller,False,True,PASS,0 ns
+tb_moving_controller_L64_B16_N4_I21,Moving,tb_moving_controller,False,True,PASS,0 ns
+tb_moving_controller_L64_B16_N17,Moving,tb_moving_controller,False,True,PASS,0 ns
+tb_moving_integration_L64_B16_N4,Moving,tb_moving_integration,False,False,PASS,131457100 ps
+tb_moving_integration_L128_B16_N4,Moving,tb_moving_integration,False,False,PASS,262913100 ps
+tb_moving_integration_L200_B32_N4,Moving,tb_moving_integration,False,False,PASS,410801100 ps

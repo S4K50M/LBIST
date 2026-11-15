@@ -1,0 +1,6 @@
+Case,Group,Testbench,BehavioralResult,VCDSignals,VCDDurationNS,CheckedPrefixes,WDBExists,WCFGExists
+tb_swap_controller_L64_B16_N4,Swap,tb_swap_controller,PASS,17,12000.0,1,True,True
+tb_swap_integration_L64_B16_N4,Swap,tb_swap_integration,PASS,26,12000.0,1,True,True
+tb_moving_controller_L64_B16_N4,Moving,tb_moving_controller,PASS,17,12000.0,1,True,True
+tb_moving_integration_L64_B16_N4,Moving,tb_moving_integration,PASS,26,12000.0,1,True,True
+tb_phase3_comparison_L64_T20,Comparison,tb_phase3_comparison,PASS,130,12000.0,5,True,True

@@ -1,0 +1,14 @@
+test_all_region_sums_and_constraints (__main__.ScheduleTests.test_all_region_sums_and_constraints) ... ok
+test_cli (__main__.ScheduleTests.test_cli) ... ok
+test_feasible_ranges_and_nearest (__main__.ScheduleTests.test_feasible_ranges_and_nearest) ... ok
+test_illegal_and_odd_configuration (__main__.ScheduleTests.test_illegal_and_odd_configuration) ... ok
+test_legacy_basic_optimizer_unchanged (__main__.ScheduleTests.test_legacy_basic_optimizer_unchanged) ... ok
+test_moving_all_positions_and_wrap (__main__.ScheduleTests.test_moving_all_positions_and_wrap) ... ok
+test_optimum_and_exact_cycle_average (__main__.ScheduleTests.test_optimum_and_exact_cycle_average) ... ok
+test_position_exposure (__main__.ScheduleTests.test_position_exposure) ... ok
+test_swap_pattern_and_chain_parity (__main__.ScheduleTests.test_swap_pattern_and_chain_parity) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 11.651s
+
+OK
