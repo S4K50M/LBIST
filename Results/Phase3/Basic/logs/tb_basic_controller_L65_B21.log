@@ -1,0 +1,13 @@
+Time resolution is 1 ps
+Note: [PASS] BC01 Reset
+Time: 1100 ps  Iteration: 0  Process: /tb_basic_controller/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_basic_controller.vhd
+Note: [PASS] BC02 First low region; BC03 first boundary; BC04 high region; BC05 second boundary
+Time: 33299100 ps  Iteration: 0  Process: /tb_basic_controller/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_basic_controller.vhd
+Note: [PASS] BC06 exact completion; BC07 rollover; BC08 pause/resume; BC09 256 consecutive patterns
+Time: 33299100 ps  Iteration: 0  Process: /tb_basic_controller/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_basic_controller.vhd
+Note: [PASS] BC10 synchronous mid-pattern reset; BC11 legal boundary configuration; BC12 no latency or extra cycles
+Time: 33315100 ps  Iteration: 0  Process: /tb_basic_controller/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_basic_controller.vhd
+Note: [CONTROLLER] 65,22,21,22,256,16640
+Time: 33315100 ps  Iteration: 0  Process: /tb_basic_controller/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_basic_controller.vhd
+Note: [TB_COMPLETE] tb_basic_controller at 33315100 ps
+Time: 33315100 ps  Iteration: 0  Process: /tb_basic_controller/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_basic_controller.vhd

@@ -1,0 +1,9 @@
+Case,ChainLength,Alpha,Beta,Gamma,Patterns,Shifts,SimTime,Result
+tb_basic_controller_L64_B0,64,32,0,32,256,16384,32797100 ps,PASS
+tb_basic_controller_L64_B8,64,28,8,28,256,16384,32803100 ps,PASS
+tb_basic_controller_L64_B16,64,24,16,24,256,16384,32803100 ps,PASS
+tb_basic_controller_L64_B20,64,22,20,22,256,16384,32803100 ps,PASS
+tb_basic_controller_L64_B28,64,18,28,18,256,16384,32803100 ps,PASS
+tb_basic_controller_L64_B36,64,14,36,14,256,16384,32803100 ps,PASS
+tb_basic_controller_L28_B0,28,14,0,14,256,7168,14365100 ps,PASS
+tb_basic_controller_L65_B21,65,22,21,22,256,16640,33315100 ps,PASS

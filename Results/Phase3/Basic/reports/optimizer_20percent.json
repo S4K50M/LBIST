@@ -1,0 +1,14 @@
+{
+  "ChainLength": 64,
+  "Alpha": 22,
+  "Beta": 20,
+  "Gamma": 22,
+  "TargetWTM": "1/5",
+  "EstimatedWTM": "23/112",
+  "ErrorPP": "15/28",
+  "FeasibleMin": "1/14",
+  "FeasibleMax": "5/16",
+  "OutsideRange": false,
+  "Classification": "paper-compliant",
+  "TieBreak": "smaller beta"
+}

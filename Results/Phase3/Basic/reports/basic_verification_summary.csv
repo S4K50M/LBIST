@@ -1,0 +1,19 @@
+Case,Testbench,ChainLength,Beta,Classification,Result,CompletionTime
+tb_basic_controller_L64_B0,tb_basic_controller,64,0,paper-compliant,PASS,32797100 ps
+tb_basic_controller_L64_B8,tb_basic_controller,64,8,paper-compliant,PASS,32803100 ps
+tb_basic_controller_L64_B16,tb_basic_controller,64,16,paper-compliant,PASS,32803100 ps
+tb_basic_controller_L64_B20,tb_basic_controller,64,20,paper-compliant,PASS,32803100 ps
+tb_basic_controller_L64_B28,tb_basic_controller,64,28,paper-compliant,PASS,32803100 ps
+tb_basic_controller_L64_B36,tb_basic_controller,64,36,paper-compliant,PASS,32803100 ps
+tb_basic_controller_L28_B0,tb_basic_controller,28,0,paper-compliant,PASS,14365100 ps
+tb_basic_controller_L65_B21,tb_basic_controller,65,21,paper-compliant,PASS,33315100 ps
+tb_basic_controller_L64_B1,tb_basic_controller,64,1,expected-rejection,PASS,0 ns
+tb_basic_controller_L64_B65,tb_basic_controller,64,65,expected-rejection,PASS,0 ns
+tb_basic_controller_L1_B0,tb_basic_controller,1,0,expected-rejection,PASS,0 ns
+tb_basic_controller_L64_B38,tb_basic_controller,64,38,expected-rejection,PASS,0 ns
+tb_basic_integration_L64_B0,tb_basic_integration,64,0,paper-compliant,PASS,131457100 ps
+tb_basic_integration_L64_B8,tb_basic_integration,64,8,paper-compliant,PASS,131457100 ps
+tb_basic_integration_L64_B16,tb_basic_integration,64,16,paper-compliant,PASS,131457100 ps
+tb_basic_integration_L64_B20,tb_basic_integration,64,20,paper-compliant,PASS,131457100 ps
+tb_basic_integration_L64_B28,tb_basic_integration,64,28,paper-compliant,PASS,131457100 ps
+tb_basic_integration_L64_B36,tb_basic_integration,64,36,paper-compliant,PASS,131457100 ps
