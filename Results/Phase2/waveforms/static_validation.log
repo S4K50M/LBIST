@@ -1,0 +1,71 @@
+
+****** Vivado v2025.1.1 (64-bit)
+  **** SW Build 6233196 on Thu Sep 11 21:27:30 MDT 2025
+  **** IP Build 6232796 on Fri Sep 12 01:46:16 MDT 2025
+  **** SharedData Build 6233195 on Thu Sep 11 17:56:43 MDT 2025
+  **** Start of session at: Sun Nov 15 18:14:12 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/scripts/verify_waveforms.tcl}
+# set wave_verify_root [file normalize [file join [file dirname [info script]] ../..]]
+# set wave_checked 0
+# foreach relative {Results/Phase2/waveforms Results/Phase3/Basic/waveforms} {
+#     set folder [file join $wave_verify_root $relative]
+#     set f [open [file join $folder waveform_summary.csv] r]
+#     set rows [split [string trim [read $f]] "\n"]; close $f
+#     foreach row [lrange $rows 1 end] {
+#         set fields [split [string trim $row] ,]
+#         lassign $fields tag top beta duration size window result
+#         if {$result ne "PASS"} {error "Capture has not passed: $tag"}
+#         open_wave_database [file join $folder $tag.wdb]
+#         open_wave_config [file join $folder $tag.wcfg]
+#         if {[llength [get_objects /$top/clk]] != 1} {error "Missing clock in saved database: $tag"}
+#         if {[string match tb_basic* $top] && [llength [get_objects /$top/count]] != 1} {
+#             error "Missing integer shift counter in native database: $tag"
+#         }
+#         close_sim
+#         incr wave_checked
+#         puts "STATIC WAVEFORM CHECK: PASS -- $tag"
+#     }
+# }
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase2/waveforms\tb_lfsr_16.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+STATIC WAVEFORM CHECK: PASS -- tb_lfsr_16
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase2/waveforms\tb_phase_shifter.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+STATIC WAVEFORM CHECK: PASS -- tb_phase_shifter
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase2/waveforms\tb_plpf_optimized.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+STATIC WAVEFORM CHECK: PASS -- tb_plpf_optimized
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase2/waveforms\tb_plpf_dynamic.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+STATIC WAVEFORM CHECK: PASS -- tb_plpf_dynamic
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase2/waveforms\tb_phase2_integration.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+STATIC WAVEFORM CHECK: PASS -- tb_phase2_integration
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Basic/waveforms\tb_basic_controller_L64_B20.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+STATIC WAVEFORM CHECK: PASS -- tb_basic_controller_L64_B20
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Basic/waveforms\tb_basic_integration_L64_B0.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+STATIC WAVEFORM CHECK: PASS -- tb_basic_integration_L64_B0
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Basic/waveforms\tb_basic_integration_L64_B8.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+STATIC WAVEFORM CHECK: PASS -- tb_basic_integration_L64_B8
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Basic/waveforms\tb_basic_integration_L64_B16.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+STATIC WAVEFORM CHECK: PASS -- tb_basic_integration_L64_B16
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Basic/waveforms\tb_basic_integration_L64_B20.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+STATIC WAVEFORM CHECK: PASS -- tb_basic_integration_L64_B20
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Basic/waveforms\tb_basic_integration_L64_B28.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+STATIC WAVEFORM CHECK: PASS -- tb_basic_integration_L64_B28
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase3/Basic/waveforms\tb_basic_integration_L64_B36.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+STATIC WAVEFORM CHECK: PASS -- tb_basic_integration_L64_B36
+# if {$wave_checked != 12} {error "Expected 12 waveform captures, found $wave_checked"}
+# puts "STATIC WAVEFORM VALIDATION: PASS ($wave_checked captures)"
+STATIC WAVEFORM VALIDATION: PASS (12 captures)
+INFO: [Common 17-206] Exiting Vivado at Sun Nov 15 18:14:21 2026...

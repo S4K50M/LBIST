@@ -1,0 +1,8 @@
+Case,Testbench,Beta,CompletionTime,WDBBytes,VCDWindow,Result
+tb_basic_controller_L64_B20,tb_basic_controller,20,32803100 ps,224585,0..512 ns,PASS
+tb_basic_integration_L64_B0,tb_basic_integration,0,131457100 ps,2392372,0..512 ns,PASS
+tb_basic_integration_L64_B8,tb_basic_integration,8,131457100 ps,2444759,0..512 ns,PASS
+tb_basic_integration_L64_B16,tb_basic_integration,16,131457100 ps,2467611,0..512 ns,PASS
+tb_basic_integration_L64_B20,tb_basic_integration,20,131457100 ps,2480107,0..512 ns,PASS
+tb_basic_integration_L64_B28,tb_basic_integration,28,131457100 ps,2503098,0..512 ns,PASS
+tb_basic_integration_L64_B36,tb_basic_integration,36,131457100 ps,2529688,0..512 ns,PASS

@@ -1,0 +1,23 @@
+Time resolution is 1 ps
+Note: [PASS] exhaustive truth table n=1
+Time: 160 ps  Iteration: 0  Process: /tb_plpf_optimized/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_plpf_optimized.vhd
+Note: [PASS] exhaustive truth table n=2
+Time: 320 ps  Iteration: 0  Process: /tb_plpf_optimized/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_plpf_optimized.vhd
+Note: [PASS] exhaustive truth table n=3
+Time: 480 ps  Iteration: 0  Process: /tb_plpf_optimized/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_plpf_optimized.vhd
+Note: [PASS] invalid modes and unknown feedback negative cases
+Time: 510 ps  Iteration: 0  Process: /tb_plpf_optimized/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_plpf_optimized.vhd
+Note: [METRIC] tb_plpf_optimized,1,5.000000e-01,5.000153e-01,1.525925e-03,65535,32768
+Time: 131069010 ps  Iteration: 0  Process: /tb_plpf_optimized/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_plpf_optimized.vhd
+Note: [PASS] measured toggle-rate tolerance n=1
+Time: 131069010 ps  Iteration: 0  Process: /tb_plpf_optimized/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_plpf_optimized.vhd
+Note: [METRIC] tb_plpf_optimized,2,1.666667e-01,1.666616e-01,5.086418e-04,65535,10922
+Time: 262139010 ps  Iteration: 0  Process: /tb_plpf_optimized/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_plpf_optimized.vhd
+Note: [PASS] measured toggle-rate tolerance n=2
+Time: 262139010 ps  Iteration: 0  Process: /tb_plpf_optimized/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_plpf_optimized.vhd
+Note: [METRIC] tb_plpf_optimized,3,7.142857e-02,7.138279e-02,4.577776e-03,65535,4678
+Time: 393209010 ps  Iteration: 0  Process: /tb_plpf_optimized/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_plpf_optimized.vhd
+Note: [PASS] measured toggle-rate tolerance n=3
+Time: 393209010 ps  Iteration: 0  Process: /tb_plpf_optimized/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_plpf_optimized.vhd
+Note: [TB_COMPLETE] tb_plpf_optimized at 393209010 ps
+Time: 393209010 ps  Iteration: 0  Process: /tb_plpf_optimized/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_plpf_optimized.vhd

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_basic_integration_L64_B16.wdb" id="1">
+         <top_modules>
+            <top_module name="phase2_tb_pkg" />
+            <top_module name="tb_basic_integration" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="300.000 ns"></ZoomEndTime>
+      <Cursor1Time time="0.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+   </column_width_setting>
+   <WVObjectSize size="15" />
+   <wvobject fp_name="/tb_basic_integration/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_basic_integration/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_basic_integration/scan_enable" type="logic">
+      <obj_property name="ElementShortName">scan_enable</obj_property>
+      <obj_property name="ObjectShortName">scan_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_basic_integration/count" type="other">
+      <obj_property name="ElementShortName">count</obj_property>
+      <obj_property name="ObjectShortName">count</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_basic_integration/mode" type="array">
+      <obj_property name="ElementShortName">mode[1:0]</obj_property>
+      <obj_property name="ObjectShortName">mode[1:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_basic_integration/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_basic_integration/state" type="array">
+      <obj_property name="ElementShortName">state[15:0]</obj_property>
+      <obj_property name="ObjectShortName">state[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_basic_integration/c" type="logic">
+      <obj_property name="ElementShortName">c</obj_property>
+      <obj_property name="ObjectShortName">c</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_basic_integration/f1" type="logic">
+      <obj_property name="ElementShortName">f1</obj_property>
+      <obj_property name="ObjectShortName">f1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_basic_integration/f2" type="logic">
+      <obj_property name="ElementShortName">f2</obj_property>
+      <obj_property name="ObjectShortName">f2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_basic_integration/active" type="array">
+      <obj_property name="ElementShortName">active[1:0]</obj_property>
+      <obj_property name="ObjectShortName">active[1:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_basic_integration/valid" type="logic">
+      <obj_property name="ElementShortName">valid</obj_property>
+      <obj_property name="ObjectShortName">valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_basic_integration/scan_in" type="logic">
+      <obj_property name="ElementShortName">scan_in</obj_property>
+      <obj_property name="ObjectShortName">scan_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_basic_integration/chain" type="array">
+      <obj_property name="ElementShortName">chain[63:0]</obj_property>
+      <obj_property name="ObjectShortName">chain[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_basic_integration/test_done" type="other">
+      <obj_property name="ElementShortName">test_done</obj_property>
+      <obj_property name="ObjectShortName">test_done</obj_property>
+   </wvobject>
+</wave_config>
+

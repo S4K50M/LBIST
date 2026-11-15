@@ -1,0 +1,6 @@
+Case,Testbench,Beta,CompletionTime,WDBBytes,VCDWindow,Result
+tb_lfsr_16,tb_lfsr_16,NA,131081200 ps,1997519,0..512 ns,PASS
+tb_phase_shifter,tb_phase_shifter,NA,8264736 ps,872347,0..512 ns,PASS
+tb_plpf_optimized,tb_plpf_optimized,NA,393209010 ps,6873868,0..512 ns,PASS
+tb_plpf_dynamic,tb_plpf_dynamic,NA,8199100 ps,204135,0..512 ns,PASS
+tb_phase2_integration,tb_phase2_integration,NA,131455100 ps,2396650,0..512 ns,PASS
