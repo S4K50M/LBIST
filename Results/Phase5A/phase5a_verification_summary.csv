@@ -1,0 +1,9 @@
+Case,Testbench,Group,Result,CompletionTime,Capture,WDBBytes
+controller_L1,tb_lbist_test_controller,Controller,PASS,1581200 ps,0,0
+controller_L2,tb_lbist_test_controller,Controller,PASS,2605200 ps,0,0
+controller_L64,tb_lbist_test_controller,Controller,PASS,66093200 ps,1,631749
+core_isolation,tb_core_scan_isolation,Isolation,PASS,21780200 ps,1,599954
+core_shift_capture_P256,tb_core_scan_shift_capture,ShiftCapture,PASS,661600200 ps,1,3137067
+core_shift_capture_P16,tb_core_scan_shift_capture,ShiftCapture,PASS,42220200 ps,1,674166
+functional_lwsw,tb_core_scan_test_regression,Isolation,PASS,1670000 ps,0,0
+functional_stalls,tb_core_scan_test_regression,Isolation,PASS,1730000 ps,0,0

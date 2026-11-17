@@ -1,0 +1,5 @@
+Case,Kind,CheckedEdges,Shifts,Captures,Unloads,DirectedResetPartialShifts,Result
+controller_L64,Controller,33047,16385,256,16384,1,PASS
+core_isolation,Processor,1089,512,8,512,,PASS
+core_shift_capture_P256,Processor,33080,16384,256,16384,,PASS
+core_shift_capture_P16,Processor,2111,1024,16,1024,,PASS

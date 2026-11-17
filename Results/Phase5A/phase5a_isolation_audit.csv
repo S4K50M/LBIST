@@ -1,0 +1,15 @@
+StateOrBoundary,Clock,RequiredPolicy,Observation
+PC/CP0/TLB registers,clk,register32/registerN hold enables,all Q outputs; Context slices; 24 TLB records
+"RF/EX, EX/MM, MM/WB",clk,load-bank hold enables,all stored outputs including enum/boolean
+Exception pipeline,clk,hold enables including resetless IF/RF exception bank,all stored exception fields
+CAUSE/LLbit/RANDOM,clk,guard all three core sequential processes,"CAUSE,ll_sc_bit,RANDOM"
+COUNT,clk,counter CE freezes increment and load,COUNT
+Stall and exception flags,clk and phi2,FFD hold enable,all FFD Qs including COUNT enable
+Register file,wrclk=clk; rdclk=phi1,freeze both RAM writes and registered reads,both 32x32 arrays plus pre_A/pre_B
+ALU HI/LO,clk,hold both internal register32 banks,"HI,LO"
+Selected IF/RF,clk,legal scan or one capture only,"RF_PCincd,RF_instruction"
+External fabric,external clocks,"mask i_aVal,d_aVal,wr,b_sel; fabric_idle entry contract","no CPU requests, writes or peripheral selection"
+Mode control,falling clk; falling phi1/phi2; rising clk,sticky master hold; two-stage per-phase holds; two-stage acknowledgement; reset-only exit,"isolation ack, protocol errors"
+Capture cone,clk,align scan-loaded PC field through original U_INCPC adder; raw ROM instruction at held PC,one legal capture; all unrelated state held
+Decoder temporaries,combinational,feed NOP during isolation; suppress simulation exit assertion,not architectural storage
+Caches/peripheral timers,outside core,explicit exclusion: autonomous device state not frozen,no CPU-initiated access during acknowledged isolation

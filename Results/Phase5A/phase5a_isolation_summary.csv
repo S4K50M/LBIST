@@ -1,0 +1,4 @@
+Case,ObservedBits,ProtectedStateChanges,MemoryWriteAttempts,ActualMemoryWrites,RegisterWriteAttempts,ActualRegisterWrites,IRQ_NMI_BusErrors,Exit,Result
+core_isolation,4287,0,0,0,1033,0,injected; masked and state held,reset only,PASS
+core_shift_capture_P256,4287,0,0,0,33025,0,injected; masked and state held,reset only,PASS
+core_shift_capture_P16,4287,0,2065,0,0,0,injected; masked and state held,reset only,PASS

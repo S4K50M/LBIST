@@ -1,0 +1,2 @@
+Case,Testbench,Group,Result,CompletionTime,Capture,WDBBytes
+controller_L64,tb_lbist_test_controller,Controller,PASS,66093200 ps,1,631749

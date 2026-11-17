@@ -1,0 +1,2 @@
+Case,Testbench,Group,Result,CompletionTime,Capture,WDBBytes
+functional_lwsw,tb_core_scan_test_regression,Isolation,PASS,1670000 ps,0,0

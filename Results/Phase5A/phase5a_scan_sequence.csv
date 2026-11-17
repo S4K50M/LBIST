@@ -1,0 +1,7 @@
+Case,ChainLength,ShiftEdges,CaptureEdges,UnloadEdges,Patterns,EnabledScanEdges,TotalGeneratorAdvances,CompletionPS,Result
+controller_L1,1,256,256,256,256,512,NA,1581200,PASS
+controller_L2,2,512,256,512,256,1024,NA,2605200,PASS
+controller_L64,64,16384,256,16384,256,32768,NA,66093200,PASS
+core_isolation,64,512,8,512,8,1024,1024,21780200,PASS
+core_shift_capture_P256,64,16384,256,16384,256,32768,32768,661600200,PASS
+core_shift_capture_P16,64,1024,16,1024,16,2048,2048,42220200,PASS

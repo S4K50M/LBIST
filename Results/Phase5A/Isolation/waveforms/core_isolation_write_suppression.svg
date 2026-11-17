@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="574" viewBox="0 0 1600 574">
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="20" y="28" font-family="sans-serif" font-size="20">core_isolation - write suppression (legacy unreset bits remain X)</text>
+<text x="20" y="51" font-family="sans-serif" font-size="13">00 = PLPF n=3 (low toggle) | 11 = PLPF n=1 (unfiltered) | Edge capture uses PRE-edge mode; POST-edge mode prepares the next shift.</text>
+<line x1="220.0" x2="220.0" y1="110" y2="544" stroke="#e6eaf0"/>
+<text x="220.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">620.00 ns</text>
+<line x1="385.0" x2="385.0" y1="110" y2="544" stroke="#e6eaf0"/>
+<text x="385.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">622.75 ns</text>
+<line x1="550.0" x2="550.0" y1="110" y2="544" stroke="#e6eaf0"/>
+<text x="550.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">625.50 ns</text>
+<line x1="715.0" x2="715.0" y1="110" y2="544" stroke="#e6eaf0"/>
+<text x="715.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">628.25 ns</text>
+<line x1="880.0" x2="880.0" y1="110" y2="544" stroke="#e6eaf0"/>
+<text x="880.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">631.00 ns</text>
+<line x1="1045.0" x2="1045.0" y1="110" y2="544" stroke="#e6eaf0"/>
+<text x="1045.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">633.75 ns</text>
+<line x1="1210.0" x2="1210.0" y1="110" y2="544" stroke="#e6eaf0"/>
+<text x="1210.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">636.50 ns</text>
+<line x1="1375.0" x2="1375.0" y1="110" y2="544" stroke="#e6eaf0"/>
+<text x="1375.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">639.25 ns</text>
+<line x1="1540.0" x2="1540.0" y1="110" y2="544" stroke="#e6eaf0"/>
+<text x="1540.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">642.00 ns</text>
+<text x="12" y="156" font-family="monospace" font-size="14">clk</text>
+<path d="M 220.000 163 H 820.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_isolation/engine/clk = 0, 620.000..630.000 ns</title></path>
+<path d="M 820.000 139 H 1420.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_isolation/engine/clk = 1, 630.000..640.000 ns</title></path>
+<path d="M 820.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1420.000 163 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_isolation/engine/clk = 0, 640.000..642.000 ns</title></path>
+<path d="M 1420.000 139 V 163" stroke="#126e60" fill="none"/>
+<text x="12" y="204" font-family="monospace" font-size="14">isolation_ack</text>
+<path d="M 220.000 187 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_isolation/engine/isolation_ack = 1, 620.000..642.000 ns</title></path>
+<text x="12" y="252" font-family="monospace" font-size="14">scan_enable</text>
+<path d="M 220.000 235 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_isolation/engine/scan_enable = 1, 620.000..642.000 ns</title></path>
+<text x="12" y="300" font-family="monospace" font-size="14">memory_write_attempt</text>
+<path d="M 220.000 307 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_isolation/engine/memory_write_attempt = 0, 620.000..642.000 ns</title></path>
+<text x="12" y="348" font-family="monospace" font-size="14">wr</text>
+<path d="M 220.000 331 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_isolation/engine/wr = 1, 620.000..642.000 ns</title></path>
+<text x="12" y="396" font-family="monospace" font-size="14">d_aval</text>
+<path d="M 220.000 379 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_isolation/engine/d_aval = 1, 620.000..642.000 ns</title></path>
+<text x="12" y="444" font-family="monospace" font-size="14">register_write_attempt</text>
+<path d="M 220.000 427 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_isolation/engine/register_write_attempt = 1, 620.000..642.000 ns</title></path>
+<text x="12" y="492" font-family="monospace" font-size="14">register_write_actual</text>
+<path d="M 220.000 499 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_isolation/engine/register_write_actual = 0, 620.000..642.000 ns</title></path>
+<text x="20" y="564" font-family="sans-serif" font-size="11">Source: core_isolation.vcd; no expected-schedule signal reconstruction. Buses are hexadecimal; counters/region lengths are decimal.</text></svg>

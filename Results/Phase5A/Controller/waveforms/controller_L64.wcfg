@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="controller_L64.wdb" id="1">
+         <top_modules>
+            <top_module name="p_wires" />
+            <top_module name="phase2_tb_pkg" />
+            <top_module name="tb_lbist_test_controller" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="180.000 ns"></ZoomEndTime>
+   </zoom_setting>
+   <column_width_setting>
+   </column_width_setting>
+   <WVObjectSize size="16" />
+   <wvobject fp_name="/tb_lbist_test_controller/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist_test_controller/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist_test_controller/start" type="logic">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist_test_controller/pause" type="logic">
+      <obj_property name="ElementShortName">pause</obj_property>
+      <obj_property name="ObjectShortName">pause</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist_test_controller/abort_test" type="logic">
+      <obj_property name="ElementShortName">abort_test</obj_property>
+      <obj_property name="ObjectShortName">abort_test</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist_test_controller/ack" type="logic">
+      <obj_property name="ElementShortName">ack</obj_property>
+      <obj_property name="ObjectShortName">ack</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist_test_controller/ready" type="logic">
+      <obj_property name="ElementShortName">ready</obj_property>
+      <obj_property name="ObjectShortName">ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist_test_controller/tm" type="logic">
+      <obj_property name="ElementShortName">tm</obj_property>
+      <obj_property name="ObjectShortName">tm</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist_test_controller/se" type="logic">
+      <obj_property name="ElementShortName">se</obj_property>
+      <obj_property name="ObjectShortName">se</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist_test_controller/ce" type="logic">
+      <obj_property name="ElementShortName">ce</obj_property>
+      <obj_property name="ObjectShortName">ce</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist_test_controller/pd" type="logic">
+      <obj_property name="ElementShortName">pd</obj_property>
+      <obj_property name="ObjectShortName">pd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist_test_controller/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist_test_controller/error_status" type="logic">
+      <obj_property name="ElementShortName">error_status</obj_property>
+      <obj_property name="ObjectShortName">error_status</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist_test_controller/state" type="array">
+      <obj_property name="ElementShortName">state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">state[2:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist_test_controller/shift_count_v" type="array">
+      <obj_property name="ElementShortName">shift_count_v[15:0]</obj_property>
+      <obj_property name="ObjectShortName">shift_count_v[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_lbist_test_controller/pattern_index" type="array">
+      <obj_property name="ElementShortName">pattern_index[15:0]</obj_property>
+      <obj_property name="ObjectShortName">pattern_index[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>
+

@@ -1,0 +1,6 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/packageWires.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/lbist_test_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'lbist_test_controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase2_tb_pkg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_lbist_test_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_lbist_test_controller'

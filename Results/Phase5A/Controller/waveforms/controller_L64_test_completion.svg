@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="862" viewBox="0 0 1600 862">
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="20" y="28" font-family="sans-serif" font-size="20">controller_L64 - test completion</text>
+<text x="20" y="51" font-family="sans-serif" font-size="13">00 = PLPF n=3 (low toggle) | 11 = PLPF n=1 (unfiltered) | Edge capture uses PRE-edge mode; POST-edge mode prepares the next shift.</text>
+<line x1="820.0" x2="820.0" y1="110" y2="832" stroke="#a33" stroke-dasharray="4 4"/>
+<text x="20" y="76" font-family="sans-serif" font-size="13" fill="#922">test completion (captured event) @ 66075.000 ns</text>
+<line x1="220.0" x2="220.0" y1="110" y2="832" stroke="#e6eaf0"/>
+<text x="220.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">66065.00 ns</text>
+<line x1="385.0" x2="385.0" y1="110" y2="832" stroke="#e6eaf0"/>
+<text x="385.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">66067.75 ns</text>
+<line x1="550.0" x2="550.0" y1="110" y2="832" stroke="#e6eaf0"/>
+<text x="550.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">66070.50 ns</text>
+<line x1="715.0" x2="715.0" y1="110" y2="832" stroke="#e6eaf0"/>
+<text x="715.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">66073.25 ns</text>
+<line x1="880.0" x2="880.0" y1="110" y2="832" stroke="#e6eaf0"/>
+<text x="880.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">66076.00 ns</text>
+<line x1="1045.0" x2="1045.0" y1="110" y2="832" stroke="#e6eaf0"/>
+<text x="1045.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">66078.75 ns</text>
+<line x1="1210.0" x2="1210.0" y1="110" y2="832" stroke="#e6eaf0"/>
+<text x="1210.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">66081.50 ns</text>
+<line x1="1375.0" x2="1375.0" y1="110" y2="832" stroke="#e6eaf0"/>
+<text x="1375.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">66084.25 ns</text>
+<line x1="1540.0" x2="1540.0" y1="110" y2="832" stroke="#e6eaf0"/>
+<text x="1540.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">66087.00 ns</text>
+<text x="12" y="156" font-family="monospace" font-size="14">clk</text>
+<path d="M 220.000 139 H 280.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/clk = 1, 66065.000..66066.000 ns</title></path>
+<path d="M 280.000 163 H 340.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/clk = 0, 66066.000..66067.000 ns</title></path>
+<path d="M 280.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 340.000 139 H 400.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/clk = 1, 66067.000..66068.000 ns</title></path>
+<path d="M 340.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 400.000 163 H 460.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/clk = 0, 66068.000..66069.000 ns</title></path>
+<path d="M 400.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 460.000 139 H 520.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/clk = 1, 66069.000..66070.000 ns</title></path>
+<path d="M 460.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 520.000 163 H 580.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/clk = 0, 66070.000..66071.000 ns</title></path>
+<path d="M 520.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 580.000 139 H 640.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/clk = 1, 66071.000..66072.000 ns</title></path>
+<path d="M 580.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 640.000 163 H 700.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/clk = 0, 66072.000..66073.000 ns</title></path>
+<path d="M 640.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 700.000 139 H 760.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/clk = 1, 66073.000..66074.000 ns</title></path>
+<path d="M 700.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 760.000 163 H 820.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/clk = 0, 66074.000..66075.000 ns</title></path>
+<path d="M 760.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 820.000 139 H 880.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/clk = 1, 66075.000..66076.000 ns</title></path>
+<path d="M 820.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 880.000 163 H 940.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/clk = 0, 66076.000..66077.000 ns</title></path>
+<path d="M 880.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 940.000 139 H 1000.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/clk = 1, 66077.000..66078.000 ns</title></path>
+<path d="M 940.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1000.000 163 H 1060.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/clk = 0, 66078.000..66079.000 ns</title></path>
+<path d="M 1000.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1060.000 139 H 1120.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/clk = 1, 66079.000..66080.000 ns</title></path>
+<path d="M 1060.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1120.000 163 H 1180.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/clk = 0, 66080.000..66081.000 ns</title></path>
+<path d="M 1120.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1180.000 139 H 1240.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/clk = 1, 66081.000..66082.000 ns</title></path>
+<path d="M 1180.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1240.000 163 H 1300.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/clk = 0, 66082.000..66083.000 ns</title></path>
+<path d="M 1240.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1300.000 139 H 1360.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/clk = 1, 66083.000..66084.000 ns</title></path>
+<path d="M 1300.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1360.000 163 H 1420.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/clk = 0, 66084.000..66085.000 ns</title></path>
+<path d="M 1360.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1420.000 139 H 1480.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/clk = 1, 66085.000..66086.000 ns</title></path>
+<path d="M 1420.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1480.000 163 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/clk = 0, 66086.000..66087.000 ns</title></path>
+<path d="M 1480.000 139 V 163" stroke="#126e60" fill="none"/>
+<text x="12" y="204" font-family="monospace" font-size="14">rst</text>
+<path d="M 220.000 187 H 1006.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/rst = 1, 66065.000..66078.100 ns</title></path>
+<path d="M 1006.000 211 H 1012.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/rst = 0, 66078.100..66078.200 ns</title></path>
+<path d="M 1006.000 187 V 211" stroke="#126e60" fill="none"/>
+<path d="M 1012.000 187 H 1306.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/rst = 1, 66078.200..66083.100 ns</title></path>
+<path d="M 1012.000 211 V 187" stroke="#126e60" fill="none"/>
+<path d="M 1306.000 211 H 1312.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/rst = 0, 66083.100..66083.200 ns</title></path>
+<path d="M 1306.000 187 V 211" stroke="#126e60" fill="none"/>
+<path d="M 1312.000 187 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/rst = 1, 66083.200..66087.000 ns</title></path>
+<path d="M 1312.000 211 V 187" stroke="#126e60" fill="none"/>
+<text x="12" y="252" font-family="monospace" font-size="14">start</text>
+<path d="M 220.000 259 H 1012.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/start = 0, 66065.000..66078.200 ns</title></path>
+<path d="M 1012.000 235 H 1120.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/start = 1, 66078.200..66080.000 ns</title></path>
+<path d="M 1012.000 259 V 235" stroke="#126e60" fill="none"/>
+<path d="M 1120.000 259 H 1312.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/start = 0, 66080.000..66083.200 ns</title></path>
+<path d="M 1120.000 235 V 259" stroke="#126e60" fill="none"/>
+<path d="M 1312.000 235 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/start = 1, 66083.200..66087.000 ns</title></path>
+<path d="M 1312.000 259 V 235" stroke="#126e60" fill="none"/>
+<text x="12" y="300" font-family="monospace" font-size="14">ack</text>
+<path d="M 220.000 283 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/ack = 1, 66065.000..66087.000 ns</title></path>
+<text x="12" y="348" font-family="monospace" font-size="14">state</text>
+<rect x="220.000" y="329" width="600.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_lbist_test_controller/state = 100, 66065.000..66075.000 ns</title></rect>
+<text x="520.000" y="348" text-anchor="middle" font-family="monospace" font-size="13">4</text>
+<rect x="820.000" y="329" width="186.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_lbist_test_controller/state = 101, 66075.000..66078.100 ns</title></rect>
+<text x="913.000" y="348" text-anchor="middle" font-family="monospace" font-size="13">5</text>
+<rect x="1006.000" y="329" width="54.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_lbist_test_controller/state = 0, 66078.100..66079.000 ns</title></rect>
+<text x="1033.000" y="348" text-anchor="middle" font-family="monospace" font-size="13">0</text>
+<rect x="1060.000" y="329" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_lbist_test_controller/state = 1, 66079.000..66081.000 ns</title></rect>
+<text x="1120.000" y="348" text-anchor="middle" font-family="monospace" font-size="13">1</text>
+<rect x="1180.000" y="329" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_lbist_test_controller/state = 10, 66081.000..66083.000 ns</title></rect>
+<text x="1240.000" y="348" text-anchor="middle" font-family="monospace" font-size="13">2</text>
+<rect x="1300.000" y="329" width="6.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_lbist_test_controller/state = 101, 66083.000..66083.100 ns</title></rect>
+<rect x="1306.000" y="329" width="114.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_lbist_test_controller/state = 0, 66083.100..66085.000 ns</title></rect>
+<text x="1363.000" y="348" text-anchor="middle" font-family="monospace" font-size="13">0</text>
+<rect x="1420.000" y="329" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_lbist_test_controller/state = 1, 66085.000..66087.000 ns</title></rect>
+<text x="1480.000" y="348" text-anchor="middle" font-family="monospace" font-size="13">1</text>
+<text x="12" y="396" font-family="monospace" font-size="14">tm</text>
+<path d="M 220.000 379 H 1006.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/tm = 1, 66065.000..66078.100 ns</title></path>
+<path d="M 1006.000 403 H 1060.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/tm = 0, 66078.100..66079.000 ns</title></path>
+<path d="M 1006.000 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 1060.000 379 H 1306.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/tm = 1, 66079.000..66083.100 ns</title></path>
+<path d="M 1060.000 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 1306.000 403 H 1420.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/tm = 0, 66083.100..66085.000 ns</title></path>
+<path d="M 1306.000 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 1420.000 379 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/tm = 1, 66085.000..66087.000 ns</title></path>
+<path d="M 1420.000 403 V 379" stroke="#126e60" fill="none"/>
+<text x="12" y="444" font-family="monospace" font-size="14">se</text>
+<path d="M 220.000 427 H 820.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/se = 1, 66065.000..66075.000 ns</title></path>
+<path d="M 820.000 451 H 1180.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/se = 0, 66075.000..66081.000 ns</title></path>
+<path d="M 820.000 427 V 451" stroke="#126e60" fill="none"/>
+<path d="M 1180.000 427 H 1240.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/se = 1, 66081.000..66082.000 ns</title></path>
+<path d="M 1180.000 451 V 427" stroke="#126e60" fill="none"/>
+<path d="M 1240.000 451 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/se = 0, 66082.000..66087.000 ns</title></path>
+<path d="M 1240.000 427 V 451" stroke="#126e60" fill="none"/>
+<text x="12" y="492" font-family="monospace" font-size="14">ce</text>
+<path d="M 220.000 499 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/ce = 0, 66065.000..66087.000 ns</title></path>
+<text x="12" y="540" font-family="monospace" font-size="14">pause</text>
+<path d="M 220.000 547 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/pause = 0, 66065.000..66087.000 ns</title></path>
+<text x="12" y="588" font-family="monospace" font-size="14">shift_count_v</text>
+<rect x="220.000" y="569" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_lbist_test_controller/shift_count_v = 0000000000111011, 66065.000..66067.000 ns</title></rect>
+<text x="280.000" y="588" text-anchor="middle" font-family="monospace" font-size="13">59</text>
+<rect x="340.000" y="569" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_lbist_test_controller/shift_count_v = 111100, 66067.000..66069.000 ns</title></rect>
+<text x="400.000" y="588" text-anchor="middle" font-family="monospace" font-size="13">60</text>
+<rect x="460.000" y="569" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_lbist_test_controller/shift_count_v = 111101, 66069.000..66071.000 ns</title></rect>
+<text x="520.000" y="588" text-anchor="middle" font-family="monospace" font-size="13">61</text>
+<rect x="580.000" y="569" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_lbist_test_controller/shift_count_v = 111110, 66071.000..66073.000 ns</title></rect>
+<text x="640.000" y="588" text-anchor="middle" font-family="monospace" font-size="13">62</text>
+<rect x="700.000" y="569" width="120.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_lbist_test_controller/shift_count_v = 111111, 66073.000..66075.000 ns</title></rect>
+<text x="760.000" y="588" text-anchor="middle" font-family="monospace" font-size="13">63</text>
+<rect x="820.000" y="569" width="720.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_lbist_test_controller/shift_count_v = 0, 66075.000..66087.000 ns</title></rect>
+<text x="1180.000" y="588" text-anchor="middle" font-family="monospace" font-size="13">0</text>
+<text x="12" y="636" font-family="monospace" font-size="14">pattern_index</text>
+<rect x="220.000" y="617" width="600.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_lbist_test_controller/pattern_index = 0000000011111111, 66065.000..66075.000 ns</title></rect>
+<text x="520.000" y="636" text-anchor="middle" font-family="monospace" font-size="13">255</text>
+<rect x="820.000" y="617" width="186.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_lbist_test_controller/pattern_index = 100000000, 66075.000..66078.100 ns</title></rect>
+<text x="913.000" y="636" text-anchor="middle" font-family="monospace" font-size="13">256</text>
+<rect x="1006.000" y="617" width="534.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_lbist_test_controller/pattern_index = 0, 66078.100..66087.000 ns</title></rect>
+<text x="1273.000" y="636" text-anchor="middle" font-family="monospace" font-size="13">0</text>
+<text x="12" y="684" font-family="monospace" font-size="14">pd</text>
+<path d="M 220.000 691 H 820.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/pd = 0, 66065.000..66075.000 ns</title></path>
+<path d="M 820.000 667 H 940.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/pd = 1, 66075.000..66077.000 ns</title></path>
+<path d="M 820.000 691 V 667" stroke="#126e60" fill="none"/>
+<path d="M 940.000 691 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/pd = 0, 66077.000..66087.000 ns</title></path>
+<path d="M 940.000 667 V 691" stroke="#126e60" fill="none"/>
+<text x="12" y="732" font-family="monospace" font-size="14">done</text>
+<path d="M 220.000 739 H 820.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/done = 0, 66065.000..66075.000 ns</title></path>
+<path d="M 820.000 715 H 1006.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/done = 1, 66075.000..66078.100 ns</title></path>
+<path d="M 820.000 739 V 715" stroke="#126e60" fill="none"/>
+<path d="M 1006.000 739 H 1300.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/done = 0, 66078.100..66083.000 ns</title></path>
+<path d="M 1006.000 715 V 739" stroke="#126e60" fill="none"/>
+<path d="M 1300.000 715 H 1306.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/done = 1, 66083.000..66083.100 ns</title></path>
+<path d="M 1300.000 739 V 715" stroke="#126e60" fill="none"/>
+<path d="M 1306.000 739 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/done = 0, 66083.100..66087.000 ns</title></path>
+<path d="M 1306.000 715 V 739" stroke="#126e60" fill="none"/>
+<text x="12" y="780" font-family="monospace" font-size="14">error_status</text>
+<path d="M 220.000 787 H 1300.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/error_status = 0, 66065.000..66083.000 ns</title></path>
+<path d="M 1300.000 763 H 1306.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/error_status = 1, 66083.000..66083.100 ns</title></path>
+<path d="M 1300.000 787 V 763" stroke="#126e60" fill="none"/>
+<path d="M 1306.000 787 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_test_controller/error_status = 0, 66083.100..66087.000 ns</title></path>
+<path d="M 1306.000 763 V 787" stroke="#126e60" fill="none"/>
+<text x="20" y="852" font-family="sans-serif" font-size="11">Source: controller_L64.vcd; no expected-schedule signal reconstruction. Buses are hexadecimal; counters/region lengths are decimal.</text></svg>

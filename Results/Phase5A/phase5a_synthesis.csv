@@ -1,0 +1,4 @@
+Top,FlipFlops,LUTs,Latches,RAMPrimitives,Result
+lbist_test_controller,23,44,0,0,PASS
+phase5a_ifrf_subsystem,87,97,0,0,PASS
+core_scan_test,3086,6505,0,0,PASS

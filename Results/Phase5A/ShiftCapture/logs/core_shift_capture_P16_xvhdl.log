@@ -1,0 +1,5 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_rom_pkg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'phase5a_processor_check'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_core_scan_shift_capture.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_core_scan_shift_capture'

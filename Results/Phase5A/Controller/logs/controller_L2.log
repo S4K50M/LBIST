@@ -1,0 +1,9 @@
+Time resolution is 1 ps
+Note: [PASS] independent FSM, handshakes, exact counts, pause, capture wait, all patterns
+Time: 2588100 ps  Iteration: 0  Process: /tb_lbist_test_controller/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_lbist_test_controller.vhd
+Note: [SEQUENCE] 512,256,512,256
+Time: 2588100 ps  Iteration: 0  Process: /tb_lbist_test_controller/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_lbist_test_controller.vhd
+Note: [PASS] DONE hold, abort, illegal restart and mid-test reset
+Time: 2605200 ps  Iteration: 0  Process: /tb_lbist_test_controller/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_lbist_test_controller.vhd
+Note: [TB_COMPLETE] tb_lbist_test_controller at 2605200 ps
+Time: 2605200 ps  Iteration: 0  Process: /tb_lbist_test_controller/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_lbist_test_controller.vhd

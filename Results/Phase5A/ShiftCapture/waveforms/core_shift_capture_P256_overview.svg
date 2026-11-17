@@ -1,0 +1,907 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1150" viewBox="0 0 1600 1150">
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="20" y="28" font-family="sans-serif" font-size="20">core_shift_capture_P256 - captured overview</text>
+<text x="20" y="51" font-family="sans-serif" font-size="13">00 = PLPF n=3 (low toggle) | 11 = PLPF n=1 (unfiltered) | Edge capture uses PRE-edge mode; POST-edge mode prepares the next shift.</text>
+<line x1="220.0" x2="220.0" y1="110" y2="1120" stroke="#e6eaf0"/>
+<text x="220.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">0.00 ns</text>
+<line x1="385.0" x2="385.0" y1="110" y2="1120" stroke="#e6eaf0"/>
+<text x="385.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">251.25 ns</text>
+<line x1="550.0" x2="550.0" y1="110" y2="1120" stroke="#e6eaf0"/>
+<text x="550.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">502.50 ns</text>
+<line x1="715.0" x2="715.0" y1="110" y2="1120" stroke="#e6eaf0"/>
+<text x="715.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">753.75 ns</text>
+<line x1="880.0" x2="880.0" y1="110" y2="1120" stroke="#e6eaf0"/>
+<text x="880.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">1005.00 ns</text>
+<line x1="1045.0" x2="1045.0" y1="110" y2="1120" stroke="#e6eaf0"/>
+<text x="1045.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">1256.25 ns</text>
+<line x1="1210.0" x2="1210.0" y1="110" y2="1120" stroke="#e6eaf0"/>
+<text x="1210.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">1507.50 ns</text>
+<line x1="1375.0" x2="1375.0" y1="110" y2="1120" stroke="#e6eaf0"/>
+<text x="1375.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">1758.75 ns</text>
+<line x1="1540.0" x2="1540.0" y1="110" y2="1120" stroke="#e6eaf0"/>
+<text x="1540.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">2010.00 ns</text>
+<text x="12" y="156" font-family="monospace" font-size="14">clk</text>
+<path d="M 220.000 163 H 226.567" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 0.000..10.000 ns</title></path>
+<path d="M 226.567 139 H 233.134" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 10.000..20.000 ns</title></path>
+<path d="M 226.567 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 233.134 163 H 239.701" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 20.000..30.000 ns</title></path>
+<path d="M 233.134 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 239.701 139 H 246.269" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 30.000..40.000 ns</title></path>
+<path d="M 239.701 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 246.269 163 H 252.836" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 40.000..50.000 ns</title></path>
+<path d="M 246.269 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 252.836 139 H 259.403" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 50.000..60.000 ns</title></path>
+<path d="M 252.836 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 259.403 163 H 265.970" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 60.000..70.000 ns</title></path>
+<path d="M 259.403 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 265.970 139 H 272.537" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 70.000..80.000 ns</title></path>
+<path d="M 265.970 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 272.537 163 H 279.104" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 80.000..90.000 ns</title></path>
+<path d="M 272.537 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 279.104 139 H 285.672" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 90.000..100.000 ns</title></path>
+<path d="M 279.104 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 285.672 163 H 292.239" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 100.000..110.000 ns</title></path>
+<path d="M 285.672 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 292.239 139 H 298.806" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 110.000..120.000 ns</title></path>
+<path d="M 292.239 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 298.806 163 H 305.373" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 120.000..130.000 ns</title></path>
+<path d="M 298.806 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 305.373 139 H 311.940" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 130.000..140.000 ns</title></path>
+<path d="M 305.373 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 311.940 163 H 318.507" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 140.000..150.000 ns</title></path>
+<path d="M 311.940 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 318.507 139 H 325.075" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 150.000..160.000 ns</title></path>
+<path d="M 318.507 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 325.075 163 H 331.642" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 160.000..170.000 ns</title></path>
+<path d="M 325.075 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 331.642 139 H 338.209" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 170.000..180.000 ns</title></path>
+<path d="M 331.642 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 338.209 163 H 344.776" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 180.000..190.000 ns</title></path>
+<path d="M 338.209 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 344.776 139 H 351.343" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 190.000..200.000 ns</title></path>
+<path d="M 344.776 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 351.343 163 H 357.910" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 200.000..210.000 ns</title></path>
+<path d="M 351.343 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 357.910 139 H 364.478" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 210.000..220.000 ns</title></path>
+<path d="M 357.910 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 364.478 163 H 371.045" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 220.000..230.000 ns</title></path>
+<path d="M 364.478 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 371.045 139 H 377.612" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 230.000..240.000 ns</title></path>
+<path d="M 371.045 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 377.612 163 H 384.179" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 240.000..250.000 ns</title></path>
+<path d="M 377.612 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 384.179 139 H 390.746" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 250.000..260.000 ns</title></path>
+<path d="M 384.179 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 390.746 163 H 397.313" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 260.000..270.000 ns</title></path>
+<path d="M 390.746 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 397.313 139 H 403.881" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 270.000..280.000 ns</title></path>
+<path d="M 397.313 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 403.881 163 H 410.448" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 280.000..290.000 ns</title></path>
+<path d="M 403.881 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 410.448 139 H 417.015" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 290.000..300.000 ns</title></path>
+<path d="M 410.448 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 417.015 163 H 423.582" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 300.000..310.000 ns</title></path>
+<path d="M 417.015 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 423.582 139 H 430.149" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 310.000..320.000 ns</title></path>
+<path d="M 423.582 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 430.149 163 H 436.716" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 320.000..330.000 ns</title></path>
+<path d="M 430.149 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 436.716 139 H 443.284" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 330.000..340.000 ns</title></path>
+<path d="M 436.716 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 443.284 163 H 449.851" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 340.000..350.000 ns</title></path>
+<path d="M 443.284 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 449.851 139 H 456.418" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 350.000..360.000 ns</title></path>
+<path d="M 449.851 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 456.418 163 H 462.985" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 360.000..370.000 ns</title></path>
+<path d="M 456.418 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 462.985 139 H 469.552" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 370.000..380.000 ns</title></path>
+<path d="M 462.985 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 469.552 163 H 476.119" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 380.000..390.000 ns</title></path>
+<path d="M 469.552 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 476.119 139 H 482.687" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 390.000..400.000 ns</title></path>
+<path d="M 476.119 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 482.687 163 H 489.254" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 400.000..410.000 ns</title></path>
+<path d="M 482.687 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 489.254 139 H 495.821" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 410.000..420.000 ns</title></path>
+<path d="M 489.254 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 495.821 163 H 502.388" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 420.000..430.000 ns</title></path>
+<path d="M 495.821 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 502.388 139 H 508.955" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 430.000..440.000 ns</title></path>
+<path d="M 502.388 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 508.955 163 H 515.522" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 440.000..450.000 ns</title></path>
+<path d="M 508.955 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 515.522 139 H 522.090" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 450.000..460.000 ns</title></path>
+<path d="M 515.522 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 522.090 163 H 528.657" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 460.000..470.000 ns</title></path>
+<path d="M 522.090 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 528.657 139 H 535.224" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 470.000..480.000 ns</title></path>
+<path d="M 528.657 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 535.224 163 H 541.791" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 480.000..490.000 ns</title></path>
+<path d="M 535.224 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 541.791 139 H 548.358" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 490.000..500.000 ns</title></path>
+<path d="M 541.791 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 548.358 163 H 554.925" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 500.000..510.000 ns</title></path>
+<path d="M 548.358 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 554.925 139 H 561.493" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 510.000..520.000 ns</title></path>
+<path d="M 554.925 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 561.493 163 H 568.060" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 520.000..530.000 ns</title></path>
+<path d="M 561.493 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 568.060 139 H 574.627" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 530.000..540.000 ns</title></path>
+<path d="M 568.060 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 574.627 163 H 581.194" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 540.000..550.000 ns</title></path>
+<path d="M 574.627 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 581.194 139 H 587.761" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 550.000..560.000 ns</title></path>
+<path d="M 581.194 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 587.761 163 H 594.328" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 560.000..570.000 ns</title></path>
+<path d="M 587.761 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 594.328 139 H 600.896" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 570.000..580.000 ns</title></path>
+<path d="M 594.328 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 600.896 163 H 607.463" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 580.000..590.000 ns</title></path>
+<path d="M 600.896 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 607.463 139 H 614.030" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 590.000..600.000 ns</title></path>
+<path d="M 607.463 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 614.030 163 H 620.597" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 600.000..610.000 ns</title></path>
+<path d="M 614.030 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 620.597 139 H 627.164" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 610.000..620.000 ns</title></path>
+<path d="M 620.597 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 627.164 163 H 633.731" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 620.000..630.000 ns</title></path>
+<path d="M 627.164 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 633.731 139 H 640.299" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 630.000..640.000 ns</title></path>
+<path d="M 633.731 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 640.299 163 H 646.866" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 640.000..650.000 ns</title></path>
+<path d="M 640.299 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 646.866 139 H 653.433" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 650.000..660.000 ns</title></path>
+<path d="M 646.866 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 653.433 163 H 660.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 660.000..670.000 ns</title></path>
+<path d="M 653.433 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 660.000 139 H 666.567" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 670.000..680.000 ns</title></path>
+<path d="M 660.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 666.567 163 H 673.134" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 680.000..690.000 ns</title></path>
+<path d="M 666.567 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 673.134 139 H 679.701" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 690.000..700.000 ns</title></path>
+<path d="M 673.134 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 679.701 163 H 686.269" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 700.000..710.000 ns</title></path>
+<path d="M 679.701 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 686.269 139 H 692.836" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 710.000..720.000 ns</title></path>
+<path d="M 686.269 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 692.836 163 H 699.403" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 720.000..730.000 ns</title></path>
+<path d="M 692.836 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 699.403 139 H 705.970" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 730.000..740.000 ns</title></path>
+<path d="M 699.403 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 705.970 163 H 712.537" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 740.000..750.000 ns</title></path>
+<path d="M 705.970 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 712.537 139 H 719.104" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 750.000..760.000 ns</title></path>
+<path d="M 712.537 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 719.104 163 H 725.672" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 760.000..770.000 ns</title></path>
+<path d="M 719.104 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 725.672 139 H 732.239" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 770.000..780.000 ns</title></path>
+<path d="M 725.672 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 732.239 163 H 738.806" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 780.000..790.000 ns</title></path>
+<path d="M 732.239 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 738.806 139 H 745.373" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 790.000..800.000 ns</title></path>
+<path d="M 738.806 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 745.373 163 H 751.940" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 800.000..810.000 ns</title></path>
+<path d="M 745.373 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 751.940 139 H 758.507" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 810.000..820.000 ns</title></path>
+<path d="M 751.940 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 758.507 163 H 765.075" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 820.000..830.000 ns</title></path>
+<path d="M 758.507 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 765.075 139 H 771.642" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 830.000..840.000 ns</title></path>
+<path d="M 765.075 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 771.642 163 H 778.209" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 840.000..850.000 ns</title></path>
+<path d="M 771.642 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 778.209 139 H 784.776" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 850.000..860.000 ns</title></path>
+<path d="M 778.209 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 784.776 163 H 791.343" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 860.000..870.000 ns</title></path>
+<path d="M 784.776 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 791.343 139 H 797.910" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 870.000..880.000 ns</title></path>
+<path d="M 791.343 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 797.910 163 H 804.478" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 880.000..890.000 ns</title></path>
+<path d="M 797.910 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 804.478 139 H 811.045" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 890.000..900.000 ns</title></path>
+<path d="M 804.478 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 811.045 163 H 817.612" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 900.000..910.000 ns</title></path>
+<path d="M 811.045 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 817.612 139 H 824.179" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 910.000..920.000 ns</title></path>
+<path d="M 817.612 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 824.179 163 H 830.746" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 920.000..930.000 ns</title></path>
+<path d="M 824.179 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 830.746 139 H 837.313" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 930.000..940.000 ns</title></path>
+<path d="M 830.746 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 837.313 163 H 843.881" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 940.000..950.000 ns</title></path>
+<path d="M 837.313 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 843.881 139 H 850.448" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 950.000..960.000 ns</title></path>
+<path d="M 843.881 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 850.448 163 H 857.015" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 960.000..970.000 ns</title></path>
+<path d="M 850.448 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 857.015 139 H 863.582" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 970.000..980.000 ns</title></path>
+<path d="M 857.015 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 863.582 163 H 870.149" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 980.000..990.000 ns</title></path>
+<path d="M 863.582 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 870.149 139 H 876.716" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 990.000..1000.000 ns</title></path>
+<path d="M 870.149 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 876.716 163 H 883.284" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1000.000..1010.000 ns</title></path>
+<path d="M 876.716 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 883.284 139 H 889.851" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1010.000..1020.000 ns</title></path>
+<path d="M 883.284 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 889.851 163 H 896.418" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1020.000..1030.000 ns</title></path>
+<path d="M 889.851 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 896.418 139 H 902.985" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1030.000..1040.000 ns</title></path>
+<path d="M 896.418 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 902.985 163 H 909.552" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1040.000..1050.000 ns</title></path>
+<path d="M 902.985 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 909.552 139 H 916.119" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1050.000..1060.000 ns</title></path>
+<path d="M 909.552 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 916.119 163 H 922.687" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1060.000..1070.000 ns</title></path>
+<path d="M 916.119 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 922.687 139 H 929.254" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1070.000..1080.000 ns</title></path>
+<path d="M 922.687 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 929.254 163 H 935.821" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1080.000..1090.000 ns</title></path>
+<path d="M 929.254 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 935.821 139 H 942.388" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1090.000..1100.000 ns</title></path>
+<path d="M 935.821 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 942.388 163 H 948.955" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1100.000..1110.000 ns</title></path>
+<path d="M 942.388 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 948.955 139 H 955.522" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1110.000..1120.000 ns</title></path>
+<path d="M 948.955 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 955.522 163 H 962.090" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1120.000..1130.000 ns</title></path>
+<path d="M 955.522 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 962.090 139 H 968.657" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1130.000..1140.000 ns</title></path>
+<path d="M 962.090 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 968.657 163 H 975.224" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1140.000..1150.000 ns</title></path>
+<path d="M 968.657 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 975.224 139 H 981.791" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1150.000..1160.000 ns</title></path>
+<path d="M 975.224 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 981.791 163 H 988.358" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1160.000..1170.000 ns</title></path>
+<path d="M 981.791 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 988.358 139 H 994.925" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1170.000..1180.000 ns</title></path>
+<path d="M 988.358 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 994.925 163 H 1001.493" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1180.000..1190.000 ns</title></path>
+<path d="M 994.925 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1001.493 139 H 1008.060" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1190.000..1200.000 ns</title></path>
+<path d="M 1001.493 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1008.060 163 H 1014.627" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1200.000..1210.000 ns</title></path>
+<path d="M 1008.060 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1014.627 139 H 1021.194" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1210.000..1220.000 ns</title></path>
+<path d="M 1014.627 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1021.194 163 H 1027.761" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1220.000..1230.000 ns</title></path>
+<path d="M 1021.194 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1027.761 139 H 1034.328" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1230.000..1240.000 ns</title></path>
+<path d="M 1027.761 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1034.328 163 H 1040.896" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1240.000..1250.000 ns</title></path>
+<path d="M 1034.328 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1040.896 139 H 1047.463" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1250.000..1260.000 ns</title></path>
+<path d="M 1040.896 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1047.463 163 H 1054.030" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1260.000..1270.000 ns</title></path>
+<path d="M 1047.463 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1054.030 139 H 1060.597" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1270.000..1280.000 ns</title></path>
+<path d="M 1054.030 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1060.597 163 H 1067.164" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1280.000..1290.000 ns</title></path>
+<path d="M 1060.597 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1067.164 139 H 1073.731" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1290.000..1300.000 ns</title></path>
+<path d="M 1067.164 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1073.731 163 H 1080.299" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1300.000..1310.000 ns</title></path>
+<path d="M 1073.731 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1080.299 139 H 1086.866" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1310.000..1320.000 ns</title></path>
+<path d="M 1080.299 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1086.866 163 H 1093.433" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1320.000..1330.000 ns</title></path>
+<path d="M 1086.866 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1093.433 139 H 1100.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1330.000..1340.000 ns</title></path>
+<path d="M 1093.433 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1100.000 163 H 1106.567" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1340.000..1350.000 ns</title></path>
+<path d="M 1100.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1106.567 139 H 1113.134" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1350.000..1360.000 ns</title></path>
+<path d="M 1106.567 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1113.134 163 H 1119.701" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1360.000..1370.000 ns</title></path>
+<path d="M 1113.134 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1119.701 139 H 1126.269" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1370.000..1380.000 ns</title></path>
+<path d="M 1119.701 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1126.269 163 H 1132.836" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1380.000..1390.000 ns</title></path>
+<path d="M 1126.269 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1132.836 139 H 1139.403" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1390.000..1400.000 ns</title></path>
+<path d="M 1132.836 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1139.403 163 H 1145.970" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1400.000..1410.000 ns</title></path>
+<path d="M 1139.403 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1145.970 139 H 1152.537" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1410.000..1420.000 ns</title></path>
+<path d="M 1145.970 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1152.537 163 H 1159.104" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1420.000..1430.000 ns</title></path>
+<path d="M 1152.537 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1159.104 139 H 1165.672" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1430.000..1440.000 ns</title></path>
+<path d="M 1159.104 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1165.672 163 H 1172.239" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1440.000..1450.000 ns</title></path>
+<path d="M 1165.672 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1172.239 139 H 1178.806" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1450.000..1460.000 ns</title></path>
+<path d="M 1172.239 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1178.806 163 H 1185.373" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1460.000..1470.000 ns</title></path>
+<path d="M 1178.806 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1185.373 139 H 1191.940" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1470.000..1480.000 ns</title></path>
+<path d="M 1185.373 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1191.940 163 H 1198.507" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1480.000..1490.000 ns</title></path>
+<path d="M 1191.940 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1198.507 139 H 1205.075" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1490.000..1500.000 ns</title></path>
+<path d="M 1198.507 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1205.075 163 H 1211.642" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1500.000..1510.000 ns</title></path>
+<path d="M 1205.075 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1211.642 139 H 1218.209" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1510.000..1520.000 ns</title></path>
+<path d="M 1211.642 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1218.209 163 H 1224.776" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1520.000..1530.000 ns</title></path>
+<path d="M 1218.209 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1224.776 139 H 1231.343" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1530.000..1540.000 ns</title></path>
+<path d="M 1224.776 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1231.343 163 H 1237.910" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1540.000..1550.000 ns</title></path>
+<path d="M 1231.343 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1237.910 139 H 1244.478" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1550.000..1560.000 ns</title></path>
+<path d="M 1237.910 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1244.478 163 H 1251.045" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1560.000..1570.000 ns</title></path>
+<path d="M 1244.478 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1251.045 139 H 1257.612" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1570.000..1580.000 ns</title></path>
+<path d="M 1251.045 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1257.612 163 H 1264.179" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1580.000..1590.000 ns</title></path>
+<path d="M 1257.612 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1264.179 139 H 1270.746" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1590.000..1600.000 ns</title></path>
+<path d="M 1264.179 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1270.746 163 H 1277.313" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1600.000..1610.000 ns</title></path>
+<path d="M 1270.746 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1277.313 139 H 1283.881" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1610.000..1620.000 ns</title></path>
+<path d="M 1277.313 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1283.881 163 H 1290.448" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1620.000..1630.000 ns</title></path>
+<path d="M 1283.881 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1290.448 139 H 1297.015" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1630.000..1640.000 ns</title></path>
+<path d="M 1290.448 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1297.015 163 H 1303.582" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1640.000..1650.000 ns</title></path>
+<path d="M 1297.015 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1303.582 139 H 1310.149" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1650.000..1660.000 ns</title></path>
+<path d="M 1303.582 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1310.149 163 H 1316.716" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1660.000..1670.000 ns</title></path>
+<path d="M 1310.149 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1316.716 139 H 1323.284" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1670.000..1680.000 ns</title></path>
+<path d="M 1316.716 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1323.284 163 H 1329.851" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1680.000..1690.000 ns</title></path>
+<path d="M 1323.284 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1329.851 139 H 1336.418" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1690.000..1700.000 ns</title></path>
+<path d="M 1329.851 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1336.418 163 H 1342.985" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1700.000..1710.000 ns</title></path>
+<path d="M 1336.418 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1342.985 139 H 1349.552" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1710.000..1720.000 ns</title></path>
+<path d="M 1342.985 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1349.552 163 H 1356.119" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1720.000..1730.000 ns</title></path>
+<path d="M 1349.552 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1356.119 139 H 1362.687" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1730.000..1740.000 ns</title></path>
+<path d="M 1356.119 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1362.687 163 H 1369.254" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1740.000..1750.000 ns</title></path>
+<path d="M 1362.687 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1369.254 139 H 1375.821" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1750.000..1760.000 ns</title></path>
+<path d="M 1369.254 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1375.821 163 H 1382.388" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1760.000..1770.000 ns</title></path>
+<path d="M 1375.821 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1382.388 139 H 1388.955" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1770.000..1780.000 ns</title></path>
+<path d="M 1382.388 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1388.955 163 H 1395.522" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1780.000..1790.000 ns</title></path>
+<path d="M 1388.955 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1395.522 139 H 1402.090" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1790.000..1800.000 ns</title></path>
+<path d="M 1395.522 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1402.090 163 H 1408.657" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1800.000..1810.000 ns</title></path>
+<path d="M 1402.090 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1408.657 139 H 1415.224" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1810.000..1820.000 ns</title></path>
+<path d="M 1408.657 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1415.224 163 H 1421.791" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1820.000..1830.000 ns</title></path>
+<path d="M 1415.224 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1421.791 139 H 1428.358" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1830.000..1840.000 ns</title></path>
+<path d="M 1421.791 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1428.358 163 H 1434.925" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1840.000..1850.000 ns</title></path>
+<path d="M 1428.358 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1434.925 139 H 1441.493" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1850.000..1860.000 ns</title></path>
+<path d="M 1434.925 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1441.493 163 H 1448.060" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1860.000..1870.000 ns</title></path>
+<path d="M 1441.493 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1448.060 139 H 1454.627" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1870.000..1880.000 ns</title></path>
+<path d="M 1448.060 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1454.627 163 H 1461.194" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1880.000..1890.000 ns</title></path>
+<path d="M 1454.627 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1461.194 139 H 1467.761" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1890.000..1900.000 ns</title></path>
+<path d="M 1461.194 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1467.761 163 H 1474.328" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1900.000..1910.000 ns</title></path>
+<path d="M 1467.761 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1474.328 139 H 1480.896" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1910.000..1920.000 ns</title></path>
+<path d="M 1474.328 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1480.896 163 H 1487.463" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1920.000..1930.000 ns</title></path>
+<path d="M 1480.896 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1487.463 139 H 1494.030" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1930.000..1940.000 ns</title></path>
+<path d="M 1487.463 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1494.030 163 H 1500.597" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1940.000..1950.000 ns</title></path>
+<path d="M 1494.030 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1500.597 139 H 1507.164" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1950.000..1960.000 ns</title></path>
+<path d="M 1500.597 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1507.164 163 H 1513.731" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1960.000..1970.000 ns</title></path>
+<path d="M 1507.164 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1513.731 139 H 1520.299" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1970.000..1980.000 ns</title></path>
+<path d="M 1513.731 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1520.299 163 H 1526.866" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1980.000..1990.000 ns</title></path>
+<path d="M 1520.299 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1526.866 139 H 1533.433" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1990.000..2000.000 ns</title></path>
+<path d="M 1526.866 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1533.433 163 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 2000.000..2010.000 ns</title></path>
+<path d="M 1533.433 139 V 163" stroke="#126e60" fill="none"/>
+<text x="12" y="204" font-family="monospace" font-size="14">rst</text>
+<path d="M 220.000 211 H 236.418" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/rst = 0, 0.000..25.000 ns</title></path>
+<path d="M 236.418 187 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/rst = 1, 25.000..2010.000 ns</title></path>
+<path d="M 236.418 211 V 187" stroke="#126e60" fill="none"/>
+<text x="12" y="252" font-family="monospace" font-size="14">test_mode</text>
+<path d="M 220.000 259 H 502.388" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/test_mode = 0, 0.000..430.000 ns</title></path>
+<path d="M 502.388 235 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/test_mode = 1, 430.000..2010.000 ns</title></path>
+<path d="M 502.388 259 V 235" stroke="#126e60" fill="none"/>
+<text x="12" y="300" font-family="monospace" font-size="14">isolation_ack</text>
+<path d="M 220.000 307 H 607.463" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/isolation_ack = 0, 0.000..590.000 ns</title></path>
+<path d="M 607.463 283 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/isolation_ack = 1, 590.000..2010.000 ns</title></path>
+<path d="M 607.463 307 V 283" stroke="#126e60" fill="none"/>
+<text x="12" y="348" font-family="monospace" font-size="14">test_phase</text>
+<rect x="220.000" y="329" width="282.388" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/test_phase = 000, 0.000..430.000 ns</title></rect>
+<text x="361.194" y="348" text-anchor="middle" font-family="monospace" font-size="13">0</text>
+<rect x="502.388" y="329" width="118.209" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/test_phase = 1, 430.000..610.000 ns</title></rect>
+<text x="561.493" y="348" text-anchor="middle" font-family="monospace" font-size="13">1</text>
+<rect x="620.597" y="329" width="880.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/test_phase = 10, 610.000..1950.000 ns</title></rect>
+<text x="1060.597" y="348" text-anchor="middle" font-family="monospace" font-size="13">2</text>
+<rect x="1500.597" y="329" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/test_phase = 11, 1950.000..1970.000 ns</title></rect>
+<rect x="1513.731" y="329" width="26.269" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/test_phase = 100, 1970.000..2010.000 ns</title></rect>
+<text x="1526.866" y="348" text-anchor="middle" font-family="monospace" font-size="13">4</text>
+<text x="12" y="396" font-family="monospace" font-size="14">scan_enable</text>
+<path d="M 220.000 403 H 620.597" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_enable = 0, 0.000..610.000 ns</title></path>
+<path d="M 620.597 379 H 916.251" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_enable = 1, 610.000..1060.200 ns</title></path>
+<path d="M 620.597 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 916.251 403 H 955.654" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_enable = 0, 1060.200..1120.200 ns</title></path>
+<path d="M 916.251 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 955.654 379 H 1500.597" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_enable = 1, 1120.200..1950.000 ns</title></path>
+<path d="M 955.654 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 1500.597 403 H 1513.731" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_enable = 0, 1950.000..1970.000 ns</title></path>
+<path d="M 1500.597 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 1513.731 379 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_enable = 1, 1970.000..2010.000 ns</title></path>
+<path d="M 1513.731 403 V 379" stroke="#126e60" fill="none"/>
+<text x="12" y="444" font-family="monospace" font-size="14">capture_enable</text>
+<path d="M 220.000 451 H 1500.597" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/capture_enable = 0, 0.000..1950.000 ns</title></path>
+<path d="M 1500.597 427 H 1513.731" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/capture_enable = 1, 1950.000..1970.000 ns</title></path>
+<path d="M 1500.597 451 V 427" stroke="#126e60" fill="none"/>
+<path d="M 1513.731 451 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/capture_enable = 0, 1970.000..2010.000 ns</title></path>
+<path d="M 1513.731 427 V 451" stroke="#126e60" fill="none"/>
+<text x="12" y="492" font-family="monospace" font-size="14">shift_count_v</text>
+<rect x="220.000" y="473" width="413.731" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 0000000000000000, 0.000..630.000 ns</title></rect>
+<text x="426.866" y="492" text-anchor="middle" font-family="monospace" font-size="13">0</text>
+<rect x="633.731" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 1, 630.000..650.000 ns</title></rect>
+<rect x="646.866" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 10, 650.000..670.000 ns</title></rect>
+<rect x="660.000" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 11, 670.000..690.000 ns</title></rect>
+<rect x="673.134" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 100, 690.000..710.000 ns</title></rect>
+<rect x="686.269" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 101, 710.000..730.000 ns</title></rect>
+<rect x="699.403" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 110, 730.000..750.000 ns</title></rect>
+<rect x="712.537" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 111, 750.000..770.000 ns</title></rect>
+<rect x="725.672" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 1000, 770.000..790.000 ns</title></rect>
+<rect x="738.806" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 1001, 790.000..810.000 ns</title></rect>
+<rect x="751.940" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 1010, 810.000..830.000 ns</title></rect>
+<rect x="765.075" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 1011, 830.000..850.000 ns</title></rect>
+<rect x="778.209" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 1100, 850.000..870.000 ns</title></rect>
+<rect x="791.343" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 1101, 870.000..890.000 ns</title></rect>
+<rect x="804.478" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 1110, 890.000..910.000 ns</title></rect>
+<rect x="817.612" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 1111, 910.000..930.000 ns</title></rect>
+<rect x="830.746" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 10000, 930.000..950.000 ns</title></rect>
+<rect x="843.881" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 10001, 950.000..970.000 ns</title></rect>
+<rect x="857.015" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 10010, 970.000..990.000 ns</title></rect>
+<rect x="870.149" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 10011, 990.000..1010.000 ns</title></rect>
+<rect x="883.284" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 10100, 1010.000..1030.000 ns</title></rect>
+<rect x="896.418" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 10101, 1030.000..1050.000 ns</title></rect>
+<rect x="909.552" y="473" width="52.537" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 10110, 1050.000..1130.000 ns</title></rect>
+<text x="935.821" y="492" text-anchor="middle" font-family="monospace" font-size="13">22</text>
+<rect x="962.090" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 10111, 1130.000..1150.000 ns</title></rect>
+<rect x="975.224" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 11000, 1150.000..1170.000 ns</title></rect>
+<rect x="988.358" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 11001, 1170.000..1190.000 ns</title></rect>
+<rect x="1001.493" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 11010, 1190.000..1210.000 ns</title></rect>
+<rect x="1014.627" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 11011, 1210.000..1230.000 ns</title></rect>
+<rect x="1027.761" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 11100, 1230.000..1250.000 ns</title></rect>
+<rect x="1040.896" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 11101, 1250.000..1270.000 ns</title></rect>
+<rect x="1054.030" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 11110, 1270.000..1290.000 ns</title></rect>
+<rect x="1067.164" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 11111, 1290.000..1310.000 ns</title></rect>
+<rect x="1080.299" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 100000, 1310.000..1330.000 ns</title></rect>
+<rect x="1093.433" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 100001, 1330.000..1350.000 ns</title></rect>
+<rect x="1106.567" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 100010, 1350.000..1370.000 ns</title></rect>
+<rect x="1119.701" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 100011, 1370.000..1390.000 ns</title></rect>
+<rect x="1132.836" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 100100, 1390.000..1410.000 ns</title></rect>
+<rect x="1145.970" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 100101, 1410.000..1430.000 ns</title></rect>
+<rect x="1159.104" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 100110, 1430.000..1450.000 ns</title></rect>
+<rect x="1172.239" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 100111, 1450.000..1470.000 ns</title></rect>
+<rect x="1185.373" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 101000, 1470.000..1490.000 ns</title></rect>
+<rect x="1198.507" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 101001, 1490.000..1510.000 ns</title></rect>
+<rect x="1211.642" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 101010, 1510.000..1530.000 ns</title></rect>
+<rect x="1224.776" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 101011, 1530.000..1550.000 ns</title></rect>
+<rect x="1237.910" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 101100, 1550.000..1570.000 ns</title></rect>
+<rect x="1251.045" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 101101, 1570.000..1590.000 ns</title></rect>
+<rect x="1264.179" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 101110, 1590.000..1610.000 ns</title></rect>
+<rect x="1277.313" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 101111, 1610.000..1630.000 ns</title></rect>
+<rect x="1290.448" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 110000, 1630.000..1650.000 ns</title></rect>
+<rect x="1303.582" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 110001, 1650.000..1670.000 ns</title></rect>
+<rect x="1316.716" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 110010, 1670.000..1690.000 ns</title></rect>
+<rect x="1329.851" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 110011, 1690.000..1710.000 ns</title></rect>
+<rect x="1342.985" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 110100, 1710.000..1730.000 ns</title></rect>
+<rect x="1356.119" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 110101, 1730.000..1750.000 ns</title></rect>
+<rect x="1369.254" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 110110, 1750.000..1770.000 ns</title></rect>
+<rect x="1382.388" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 110111, 1770.000..1790.000 ns</title></rect>
+<rect x="1395.522" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 111000, 1790.000..1810.000 ns</title></rect>
+<rect x="1408.657" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 111001, 1810.000..1830.000 ns</title></rect>
+<rect x="1421.791" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 111010, 1830.000..1850.000 ns</title></rect>
+<rect x="1434.925" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 111011, 1850.000..1870.000 ns</title></rect>
+<rect x="1448.060" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 111100, 1870.000..1890.000 ns</title></rect>
+<rect x="1461.194" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 111101, 1890.000..1910.000 ns</title></rect>
+<rect x="1474.328" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 111110, 1910.000..1930.000 ns</title></rect>
+<rect x="1487.463" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 111111, 1930.000..1950.000 ns</title></rect>
+<rect x="1500.597" y="473" width="26.269" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 0, 1950.000..1990.000 ns</title></rect>
+<text x="1513.731" y="492" text-anchor="middle" font-family="monospace" font-size="13">0</text>
+<rect x="1526.866" y="473" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 1, 1990.000..2010.000 ns</title></rect>
+<text x="12" y="540" font-family="monospace" font-size="14">pattern_index</text>
+<rect x="220.000" y="521" width="1320.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/pattern_index = 0000000000000000, 0.000..2010.000 ns</title></rect>
+<text x="880.000" y="540" text-anchor="middle" font-family="monospace" font-size="13">0</text>
+<text x="12" y="588" font-family="monospace" font-size="14">scan_state</text>
+<rect x="220.000" y="569" width="19.701" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 0000000000000000000000000000000000000000000000000000000000000000, 0.000..30.000 ns</title></rect>
+<text x="229.851" y="588" text-anchor="middle" font-family="monospace" font-size="13">0</text>
+<rect x="239.701" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 10000111100000011110000000000000100, 30.000..50.000 ns</title></rect>
+<rect x="252.836" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 100000110101111011110000000000010000, 50.000..70.000 ns</title></rect>
+<rect x="265.970" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 110000111100000100000011110000000000, 70.000..90.000 ns</title></rect>
+<rect x="279.104" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1000000100000000000111111111111110110, 90.000..110.000 ns</title></rect>
+<rect x="292.239" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1010000110100000001010000000000000100, 110.000..130.000 ns</title></rect>
+<rect x="305.373" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1100000000000000000000000000000000000, 130.000..150.000 ns</title></rect>
+<rect x="318.507" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1110010101101111000110000000000000100, 150.000..170.000 ns</title></rect>
+<rect x="331.642" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 10000000100000011000110000000000000001, 170.000..190.000 ns</title></rect>
+<rect x="344.776" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 10010010001101111001000000000000000100, 190.000..210.000 ns</title></rect>
+<rect x="357.910" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 10100000000001111001010111100000100000, 210.000..230.000 ns</title></rect>
+<rect x="371.045" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 10110010101110000001000000000000000000, 230.000..250.000 ns</title></rect>
+<rect x="384.179" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 11000000010100011000001111111111111010, 250.000..270.000 ns</title></rect>
+<rect x="397.313" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 11010000000000000000000000000000000000, 270.000..290.000 ns</title></rect>
+<rect x="410.448" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1110010101101111000110000000000000100, 290.000..310.000 ns</title></rect>
+<rect x="423.582" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 10000000100000011000110000000000000001, 310.000..330.000 ns</title></rect>
+<rect x="436.716" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 10010010001101111001000000000000000100, 330.000..350.000 ns</title></rect>
+<rect x="449.851" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 10100000000001111001010111100000100000, 350.000..370.000 ns</title></rect>
+<rect x="462.985" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 10110010101110000001000000000000000000, 370.000..390.000 ns</title></rect>
+<rect x="476.119" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 11000000010100011000001111111111111010, 390.000..410.000 ns</title></rect>
+<rect x="489.254" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 11010000000000000000000000000000000000, 410.000..430.000 ns</title></rect>
+<rect x="502.388" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1110010101101111000110000000000000100, 430.000..450.000 ns</title></rect>
+<rect x="515.522" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 10000000100000011000110000000000000001, 450.000..470.000 ns</title></rect>
+<rect x="528.657" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 10010010001101111001000000000000000100, 470.000..490.000 ns</title></rect>
+<rect x="541.791" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 10100000000001111001010111100000100000, 490.000..510.000 ns</title></rect>
+<rect x="554.925" y="569" width="78.806" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 10110010101110000001000000000000000000, 510.000..630.000 ns</title></rect>
+<rect x="633.731" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 101100101011100000010000000000000000000, 630.000..650.000 ns</title></rect>
+<rect x="646.866" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1011001010111000000100000000000000000000, 650.000..670.000 ns</title></rect>
+<rect x="660.000" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 10110010101110000001000000000000000000000, 670.000..690.000 ns</title></rect>
+<rect x="673.134" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 101100101011100000010000000000000000000000, 690.000..710.000 ns</title></rect>
+<rect x="686.269" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1011001010111000000100000000000000000000000, 710.000..730.000 ns</title></rect>
+<rect x="699.403" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 10110010101110000001000000000000000000000000, 730.000..750.000 ns</title></rect>
+<rect x="712.537" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 101100101011100000010000000000000000000000000, 750.000..770.000 ns</title></rect>
+<rect x="725.672" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1011001010111000000100000000000000000000000000, 770.000..790.000 ns</title></rect>
+<rect x="738.806" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 10110010101110000001000000000000000000000000000, 790.000..810.000 ns</title></rect>
+<rect x="751.940" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 101100101011100000010000000000000000000000000000, 810.000..830.000 ns</title></rect>
+<rect x="765.075" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1011001010111000000100000000000000000000000000000, 830.000..850.000 ns</title></rect>
+<rect x="778.209" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 10110010101110000001000000000000000000000000000000, 850.000..870.000 ns</title></rect>
+<rect x="791.343" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 101100101011100000010000000000000000000000000000000, 870.000..890.000 ns</title></rect>
+<rect x="804.478" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1011001010111000000100000000000000000000000000000000, 890.000..910.000 ns</title></rect>
+<rect x="817.612" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 10110010101110000001000000000000000000000000000000000, 910.000..930.000 ns</title></rect>
+<rect x="830.746" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 101100101011100000010000000000000000000000000000000000, 930.000..950.000 ns</title></rect>
+<rect x="843.881" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1011001010111000000100000000000000000000000000000000000, 950.000..970.000 ns</title></rect>
+<rect x="857.015" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 10110010101110000001000000000000000000000000000000000000, 970.000..990.000 ns</title></rect>
+<rect x="870.149" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 101100101011100000010000000000000000000000000000000000001, 990.000..1010.000 ns</title></rect>
+<rect x="883.284" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1011001010111000000100000000000000000000000000000000000011, 1010.000..1030.000 ns</title></rect>
+<rect x="896.418" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 10110010101110000001000000000000000000000000000000000000111, 1030.000..1050.000 ns</title></rect>
+<rect x="909.552" y="569" width="52.537" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 101100101011100000010000000000000000000000000000000000001111, 1050.000..1130.000 ns</title></rect>
+<rect x="962.090" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1011001010111000000100000000000000000000000000000000000011111, 1130.000..1150.000 ns</title></rect>
+<rect x="975.224" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 10110010101110000001000000000000000000000000000000000000111110, 1150.000..1170.000 ns</title></rect>
+<rect x="988.358" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 101100101011100000010000000000000000000000000000000000001111100, 1170.000..1190.000 ns</title></rect>
+<rect x="1001.493" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1011001010111000000100000000000000000000000000000000000011111001, 1190.000..1210.000 ns</title></rect>
+<rect x="1014.627" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 110010101110000001000000000000000000000000000000000000111110011, 1210.000..1230.000 ns</title></rect>
+<rect x="1027.761" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1100101011100000010000000000000000000000000000000000001111100111, 1230.000..1250.000 ns</title></rect>
+<rect x="1040.896" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1001010111000000100000000000000000000000000000000000011111001110, 1250.000..1270.000 ns</title></rect>
+<rect x="1054.030" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 10101110000001000000000000000000000000000000000000111110011100, 1270.000..1290.000 ns</title></rect>
+<rect x="1067.164" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 101011100000010000000000000000000000000000000000001111100111000, 1290.000..1310.000 ns</title></rect>
+<rect x="1080.299" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1010111000000100000000000000000000000000000000000011111001110000, 1310.000..1330.000 ns</title></rect>
+<rect x="1093.433" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 101110000001000000000000000000000000000000000000111110011100001, 1330.000..1350.000 ns</title></rect>
+<rect x="1106.567" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1011100000010000000000000000000000000000000000001111100111000011, 1350.000..1370.000 ns</title></rect>
+<rect x="1119.701" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 111000000100000000000000000000000000000000000011111001110000111, 1370.000..1390.000 ns</title></rect>
+<rect x="1132.836" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1110000001000000000000000000000000000000000000111110011100001111, 1390.000..1410.000 ns</title></rect>
+<rect x="1145.970" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1100000010000000000000000000000000000000000001111100111000011111, 1410.000..1430.000 ns</title></rect>
+<rect x="1159.104" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1000000100000000000000000000000000000000000011111001110000111111, 1430.000..1450.000 ns</title></rect>
+<rect x="1172.239" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1000000000000000000000000000000000000111110011100001111110, 1450.000..1470.000 ns</title></rect>
+<rect x="1185.373" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 10000000000000000000000000000000000001111100111000011111100, 1470.000..1490.000 ns</title></rect>
+<rect x="1198.507" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 100000000000000000000000000000000000011111001110000111111001, 1490.000..1510.000 ns</title></rect>
+<rect x="1211.642" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1000000000000000000000000000000000000111110011100001111110010, 1510.000..1530.000 ns</title></rect>
+<rect x="1224.776" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 10000000000000000000000000000000000001111100111000011111100100, 1530.000..1550.000 ns</title></rect>
+<rect x="1237.910" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 100000000000000000000000000000000000011111001110000111111001000, 1550.000..1570.000 ns</title></rect>
+<rect x="1251.045" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1000000000000000000000000000000000000111110011100001111110010000, 1570.000..1590.000 ns</title></rect>
+<rect x="1264.179" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1111100111000011111100100000, 1590.000..1610.000 ns</title></rect>
+<rect x="1277.313" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 11111001110000111111001000000, 1610.000..1630.000 ns</title></rect>
+<rect x="1290.448" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 111110011100001111110010000001, 1630.000..1650.000 ns</title></rect>
+<rect x="1303.582" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1111100111000011111100100000011, 1650.000..1670.000 ns</title></rect>
+<rect x="1316.716" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 11111001110000111111001000000111, 1670.000..1690.000 ns</title></rect>
+<rect x="1329.851" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 111110011100001111110010000001111, 1690.000..1710.000 ns</title></rect>
+<rect x="1342.985" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1111100111000011111100100000011111, 1710.000..1730.000 ns</title></rect>
+<rect x="1356.119" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 11111001110000111111001000000111110, 1730.000..1750.000 ns</title></rect>
+<rect x="1369.254" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 111110011100001111110010000001111100, 1750.000..1770.000 ns</title></rect>
+<rect x="1382.388" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1111100111000011111100100000011111000, 1770.000..1790.000 ns</title></rect>
+<rect x="1395.522" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 11111001110000111111001000000111110000, 1790.000..1810.000 ns</title></rect>
+<rect x="1408.657" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 111110011100001111110010000001111100000, 1810.000..1830.000 ns</title></rect>
+<rect x="1421.791" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1111100111000011111100100000011111000000, 1830.000..1850.000 ns</title></rect>
+<rect x="1434.925" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 11111001110000111111001000000111110000000, 1850.000..1870.000 ns</title></rect>
+<rect x="1448.060" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 111110011100001111110010000001111100000000, 1870.000..1890.000 ns</title></rect>
+<rect x="1461.194" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1111100111000011111100100000011111000000000, 1890.000..1910.000 ns</title></rect>
+<rect x="1474.328" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 11111001110000111111001000000111110000000000, 1910.000..1930.000 ns</title></rect>
+<rect x="1487.463" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 111110011100001111110010000001111100000000000, 1930.000..1950.000 ns</title></rect>
+<rect x="1500.597" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1111100111000011111100100000011111000000000000, 1950.000..1970.000 ns</title></rect>
+<rect x="1513.731" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1111100111010000010100011000001111111111111010, 1970.000..1990.000 ns</title></rect>
+<rect x="1526.866" y="569" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 11111001110100000101000110000011111111111110100, 1990.000..2010.000 ns</title></rect>
+<text x="12" y="636" font-family="monospace" font-size="14">pc_observe</text>
+<rect x="220.000" y="617" width="19.701" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/pc_observe = 00000000000000000000000000000000, 0.000..30.000 ns</title></rect>
+<text x="229.851" y="636" text-anchor="middle" font-family="monospace" font-size="13">0</text>
+<rect x="239.701" y="617" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/pc_observe = 100, 30.000..50.000 ns</title></rect>
+<rect x="252.836" y="617" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/pc_observe = 1000, 50.000..70.000 ns</title></rect>
+<rect x="265.970" y="617" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/pc_observe = 1100, 70.000..90.000 ns</title></rect>
+<rect x="279.104" y="617" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/pc_observe = 10000, 90.000..110.000 ns</title></rect>
+<rect x="292.239" y="617" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/pc_observe = 10100, 110.000..130.000 ns</title></rect>
+<rect x="305.373" y="617" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/pc_observe = 11000, 130.000..150.000 ns</title></rect>
+<rect x="318.507" y="617" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/pc_observe = 11100, 150.000..170.000 ns</title></rect>
+<rect x="331.642" y="617" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/pc_observe = 100000, 170.000..190.000 ns</title></rect>
+<rect x="344.776" y="617" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/pc_observe = 100100, 190.000..210.000 ns</title></rect>
+<rect x="357.910" y="617" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/pc_observe = 101000, 210.000..230.000 ns</title></rect>
+<rect x="371.045" y="617" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/pc_observe = 101100, 230.000..250.000 ns</title></rect>
+<rect x="384.179" y="617" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/pc_observe = 110000, 250.000..270.000 ns</title></rect>
+<rect x="397.313" y="617" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/pc_observe = 11000, 270.000..290.000 ns</title></rect>
+<rect x="410.448" y="617" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/pc_observe = 11100, 290.000..310.000 ns</title></rect>
+<rect x="423.582" y="617" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/pc_observe = 100000, 310.000..330.000 ns</title></rect>
+<rect x="436.716" y="617" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/pc_observe = 100100, 330.000..350.000 ns</title></rect>
+<rect x="449.851" y="617" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/pc_observe = 101000, 350.000..370.000 ns</title></rect>
+<rect x="462.985" y="617" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/pc_observe = 101100, 370.000..390.000 ns</title></rect>
+<rect x="476.119" y="617" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/pc_observe = 110000, 390.000..410.000 ns</title></rect>
+<rect x="489.254" y="617" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/pc_observe = 11000, 410.000..430.000 ns</title></rect>
+<rect x="502.388" y="617" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/pc_observe = 11100, 430.000..450.000 ns</title></rect>
+<rect x="515.522" y="617" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/pc_observe = 100000, 450.000..470.000 ns</title></rect>
+<rect x="528.657" y="617" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/pc_observe = 100100, 470.000..490.000 ns</title></rect>
+<rect x="541.791" y="617" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/pc_observe = 101000, 490.000..510.000 ns</title></rect>
+<rect x="554.925" y="617" width="985.075" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/pc_observe = 101100, 510.000..2010.000 ns</title></rect>
+<text x="1047.463" y="636" text-anchor="middle" font-family="monospace" font-size="13">2C</text>
+<text x="12" y="684" font-family="monospace" font-size="14">scan_in</text>
+<path d="M 220.000 691 H 331.642" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_in = 0, 0.000..170.000 ns</title></path>
+<path d="M 331.642 667 H 344.776" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_in = 1, 170.000..190.000 ns</title></path>
+<path d="M 331.642 691 V 667" stroke="#126e60" fill="none"/>
+<path d="M 344.776 691 H 423.582" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_in = 0, 190.000..310.000 ns</title></path>
+<path d="M 344.776 667 V 691" stroke="#126e60" fill="none"/>
+<path d="M 423.582 667 H 436.716" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_in = 1, 310.000..330.000 ns</title></path>
+<path d="M 423.582 691 V 667" stroke="#126e60" fill="none"/>
+<path d="M 436.716 691 H 515.522" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_in = 0, 330.000..450.000 ns</title></path>
+<path d="M 436.716 667 V 691" stroke="#126e60" fill="none"/>
+<path d="M 515.522 667 H 528.657" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_in = 1, 450.000..470.000 ns</title></path>
+<path d="M 515.522 691 V 667" stroke="#126e60" fill="none"/>
+<path d="M 528.657 691 H 857.015" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_in = 0, 470.000..970.000 ns</title></path>
+<path d="M 528.657 667 V 691" stroke="#126e60" fill="none"/>
+<path d="M 857.015 667 H 962.090" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_in = 1, 970.000..1130.000 ns</title></path>
+<path d="M 857.015 691 V 667" stroke="#126e60" fill="none"/>
+<path d="M 962.090 691 H 988.358" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_in = 0, 1130.000..1170.000 ns</title></path>
+<path d="M 962.090 667 V 691" stroke="#126e60" fill="none"/>
+<path d="M 988.358 667 H 1027.761" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_in = 1, 1170.000..1230.000 ns</title></path>
+<path d="M 988.358 691 V 667" stroke="#126e60" fill="none"/>
+<path d="M 1027.761 691 H 1080.299" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_in = 0, 1230.000..1310.000 ns</title></path>
+<path d="M 1027.761 667 V 691" stroke="#126e60" fill="none"/>
+<path d="M 1080.299 667 H 1159.104" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_in = 1, 1310.000..1430.000 ns</title></path>
+<path d="M 1080.299 691 V 667" stroke="#126e60" fill="none"/>
+<path d="M 1159.104 691 H 1185.373" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_in = 0, 1430.000..1470.000 ns</title></path>
+<path d="M 1159.104 667 V 691" stroke="#126e60" fill="none"/>
+<path d="M 1185.373 667 H 1198.507" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_in = 1, 1470.000..1490.000 ns</title></path>
+<path d="M 1185.373 691 V 667" stroke="#126e60" fill="none"/>
+<path d="M 1198.507 691 H 1277.313" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_in = 0, 1490.000..1610.000 ns</title></path>
+<path d="M 1198.507 667 V 691" stroke="#126e60" fill="none"/>
+<path d="M 1277.313 667 H 1342.985" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_in = 1, 1610.000..1710.000 ns</title></path>
+<path d="M 1277.313 691 V 667" stroke="#126e60" fill="none"/>
+<path d="M 1342.985 691 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_in = 0, 1710.000..2010.000 ns</title></path>
+<path d="M 1342.985 667 V 691" stroke="#126e60" fill="none"/>
+<text x="12" y="732" font-family="monospace" font-size="14">scan_out</text>
+<path d="M 220.000 739 H 1001.493" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_out = 0, 0.000..1190.000 ns</title></path>
+<path d="M 1001.493 715 H 1014.627" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_out = 1, 1190.000..1210.000 ns</title></path>
+<path d="M 1001.493 739 V 715" stroke="#126e60" fill="none"/>
+<path d="M 1014.627 739 H 1027.761" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_out = 0, 1210.000..1230.000 ns</title></path>
+<path d="M 1014.627 715 V 739" stroke="#126e60" fill="none"/>
+<path d="M 1027.761 715 H 1054.030" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_out = 1, 1230.000..1270.000 ns</title></path>
+<path d="M 1027.761 739 V 715" stroke="#126e60" fill="none"/>
+<path d="M 1054.030 739 H 1080.299" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_out = 0, 1270.000..1310.000 ns</title></path>
+<path d="M 1054.030 715 V 739" stroke="#126e60" fill="none"/>
+<path d="M 1080.299 715 H 1093.433" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_out = 1, 1310.000..1330.000 ns</title></path>
+<path d="M 1080.299 739 V 715" stroke="#126e60" fill="none"/>
+<path d="M 1093.433 739 H 1106.567" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_out = 0, 1330.000..1350.000 ns</title></path>
+<path d="M 1093.433 715 V 739" stroke="#126e60" fill="none"/>
+<path d="M 1106.567 715 H 1119.701" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_out = 1, 1350.000..1370.000 ns</title></path>
+<path d="M 1106.567 739 V 715" stroke="#126e60" fill="none"/>
+<path d="M 1119.701 739 H 1132.836" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_out = 0, 1370.000..1390.000 ns</title></path>
+<path d="M 1119.701 715 V 739" stroke="#126e60" fill="none"/>
+<path d="M 1132.836 715 H 1172.239" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_out = 1, 1390.000..1450.000 ns</title></path>
+<path d="M 1132.836 739 V 715" stroke="#126e60" fill="none"/>
+<path d="M 1172.239 739 H 1251.045" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_out = 0, 1450.000..1570.000 ns</title></path>
+<path d="M 1172.239 715 V 739" stroke="#126e60" fill="none"/>
+<path d="M 1251.045 715 H 1264.179" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_out = 1, 1570.000..1590.000 ns</title></path>
+<path d="M 1251.045 739 V 715" stroke="#126e60" fill="none"/>
+<path d="M 1264.179 739 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_out = 0, 1590.000..2010.000 ns</title></path>
+<path d="M 1264.179 715 V 739" stroke="#126e60" fill="none"/>
+<text x="12" y="780" font-family="monospace" font-size="14">scan_feedback</text>
+<path d="M 220.000 787 H 331.642" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_feedback = 0, 0.000..170.000 ns</title></path>
+<path d="M 331.642 763 H 344.776" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_feedback = 1, 170.000..190.000 ns</title></path>
+<path d="M 331.642 787 V 763" stroke="#126e60" fill="none"/>
+<path d="M 344.776 787 H 423.582" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_feedback = 0, 190.000..310.000 ns</title></path>
+<path d="M 344.776 763 V 787" stroke="#126e60" fill="none"/>
+<path d="M 423.582 763 H 436.716" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_feedback = 1, 310.000..330.000 ns</title></path>
+<path d="M 423.582 787 V 763" stroke="#126e60" fill="none"/>
+<path d="M 436.716 787 H 515.522" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_feedback = 0, 330.000..450.000 ns</title></path>
+<path d="M 436.716 763 V 787" stroke="#126e60" fill="none"/>
+<path d="M 515.522 763 H 528.657" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_feedback = 1, 450.000..470.000 ns</title></path>
+<path d="M 515.522 787 V 763" stroke="#126e60" fill="none"/>
+<path d="M 528.657 787 H 870.149" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_feedback = 0, 470.000..990.000 ns</title></path>
+<path d="M 528.657 763 V 787" stroke="#126e60" fill="none"/>
+<path d="M 870.149 763 H 975.224" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_feedback = 1, 990.000..1150.000 ns</title></path>
+<path d="M 870.149 787 V 763" stroke="#126e60" fill="none"/>
+<path d="M 975.224 787 H 1001.493" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_feedback = 0, 1150.000..1190.000 ns</title></path>
+<path d="M 975.224 763 V 787" stroke="#126e60" fill="none"/>
+<path d="M 1001.493 763 H 1040.896" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_feedback = 1, 1190.000..1250.000 ns</title></path>
+<path d="M 1001.493 787 V 763" stroke="#126e60" fill="none"/>
+<path d="M 1040.896 787 H 1093.433" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_feedback = 0, 1250.000..1330.000 ns</title></path>
+<path d="M 1040.896 763 V 787" stroke="#126e60" fill="none"/>
+<path d="M 1093.433 763 H 1172.239" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_feedback = 1, 1330.000..1450.000 ns</title></path>
+<path d="M 1093.433 787 V 763" stroke="#126e60" fill="none"/>
+<path d="M 1172.239 787 H 1198.507" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_feedback = 0, 1450.000..1490.000 ns</title></path>
+<path d="M 1172.239 763 V 787" stroke="#126e60" fill="none"/>
+<path d="M 1198.507 763 H 1211.642" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_feedback = 1, 1490.000..1510.000 ns</title></path>
+<path d="M 1198.507 787 V 763" stroke="#126e60" fill="none"/>
+<path d="M 1211.642 787 H 1290.448" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_feedback = 0, 1510.000..1630.000 ns</title></path>
+<path d="M 1211.642 763 V 787" stroke="#126e60" fill="none"/>
+<path d="M 1290.448 763 H 1356.119" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_feedback = 1, 1630.000..1730.000 ns</title></path>
+<path d="M 1290.448 787 V 763" stroke="#126e60" fill="none"/>
+<path d="M 1356.119 787 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_feedback = 0, 1730.000..2010.000 ns</title></path>
+<path d="M 1356.119 763 V 787" stroke="#126e60" fill="none"/>
+<text x="12" y="828" font-family="monospace" font-size="14">mode_select</text>
+<rect x="220.000" y="809" width="689.552" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/mode_select = 00, 0.000..1050.000 ns</title></rect>
+<text x="564.776" y="828" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="909.552" y="809" width="302.090" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/mode_select = 11, 1050.000..1510.000 ns</title></rect>
+<text x="1060.597" y="828" text-anchor="middle" font-family="monospace" font-size="13">11</text>
+<rect x="1211.642" y="809" width="328.358" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/mode_select = 0, 1510.000..2010.000 ns</title></rect>
+<text x="1375.821" y="828" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<text x="12" y="876" font-family="monospace" font-size="14">generator_state</text>
+<rect x="220.000" y="857" width="413.731" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1010101010101010, 0.000..630.000 ns</title></rect>
+<text x="426.866" y="876" text-anchor="middle" font-family="monospace" font-size="13">AAAA</text>
+<rect x="633.731" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 101010101010101, 630.000..650.000 ns</title></rect>
+<rect x="646.866" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 10101010101010, 650.000..670.000 ns</title></rect>
+<rect x="660.000" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1001010101010101, 670.000..690.000 ns</title></rect>
+<rect x="673.134" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1100101010101010, 690.000..710.000 ns</title></rect>
+<rect x="686.269" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1110010101010101, 710.000..730.000 ns</title></rect>
+<rect x="699.403" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 111001010101010, 730.000..750.000 ns</title></rect>
+<rect x="712.537" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1011100101010101, 750.000..770.000 ns</title></rect>
+<rect x="725.672" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 101110010101010, 770.000..790.000 ns</title></rect>
+<rect x="738.806" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 10111001010101, 790.000..810.000 ns</title></rect>
+<rect x="751.940" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1001011100101010, 810.000..830.000 ns</title></rect>
+<rect x="765.075" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1100101110010101, 830.000..850.000 ns</title></rect>
+<rect x="778.209" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1110010111001010, 850.000..870.000 ns</title></rect>
+<rect x="791.343" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 111001011100101, 870.000..890.000 ns</title></rect>
+<rect x="804.478" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 11100101110010, 890.000..910.000 ns</title></rect>
+<rect x="817.612" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1110010111001, 910.000..930.000 ns</title></rect>
+<rect x="830.746" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 111001011100, 930.000..950.000 ns</title></rect>
+<rect x="843.881" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1000011100101110, 950.000..970.000 ns</title></rect>
+<rect x="857.015" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1100001110010111, 970.000..990.000 ns</title></rect>
+<rect x="870.149" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1110000111001011, 990.000..1010.000 ns</title></rect>
+<rect x="883.284" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1111000011100101, 1010.000..1030.000 ns</title></rect>
+<rect x="896.418" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1111100001110010, 1030.000..1050.000 ns</title></rect>
+<rect x="909.552" y="857" width="52.537" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1111110000111001, 1050.000..1130.000 ns</title></rect>
+<text x="935.821" y="876" text-anchor="middle" font-family="monospace" font-size="13">FC39</text>
+<rect x="962.090" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 111111000011100, 1130.000..1150.000 ns</title></rect>
+<rect x="975.224" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 11111100001110, 1150.000..1170.000 ns</title></rect>
+<rect x="988.358" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1001111110000111, 1170.000..1190.000 ns</title></rect>
+<rect x="1001.493" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 100111111000011, 1190.000..1210.000 ns</title></rect>
+<rect x="1014.627" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1010011111100001, 1210.000..1230.000 ns</title></rect>
+<rect x="1027.761" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1101001111110000, 1230.000..1250.000 ns</title></rect>
+<rect x="1040.896" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 110100111111000, 1250.000..1270.000 ns</title></rect>
+<rect x="1054.030" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 11010011111100, 1270.000..1290.000 ns</title></rect>
+<rect x="1067.164" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1101001111110, 1290.000..1310.000 ns</title></rect>
+<rect x="1080.299" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1000110100111111, 1310.000..1330.000 ns</title></rect>
+<rect x="1093.433" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1100011010011111, 1330.000..1350.000 ns</title></rect>
+<rect x="1106.567" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1110001101001111, 1350.000..1370.000 ns</title></rect>
+<rect x="1119.701" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1111000110100111, 1370.000..1390.000 ns</title></rect>
+<rect x="1132.836" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1111100011010011, 1390.000..1410.000 ns</title></rect>
+<rect x="1145.970" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 111110001101001, 1410.000..1430.000 ns</title></rect>
+<rect x="1159.104" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 11111000110100, 1430.000..1450.000 ns</title></rect>
+<rect x="1172.239" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1111100011010, 1450.000..1470.000 ns</title></rect>
+<rect x="1185.373" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1000111110001101, 1470.000..1490.000 ns</title></rect>
+<rect x="1198.507" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 100011111000110, 1490.000..1510.000 ns</title></rect>
+<rect x="1211.642" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 10001111100011, 1510.000..1530.000 ns</title></rect>
+<rect x="1224.776" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1000111110001, 1530.000..1550.000 ns</title></rect>
+<rect x="1237.910" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 100011111000, 1550.000..1570.000 ns</title></rect>
+<rect x="1251.045" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1000010001111100, 1570.000..1590.000 ns</title></rect>
+<rect x="1264.179" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 100001000111110, 1590.000..1610.000 ns</title></rect>
+<rect x="1277.313" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1010000100011111, 1610.000..1630.000 ns</title></rect>
+<rect x="1290.448" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 101000010001111, 1630.000..1650.000 ns</title></rect>
+<rect x="1303.582" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1010100001000111, 1650.000..1670.000 ns</title></rect>
+<rect x="1316.716" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1101010000100011, 1670.000..1690.000 ns</title></rect>
+<rect x="1329.851" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 110101000010001, 1690.000..1710.000 ns</title></rect>
+<rect x="1342.985" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1011010100001000, 1710.000..1730.000 ns</title></rect>
+<rect x="1356.119" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 101101010000100, 1730.000..1750.000 ns</title></rect>
+<rect x="1369.254" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 10110101000010, 1750.000..1770.000 ns</title></rect>
+<rect x="1382.388" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1001011010100001, 1770.000..1790.000 ns</title></rect>
+<rect x="1395.522" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 100101101010000, 1790.000..1810.000 ns</title></rect>
+<rect x="1408.657" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1010010110101000, 1810.000..1830.000 ns</title></rect>
+<rect x="1421.791" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 101001011010100, 1830.000..1850.000 ns</title></rect>
+<rect x="1434.925" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1010100101101010, 1850.000..1870.000 ns</title></rect>
+<rect x="1448.060" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 101010010110101, 1870.000..1890.000 ns</title></rect>
+<rect x="1461.194" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 10101001011010, 1890.000..1910.000 ns</title></rect>
+<rect x="1474.328" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1010100101101, 1910.000..1930.000 ns</title></rect>
+<rect x="1487.463" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1000101010010110, 1930.000..1950.000 ns</title></rect>
+<rect x="1500.597" y="857" width="26.269" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 100010101001011, 1950.000..1990.000 ns</title></rect>
+<rect x="1526.866" y="857" width="13.134" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 1010001010100101, 1990.000..2010.000 ns</title></rect>
+<text x="12" y="924" font-family="monospace" font-size="14">protected_equal</text>
+<path d="M 220.000 907 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/protected_equal = 1, 0.000..2010.000 ns</title></path>
+<text x="12" y="972" font-family="monospace" font-size="14">wr</text>
+<path d="M 220.000 955 H 344.776" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/wr = 1, 0.000..190.000 ns</title></path>
+<path d="M 344.776 979 H 357.910" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/wr = 0, 190.000..210.000 ns</title></path>
+<path d="M 344.776 955 V 979" stroke="#126e60" fill="none"/>
+<path d="M 357.910 955 H 397.313" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/wr = 1, 210.000..270.000 ns</title></path>
+<path d="M 357.910 979 V 955" stroke="#126e60" fill="none"/>
+<path d="M 397.313 979 H 410.448" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/wr = 0, 270.000..290.000 ns</title></path>
+<path d="M 397.313 955 V 979" stroke="#126e60" fill="none"/>
+<path d="M 410.448 955 H 436.716" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/wr = 1, 290.000..330.000 ns</title></path>
+<path d="M 410.448 979 V 955" stroke="#126e60" fill="none"/>
+<path d="M 436.716 979 H 449.851" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/wr = 0, 330.000..350.000 ns</title></path>
+<path d="M 436.716 955 V 979" stroke="#126e60" fill="none"/>
+<path d="M 449.851 955 H 489.254" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/wr = 1, 350.000..410.000 ns</title></path>
+<path d="M 449.851 979 V 955" stroke="#126e60" fill="none"/>
+<path d="M 489.254 979 H 502.388" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/wr = 0, 410.000..430.000 ns</title></path>
+<path d="M 489.254 955 V 979" stroke="#126e60" fill="none"/>
+<path d="M 502.388 955 H 528.657" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/wr = 1, 430.000..470.000 ns</title></path>
+<path d="M 502.388 979 V 955" stroke="#126e60" fill="none"/>
+<path d="M 528.657 979 H 541.791" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/wr = 0, 470.000..490.000 ns</title></path>
+<path d="M 528.657 955 V 979" stroke="#126e60" fill="none"/>
+<path d="M 541.791 955 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/wr = 1, 490.000..2010.000 ns</title></path>
+<path d="M 541.791 979 V 955" stroke="#126e60" fill="none"/>
+<text x="12" y="1020" font-family="monospace" font-size="14">d_aval</text>
+<path d="M 220.000 1003 H 344.776" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/d_aval = 1, 0.000..190.000 ns</title></path>
+<path d="M 344.776 1027 H 357.910" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/d_aval = 0, 190.000..210.000 ns</title></path>
+<path d="M 344.776 1003 V 1027" stroke="#126e60" fill="none"/>
+<path d="M 357.910 1003 H 371.045" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/d_aval = 1, 210.000..230.000 ns</title></path>
+<path d="M 357.910 1027 V 1003" stroke="#126e60" fill="none"/>
+<path d="M 371.045 1027 H 384.179" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/d_aval = 0, 230.000..250.000 ns</title></path>
+<path d="M 371.045 1003 V 1027" stroke="#126e60" fill="none"/>
+<path d="M 384.179 1003 H 397.313" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/d_aval = 1, 250.000..270.000 ns</title></path>
+<path d="M 384.179 1027 V 1003" stroke="#126e60" fill="none"/>
+<path d="M 397.313 1027 H 410.448" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/d_aval = 0, 270.000..290.000 ns</title></path>
+<path d="M 397.313 1003 V 1027" stroke="#126e60" fill="none"/>
+<path d="M 410.448 1003 H 436.716" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/d_aval = 1, 290.000..330.000 ns</title></path>
+<path d="M 410.448 1027 V 1003" stroke="#126e60" fill="none"/>
+<path d="M 436.716 1027 H 449.851" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/d_aval = 0, 330.000..350.000 ns</title></path>
+<path d="M 436.716 1003 V 1027" stroke="#126e60" fill="none"/>
+<path d="M 449.851 1003 H 462.985" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/d_aval = 1, 350.000..370.000 ns</title></path>
+<path d="M 449.851 1027 V 1003" stroke="#126e60" fill="none"/>
+<path d="M 462.985 1027 H 476.119" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/d_aval = 0, 370.000..390.000 ns</title></path>
+<path d="M 462.985 1003 V 1027" stroke="#126e60" fill="none"/>
+<path d="M 476.119 1003 H 489.254" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/d_aval = 1, 390.000..410.000 ns</title></path>
+<path d="M 476.119 1027 V 1003" stroke="#126e60" fill="none"/>
+<path d="M 489.254 1027 H 502.388" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/d_aval = 0, 410.000..430.000 ns</title></path>
+<path d="M 489.254 1003 V 1027" stroke="#126e60" fill="none"/>
+<path d="M 502.388 1003 H 528.657" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/d_aval = 1, 430.000..470.000 ns</title></path>
+<path d="M 502.388 1027 V 1003" stroke="#126e60" fill="none"/>
+<path d="M 528.657 1027 H 541.791" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/d_aval = 0, 470.000..490.000 ns</title></path>
+<path d="M 528.657 1003 V 1027" stroke="#126e60" fill="none"/>
+<path d="M 541.791 1003 H 554.925" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/d_aval = 1, 490.000..510.000 ns</title></path>
+<path d="M 541.791 1027 V 1003" stroke="#126e60" fill="none"/>
+<path d="M 554.925 1027 H 561.493" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/d_aval = 0, 510.000..520.000 ns</title></path>
+<path d="M 554.925 1003 V 1027" stroke="#126e60" fill="none"/>
+<path d="M 561.493 1003 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/d_aval = 1, 520.000..2010.000 ns</title></path>
+<path d="M 561.493 1027 V 1003" stroke="#126e60" fill="none"/>
+<text x="12" y="1068" font-family="monospace" font-size="14">register_write_actual</text>
+<path d="M 220.000 1075 H 279.104" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/register_write_actual = 0, 0.000..90.000 ns</title></path>
+<path d="M 279.104 1051 H 344.776" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/register_write_actual = 1, 90.000..190.000 ns</title></path>
+<path d="M 279.104 1075 V 1051" stroke="#126e60" fill="none"/>
+<path d="M 344.776 1075 H 371.045" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/register_write_actual = 0, 190.000..230.000 ns</title></path>
+<path d="M 344.776 1051 V 1075" stroke="#126e60" fill="none"/>
+<path d="M 371.045 1051 H 410.448" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/register_write_actual = 1, 230.000..290.000 ns</title></path>
+<path d="M 371.045 1075 V 1051" stroke="#126e60" fill="none"/>
+<path d="M 410.448 1075 H 462.985" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/register_write_actual = 0, 290.000..370.000 ns</title></path>
+<path d="M 410.448 1051 V 1075" stroke="#126e60" fill="none"/>
+<path d="M 462.985 1051 H 502.388" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/register_write_actual = 1, 370.000..430.000 ns</title></path>
+<path d="M 462.985 1075 V 1051" stroke="#126e60" fill="none"/>
+<path d="M 502.388 1075 H 554.925" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/register_write_actual = 0, 430.000..510.000 ns</title></path>
+<path d="M 502.388 1051 V 1075" stroke="#126e60" fill="none"/>
+<path d="M 554.925 1051 H 561.493" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/register_write_actual = 1, 510.000..520.000 ns</title></path>
+<path d="M 554.925 1075 V 1051" stroke="#126e60" fill="none"/>
+<path d="M 561.493 1075 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/register_write_actual = 0, 520.000..2010.000 ns</title></path>
+<path d="M 561.493 1051 V 1075" stroke="#126e60" fill="none"/>
+<text x="20" y="1140" font-family="sans-serif" font-size="11">Source: core_shift_capture_P256.vcd; no expected-schedule signal reconstruction. Buses are hexadecimal; counters/region lengths are decimal.</text></svg>

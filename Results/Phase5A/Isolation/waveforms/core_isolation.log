@@ -1,0 +1,29 @@
+Time resolution is 1 ps
+Note: [CAPTURE] 1,00003e741460fffa,00003e741460fffa,00003e741460fffa,PASS
+Time: 3260200 ps  Iteration: 0  Process: /tb_core_scan_isolation/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [CAPTURE] 2,001fff481460fffa,001fff481460fffa,001fff481460fffa,PASS
+Time: 5840200 ps  Iteration: 0  Process: /tb_core_scan_isolation/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [CAPTURE] 3,ff8000681460fffa,ff8000681460fffa,ff8000681460fffa,PASS
+Time: 8420200 ps  Iteration: 0  Process: /tb_core_scan_isolation/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [CAPTURE] 4,000000a01460fffa,000000a01460fffa,000000a01460fffa,PASS
+Time: 11000200 ps  Iteration: 0  Process: /tb_core_scan_isolation/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [CAPTURE] 5,f83f1f0c1460fffa,f83f1f0c1460fffa,f83f1f0c1460fffa,PASS
+Time: 13580200 ps  Iteration: 0  Process: /tb_core_scan_isolation/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [CAPTURE] 6,fffffc881460fffa,fffffc881460fffa,fffffc881460fffa,PASS
+Time: 16160200 ps  Iteration: 0  Process: /tb_core_scan_isolation/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [CAPTURE] 7,07f000741460fffa,07f000741460fffa,07f000741460fffa,PASS
+Time: 18740200 ps  Iteration: 0  Process: /tb_core_scan_isolation/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [CAPTURE] 8,ff8001141460fffa,ff8001141460fffa,ff8001141460fffa,PASS
+Time: 21320200 ps  Iteration: 0  Process: /tb_core_scan_isolation/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [PASS] real core protected-state hold, all CPU phases, write suppression and interrupt/exception isolation
+Time: 21320200 ps  Iteration: 0  Process: /tb_core_scan_isolation/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [ISOLATION] 4287,0,0,0,1033,0
+Time: 21320200 ps  Iteration: 0  Process: /tb_core_scan_isolation/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [SEQUENCE] 512,8,512,8
+Time: 21320200 ps  Iteration: 0  Process: /tb_core_scan_isolation/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [PASS] reset-only exit and functional restart against original core
+Time: 21780200 ps  Iteration: 0  Process: /tb_core_scan_isolation/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [ENGINE_COMPLETE] processor at 21780200 ps
+Time: 21780200 ps  Iteration: 0  Process: /tb_core_scan_isolation/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [TB_COMPLETE] tb_core_scan_isolation at 21780200 ps
+Time: 21780200 ps  Iteration: 2  Process: /tb_core_scan_isolation/line__9  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_core_scan_isolation.vhd

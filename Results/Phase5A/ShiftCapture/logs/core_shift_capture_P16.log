@@ -1,0 +1,45 @@
+Time resolution is 1 ps
+Note: [CAPTURE] 1,00003e7401e57820,00003e7401e57820,00003e7401e57820,PASS
+Time: 3080200 ps  Iteration: 0  Process: /tb_core_scan_shift_capture/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [CAPTURE] 2,001fff4801e57820,001fff4801e57820,001fff4801e57820,PASS
+Time: 5660200 ps  Iteration: 0  Process: /tb_core_scan_shift_capture/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [CAPTURE] 3,ff80006801e57820,ff80006801e57820,ff80006801e57820,PASS
+Time: 8240200 ps  Iteration: 0  Process: /tb_core_scan_shift_capture/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [CAPTURE] 4,000000a001e57820,000000a001e57820,000000a001e57820,PASS
+Time: 10820200 ps  Iteration: 0  Process: /tb_core_scan_shift_capture/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [CAPTURE] 5,f83f1f0c01e57820,f83f1f0c01e57820,f83f1f0c01e57820,PASS
+Time: 13400200 ps  Iteration: 0  Process: /tb_core_scan_shift_capture/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [CAPTURE] 6,fffffc8801e57820,fffffc8801e57820,fffffc8801e57820,PASS
+Time: 15980200 ps  Iteration: 0  Process: /tb_core_scan_shift_capture/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [CAPTURE] 7,07f0007401e57820,07f0007401e57820,07f0007401e57820,PASS
+Time: 18560200 ps  Iteration: 0  Process: /tb_core_scan_shift_capture/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [CAPTURE] 8,ff80011401e57820,ff80011401e57820,ff80011401e57820,PASS
+Time: 21140200 ps  Iteration: 0  Process: /tb_core_scan_shift_capture/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [CAPTURE] 9,00007fc801e57820,00007fc801e57820,00007fc801e57820,PASS
+Time: 23720200 ps  Iteration: 0  Process: /tb_core_scan_shift_capture/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [CAPTURE] 10,0000fd6401e57820,0000fd6401e57820,0000fd6401e57820,PASS
+Time: 26300200 ps  Iteration: 0  Process: /tb_core_scan_shift_capture/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [CAPTURE] 11,fffff84c01e57820,fffff84c01e57820,fffff84c01e57820,PASS
+Time: 28880200 ps  Iteration: 0  Process: /tb_core_scan_shift_capture/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [CAPTURE] 12,f0fff0dc01e57820,f0fff0dc01e57820,f0fff0dc01e57820,PASS
+Time: 31460200 ps  Iteration: 0  Process: /tb_core_scan_shift_capture/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [CAPTURE] 13,007ff07401e57820,007ff07401e57820,007ff07401e57820,PASS
+Time: 34040200 ps  Iteration: 0  Process: /tb_core_scan_shift_capture/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [CAPTURE] 14,7000024401e57820,7000024401e57820,7000024401e57820,PASS
+Time: 36620200 ps  Iteration: 0  Process: /tb_core_scan_shift_capture/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [CAPTURE] 15,7f87f8b801e57820,7f87f8b801e57820,7f87f8b801e57820,PASS
+Time: 39200200 ps  Iteration: 0  Process: /tb_core_scan_shift_capture/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [CAPTURE] 16,0007ffe401e57820,0007ffe401e57820,0007ffe401e57820,PASS
+Time: 41780200 ps  Iteration: 0  Process: /tb_core_scan_shift_capture/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [PASS] real core protected-state hold, all CPU phases, write suppression and interrupt/exception isolation
+Time: 41780200 ps  Iteration: 0  Process: /tb_core_scan_shift_capture/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [ISOLATION] 4287,0,2065,0,0,0
+Time: 41780200 ps  Iteration: 0  Process: /tb_core_scan_shift_capture/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [SEQUENCE] 1024,16,1024,16
+Time: 41780200 ps  Iteration: 0  Process: /tb_core_scan_shift_capture/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [PASS] reset-only exit and functional restart against original core
+Time: 42220200 ps  Iteration: 0  Process: /tb_core_scan_shift_capture/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [ENGINE_COMPLETE] processor at 42220200 ps
+Time: 42220200 ps  Iteration: 0  Process: /tb_core_scan_shift_capture/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [TB_COMPLETE] tb_core_scan_shift_capture at 42220200 ps
+Time: 42220200 ps  Iteration: 2  Process: /tb_core_scan_shift_capture/line__10  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_core_scan_shift_capture.vhd

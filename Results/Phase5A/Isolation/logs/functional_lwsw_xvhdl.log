@@ -1,0 +1,125 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/packageWires.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/SDcard.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SdCardCtrl'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/packageMemory_simu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/altera.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'mf_alt_add_4'
+INFO: [VRFC 10-3107] analyzing entity 'mf_alt_adder'
+INFO: [VRFC 10-3107] analyzing entity 'mf_alt_add_sub'
+INFO: [VRFC 10-3107] analyzing entity 'mf_alt_add_sub_u'
+INFO: [VRFC 10-3107] analyzing entity 'mf_ram1port'
+INFO: [VRFC 10-3107] analyzing entity 'alt_mf_rom'
+INFO: [VRFC 10-3107] analyzing entity 'mf_altpll'
+INFO: [VRFC 10-3107] analyzing entity 'mf_altpll_io'
+INFO: [VRFC 10-3107] analyzing entity 'mf_altclkctrl'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/aux_module.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'register32'
+INFO: [VRFC 10-3107] analyzing entity 'registerN'
+INFO: [VRFC 10-3107] analyzing entity 'counter32'
+INFO: [VRFC 10-3107] analyzing entity 'countNup'
+INFO: [VRFC 10-3107] analyzing entity 'count4phases'
+INFO: [VRFC 10-3107] analyzing entity 'FFD'
+INFO: [VRFC 10-3107] analyzing entity 'FFDsimple'
+INFO: [VRFC 10-3107] analyzing entity 'FFT'
+INFO: [VRFC 10-3107] analyzing entity 'subtr32'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/cache.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'D_CACHE'
+INFO: [VRFC 10-3107] analyzing entity 'I_CACHE'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/packageExcp.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/core.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'core'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/disk.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'DISK'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/exception.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_IF_RF'
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_RF_EX'
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_EX_MM'
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_MM_WB'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/fpu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'special_values'
+INFO: [VRFC 10-3107] analyzing entity 'data_check_mult'
+INFO: [VRFC 10-3107] analyzing entity 'mult32float'
+INFO: [VRFC 10-3107] analyzing entity 'data_check_sum'
+INFO: [VRFC 10-3107] analyzing entity 'sum32float'
+INFO: [VRFC 10-3107] analyzing entity 'FPU'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/io.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'from_stdin'
+INFO: [VRFC 10-3107] analyzing entity 'print_data'
+INFO: [VRFC 10-3107] analyzing entity 'to_stdout'
+INFO: [VRFC 10-3107] analyzing entity 'write_data_file'
+INFO: [VRFC 10-3107] analyzing entity 'read_data_file'
+INFO: [VRFC 10-3107] analyzing entity 'do_interrupt'
+INFO: [VRFC 10-3107] analyzing entity 'simple_uart'
+INFO: [VRFC 10-3107] analyzing entity 'sys_stats'
+INFO: [VRFC 10-3107] analyzing entity 'to_7seg'
+INFO: [VRFC 10-3107] analyzing entity 'read_keys'
+INFO: [VRFC 10-3107] analyzing entity 'LCD_display'
+INFO: [VRFC 10-3107] analyzing entity 'SDcard'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/FFD_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'FFD_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'register32_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/reg_IF_RF_scan.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_IF_RF_scan'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/ram_dual_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ram_dual_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_bank_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_bank_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_RF_EX_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_RF_EX_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/alu_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'alu_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_EX_MM_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_EX_MM_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_MM_WB_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_MM_WB_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_excp_IF_RF_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_IF_RF_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_excp_RF_EX_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_RF_EX_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_excp_EX_MM_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_EX_MM_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/counter32_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'counter32_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'registerN_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_excp_MM_WB_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_MM_WB_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/core_scan_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'core_scan_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/pipestages.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_IF_RF'
+INFO: [VRFC 10-3107] analyzing entity 'reg_RF_EX'
+INFO: [VRFC 10-3107] analyzing entity 'reg_EX_MM'
+INFO: [VRFC 10-3107] analyzing entity 'reg_MM_WB'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'RAM'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/rom.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ROM'
+INFO: [VRFC 10-3107] analyzing entity 'single_port_rom'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/sdram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SDRAM_controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/uart.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'uart_int'
+INFO: [VRFC 10-3107] analyzing entity 'register8'
+INFO: [VRFC 10-3107] analyzing entity 'register2'
+INFO: [VRFC 10-3107] analyzing entity 'par_ser10'
+INFO: [VRFC 10-3107] analyzing entity 'ser_par10'
+INFO: [VRFC 10-3107] analyzing entity 'remota'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/tb_cMIPS.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_cMIPS'
+INFO: [VRFC 10-3107] analyzing entity 'inst_addr_decode'
+INFO: [VRFC 10-3107] analyzing entity 'ram_addr_decode'
+INFO: [VRFC 10-3107] analyzing entity 'busError_addr_decode'
+INFO: [VRFC 10-3107] analyzing entity 'io_addr_decode'
+INFO: [VRFC 10-3107] analyzing entity 'sdram_addr_decode'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/units.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ram_dual'
+INFO: [VRFC 10-3107] analyzing entity 'reg_bank'
+INFO: [VRFC 10-3107] analyzing entity 'alu'
+INFO: [VRFC 10-3107] analyzing entity 'mask_off_bits'
+INFO: [VRFC 10-3107] analyzing entity 'shift_left32'
+INFO: [VRFC 10-3107] analyzing entity 'shift_right32'
+INFO: [VRFC 10-3107] analyzing entity 'wait_states'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_core_scan_test_regression.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_core_scan_test_regression'

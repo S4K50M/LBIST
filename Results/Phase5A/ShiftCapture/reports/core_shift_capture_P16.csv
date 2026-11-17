@@ -1,0 +1,2 @@
+Case,Testbench,Group,Result,CompletionTime,Capture,WDBBytes
+core_shift_capture_P16,tb_core_scan_shift_capture,ShiftCapture,PASS,42220200 ps,1,674166

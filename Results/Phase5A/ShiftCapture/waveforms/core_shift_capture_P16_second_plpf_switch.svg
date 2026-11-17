@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1150" viewBox="0 0 1600 1150">
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="20" y="28" font-family="sans-serif" font-size="20">core_shift_capture_P16 - second plpf switch</text>
+<text x="20" y="51" font-family="sans-serif" font-size="13">00 = PLPF n=3 (low toggle) | 11 = PLPF n=1 (unfiltered) | Edge capture uses PRE-edge mode; POST-edge mode prepares the next shift.</text>
+<line x1="820.0" x2="820.0" y1="110" y2="1120" stroke="#a33" stroke-dasharray="4 4"/>
+<text x="20" y="76" font-family="sans-serif" font-size="13" fill="#922">second plpf switch (captured event) @ 1330.000 ns</text>
+<line x1="220.0" x2="220.0" y1="110" y2="1120" stroke="#e6eaf0"/>
+<text x="220.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">1320.00 ns</text>
+<line x1="385.0" x2="385.0" y1="110" y2="1120" stroke="#e6eaf0"/>
+<text x="385.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">1322.75 ns</text>
+<line x1="550.0" x2="550.0" y1="110" y2="1120" stroke="#e6eaf0"/>
+<text x="550.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">1325.50 ns</text>
+<line x1="715.0" x2="715.0" y1="110" y2="1120" stroke="#e6eaf0"/>
+<text x="715.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">1328.25 ns</text>
+<line x1="880.0" x2="880.0" y1="110" y2="1120" stroke="#e6eaf0"/>
+<text x="880.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">1331.00 ns</text>
+<line x1="1045.0" x2="1045.0" y1="110" y2="1120" stroke="#e6eaf0"/>
+<text x="1045.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">1333.75 ns</text>
+<line x1="1210.0" x2="1210.0" y1="110" y2="1120" stroke="#e6eaf0"/>
+<text x="1210.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">1336.50 ns</text>
+<line x1="1375.0" x2="1375.0" y1="110" y2="1120" stroke="#e6eaf0"/>
+<text x="1375.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">1339.25 ns</text>
+<line x1="1540.0" x2="1540.0" y1="110" y2="1120" stroke="#e6eaf0"/>
+<text x="1540.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">1342.00 ns</text>
+<text x="12" y="156" font-family="monospace" font-size="14">clk</text>
+<path d="M 220.000 163 H 820.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1320.000..1330.000 ns</title></path>
+<path d="M 820.000 139 H 1420.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 1, 1330.000..1340.000 ns</title></path>
+<path d="M 820.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1420.000 163 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/clk = 0, 1340.000..1342.000 ns</title></path>
+<path d="M 1420.000 139 V 163" stroke="#126e60" fill="none"/>
+<text x="12" y="204" font-family="monospace" font-size="14">rst</text>
+<path d="M 220.000 187 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/rst = 1, 1320.000..1342.000 ns</title></path>
+<text x="12" y="252" font-family="monospace" font-size="14">test_mode</text>
+<path d="M 220.000 235 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/test_mode = 1, 1320.000..1342.000 ns</title></path>
+<text x="12" y="300" font-family="monospace" font-size="14">isolation_ack</text>
+<path d="M 220.000 283 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/isolation_ack = 1, 1320.000..1342.000 ns</title></path>
+<text x="12" y="348" font-family="monospace" font-size="14">test_phase</text>
+<rect x="220.000" y="329" width="1320.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/test_phase = 010, 1320.000..1342.000 ns</title></rect>
+<text x="880.000" y="348" text-anchor="middle" font-family="monospace" font-size="13">2</text>
+<text x="12" y="396" font-family="monospace" font-size="14">scan_enable</text>
+<path d="M 220.000 379 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_enable = 1, 1320.000..1342.000 ns</title></path>
+<text x="12" y="444" font-family="monospace" font-size="14">capture_enable</text>
+<path d="M 220.000 451 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/capture_enable = 0, 1320.000..1342.000 ns</title></path>
+<text x="12" y="492" font-family="monospace" font-size="14">shift_count_v</text>
+<rect x="220.000" y="473" width="600.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 0000000000101001, 1320.000..1330.000 ns</title></rect>
+<text x="520.000" y="492" text-anchor="middle" font-family="monospace" font-size="13">41</text>
+<rect x="820.000" y="473" width="720.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/shift_count_v = 101010, 1330.000..1342.000 ns</title></rect>
+<text x="1180.000" y="492" text-anchor="middle" font-family="monospace" font-size="13">42</text>
+<text x="12" y="540" font-family="monospace" font-size="14">pattern_index</text>
+<rect x="220.000" y="521" width="1320.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/pattern_index = 0000000000000000, 1320.000..1342.000 ns</title></rect>
+<text x="880.000" y="540" text-anchor="middle" font-family="monospace" font-size="13">0</text>
+<text x="12" y="588" font-family="monospace" font-size="14">scan_state</text>
+<rect x="220.000" y="569" width="600.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1100100000000000000010000000000000000000011111001110000111111001, 1320.000..1330.000 ns</title></rect>
+<text x="520.000" y="588" text-anchor="middle" font-family="monospace" font-size="13">C8000800007CE1F9</text>
+<rect x="820.000" y="569" width="720.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/scan_state = 1001000000000000000100000000000000000000111110011100001111110010, 1330.000..1342.000 ns</title></rect>
+<text x="1180.000" y="588" text-anchor="middle" font-family="monospace" font-size="13">9000100000F9C3F2</text>
+<text x="12" y="636" font-family="monospace" font-size="14">pc_observe</text>
+<rect x="220.000" y="617" width="1320.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/pc_observe = 00000000000000000000000000100100, 1320.000..1342.000 ns</title></rect>
+<text x="880.000" y="636" text-anchor="middle" font-family="monospace" font-size="13">24</text>
+<text x="12" y="684" font-family="monospace" font-size="14">scan_in</text>
+<path d="M 220.000 691 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_in = 0, 1320.000..1342.000 ns</title></path>
+<text x="12" y="732" font-family="monospace" font-size="14">scan_out</text>
+<path d="M 220.000 715 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_out = 1, 1320.000..1342.000 ns</title></path>
+<text x="12" y="780" font-family="monospace" font-size="14">scan_feedback</text>
+<path d="M 220.000 763 H 820.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_feedback = 1, 1320.000..1330.000 ns</title></path>
+<path d="M 820.000 787 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/scan_feedback = 0, 1330.000..1342.000 ns</title></path>
+<path d="M 820.000 763 V 787" stroke="#126e60" fill="none"/>
+<text x="12" y="828" font-family="monospace" font-size="14">mode_select</text>
+<rect x="220.000" y="809" width="600.000" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/mode_select = 11, 1320.000..1330.000 ns</title></rect>
+<text x="520.000" y="828" text-anchor="middle" font-family="monospace" font-size="13">11</text>
+<rect x="820.000" y="809" width="720.000" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/mode_select = 0, 1330.000..1342.000 ns</title></rect>
+<text x="1180.000" y="828" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<text x="12" y="876" font-family="monospace" font-size="14">generator_state</text>
+<rect x="220.000" y="857" width="600.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 0100011111000110, 1320.000..1330.000 ns</title></rect>
+<text x="520.000" y="876" text-anchor="middle" font-family="monospace" font-size="13">47C6</text>
+<rect x="820.000" y="857" width="720.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_core_scan_shift_capture/engine/generator_state = 10001111100011, 1330.000..1342.000 ns</title></rect>
+<text x="1180.000" y="876" text-anchor="middle" font-family="monospace" font-size="13">23E3</text>
+<text x="12" y="924" font-family="monospace" font-size="14">protected_equal</text>
+<path d="M 220.000 907 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/protected_equal = 1, 1320.000..1342.000 ns</title></path>
+<text x="12" y="972" font-family="monospace" font-size="14">wr</text>
+<path d="M 220.000 955 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/wr = 1, 1320.000..1342.000 ns</title></path>
+<text x="12" y="1020" font-family="monospace" font-size="14">d_aval</text>
+<path d="M 220.000 1003 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/d_aval = 1, 1320.000..1342.000 ns</title></path>
+<text x="12" y="1068" font-family="monospace" font-size="14">register_write_actual</text>
+<path d="M 220.000 1075 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_core_scan_shift_capture/engine/register_write_actual = 0, 1320.000..1342.000 ns</title></path>
+<text x="20" y="1140" font-family="sans-serif" font-size="11">Source: core_shift_capture_P16.vcd; no expected-schedule signal reconstruction. Buses are hexadecimal; counters/region lengths are decimal.</text></svg>

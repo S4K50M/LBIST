@@ -1,0 +1,622 @@
+{
+  "Instances": [
+    {
+      "Instance": "U_ifetch_stalled",
+      "Primitive": "FFD",
+      "Outputs": [
+        "if_stalled"
+      ]
+    },
+    {
+      "Instance": "PIPESTAGE_PC",
+      "Primitive": "register32",
+      "Outputs": [
+        "PC"
+      ]
+    },
+    {
+      "Instance": "U_NULLIFY_TWICE",
+      "Primitive": "FFD",
+      "Outputs": [
+        "annul_2"
+      ]
+    },
+    {
+      "Instance": "U_regs",
+      "Primitive": "reg_bank",
+      "Outputs": []
+    },
+    {
+      "Instance": "PIPESTAGE_RF_EX",
+      "Primitive": "reg_RF_EX",
+      "Outputs": [
+        "EX_selB",
+        "EX_oper",
+        "EX_a_rs",
+        "EX_a_rt",
+        "EX_a_c",
+        "EX_wreg_pre",
+        "EX_muxC",
+        "EX_move",
+        "EX_postn",
+        "EX_shamt",
+        "EX_aVal",
+        "EX_wrmem",
+        "EX_mem_t",
+        "EX_is_load",
+        "EX_A",
+        "EX_B",
+        "EX_displ32",
+        "EX_pc_p8"
+      ]
+    },
+    {
+      "Instance": "U_ALU",
+      "Primitive": "alu",
+      "Outputs": []
+    },
+    {
+      "Instance": "PIPESTAGE_EX_MM",
+      "Primitive": "reg_EX_MM",
+      "Outputs": [
+        "MM_a_rt",
+        "MM_a_c",
+        "MM_wreg",
+        "MM_muxC",
+        "MM_aVal",
+        "MM_wrmem",
+        "MM_mem_t",
+        "MM_is_load",
+        "MM_A",
+        "MM_B",
+        "MM_result",
+        "MM_addr",
+        "MM_HI",
+        "MM_LO",
+        "MM_alu_move_ok",
+        "MM_move",
+        "MM_pc_p8"
+      ]
+    },
+    {
+      "Instance": "U_dmem_stalled",
+      "Primitive": "FFD",
+      "Outputs": [
+        "mm_stalled"
+      ]
+    },
+    {
+      "Instance": "U_NULLIFY_THRICE",
+      "Primitive": "FFD",
+      "Outputs": [
+        "nullify_MM_int"
+      ]
+    },
+    {
+      "Instance": "PIPESTAGE_MM_WB",
+      "Primitive": "reg_MM_WB",
+      "Outputs": [
+        "WB_a_c",
+        "WB_wreg",
+        "WB_muxC",
+        "WB_A",
+        "WB_result",
+        "WB_HI",
+        "WB_LO",
+        "WB_rd_data",
+        "WB_B_data",
+        "WB_addr2",
+        "WB_mem_t",
+        "WB_pc_p8"
+      ]
+    },
+    {
+      "Instance": "PIPESTAGE_EXCP_IF_RF",
+      "Primitive": "reg_excp_IF_RF",
+      "Outputs": [
+        "RF_excp_type",
+        "RF_PC_abort",
+        "RF_PC"
+      ]
+    },
+    {
+      "Instance": "PIPESTAGE_EXCP_RF_EX",
+      "Primitive": "reg_excp_RF_EX",
+      "Outputs": [
+        "EX_cop0_reg",
+        "EX_cop0_sel",
+        "EX_can_trap",
+        "EX_exception",
+        "EX_is_delayslot",
+        "EX_PC_abort",
+        "EX_PC",
+        "EX_trapped"
+      ]
+    },
+    {
+      "Instance": "U_DLY_INT1",
+      "Primitive": "FFD",
+      "Outputs": [
+        "dly_i1"
+      ]
+    },
+    {
+      "Instance": "U_DLY_INT2",
+      "Primitive": "FFD",
+      "Outputs": [
+        "dly_i2"
+      ]
+    },
+    {
+      "Instance": "PIPESTAGE_EXCP_EX_MM",
+      "Primitive": "reg_excp_EX_MM",
+      "Outputs": [
+        "MM_cop0_reg",
+        "MM_cop0_sel",
+        "MM_PC",
+        "MM_v_addr",
+        "MM_nullify",
+        "MM_addrError",
+        "MM_addrErr_stage_mm",
+        "MM_is_delayslot",
+        "MM_trapped",
+        "MM_ll_sc_abort",
+        "MM_tlb_exception",
+        "MM_tlb_stage_mm",
+        "MM_int_req",
+        "MM_is_SC",
+        "MM_is_MFC0",
+        "is_exception"
+      ]
+    },
+    {
+      "Instance": "COP0_STATUS",
+      "Primitive": "register32",
+      "Outputs": [
+        "STATUS"
+      ]
+    },
+    {
+      "Instance": "U_DLY_TLB_EXCP",
+      "Primitive": "FFD",
+      "Outputs": [
+        "tlb_excp_taken"
+      ]
+    },
+    {
+      "Instance": "COP0_EPC",
+      "Primitive": "register32",
+      "Outputs": [
+        "EPC"
+      ]
+    },
+    {
+      "Instance": "COP0_COMPARE",
+      "Primitive": "register32",
+      "Outputs": [
+        "COMPARE"
+      ]
+    },
+    {
+      "Instance": "COP0_COUNT",
+      "Primitive": "counter32",
+      "Outputs": [
+        "COUNT"
+      ]
+    },
+    {
+      "Instance": "COP0_COUNT_INTERRUPT",
+      "Primitive": "FFD",
+      "Outputs": [
+        "count_eq_compare"
+      ]
+    },
+    {
+      "Instance": "COP0_DISABLE_COUNT",
+      "Primitive": "FFD",
+      "Outputs": [
+        "count_enable"
+      ]
+    },
+    {
+      "Instance": "COP0_BadVAddr",
+      "Primitive": "register32",
+      "Outputs": [
+        "BadVAddr"
+      ]
+    },
+    {
+      "Instance": "COP0_LLaddr",
+      "Primitive": "register32",
+      "Outputs": [
+        "LLaddr"
+      ]
+    },
+    {
+      "Instance": "MMU_Index",
+      "Primitive": "register32",
+      "Outputs": [
+        "INDEX"
+      ]
+    },
+    {
+      "Instance": "MMU_Wired",
+      "Primitive": "register32",
+      "Outputs": [
+        "WIRED"
+      ]
+    },
+    {
+      "Instance": "MMU_EntryLo0",
+      "Primitive": "register32",
+      "Outputs": [
+        "EntryLo0"
+      ]
+    },
+    {
+      "Instance": "MMU_EntryLo1",
+      "Primitive": "register32",
+      "Outputs": [
+        "EntryLo1"
+      ]
+    },
+    {
+      "Instance": "MMU_ContextPTE",
+      "Primitive": "registerN",
+      "Outputs": [
+        "Context(31 downto 16)"
+      ]
+    },
+    {
+      "Instance": "MMU_ContextBAD",
+      "Primitive": "registerN",
+      "Outputs": [
+        "Context(15 downto 4)"
+      ]
+    },
+    {
+      "Instance": "MMU_EntryHi",
+      "Primitive": "register32",
+      "Outputs": [
+        "EntryHi"
+      ]
+    },
+    {
+      "Instance": "U_TLB_EXCP_ONCE",
+      "Primitive": "FFD",
+      "Outputs": [
+        "tlb_ex_2"
+      ]
+    },
+    {
+      "Instance": "MMU_TAG0",
+      "Primitive": "register32",
+      "Outputs": [
+        "tlb_tag0"
+      ]
+    },
+    {
+      "Instance": "MMU_DAT0_0",
+      "Primitive": "registerN",
+      "Outputs": [
+        "tlb_dat0_0"
+      ]
+    },
+    {
+      "Instance": "MMU_DAT0_1",
+      "Primitive": "registerN",
+      "Outputs": [
+        "tlb_dat0_1"
+      ]
+    },
+    {
+      "Instance": "MMU_TAG1",
+      "Primitive": "register32",
+      "Outputs": [
+        "tlb_tag1"
+      ]
+    },
+    {
+      "Instance": "MMU_DAT1_0",
+      "Primitive": "registerN",
+      "Outputs": [
+        "tlb_dat1_0"
+      ]
+    },
+    {
+      "Instance": "MMU_DAT1_1",
+      "Primitive": "registerN",
+      "Outputs": [
+        "tlb_dat1_1"
+      ]
+    },
+    {
+      "Instance": "MMU_TAG2",
+      "Primitive": "register32",
+      "Outputs": [
+        "tlb_tag2"
+      ]
+    },
+    {
+      "Instance": "MMU_DAT2_0",
+      "Primitive": "registerN",
+      "Outputs": [
+        "tlb_dat2_0"
+      ]
+    },
+    {
+      "Instance": "MMU_DAT2_1",
+      "Primitive": "registerN",
+      "Outputs": [
+        "tlb_dat2_1"
+      ]
+    },
+    {
+      "Instance": "MMU_TAG3",
+      "Primitive": "register32",
+      "Outputs": [
+        "tlb_tag3"
+      ]
+    },
+    {
+      "Instance": "MMU_DAT3_0",
+      "Primitive": "registerN",
+      "Outputs": [
+        "tlb_dat3_0"
+      ]
+    },
+    {
+      "Instance": "MMU_DAT3_1",
+      "Primitive": "registerN",
+      "Outputs": [
+        "tlb_dat3_1"
+      ]
+    },
+    {
+      "Instance": "MMU_TAG4",
+      "Primitive": "register32",
+      "Outputs": [
+        "tlb_tag4"
+      ]
+    },
+    {
+      "Instance": "MMU_DAT4_0",
+      "Primitive": "registerN",
+      "Outputs": [
+        "tlb_dat4_0"
+      ]
+    },
+    {
+      "Instance": "MMU_DAT4_1",
+      "Primitive": "registerN",
+      "Outputs": [
+        "tlb_dat4_1"
+      ]
+    },
+    {
+      "Instance": "MMU_TAG5",
+      "Primitive": "register32",
+      "Outputs": [
+        "tlb_tag5"
+      ]
+    },
+    {
+      "Instance": "MMU_DAT5_0",
+      "Primitive": "registerN",
+      "Outputs": [
+        "tlb_dat5_0"
+      ]
+    },
+    {
+      "Instance": "MMU_DAT5_1",
+      "Primitive": "registerN",
+      "Outputs": [
+        "tlb_dat5_1"
+      ]
+    },
+    {
+      "Instance": "MMU_TAG6",
+      "Primitive": "register32",
+      "Outputs": [
+        "tlb_tag6"
+      ]
+    },
+    {
+      "Instance": "MMU_DAT6_0",
+      "Primitive": "registerN",
+      "Outputs": [
+        "tlb_dat6_0"
+      ]
+    },
+    {
+      "Instance": "MMU_DAT6_1",
+      "Primitive": "registerN",
+      "Outputs": [
+        "tlb_dat6_1"
+      ]
+    },
+    {
+      "Instance": "MMU_TAG7",
+      "Primitive": "register32",
+      "Outputs": [
+        "tlb_tag7"
+      ]
+    },
+    {
+      "Instance": "MMU_DAT7_0",
+      "Primitive": "registerN",
+      "Outputs": [
+        "tlb_dat7_0"
+      ]
+    },
+    {
+      "Instance": "MMU_DAT7_1",
+      "Primitive": "registerN",
+      "Outputs": [
+        "tlb_dat7_1"
+      ]
+    },
+    {
+      "Instance": "PIPESTAGE_EXCP_MM_WB",
+      "Primitive": "reg_excp_MM_WB",
+      "Outputs": [
+        "WB_PC",
+        "WB_LLbit",
+        "WB_is_delayslot",
+        "WB_cop0_val"
+      ]
+    }
+  ],
+  "DirectProcesses": [
+    "CAUSE",
+    "ll_sc_bit",
+    "RANDOM"
+  ],
+  "GPRBits": 2112,
+  "ProbeTerms": [
+    "if_stalled",
+    "PC",
+    "annul_2",
+    "EX_selB",
+    "std_logic_vector(to_unsigned(t_alu_fun'pos(EX_oper),16))",
+    "EX_a_rs",
+    "EX_a_rt",
+    "EX_a_c",
+    "EX_wreg_pre",
+    "EX_muxC",
+    "EX_move",
+    "EX_postn",
+    "EX_shamt",
+    "EX_aVal",
+    "EX_wrmem",
+    "EX_mem_t",
+    "BOOL2SL(EX_is_load)",
+    "EX_A",
+    "EX_B",
+    "EX_displ32",
+    "EX_pc_p8",
+    "MM_a_rt",
+    "MM_a_c",
+    "MM_wreg",
+    "MM_muxC",
+    "MM_aVal",
+    "MM_wrmem",
+    "MM_mem_t",
+    "BOOL2SL(MM_is_load)",
+    "MM_A",
+    "MM_B",
+    "MM_result",
+    "MM_addr",
+    "MM_HI",
+    "MM_LO",
+    "MM_alu_move_ok",
+    "MM_move",
+    "MM_pc_p8",
+    "mm_stalled",
+    "nullify_MM_int",
+    "WB_a_c",
+    "WB_wreg",
+    "WB_muxC",
+    "WB_A",
+    "WB_result",
+    "WB_HI",
+    "WB_LO",
+    "WB_rd_data",
+    "WB_B_data",
+    "WB_addr2",
+    "WB_mem_t",
+    "WB_pc_p8",
+    "std_logic_vector(to_unsigned(exception_type'pos(RF_excp_type),16))",
+    "BOOL2SL(RF_PC_abort)",
+    "RF_PC",
+    "EX_cop0_reg",
+    "EX_cop0_sel",
+    "EX_can_trap",
+    "std_logic_vector(to_unsigned(exception_type'pos(EX_exception),16))",
+    "EX_is_delayslot",
+    "BOOL2SL(EX_PC_abort)",
+    "EX_PC",
+    "BOOL2SL(EX_trapped)",
+    "dly_i1",
+    "dly_i2",
+    "MM_cop0_reg",
+    "MM_cop0_sel",
+    "MM_PC",
+    "MM_v_addr",
+    "BOOL2SL(MM_nullify)",
+    "BOOL2SL(MM_addrError)",
+    "BOOL2SL(MM_addrErr_stage_mm)",
+    "MM_is_delayslot",
+    "BOOL2SL(MM_trapped)",
+    "BOOL2SL(MM_ll_sc_abort)",
+    "BOOL2SL(MM_tlb_exception)",
+    "BOOL2SL(MM_tlb_stage_mm)",
+    "MM_int_req",
+    "BOOL2SL(MM_is_SC)",
+    "BOOL2SL(MM_is_MFC0)",
+    "std_logic_vector(to_unsigned(exception_type'pos(is_exception),16))",
+    "STATUS",
+    "tlb_excp_taken",
+    "EPC",
+    "COMPARE",
+    "COUNT",
+    "count_eq_compare",
+    "count_enable",
+    "BadVAddr",
+    "LLaddr",
+    "INDEX",
+    "WIRED",
+    "EntryLo0",
+    "EntryLo1",
+    "Context(31 downto 16)",
+    "Context(15 downto 4)",
+    "EntryHi",
+    "tlb_ex_2",
+    "tlb_tag0",
+    "tlb_dat0_0",
+    "tlb_dat0_1",
+    "tlb_tag1",
+    "tlb_dat1_0",
+    "tlb_dat1_1",
+    "tlb_tag2",
+    "tlb_dat2_0",
+    "tlb_dat2_1",
+    "tlb_tag3",
+    "tlb_dat3_0",
+    "tlb_dat3_1",
+    "tlb_tag4",
+    "tlb_dat4_0",
+    "tlb_dat4_1",
+    "tlb_tag5",
+    "tlb_dat5_0",
+    "tlb_dat5_1",
+    "tlb_tag6",
+    "tlb_dat6_0",
+    "tlb_dat6_1",
+    "tlb_tag7",
+    "tlb_dat7_0",
+    "tlb_dat7_1",
+    "WB_PC",
+    "WB_LLbit",
+    "WB_is_delayslot",
+    "WB_cop0_val",
+    "CAUSE",
+    "ll_sc_bit",
+    "RANDOM",
+    "HI",
+    "LO",
+    "gpr_probe",
+    "ExcCode",
+    "nullify_MM_pre"
+  ],
+  "IdentifierRename": {
+    "Context": "context_reg"
+  },
+  "HoldDomains": {
+    "clk": "isolation_hold",
+    "phi1": "phi1_sync(1)",
+    "phi2": "phi2_sync(1)"
+  },
+  "Acknowledgement": "two-stage clk synchronizer after both inactive-edge hold synchronizers",
+  "CaptureCone": "scan PC half -> alignment -> existing U_INCPC +4; raw instruction input"
+}

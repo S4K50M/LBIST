@@ -1,0 +1,1232 @@
+
+****** Vivado v2025.1.1 (64-bit)
+  **** SW Build 6233196 on Thu Sep 11 21:27:30 MDT 2025
+  **** IP Build 6232796 on Fri Sep 12 01:46:16 MDT 2025
+  **** SharedData Build 6233195 on Thu Sep 11 17:56:43 MDT 2025
+  **** Start of session at: Tue Nov 17 23:31:53 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source synth_final_core.tcl
+# set ::phase5a_synth_tops {core_scan_test}
+# source {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/scripts/synth_phase5a.tcl}
+## source [file join [file dirname [file normalize [info script]]] phase5a_common.tcl]
+### set phase5_scripts [file dirname [file normalize [info script]]]
+### source [file join $phase5_scripts phase3_common.tcl]
+#### set phase3_script_dir [file dirname [file normalize [info script]]]
+#### source [file join $phase3_script_dir waveforms_common.tcl]
+##### set waveform_script_dir [file dirname [file normalize [info script]]]
+##### proc generate_lbist_waveforms {selection} {
+#####     global waveform_script_dir
+#####     set root [file normalize [file join $waveform_script_dir ../..]]
+#####     set project_dir [file join $root Results Phase2 work waveform_project]
+#####     create_project -force lbist_waves $project_dir -part xc7a35tcpg236-1
+#####     set_property target_language VHDL [current_project]
+#####     foreach name {lfsr_16 phase_shifter plpf_optimized plpf_dynamic basic_controller} {
+#####         add_files -fileset sources_1 [list [file join $root lbist rtl $name.vhd]]
+#####     }
+#####     foreach name {phase2_tb_pkg tb_lfsr_16 tb_phase_shifter tb_plpf_optimized tb_plpf_dynamic tb_phase2_integration tb_basic_controller tb_basic_integration} {
+#####         add_files -fileset sim_1 [list [file join $root lbist tb $name.vhd]]
+#####     }
+#####     set_property file_type VHDL [get_files *.vhd]
+#####     set_property xsim.simulate.runtime 0ns [get_filesets sim_1]
+#####     set cases {}
+#####     if {$selection ne "basic"} {
+#####         foreach top {tb_lfsr_16 tb_phase_shifter tb_plpf_optimized tb_plpf_dynamic tb_phase2_integration} {
+#####             lappend cases [list phase2 $top $top {}]
+#####         }
+#####     }
+#####     if {$selection ne "phase2"} {
+#####         lappend cases {basic tb_basic_controller tb_basic_controller_L64_B20 20}
+#####         foreach beta {0 8 16 20 28 36} {
+#####             lappend cases [list basic tb_basic_integration tb_basic_integration_L64_B${beta} $beta]
+#####         }
+#####     }
+#####     set summaries [dict create]
+#####     foreach phase {phase2 basic} {
+#####         if {$phase eq "phase2"} {set folder [file join $root Results Phase2 waveforms]} else {
+#####             set folder [file join $root Results Phase3 Basic waveforms]
+#####         }
+#####         file mkdir $folder
+#####         if {($phase eq "phase2" && $selection ne "basic") || ($phase eq "basic" && $selection ne "phase2")} {
+#####             set channel [open [file join $folder waveform_summary.csv] w]
+#####             puts $channel "Case,Testbench,Beta,CompletionTime,WDBBytes,VCDWindow,Result"
+#####             dict set summaries $phase $channel
+#####         }
+#####     }
+#####     set failures 0
+#####     foreach case $cases {
+#####         lassign $case phase top tag beta
+#####         if {$phase eq "phase2"} {set folder [file join $root Results Phase2 waveforms]} else {
+#####             set folder [file join $root Results Phase3 Basic waveforms]
+#####         }
+#####         puts "=== WAVEFORM: $tag ==="
+#####         set_property top $top [get_filesets sim_1]
+#####         if {$beta ne ""} {set generics [list CHAIN_LENGTH=64 BETA=$beta]} else {set generics {}}
+#####         set_property generic $generics [get_filesets sim_1]
+#####         update_compile_order -fileset sim_1
+#####         set simdir [file join $project_dir lbist_waves.sim sim_1 behav xsim]
+#####         set simlog [file join $simdir simulate.log]
+#####         if {[file exists $simlog]} {file delete $simlog}
+#####         set wcfg [file join $folder $tag.wcfg]
+#####         set problem [catch {
+#####             launch_simulation -simset sim_1 -mode behavioral
+#####             create_wave_config $tag
+#####             switch $top {
+#####                 tb_lfsr_16 {set signals {clk rst en state bit_out zero_state custom_state test_done}}
+#####                 tb_phase_shifter {set signals {clk rst en state c f1 f2 manual selected test_done}}
+#####                 tb_plpf_optimized {set signals {clk mode manual c f1 f2 past y valid chain test_done}}
+#####                 tb_plpf_dynamic {set signals {clk rst en state c f1 f2 mode active valid chain y test_done}}
+#####                 tb_phase2_integration {set signals {clk rst scan_enable state c f1 f2 mode active valid y chain test_done}}
+#####                 tb_basic_controller {set signals {clk rst scan_enable count mode done test_done}}
+#####                 tb_basic_integration {set signals {clk rst scan_enable count mode done state c f1 f2 active valid scan_in chain test_done}}
+#####             }
+#####             foreach name $signals {
+#####                 set path /$top/$name
+#####                 if {[llength [get_objects $path]] != 1} {error "Missing waveform signal: $path"}
+#####                 set radix default
+#####                 if {$name in {state zero_state custom_state selected chain}} {set radix hex}
+#####                 if {$name in {mode active}} {set radix bin}
+#####                 if {$name eq "count"} {set radix unsigned}
+#####                 if {$radix eq "default"} {add_wave $path} else {add_wave -radix $radix $path}
+#####                 log_wave $path
+#####             }
+#####             # A compact portable trace covers the initial few complete patterns.
+#####             # Full-time activity remains available in the WDB.
+#####             open_vcd [file join $folder $tag.vcd]
+#####             foreach name $signals {if {$name ni {test_done manual count}} {log_vcd /$top/$name}}
+#####             run 512 ns
+#####             close_vcd
+#####             set finished 0
+#####             for {set step 0} {$step<2000} {incr step} {
+#####                 set done [string tolower [get_value /$top/test_done]]
+#####                 if {$done eq "true" || $done eq "1"} {set finished 1; break}
+#####                 run 1 us
+#####             }
+#####             if {!$finished} {error "Waveform simulation timeout"}
+#####             save_wave_config $wcfg
+#####         } message]
+#####         catch {close_vcd}
+#####         catch {close_sim}
+#####         set text ""
+#####         if {[file exists $simlog]} {
+#####             file copy -force $simlog [file join $folder $tag.log]
+#####             set f [open $simlog r]; set text [read $f]; close $f
+#####         }
+#####         set complete [regexp [format {[[]TB_COMPLETE[]] %s at ([^[:cntrl:]]+)} $top] $text whole duration]
+#####         set result FAIL
+#####         set size 0
+#####         if {!$problem && $complete && ![regexp {[[]FAIL[]]|Failure:|Fatal:|ERROR:} $text]} {
+#####             set database [file join $simdir ${top}_behav.wdb]
+#####             if {[file exists $database] && [file exists $wcfg]} {
+#####                 file copy -force $database [file join $folder $tag.wdb]
+#####                 set size [file size [file join $folder $tag.wdb]]
+#####                 # Keep the WCFG/WDB pair relocatable together.
+#####                 set f [open $wcfg r]; set cfg [read $f]; close $f
+#####                 regsub -all {(<db_ref path=")[^"]*(")} $cfg [format {\1%s.wdb\2} $tag] cfg
+#####                 # Full WDB is retained; start with a readable 300-ns view.
+#####                 regsub {<zoom_setting>[^<]*</zoom_setting>} $cfg {<zoom_setting>
+#####       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+#####       <ZoomEndTime time="300.000 ns"></ZoomEndTime>
+#####       <Cursor1Time time="0.000 ns"></Cursor1Time>
+#####    </zoom_setting>} cfg
+#####                 set f [open $wcfg w]; puts $f $cfg; close $f
+#####                 set result PASS
+#####             }
+#####         }
+#####         if {$result eq "FAIL"} {incr failures; set duration UNKNOWN; puts stderr "Waveform failed: $tag -- $message"}
+#####         if {$beta eq ""} {set beta NA}
+#####         set channel [dict get $summaries $phase]
+#####         puts $channel "$tag,$top,$beta,$duration,$size,0..512 ns,$result"
+#####         flush $channel
+#####         puts "WAVEFORM RESULT: $result -- $tag ($size bytes)"
+#####     }
+#####     dict for {phase channel} $summaries {close $channel}
+#####     close_project
+#####     if {$failures} {error "$failures waveform simulations failed"}
+#####     puts "WAVEFORM GENERATION: PASS ([llength $cases] captures)"
+##### }
+##### proc phase3_wave_begin {folder top tag} {
+#####     file mkdir $folder
+#####     create_wave_config $tag
+#####     if {$top eq "tb_phase3_comparison"} {
+#####         set prefixes [list /$top/direct_engine /$top/low_engine /$top/basic_engine /$top/swap_engine /$top/moving_engine]
+#####     } else {set prefixes [list /$top/engine]}
+#####     foreach prefix $prefixes {
+#####         foreach name {clk rst scan_enable shift_count_v pattern_index moving_position_v alpha_0 beta_v gamma_0 mode_0 mode_1 mode_2 mode_3 mode_select pattern_done alpha_debug gamma_debug state current_bits future1_bits future2_bits active_mode mode_valid scan_in past_bits chain_flat} {
+#####             set path $prefix/$name
+#####             if {[llength [get_objects $path]]==1} {
+#####                 set radix hex
+#####                 if {$name in {mode_0 mode_1 mode_2 mode_3 mode_select active_mode mode_valid}} {set radix bin}
+#####                 if {$name in {shift_count_v moving_position_v alpha_0 beta_v gamma_0 pattern_index}} {set radix unsigned}
+#####                 add_wave -radix $radix $path
+#####                 log_wave $path
+#####             }
+#####         }
+#####     }
+#####     open_vcd [file join $folder $tag.vcd]
+#####     foreach prefix $prefixes {
+#####         foreach name {clk rst scan_enable shift_count_v pattern_index moving_position_v alpha_0 beta_v gamma_0 mode_0 mode_1 mode_2 mode_3 mode_select pattern_done alpha_debug gamma_debug state current_bits future1_bits future2_bits active_mode mode_valid scan_in past_bits chain_flat} {
+#####             set path $prefix/$name
+#####             if {[llength [get_objects $path]]==1} {log_vcd $path}
+#####         }
+#####     }
+#####     run 12 us
+#####     close_vcd
+##### }
+##### proc phase3_wave_finish {folder top tag simdir} {
+#####     set dest [file join $folder $tag.wdb]
+#####     file copy -force [file join $simdir [format "%s_behav.wdb" $top]] $dest
+#####     set config [file join $folder $tag.wcfg]
+#####     set f [open $config r]; set text [read $f]; close $f
+#####     regsub -all {(<db_ref path=")[^"]*(")} $text [format {\1%s.wdb\2} $tag] text
+#####     regsub {<zoom_setting>[^<]*</zoom_setting>} $text {<zoom_setting>
+#####       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+#####       <ZoomEndTime time="180.000 ns"></ZoomEndTime>
+#####    </zoom_setting>} text
+#####     set f [open $config w]; puts $f $text; close $f
+#####     return [file size $dest]
+##### }
+#### proc phase3_python {} {
+####     if {[info exists ::phase3_selected_python]} {return $::phase3_selected_python}
+####     set candidates {}
+####     if {[info exists ::env(PHASE3_PYTHON)]} {
+####         lappend candidates $::env(PHASE3_PYTHON)
+####     } else {
+####         if {[info exists ::env(LOCALAPPDATA)]} {
+####             set installs [glob -nocomplain -directory [file join $::env(LOCALAPPDATA) Programs Python] Python*/python.exe]
+####             set candidates [lsort -decreasing $installs]
+####         }
+####         lappend candidates python3 python
+####     }
+####     foreach candidate $candidates {
+####         if {![catch {exec $candidate -E -c {import sys; assert sys.version_info >= (3,9); import matplotlib,numpy}}]} {
+####             set ::phase3_selected_python $candidate
+####             puts "PHASE 3 PYTHON: $candidate"
+####             return $candidate
+####         }
+####     }
+####     error "No Python 3.9+ with matplotlib/numpy found; install those packages and set PHASE3_PYTHON to its executable."
+#### }
+#### proc phase3_run {selection} {
+####     global phase3_script_dir
+####     set root [file normalize [file join $phase3_script_dir ../..]]
+####     set python [phase3_python]
+####     puts [exec $python -E [file join $phase3_script_dir make_phase3_plan.py]]
+####     source [file join $root Results Phase3 Comparison work experiment_plan.tcl]
+####     set project_dir [file join $root Results Phase3 Comparison work project_$selection]
+####     create_project -force phase3 $project_dir -part xc7a35tcpg236-1
+####     set_property target_language VHDL [current_project]
+####     foreach file [glob [file join $root lbist rtl *.vhd]] {add_files -fileset sources_1 [list $file]}
+####     foreach name {phase2_tb_pkg phase3_tb_pkg phase3_controller_check phase3_integration_check tb_swap_controller tb_moving_controller tb_swap_integration tb_moving_integration tb_phase3_comparison tb_lfsr_16 tb_phase_shifter tb_plpf_optimized tb_plpf_dynamic tb_phase2_integration tb_basic_controller tb_basic_integration} {
+####         set file [file join $root lbist tb $name.vhd]
+####         if {[file exists $file]} {add_files -fileset sim_1 [list $file]}
+####     }
+####     set_property file_type VHDL [get_files *.vhd]
+####     set_property xsim.simulate.runtime 0ns [get_filesets sim_1]
+####     set failed 0; set executed 0
+####     foreach case $phase3_cases {
+####         lassign $case group top tag generics negative capture regression
+####         set selected [expr {$selection eq "all" || ($selection eq "regression" && $regression) || ($selection eq "waveforms" && $capture) || ($selection eq $top && !$regression)}]
+####         if {!$selected} {continue}
+####         incr executed
+####         set out [file join $root Results Phase3 $group]
+####         file mkdir [file join $out logs] [file join $out reports cases]
+####         set_property top $top [get_filesets sim_1]
+####         set_property generic $generics [get_filesets sim_1]
+####         update_compile_order -fileset sim_1
+####         set simdir [file join $project_dir phase3.sim sim_1 behav xsim]
+####         set simlog [file join $simdir simulate.log]
+####         if {[file exists $simlog]} {file delete $simlog}
+####         puts "=== PHASE 3: $tag ==="
+####         set size 0
+####         set problem [catch {
+####             launch_simulation -simset sim_1 -mode behavioral
+####             if {!$negative} {
+####                 if {$capture} {phase3_wave_begin [file join $out waveforms] $top $tag}
+####                 set finished 0
+####                 for {set step 0} {$step<20000} {incr step} {
+####                     if {[string tolower [get_value /$top/test_done]] in {true 1}} {set finished 1; break}
+####                     run 1 us
+####                 }
+####                 if {!$finished} {error "Simulation timeout without test_done"}
+####                 if {$capture} {save_wave_config [file join $out waveforms $tag.wcfg]}
+####             }
+####         } message]
+####         catch {close_vcd}
+####         catch {close_sim}
+####         set text ""
+####         if {[file exists $simlog]} {
+####             file copy -force $simlog [file join $out logs $tag.log]
+####             if {$capture} {file copy -force $simlog [file join $out waveforms $tag.log]}
+####             set f [open $simlog r]; set text [read $f]; close $f
+####         }
+####         foreach filename {xvhdl.log elaborate.log} {
+####             set src [file join $simdir $filename]
+####             if {[file exists $src]} {file copy -force $src [file join $out logs [format "%s_%s" $tag $filename]]}
+####         }
+####         set complete [regexp [format {[[]TB_COMPLETE[]] %s at ([^[:cntrl:]]+)} $top] $text whole duration]
+####         set result FAIL
+####         if {$negative} {
+####             set duration {0 ns}
+####             if {[regexp {[[]CONFIG_ERROR[]]} $text] && !$complete && ![regexp {[[]FAIL[]]} $text]} {set result PASS}
+####         } elseif {!$problem && $complete && ![regexp {[[]FAIL[]]|Failure:|Fatal:|ERROR:} $text]} {
+####             set result PASS
+####             if {$capture} {
+####                 if {[catch {set size [phase3_wave_finish [file join $out waveforms] $top $tag $simdir]} why]} {
+####                     set result FAIL; set message $why
+####                 }
+####             }
+####         }
+####         if {$result eq "FAIL"} {
+####             incr failed; set duration UNKNOWN
+####             set f [open [file join $out logs [format "%s_runner_error.log" $tag]] w]
+####             puts $f $message; close $f
+####             puts stderr "[format {FAIL: %s -- %s} $tag $message]"
+####         }
+####         set f [open [file join $out reports cases $tag.csv] w]
+####         puts $f "Case,Testbench,ExpectedNegative,Regression,Capture,Result,CompletionTime,WDBBytes"
+####         puts $f "$tag,$top,$negative,$regression,$capture,$result,$duration,$size"
+####         close $f
+####         puts "RESULT: $result -- $tag -- $duration"
+####     }
+####     close_project
+####     if {$failed} {error "$failed of $executed Phase 3 cases failed"}
+####     puts "PHASE 3 RESULT: PASS ($executed cases)"
+#### }
+#### proc phase3_finalize {} {
+####     global phase3_script_dir
+####     set python [phase3_python]
+####     puts [exec $python -E [file join $phase3_script_dir collect_phase3_results.py] --require-all]
+####     puts [exec $python -E [file join $phase3_script_dir render_waveform_previews.py] --phase3]
+####     set ::WAVEFORM_VERIFY_SCOPE phase3
+####     source [file join $phase3_script_dir verify_waveforms.tcl]
+####     puts "PHASE 3 FINAL REPORTS AND WAVEFORM VERIFICATION: PASS"
+#### }
+### set phase5_root [file normalize [file join $phase5_scripts ../..]]
+### file mkdir [file join $phase5_root Results Phase5A work]
+### cd [file join $phase5_root Results Phase5A work]
+### proc phase5_project {selection} {
+###     global phase5_root phase5_scripts
+###     set python [phase3_python]
+###     puts [exec $python -E [file join $phase5_scripts prepare_phase5a_rom.py]]
+###     set dir [file join $phase5_root Results Phase5A work project_$selection]
+###     create_project -force phase5a $dir -part xc7a35tcpg236-1
+###     set_property target_language VHDL [current_project]
+###     foreach name {packageWires packageMemory_simu packageExcp altera units aux_module pipestages exception core cache instrcache rom ram io uart disk SDcard fpu sdram tb_cMIPS} {
+###         add_files -fileset sources_1 [list [file join $phase5_root cMIPS vhdl $name.vhd]]
+###     }
+###     foreach name {lfsr_16 phase_shifter plpf_dynamic basic_controller reg_IF_RF_scan lbist_test_controller} {
+###         add_files -fileset sources_1 [list [file join $phase5_root lbist rtl $name.vhd]]
+###     }
+###     foreach file [glob [file join $phase5_root lbist core_scan phase5a *.vhd]] {
+###         add_files -fileset sources_1 [list $file]
+###         set_property file_type {VHDL 2008} [get_files [list $file]]
+###     }
+###     set file [file join $phase5_root lbist core_scan core_scan_test.vhd]
+###     add_files -fileset sources_1 [list $file]
+###     set_property file_type {VHDL 2008} [get_files [list $file]]
+###     foreach name {phase2_tb_pkg phase5a_rom_pkg phase5a_processor_check tb_lbist_test_controller tb_core_scan_isolation tb_core_scan_shift_capture tb_core_scan_test_regression} {
+###         set file [file join $phase5_root lbist tb $name.vhd]
+###         if {[file exists $file]} {add_files -fileset sim_1 [list $file]}
+###     }
+###     set_property xsim.simulate.runtime 0ns [get_filesets sim_1]
+### }
+### proc phase5_case {group top tag generics {capture 1} {cpu 0}} {
+###     global phase5_root
+###     set out [file join $phase5_root Results Phase5A $group]
+###     set cpu_exit [expr {$top in {tb_core_scan_test_regression tb_cMIPS}}]
+###     file mkdir [file join $out logs] [file join $out reports] [file join $out waveforms]
+###     set_property top $top [get_filesets sim_1]
+###     set_property generic $generics [get_filesets sim_1]
+###     update_compile_order -fileset sim_1
+###     set project_dir [get_property DIRECTORY [current_project]]
+###     set simdir [file join $project_dir phase5a.sim sim_1 behav xsim]
+###     file mkdir $simdir
+###     if {$cpu} {
+###         foreach image {prog.bin data.bin input.data serial.inp} {
+###             file copy -force [file join $phase5_root cMIPS $image] [file join $simdir $image]
+###         }
+###     }
+###     set simlog [file join $simdir simulate.log]
+###     if {[file exists $simlog]} {file delete $simlog}
+###     set problem [catch {
+###         launch_simulation -mode behavioral
+###         if {$capture} {phase5_capture $out $top $tag}
+###         if {$cpu_exit} {
+###             phase5_cpu_run $top $tag $out
+###         } else {
+###             set done 0
+###             for {set k 0} {$k<20000} {incr k} {
+###                 set channel [open $simlog r];set progress [read $channel];close $channel
+###                 if {[regexp {[[]FAIL[]]|Failure:|Fatal:|ERROR:} $progress]} {error "XSim assertion/error; do not resume a failed simulation"}
+###                 if {[string tolower [get_value /$top/test_done]] in {true 1}} {set done 1;break}
+###                 run 1 us
+###             }
+###             if {!$done} {error "Timeout without completion"}
+###         }
+###         if {$capture} {save_wave_config [file join $out waveforms $tag.wcfg]}
+###     } message]
+###     catch {close_vcd};catch {close_sim}
+###     set text ""
+###     if {[file exists $simlog]} {
+###         set f [open $simlog r];set text [read $f];close $f
+###         file copy -force $simlog [file join $out logs $tag.log]
+###         if {$capture} {file copy -force $simlog [file join $out waveforms $tag.log]}
+###     }
+###     foreach name {xvhdl.log elaborate.log} {
+###         set file [file join $simdir $name]
+###         if {[file exists $file]} {file copy -force $file [file join $out logs [format "%s_%s" $tag $name]]}
+###     }
+###     set result FAIL;set duration UNKNOWN;set bytes 0
+###     if {!$problem && !$cpu_exit && [regexp [format {[[]TB_COMPLETE[]] %s at ([0-9]+ ps)} $top] $text m duration] && ![regexp {[[]FAIL[]]|Failure:|Fatal:|ERROR:} $text]} {set result PASS}
+###     if {!$problem && $cpu_exit && [regexp {Time: ([0-9]+) ns[^\n]*RF_STOP_SIMULATION} $text m ns] && [regexp {cMIPS BREAKPOINT at PC=00000038} $text] && ![regexp {[[]FAIL[]]|SIMULATION ABORTED|Fatal:|ERROR:} $text]} {
+###         set result PASS;set duration "[expr {$ns*1000}] ps"
+###     }
+###     if {$result eq "PASS" && $capture} {
+###         set bytes [phase3_wave_finish [file join $out waveforms] $top $tag $simdir]
+###     }
+###     set f [open [file join $out reports $tag.csv] w]
+###     puts $f "Case,Testbench,Group,Result,CompletionTime,Capture,WDBBytes"
+###     puts $f "$tag,$top,$group,$result,$duration,$capture,$bytes";close $f
+###     puts "PHASE 5A RESULT: $result -- $tag -- $duration"
+###     if {$result ne "PASS"} {error "$tag failed: $message"}
+### }
+### proc phase5_capture {out top tag} {
+###     create_wave_config $tag
+###     set paths [get_objects /$top/*]
+###     if {$top in {tb_core_scan_isolation tb_core_scan_shift_capture}} {set paths [get_objects /$top/engine/*]}
+###     set selected {}
+###     foreach p $paths {
+###         # Scalars/vectors only; real RTL state probes are explicitly exported.
+###         set name [file tail $p]
+###         if {$name in {clk rst start pause abort_test ack ready tm se ce pd done error_status state shift_count_v pattern_index test_mode scan_enable capture_enable core_tm core_se core_ce bad_command exit_attempt isolation_ack protocol_error test_phase scan_in scan_out scan_feedback protected_state scan_state pc_observe mode_select active_mode generator_state current_bit future1 future2 pattern_done event_id i_addr d_addr i_aval d_aval wr memory_write_attempt register_write_attempt register_write_actual protected_equal capture_ready fabric_idle bsel busfree}} {
+###             lappend selected $p
+###             set radix hex
+###             if {$name in {test_phase state mode_select active_mode}} {set radix bin}
+###             if {$name in {shift_count_v pattern_index}} {set radix unsigned}
+###             add_wave -radix $radix $p;log_wave $p
+###         }
+###     }
+###     if {$top in {tb_core_scan_isolation tb_core_scan_shift_capture}} {
+###         foreach name {clk rst phi1 phi2 isolation_hold phi1_sync phi2_sync ack_sync isolation_ack legal_capture increment_operand PCincd capture_word RF_PCincd RF_instruction} {
+###             set p /$top/engine/dut/$name
+###             if {[llength [get_objects $p]]==1} {
+###                 lappend selected $p
+###                 add_wave -radix hex $p;log_wave $p
+###             }
+###         }
+###     }
+###     open_vcd [file join $out waveforms $tag.vcd]
+###     foreach p $selected {log_vcd $p}
+### }
+### proc phase5_cpu_run {top tag out} {
+###     set samples [open [file join $out reports [format "%s_samples.csv" $tag]] w]
+###     puts $samples "TimePS,PC,RF_PCincd,RF_instruction,IF_RF_ld,WB_wreg,MM_wrmem,Result"
+###     set checked 0;set stalled 0;set exit_seen 0
+###     for {set step 1} {$step<=1000} {incr step} {
+###         run 5 ns
+###         if {[get_value /$top/cpu_reset] ne "1"} {continue}
+###         if {$top eq "tb_core_scan_test_regression"} {
+###             set values {}
+###             foreach name {PC RF_PCincd RF_instruction IF_RF_ld WB_wreg MM_wrmem EX_A EX_B WB_C} {
+###                 set a [get_value -radix hex /$top/U_CORE/$name]
+###                 set b [get_value -radix hex /$top/U_SCAN/$name]
+###                 if {$a ne $b} {close $samples;error "Core pipeline mismatch $name at step $step"}
+###                 lappend values $a
+###             }
+###             if {[get_value /$top/U_CORE/IF_RF_ld] eq "1"} {incr stalled}
+###             puts $samples "[expr {$step*5000}],[join [lrange $values 0 5] ,],PASS"
+###             incr checked
+###         }
+###         set exception [string tolower [get_value /$top/U_CORE/exception]]
+###         set syscall [string tolower [get_value -radix hex /$top/U_CORE/syscall_n]]
+###         if {$exception eq "exwait" && $syscall eq "80000"} {
+###             set exit_seen 1
+###             if {$top eq "tb_core_scan_test_regression"} {
+###                 foreach name {RF_PC exception syscall_n} {
+###                     if {[get_value /$top/U_CORE/$name] ne [get_value /$top/U_SCAN/$name]} {close $samples;error "Exit decoder mismatch"}
+###                 }
+###                 if {$checked<100 || ($tag eq "functional_stalls" && $stalled<1)} {close $samples;error "Insufficient execution/stall comparisons"}
+###                 puts "CORE DIFFERENTIAL: PASS ($checked samples, $stalled stalls; both wait decoders equal)"
+###             }
+###             break
+###         }
+###     }
+###     close $samples
+###     if {!$exit_seen} {error "No expected wait decoder within 5 us"}
+###     # phi2 triggers the original assertion within the next half CPU cycle.
+###     run 10 ns
+### }
+## if {[catch {
+##     phase5_project synthesis
+##     add_files -fileset sources_1 [list [file join $phase5_root lbist rtl phase5a_ifrf_subsystem.vhd]]
+##     set report_dir [file join $phase5_root Results Phase5A Controller reports]
+##     set tops {lbist_test_controller phase5a_ifrf_subsystem core_scan_test}
+##     if {[info exists ::phase5a_synth_tops]} {set tops $::phase5a_synth_tops}
+##     set rows {}
+##     set summary [file join $phase5_root Results Phase5A phase5a_synthesis.csv]
+##     if {[file exists $summary]} {
+##         set f [open $summary r];set previous [split [string trim [read $f]] "\n"];close $f
+##         foreach row [lrange $previous 1 end] {
+##             if {[lindex [split $row ,] 0] ni $tops} {lappend rows [string trim $row]}
+##         }
+##     }
+##     foreach top $tops {
+##         synth_design -mode out_of_context -top $top -part xc7a35tcpg236-1
+##         set ff 0;set lut 0;set latch 0;set rams 0
+##         set latch_rows {}
+##         foreach cell [get_cells -hierarchical] {
+##             set ref [get_property REF_NAME $cell]
+##             if {[string match FD* $ref]} {incr ff}
+##             if {[string match LUT* $ref]} {incr lut}
+##             if {[string match LD* $ref]} {incr latch;lappend latch_rows "$cell,$ref"}
+##             if {[string match RAM* $ref]} {incr rams}
+##         }
+##         report_utilization -file [file join $report_dir $top.utilization.rpt]
+##         set f [open [file join $report_dir $top.latches.csv] w]
+##         puts $f "Cell,Primitive";foreach row $latch_rows {puts $f $row};close $f
+##         lappend rows "$top,$ff,$lut,$latch,$rams,PASS"
+##         puts "PHASE 5A SYNTHESIS: $top FF=$ff LUT=$lut latch=$latch RAM=$rams"
+##         close_design
+##     }
+##     set f [open [file join $phase5_root Results Phase5A phase5a_synthesis.csv] w]
+##     puts $f "Top,FlipFlops,LUTs,Latches,RAMPrimitives,Result"
+##     foreach row $rows {puts $f $row};close $f
+##     close_project
+## } message]} {puts stderr [format {[FAIL] %s} $message];exit 1}
+PHASE 3 PYTHON: C:/Users/Saksham Setia/AppData/Local/Programs/Python/Python313/python.exe
+ROM: 20 original words; SHA256 fbb3da2760faf41147f751b857cb8b2c0105cec1e03fd824fa64387f45abae50
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5A/work/project_synthesis'
+create_project: Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 498.949 ; gain = 213.371
+Command: synth_design -mode out_of_context -top core_scan_test -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 8660
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:21 ; elapsed = 00:00:34 . Memory (MB): peak = 998.570 ; gain = 495.656
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'core_scan_test' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/core_scan_test.vhd:64]
+INFO: [Synth 8-638] synthesizing module 'FFD_test' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/FFD_test.vhd:28]
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/FFD_test.vhd:31]
+INFO: [Synth 8-256] done synthesizing module 'FFD_test' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/FFD_test.vhd:28]
+INFO: [Synth 8-226] default block is never used [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/core_scan_test.vhd:838]
+INFO: [Synth 8-638] synthesizing module 'register32_test' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd:31]
+	Parameter INITIAL_VALUE bound to: 32'b00000000000000000000000000000000 
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'register32_test' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd:31]
+INFO: [Synth 8-3491] module 'mf_alt_add_4' declared at 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/altera.vhd:28' bound to instance 'U_INCPC' of component 'mf_alt_add_4' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/core_scan_test.vhd:865]
+INFO: [Synth 8-638] synthesizing module 'mf_alt_add_4' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/altera.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'mf_alt_add_4' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/altera.vhd:33]
+INFO: [Synth 8-638] synthesizing module 'reg_IF_RF_scan' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/reg_IF_RF_scan.vhd:30]
+INFO: [Synth 8-256] done synthesizing module 'reg_IF_RF_scan' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/reg_IF_RF_scan.vhd:30]
+WARNING: [Synth 8-614] signal 'isolation_hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/core_scan_test.vhd:932]
+INFO: [Synth 8-638] synthesizing module 'reg_bank_test_dual_port_ram' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_bank_test.vhd:87]
+INFO: [Synth 8-638] synthesizing module 'ram_dual_test' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/ram_dual_test.vhd:36]
+	Parameter N_WORDS bound to: 32 - type: integer 
+	Parameter WIDTH bound to: 32 - type: integer 
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/ram_dual_test.vhd:52]
+WARNING: [Synth 8-614] signal 'read_hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/ram_dual_test.vhd:61]
+INFO: [Synth 8-256] done synthesizing module 'ram_dual_test' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/ram_dual_test.vhd:36]
+INFO: [Synth 8-256] done synthesizing module 'reg_bank_test_dual_port_ram' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_bank_test.vhd:87]
+INFO: [Synth 8-3491] module 'mf_alt_add_4' declared at 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/altera.vhd:28' bound to instance 'U_PC_plus_8' of component 'mf_alt_add_4' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/core_scan_test.vhd:990]
+WARNING: [Synth 8-614] signal 'MM_is_SC' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/core_scan_test.vhd:1060]
+INFO: [Synth 8-3491] module 'mf_alt_add_4' declared at 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/altera.vhd:28' bound to instance 'U_BR_tgt_pl_4' of component 'mf_alt_add_4' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/core_scan_test.vhd:1182]
+INFO: [Synth 8-3491] module 'mf_alt_adder' declared at 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/altera.vhd:44' bound to instance 'U_BR_tgt_pl_displ' of component 'mf_alt_adder' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/core_scan_test.vhd:1183]
+INFO: [Synth 8-638] synthesizing module 'mf_alt_adder' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/altera.vhd:50]
+INFO: [Synth 8-256] done synthesizing module 'mf_alt_adder' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/altera.vhd:50]
+INFO: [Synth 8-638] synthesizing module 'reg_RF_EX_test' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_RF_EX_test.vhd:63]
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_RF_EX_test.vhd:65]
+INFO: [Synth 8-256] done synthesizing module 'reg_RF_EX_test' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_RF_EX_test.vhd:63]
+INFO: [Synth 8-638] synthesizing module 'alu_test' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/alu_test.vhd:39]
+INFO: [Synth 8-3491] module 'mf_alt_add_sub' declared at 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/altera.vhd:63' bound to instance 'U_ADD_SUB' of component 'mf_alt_add_sub' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/alu_test.vhd:188]
+INFO: [Synth 8-638] synthesizing module 'mf_alt_add_sub' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/altera.vhd:71]
+INFO: [Synth 8-256] done synthesizing module 'mf_alt_add_sub' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/altera.vhd:71]
+INFO: [Synth 8-3491] module 'mf_alt_add_sub_u' declared at 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/altera.vhd:100' bound to instance 'U_ADD_SUB_U' of component 'mf_alt_add_sub_u' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/alu_test.vhd:192]
+INFO: [Synth 8-638] synthesizing module 'mf_alt_add_sub_u' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/altera.vhd:107]
+INFO: [Synth 8-256] done synthesizing module 'mf_alt_add_sub_u' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/altera.vhd:107]
+INFO: [Synth 8-3491] module 'shift_left32' declared at 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/units.vhd:546' bound to instance 'U_sh_left' of component 'shift_left32' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/alu_test.vhd:312]
+INFO: [Synth 8-638] synthesizing module 'shift_left32' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/units.vhd:552]
+INFO: [Synth 8-256] done synthesizing module 'shift_left32' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/units.vhd:552]
+INFO: [Synth 8-3491] module 'shift_right32' declared at 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/units.vhd:588' bound to instance 'U_sh_right' of component 'shift_right32' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/alu_test.vhd:313]
+INFO: [Synth 8-638] synthesizing module 'shift_right32' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/units.vhd:595]
+INFO: [Synth 8-256] done synthesizing module 'shift_right32' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/units.vhd:595]
+INFO: [Synth 8-3491] module 'shift_left32' declared at 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/units.vhd:546' bound to instance 'U_sh_left_ins' of component 'shift_left32' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/alu_test.vhd:315]
+INFO: [Synth 8-3491] module 'mask_off_bits' declared at 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/units.vhd:494' bound to instance 'U_mask' of component 'mask_off_bits' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/alu_test.vhd:319]
+INFO: [Synth 8-638] synthesizing module 'mask_off_bits' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/units.vhd:499]
+INFO: [Synth 8-256] done synthesizing module 'mask_off_bits' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/units.vhd:499]
+INFO: [Synth 8-256] done synthesizing module 'alu_test' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/alu_test.vhd:39]
+INFO: [Synth 8-3491] module 'mf_alt_adder' declared at 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/altera.vhd:44' bound to instance 'U_VIR_ADDR_ADD' of component 'mf_alt_adder' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/core_scan_test.vhd:1450]
+INFO: [Synth 8-638] synthesizing module 'reg_EX_MM_test' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_EX_MM_test.vhd:61]
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_EX_MM_test.vhd:63]
+INFO: [Synth 8-256] done synthesizing module 'reg_EX_MM_test' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_EX_MM_test.vhd:61]
+INFO: [Synth 8-638] synthesizing module 'reg_MM_WB_test' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_MM_WB_test.vhd:51]
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_MM_WB_test.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'reg_MM_WB_test' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_MM_WB_test.vhd:51]
+INFO: [Synth 8-226] default block is never used [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/core_scan_test.vhd:1769]
+INFO: [Synth 8-638] synthesizing module 'reg_excp_IF_RF_test' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_excp_IF_RF_test.vhd:34]
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_excp_IF_RF_test.vhd:36]
+INFO: [Synth 8-256] done synthesizing module 'reg_excp_IF_RF_test' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_excp_IF_RF_test.vhd:34]
+INFO: [Synth 8-3491] module 'subtr32' declared at 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/aux_module.vhd:298' bound to instance 'U_COMP_TRAP' of component 'subtr32' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/core_scan_test.vhd:1851]
+INFO: [Synth 8-638] synthesizing module 'subtr32' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/aux_module.vhd:305]
+INFO: [Synth 8-256] done synthesizing module 'subtr32' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/aux_module.vhd:305]
+INFO: [Synth 8-638] synthesizing module 'reg_excp_RF_EX_test' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_excp_RF_EX_test.vhd:44]
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_excp_RF_EX_test.vhd:46]
+INFO: [Synth 8-256] done synthesizing module 'reg_excp_RF_EX_test' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_excp_RF_EX_test.vhd:44]
+INFO: [Synth 8-638] synthesizing module 'reg_excp_EX_MM_test' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_excp_EX_MM_test.vhd:60]
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_excp_EX_MM_test.vhd:62]
+INFO: [Synth 8-256] done synthesizing module 'reg_excp_EX_MM_test' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_excp_EX_MM_test.vhd:60]
+INFO: [Synth 8-638] synthesizing module 'register32_test__parameterized0' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd:31]
+	Parameter INITIAL_VALUE bound to: 32'b00010000000000000000000000000010 
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'register32_test__parameterized0' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd:31]
+WARNING: [Synth 8-614] signal 'STATUS' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/core_scan_test.vhd:2459]
+WARNING: [Synth 8-614] signal 'CAUSE' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/core_scan_test.vhd:2459]
+WARNING: [Synth 8-614] signal 'is_delayslot' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/core_scan_test.vhd:2459]
+WARNING: [Synth 8-614] signal 'interrupt_taken' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/core_scan_test.vhd:2459]
+WARNING: [Synth 8-614] signal 'exception_taken' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/core_scan_test.vhd:2459]
+WARNING: [Synth 8-614] signal 'tlb_excp_taken' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/core_scan_test.vhd:2459]
+WARNING: [Synth 8-614] signal 'ExcCode' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/core_scan_test.vhd:2459]
+WARNING: [Synth 8-614] signal 'is_exception' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/core_scan_test.vhd:2459]
+WARNING: [Synth 8-614] signal 'MM_cop0_reg' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/core_scan_test.vhd:2459]
+WARNING: [Synth 8-614] signal 'isolation_hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/core_scan_test.vhd:2459]
+INFO: [Synth 8-638] synthesizing module 'counter32_test' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/counter32_test.vhd:31]
+	Parameter INITIAL_VALUE bound to: 32'b00000000000000000000000000000001 
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/counter32_test.vhd:35]
+INFO: [Synth 8-256] done synthesizing module 'counter32_test' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/counter32_test.vhd:31]
+WARNING: [Synth 8-614] signal 'isolation_hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/core_scan_test.vhd:2605]
+INFO: [Synth 8-226] default block is never used [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/core_scan_test.vhd:2642]
+WARNING: [Synth 8-614] signal 'isolation_hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/core_scan_test.vhd:2670]
+INFO: [Synth 8-638] synthesizing module 'registerN_test' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+	Parameter NUM_BITS bound to: 16 - type: integer 
+	Parameter INIT_VAL bound to: 16'b0000000000000000 
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'registerN_test' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+INFO: [Synth 8-638] synthesizing module 'registerN_test__parameterized0' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+	Parameter NUM_BITS bound to: 12 - type: integer 
+	Parameter INIT_VAL bound to: 12'b000000000000 
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'registerN_test__parameterized0' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+INFO: [Synth 8-226] default block is never used [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/core_scan_test.vhd:2901]
+WARNING: [Synth 8-7193] Integer conversion function is truncating input [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/packageMemory_simu.vhd:61]
+INFO: [Synth 8-638] synthesizing module 'register32_test__parameterized1' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd:31]
+	Parameter INITIAL_VALUE bound to: 32'b00000000000000000000000100000000 
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'register32_test__parameterized1' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd:31]
+INFO: [Synth 8-638] synthesizing module 'registerN_test__parameterized1' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+	Parameter NUM_BITS bound to: 26 - type: integer 
+	Parameter INIT_VAL bound to: 26'b00000000000000000000000111 
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'registerN_test__parameterized1' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+INFO: [Synth 8-638] synthesizing module 'registerN_test__parameterized2' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+	Parameter NUM_BITS bound to: 26 - type: integer 
+	Parameter INIT_VAL bound to: 26'b00000000000000000001000111 
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'registerN_test__parameterized2' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+INFO: [Synth 8-638] synthesizing module 'register32_test__parameterized2' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd:31]
+	Parameter INITIAL_VALUE bound to: 32'b00111100000000000000000100000000 
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'register32_test__parameterized2' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd:31]
+WARNING: [Synth 8-7193] Integer conversion function is truncating input [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/packageMemory_simu.vhd:71]
+INFO: [Synth 8-638] synthesizing module 'registerN_test__parameterized3' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+	Parameter NUM_BITS bound to: 26 - type: integer 
+	Parameter INIT_VAL bound to: 26'b00111100000000000000000111 
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'registerN_test__parameterized3' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+INFO: [Synth 8-638] synthesizing module 'registerN_test__parameterized4' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+	Parameter NUM_BITS bound to: 26 - type: integer 
+	Parameter INIT_VAL bound to: 26'b00111100000000000001000111 
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'registerN_test__parameterized4' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+INFO: [Synth 8-638] synthesizing module 'register32_test__parameterized3' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd:31]
+	Parameter INITIAL_VALUE bound to: 32'b00000000000000000010000100000000 
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'register32_test__parameterized3' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd:31]
+INFO: [Synth 8-638] synthesizing module 'registerN_test__parameterized5' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+	Parameter NUM_BITS bound to: 26 - type: integer 
+	Parameter INIT_VAL bound to: 26'b00000000000000000010000111 
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'registerN_test__parameterized5' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+INFO: [Synth 8-638] synthesizing module 'registerN_test__parameterized6' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+	Parameter NUM_BITS bound to: 26 - type: integer 
+	Parameter INIT_VAL bound to: 26'b00000000000000000011000111 
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'registerN_test__parameterized6' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+INFO: [Synth 8-638] synthesizing module 'register32_test__parameterized4' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd:31]
+	Parameter INITIAL_VALUE bound to: 32'b00000000000000000100000100000000 
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'register32_test__parameterized4' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd:31]
+INFO: [Synth 8-638] synthesizing module 'registerN_test__parameterized7' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+	Parameter NUM_BITS bound to: 26 - type: integer 
+	Parameter INIT_VAL bound to: 26'b00000000000000000101000111 
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'registerN_test__parameterized7' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+INFO: [Synth 8-638] synthesizing module 'registerN_test__parameterized8' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+	Parameter NUM_BITS bound to: 26 - type: integer 
+	Parameter INIT_VAL bound to: 26'b00000000000000000110000111 
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'registerN_test__parameterized8' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+WARNING: [Synth 8-7193] Integer conversion function is truncating input [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/packageMemory_simu.vhd:65]
+INFO: [Synth 8-638] synthesizing module 'register32_test__parameterized5' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd:31]
+	Parameter INITIAL_VALUE bound to: 32'b00000000000001000000000100000000 
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'register32_test__parameterized5' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd:31]
+INFO: [Synth 8-638] synthesizing module 'registerN_test__parameterized9' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+	Parameter NUM_BITS bound to: 26 - type: integer 
+	Parameter INIT_VAL bound to: 26'b00000000000001000000000111 
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'registerN_test__parameterized9' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+INFO: [Synth 8-638] synthesizing module 'registerN_test__parameterized10' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+	Parameter NUM_BITS bound to: 26 - type: integer 
+	Parameter INIT_VAL bound to: 26'b00000000000001000001000111 
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'registerN_test__parameterized10' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+INFO: [Synth 8-638] synthesizing module 'register32_test__parameterized6' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd:31]
+	Parameter INITIAL_VALUE bound to: 32'b00000000000001000010000100000000 
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'register32_test__parameterized6' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd:31]
+INFO: [Synth 8-638] synthesizing module 'registerN_test__parameterized11' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+	Parameter NUM_BITS bound to: 26 - type: integer 
+	Parameter INIT_VAL bound to: 26'b00000000000001000010000111 
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'registerN_test__parameterized11' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+INFO: [Synth 8-638] synthesizing module 'registerN_test__parameterized12' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+	Parameter NUM_BITS bound to: 26 - type: integer 
+	Parameter INIT_VAL bound to: 26'b00000000000001000011000111 
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'registerN_test__parameterized12' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+INFO: [Synth 8-638] synthesizing module 'register32_test__parameterized7' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd:31]
+	Parameter INITIAL_VALUE bound to: 32'b00000000000001000100000100000000 
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'register32_test__parameterized7' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd:31]
+INFO: [Synth 8-638] synthesizing module 'registerN_test__parameterized13' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+	Parameter NUM_BITS bound to: 26 - type: integer 
+	Parameter INIT_VAL bound to: 26'b00000000000001000100000111 
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'registerN_test__parameterized13' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+INFO: [Synth 8-638] synthesizing module 'registerN_test__parameterized14' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+	Parameter NUM_BITS bound to: 26 - type: integer 
+	Parameter INIT_VAL bound to: 26'b00000000000001000101000111 
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'registerN_test__parameterized14' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+INFO: [Synth 8-638] synthesizing module 'register32_test__parameterized8' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd:31]
+	Parameter INITIAL_VALUE bound to: 32'b00000000000001000110000100000000 
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'register32_test__parameterized8' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd:31]
+INFO: [Synth 8-638] synthesizing module 'registerN_test__parameterized15' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+	Parameter NUM_BITS bound to: 26 - type: integer 
+	Parameter INIT_VAL bound to: 26'b00000000000001000110000111 
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'registerN_test__parameterized15' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+INFO: [Synth 8-638] synthesizing module 'registerN_test__parameterized16' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+	Parameter NUM_BITS bound to: 26 - type: integer 
+	Parameter INIT_VAL bound to: 26'b00000000000001000111000111 
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'registerN_test__parameterized16' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd:31]
+INFO: [Synth 8-638] synthesizing module 'reg_excp_MM_WB_test' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_excp_MM_WB_test.vhd:36]
+WARNING: [Synth 8-614] signal 'hold' is read in the process but is not in the sensitivity list [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_excp_MM_WB_test.vhd:38]
+INFO: [Synth 8-256] done synthesizing module 'reg_excp_MM_WB_test' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_excp_MM_WB_test.vhd:36]
+INFO: [Synth 8-256] done synthesizing module 'core_scan_test' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/core_scan_test.vhd:64]
+WARNING: [Synth 8-5837] Detected dual asynchronous set and preset for register state_reg in module FFD_test. This is not a recommended register style for Xilinx devices  [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/FFD_test.vhd:35]
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8191] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8190] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8189] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8188] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8187] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8186] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8185] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8184] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8183] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8182] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8181] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8180] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8179] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8178] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8177] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8176] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8175] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8174] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8173] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8172] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8171] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8170] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8169] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8168] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8167] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8166] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8165] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8164] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8163] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8162] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8161] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8160] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8159] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8158] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8157] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8156] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8155] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8154] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8153] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8152] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8151] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8150] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8149] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8148] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8147] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8146] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8145] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8144] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8143] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8142] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8141] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8140] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8139] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8138] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8137] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8136] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8135] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8134] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8133] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8132] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8131] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8130] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8129] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8128] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8127] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8126] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8125] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8124] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8123] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8122] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8121] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8120] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8119] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8118] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8117] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8116] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8115] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8114] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8113] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8112] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8111] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8110] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8109] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8108] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8107] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8106] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8105] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8104] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8103] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8102] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8101] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8100] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8099] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8098] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8097] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8096] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8095] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8094] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8093] driven by constant 0
+WARNING: [Synth 8-3917] design core_scan_test has port protected_state[8092] driven by constant 0
+INFO: [Common 17-14] Message 'Synth 8-3917' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-7129] Port rst in module reg_excp_IF_RF_test is either unconnected or has no load
+WARNING: [Synth 8-7129] Port phi3 in module core_scan_test is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:40 ; elapsed = 00:01:00 . Memory (MB): peak = 1161.930 ; gain = 659.016
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:43 ; elapsed = 00:01:07 . Memory (MB): peak = 1161.930 ; gain = 659.016
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:43 ; elapsed = 00:01:07 . Memory (MB): peak = 1161.930 ; gain = 659.016
+---------------------------------------------------------------------------------
+ROM "ctrl_word[i]" will be implemented in logic because its size less than 1024
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:57 ; elapsed = 00:01:28 . Memory (MB): peak = 1161.930 ; gain = 659.016
+---------------------------------------------------------------------------------
+INFO: [Synth 8-223] decloning instance 'U_ifetch_stalled' (FFD_test) to 'U_dmem_stalled'
+INFO: [Synth 8-223] decloning instance 'U_DLY_TLB_EXCP' (FFD_test) to 'U_TLB_EXCP_ONCE'
+INFO: [Synth 8-223] decloning instance 'U_PC_plus_8' (mf_alt_add_4) to 'U_BR_tgt_pl_4'
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   64 Bit       Adders := 1     
+	   3 Input   33 Bit       Adders := 2     
+	   2 Input   33 Bit       Adders := 1     
+	   2 Input   32 Bit       Adders := 5     
+	   3 Input   32 Bit       Adders := 1     
+	   2 Input   31 Bit       Adders := 1     
+	   3 Input    5 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 1     
+	   3 Input    3 Bit       Adders := 2     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               64 Bit    Registers := 1     
+	               32 Bit    Registers := 113   
+	               26 Bit    Registers := 16    
+	               16 Bit    Registers := 1     
+	               12 Bit    Registers := 1     
+	                6 Bit    Registers := 5     
+	                5 Bit    Registers := 10    
+	                4 Bit    Registers := 3     
+	                3 Bit    Registers := 5     
+	                2 Bit    Registers := 6     
+	                1 Bit    Registers := 41    
++---Multipliers : 
+	              32x32  Multipliers := 1     
++---Muxes : 
+	   2 Input   64 Bit        Muxes := 1     
+	   2 Input   33 Bit        Muxes := 2     
+	   2 Input   32 Bit        Muxes := 73    
+	   4 Input   32 Bit        Muxes := 5     
+	   3 Input   32 Bit        Muxes := 2     
+	   6 Input   32 Bit        Muxes := 1     
+	   2 Input   20 Bit        Muxes := 2     
+	   2 Input   19 Bit        Muxes := 2     
+	   2 Input   16 Bit        Muxes := 1     
+	   4 Input    8 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 6     
+	   4 Input    6 Bit        Muxes := 1     
+	   3 Input    6 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 8     
+	   3 Input    5 Bit        Muxes := 2     
+	   4 Input    5 Bit        Muxes := 1     
+	   6 Input    5 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 9     
+	  11 Input    4 Bit        Muxes := 1     
+	   3 Input    4 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 9     
+	  64 Input    3 Bit        Muxes := 2     
+	   7 Input    3 Bit        Muxes := 1     
+	   4 Input    3 Bit        Muxes := 2     
+	   6 Input    3 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 1     
+	  64 Input    2 Bit        Muxes := 4     
+	   2 Input    2 Bit        Muxes := 10    
+	   3 Input    2 Bit        Muxes := 1     
+	   6 Input    2 Bit        Muxes := 1     
+	  69 Input    2 Bit        Muxes := 1     
+	  32 Input    2 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 125   
+	   7 Input    1 Bit        Muxes := 1     
+	   4 Input    1 Bit        Muxes := 15    
+	  24 Input    1 Bit        Muxes := 1     
+	   3 Input    1 Bit        Muxes := 5     
+	  22 Input    1 Bit        Muxes := 2     
+	  32 Input    1 Bit        Muxes := 3     
+	  64 Input    1 Bit        Muxes := 2     
+	   8 Input    1 Bit        Muxes := 8     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP i_hi0, operation Mode is: A*B.
+DSP Report: operator i_hi0 is absorbed into DSP i_hi0.
+DSP Report: operator i_hi0 is absorbed into DSP i_hi0.
+DSP Report: Generating DSP i_hi0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator i_hi0 is absorbed into DSP i_hi0.
+DSP Report: operator i_hi0 is absorbed into DSP i_hi0.
+DSP Report: Generating DSP i_hi0, operation Mode is: A*B.
+DSP Report: operator i_hi0 is absorbed into DSP i_hi0.
+DSP Report: operator i_hi0 is absorbed into DSP i_hi0.
+DSP Report: Generating DSP i_hi0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator i_hi0 is absorbed into DSP i_hi0.
+DSP Report: operator i_hi0 is absorbed into DSP i_hi0.
+DSP Report: Generating DSP i_C0, operation Mode is: A*B.
+DSP Report: operator i_C0 is absorbed into DSP i_C0.
+DSP Report: operator i_C0 is absorbed into DSP i_C0.
+DSP Report: Generating DSP i_C0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator i_C0 is absorbed into DSP i_C0.
+DSP Report: operator i_C0 is absorbed into DSP i_C0.
+DSP Report: Generating DSP i_C0, operation Mode is: A*B.
+DSP Report: operator i_C0 is absorbed into DSP i_C0.
+DSP Report: operator i_C0 is absorbed into DSP i_C0.
+DSP Report: Generating DSP i_C0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator i_C0 is absorbed into DSP i_C0.
+DSP Report: operator i_C0 is absorbed into DSP i_C0.
+WARNING: [Synth 8-7129] Port phi3 in module core_scan_test is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:04 ; elapsed = 00:02:56 . Memory (MB): peak = 1605.883 ; gain = 1102.969
+---------------------------------------------------------------------------------
+ Sort Area is  i_C0_6 : 0 0 : 2701 5354 : Used 1 time 0
+ Sort Area is  i_C0_6 : 0 1 : 2653 5354 : Used 1 time 0
+ Sort Area is  i_hi0_0 : 0 0 : 2701 4861 : Used 1 time 0
+ Sort Area is  i_hi0_0 : 0 1 : 2160 4861 : Used 1 time 0
+ Sort Area is  i_C0_8 : 0 0 : 2158 4643 : Used 1 time 0
+ Sort Area is  i_C0_8 : 0 1 : 2485 4643 : Used 1 time 0
+ Sort Area is  i_hi0_3 : 0 0 : 2158 3958 : Used 1 time 0
+ Sort Area is  i_hi0_3 : 0 1 : 1800 3958 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++---------------+---------------------+---------------+----------------+
+|Module Name    | RTL Object          | Depth x Width | Implemented As | 
++---------------+---------------------+---------------+----------------+
+|mask_off_bits  | sel_array[0]        | 32x32         | LUT            | 
+|core_scan_test | ctrl_table[0][i]    | 64x7          | LUT            | 
+|core_scan_test | func_table[0][wreg] | 64x1          | LUT            | 
+|core_scan_test | ctrl_table[0][extS] | 64x1          | LUT            | 
+|core_scan_test | func_table[0][i]    | 64x7          | LUT            | 
+|alu_test       | U_mask/sel_array[0] | 32x32         | LUT            | 
+|core_scan_test | p_0_out             | 64x7          | LUT            | 
+|core_scan_test | p_0_out             | 64x7          | LUT            | 
+|core_scan_test | p_0_out             | 64x7          | LUT            | 
+|core_scan_test | p_0_out             | 64x7          | LUT            | 
+|core_scan_test | ctrl_table[0][i]    | 64x7          | LUT            | 
+|core_scan_test | func_table[0][wreg] | 64x1          | LUT            | 
+|core_scan_test | ctrl_table[0][extS] | 64x1          | LUT            | 
+|core_scan_test | func_table[0][i]    | 64x7          | LUT            | 
++---------------+---------------------+---------------+----------------+
+
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|alu_test    | A*B            | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|alu_test    | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|alu_test    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|alu_test    | (PCIN>>17)+A*B | 18     | 15     | -      | -      | 47     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|alu_test    | A*B            | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|alu_test    | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|alu_test    | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|alu_test    | (PCIN>>17)+A*B | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:02:11 ; elapsed = 00:03:04 . Memory (MB): peak = 1605.883 ; gain = 1102.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:02:19 ; elapsed = 00:03:13 . Memory (MB): peak = 1605.883 ; gain = 1102.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:02:32 ; elapsed = 00:03:26 . Memory (MB): peak = 1605.883 ; gain = 1102.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:32 ; elapsed = 00:03:26 . Memory (MB): peak = 1605.883 ; gain = 1102.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:32 ; elapsed = 00:03:27 . Memory (MB): peak = 1605.883 ; gain = 1102.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:33 ; elapsed = 00:03:27 . Memory (MB): peak = 1605.883 ; gain = 1102.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:33 ; elapsed = 00:03:27 . Memory (MB): peak = 1605.883 ; gain = 1102.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:33 ; elapsed = 00:03:27 . Memory (MB): peak = 1605.883 ; gain = 1102.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping  | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|alu_test    | A*B          | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|alu_test    | PCIN>>17+A*B | 30     | 18     | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|alu_test    | A*B          | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|alu_test    | PCIN>>17+A*B | 17     | 18     | -      | -      | 47     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|alu_test    | A*B          | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|alu_test    | A*B          | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|alu_test    | PCIN>>17+A*B | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |CARRY4  |   715|
+|2     |DSP48E1 |     7|
+|3     |LUT1    |   162|
+|4     |LUT2    |   399|
+|5     |LUT3    |  2585|
+|6     |LUT4    |   375|
+|7     |LUT5    |   753|
+|8     |LUT6    |  2231|
+|9     |MUXF7   |   387|
+|10    |MUXF8   |    21|
+|11    |FDCE    |  1056|
+|12    |FDC     |     4|
+|13    |FDPE    |   128|
+|14    |FDRE    |  1882|
+|15    |FDSE    |    16|
++------+--------+------+
+
+Report Instance Areas: 
++------+-----------------------+--------------------------------+------+
+|      |Instance               |Module                          |Cells |
++------+-----------------------+--------------------------------+------+
+|1     |top                    |                                | 10721|
+|2     |  COP0_BadVAddr        |register32_test                 |    32|
+|3     |  COP0_COMPARE         |register32_test_0               |    34|
+|4     |  COP0_COUNT           |counter32_test                  |    78|
+|5     |  COP0_COUNT_INTERRUPT |FFD_test                        |     4|
+|6     |  COP0_DISABLE_COUNT   |FFD_test_1                      |     2|
+|7     |  COP0_EPC             |register32_test_2               |    32|
+|8     |  COP0_LLaddr          |register32_test_3               |    35|
+|9     |  COP0_STATUS          |register32_test__parameterized0 |    36|
+|10    |  MMU_ContextBAD       |registerN_test__parameterized0  |    12|
+|11    |  MMU_ContextPTE       |registerN_test                  |    16|
+|12    |  MMU_DAT0_0           |registerN_test__parameterized1  |    47|
+|13    |  MMU_DAT0_1           |registerN_test__parameterized2  |    62|
+|14    |  MMU_DAT1_0           |registerN_test__parameterized3  |    26|
+|15    |  MMU_DAT1_1           |registerN_test__parameterized4  |    26|
+|16    |  MMU_DAT2_0           |registerN_test__parameterized5  |    26|
+|17    |  MMU_DAT2_1           |registerN_test__parameterized6  |    26|
+|18    |  MMU_DAT3_0           |registerN_test__parameterized7  |    26|
+|19    |  MMU_DAT3_1           |registerN_test__parameterized8  |    26|
+|20    |  MMU_DAT4_0           |registerN_test__parameterized9  |    47|
+|21    |  MMU_DAT4_1           |registerN_test__parameterized10 |    52|
+|22    |  MMU_DAT5_0           |registerN_test__parameterized11 |    26|
+|23    |  MMU_DAT5_1           |registerN_test__parameterized12 |    26|
+|24    |  MMU_DAT6_0           |registerN_test__parameterized13 |    26|
+|25    |  MMU_DAT6_1           |registerN_test__parameterized14 |    26|
+|26    |  MMU_DAT7_0           |registerN_test__parameterized15 |    26|
+|27    |  MMU_DAT7_1           |registerN_test__parameterized16 |    26|
+|28    |  MMU_EntryHi          |register32_test_4               |   347|
+|29    |  MMU_EntryLo0         |register32_test_5               |    33|
+|30    |  MMU_EntryLo1         |register32_test_6               |    43|
+|31    |  MMU_Index            |register32_test_7               |     4|
+|32    |  MMU_TAG0             |register32_test__parameterized1 |    36|
+|33    |  MMU_TAG1             |register32_test__parameterized2 |    28|
+|34    |  MMU_TAG2             |register32_test__parameterized3 |    28|
+|35    |  MMU_TAG3             |register32_test__parameterized4 |    31|
+|36    |  MMU_TAG4             |register32_test__parameterized5 |    34|
+|37    |  MMU_TAG5             |register32_test__parameterized6 |    32|
+|38    |  MMU_TAG6             |register32_test__parameterized7 |    32|
+|39    |  MMU_TAG7             |register32_test__parameterized8 |    34|
+|40    |  MMU_Wired            |register32_test_8               |    24|
+|41    |  PIPESTAGE_EXCP_EX_MM |reg_excp_EX_MM_test             |  1193|
+|42    |  PIPESTAGE_EXCP_IF_RF |reg_excp_IF_RF_test             |    66|
+|43    |  PIPESTAGE_EXCP_MM_WB |reg_excp_MM_WB_test             |    66|
+|44    |  PIPESTAGE_EXCP_RF_EX |reg_excp_RF_EX_test             |    71|
+|45    |  PIPESTAGE_EX_MM      |reg_EX_MM_test                  |   451|
+|46    |  PIPESTAGE_IF_RF      |reg_IF_RF_scan                  |   441|
+|47    |  PIPESTAGE_MM_WB      |reg_MM_WB_test                  |   699|
+|48    |  PIPESTAGE_PC         |register32_test_9               |    78|
+|49    |  PIPESTAGE_RF_EX      |reg_RF_EX_test                  |  1082|
+|50    |  U_ALU                |alu_test                        |  3018|
+|51    |    U_HI               |register32_test_19              |   131|
+|52    |    U_LO               |register32_test_20              |    51|
+|53    |    U_mask             |mask_off_bits                   |    32|
+|54    |    U_sh_left          |shift_left32                    |    85|
+|55    |    U_sh_left_ins      |shift_left32_21                 |    71|
+|56    |  U_BR_tgt_pl_displ    |mf_alt_adder                    |    38|
+|57    |  U_DLY_INT1           |FFD_test_10                     |     1|
+|58    |  U_DLY_INT2           |FFD_test_11                     |     1|
+|59    |  U_DLY_TLB_EXCP       |FFD_test_12                     |     1|
+|60    |  U_INCPC              |mf_alt_add_4                    |    11|
+|61    |  U_NULLIFY_THRICE     |FFD_test_13                     |     1|
+|62    |  U_NULLIFY_TWICE      |FFD_test_14                     |     2|
+|63    |  U_PC_plus_8          |mf_alt_add_4_15                 |     8|
+|64    |  U_VIR_ADDR_ADD       |mf_alt_adder_16                 |    52|
+|65    |  U_ifetch_stalled     |FFD_test_17                     |     2|
+|66    |  U_regs               |reg_bank_test_dual_port_ram     |  1889|
+|67    |    PORT_A             |ram_dual_test                   |  1857|
+|68    |    PORT_B             |ram_dual_test_18                |    32|
++------+-----------------------+--------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:33 ; elapsed = 00:03:27 . Memory (MB): peak = 1605.883 ; gain = 1102.969
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 7969 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:33 ; elapsed = 00:03:27 . Memory (MB): peak = 1605.883 ; gain = 1102.969
+Synthesis Optimization Complete : Time (s): cpu = 00:02:33 ; elapsed = 00:03:27 . Memory (MB): peak = 1605.883 ; gain = 1102.969
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.326 . Memory (MB): peak = 1605.883 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1134 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1692.121 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 4 instances were transformed.
+  FDC_1 => FDCE (inverted pins: C): 4 instances
+
+Synth Design complete | Checksum: daf5b3b2
+INFO: [Common 17-83] Releasing license: Synthesis
+132 Infos, 161 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:41 ; elapsed = 00:03:38 . Memory (MB): peak = 1692.121 ; gain = 1193.172
+PHASE 5A SYNTHESIS: core_scan_test FF=3086 LUT=6505 latch=0 RAM=0
+INFO: [Common 17-206] Exiting Vivado at Tue Nov 17 23:36:14 2026...

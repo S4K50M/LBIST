@@ -1,0 +1,2 @@
+Case,Testbench,Group,Result,CompletionTime,Capture,WDBBytes
+core_isolation,tb_core_scan_isolation,Isolation,PASS,21780200 ps,1,599954

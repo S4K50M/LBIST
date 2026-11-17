@@ -1,0 +1,690 @@
+
+****** Vivado v2025.1.1 (64-bit)
+  **** SW Build 6233196 on Thu Sep 11 21:27:30 MDT 2025
+  **** IP Build 6232796 on Fri Sep 12 01:46:16 MDT 2025
+  **** SharedData Build 6233195 on Thu Sep 11 17:56:43 MDT 2025
+  **** Start of session at: Tue Nov 17 22:34:52 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source ../../../lbist/scripts/run_test_controller.tcl
+# source [file join [file dirname [file normalize [info script]]] phase5a_common.tcl]
+## set phase5_scripts [file dirname [file normalize [info script]]]
+## source [file join $phase5_scripts phase3_common.tcl]
+### set phase3_script_dir [file dirname [file normalize [info script]]]
+### source [file join $phase3_script_dir waveforms_common.tcl]
+#### set waveform_script_dir [file dirname [file normalize [info script]]]
+#### proc generate_lbist_waveforms {selection} {
+####     global waveform_script_dir
+####     set root [file normalize [file join $waveform_script_dir ../..]]
+####     set project_dir [file join $root Results Phase2 work waveform_project]
+####     create_project -force lbist_waves $project_dir -part xc7a35tcpg236-1
+####     set_property target_language VHDL [current_project]
+####     foreach name {lfsr_16 phase_shifter plpf_optimized plpf_dynamic basic_controller} {
+####         add_files -fileset sources_1 [list [file join $root lbist rtl $name.vhd]]
+####     }
+####     foreach name {phase2_tb_pkg tb_lfsr_16 tb_phase_shifter tb_plpf_optimized tb_plpf_dynamic tb_phase2_integration tb_basic_controller tb_basic_integration} {
+####         add_files -fileset sim_1 [list [file join $root lbist tb $name.vhd]]
+####     }
+####     set_property file_type VHDL [get_files *.vhd]
+####     set_property xsim.simulate.runtime 0ns [get_filesets sim_1]
+####     set cases {}
+####     if {$selection ne "basic"} {
+####         foreach top {tb_lfsr_16 tb_phase_shifter tb_plpf_optimized tb_plpf_dynamic tb_phase2_integration} {
+####             lappend cases [list phase2 $top $top {}]
+####         }
+####     }
+####     if {$selection ne "phase2"} {
+####         lappend cases {basic tb_basic_controller tb_basic_controller_L64_B20 20}
+####         foreach beta {0 8 16 20 28 36} {
+####             lappend cases [list basic tb_basic_integration tb_basic_integration_L64_B${beta} $beta]
+####         }
+####     }
+####     set summaries [dict create]
+####     foreach phase {phase2 basic} {
+####         if {$phase eq "phase2"} {set folder [file join $root Results Phase2 waveforms]} else {
+####             set folder [file join $root Results Phase3 Basic waveforms]
+####         }
+####         file mkdir $folder
+####         if {($phase eq "phase2" && $selection ne "basic") || ($phase eq "basic" && $selection ne "phase2")} {
+####             set channel [open [file join $folder waveform_summary.csv] w]
+####             puts $channel "Case,Testbench,Beta,CompletionTime,WDBBytes,VCDWindow,Result"
+####             dict set summaries $phase $channel
+####         }
+####     }
+####     set failures 0
+####     foreach case $cases {
+####         lassign $case phase top tag beta
+####         if {$phase eq "phase2"} {set folder [file join $root Results Phase2 waveforms]} else {
+####             set folder [file join $root Results Phase3 Basic waveforms]
+####         }
+####         puts "=== WAVEFORM: $tag ==="
+####         set_property top $top [get_filesets sim_1]
+####         if {$beta ne ""} {set generics [list CHAIN_LENGTH=64 BETA=$beta]} else {set generics {}}
+####         set_property generic $generics [get_filesets sim_1]
+####         update_compile_order -fileset sim_1
+####         set simdir [file join $project_dir lbist_waves.sim sim_1 behav xsim]
+####         set simlog [file join $simdir simulate.log]
+####         if {[file exists $simlog]} {file delete $simlog}
+####         set wcfg [file join $folder $tag.wcfg]
+####         set problem [catch {
+####             launch_simulation -simset sim_1 -mode behavioral
+####             create_wave_config $tag
+####             switch $top {
+####                 tb_lfsr_16 {set signals {clk rst en state bit_out zero_state custom_state test_done}}
+####                 tb_phase_shifter {set signals {clk rst en state c f1 f2 manual selected test_done}}
+####                 tb_plpf_optimized {set signals {clk mode manual c f1 f2 past y valid chain test_done}}
+####                 tb_plpf_dynamic {set signals {clk rst en state c f1 f2 mode active valid chain y test_done}}
+####                 tb_phase2_integration {set signals {clk rst scan_enable state c f1 f2 mode active valid y chain test_done}}
+####                 tb_basic_controller {set signals {clk rst scan_enable count mode done test_done}}
+####                 tb_basic_integration {set signals {clk rst scan_enable count mode done state c f1 f2 active valid scan_in chain test_done}}
+####             }
+####             foreach name $signals {
+####                 set path /$top/$name
+####                 if {[llength [get_objects $path]] != 1} {error "Missing waveform signal: $path"}
+####                 set radix default
+####                 if {$name in {state zero_state custom_state selected chain}} {set radix hex}
+####                 if {$name in {mode active}} {set radix bin}
+####                 if {$name eq "count"} {set radix unsigned}
+####                 if {$radix eq "default"} {add_wave $path} else {add_wave -radix $radix $path}
+####                 log_wave $path
+####             }
+####             # A compact portable trace covers the initial few complete patterns.
+####             # Full-time activity remains available in the WDB.
+####             open_vcd [file join $folder $tag.vcd]
+####             foreach name $signals {if {$name ni {test_done manual count}} {log_vcd /$top/$name}}
+####             run 512 ns
+####             close_vcd
+####             set finished 0
+####             for {set step 0} {$step<2000} {incr step} {
+####                 set done [string tolower [get_value /$top/test_done]]
+####                 if {$done eq "true" || $done eq "1"} {set finished 1; break}
+####                 run 1 us
+####             }
+####             if {!$finished} {error "Waveform simulation timeout"}
+####             save_wave_config $wcfg
+####         } message]
+####         catch {close_vcd}
+####         catch {close_sim}
+####         set text ""
+####         if {[file exists $simlog]} {
+####             file copy -force $simlog [file join $folder $tag.log]
+####             set f [open $simlog r]; set text [read $f]; close $f
+####         }
+####         set complete [regexp [format {[[]TB_COMPLETE[]] %s at ([^[:cntrl:]]+)} $top] $text whole duration]
+####         set result FAIL
+####         set size 0
+####         if {!$problem && $complete && ![regexp {[[]FAIL[]]|Failure:|Fatal:|ERROR:} $text]} {
+####             set database [file join $simdir ${top}_behav.wdb]
+####             if {[file exists $database] && [file exists $wcfg]} {
+####                 file copy -force $database [file join $folder $tag.wdb]
+####                 set size [file size [file join $folder $tag.wdb]]
+####                 # Keep the WCFG/WDB pair relocatable together.
+####                 set f [open $wcfg r]; set cfg [read $f]; close $f
+####                 regsub -all {(<db_ref path=")[^"]*(")} $cfg [format {\1%s.wdb\2} $tag] cfg
+####                 # Full WDB is retained; start with a readable 300-ns view.
+####                 regsub {<zoom_setting>[^<]*</zoom_setting>} $cfg {<zoom_setting>
+####       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+####       <ZoomEndTime time="300.000 ns"></ZoomEndTime>
+####       <Cursor1Time time="0.000 ns"></Cursor1Time>
+####    </zoom_setting>} cfg
+####                 set f [open $wcfg w]; puts $f $cfg; close $f
+####                 set result PASS
+####             }
+####         }
+####         if {$result eq "FAIL"} {incr failures; set duration UNKNOWN; puts stderr "Waveform failed: $tag -- $message"}
+####         if {$beta eq ""} {set beta NA}
+####         set channel [dict get $summaries $phase]
+####         puts $channel "$tag,$top,$beta,$duration,$size,0..512 ns,$result"
+####         flush $channel
+####         puts "WAVEFORM RESULT: $result -- $tag ($size bytes)"
+####     }
+####     dict for {phase channel} $summaries {close $channel}
+####     close_project
+####     if {$failures} {error "$failures waveform simulations failed"}
+####     puts "WAVEFORM GENERATION: PASS ([llength $cases] captures)"
+#### }
+#### proc phase3_wave_begin {folder top tag} {
+####     file mkdir $folder
+####     create_wave_config $tag
+####     if {$top eq "tb_phase3_comparison"} {
+####         set prefixes [list /$top/direct_engine /$top/low_engine /$top/basic_engine /$top/swap_engine /$top/moving_engine]
+####     } else {set prefixes [list /$top/engine]}
+####     foreach prefix $prefixes {
+####         foreach name {clk rst scan_enable shift_count_v pattern_index moving_position_v alpha_0 beta_v gamma_0 mode_0 mode_1 mode_2 mode_3 mode_select pattern_done alpha_debug gamma_debug state current_bits future1_bits future2_bits active_mode mode_valid scan_in past_bits chain_flat} {
+####             set path $prefix/$name
+####             if {[llength [get_objects $path]]==1} {
+####                 set radix hex
+####                 if {$name in {mode_0 mode_1 mode_2 mode_3 mode_select active_mode mode_valid}} {set radix bin}
+####                 if {$name in {shift_count_v moving_position_v alpha_0 beta_v gamma_0 pattern_index}} {set radix unsigned}
+####                 add_wave -radix $radix $path
+####                 log_wave $path
+####             }
+####         }
+####     }
+####     open_vcd [file join $folder $tag.vcd]
+####     foreach prefix $prefixes {
+####         foreach name {clk rst scan_enable shift_count_v pattern_index moving_position_v alpha_0 beta_v gamma_0 mode_0 mode_1 mode_2 mode_3 mode_select pattern_done alpha_debug gamma_debug state current_bits future1_bits future2_bits active_mode mode_valid scan_in past_bits chain_flat} {
+####             set path $prefix/$name
+####             if {[llength [get_objects $path]]==1} {log_vcd $path}
+####         }
+####     }
+####     run 12 us
+####     close_vcd
+#### }
+#### proc phase3_wave_finish {folder top tag simdir} {
+####     set dest [file join $folder $tag.wdb]
+####     file copy -force [file join $simdir [format "%s_behav.wdb" $top]] $dest
+####     set config [file join $folder $tag.wcfg]
+####     set f [open $config r]; set text [read $f]; close $f
+####     regsub -all {(<db_ref path=")[^"]*(")} $text [format {\1%s.wdb\2} $tag] text
+####     regsub {<zoom_setting>[^<]*</zoom_setting>} $text {<zoom_setting>
+####       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+####       <ZoomEndTime time="180.000 ns"></ZoomEndTime>
+####    </zoom_setting>} text
+####     set f [open $config w]; puts $f $text; close $f
+####     return [file size $dest]
+#### }
+### proc phase3_python {} {
+###     if {[info exists ::phase3_selected_python]} {return $::phase3_selected_python}
+###     set candidates {}
+###     if {[info exists ::env(PHASE3_PYTHON)]} {
+###         lappend candidates $::env(PHASE3_PYTHON)
+###     } else {
+###         if {[info exists ::env(LOCALAPPDATA)]} {
+###             set installs [glob -nocomplain -directory [file join $::env(LOCALAPPDATA) Programs Python] Python*/python.exe]
+###             set candidates [lsort -decreasing $installs]
+###         }
+###         lappend candidates python3 python
+###     }
+###     foreach candidate $candidates {
+###         if {![catch {exec $candidate -E -c {import sys; assert sys.version_info >= (3,9); import matplotlib,numpy}}]} {
+###             set ::phase3_selected_python $candidate
+###             puts "PHASE 3 PYTHON: $candidate"
+###             return $candidate
+###         }
+###     }
+###     error "No Python 3.9+ with matplotlib/numpy found; install those packages and set PHASE3_PYTHON to its executable."
+### }
+### proc phase3_run {selection} {
+###     global phase3_script_dir
+###     set root [file normalize [file join $phase3_script_dir ../..]]
+###     set python [phase3_python]
+###     puts [exec $python -E [file join $phase3_script_dir make_phase3_plan.py]]
+###     source [file join $root Results Phase3 Comparison work experiment_plan.tcl]
+###     set project_dir [file join $root Results Phase3 Comparison work project_$selection]
+###     create_project -force phase3 $project_dir -part xc7a35tcpg236-1
+###     set_property target_language VHDL [current_project]
+###     foreach file [glob [file join $root lbist rtl *.vhd]] {add_files -fileset sources_1 [list $file]}
+###     foreach name {phase2_tb_pkg phase3_tb_pkg phase3_controller_check phase3_integration_check tb_swap_controller tb_moving_controller tb_swap_integration tb_moving_integration tb_phase3_comparison tb_lfsr_16 tb_phase_shifter tb_plpf_optimized tb_plpf_dynamic tb_phase2_integration tb_basic_controller tb_basic_integration} {
+###         set file [file join $root lbist tb $name.vhd]
+###         if {[file exists $file]} {add_files -fileset sim_1 [list $file]}
+###     }
+###     set_property file_type VHDL [get_files *.vhd]
+###     set_property xsim.simulate.runtime 0ns [get_filesets sim_1]
+###     set failed 0; set executed 0
+###     foreach case $phase3_cases {
+###         lassign $case group top tag generics negative capture regression
+###         set selected [expr {$selection eq "all" || ($selection eq "regression" && $regression) || ($selection eq "waveforms" && $capture) || ($selection eq $top && !$regression)}]
+###         if {!$selected} {continue}
+###         incr executed
+###         set out [file join $root Results Phase3 $group]
+###         file mkdir [file join $out logs] [file join $out reports cases]
+###         set_property top $top [get_filesets sim_1]
+###         set_property generic $generics [get_filesets sim_1]
+###         update_compile_order -fileset sim_1
+###         set simdir [file join $project_dir phase3.sim sim_1 behav xsim]
+###         set simlog [file join $simdir simulate.log]
+###         if {[file exists $simlog]} {file delete $simlog}
+###         puts "=== PHASE 3: $tag ==="
+###         set size 0
+###         set problem [catch {
+###             launch_simulation -simset sim_1 -mode behavioral
+###             if {!$negative} {
+###                 if {$capture} {phase3_wave_begin [file join $out waveforms] $top $tag}
+###                 set finished 0
+###                 for {set step 0} {$step<20000} {incr step} {
+###                     if {[string tolower [get_value /$top/test_done]] in {true 1}} {set finished 1; break}
+###                     run 1 us
+###                 }
+###                 if {!$finished} {error "Simulation timeout without test_done"}
+###                 if {$capture} {save_wave_config [file join $out waveforms $tag.wcfg]}
+###             }
+###         } message]
+###         catch {close_vcd}
+###         catch {close_sim}
+###         set text ""
+###         if {[file exists $simlog]} {
+###             file copy -force $simlog [file join $out logs $tag.log]
+###             if {$capture} {file copy -force $simlog [file join $out waveforms $tag.log]}
+###             set f [open $simlog r]; set text [read $f]; close $f
+###         }
+###         foreach filename {xvhdl.log elaborate.log} {
+###             set src [file join $simdir $filename]
+###             if {[file exists $src]} {file copy -force $src [file join $out logs [format "%s_%s" $tag $filename]]}
+###         }
+###         set complete [regexp [format {[[]TB_COMPLETE[]] %s at ([^[:cntrl:]]+)} $top] $text whole duration]
+###         set result FAIL
+###         if {$negative} {
+###             set duration {0 ns}
+###             if {[regexp {[[]CONFIG_ERROR[]]} $text] && !$complete && ![regexp {[[]FAIL[]]} $text]} {set result PASS}
+###         } elseif {!$problem && $complete && ![regexp {[[]FAIL[]]|Failure:|Fatal:|ERROR:} $text]} {
+###             set result PASS
+###             if {$capture} {
+###                 if {[catch {set size [phase3_wave_finish [file join $out waveforms] $top $tag $simdir]} why]} {
+###                     set result FAIL; set message $why
+###                 }
+###             }
+###         }
+###         if {$result eq "FAIL"} {
+###             incr failed; set duration UNKNOWN
+###             set f [open [file join $out logs [format "%s_runner_error.log" $tag]] w]
+###             puts $f $message; close $f
+###             puts stderr "[format {FAIL: %s -- %s} $tag $message]"
+###         }
+###         set f [open [file join $out reports cases $tag.csv] w]
+###         puts $f "Case,Testbench,ExpectedNegative,Regression,Capture,Result,CompletionTime,WDBBytes"
+###         puts $f "$tag,$top,$negative,$regression,$capture,$result,$duration,$size"
+###         close $f
+###         puts "RESULT: $result -- $tag -- $duration"
+###     }
+###     close_project
+###     if {$failed} {error "$failed of $executed Phase 3 cases failed"}
+###     puts "PHASE 3 RESULT: PASS ($executed cases)"
+### }
+### proc phase3_finalize {} {
+###     global phase3_script_dir
+###     set python [phase3_python]
+###     puts [exec $python -E [file join $phase3_script_dir collect_phase3_results.py] --require-all]
+###     puts [exec $python -E [file join $phase3_script_dir render_waveform_previews.py] --phase3]
+###     set ::WAVEFORM_VERIFY_SCOPE phase3
+###     source [file join $phase3_script_dir verify_waveforms.tcl]
+###     puts "PHASE 3 FINAL REPORTS AND WAVEFORM VERIFICATION: PASS"
+### }
+## set phase5_root [file normalize [file join $phase5_scripts ../..]]
+## file mkdir [file join $phase5_root Results Phase5A work]
+## cd [file join $phase5_root Results Phase5A work]
+## proc phase5_project {selection} {
+##     global phase5_root
+##     set dir [file join $phase5_root Results Phase5A work project_$selection]
+##     create_project -force phase5a $dir -part xc7a35tcpg236-1
+##     set_property target_language VHDL [current_project]
+##     foreach name {packageWires packageMemory_simu packageExcp altera units aux_module pipestages exception core cache instrcache rom ram io uart disk SDcard fpu sdram tb_cMIPS} {
+##         add_files -fileset sources_1 [list [file join $phase5_root cMIPS vhdl $name.vhd]]
+##     }
+##     foreach name {lfsr_16 phase_shifter plpf_dynamic basic_controller reg_IF_RF_scan lbist_test_controller} {
+##         add_files -fileset sources_1 [list [file join $phase5_root lbist rtl $name.vhd]]
+##     }
+##     foreach file [glob [file join $phase5_root lbist core_scan phase5a *.vhd]] {
+##         add_files -fileset sources_1 [list $file]
+##         set_property file_type {VHDL 2008} [get_files [list $file]]
+##     }
+##     set file [file join $phase5_root lbist core_scan core_scan_test.vhd]
+##     add_files -fileset sources_1 [list $file]
+##     set_property file_type {VHDL 2008} [get_files [list $file]]
+##     foreach name {phase2_tb_pkg phase5a_rom_pkg phase5a_processor_check tb_lbist_test_controller tb_core_scan_isolation tb_core_scan_shift_capture tb_core_scan_test_regression} {
+##         set file [file join $phase5_root lbist tb $name.vhd]
+##         if {[file exists $file]} {add_files -fileset sim_1 [list $file]}
+##     }
+##     set_property xsim.simulate.runtime 0ns [get_filesets sim_1]
+## }
+## proc phase5_case {group top tag generics {capture 1} {cpu 0}} {
+##     global phase5_root
+##     set out [file join $phase5_root Results Phase5A $group]
+##     set cpu_exit [expr {$top in {tb_core_scan_test_regression tb_cMIPS}}]
+##     file mkdir [file join $out logs] [file join $out reports] [file join $out waveforms]
+##     set_property top $top [get_filesets sim_1]
+##     set_property generic $generics [get_filesets sim_1]
+##     update_compile_order -fileset sim_1
+##     set project_dir [get_property DIRECTORY [current_project]]
+##     set simdir [file join $project_dir phase5a.sim sim_1 behav xsim]
+##     file mkdir $simdir
+##     if {$cpu} {
+##         foreach image {prog.bin data.bin input.data serial.inp} {
+##             file copy -force [file join $phase5_root cMIPS $image] [file join $simdir $image]
+##         }
+##     }
+##     set simlog [file join $simdir simulate.log]
+##     if {[file exists $simlog]} {file delete $simlog}
+##     set problem [catch {
+##         launch_simulation -mode behavioral
+##         if {$capture} {phase5_capture $out $top $tag}
+##         if {$cpu_exit} {
+##             phase5_cpu_run $top
+##         } else {
+##             set done 0
+##             for {set k 0} {$k<20000} {incr k} {
+##                 if {[string tolower [get_value /$top/test_done]] in {true 1}} {set done 1;break}
+##                 run 1 us
+##             }
+##             if {!$done} {error "Timeout without completion"}
+##         }
+##         if {$capture} {save_wave_config [file join $out waveforms $tag.wcfg]}
+##     } message]
+##     catch {close_vcd};catch {close_sim}
+##     set text ""
+##     if {[file exists $simlog]} {
+##         set f [open $simlog r];set text [read $f];close $f
+##         file copy -force $simlog [file join $out logs $tag.log]
+##         if {$capture} {file copy -force $simlog [file join $out waveforms $tag.log]}
+##     }
+##     foreach name {xvhdl.log elaborate.log} {
+##         set file [file join $simdir $name]
+##         if {[file exists $file]} {file copy -force $file [file join $out logs [format "%s_%s" $tag $name]]}
+##     }
+##     set result FAIL;set duration UNKNOWN;set bytes 0
+##     if {!$problem && !$cpu_exit && [regexp [format {[[]TB_COMPLETE[]] %s at ([0-9]+ ps)} $top] $text m duration] && ![regexp {[[]FAIL[]]|Failure:|Fatal:|ERROR:} $text]} {set result PASS}
+##     if {!$problem && $cpu_exit && [regexp {Time: ([0-9]+) ns[^\n]*RF_STOP_SIMULATION} $text m ns] && [regexp {cMIPS BREAKPOINT at PC=00000038} $text] && ![regexp {[[]FAIL[]]|SIMULATION ABORTED|Fatal:|ERROR:} $text]} {
+##         set result PASS;set duration "[expr {$ns*1000}] ps"
+##     }
+##     if {$result eq "PASS" && $capture} {
+##         set bytes [phase3_wave_finish [file join $out waveforms] $top $tag $simdir]
+##     }
+##     set f [open [file join $out reports $tag.csv] w]
+##     puts $f "Case,Testbench,Group,Result,CompletionTime,Capture,WDBBytes"
+##     puts $f "$tag,$top,$group,$result,$duration,$capture,$bytes";close $f
+##     puts "PHASE 5A RESULT: $result -- $tag -- $duration"
+##     if {$result ne "PASS"} {error "$tag failed: $message"}
+## }
+## proc phase5_capture {out top tag} {
+##     create_wave_config $tag
+##     set paths [get_objects /$top/*]
+##     if {$top in {tb_core_scan_isolation tb_core_scan_shift_capture}} {set paths [get_objects /$top/engine/*]}
+##     set selected {}
+##     foreach p $paths {
+##         # Scalars/vectors only; real RTL state probes are explicitly exported.
+##         set name [file tail $p]
+##         if {$name in {clk rst start pause abort_test ack ready tm se ce pd done error_status state shift_count_v pattern_index test_mode scan_enable capture_enable isolation_ack protocol_error test_phase scan_in scan_out scan_feedback protected_state scan_state pc_observe mode_select active_mode generator_state current_bit future1 future2 pattern_done test_done event_id i_addr d_addr i_aval d_aval wr memory_write_attempt register_write_attempt register_write_actual protected_equal capture_ready fabric_idle}} {
+##             lappend selected $p
+##             set radix hex
+##             if {$name in {test_phase state mode_select active_mode}} {set radix bin}
+##             if {$name in {shift_count_v pattern_index}} {set radix unsigned}
+##             add_wave -radix $radix $p;log_wave $p
+##         }
+##     }
+##     open_vcd [file join $out waveforms $tag.vcd]
+##     foreach p $selected {log_vcd $p}
+## }
+# if {[catch {
+#     phase5_project controller
+#     foreach length {1 2 64} {
+#         phase5_case Controller tb_lbist_test_controller controller_L$length [list LENGTH=$length PATTERNS=256] [expr {$length==64}]
+#     }
+#     close_project
+# } message]} {puts stderr [format {[FAIL] %s} $message];exit 1}
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5A/work/project_controller'
+create_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:14 . Memory (MB): peak = 498.996 ; gain = 215.359
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_lbist_test_controller'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5A/work/project_controller/phase5a.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_lbist_test_controller' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5A/work/project_controller/phase5a.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_lbist_test_controller_vhdl.prj"
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/packageWires.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/lbist_test_controller.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'lbist_test_controller'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase2_tb_pkg.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_lbist_test_controller.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'tb_lbist_test_controller'
+
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5A/work/project_controller/phase5a.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -generic_top "LENGTH=1" -generic_top "PATTERNS=256" -L xil_defaultlib -L secureip --snapshot tb_lbist_test_controller_behav xil_defaultlib.tb_lbist_test_controller -log elaborate.log"
+
+Vivado Simulator v2025.1.1
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -generic_top LENGTH=1 -generic_top PATTERNS=256 -L xil_defaultlib -L secureip --snapshot tb_lbist_test_controller_behav xil_defaultlib.tb_lbist_test_controller -log elaborate.log 
+
+Using 2 slave threads.
+
+Starting static elaboration
+
+Completed static elaboration
+
+Starting simulation data flow analysis
+
+Completed simulation data flow analysis
+
+Time Resolution for simulation is 1ps
+
+Compiling package std.standard
+
+Compiling package std.textio
+
+Compiling package ieee.std_logic_1164
+
+Compiling package ieee.numeric_std
+
+Compiling package xil_defaultlib.p_wires
+
+Compiling package xil_defaultlib.phase2_tb_pkg
+
+Compiling architecture rtl of entity xil_defaultlib.lbist_test_controller [\lbist_test_controller(chain_len...]
+
+Compiling architecture test of entity xil_defaultlib.tb_lbist_test_controller
+
+Built simulation snapshot tb_lbist_test_controller_behav
+
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 511.129 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '11' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5A/work/project_controller/phase5a.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_lbist_test_controller_behav -key {Behavioral:sim_1:Functional:tb_lbist_test_controller} -tclbatch {tb_lbist_test_controller.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_lbist_test_controller.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_lbist_test_controller_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:19 . Memory (MB): peak = 511.129 ; gain = 12.133
+Note: [PASS] independent FSM, handshakes, exact counts, pause, capture wait, all patterns
+Time: 1560100 ps  Iteration: 0  Process: /tb_lbist_test_controller/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_lbist_test_controller.vhd
+Note: [SEQUENCE] 256,256,256,256
+Time: 1560100 ps  Iteration: 0  Process: /tb_lbist_test_controller/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_lbist_test_controller.vhd
+Note: [PASS] DONE hold, abort, illegal restart and mid-test reset
+Time: 1571200 ps  Iteration: 0  Process: /tb_lbist_test_controller/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_lbist_test_controller.vhd
+Note: [TB_COMPLETE] tb_lbist_test_controller at 1571200 ps
+Time: 1571200 ps  Iteration: 0  Process: /tb_lbist_test_controller/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_lbist_test_controller.vhd
+INFO: [Simtcl 6-16] Simulation closed
+PHASE 5A RESULT: PASS -- controller_L1 -- 1571200 ps
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_lbist_test_controller'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5A/work/project_controller/phase5a.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_lbist_test_controller' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5A/work/project_controller/phase5a.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_lbist_test_controller_vhdl.prj"
+
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5A/work/project_controller/phase5a.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -generic_top "LENGTH=2" -generic_top "PATTERNS=256" -L xil_defaultlib -L secureip --snapshot tb_lbist_test_controller_behav xil_defaultlib.tb_lbist_test_controller -log elaborate.log"
+
+Vivado Simulator v2025.1.1
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -generic_top LENGTH=2 -generic_top PATTERNS=256 -L xil_defaultlib -L secureip --snapshot tb_lbist_test_controller_behav xil_defaultlib.tb_lbist_test_controller -log elaborate.log 
+
+Using 2 slave threads.
+
+Starting static elaboration
+
+Completed static elaboration
+
+Starting simulation data flow analysis
+
+Completed simulation data flow analysis
+
+Time Resolution for simulation is 1ps
+
+Compiling package std.standard
+
+Compiling package std.textio
+
+Compiling package ieee.std_logic_1164
+
+Compiling package ieee.numeric_std
+
+Compiling package xil_defaultlib.p_wires
+
+Compiling package xil_defaultlib.phase2_tb_pkg
+
+Compiling architecture rtl of entity xil_defaultlib.lbist_test_controller [\lbist_test_controller(chain_len...]
+
+Compiling architecture test of entity xil_defaultlib.tb_lbist_test_controller
+
+Built simulation snapshot tb_lbist_test_controller_behav
+
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5A/work/project_controller/phase5a.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_lbist_test_controller_behav -key {Behavioral:sim_1:Functional:tb_lbist_test_controller} -tclbatch {tb_lbist_test_controller.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_lbist_test_controller.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_lbist_test_controller_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 526.500 ; gain = 0.000
+Note: [PASS] independent FSM, handshakes, exact counts, pause, capture wait, all patterns
+Time: 2584100 ps  Iteration: 0  Process: /tb_lbist_test_controller/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_lbist_test_controller.vhd
+Note: [SEQUENCE] 512,256,512,256
+Time: 2584100 ps  Iteration: 0  Process: /tb_lbist_test_controller/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_lbist_test_controller.vhd
+Note: [PASS] DONE hold, abort, illegal restart and mid-test reset
+Time: 2595200 ps  Iteration: 0  Process: /tb_lbist_test_controller/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_lbist_test_controller.vhd
+Note: [TB_COMPLETE] tb_lbist_test_controller at 2595200 ps
+Time: 2595200 ps  Iteration: 0  Process: /tb_lbist_test_controller/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_lbist_test_controller.vhd
+INFO: [Simtcl 6-16] Simulation closed
+PHASE 5A RESULT: PASS -- controller_L2 -- 2595200 ps
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_lbist_test_controller'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5A/work/project_controller/phase5a.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_lbist_test_controller' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5A/work/project_controller/phase5a.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_lbist_test_controller_vhdl.prj"
+
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5A/work/project_controller/phase5a.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -generic_top "LENGTH=64" -generic_top "PATTERNS=256" -L xil_defaultlib -L secureip --snapshot tb_lbist_test_controller_behav xil_defaultlib.tb_lbist_test_controller -log elaborate.log"
+
+Vivado Simulator v2025.1.1
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -generic_top LENGTH=64 -generic_top PATTERNS=256 -L xil_defaultlib -L secureip --snapshot tb_lbist_test_controller_behav xil_defaultlib.tb_lbist_test_controller -log elaborate.log 
+
+Using 2 slave threads.
+
+Starting static elaboration
+
+Completed static elaboration
+
+Starting simulation data flow analysis
+
+Completed simulation data flow analysis
+
+Time Resolution for simulation is 1ps
+
+Compiling package std.standard
+
+Compiling package std.textio
+
+Compiling package ieee.std_logic_1164
+
+Compiling package ieee.numeric_std
+
+Compiling package xil_defaultlib.p_wires
+
+Compiling package xil_defaultlib.phase2_tb_pkg
+
+Compiling architecture rtl of entity xil_defaultlib.lbist_test_controller [lbist_test_controller_default]
+
+Compiling architecture test of entity xil_defaultlib.tb_lbist_test_controller
+
+Built simulation snapshot tb_lbist_test_controller_behav
+
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5A/work/project_controller/phase5a.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_lbist_test_controller_behav -key {Behavioral:sim_1:Functional:tb_lbist_test_controller} -tclbatch {tb_lbist_test_controller.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_lbist_test_controller.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_lbist_test_controller_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 526.500 ; gain = 0.000
+WARNING: HDL object /tb_lbist_test_controller/test_done is of a type not supported for VCD or has zero size.
+Note: [PASS] independent FSM, handshakes, exact counts, pause, capture wait, all patterns
+Time: 66072100 ps  Iteration: 0  Process: /tb_lbist_test_controller/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_lbist_test_controller.vhd
+Note: [SEQUENCE] 16384,256,16384,256
+Time: 66072100 ps  Iteration: 0  Process: /tb_lbist_test_controller/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_lbist_test_controller.vhd
+Note: [PASS] DONE hold, abort, illegal restart and mid-test reset
+Time: 66083200 ps  Iteration: 0  Process: /tb_lbist_test_controller/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_lbist_test_controller.vhd
+Note: [TB_COMPLETE] tb_lbist_test_controller at 66083200 ps
+Time: 66083200 ps  Iteration: 0  Process: /tb_lbist_test_controller/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_lbist_test_controller.vhd
+INFO: [Simtcl 6-16] Simulation closed
+PHASE 5A RESULT: PASS -- controller_L64 -- 66083200 ps
+INFO: [Common 17-206] Exiting Vivado at Tue Nov 17 22:35:56 2026...

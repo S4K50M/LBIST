@@ -1,0 +1,13 @@
+test_complete_isolation_trace (__main__.CaptureChecks.test_complete_isolation_trace) ... ok
+test_complete_real_core_sequence (__main__.CaptureChecks.test_complete_real_core_sequence) ... ok
+test_compressed_mixed_unknowns_remain_unknown (__main__.CaptureChecks.test_compressed_mixed_unknowns_remain_unknown) ... ok
+test_controller (__main__.CaptureChecks.test_controller) ... ok
+test_external_write_corruption_rejected (__main__.CaptureChecks.test_external_write_corruption_rejected) ... ok
+test_protected_state_corruption_rejected (__main__.CaptureChecks.test_protected_state_corruption_rejected) ... ok
+test_saved_preview_corruption_rejected (__main__.CaptureChecks.test_saved_preview_corruption_rejected) ... ok
+test_serial_output_corruption_rejected (__main__.CaptureChecks.test_serial_output_corruption_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 6.375s
+
+OK

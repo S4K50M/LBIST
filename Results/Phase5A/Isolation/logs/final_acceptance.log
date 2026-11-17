@@ -1,0 +1,48 @@
+#-----------------------------------------------------------
+# Vivado v2025.1.1 (64-bit)
+# SW Build 6233196 on Thu Sep 11 21:27:30 MDT 2025
+# IP Build 6232796 on Fri Sep 12 01:46:16 MDT 2025
+# SharedData Build 6233195 on Thu Sep 11 17:56:43 MDT 2025
+# Start of session at: Tue Nov 17 23:45:32 2026
+# Process ID         : 19108
+# Current directory  : C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5A/work
+# Command line       : vivado.exe -mode batch -source final_acceptance.tcl -log ../Isolation/logs/final_acceptance.log -journal final_acceptance.jou -notrace
+# Log file           : C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5A/work/../Isolation/logs/final_acceptance.log
+# Journal file       : C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5A/work\final_acceptance.jou
+# Running On         : LAPTOP-B852K4P2
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i5-13420H
+# CPU Frequency      : 2611 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 12
+# Host memory        : 16802 MB
+# Swap memory        : 9126 MB
+# Total Virtual      : 25929 MB
+# Available Virtual  : 10087 MB
+#-----------------------------------------------------------
+source final_acceptance.tcl -notrace
+PHASE 3 PYTHON: C:/Users/Saksham Setia/AppData/Local/Programs/Python/Python313/python.exe
+Collected 8 PASS / 8 planned cases; 280 real capture/unload records.
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5A/Controller/waveforms\controller_L64.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+PHASE 5A NATIVE WAVEFORM: PASS -- controller_L64
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5A/Isolation/waveforms\core_isolation.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+PHASE 5A NATIVE WAVEFORM: PASS -- core_isolation
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5A/ShiftCapture/waveforms\core_shift_capture_P256.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+PHASE 5A NATIVE WAVEFORM: PASS -- core_shift_capture_P256
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5A/ShiftCapture/waveforms\core_shift_capture_P16.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+PHASE 5A NATIVE WAVEFORM: PASS -- core_shift_capture_P16
+Collected 8 PASS / 8 planned cases; 280 real capture/unload records.
+PHASE 5A CAPTURED BEHAVIOR: PASS -- controller_L64
+PHASE 5A CAPTURED BEHAVIOR: PASS -- core_isolation
+PHASE 5A CAPTURED BEHAVIOR: PASS -- core_shift_capture_P256
+PHASE 5A CAPTURED BEHAVIOR: PASS -- core_shift_capture_P16
+Verified 63 saved waveform SVGs against actual captured transitions.
+PHASE 5A WAVEFORM AUDIT: PASS (4 native captures)
+Previous-phase protected files unchanged: 1169 PASS
+PHASE 5A FINAL ACCEPTANCE: PASS -- eight simulation cases, four native captures, independently checked VCD/SVG, protected previous files unchanged
+INFO: [Common 17-206] Exiting Vivado at Tue Nov 17 23:45:52 2026...
