@@ -1,0 +1,1043 @@
+Time resolution is 1 ps
+Note: [SIGNATURE] 7,1,00005b48
+Time: 3260200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 1,00003ff41460fffa,00003ff41460fffa,00003ff41460fffa,PASS
+Time: 3260200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,2,00008ca5
+Time: 5840200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 2,001fffc81460fffa,001fffc81460fffa,001fffc81460fffa,PASS
+Time: 5840200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,3,00001c38
+Time: 8420200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 3,7f8000041460fffa,7f8000041460fffa,7f8000041460fffa,PASS
+Time: 8420200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,4,0000e900
+Time: 11000200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 4,000000201460fffa,000000201460fffa,000000201460fffa,PASS
+Time: 11000200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,5,00000594
+Time: 13580200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 5,783f1f041460fffa,783f1f041460fffa,783f1f041460fffa,PASS
+Time: 13580200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,6,0000aa90
+Time: 16160200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 6,7fffff881460fffa,7fffff881460fffa,7fffff881460fffa,PASS
+Time: 16160200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,7,000046d0
+Time: 18740200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 7,07f000801460fffa,07f000801460fffa,07f000801460fffa,PASS
+Time: 18740200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,8,00007bd3
+Time: 21320200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 8,7f8000041460fffa,7f8000041460fffa,7f8000041460fffa,PASS
+Time: 21320200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,9,0000c2f9
+Time: 23900200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 9,00007fc41460fffa,00007fc41460fffa,00007fc41460fffa,PASS
+Time: 23900200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,10,00006181
+Time: 26480200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 10,0000ffe41460fffa,0000ffe41460fffa,0000ffe41460fffa,PASS
+Time: 26480200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,11,00000723
+Time: 29060200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 11,7ffff8041460fffa,7ffff8041460fffa,7ffff8041460fffa,PASS
+Time: 29060200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,12,00007911
+Time: 31640200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 12,70fff00c1460fffa,70fff00c1460fffa,70fff00c1460fffa,PASS
+Time: 31640200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,13,00006a3c
+Time: 34220200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 13,007ff0741460fffa,007ff0741460fffa,007ff0741460fffa,PASS
+Time: 34220200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,14,000029bf
+Time: 36800200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 14,700000041460fffa,700000041460fffa,700000041460fffa,PASS
+Time: 36800200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,15,000093e0
+Time: 39380200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 15,7f87f8041460fffa,7f87f8041460fffa,7f87f8041460fffa,PASS
+Time: 39380200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,16,0000e8c5
+Time: 41960200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 16,0007ffe41460fffa,0007ffe41460fffa,0007ffe41460fffa,PASS
+Time: 41960200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,17,00009b1e
+Time: 44540200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 17,7ffe00041460fffa,7ffe00041460fffa,7ffe00041460fffa,PASS
+Time: 44540200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,18,0000e97f
+Time: 47120200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 18,800000001460fffa,800000001460fffa,800000001460fffa,PASS
+Time: 47120200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,19,0000a929
+Time: 49700200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 19,000000041460fffa,000000041460fffa,000000041460fffa,PASS
+Time: 49700200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,20,0000b70a
+Time: 52280200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 20,7e0000101460fffa,7e0000101460fffa,7e0000101460fffa,PASS
+Time: 52280200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,21,00005570
+Time: 54860200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 21,004000001460fffa,004000001460fffa,004000001460fffa,PASS
+Time: 54860200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,22,00002e7c
+Time: 57440200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 22,7ffffff41460fffa,7ffffff41460fffa,7ffffff41460fffa,PASS
+Time: 57440200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,23,00000069
+Time: 60020200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 23,7fe001001460fffa,7fe001001460fffa,7fe001001460fffa,PASS
+Time: 60020200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,24,00003069
+Time: 62600200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 24,7807f0041460fffa,7807f0041460fffa,7807f0041460fffa,PASS
+Time: 62600200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,25,00004804
+Time: 65180200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 25,7fff80041460fffa,7fff80041460fffa,7fff80041460fffa,PASS
+Time: 65180200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,26,0000d3cb
+Time: 67760200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 26,003ff8e41460fffa,003ff8e41460fffa,003ff8e41460fffa,PASS
+Time: 67760200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,27,00005790
+Time: 70340200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 27,000800001460fffa,000800001460fffa,000800001460fffa,PASS
+Time: 70340200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,28,0000dc19
+Time: 72920200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 28,00ffffc41460fffa,00ffffc41460fffa,00ffffc41460fffa,PASS
+Time: 72920200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,29,000014cf
+Time: 75500200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 29,7c0000041460fffa,7c0000041460fffa,7c0000041460fffa,PASS
+Time: 75500200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,30,00002ff0
+Time: 78080200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 30,60001ffc1460fffa,60001ffc1460fffa,60001ffc1460fffa,PASS
+Time: 78080200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,31,0000c4b3
+Time: 80660200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 31,47fc00081460fffa,47fc00081460fffa,47fc00081460fffa,PASS
+Time: 80660200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,32,000065dd
+Time: 83240200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 32,0f03c1f41460fffa,0f03c1f41460fffa,0f03c1f41460fffa,PASS
+Time: 83240200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,33,000034ca
+Time: 85820200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 33,7fff81001460fffa,7fff81001460fffa,7fff81001460fffa,PASS
+Time: 85820200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,34,00007807
+Time: 88400200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 34,3fffe0081460fffa,3fffe0081460fffa,3fffe0081460fffa,PASS
+Time: 88400200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,35,0000be46
+Time: 90980200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 35,7ffe03fc1460fffa,7ffe03fc1460fffa,7ffe03fc1460fffa,PASS
+Time: 90980200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,36,0000d539
+Time: 93560200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 36,0000000c1460fffa,0000000c1460fffa,0000000c1460fffa,PASS
+Time: 93560200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,37,0000c1b3
+Time: 96140200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 37,003c78041460fffa,003c78041460fffa,003c78041460fffa,PASS
+Time: 96140200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,38,00003454
+Time: 98720200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 38,7ffff0201460fffa,7ffff0201460fffa,7ffff0201460fffa,PASS
+Time: 98720200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,39,0000612d
+Time: 101300200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 39,000000101460fffa,000000101460fffa,000000101460fffa,PASS
+Time: 101300200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,40,000054e2
+Time: 103880200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 40,00001e3c1460fffa,00001e3c1460fffa,00001e3c1460fffa,PASS
+Time: 103880200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,41,00003298
+Time: 106460200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 41,000000041460fffa,000000041460fffa,000000041460fffa,PASS
+Time: 106460200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,42,00009d04
+Time: 109040200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 42,7f0020001460fffa,7f0020001460fffa,7f0020001460fffa,PASS
+Time: 109040200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,43,0000ad81
+Time: 111620200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 43,800000001460fffa,800000001460fffa,800000001460fffa,PASS
+Time: 111620200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,44,0000c6af
+Time: 114200200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 44,000000081460fffa,000000081460fffa,000000081460fffa,PASS
+Time: 114200200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,45,00008c3f
+Time: 116780200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 45,03ff00801460fffa,03ff00801460fffa,03ff00801460fffa,PASS
+Time: 116780200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,46,0000e2d9
+Time: 119360200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 46,700040001460fffa,700040001460fffa,700040001460fffa,PASS
+Time: 119360200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,47,00007ebc
+Time: 121940200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 47,001c00041460fffa,001c00041460fffa,001c00041460fffa,PASS
+Time: 121940200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,48,000046d6
+Time: 124520200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 48,601fff841460fffa,601fff841460fffa,601fff841460fffa,PASS
+Time: 124520200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,49,0000ba9f
+Time: 127100200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 49,47f020001460fffa,47f020001460fffa,47f020001460fffa,PASS
+Time: 127100200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,50,00006bbb
+Time: 129680200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 50,7c0001fc1460fffa,7c0001fc1460fffa,7c0001fc1460fffa,PASS
+Time: 129680200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,51,0000f2cc
+Time: 132260200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 51,0e0000041460fffa,0e0000041460fffa,0e0000041460fffa,PASS
+Time: 132260200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,52,00000880
+Time: 134840200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 52,07ff000c1460fffa,07ff000c1460fffa,07ff000c1460fffa,PASS
+Time: 134840200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,53,0000c29a
+Time: 137420200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 53,00f807101460fffa,00f807101460fffa,00f807101460fffa,PASS
+Time: 137420200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,54,00001174
+Time: 140000200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 54,7ffe00041460fffa,7ffe00041460fffa,7ffe00041460fffa,PASS
+Time: 140000200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,55,00000b81
+Time: 142580200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 55,7fffff841460fffa,7fffff841460fffa,7fffff841460fffa,PASS
+Time: 142580200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,56,00005c1f
+Time: 145160200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 56,61ffe3fc1460fffa,61ffe3fc1460fffa,61ffe3fc1460fffa,PASS
+Time: 145160200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,57,00007c5f
+Time: 147740200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 57,7ffc00201460fffa,7ffc00201460fffa,7ffc00201460fffa,PASS
+Time: 147740200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,58,00001905
+Time: 150320200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 58,0fc7fff81460fffa,0fc7fff81460fffa,0fc7fff81460fffa,PASS
+Time: 150320200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,59,0000b92d
+Time: 152900200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 59,03ff90001460fffa,03ff90001460fffa,03ff90001460fffa,PASS
+Time: 152900200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,60,00008fd7
+Time: 155480200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 60,7e0007201460fffa,7e0007201460fffa,7e0007201460fffa,PASS
+Time: 155480200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,61,0000480c
+Time: 158060200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 61,400e01e41460fffa,400e01e41460fffa,400e01e41460fffa,PASS
+Time: 158060200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,62,000093a6
+Time: 160640200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 62,7ffffff41460fffa,7ffffff41460fffa,7ffffff41460fffa,PASS
+Time: 160640200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,63,00006258
+Time: 163220200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 63,00000e041460fffa,00000e041460fffa,00000e041460fffa,PASS
+Time: 163220200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,64,00006f25
+Time: 165800200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 64,007800101460fffa,007800101460fffa,007800101460fffa,PASS
+Time: 165800200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,65,00009dfb
+Time: 168380200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 65,7ffff8041460fffa,7ffff8041460fffa,7ffff8041460fffa,PASS
+Time: 168380200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,66,00002104
+Time: 170960200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 66,003ff07c1460fffa,003ff07c1460fffa,003ff07c1460fffa,PASS
+Time: 170960200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,67,000007de
+Time: 173540200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 67,7fc0fff41460fffa,7fc0fff41460fffa,7fc0fff41460fffa,PASS
+Time: 173540200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,68,00001612
+Time: 176120200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 68,7ffffff81460fffa,7ffffff81460fffa,7ffffff81460fffa,PASS
+Time: 176120200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,69,0000cfa0
+Time: 178700200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 69,000000801460fffa,000000801460fffa,000000801460fffa,PASS
+Time: 178700200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,70,000023ad
+Time: 181280200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 70,003ffffc1460fffa,003ffffc1460fffa,003ffffc1460fffa,PASS
+Time: 181280200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,71,00001289
+Time: 183860200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 71,000000041460fffa,000000041460fffa,000000041460fffa,PASS
+Time: 183860200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,72,0000ca45
+Time: 186440200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 72,7ffe000c1460fffa,7ffe000c1460fffa,7ffe000c1460fffa,PASS
+Time: 186440200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,73,00004299
+Time: 189020200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 73,200000001460fffa,200000001460fffa,200000001460fffa,PASS
+Time: 189020200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,74,00006c99
+Time: 191600200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 74,7e00000c1460fffa,7e00000c1460fffa,7e00000c1460fffa,PASS
+Time: 191600200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,75,0000b858
+Time: 194180200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 75,0f80ffe41460fffa,0f80ffe41460fffa,0f80ffe41460fffa,PASS
+Time: 194180200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,76,0000b13a
+Time: 196760200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 76,000040001460fffa,000040001460fffa,000040001460fffa,PASS
+Time: 196760200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,77,0000c39d
+Time: 199340200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 77,00ffc0041460fffa,00ffc0041460fffa,00ffc0041460fffa,PASS
+Time: 199340200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,78,000010e0
+Time: 201920200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 78,1c1e000c1460fffa,1c1e000c1460fffa,1c1e000c1460fffa,PASS
+Time: 201920200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,79,00004c36
+Time: 204500200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 79,002000001460fffa,002000001460fffa,002000001460fffa,PASS
+Time: 204500200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,80,000000c2
+Time: 207080200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 80,407ffffc1460fffa,407ffffc1460fffa,407ffffc1460fffa,PASS
+Time: 207080200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,81,000036b1
+Time: 209660200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 81,780000041460fffa,780000041460fffa,780000041460fffa,PASS
+Time: 209660200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,82,0000d336
+Time: 212240200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 82,0001fffc1460fffa,0001fffc1460fffa,0001fffc1460fffa,PASS
+Time: 212240200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,83,00003f31
+Time: 214820200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 83,61fc00041460fffa,61fc00041460fffa,61fc00041460fffa,PASS
+Time: 214820200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,84,0000db16
+Time: 217400200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 84,007f81f81460fffa,007f81f81460fffa,007f81f81460fffa,PASS
+Time: 217400200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,85,00007eee
+Time: 219980200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 85,040000001460fffa,040000001460fffa,040000001460fffa,PASS
+Time: 219980200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,86,0000f382
+Time: 222560200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 86,071000001460fffa,071000001460fffa,071000001460fffa,PASS
+Time: 222560200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,87,0000f7a4
+Time: 225140200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 87,703fff041460fffa,703fff041460fffa,703fff041460fffa,PASS
+Time: 225140200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,88,000030ca
+Time: 227720200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 88,7c00f0041460fffa,7c00f0041460fffa,7c00f0041460fffa,PASS
+Time: 227720200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,89,00005c09
+Time: 230300200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 89,78007ff41460fffa,78007ff41460fffa,78007ff41460fffa,PASS
+Time: 230300200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,90,00008c39
+Time: 232880200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 90,7e001f0c1460fffa,7e001f0c1460fffa,7e001f0c1460fffa,PASS
+Time: 232880200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,91,0000ace8
+Time: 235460200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 91,000020001460fffa,000020001460fffa,000020001460fffa,PASS
+Time: 235460200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,92,00006375
+Time: 238040200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 92,01ffe0401460fffa,01ffe0401460fffa,01ffe0401460fffa,PASS
+Time: 238040200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,93,00003ecf
+Time: 240620200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 93,1f8072001460fffa,1f8072001460fffa,1f8072001460fffa,PASS
+Time: 240620200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,94,00006f8c
+Time: 243200200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 94,78001ff81460fffa,78001ff81460fffa,78001ff81460fffa,PASS
+Time: 243200200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,95,00009d04
+Time: 245780200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 95,001000001460fffa,001000001460fffa,001000001460fffa,PASS
+Time: 245780200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,96,00007404
+Time: 248360200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 96,00003e0c1460fffa,00003e0c1460fffa,00003e0c1460fffa,PASS
+Time: 248360200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,97,0000d8f5
+Time: 250940200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 97,1ffffffc1460fffa,1ffffffc1460fffa,1ffffffc1460fffa,PASS
+Time: 250940200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,98,0000f2f1
+Time: 253520200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 98,01fffff81460fffa,01fffff81460fffa,01fffff81460fffa,PASS
+Time: 253520200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,99,00000827
+Time: 256100200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 99,003f00041460fffa,003f00041460fffa,003f00041460fffa,PASS
+Time: 256100200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,100,0000445b
+Time: 258680200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 100,7f00070c1460fffa,7f00070c1460fffa,7f00070c1460fffa,PASS
+Time: 258680200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,101,0000ed98
+Time: 261260200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 101,000000e41460fffa,000000e41460fffa,000000e41460fffa,PASS
+Time: 261260200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,102,00003173
+Time: 263840200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 102,7e3ffff41460fffa,7e3ffff41460fffa,7e3ffff41460fffa,PASS
+Time: 263840200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,103,0000488b
+Time: 266420200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 103,000ffe041460fffa,000ffe041460fffa,000ffe041460fffa,PASS
+Time: 266420200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,104,00000d66
+Time: 269000200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 104,000000081460fffa,000000081460fffa,000000081460fffa,PASS
+Time: 269000200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,105,0000176a
+Time: 271580200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 105,7ffffe041460fffa,7ffffe041460fffa,7ffffe041460fffa,PASS
+Time: 271580200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,106,00005f09
+Time: 274160200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 106,03ffe0101460fffa,03ffe0101460fffa,03ffe0101460fffa,PASS
+Time: 274160200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,107,000007f7
+Time: 276740200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 107,700000041460fffa,700000041460fffa,700000041460fffa,PASS
+Time: 276740200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,108,00006aa7
+Time: 279320200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 108,7f0007f81460fffa,7f0007f81460fffa,7f0007f81460fffa,PASS
+Time: 279320200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,109,00001a57
+Time: 281900200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 109,7ff800201460fffa,7ff800201460fffa,7ff800201460fffa,PASS
+Time: 281900200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,110,0000360a
+Time: 284480200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 110,7fe000781460fffa,7fe000781460fffa,7fe000781460fffa,PASS
+Time: 284480200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,111,0000f89a
+Time: 287060200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 111,0001ff901460fffa,0001ff901460fffa,0001ff901460fffa,PASS
+Time: 287060200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,112,0000946e
+Time: 289640200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 112,01ffc1f41460fffa,01ffc1f41460fffa,01ffc1f41460fffa,PASS
+Time: 289640200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,113,000086fa
+Time: 292220200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 113,001fff901460fffa,001fff901460fffa,001fff901460fffa,PASS
+Time: 292220200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,114,0000b020
+Time: 294800200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 114,07ffff881460fffa,07ffff881460fffa,07ffff881460fffa,PASS
+Time: 294800200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,115,000007c8
+Time: 297380200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 115,7ff81c401460fffa,7ff81c401460fffa,7ff81c401460fffa,PASS
+Time: 297380200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,116,0000ef5e
+Time: 299960200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 116,0380380c1460fffa,0380380c1460fffa,0380380c1460fffa,PASS
+Time: 299960200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,117,00009ca5
+Time: 302540200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 117,600039001460fffa,600039001460fffa,600039001460fffa,PASS
+Time: 302540200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,118,00006af0
+Time: 305120200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 118,01fffff41460fffa,01fffff41460fffa,01fffff41460fffa,PASS
+Time: 305120200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,119,00000001
+Time: 307700200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 119,01e01ffc1460fffa,01e01ffc1460fffa,01e01ffc1460fffa,PASS
+Time: 307700200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,120,00000ba0
+Time: 310280200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 120,700000101460fffa,700000101460fffa,700000101460fffa,PASS
+Time: 310280200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,121,00002415
+Time: 312860200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 121,03ff80041460fffa,03ff80041460fffa,03ff80041460fffa,PASS
+Time: 312860200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,122,00001ded
+Time: 315440200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 122,00e3fffc1460fffa,00e3fffc1460fffa,00e3fffc1460fffa,PASS
+Time: 315440200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,123,0000632f
+Time: 318020200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 123,800000001460fffa,800000001460fffa,800000001460fffa,PASS
+Time: 318020200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,124,0000d6c1
+Time: 320600200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 124,7ffe00101460fffa,7ffe00101460fffa,7ffe00101460fffa,PASS
+Time: 320600200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,125,000020e3
+Time: 323180200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 125,7ffff0081460fffa,7ffff0081460fffa,7ffff0081460fffa,PASS
+Time: 323180200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,126,000026b3
+Time: 325760200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 126,7fffff081460fffa,7fffff081460fffa,7fffff081460fffa,PASS
+Time: 325760200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,127,00006ea3
+Time: 328340200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 127,000100001460fffa,000100001460fffa,000100001460fffa,PASS
+Time: 328340200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,128,00009d33
+Time: 330920200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 128,000000741460fffa,000000741460fffa,000000741460fffa,PASS
+Time: 330920200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,129,0000cf2f
+Time: 333500200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 129,7ffffc041460fffa,7ffffc041460fffa,7ffffc041460fffa,PASS
+Time: 333500200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,130,00002e67
+Time: 336080200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 130,7f81ffc81460fffa,7f81ffc81460fffa,7f81ffc81460fffa,PASS
+Time: 336080200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,131,0000cbfb
+Time: 338660200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 131,1f1c00081460fffa,1f1c00081460fffa,1f1c00081460fffa,PASS
+Time: 338660200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,132,00004a70
+Time: 341240200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 132,401c39001460fffa,401c39001460fffa,401c39001460fffa,PASS
+Time: 341240200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,133,0000d5a0
+Time: 343820200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 133,07e0ffc41460fffa,07e0ffc41460fffa,07e0ffc41460fffa,PASS
+Time: 343820200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,134,000090be
+Time: 346400200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 134,7ffffffc1460fffa,7ffffffc1460fffa,7ffffffc1460fffa,PASS
+Time: 346400200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,135,000009ae
+Time: 348980200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 135,007fe2001460fffa,007fe2001460fffa,007fe2001460fffa,PASS
+Time: 348980200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,136,00006464
+Time: 351560200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 136,7ff0000c1460fffa,7ff0000c1460fffa,7ff0000c1460fffa,PASS
+Time: 351560200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,137,00008f62
+Time: 354140200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 137,03fff8041460fffa,03fff8041460fffa,03fff8041460fffa,PASS
+Time: 354140200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,138,00006380
+Time: 356720200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 138,000800001460fffa,000800001460fffa,000800001460fffa,PASS
+Time: 356720200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,139,00003410
+Time: 359300200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 139,7f0000fc1460fffa,7f0000fc1460fffa,7f0000fc1460fffa,PASS
+Time: 359300200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,140,00005520
+Time: 361880200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 140,7ffffffc1460fffa,7ffffffc1460fffa,7ffffffc1460fffa,PASS
+Time: 361880200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,141,0000e7f9
+Time: 364460200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 141,000008001460fffa,000008001460fffa,000008001460fffa,PASS
+Time: 364460200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,142,00000c1f
+Time: 367040200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 142,7fffff881460fffa,7fffff881460fffa,7fffff881460fffa,PASS
+Time: 367040200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,143,0000efff
+Time: 369620200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 143,000f90001460fffa,000f90001460fffa,000f90001460fffa,PASS
+Time: 369620200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,144,0000593d
+Time: 372200200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 144,7c0003f81460fffa,7c0003f81460fffa,7c0003f81460fffa,PASS
+Time: 372200200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,145,000061ae
+Time: 374780200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 145,010000001460fffa,010000001460fffa,010000001460fffa,PASS
+Time: 374780200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,146,00007fc2
+Time: 377360200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 146,7fff00041460fffa,7fff00041460fffa,7fff00041460fffa,PASS
+Time: 377360200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,147,0000f061
+Time: 379940200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 147,7ff0e1001460fffa,7ff0e1001460fffa,7ff0e1001460fffa,PASS
+Time: 379940200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,148,0000a95c
+Time: 382520200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 148,007fffe41460fffa,007fffe41460fffa,007fffe41460fffa,PASS
+Time: 382520200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,149,0000425b
+Time: 385100200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 149,000000801460fffa,000000801460fffa,000000801460fffa,PASS
+Time: 385100200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,150,0000b68e
+Time: 387680200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 150,00001ff41460fffa,00001ff41460fffa,00001ff41460fffa,PASS
+Time: 387680200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,151,000036dd
+Time: 390260200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 151,000800001460fffa,000800001460fffa,000800001460fffa,PASS
+Time: 390260200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,152,0000f5a6
+Time: 392840200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 152,001f00801460fffa,001f00801460fffa,001f00801460fffa,PASS
+Time: 392840200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,153,00007a07
+Time: 395420200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 153,7ffc00201460fffa,7ffc00201460fffa,7ffc00201460fffa,PASS
+Time: 395420200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,154,0000d1a2
+Time: 398000200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 154,0000ffc41460fffa,0000ffc41460fffa,0000ffc41460fffa,PASS
+Time: 398000200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,155,00007faf
+Time: 400580200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 155,43ffc0041460fffa,43ffc0041460fffa,43ffc0041460fffa,PASS
+Time: 400580200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,156,00001ea4
+Time: 403160200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 156,01ffff041460fffa,01ffff041460fffa,01ffff041460fffa,PASS
+Time: 403160200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,157,0000dd6b
+Time: 405740200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 157,400002001460fffa,400002001460fffa,400002001460fffa,PASS
+Time: 405740200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,158,0000aea8
+Time: 408320200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 158,003ffff41460fffa,003ffff41460fffa,003ffff41460fffa,PASS
+Time: 408320200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,159,0000a2bb
+Time: 410900200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 159,780001001460fffa,780001001460fffa,780001001460fffa,PASS
+Time: 410900200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,160,00003528
+Time: 413480200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 160,07fffffc1460fffa,07fffffc1460fffa,07fffffc1460fffa,PASS
+Time: 413480200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,161,00004e3a
+Time: 416060200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 161,00f804001460fffa,00f804001460fffa,00f804001460fffa,PASS
+Time: 416060200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,162,000067e3
+Time: 418640200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 162,3ffffe041460fffa,3ffffe041460fffa,3ffffe041460fffa,PASS
+Time: 418640200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,163,00007f43
+Time: 421220200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 163,7c7f80041460fffa,7c7f80041460fffa,7c7f80041460fffa,PASS
+Time: 421220200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,164,0000fcc4
+Time: 423800200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 164,7ff1fff81460fffa,7ff1fff81460fffa,7ff1fff81460fffa,PASS
+Time: 423800200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,165,00007a41
+Time: 426380200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 165,7f07ffe41460fffa,7f07ffe41460fffa,7f07ffe41460fffa,PASS
+Time: 426380200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,166,00003bda
+Time: 428960200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 166,000003f41460fffa,000003f41460fffa,000003f41460fffa,PASS
+Time: 428960200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,167,0000b144
+Time: 431540200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 167,000000741460fffa,000000741460fffa,000000741460fffa,PASS
+Time: 431540200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,168,00005f52
+Time: 434120200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 168,000100001460fffa,000100001460fffa,000100001460fffa,PASS
+Time: 434120200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,169,00007134
+Time: 436700200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 169,007040001460fffa,007040001460fffa,007040001460fffa,PASS
+Time: 436700200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,170,0000c501
+Time: 439280200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 170,00003e081460fffa,00003e081460fffa,00003e081460fffa,PASS
+Time: 439280200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,171,00000790
+Time: 441860200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 171,7fffc0041460fffa,7fffc0041460fffa,7fffc0041460fffa,PASS
+Time: 441860200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,172,0000f685
+Time: 444440200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 172,700010001460fffa,700010001460fffa,700010001460fffa,PASS
+Time: 444440200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,173,0000a577
+Time: 447020200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 173,407f01001460fffa,407f01001460fffa,407f01001460fffa,PASS
+Time: 447020200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,174,00004b4e
+Time: 449600200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 174,000000781460fffa,000000781460fffa,000000781460fffa,PASS
+Time: 449600200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,175,000017af
+Time: 452180200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 175,1fe0f0e41460fffa,1fe0f0e41460fffa,1fe0f0e41460fffa,PASS
+Time: 452180200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,176,000006a0
+Time: 454760200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 176,000000fc1460fffa,000000fc1460fffa,000000fc1460fffa,PASS
+Time: 454760200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,177,00008208
+Time: 457340200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 177,00ffffc81460fffa,00ffffc81460fffa,00ffffc81460fffa,PASS
+Time: 457340200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,178,00002aa8
+Time: 459920200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 178,00fffff81460fffa,00fffff81460fffa,00fffff81460fffa,PASS
+Time: 459920200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,179,00003227
+Time: 462500200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 179,000000041460fffa,000000041460fffa,000000041460fffa,PASS
+Time: 462500200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,180,0000000b
+Time: 465080200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 180,7ffc3c041460fffa,7ffc3c041460fffa,7ffc3c041460fffa,PASS
+Time: 465080200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,181,0000865c
+Time: 467660200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 181,0ffc0f841460fffa,0ffc0f841460fffa,0ffc0f841460fffa,PASS
+Time: 467660200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,182,00001437
+Time: 470240200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 182,7c0fff8c1460fffa,7c0fff8c1460fffa,7c0fff8c1460fffa,PASS
+Time: 470240200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,183,0000e7f1
+Time: 472820200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 183,7ff080001460fffa,7ff080001460fffa,7ff080001460fffa,PASS
+Time: 472820200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,184,00000b32
+Time: 475400200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 184,7ffffffc1460fffa,7ffffffc1460fffa,7ffffffc1460fffa,PASS
+Time: 475400200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,185,0000c25c
+Time: 477980200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 185,7fffffe41460fffa,7fffffe41460fffa,7fffffe41460fffa,PASS
+Time: 477980200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,186,00002b41
+Time: 480560200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 186,000ffe0c1460fffa,000ffe0c1460fffa,000ffe0c1460fffa,PASS
+Time: 480560200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,187,0000c97c
+Time: 483140200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 187,000004001460fffa,000004001460fffa,000004001460fffa,PASS
+Time: 483140200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,188,0000b374
+Time: 485720200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 188,0e1ffe081460fffa,0e1ffe081460fffa,0e1ffe081460fffa,PASS
+Time: 485720200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,189,00008ea6
+Time: 488300200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 189,780000401460fffa,780000401460fffa,780000401460fffa,PASS
+Time: 488300200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,190,00008a6e
+Time: 490880200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 190,0fff80801460fffa,0fff80801460fffa,0fff80801460fffa,PASS
+Time: 490880200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,191,00005f1d
+Time: 493460200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 191,4038e0081460fffa,4038e0081460fffa,4038e0081460fffa,PASS
+Time: 493460200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,192,0000b4aa
+Time: 496040200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 192,000003e41460fffa,000003e41460fffa,000003e41460fffa,PASS
+Time: 496040200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,193,0000d911
+Time: 498620200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 193,00f8fffc1460fffa,00f8fffc1460fffa,00f8fffc1460fffa,PASS
+Time: 498620200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,194,0000c1b0
+Time: 501200200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 194,0fc000041460fffa,0fc000041460fffa,0fc000041460fffa,PASS
+Time: 501200200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,195,0000ccaa
+Time: 503780200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 195,7fc040001460fffa,7fc040001460fffa,7fc040001460fffa,PASS
+Time: 503780200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,196,0000795c
+Time: 506360200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 196,7ffff8081460fffa,7ffff8081460fffa,7ffff8081460fffa,PASS
+Time: 506360200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,197,0000000e
+Time: 508940200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 197,0001ffc41460fffa,0001ffc41460fffa,0001ffc41460fffa,PASS
+Time: 508940200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,198,0000099f
+Time: 511520200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 198,03fc00041460fffa,03fc00041460fffa,03fc00041460fffa,PASS
+Time: 511520200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,199,0000abbb
+Time: 514100200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 199,602000001460fffa,602000001460fffa,602000001460fffa,PASS
+Time: 514100200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,200,000021b7
+Time: 516680200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 200,03e000781460fffa,03e000781460fffa,03e000781460fffa,PASS
+Time: 516680200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,201,0000d931
+Time: 519260200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 201,7f0200001460fffa,7f0200001460fffa,7f0200001460fffa,PASS
+Time: 519260200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,202,00005fa1
+Time: 521840200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 202,01e000041460fffa,01e000041460fffa,01e000041460fffa,PASS
+Time: 521840200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,203,000028a8
+Time: 524420200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 203,7ff004001460fffa,7ff004001460fffa,7ff004001460fffa,PASS
+Time: 524420200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,204,00008a09
+Time: 527000200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 204,780e00801460fffa,780e00801460fffa,780e00801460fffa,PASS
+Time: 527000200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,205,0000b88d
+Time: 529580200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 205,7fe000041460fffa,7fe000041460fffa,7fe000041460fffa,PASS
+Time: 529580200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,206,0000aca3
+Time: 532160200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 206,0f8000f81460fffa,0f8000f81460fffa,0f8000f81460fffa,PASS
+Time: 532160200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,207,0000be92
+Time: 534740200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 207,7fffff841460fffa,7fffff841460fffa,7fffff841460fffa,PASS
+Time: 534740200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,208,0000deca
+Time: 537320200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 208,7fc000781460fffa,7fc000781460fffa,7fc000781460fffa,PASS
+Time: 537320200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,209,00005003
+Time: 539900200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 209,7fffc0201460fffa,7fffc0201460fffa,7fffc0201460fffa,PASS
+Time: 539900200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,210,000031bd
+Time: 542480200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 210,7e1fe0f81460fffa,7e1fe0f81460fffa,7e1fe0f81460fffa,PASS
+Time: 542480200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,211,0000a5d9
+Time: 545060200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 211,7c0010001460fffa,7c0010001460fffa,7c0010001460fffa,PASS
+Time: 545060200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,212,000074b4
+Time: 547640200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 212,7ff800081460fffa,7ff800081460fffa,7ff800081460fffa,PASS
+Time: 547640200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,213,0000c18c
+Time: 550220200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 213,01e0f8041460fffa,01e0f8041460fffa,01e0f8041460fffa,PASS
+Time: 550220200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,214,0000f6fc
+Time: 552800200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 214,7ff000081460fffa,7ff000081460fffa,7ff000081460fffa,PASS
+Time: 552800200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,215,00003436
+Time: 555380200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 215,0007e0401460fffa,0007e0401460fffa,0007e0401460fffa,PASS
+Time: 555380200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,216,0000ee2d
+Time: 557960200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 216,0001fffc1460fffa,0001fffc1460fffa,0001fffc1460fffa,PASS
+Time: 557960200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,217,000065f7
+Time: 560540200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 217,000000201460fffa,000000201460fffa,000000201460fffa,PASS
+Time: 560540200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,218,0000dd8e
+Time: 563120200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 218,7e1e00081460fffa,7e1e00081460fffa,7e1e00081460fffa,PASS
+Time: 563120200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,219,000079f0
+Time: 565700200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 219,7f8001001460fffa,7f8001001460fffa,7f8001001460fffa,PASS
+Time: 565700200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,220,000071ff
+Time: 568280200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 220,7fe078041460fffa,7fe078041460fffa,7fe078041460fffa,PASS
+Time: 568280200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,221,000035da
+Time: 570860200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 221,000200001460fffa,000200001460fffa,000200001460fffa,PASS
+Time: 570860200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,222,0000e490
+Time: 573440200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 222,3fffffc81460fffa,3fffffc81460fffa,3fffffc81460fffa,PASS
+Time: 573440200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,223,00000c4b
+Time: 576020200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 223,480000001460fffa,480000001460fffa,480000001460fffa,PASS
+Time: 576020200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,224,000051ac
+Time: 578600200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 224,7fe07f881460fffa,7fe07f881460fffa,7fe07f881460fffa,PASS
+Time: 578600200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,225,0000aef6
+Time: 581180200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 225,7fc03c041460fffa,7fc03c041460fffa,7fc03c041460fffa,PASS
+Time: 581180200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,226,00004369
+Time: 583760200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 226,03e000081460fffa,03e000081460fffa,03e000081460fffa,PASS
+Time: 583760200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,227,000004e1
+Time: 586340200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 227,1c0000041460fffa,1c0000041460fffa,1c0000041460fffa,PASS
+Time: 586340200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,228,0000324c
+Time: 588920200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 228,78007ffc1460fffa,78007ffc1460fffa,78007ffc1460fffa,PASS
+Time: 588920200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,229,00004371
+Time: 591500200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 229,7fff90001460fffa,7fff90001460fffa,7fff90001460fffa,PASS
+Time: 591500200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,230,000020cf
+Time: 594080200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 230,7800000c1460fffa,7800000c1460fffa,7800000c1460fffa,PASS
+Time: 594080200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,231,0000ebf9
+Time: 596660200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 231,00001ffc1460fffa,00001ffc1460fffa,00001ffc1460fffa,PASS
+Time: 596660200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,232,000058d4
+Time: 599240200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 232,800000001460fffa,800000001460fffa,800000001460fffa,PASS
+Time: 599240200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,233,00007efc
+Time: 601820200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 233,7ffffffc1460fffa,7ffffffc1460fffa,7ffffffc1460fffa,PASS
+Time: 601820200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,234,0000457f
+Time: 604400200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 234,7fffff041460fffa,7fffff041460fffa,7fffff041460fffa,PASS
+Time: 604400200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,235,0000a9bf
+Time: 606980200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 235,7ffe40001460fffa,7ffe40001460fffa,7ffe40001460fffa,PASS
+Time: 606980200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,236,0000b1ec
+Time: 609560200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 236,7fffff041460fffa,7fffff041460fffa,7fffff041460fffa,PASS
+Time: 609560200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,237,00003897
+Time: 612140200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 237,000000041460fffa,000000041460fffa,000000041460fffa,PASS
+Time: 612140200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,238,0000ac82
+Time: 614720200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 238,7fffc0101460fffa,7fffc0101460fffa,7fffc0101460fffa,PASS
+Time: 614720200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,239,0000451d
+Time: 617300200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 239,7ffe40001460fffa,7ffe40001460fffa,7ffe40001460fffa,PASS
+Time: 617300200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,240,0000274c
+Time: 619880200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 240,00ffffe41460fffa,00ffffe41460fffa,00ffffe41460fffa,PASS
+Time: 619880200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,241,0000c9b8
+Time: 622460200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 241,7ffe00041460fffa,7ffe00041460fffa,7ffe00041460fffa,PASS
+Time: 622460200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,242,0000bd10
+Time: 625040200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 242,000000041460fffa,000000041460fffa,000000041460fffa,PASS
+Time: 625040200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,243,000094a2
+Time: 627620200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 243,7f8002001460fffa,7f8002001460fffa,7f8002001460fffa,PASS
+Time: 627620200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,244,00005604
+Time: 630200200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 244,7000000c1460fffa,7000000c1460fffa,7000000c1460fffa,PASS
+Time: 630200200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,245,0000dac0
+Time: 632780200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 245,7ff000401460fffa,7ff000401460fffa,7ff000401460fffa,PASS
+Time: 632780200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,246,00002792
+Time: 635360200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 246,7e00ff0c1460fffa,7e00ff0c1460fffa,7e00ff0c1460fffa,PASS
+Time: 635360200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,247,00007afd
+Time: 637940200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 247,780800001460fffa,780800001460fffa,780800001460fffa,PASS
+Time: 637940200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,248,00004e77
+Time: 640520200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 248,00003e081460fffa,00003e081460fffa,00003e081460fffa,PASS
+Time: 640520200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,249,0000b7d3
+Time: 643100200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 249,000001001460fffa,000001001460fffa,000001001460fffa,PASS
+Time: 643100200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,250,0000ea8a
+Time: 645680200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 250,000000201460fffa,000000201460fffa,000000201460fffa,PASS
+Time: 645680200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,251,0000c50d
+Time: 648260200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 251,200000001460fffa,200000001460fffa,200000001460fffa,PASS
+Time: 648260200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,252,000010f8
+Time: 650840200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 252,7fffff901460fffa,7fffff901460fffa,7fffff901460fffa,PASS
+Time: 650840200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,253,00000f10
+Time: 653420200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 253,000000041460fffa,000000041460fffa,000000041460fffa,PASS
+Time: 653420200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,254,000082cd
+Time: 656000200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 254,7f0000081460fffa,7f0000081460fffa,7f0000081460fffa,PASS
+Time: 656000200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,255,0000b75d
+Time: 658580200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 255,00003ffc1460fffa,00003ffc1460fffa,00003ffc1460fffa,PASS
+Time: 658580200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SIGNATURE] 7,256,0000b5ce
+Time: 661160200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CAPTURE] 256,7fffe0041460fffa,7fffe0041460fffa,7fffe0041460fffa,PASS
+Time: 661160200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [PASS] real core protected-state hold, all CPU phases, write suppression and interrupt/exception isolation
+Time: 661160200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [ISOLATION] 4287,0,0,0,33025,0
+Time: 661160200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [ACTIVITY] 3232912,99604,1668
+Time: 661160200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [SEQUENCE] 16384,256,16384,256
+Time: 661160200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [CONFIG] 7,3,4
+Time: 661160200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [FINAL_SIGNATURE] 7,0000b5ce
+Time: 661160200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [PASS] reset-only exit and functional restart against original core
+Time: 661600200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [ENGINE_COMPLETE] processor at 661600200 ps
+Time: 661600200 ps  Iteration: 0  Process: /tb_phase6a_fault_comparison/engine/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd
+Note: [TB_COMPLETE] tb_phase6a_fault_comparison at 661600200 ps
+Time: 661600200 ps  Iteration: 2  Process: /tb_phase6a_fault_comparison/line__5  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_fault_comparison.vhd

@@ -1,0 +1,420 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="478" viewBox="0 0 1600 478">
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="20" y="28" font-family="sans-serif" font-size="20">Swap/Moving progression through eighteen captures</text>
+<text x="20" y="51" font-family="sans-serif" font-size="13">00 = PLPF n=3 (low toggle) | 11 = PLPF n=1 (unfiltered) | Edge capture uses PRE-edge mode; POST-edge mode prepares the next shift.</text>
+<line x1="220.0" x2="220.0" y1="110" y2="448" stroke="#e6eaf0"/>
+<text x="220.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">0.00 ns</text>
+<line x1="385.0" x2="385.0" y1="110" y2="448" stroke="#e6eaf0"/>
+<text x="385.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">5888.75 ns</text>
+<line x1="550.0" x2="550.0" y1="110" y2="448" stroke="#e6eaf0"/>
+<text x="550.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">11777.50 ns</text>
+<line x1="715.0" x2="715.0" y1="110" y2="448" stroke="#e6eaf0"/>
+<text x="715.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">17666.25 ns</text>
+<line x1="880.0" x2="880.0" y1="110" y2="448" stroke="#e6eaf0"/>
+<text x="880.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">23555.00 ns</text>
+<line x1="1045.0" x2="1045.0" y1="110" y2="448" stroke="#e6eaf0"/>
+<text x="1045.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">29443.75 ns</text>
+<line x1="1210.0" x2="1210.0" y1="110" y2="448" stroke="#e6eaf0"/>
+<text x="1210.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">35332.50 ns</text>
+<line x1="1375.0" x2="1375.0" y1="110" y2="448" stroke="#e6eaf0"/>
+<text x="1375.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">41221.25 ns</text>
+<line x1="1540.0" x2="1540.0" y1="110" y2="448" stroke="#e6eaf0"/>
+<text x="1540.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">47110.00 ns</text>
+<text x="12" y="156" font-family="monospace" font-size="14">rst</text>
+<path d="M 220.000 163 H 220.700" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/rst = 0, 0.000..25.000 ns</title></path>
+<path d="M 220.700 139 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/rst = 1, 25.000..47110.000 ns</title></path>
+<path d="M 220.700 163 V 139" stroke="#126e60" fill="none"/>
+<text x="12" y="204" font-family="monospace" font-size="14">pattern_index</text>
+<rect x="220.000" y="185" width="91.063" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/pattern_index = 0000000000000000, 0.000..3250.000 ns</title></rect>
+<text x="265.532" y="204" text-anchor="middle" font-family="monospace" font-size="13">0</text>
+<rect x="311.063" y="185" width="72.290" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/pattern_index = 1, 3250.000..5830.000 ns</title></rect>
+<text x="347.209" y="204" text-anchor="middle" font-family="monospace" font-size="13">1</text>
+<rect x="383.354" y="185" width="72.290" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/pattern_index = 10, 5830.000..8410.000 ns</title></rect>
+<text x="419.499" y="204" text-anchor="middle" font-family="monospace" font-size="13">2</text>
+<rect x="455.644" y="185" width="72.290" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/pattern_index = 11, 8410.000..10990.000 ns</title></rect>
+<text x="491.789" y="204" text-anchor="middle" font-family="monospace" font-size="13">3</text>
+<rect x="527.935" y="185" width="72.290" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/pattern_index = 100, 10990.000..13570.000 ns</title></rect>
+<text x="564.080" y="204" text-anchor="middle" font-family="monospace" font-size="13">4</text>
+<rect x="600.225" y="185" width="72.290" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/pattern_index = 101, 13570.000..16150.000 ns</title></rect>
+<text x="636.370" y="204" text-anchor="middle" font-family="monospace" font-size="13">5</text>
+<rect x="672.515" y="185" width="72.290" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/pattern_index = 110, 16150.000..18730.000 ns</title></rect>
+<text x="708.661" y="204" text-anchor="middle" font-family="monospace" font-size="13">6</text>
+<rect x="744.806" y="185" width="72.290" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/pattern_index = 111, 18730.000..21310.000 ns</title></rect>
+<text x="780.951" y="204" text-anchor="middle" font-family="monospace" font-size="13">7</text>
+<rect x="817.096" y="185" width="72.290" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/pattern_index = 1000, 21310.000..23890.000 ns</title></rect>
+<text x="853.241" y="204" text-anchor="middle" font-family="monospace" font-size="13">8</text>
+<rect x="889.387" y="185" width="72.290" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/pattern_index = 1001, 23890.000..26470.000 ns</title></rect>
+<text x="925.532" y="204" text-anchor="middle" font-family="monospace" font-size="13">9</text>
+<rect x="961.677" y="185" width="72.290" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/pattern_index = 1010, 26470.000..29050.000 ns</title></rect>
+<text x="997.822" y="204" text-anchor="middle" font-family="monospace" font-size="13">10</text>
+<rect x="1033.967" y="185" width="72.290" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/pattern_index = 1011, 29050.000..31630.000 ns</title></rect>
+<text x="1070.113" y="204" text-anchor="middle" font-family="monospace" font-size="13">11</text>
+<rect x="1106.258" y="185" width="72.290" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/pattern_index = 1100, 31630.000..34210.000 ns</title></rect>
+<text x="1142.403" y="204" text-anchor="middle" font-family="monospace" font-size="13">12</text>
+<rect x="1178.548" y="185" width="72.290" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/pattern_index = 1101, 34210.000..36790.000 ns</title></rect>
+<text x="1214.693" y="204" text-anchor="middle" font-family="monospace" font-size="13">13</text>
+<rect x="1250.838" y="185" width="72.290" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/pattern_index = 1110, 36790.000..39370.000 ns</title></rect>
+<text x="1286.984" y="204" text-anchor="middle" font-family="monospace" font-size="13">14</text>
+<rect x="1323.129" y="185" width="72.290" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/pattern_index = 1111, 39370.000..41950.000 ns</title></rect>
+<text x="1359.274" y="204" text-anchor="middle" font-family="monospace" font-size="13">15</text>
+<rect x="1395.419" y="185" width="72.290" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/pattern_index = 10000, 41950.000..44530.000 ns</title></rect>
+<text x="1431.564" y="204" text-anchor="middle" font-family="monospace" font-size="13">16</text>
+<rect x="1467.710" y="185" width="72.290" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/pattern_index = 10001, 44530.000..47110.000 ns</title></rect>
+<text x="1503.855" y="204" text-anchor="middle" font-family="monospace" font-size="13">17</text>
+<text x="12" y="252" font-family="monospace" font-size="14">test_phase</text>
+<rect x="220.000" y="233" width="12.048" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 000, 0.000..430.000 ns</title></rect>
+<rect x="232.048" y="233" width="5.044" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 1, 430.000..610.000 ns</title></rect>
+<rect x="237.092" y="233" width="37.546" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 10, 610.000..1950.000 ns</title></rect>
+<text x="255.865" y="252" text-anchor="middle" font-family="monospace" font-size="13">2</text>
+<rect x="274.638" y="233" width="0.560" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 11, 1950.000..1970.000 ns</title></rect>
+<rect x="275.198" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 100, 1970.000..3250.000 ns</title></rect>
+<text x="293.131" y="252" text-anchor="middle" font-family="monospace" font-size="13">4</text>
+<rect x="311.063" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 10, 3250.000..4530.000 ns</title></rect>
+<text x="328.996" y="252" text-anchor="middle" font-family="monospace" font-size="13">2</text>
+<rect x="346.928" y="233" width="0.560" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 11, 4530.000..4550.000 ns</title></rect>
+<rect x="347.489" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 100, 4550.000..5830.000 ns</title></rect>
+<text x="365.421" y="252" text-anchor="middle" font-family="monospace" font-size="13">4</text>
+<rect x="383.354" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 10, 5830.000..7110.000 ns</title></rect>
+<text x="401.286" y="252" text-anchor="middle" font-family="monospace" font-size="13">2</text>
+<rect x="419.219" y="233" width="0.560" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 11, 7110.000..7130.000 ns</title></rect>
+<rect x="419.779" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 100, 7130.000..8410.000 ns</title></rect>
+<text x="437.712" y="252" text-anchor="middle" font-family="monospace" font-size="13">4</text>
+<rect x="455.644" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 10, 8410.000..9690.000 ns</title></rect>
+<text x="473.577" y="252" text-anchor="middle" font-family="monospace" font-size="13">2</text>
+<rect x="491.509" y="233" width="0.560" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 11, 9690.000..9710.000 ns</title></rect>
+<rect x="492.070" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 100, 9710.000..10990.000 ns</title></rect>
+<text x="510.002" y="252" text-anchor="middle" font-family="monospace" font-size="13">4</text>
+<rect x="527.935" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 10, 10990.000..12270.000 ns</title></rect>
+<text x="545.867" y="252" text-anchor="middle" font-family="monospace" font-size="13">2</text>
+<rect x="563.800" y="233" width="0.560" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 11, 12270.000..12290.000 ns</title></rect>
+<rect x="564.360" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 100, 12290.000..13570.000 ns</title></rect>
+<text x="582.293" y="252" text-anchor="middle" font-family="monospace" font-size="13">4</text>
+<rect x="600.225" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 10, 13570.000..14850.000 ns</title></rect>
+<text x="618.158" y="252" text-anchor="middle" font-family="monospace" font-size="13">2</text>
+<rect x="636.090" y="233" width="0.560" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 11, 14850.000..14870.000 ns</title></rect>
+<rect x="636.650" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 100, 14870.000..16150.000 ns</title></rect>
+<text x="654.583" y="252" text-anchor="middle" font-family="monospace" font-size="13">4</text>
+<rect x="672.515" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 10, 16150.000..17430.000 ns</title></rect>
+<text x="690.448" y="252" text-anchor="middle" font-family="monospace" font-size="13">2</text>
+<rect x="708.380" y="233" width="0.560" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 11, 17430.000..17450.000 ns</title></rect>
+<rect x="708.941" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 100, 17450.000..18730.000 ns</title></rect>
+<text x="726.873" y="252" text-anchor="middle" font-family="monospace" font-size="13">4</text>
+<rect x="744.806" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 10, 18730.000..20010.000 ns</title></rect>
+<text x="762.738" y="252" text-anchor="middle" font-family="monospace" font-size="13">2</text>
+<rect x="780.671" y="233" width="0.560" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 11, 20010.000..20030.000 ns</title></rect>
+<rect x="781.231" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 100, 20030.000..21310.000 ns</title></rect>
+<text x="799.164" y="252" text-anchor="middle" font-family="monospace" font-size="13">4</text>
+<rect x="817.096" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 10, 21310.000..22590.000 ns</title></rect>
+<text x="835.029" y="252" text-anchor="middle" font-family="monospace" font-size="13">2</text>
+<rect x="852.961" y="233" width="0.560" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 11, 22590.000..22610.000 ns</title></rect>
+<rect x="853.522" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 100, 22610.000..23890.000 ns</title></rect>
+<text x="871.454" y="252" text-anchor="middle" font-family="monospace" font-size="13">4</text>
+<rect x="889.387" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 10, 23890.000..25170.000 ns</title></rect>
+<text x="907.319" y="252" text-anchor="middle" font-family="monospace" font-size="13">2</text>
+<rect x="925.252" y="233" width="0.560" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 11, 25170.000..25190.000 ns</title></rect>
+<rect x="925.812" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 100, 25190.000..26470.000 ns</title></rect>
+<text x="943.744" y="252" text-anchor="middle" font-family="monospace" font-size="13">4</text>
+<rect x="961.677" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 10, 26470.000..27750.000 ns</title></rect>
+<text x="979.609" y="252" text-anchor="middle" font-family="monospace" font-size="13">2</text>
+<rect x="997.542" y="233" width="0.560" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 11, 27750.000..27770.000 ns</title></rect>
+<rect x="998.102" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 100, 27770.000..29050.000 ns</title></rect>
+<text x="1016.035" y="252" text-anchor="middle" font-family="monospace" font-size="13">4</text>
+<rect x="1033.967" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 10, 29050.000..30330.000 ns</title></rect>
+<text x="1051.900" y="252" text-anchor="middle" font-family="monospace" font-size="13">2</text>
+<rect x="1069.832" y="233" width="0.560" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 11, 30330.000..30350.000 ns</title></rect>
+<rect x="1070.393" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 100, 30350.000..31630.000 ns</title></rect>
+<text x="1088.325" y="252" text-anchor="middle" font-family="monospace" font-size="13">4</text>
+<rect x="1106.258" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 10, 31630.000..32910.000 ns</title></rect>
+<text x="1124.190" y="252" text-anchor="middle" font-family="monospace" font-size="13">2</text>
+<rect x="1142.123" y="233" width="0.560" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 11, 32910.000..32930.000 ns</title></rect>
+<rect x="1142.683" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 100, 32930.000..34210.000 ns</title></rect>
+<text x="1160.616" y="252" text-anchor="middle" font-family="monospace" font-size="13">4</text>
+<rect x="1178.548" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 10, 34210.000..35490.000 ns</title></rect>
+<text x="1196.481" y="252" text-anchor="middle" font-family="monospace" font-size="13">2</text>
+<rect x="1214.413" y="233" width="0.560" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 11, 35490.000..35510.000 ns</title></rect>
+<rect x="1214.973" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 100, 35510.000..36790.000 ns</title></rect>
+<text x="1232.906" y="252" text-anchor="middle" font-family="monospace" font-size="13">4</text>
+<rect x="1250.838" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 10, 36790.000..38070.000 ns</title></rect>
+<text x="1268.771" y="252" text-anchor="middle" font-family="monospace" font-size="13">2</text>
+<rect x="1286.703" y="233" width="0.560" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 11, 38070.000..38090.000 ns</title></rect>
+<rect x="1287.264" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 100, 38090.000..39370.000 ns</title></rect>
+<text x="1305.196" y="252" text-anchor="middle" font-family="monospace" font-size="13">4</text>
+<rect x="1323.129" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 10, 39370.000..40650.000 ns</title></rect>
+<text x="1341.061" y="252" text-anchor="middle" font-family="monospace" font-size="13">2</text>
+<rect x="1358.994" y="233" width="0.560" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 11, 40650.000..40670.000 ns</title></rect>
+<rect x="1359.554" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 100, 40670.000..41950.000 ns</title></rect>
+<text x="1377.487" y="252" text-anchor="middle" font-family="monospace" font-size="13">4</text>
+<rect x="1395.419" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 10, 41950.000..43230.000 ns</title></rect>
+<text x="1413.352" y="252" text-anchor="middle" font-family="monospace" font-size="13">2</text>
+<rect x="1431.284" y="233" width="0.560" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 11, 43230.000..43250.000 ns</title></rect>
+<rect x="1431.845" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 100, 43250.000..44530.000 ns</title></rect>
+<text x="1449.777" y="252" text-anchor="middle" font-family="monospace" font-size="13">4</text>
+<rect x="1467.710" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 10, 44530.000..45810.000 ns</title></rect>
+<text x="1485.642" y="252" text-anchor="middle" font-family="monospace" font-size="13">2</text>
+<rect x="1503.575" y="233" width="0.560" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 11, 45810.000..45830.000 ns</title></rect>
+<rect x="1504.135" y="233" width="35.865" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/test_phase = 100, 45830.000..47110.000 ns</title></rect>
+<text x="1522.068" y="252" text-anchor="middle" font-family="monospace" font-size="13">4</text>
+<text x="12" y="300" font-family="monospace" font-size="14">scan_enable</text>
+<path d="M 220.000 307 H 237.092" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 0, 0.000..610.000 ns</title></path>
+<path d="M 237.092 283 H 249.706" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 1, 610.000..1060.200 ns</title></path>
+<path d="M 237.092 307 V 283" stroke="#126e60" fill="none"/>
+<path d="M 249.706 307 H 251.387" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 0, 1060.200..1120.200 ns</title></path>
+<path d="M 249.706 283 V 307" stroke="#126e60" fill="none"/>
+<path d="M 251.387 283 H 274.638" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 1, 1120.200..1950.000 ns</title></path>
+<path d="M 251.387 307 V 283" stroke="#126e60" fill="none"/>
+<path d="M 274.638 307 H 275.198" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 0, 1950.000..1970.000 ns</title></path>
+<path d="M 274.638 283 V 307" stroke="#126e60" fill="none"/>
+<path d="M 275.198 283 H 346.928" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 1, 1970.000..4530.000 ns</title></path>
+<path d="M 275.198 307 V 283" stroke="#126e60" fill="none"/>
+<path d="M 346.928 307 H 347.489" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 0, 4530.000..4550.000 ns</title></path>
+<path d="M 346.928 283 V 307" stroke="#126e60" fill="none"/>
+<path d="M 347.489 283 H 419.219" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 1, 4550.000..7110.000 ns</title></path>
+<path d="M 347.489 307 V 283" stroke="#126e60" fill="none"/>
+<path d="M 419.219 307 H 419.779" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 0, 7110.000..7130.000 ns</title></path>
+<path d="M 419.219 283 V 307" stroke="#126e60" fill="none"/>
+<path d="M 419.779 283 H 491.509" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 1, 7130.000..9690.000 ns</title></path>
+<path d="M 419.779 307 V 283" stroke="#126e60" fill="none"/>
+<path d="M 491.509 307 H 492.070" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 0, 9690.000..9710.000 ns</title></path>
+<path d="M 491.509 283 V 307" stroke="#126e60" fill="none"/>
+<path d="M 492.070 283 H 563.800" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 1, 9710.000..12270.000 ns</title></path>
+<path d="M 492.070 307 V 283" stroke="#126e60" fill="none"/>
+<path d="M 563.800 307 H 564.360" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 0, 12270.000..12290.000 ns</title></path>
+<path d="M 563.800 283 V 307" stroke="#126e60" fill="none"/>
+<path d="M 564.360 283 H 636.090" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 1, 12290.000..14850.000 ns</title></path>
+<path d="M 564.360 307 V 283" stroke="#126e60" fill="none"/>
+<path d="M 636.090 307 H 636.650" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 0, 14850.000..14870.000 ns</title></path>
+<path d="M 636.090 283 V 307" stroke="#126e60" fill="none"/>
+<path d="M 636.650 283 H 708.380" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 1, 14870.000..17430.000 ns</title></path>
+<path d="M 636.650 307 V 283" stroke="#126e60" fill="none"/>
+<path d="M 708.380 307 H 708.941" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 0, 17430.000..17450.000 ns</title></path>
+<path d="M 708.380 283 V 307" stroke="#126e60" fill="none"/>
+<path d="M 708.941 283 H 780.671" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 1, 17450.000..20010.000 ns</title></path>
+<path d="M 708.941 307 V 283" stroke="#126e60" fill="none"/>
+<path d="M 780.671 307 H 781.231" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 0, 20010.000..20030.000 ns</title></path>
+<path d="M 780.671 283 V 307" stroke="#126e60" fill="none"/>
+<path d="M 781.231 283 H 852.961" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 1, 20030.000..22590.000 ns</title></path>
+<path d="M 781.231 307 V 283" stroke="#126e60" fill="none"/>
+<path d="M 852.961 307 H 853.522" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 0, 22590.000..22610.000 ns</title></path>
+<path d="M 852.961 283 V 307" stroke="#126e60" fill="none"/>
+<path d="M 853.522 283 H 925.252" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 1, 22610.000..25170.000 ns</title></path>
+<path d="M 853.522 307 V 283" stroke="#126e60" fill="none"/>
+<path d="M 925.252 307 H 925.812" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 0, 25170.000..25190.000 ns</title></path>
+<path d="M 925.252 283 V 307" stroke="#126e60" fill="none"/>
+<path d="M 925.812 283 H 997.542" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 1, 25190.000..27750.000 ns</title></path>
+<path d="M 925.812 307 V 283" stroke="#126e60" fill="none"/>
+<path d="M 997.542 307 H 998.102" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 0, 27750.000..27770.000 ns</title></path>
+<path d="M 997.542 283 V 307" stroke="#126e60" fill="none"/>
+<path d="M 998.102 283 H 1069.832" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 1, 27770.000..30330.000 ns</title></path>
+<path d="M 998.102 307 V 283" stroke="#126e60" fill="none"/>
+<path d="M 1069.832 307 H 1070.393" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 0, 30330.000..30350.000 ns</title></path>
+<path d="M 1069.832 283 V 307" stroke="#126e60" fill="none"/>
+<path d="M 1070.393 283 H 1142.123" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 1, 30350.000..32910.000 ns</title></path>
+<path d="M 1070.393 307 V 283" stroke="#126e60" fill="none"/>
+<path d="M 1142.123 307 H 1142.683" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 0, 32910.000..32930.000 ns</title></path>
+<path d="M 1142.123 283 V 307" stroke="#126e60" fill="none"/>
+<path d="M 1142.683 283 H 1214.413" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 1, 32930.000..35490.000 ns</title></path>
+<path d="M 1142.683 307 V 283" stroke="#126e60" fill="none"/>
+<path d="M 1214.413 307 H 1214.973" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 0, 35490.000..35510.000 ns</title></path>
+<path d="M 1214.413 283 V 307" stroke="#126e60" fill="none"/>
+<path d="M 1214.973 283 H 1286.703" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 1, 35510.000..38070.000 ns</title></path>
+<path d="M 1214.973 307 V 283" stroke="#126e60" fill="none"/>
+<path d="M 1286.703 307 H 1287.264" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 0, 38070.000..38090.000 ns</title></path>
+<path d="M 1286.703 283 V 307" stroke="#126e60" fill="none"/>
+<path d="M 1287.264 283 H 1358.994" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 1, 38090.000..40650.000 ns</title></path>
+<path d="M 1287.264 307 V 283" stroke="#126e60" fill="none"/>
+<path d="M 1358.994 307 H 1359.554" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 0, 40650.000..40670.000 ns</title></path>
+<path d="M 1358.994 283 V 307" stroke="#126e60" fill="none"/>
+<path d="M 1359.554 283 H 1431.284" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 1, 40670.000..43230.000 ns</title></path>
+<path d="M 1359.554 307 V 283" stroke="#126e60" fill="none"/>
+<path d="M 1431.284 307 H 1431.845" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 0, 43230.000..43250.000 ns</title></path>
+<path d="M 1431.284 283 V 307" stroke="#126e60" fill="none"/>
+<path d="M 1431.845 283 H 1503.575" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 1, 43250.000..45810.000 ns</title></path>
+<path d="M 1431.845 307 V 283" stroke="#126e60" fill="none"/>
+<path d="M 1503.575 307 H 1504.135" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 0, 45810.000..45830.000 ns</title></path>
+<path d="M 1503.575 283 V 307" stroke="#126e60" fill="none"/>
+<path d="M 1504.135 283 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_enable = 1, 45830.000..47110.000 ns</title></path>
+<path d="M 1504.135 307 V 283" stroke="#126e60" fill="none"/>
+<text x="12" y="348" font-family="monospace" font-size="14">mode_select</text>
+<rect x="220.000" y="329" width="24.937" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 00, 0.000..890.000 ns</title></rect>
+<text x="232.469" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="244.937" y="329" width="12.889" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 890.000..1350.000 ns</title></rect>
+<rect x="257.826" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 1350.000..2250.000 ns</title></rect>
+<text x="270.435" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="283.044" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 2250.000..2650.000 ns</title></rect>
+<rect x="294.252" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 2650.000..3550.000 ns</title></rect>
+<text x="306.861" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="319.469" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 3550.000..3950.000 ns</title></rect>
+<rect x="330.677" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 3950.000..4850.000 ns</title></rect>
+<text x="343.286" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="355.895" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 4850.000..5250.000 ns</title></rect>
+<rect x="367.103" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 5250.000..6150.000 ns</title></rect>
+<text x="379.711" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="392.320" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 6150.000..6550.000 ns</title></rect>
+<rect x="403.528" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 6550.000..7450.000 ns</title></rect>
+<text x="416.137" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="428.745" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 7450.000..7850.000 ns</title></rect>
+<rect x="439.953" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 7850.000..8750.000 ns</title></rect>
+<text x="452.562" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="465.171" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 8750.000..9150.000 ns</title></rect>
+<rect x="476.379" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 9150.000..10050.000 ns</title></rect>
+<text x="488.987" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="501.596" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 10050.000..10450.000 ns</title></rect>
+<rect x="512.804" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 10450.000..11350.000 ns</title></rect>
+<text x="525.413" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="538.022" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 11350.000..11750.000 ns</title></rect>
+<rect x="549.229" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 11750.000..12650.000 ns</title></rect>
+<text x="561.838" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="574.447" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 12650.000..13050.000 ns</title></rect>
+<rect x="585.655" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 13050.000..13950.000 ns</title></rect>
+<text x="598.264" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="610.872" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 13950.000..14350.000 ns</title></rect>
+<rect x="622.080" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 14350.000..15250.000 ns</title></rect>
+<text x="634.689" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="647.298" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 15250.000..15650.000 ns</title></rect>
+<rect x="658.506" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 15650.000..16550.000 ns</title></rect>
+<text x="671.114" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="683.723" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 16550.000..16950.000 ns</title></rect>
+<rect x="694.931" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 16950.000..17850.000 ns</title></rect>
+<text x="707.540" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="720.149" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 17850.000..18250.000 ns</title></rect>
+<rect x="731.356" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 18250.000..19150.000 ns</title></rect>
+<text x="743.965" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="756.574" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 19150.000..19550.000 ns</title></rect>
+<rect x="767.782" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 19550.000..20450.000 ns</title></rect>
+<text x="780.391" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="792.999" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 20450.000..20850.000 ns</title></rect>
+<rect x="804.207" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 20850.000..21750.000 ns</title></rect>
+<text x="816.816" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="829.425" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 21750.000..22150.000 ns</title></rect>
+<rect x="840.633" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 22150.000..23050.000 ns</title></rect>
+<text x="853.241" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="865.850" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 23050.000..23450.000 ns</title></rect>
+<rect x="877.058" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 23450.000..24350.000 ns</title></rect>
+<text x="889.667" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="902.276" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 24350.000..24750.000 ns</title></rect>
+<rect x="913.483" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 24750.000..25650.000 ns</title></rect>
+<text x="926.092" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="938.701" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 25650.000..26050.000 ns</title></rect>
+<rect x="949.909" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 26050.000..26950.000 ns</title></rect>
+<text x="962.518" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="975.126" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 26950.000..27350.000 ns</title></rect>
+<rect x="986.334" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 27350.000..28250.000 ns</title></rect>
+<text x="998.943" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="1011.552" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 28250.000..28650.000 ns</title></rect>
+<rect x="1022.759" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 28650.000..29550.000 ns</title></rect>
+<text x="1035.368" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="1047.977" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 29550.000..29950.000 ns</title></rect>
+<rect x="1059.185" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 29950.000..30850.000 ns</title></rect>
+<text x="1071.794" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="1084.402" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 30850.000..31250.000 ns</title></rect>
+<rect x="1095.610" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 31250.000..32150.000 ns</title></rect>
+<text x="1108.219" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="1120.828" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 32150.000..32550.000 ns</title></rect>
+<rect x="1132.036" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 32550.000..33450.000 ns</title></rect>
+<text x="1144.644" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="1157.253" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 33450.000..33850.000 ns</title></rect>
+<rect x="1168.461" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 33850.000..34750.000 ns</title></rect>
+<text x="1181.070" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="1193.679" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 34750.000..35150.000 ns</title></rect>
+<rect x="1204.886" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 35150.000..36050.000 ns</title></rect>
+<text x="1217.495" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="1230.104" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 36050.000..36450.000 ns</title></rect>
+<rect x="1241.312" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 36450.000..37350.000 ns</title></rect>
+<text x="1253.921" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="1266.529" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 37350.000..37750.000 ns</title></rect>
+<rect x="1277.737" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 37750.000..38650.000 ns</title></rect>
+<text x="1290.346" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="1302.955" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 38650.000..39050.000 ns</title></rect>
+<rect x="1314.163" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 39050.000..39950.000 ns</title></rect>
+<text x="1326.771" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="1339.380" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 39950.000..40350.000 ns</title></rect>
+<rect x="1350.588" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 40350.000..41250.000 ns</title></rect>
+<text x="1363.197" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="1375.806" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 41250.000..41650.000 ns</title></rect>
+<rect x="1387.013" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 41650.000..42550.000 ns</title></rect>
+<text x="1399.622" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="1412.231" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 42550.000..42950.000 ns</title></rect>
+<rect x="1423.439" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 42950.000..43850.000 ns</title></rect>
+<text x="1436.048" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="1448.656" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 43850.000..44250.000 ns</title></rect>
+<rect x="1459.864" y="329" width="15.691" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 44250.000..44810.000 ns</title></rect>
+<rect x="1475.555" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 44810.000..45210.000 ns</title></rect>
+<rect x="1486.763" y="329" width="25.218" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 45210.000..46110.000 ns</title></rect>
+<text x="1499.372" y="348" text-anchor="middle" font-family="monospace" font-size="13">00</text>
+<rect x="1511.980" y="329" width="11.208" height="28" fill="#ffedbf" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 11, 46110.000..46510.000 ns</title></rect>
+<rect x="1523.188" y="329" width="16.812" height="28" fill="#e1f2e7" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/mode_select = 0, 46510.000..47110.000 ns</title></rect>
+<text x="12" y="396" font-family="monospace" font-size="14">capture_enable</text>
+<path d="M 220.000 403 H 274.638" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 0, 0.000..1950.000 ns</title></path>
+<path d="M 274.638 379 H 275.198" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 1, 1950.000..1970.000 ns</title></path>
+<path d="M 274.638 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 275.198 403 H 346.928" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 0, 1970.000..4530.000 ns</title></path>
+<path d="M 275.198 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 346.928 379 H 347.489" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 1, 4530.000..4550.000 ns</title></path>
+<path d="M 346.928 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 347.489 403 H 419.219" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 0, 4550.000..7110.000 ns</title></path>
+<path d="M 347.489 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 419.219 379 H 419.779" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 1, 7110.000..7130.000 ns</title></path>
+<path d="M 419.219 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 419.779 403 H 491.509" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 0, 7130.000..9690.000 ns</title></path>
+<path d="M 419.779 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 491.509 379 H 492.070" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 1, 9690.000..9710.000 ns</title></path>
+<path d="M 491.509 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 492.070 403 H 563.800" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 0, 9710.000..12270.000 ns</title></path>
+<path d="M 492.070 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 563.800 379 H 564.360" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 1, 12270.000..12290.000 ns</title></path>
+<path d="M 563.800 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 564.360 403 H 636.090" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 0, 12290.000..14850.000 ns</title></path>
+<path d="M 564.360 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 636.090 379 H 636.650" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 1, 14850.000..14870.000 ns</title></path>
+<path d="M 636.090 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 636.650 403 H 708.380" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 0, 14870.000..17430.000 ns</title></path>
+<path d="M 636.650 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 708.380 379 H 708.941" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 1, 17430.000..17450.000 ns</title></path>
+<path d="M 708.380 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 708.941 403 H 780.671" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 0, 17450.000..20010.000 ns</title></path>
+<path d="M 708.941 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 780.671 379 H 781.231" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 1, 20010.000..20030.000 ns</title></path>
+<path d="M 780.671 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 781.231 403 H 852.961" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 0, 20030.000..22590.000 ns</title></path>
+<path d="M 781.231 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 852.961 379 H 853.522" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 1, 22590.000..22610.000 ns</title></path>
+<path d="M 852.961 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 853.522 403 H 925.252" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 0, 22610.000..25170.000 ns</title></path>
+<path d="M 853.522 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 925.252 379 H 925.812" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 1, 25170.000..25190.000 ns</title></path>
+<path d="M 925.252 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 925.812 403 H 997.542" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 0, 25190.000..27750.000 ns</title></path>
+<path d="M 925.812 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 997.542 379 H 998.102" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 1, 27750.000..27770.000 ns</title></path>
+<path d="M 997.542 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 998.102 403 H 1069.832" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 0, 27770.000..30330.000 ns</title></path>
+<path d="M 998.102 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 1069.832 379 H 1070.393" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 1, 30330.000..30350.000 ns</title></path>
+<path d="M 1069.832 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 1070.393 403 H 1142.123" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 0, 30350.000..32910.000 ns</title></path>
+<path d="M 1070.393 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 1142.123 379 H 1142.683" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 1, 32910.000..32930.000 ns</title></path>
+<path d="M 1142.123 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 1142.683 403 H 1214.413" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 0, 32930.000..35490.000 ns</title></path>
+<path d="M 1142.683 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 1214.413 379 H 1214.973" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 1, 35490.000..35510.000 ns</title></path>
+<path d="M 1214.413 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 1214.973 403 H 1286.703" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 0, 35510.000..38070.000 ns</title></path>
+<path d="M 1214.973 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 1286.703 379 H 1287.264" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 1, 38070.000..38090.000 ns</title></path>
+<path d="M 1286.703 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 1287.264 403 H 1358.994" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 0, 38090.000..40650.000 ns</title></path>
+<path d="M 1287.264 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 1358.994 379 H 1359.554" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 1, 40650.000..40670.000 ns</title></path>
+<path d="M 1358.994 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 1359.554 403 H 1431.284" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 0, 40670.000..43230.000 ns</title></path>
+<path d="M 1359.554 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 1431.284 379 H 1431.845" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 1, 43230.000..43250.000 ns</title></path>
+<path d="M 1431.284 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 1431.845 403 H 1503.575" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 0, 43250.000..45810.000 ns</title></path>
+<path d="M 1431.845 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 1503.575 379 H 1504.135" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 1, 45810.000..45830.000 ns</title></path>
+<path d="M 1503.575 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 1504.135 403 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/capture_enable = 0, 45830.000..47110.000 ns</title></path>
+<path d="M 1504.135 379 V 403" stroke="#126e60" fill="none"/>
+<text x="20" y="468" font-family="sans-serif" font-size="11">Source: c4_f0.vcd; no expected-schedule signal reconstruction. Buses are hexadecimal; counters/region lengths are decimal.</text></svg>

@@ -1,0 +1,696 @@
+#-----------------------------------------------------------
+# Vivado v2025.1.1 (64-bit)
+# SW Build 6233196 on Thu Sep 11 21:27:30 MDT 2025
+# IP Build 6232796 on Fri Sep 12 01:46:16 MDT 2025
+# SharedData Build 6233195 on Thu Sep 11 17:56:43 MDT 2025
+# Start of session at: Wed Nov 18 03:29:02 2026
+# Process ID         : 19596
+# Current directory  : C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/work
+# Command line       : vivado.exe -mode batch -source C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/scripts/synth_phase6a.tcl -log ../synthesis_console.log -journal synthesis.jou -notrace
+# Log file           : C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/work/../synthesis_console.log
+# Journal file       : C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/work\synthesis.jou
+# Running On         : LAPTOP-B852K4P2
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i5-13420H
+# CPU Frequency      : 2611 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 12
+# Host memory        : 16802 MB
+# Swap memory        : 9126 MB
+# Total Virtual      : 25929 MB
+# Available Virtual  : 2660 MB
+#-----------------------------------------------------------
+source {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/scripts/synth_phase6a.tcl} -notrace
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/work/project_synthesis'
+create_project: Time (s): cpu = 00:00:20 ; elapsed = 00:00:30 . Memory (MB): peak = 499.723 ; gain = 215.488
+Command: synth_design -mode out_of_context -top phase6a_safe_misr -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 16660
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 997.996 ; gain = 494.348
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'phase6a_safe_misr' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/phase6a_safe_misr.vhd:10]
+INFO: [Synth 8-638] synthesizing module 'misr_16' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/misr_16.vhd:8]
+INFO: [Synth 8-256] done synthesizing module 'misr_16' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/misr_16.vhd:8]
+INFO: [Synth 8-256] done synthesizing module 'phase6a_safe_misr' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/phase6a_safe_misr.vhd:10]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:15 ; elapsed = 00:00:25 . Memory (MB): peak = 1120.754 ; gain = 617.105
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:27 . Memory (MB): peak = 1120.754 ; gain = 617.105
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:27 . Memory (MB): peak = 1120.754 ; gain = 617.105
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:29 . Memory (MB): peak = 1120.754 ; gain = 617.105
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    9 Bit       Adders := 2     
+	   2 Input    7 Bit       Adders := 1     
++---XORs : 
+	   2 Input     16 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                9 Bit    Registers := 2     
+	                7 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input   16 Bit        Muxes := 2     
+	   2 Input    7 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 12    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:01:03 . Memory (MB): peak = 1305.574 ; gain = 801.926
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:01:03 . Memory (MB): peak = 1305.574 ; gain = 801.926
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:01:03 . Memory (MB): peak = 1305.574 ; gain = 801.926
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:39 ; elapsed = 00:01:29 . Memory (MB): peak = 1513.824 ; gain = 1010.176
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:39 ; elapsed = 00:01:29 . Memory (MB): peak = 1513.824 ; gain = 1010.176
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:39 ; elapsed = 00:01:29 . Memory (MB): peak = 1513.824 ; gain = 1010.176
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:39 ; elapsed = 00:01:29 . Memory (MB): peak = 1513.824 ; gain = 1010.176
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:39 ; elapsed = 00:01:29 . Memory (MB): peak = 1513.824 ; gain = 1010.176
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:39 ; elapsed = 00:01:29 . Memory (MB): peak = 1513.824 ; gain = 1010.176
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |     8|
+|2     |LUT1   |     4|
+|3     |LUT2   |     8|
+|4     |LUT3   |     7|
+|5     |LUT4   |    27|
+|6     |LUT5   |    11|
+|7     |LUT6   |    27|
+|8     |FDCE   |    57|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+--------+------+
+|      |Instance |Module  |Cells |
++------+---------+--------+------+
+|1     |top      |        |   149|
+|2     |  m      |misr_16 |    60|
++------+---------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:39 ; elapsed = 00:01:29 . Memory (MB): peak = 1513.824 ; gain = 1010.176
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:39 ; elapsed = 00:01:29 . Memory (MB): peak = 1513.824 ; gain = 1010.176
+Synthesis Optimization Complete : Time (s): cpu = 00:00:39 ; elapsed = 00:01:29 . Memory (MB): peak = 1513.824 ; gain = 1010.176
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1527.934 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1612.863 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: dca55be2
+INFO: [Common 17-83] Releasing license: Synthesis
+17 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:44 ; elapsed = 00:01:41 . Memory (MB): peak = 1613.250 ; gain = 1113.527
+Command: synth_design -mode out_of_context -top lbist_pattern_router -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:13 ; elapsed = 00:00:16 . Memory (MB): peak = 1662.629 ; gain = 49.379
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'lbist_pattern_router' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/lbist_pattern_router.vhd:9]
+INFO: [Synth 8-638] synthesizing module 'lfsr_16' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/lfsr_16.vhd:13]
+INFO: [Synth 8-256] done synthesizing module 'lfsr_16' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/lfsr_16.vhd:13]
+INFO: [Synth 8-638] synthesizing module 'phase_shifter' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/phase_shifter.vhd:10]
+INFO: [Synth 8-256] done synthesizing module 'phase_shifter' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/phase_shifter.vhd:10]
+INFO: [Synth 8-638] synthesizing module 'basic_controller' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/basic_controller.vhd:13]
+	Parameter CHAIN_LENGTH bound to: 64 - type: integer 
+	Parameter BETA bound to: 0 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'basic_controller' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/basic_controller.vhd:13]
+INFO: [Synth 8-638] synthesizing module 'swap_controller' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/swap_controller.vhd:13]
+	Parameter CHAIN_LENGTH bound to: 64 - type: integer 
+	Parameter BETA bound to: 16 - type: integer 
+	Parameter NUM_CHAINS bound to: 1 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'swap_controller' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/swap_controller.vhd:13]
+INFO: [Synth 8-638] synthesizing module 'moving_controller' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/moving_controller.vhd:15]
+	Parameter CHAIN_LENGTH bound to: 64 - type: integer 
+	Parameter BETA bound to: 20 - type: integer 
+	Parameter NUM_CHAINS bound to: 1 - type: integer 
+	Parameter INITIAL_POSITION bound to: 0 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'moving_controller' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/moving_controller.vhd:15]
+INFO: [Synth 8-638] synthesizing module 'plpf_dynamic' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/plpf_dynamic.vhd:13]
+INFO: [Synth 8-256] done synthesizing module 'plpf_dynamic' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/plpf_dynamic.vhd:13]
+INFO: [Synth 8-256] done synthesizing module 'lbist_pattern_router' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/lbist_pattern_router.vhd:9]
+WARNING: [Synth 8-7129] Port state_in[15] in module phase_shifter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port state_in[14] in module phase_shifter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port state_in[13] in module phase_shifter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port state_in[12] in module phase_shifter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port state_in[11] in module phase_shifter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port state_in[10] in module phase_shifter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port state_in[9] in module phase_shifter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port state_in[8] in module phase_shifter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port state_in[7] in module phase_shifter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port state_in[6] in module phase_shifter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port state_in[5] in module phase_shifter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port state_in[4] in module phase_shifter is either unconnected or has no load
+WARNING: [Synth 8-7129] Port state_in[3] in module phase_shifter is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 1789.020 ; gain = 175.770
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:23 . Memory (MB): peak = 1789.020 ; gain = 175.770
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:23 . Memory (MB): peak = 1789.020 ; gain = 175.770
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 1789.020 ; gain = 175.770
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   16 Bit       Adders := 2     
+	   2 Input    8 Bit       Adders := 4     
+	   2 Input    6 Bit       Adders := 5     
+	   2 Input    5 Bit       Adders := 4     
++---XORs : 
+	   4 Input      1 Bit         XORs := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                6 Bit    Registers := 5     
+	                5 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
++---Muxes : 
+	   2 Input    6 Bit        Muxes := 4     
+	   2 Input    5 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 5     
+	   4 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 7     
+	   4 Input    1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3917] design lbist_pattern_router has port shift_count[30] driven by constant 0
+WARNING: [Synth 8-3917] design lbist_pattern_router has port shift_count[29] driven by constant 0
+WARNING: [Synth 8-3917] design lbist_pattern_router has port shift_count[28] driven by constant 0
+WARNING: [Synth 8-3917] design lbist_pattern_router has port shift_count[27] driven by constant 0
+WARNING: [Synth 8-3917] design lbist_pattern_router has port shift_count[26] driven by constant 0
+WARNING: [Synth 8-3917] design lbist_pattern_router has port shift_count[25] driven by constant 0
+WARNING: [Synth 8-3917] design lbist_pattern_router has port shift_count[24] driven by constant 0
+WARNING: [Synth 8-3917] design lbist_pattern_router has port shift_count[23] driven by constant 0
+WARNING: [Synth 8-3917] design lbist_pattern_router has port shift_count[22] driven by constant 0
+WARNING: [Synth 8-3917] design lbist_pattern_router has port shift_count[21] driven by constant 0
+WARNING: [Synth 8-3917] design lbist_pattern_router has port shift_count[20] driven by constant 0
+WARNING: [Synth 8-3917] design lbist_pattern_router has port shift_count[19] driven by constant 0
+WARNING: [Synth 8-3917] design lbist_pattern_router has port shift_count[18] driven by constant 0
+WARNING: [Synth 8-3917] design lbist_pattern_router has port shift_count[17] driven by constant 0
+WARNING: [Synth 8-3917] design lbist_pattern_router has port shift_count[16] driven by constant 0
+WARNING: [Synth 8-3917] design lbist_pattern_router has port shift_count[15] driven by constant 0
+WARNING: [Synth 8-3917] design lbist_pattern_router has port shift_count[14] driven by constant 0
+WARNING: [Synth 8-3917] design lbist_pattern_router has port shift_count[13] driven by constant 0
+WARNING: [Synth 8-3917] design lbist_pattern_router has port shift_count[12] driven by constant 0
+WARNING: [Synth 8-3917] design lbist_pattern_router has port shift_count[11] driven by constant 0
+WARNING: [Synth 8-3917] design lbist_pattern_router has port shift_count[10] driven by constant 0
+WARNING: [Synth 8-3917] design lbist_pattern_router has port shift_count[9] driven by constant 0
+WARNING: [Synth 8-3917] design lbist_pattern_router has port shift_count[8] driven by constant 0
+WARNING: [Synth 8-3917] design lbist_pattern_router has port shift_count[7] driven by constant 0
+WARNING: [Synth 8-3917] design lbist_pattern_router has port shift_count[6] driven by constant 0
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:32 . Memory (MB): peak = 1801.430 ; gain = 188.180
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:34 . Memory (MB): peak = 1801.430 ; gain = 188.180
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:34 . Memory (MB): peak = 1801.430 ; gain = 188.180
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:32 ; elapsed = 00:01:01 . Memory (MB): peak = 1801.430 ; gain = 188.180
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:32 ; elapsed = 00:01:01 . Memory (MB): peak = 1801.430 ; gain = 188.180
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:01:01 . Memory (MB): peak = 1801.430 ; gain = 188.180
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:01:01 . Memory (MB): peak = 1801.430 ; gain = 188.180
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:01:01 . Memory (MB): peak = 1801.430 ; gain = 188.180
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:01:01 . Memory (MB): peak = 1801.430 ; gain = 188.180
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |     2|
+|2     |LUT1   |     6|
+|3     |LUT2   |    17|
+|4     |LUT3   |    12|
+|5     |LUT4   |    22|
+|6     |LUT5   |    22|
+|7     |LUT6   |    15|
+|8     |FDCE   |     8|
+|9     |FDPE   |     8|
+|10    |FDRE   |    42|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:01:01 . Memory (MB): peak = 1801.430 ; gain = 188.180
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 39 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:32 ; elapsed = 00:01:01 . Memory (MB): peak = 1801.430 ; gain = 188.180
+Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:01:01 . Memory (MB): peak = 1801.430 ; gain = 188.180
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1801.430 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1813.043 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 4c361835
+INFO: [Common 17-83] Releasing license: Synthesis
+40 Infos, 40 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:36 ; elapsed = 00:01:13 . Memory (MB): peak = 1813.043 ; gain = 199.793
+Command: synth_design -mode out_of_context -top phase6a_controlled_misr -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:14 ; elapsed = 00:00:34 . Memory (MB): peak = 1813.043 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'phase6a_controlled_misr' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/phase6a_controlled_misr.vhd:12]
+INFO: [Synth 8-638] synthesizing module 'lbist_test_controller' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/lbist_test_controller.vhd:14]
+	Parameter CHAIN_LENGTH bound to: 64 - type: integer 
+	Parameter NUM_PATTERNS bound to: 256 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'lbist_test_controller' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/lbist_test_controller.vhd:14]
+INFO: [Synth 8-638] synthesizing module 'phase6a_safe_misr' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/phase6a_safe_misr.vhd:10]
+	Parameter CHAIN_LENGTH bound to: 64 - type: integer 
+	Parameter NUM_PATTERNS bound to: 256 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'misr_16' [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/misr_16.vhd:8]
+INFO: [Synth 8-256] done synthesizing module 'misr_16' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/misr_16.vhd:8]
+INFO: [Synth 8-256] done synthesizing module 'phase6a_safe_misr' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/phase6a_safe_misr.vhd:10]
+INFO: [Synth 8-256] done synthesizing module 'phase6a_controlled_misr' (0#1) [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/phase6a_controlled_misr.vhd:12]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:18 ; elapsed = 00:00:39 . Memory (MB): peak = 1813.043 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:39 . Memory (MB): peak = 1813.043 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35tcpg236-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:39 . Memory (MB): peak = 1813.043 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'lbist_test_controller'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  normal |                           000001 |                              000
+               test_idle |                           000010 |                              001
+                   shift |                           000100 |                              010
+                 capture |                           001000 |                              011
+                  unload |                           010000 |                              100
+         test_done_state |                           100000 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'lbist_test_controller'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:40 . Memory (MB): peak = 1813.043 ; gain = 0.000
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    9 Bit       Adders := 3     
+	   2 Input    7 Bit       Adders := 1     
+	   2 Input    6 Bit       Adders := 1     
++---XORs : 
+	   2 Input     16 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                9 Bit    Registers := 3     
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input   16 Bit        Muxes := 2     
+	   6 Input    9 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 2     
+	   6 Input    6 Bit        Muxes := 1     
+	   9 Input    6 Bit        Muxes := 1     
+	   6 Input    3 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 18    
+	   6 Input    1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port shift_count[30] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port shift_count[29] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port shift_count[28] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port shift_count[27] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port shift_count[26] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port shift_count[25] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port shift_count[24] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port shift_count[23] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port shift_count[22] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port shift_count[21] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port shift_count[20] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port shift_count[19] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port shift_count[18] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port shift_count[17] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port shift_count[16] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port shift_count[15] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port shift_count[14] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port shift_count[13] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port shift_count[12] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port shift_count[11] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port shift_count[10] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port shift_count[9] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port shift_count[8] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port shift_count[7] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port shift_count[6] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port pattern_count[30] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port pattern_count[29] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port pattern_count[28] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port pattern_count[27] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port pattern_count[26] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port pattern_count[25] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port pattern_count[24] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port pattern_count[23] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port pattern_count[22] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port pattern_count[21] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port pattern_count[20] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port pattern_count[19] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port pattern_count[18] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port pattern_count[17] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port pattern_count[16] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port pattern_count[15] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port pattern_count[14] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port pattern_count[13] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port pattern_count[12] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port pattern_count[11] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port pattern_count[10] driven by constant 0
+WARNING: [Synth 8-3917] design phase6a_controlled_misr has port pattern_count[9] driven by constant 0
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:44 . Memory (MB): peak = 1813.043 ; gain = 0.000
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:44 . Memory (MB): peak = 1813.043 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:44 . Memory (MB): peak = 1813.043 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:01:08 . Memory (MB): peak = 1813.043 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:01:08 . Memory (MB): peak = 1813.043 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:01:08 . Memory (MB): peak = 1813.043 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:01:08 . Memory (MB): peak = 1813.043 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:01:08 . Memory (MB): peak = 1813.043 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:33 ; elapsed = 00:01:08 . Memory (MB): peak = 1813.043 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |     8|
+|2     |LUT1   |     5|
+|3     |LUT2   |    11|
+|4     |LUT3   |    12|
+|5     |LUT4   |    24|
+|6     |LUT5   |    24|
+|7     |LUT6   |    40|
+|8     |FDCE   |    79|
+|9     |FDPE   |     1|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:33 ; elapsed = 00:01:08 . Memory (MB): peak = 1813.043 ; gain = 0.000
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 48 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:33 ; elapsed = 00:01:08 . Memory (MB): peak = 1813.043 ; gain = 0.000
+Synthesis Optimization Complete : Time (s): cpu = 00:00:33 ; elapsed = 00:01:08 . Memory (MB): peak = 1813.043 ; gain = 0.000
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1813.043 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1813.043 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 828866d7
+INFO: [Common 17-83] Releasing license: Synthesis
+59 Infos, 88 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:01:19 . Memory (MB): peak = 1813.043 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 18 03:33:56 2026...

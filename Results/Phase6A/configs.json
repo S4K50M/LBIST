@@ -1,0 +1,74 @@
+[
+  {
+    "ID": 0,
+    "Approach": 0,
+    "Beta": 20,
+    "Target": "initial"
+  },
+  {
+    "ID": 1,
+    "Approach": 1,
+    "Beta": 20,
+    "Target": "initial"
+  },
+  {
+    "ID": 2,
+    "Approach": 2,
+    "Beta": 20,
+    "Target": "initial"
+  },
+  {
+    "ID": 3,
+    "Approach": 3,
+    "Beta": 16,
+    "Target": "initial"
+  },
+  {
+    "ID": 4,
+    "Approach": 4,
+    "Beta": 20,
+    "Target": "initial"
+  },
+  {
+    "ID": 5,
+    "Approach": 2,
+    "Beta": 4,
+    "Target": 10
+  },
+  {
+    "ID": 6,
+    "Approach": 2,
+    "Beta": 12,
+    "Target": 15
+  },
+  {
+    "ID": 7,
+    "Approach": 3,
+    "Beta": 4,
+    "Target": 10
+  },
+  {
+    "ID": 8,
+    "Approach": 3,
+    "Beta": 12,
+    "Target": 15
+  },
+  {
+    "ID": 9,
+    "Approach": 4,
+    "Beta": 4,
+    "Target": 10
+  },
+  {
+    "ID": 10,
+    "Approach": 4,
+    "Beta": 12,
+    "Target": 15
+  },
+  {
+    "ID": 11,
+    "Approach": 4,
+    "Beta": 19,
+    "Target": 20
+  }
+]

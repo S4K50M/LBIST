@@ -1,0 +1,2 @@
+Program,Bytes,SHA256,LFSRSeed,MISRSeed,Polynomial,ChainLength,Patterns,ClockNS,EntryNS
+cMIPS/prog.bin,80,fbb3da2760faf41147f751b857cb8b2c0105cec1e03fd824fa64387f45abae50,AAAA,0,11021,64,256,20,380

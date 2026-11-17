@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="router.wdb" id="1">
+         <top_modules>
+            <top_module name="p_wires" />
+            <top_module name="phase2_tb_pkg" />
+            <top_module name="tb_phase6a_router" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns" />
+      <ZoomEndTime time="2600.000 ns" />
+   </zoom_setting>
+   <column_width_setting>
+   </column_width_setting>
+   <WVObjectSize size="9" />
+   <wvobject fp_name="/tb_phase6a_router/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_router/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_router/scan_enable" type="logic">
+      <obj_property name="ElementShortName">scan_enable</obj_property>
+      <obj_property name="ObjectShortName">scan_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_router/scan_in" type="logic">
+      <obj_property name="ElementShortName">scan_in</obj_property>
+      <obj_property name="ObjectShortName">scan_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_router/scan_out" type="logic">
+      <obj_property name="ElementShortName">scan_out</obj_property>
+      <obj_property name="ObjectShortName">scan_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_router/scan_feedback" type="logic">
+      <obj_property name="ElementShortName">scan_feedback</obj_property>
+      <obj_property name="ObjectShortName">scan_feedback</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_router/mode_select" type="array">
+      <obj_property name="ElementShortName">mode_select[1:0]</obj_property>
+      <obj_property name="ObjectShortName">mode_select[1:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_router/generator_state" type="array">
+      <obj_property name="ElementShortName">generator_state[15:0]</obj_property>
+      <obj_property name="ObjectShortName">generator_state[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_router/scan_state" type="array">
+      <obj_property name="ElementShortName">scan_state[63:0]</obj_property>
+      <obj_property name="ObjectShortName">scan_state[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+</wave_config>

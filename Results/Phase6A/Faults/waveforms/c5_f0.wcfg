@@ -1,0 +1,298 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="c5_f0.wdb" id="1">
+         <top_modules>
+            <top_module name="p_exception" />
+            <top_module name="p_memory" />
+            <top_module name="p_wires" />
+            <top_module name="phase2_tb_pkg" />
+            <top_module name="phase5a_rom_pkg" />
+            <top_module name="phase6a_golden_pkg" />
+            <top_module name="tb_phase6a_fault_comparison" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="350.000 ns" />
+      <ZoomEndTime time="3500.000 ns" />
+   </zoom_setting>
+   <column_width_setting>
+   </column_width_setting>
+   <WVObjectSize size="63" />
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/start" type="logic">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/pause" type="logic">
+      <obj_property name="ElementShortName">pause</obj_property>
+      <obj_property name="ObjectShortName">pause</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/abort_test" type="logic">
+      <obj_property name="ElementShortName">abort_test</obj_property>
+      <obj_property name="ObjectShortName">abort_test</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/test_mode" type="logic">
+      <obj_property name="ElementShortName">test_mode</obj_property>
+      <obj_property name="ObjectShortName">test_mode</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/scan_enable" type="logic">
+      <obj_property name="ElementShortName">scan_enable</obj_property>
+      <obj_property name="ObjectShortName">scan_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/capture_enable" type="logic">
+      <obj_property name="ElementShortName">capture_enable</obj_property>
+      <obj_property name="ObjectShortName">capture_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/pattern_done" type="logic">
+      <obj_property name="ElementShortName">pattern_done</obj_property>
+      <obj_property name="ObjectShortName">pattern_done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/error_status" type="logic">
+      <obj_property name="ElementShortName">error_status</obj_property>
+      <obj_property name="ObjectShortName">error_status</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/isolation_ack" type="logic">
+      <obj_property name="ElementShortName">isolation_ack</obj_property>
+      <obj_property name="ObjectShortName">isolation_ack</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/protocol_error" type="logic">
+      <obj_property name="ElementShortName">protocol_error</obj_property>
+      <obj_property name="ObjectShortName">protocol_error</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/test_phase" type="array">
+      <obj_property name="ElementShortName">test_phase[2:0]</obj_property>
+      <obj_property name="ObjectShortName">test_phase[2:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/shift_count_v" type="array">
+      <obj_property name="ElementShortName">shift_count_v[15:0]</obj_property>
+      <obj_property name="ObjectShortName">shift_count_v[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/pattern_index" type="array">
+      <obj_property name="ElementShortName">pattern_index[15:0]</obj_property>
+      <obj_property name="ObjectShortName">pattern_index[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/protected_state" type="array">
+      <obj_property name="ElementShortName">protected_state[8191:0]</obj_property>
+      <obj_property name="ObjectShortName">protected_state[8191:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/scan_state" type="array">
+      <obj_property name="ElementShortName">scan_state[63:0]</obj_property>
+      <obj_property name="ObjectShortName">scan_state[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/pc_observe" type="array">
+      <obj_property name="ElementShortName">pc_observe[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pc_observe[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/i_addr" type="array">
+      <obj_property name="ElementShortName">i_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i_addr[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/d_addr" type="array">
+      <obj_property name="ElementShortName">d_addr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">d_addr[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/i_aval" type="logic">
+      <obj_property name="ElementShortName">i_aval</obj_property>
+      <obj_property name="ObjectShortName">i_aval</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/d_aval" type="logic">
+      <obj_property name="ElementShortName">d_aval</obj_property>
+      <obj_property name="ObjectShortName">d_aval</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/wr" type="logic">
+      <obj_property name="ElementShortName">wr</obj_property>
+      <obj_property name="ObjectShortName">wr</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/busfree" type="logic">
+      <obj_property name="ElementShortName">busfree</obj_property>
+      <obj_property name="ObjectShortName">busfree</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/bsel" type="array">
+      <obj_property name="ElementShortName">bsel[3:0]</obj_property>
+      <obj_property name="ObjectShortName">bsel[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/memory_write_attempt" type="logic">
+      <obj_property name="ElementShortName">memory_write_attempt</obj_property>
+      <obj_property name="ObjectShortName">memory_write_attempt</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/register_write_attempt" type="logic">
+      <obj_property name="ElementShortName">register_write_attempt</obj_property>
+      <obj_property name="ObjectShortName">register_write_attempt</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/register_write_actual" type="logic">
+      <obj_property name="ElementShortName">register_write_actual</obj_property>
+      <obj_property name="ObjectShortName">register_write_actual</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/scan_in" type="logic">
+      <obj_property name="ElementShortName">scan_in</obj_property>
+      <obj_property name="ObjectShortName">scan_in</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/scan_out" type="logic">
+      <obj_property name="ElementShortName">scan_out</obj_property>
+      <obj_property name="ObjectShortName">scan_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/scan_feedback" type="logic">
+      <obj_property name="ElementShortName">scan_feedback</obj_property>
+      <obj_property name="ObjectShortName">scan_feedback</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/mode_select" type="array">
+      <obj_property name="ElementShortName">mode_select[1:0]</obj_property>
+      <obj_property name="ObjectShortName">mode_select[1:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/generator_state" type="array">
+      <obj_property name="ElementShortName">generator_state[15:0]</obj_property>
+      <obj_property name="ObjectShortName">generator_state[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/fabric_idle" type="logic">
+      <obj_property name="ElementShortName">fabric_idle</obj_property>
+      <obj_property name="ObjectShortName">fabric_idle</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/capture_ready" type="logic">
+      <obj_property name="ElementShortName">capture_ready</obj_property>
+      <obj_property name="ObjectShortName">capture_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/exit_attempt" type="logic">
+      <obj_property name="ElementShortName">exit_attempt</obj_property>
+      <obj_property name="ObjectShortName">exit_attempt</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/bad_command" type="logic">
+      <obj_property name="ElementShortName">bad_command</obj_property>
+      <obj_property name="ObjectShortName">bad_command</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/core_tm" type="logic">
+      <obj_property name="ElementShortName">core_tm</obj_property>
+      <obj_property name="ObjectShortName">core_tm</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/core_se" type="logic">
+      <obj_property name="ElementShortName">core_se</obj_property>
+      <obj_property name="ObjectShortName">core_se</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/core_ce" type="logic">
+      <obj_property name="ElementShortName">core_ce</obj_property>
+      <obj_property name="ObjectShortName">core_ce</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/event_id" type="array">
+      <obj_property name="ElementShortName">event_id[7:0]</obj_property>
+      <obj_property name="ObjectShortName">event_id[7:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/protected_equal" type="logic">
+      <obj_property name="ElementShortName">protected_equal</obj_property>
+      <obj_property name="ObjectShortName">protected_equal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/signature" type="array">
+      <obj_property name="ElementShortName">signature[15:0]</obj_property>
+      <obj_property name="ObjectShortName">signature[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/misr_enable" type="logic">
+      <obj_property name="ElementShortName">misr_enable</obj_property>
+      <obj_property name="ObjectShortName">misr_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/signature_valid" type="logic">
+      <obj_property name="ElementShortName">signature_valid</obj_property>
+      <obj_property name="ObjectShortName">signature_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/signature_match" type="logic">
+      <obj_property name="ElementShortName">signature_match</obj_property>
+      <obj_property name="ObjectShortName">signature_match</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/fault_detected" type="logic">
+      <obj_property name="ElementShortName">fault_detected</obj_property>
+      <obj_property name="ObjectShortName">fault_detected</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/dut/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/dut/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/dut/phi1" type="logic">
+      <obj_property name="ElementShortName">phi1</obj_property>
+      <obj_property name="ObjectShortName">phi1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/dut/phi2" type="logic">
+      <obj_property name="ElementShortName">phi2</obj_property>
+      <obj_property name="ObjectShortName">phi2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/dut/isolation_hold" type="logic">
+      <obj_property name="ElementShortName">isolation_hold</obj_property>
+      <obj_property name="ObjectShortName">isolation_hold</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/dut/phi1_sync" type="array">
+      <obj_property name="ElementShortName">phi1_sync[1:0]</obj_property>
+      <obj_property name="ObjectShortName">phi1_sync[1:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/dut/phi2_sync" type="array">
+      <obj_property name="ElementShortName">phi2_sync[1:0]</obj_property>
+      <obj_property name="ObjectShortName">phi2_sync[1:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/dut/ack_sync" type="array">
+      <obj_property name="ElementShortName">ack_sync[1:0]</obj_property>
+      <obj_property name="ObjectShortName">ack_sync[1:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/dut/isolation_ack" type="logic">
+      <obj_property name="ElementShortName">isolation_ack</obj_property>
+      <obj_property name="ObjectShortName">isolation_ack</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/dut/legal_capture" type="logic">
+      <obj_property name="ElementShortName">legal_capture</obj_property>
+      <obj_property name="ObjectShortName">legal_capture</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/dut/increment_operand" type="array">
+      <obj_property name="ElementShortName">increment_operand[31:0]</obj_property>
+      <obj_property name="ObjectShortName">increment_operand[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/dut/PCincd" type="array">
+      <obj_property name="ElementShortName">PCincd[31:0]</obj_property>
+      <obj_property name="ObjectShortName">PCincd[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/dut/capture_word" type="array">
+      <obj_property name="ElementShortName">capture_word[31:0]</obj_property>
+      <obj_property name="ObjectShortName">capture_word[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/dut/RF_PCincd" type="array">
+      <obj_property name="ElementShortName">RF_PCincd[31:0]</obj_property>
+      <obj_property name="ObjectShortName">RF_PCincd[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_fault_comparison/engine/dut/RF_instruction" type="array">
+      <obj_property name="ElementShortName">RF_instruction[31:0]</obj_property>
+      <obj_property name="ObjectShortName">RF_instruction[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+</wave_config>

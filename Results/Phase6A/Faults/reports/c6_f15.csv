@@ -1,0 +1,2 @@
+Case,Testbench,Group,Result,CompletionTime,Capture,WDBBytes,NativeLog,Instance
+c6_f15,tb_phase6a_batch,Faults,PASS,661600200 ps,0,0,Results/Phase6A/Batch/logs/batch_c6_2_16.log,/tb_phase6a_batch/instances(15)/engine

@@ -1,0 +1,2 @@
+Case,Testbench,Group,Result,CompletionTime,Capture,WDBBytes
+tb_basic_controller,tb_basic_controller,Regression,PASS,32803100 ps,0,0

@@ -1,0 +1,137 @@
+[
+  {
+    "Approach": "direct",
+    "Target": 10,
+    "Beta": "NA",
+    "EstimatedWTM": 50.0,
+    "Feasible": false,
+    "Status": "FIXED_REFERENCE",
+    "Config": 0
+  },
+  {
+    "Approach": "direct",
+    "Target": 15,
+    "Beta": "NA",
+    "EstimatedWTM": 50.0,
+    "Feasible": false,
+    "Status": "FIXED_REFERENCE",
+    "Config": 0
+  },
+  {
+    "Approach": "direct",
+    "Target": 20,
+    "Beta": "NA",
+    "EstimatedWTM": 50.0,
+    "Feasible": false,
+    "Status": "FIXED_REFERENCE",
+    "Config": 0
+  },
+  {
+    "Approach": "constant_n3",
+    "Target": 10,
+    "Beta": "NA",
+    "EstimatedWTM": 7.142857142857143,
+    "Feasible": false,
+    "Status": "FIXED_REFERENCE",
+    "Config": 1
+  },
+  {
+    "Approach": "constant_n3",
+    "Target": 15,
+    "Beta": "NA",
+    "EstimatedWTM": 7.142857142857143,
+    "Feasible": false,
+    "Status": "FIXED_REFERENCE",
+    "Config": 1
+  },
+  {
+    "Approach": "constant_n3",
+    "Target": 20,
+    "Beta": "NA",
+    "EstimatedWTM": 7.142857142857143,
+    "Feasible": false,
+    "Status": "FIXED_REFERENCE",
+    "Config": 1
+  },
+  {
+    "Approach": "basic",
+    "Target": 10,
+    "Beta": 4,
+    "EstimatedWTM": 9.821428571428571,
+    "Feasible": true,
+    "Status": "IN_RANGE_QUANTIZED",
+    "Config": 5
+  },
+  {
+    "Approach": "basic",
+    "Target": 15,
+    "Beta": 12,
+    "EstimatedWTM": 15.178571428571427,
+    "Feasible": true,
+    "Status": "IN_RANGE_QUANTIZED",
+    "Config": 6
+  },
+  {
+    "Approach": "basic",
+    "Target": 20,
+    "Beta": 20,
+    "EstimatedWTM": 20.535714285714285,
+    "Feasible": true,
+    "Status": "IN_RANGE_QUANTIZED",
+    "Config": 2
+  },
+  {
+    "Approach": "swap",
+    "Target": 10,
+    "Beta": 4,
+    "EstimatedWTM": 9.821428571428571,
+    "Feasible": true,
+    "Status": "IN_RANGE_QUANTIZED",
+    "Config": 7
+  },
+  {
+    "Approach": "swap",
+    "Target": 15,
+    "Beta": 12,
+    "EstimatedWTM": 15.178571428571427,
+    "Feasible": true,
+    "Status": "IN_RANGE_QUANTIZED",
+    "Config": 8
+  },
+  {
+    "Approach": "swap",
+    "Target": 20,
+    "Beta": 18,
+    "EstimatedWTM": 19.196428571428573,
+    "Feasible": false,
+    "Status": "INFEASIBLE",
+    "Config": ""
+  },
+  {
+    "Approach": "moving",
+    "Target": 10,
+    "Beta": 4,
+    "EstimatedWTM": 9.821428571428571,
+    "Feasible": true,
+    "Status": "IN_RANGE_QUANTIZED",
+    "Config": 9
+  },
+  {
+    "Approach": "moving",
+    "Target": 15,
+    "Beta": 12,
+    "EstimatedWTM": 15.178571428571427,
+    "Feasible": true,
+    "Status": "IN_RANGE_QUANTIZED",
+    "Config": 10
+  },
+  {
+    "Approach": "moving",
+    "Target": 20,
+    "Beta": 19,
+    "EstimatedWTM": 19.866071428571427,
+    "Feasible": true,
+    "Status": "IN_RANGE_QUANTIZED",
+    "Config": 11
+  }
+]

@@ -1,0 +1,6 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/lbist_pattern_router.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'lbist_pattern_router'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'phase6a_processor_check'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_fault_comparison.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_phase6a_fault_comparison'

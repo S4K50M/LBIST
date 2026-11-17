@@ -1,0 +1,9 @@
+Case,Testbench,Group,Result,CompletionTime,Capture,WDBBytes
+tb_basic_controller,tb_basic_controller,Regression,PASS,32803100 ps,0,0
+tb_swap_controller,tb_swap_controller,Regression,PASS,32801100 ps,0,0
+tb_moving_controller,tb_moving_controller,Regression,PASS,32801100 ps,0,0
+tb_reg_IF_RF_scan,tb_reg_IF_RF_scan,Regression,PASS,33676200 ps,0,0
+tb_core_scan_isolation,tb_core_scan_isolation,Regression,PASS,21780200 ps,0,0
+tb_misr_16,tb_misr_16,Regression,PASS,25670000 ps,0,0
+functional_lwsw,tb_core_fault_regression,Regression,PASS,1670000 ps,0,0
+functional_stalls,tb_core_fault_regression,Regression,PASS,1730000 ps,0,0

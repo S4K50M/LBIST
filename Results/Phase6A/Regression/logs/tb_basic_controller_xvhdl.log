@@ -1,0 +1,5 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/basic_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'basic_controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase2_tb_pkg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_basic_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_basic_controller'

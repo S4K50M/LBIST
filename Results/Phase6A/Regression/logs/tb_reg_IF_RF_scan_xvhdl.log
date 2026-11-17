@@ -1,0 +1,10 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/packageWires.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/reg_IF_RF_scan.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_IF_RF_scan'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/pipestages.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_IF_RF'
+INFO: [VRFC 10-3107] analyzing entity 'reg_RF_EX'
+INFO: [VRFC 10-3107] analyzing entity 'reg_EX_MM'
+INFO: [VRFC 10-3107] analyzing entity 'reg_MM_WB'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_reg_IF_RF_scan.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_reg_IF_RF_scan'

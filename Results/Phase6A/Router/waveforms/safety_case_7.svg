@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="766" viewBox="0 0 1600 766">
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="20" y="28" font-family="sans-serif" font-size="20">Safety scenario 7</text>
+<text x="20" y="51" font-family="sans-serif" font-size="13">00 = PLPF n=3 (low toggle) | 11 = PLPF n=1 (unfiltered) | Edge capture uses PRE-edge mode; POST-edge mode prepares the next shift.</text>
+<line x1="220.0" x2="220.0" y1="110" y2="736" stroke="#e6eaf0"/>
+<text x="220.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">821.10 ns</text>
+<line x1="385.0" x2="385.0" y1="110" y2="736" stroke="#e6eaf0"/>
+<text x="385.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">849.09 ns</text>
+<line x1="550.0" x2="550.0" y1="110" y2="736" stroke="#e6eaf0"/>
+<text x="550.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">877.08 ns</text>
+<line x1="715.0" x2="715.0" y1="110" y2="736" stroke="#e6eaf0"/>
+<text x="715.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">905.06 ns</text>
+<line x1="880.0" x2="880.0" y1="110" y2="736" stroke="#e6eaf0"/>
+<text x="880.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">933.05 ns</text>
+<line x1="1045.0" x2="1045.0" y1="110" y2="736" stroke="#e6eaf0"/>
+<text x="1045.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">961.04 ns</text>
+<line x1="1210.0" x2="1210.0" y1="110" y2="736" stroke="#e6eaf0"/>
+<text x="1210.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">989.02 ns</text>
+<line x1="1375.0" x2="1375.0" y1="110" y2="736" stroke="#e6eaf0"/>
+<text x="1375.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">1017.01 ns</text>
+<line x1="1540.0" x2="1540.0" y1="110" y2="736" stroke="#e6eaf0"/>
+<text x="1540.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">1045.00 ns</text>
+<text x="12" y="156" font-family="monospace" font-size="14">clk</text>
+<path d="M 220.000 163 H 242.992" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 0, 821.100..825.000 ns</title></path>
+<path d="M 242.992 139 H 272.470" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 1, 825.000..830.000 ns</title></path>
+<path d="M 242.992 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 272.470 163 H 301.947" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 0, 830.000..835.000 ns</title></path>
+<path d="M 272.470 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 301.947 139 H 331.425" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 1, 835.000..840.000 ns</title></path>
+<path d="M 301.947 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 331.425 163 H 360.902" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 0, 840.000..845.000 ns</title></path>
+<path d="M 331.425 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 360.902 139 H 390.380" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 1, 845.000..850.000 ns</title></path>
+<path d="M 360.902 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 390.380 163 H 419.857" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 0, 850.000..855.000 ns</title></path>
+<path d="M 390.380 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 419.857 139 H 449.335" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 1, 855.000..860.000 ns</title></path>
+<path d="M 419.857 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 449.335 163 H 478.812" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 0, 860.000..865.000 ns</title></path>
+<path d="M 449.335 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 478.812 139 H 508.289" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 1, 865.000..870.000 ns</title></path>
+<path d="M 478.812 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 508.289 163 H 537.767" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 0, 870.000..875.000 ns</title></path>
+<path d="M 508.289 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 537.767 139 H 567.244" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 1, 875.000..880.000 ns</title></path>
+<path d="M 537.767 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 567.244 163 H 596.722" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 0, 880.000..885.000 ns</title></path>
+<path d="M 567.244 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 596.722 139 H 626.199" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 1, 885.000..890.000 ns</title></path>
+<path d="M 596.722 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 626.199 163 H 655.677" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 0, 890.000..895.000 ns</title></path>
+<path d="M 626.199 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 655.677 139 H 685.154" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 1, 895.000..900.000 ns</title></path>
+<path d="M 655.677 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 685.154 163 H 714.632" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 0, 900.000..905.000 ns</title></path>
+<path d="M 685.154 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 714.632 139 H 744.109" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 1, 905.000..910.000 ns</title></path>
+<path d="M 714.632 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 744.109 163 H 773.586" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 0, 910.000..915.000 ns</title></path>
+<path d="M 744.109 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 773.586 139 H 803.064" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 1, 915.000..920.000 ns</title></path>
+<path d="M 773.586 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 803.064 163 H 832.541" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 0, 920.000..925.000 ns</title></path>
+<path d="M 803.064 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 832.541 139 H 862.019" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 1, 925.000..930.000 ns</title></path>
+<path d="M 832.541 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 862.019 163 H 891.496" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 0, 930.000..935.000 ns</title></path>
+<path d="M 862.019 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 891.496 139 H 920.974" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 1, 935.000..940.000 ns</title></path>
+<path d="M 891.496 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 920.974 163 H 950.451" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 0, 940.000..945.000 ns</title></path>
+<path d="M 920.974 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 950.451 139 H 979.929" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 1, 945.000..950.000 ns</title></path>
+<path d="M 950.451 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 979.929 163 H 1009.406" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 0, 950.000..955.000 ns</title></path>
+<path d="M 979.929 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1009.406 139 H 1038.883" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 1, 955.000..960.000 ns</title></path>
+<path d="M 1009.406 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1038.883 163 H 1068.361" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 0, 960.000..965.000 ns</title></path>
+<path d="M 1038.883 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1068.361 139 H 1097.838" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 1, 965.000..970.000 ns</title></path>
+<path d="M 1068.361 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1097.838 163 H 1127.316" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 0, 970.000..975.000 ns</title></path>
+<path d="M 1097.838 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1127.316 139 H 1156.793" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 1, 975.000..980.000 ns</title></path>
+<path d="M 1127.316 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1156.793 163 H 1186.271" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 0, 980.000..985.000 ns</title></path>
+<path d="M 1156.793 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1186.271 139 H 1215.748" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 1, 985.000..990.000 ns</title></path>
+<path d="M 1186.271 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1215.748 163 H 1245.226" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 0, 990.000..995.000 ns</title></path>
+<path d="M 1215.748 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1245.226 139 H 1274.703" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 1, 995.000..1000.000 ns</title></path>
+<path d="M 1245.226 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1274.703 163 H 1304.180" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 0, 1000.000..1005.000 ns</title></path>
+<path d="M 1274.703 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1304.180 139 H 1333.658" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 1, 1005.000..1010.000 ns</title></path>
+<path d="M 1304.180 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1333.658 163 H 1363.135" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 0, 1010.000..1015.000 ns</title></path>
+<path d="M 1333.658 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1363.135 139 H 1392.613" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 1, 1015.000..1020.000 ns</title></path>
+<path d="M 1363.135 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1392.613 163 H 1422.090" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 0, 1020.000..1025.000 ns</title></path>
+<path d="M 1392.613 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1422.090 139 H 1451.568" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 1, 1025.000..1030.000 ns</title></path>
+<path d="M 1422.090 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1451.568 163 H 1481.045" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 0, 1030.000..1035.000 ns</title></path>
+<path d="M 1451.568 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1481.045 139 H 1510.523" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 1, 1035.000..1040.000 ns</title></path>
+<path d="M 1481.045 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1510.523 163 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/clk = 0, 1040.000..1045.000 ns</title></path>
+<path d="M 1510.523 139 V 163" stroke="#126e60" fill="none"/>
+<text x="12" y="204" font-family="monospace" font-size="14">rst</text>
+<path d="M 220.000 211 H 273.059" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/rst = 0, 821.100..830.100 ns</title></path>
+<path d="M 273.059 187 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/rst = 1, 830.100..1045.000 ns</title></path>
+<path d="M 273.059 211 V 187" stroke="#126e60" fill="none"/>
+<text x="12" y="252" font-family="monospace" font-size="14">scenario</text>
+<rect x="220.000" y="233" width="1320.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_misr_safety/scenario = 0111, 821.100..1045.000 ns</title></rect>
+<text x="880.000" y="252" text-anchor="middle" font-family="monospace" font-size="13">7</text>
+<text x="12" y="300" font-family="monospace" font-size="14">phase</text>
+<rect x="220.000" y="281" width="140.902" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_misr_safety/phase = 000, 821.100..845.000 ns</title></rect>
+<text x="290.451" y="300" text-anchor="middle" font-family="monospace" font-size="13">0</text>
+<rect x="360.902" y="281" width="58.955" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_misr_safety/phase = 1, 845.000..855.000 ns</title></rect>
+<text x="390.380" y="300" text-anchor="middle" font-family="monospace" font-size="13">1</text>
+<rect x="419.857" y="281" width="235.820" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_misr_safety/phase = 10, 855.000..895.000 ns</title></rect>
+<text x="537.767" y="300" text-anchor="middle" font-family="monospace" font-size="13">2</text>
+<rect x="655.677" y="281" width="58.955" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_misr_safety/phase = 11, 895.000..905.000 ns</title></rect>
+<text x="685.154" y="300" text-anchor="middle" font-family="monospace" font-size="13">3</text>
+<rect x="714.632" y="281" width="235.820" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_misr_safety/phase = 100, 905.000..945.000 ns</title></rect>
+<text x="832.541" y="300" text-anchor="middle" font-family="monospace" font-size="13">4</text>
+<rect x="950.451" y="281" width="235.820" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_misr_safety/phase = 10, 945.000..985.000 ns</title></rect>
+<text x="1068.361" y="300" text-anchor="middle" font-family="monospace" font-size="13">2</text>
+<rect x="1186.271" y="281" width="58.955" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_misr_safety/phase = 11, 985.000..995.000 ns</title></rect>
+<text x="1215.748" y="300" text-anchor="middle" font-family="monospace" font-size="13">3</text>
+<rect x="1245.226" y="281" width="235.820" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_misr_safety/phase = 100, 995.000..1035.000 ns</title></rect>
+<text x="1363.135" y="300" text-anchor="middle" font-family="monospace" font-size="13">4</text>
+<rect x="1481.045" y="281" width="58.955" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_misr_safety/phase = 101, 1035.000..1045.000 ns</title></rect>
+<text x="1510.523" y="300" text-anchor="middle" font-family="monospace" font-size="13">5</text>
+<text x="12" y="348" font-family="monospace" font-size="14">ce</text>
+<path d="M 220.000 355 H 655.677" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/ce = 0, 821.100..895.000 ns</title></path>
+<path d="M 655.677 331 H 714.632" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/ce = 1, 895.000..905.000 ns</title></path>
+<path d="M 655.677 355 V 331" stroke="#126e60" fill="none"/>
+<path d="M 714.632 355 H 1186.271" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/ce = 0, 905.000..985.000 ns</title></path>
+<path d="M 714.632 331 V 355" stroke="#126e60" fill="none"/>
+<path d="M 1186.271 331 H 1245.226" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/ce = 1, 985.000..995.000 ns</title></path>
+<path d="M 1186.271 355 V 331" stroke="#126e60" fill="none"/>
+<path d="M 1245.226 355 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/ce = 0, 995.000..1045.000 ns</title></path>
+<path d="M 1245.226 331 V 355" stroke="#126e60" fill="none"/>
+<text x="12" y="396" font-family="monospace" font-size="14">unload</text>
+<path d="M 220.000 403 H 714.632" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/unload = 0, 821.100..905.000 ns</title></path>
+<path d="M 714.632 379 H 950.451" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/unload = 1, 905.000..945.000 ns</title></path>
+<path d="M 714.632 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 950.451 403 H 1245.226" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/unload = 0, 945.000..995.000 ns</title></path>
+<path d="M 950.451 379 V 403" stroke="#126e60" fill="none"/>
+<path d="M 1245.226 379 H 1481.045" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/unload = 1, 995.000..1035.000 ns</title></path>
+<path d="M 1245.226 403 V 379" stroke="#126e60" fill="none"/>
+<path d="M 1481.045 403 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/unload = 0, 1035.000..1045.000 ns</title></path>
+<path d="M 1481.045 379 V 403" stroke="#126e60" fill="none"/>
+<text x="12" y="444" font-family="monospace" font-size="14">done</text>
+<path d="M 220.000 451 H 1481.045" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/done = 0, 821.100..1035.000 ns</title></path>
+<path d="M 1481.045 427 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/done = 1, 1035.000..1045.000 ns</title></path>
+<path d="M 1481.045 451 V 427" stroke="#126e60" fill="none"/>
+<text x="12" y="492" font-family="monospace" font-size="14">err</text>
+<path d="M 220.000 499 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/err = 0, 821.100..1045.000 ns</title></path>
+<text x="12" y="540" font-family="monospace" font-size="14">q</text>
+<rect x="220.000" y="521" width="553.586" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_misr_safety/q = 0000000000000000, 821.100..915.000 ns</title></rect>
+<text x="496.793" y="540" text-anchor="middle" font-family="monospace" font-size="13">0</text>
+<rect x="773.586" y="521" width="58.955" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_misr_safety/q = 1000000100001, 915.000..925.000 ns</title></rect>
+<text x="803.064" y="540" text-anchor="middle" font-family="monospace" font-size="13">1021</text>
+<rect x="832.541" y="521" width="58.955" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_misr_safety/q = 11000001100011, 925.000..935.000 ns</title></rect>
+<text x="862.019" y="540" text-anchor="middle" font-family="monospace" font-size="13">3063</text>
+<rect x="891.496" y="521" width="58.955" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_misr_safety/q = 111000011100111, 935.000..945.000 ns</title></rect>
+<text x="920.974" y="540" text-anchor="middle" font-family="monospace" font-size="13">70E7</text>
+<rect x="950.451" y="521" width="353.729" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_misr_safety/q = 1111000111101111, 945.000..1005.000 ns</title></rect>
+<text x="1127.316" y="540" text-anchor="middle" font-family="monospace" font-size="13">F1EF</text>
+<rect x="1304.180" y="521" width="58.955" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_misr_safety/q = 1110001111011110, 1005.000..1015.000 ns</title></rect>
+<text x="1333.658" y="540" text-anchor="middle" font-family="monospace" font-size="13">E3DE</text>
+<rect x="1363.135" y="521" width="58.955" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_misr_safety/q = 1100011110111100, 1015.000..1025.000 ns</title></rect>
+<text x="1392.613" y="540" text-anchor="middle" font-family="monospace" font-size="13">C7BC</text>
+<rect x="1422.090" y="521" width="58.955" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_misr_safety/q = 1000111101111000, 1025.000..1035.000 ns</title></rect>
+<text x="1451.568" y="540" text-anchor="middle" font-family="monospace" font-size="13">8F78</text>
+<rect x="1481.045" y="521" width="58.955" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_misr_safety/q = 1111011110000, 1035.000..1045.000 ns</title></rect>
+<text x="1510.523" y="540" text-anchor="middle" font-family="monospace" font-size="13">1EF0</text>
+<text x="12" y="588" font-family="monospace" font-size="14">valid</text>
+<path d="M 220.000 595 H 1481.045" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/valid = 0, 821.100..1035.000 ns</title></path>
+<path d="M 1481.045 571 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/valid = 1, 1035.000..1045.000 ns</title></path>
+<path d="M 1481.045 595 V 571" stroke="#126e60" fill="none"/>
+<text x="12" y="636" font-family="monospace" font-size="14">match</text>
+<path d="M 220.000 643 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/match = 0, 821.100..1045.000 ns</title></path>
+<text x="12" y="684" font-family="monospace" font-size="14">detected</text>
+<path d="M 220.000 691 H 1481.045" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/detected = 0, 821.100..1035.000 ns</title></path>
+<path d="M 1481.045 667 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_misr_safety/detected = 1, 1035.000..1045.000 ns</title></path>
+<path d="M 1481.045 691 V 667" stroke="#126e60" fill="none"/>
+<text x="20" y="756" font-family="sans-serif" font-size="11">Source: safety.vcd; no expected-schedule signal reconstruction. Buses are hexadecimal; counters/region lengths are decimal.</text></svg>

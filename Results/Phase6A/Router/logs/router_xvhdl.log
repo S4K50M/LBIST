@@ -1,0 +1,20 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/packageWires.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/basic_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'basic_controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/lfsr_16.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'lfsr_16'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/phase_shifter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'phase_shifter'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/swap_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'swap_controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/moving_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'moving_controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/plpf_dynamic.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'plpf_dynamic'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/lbist_pattern_router.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'lbist_pattern_router'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase2_tb_pkg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/reg_IF_RF_scan.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_IF_RF_scan'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_router.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_phase6a_router'

@@ -1,0 +1,193 @@
+#-----------------------------------------------------------
+# Vivado v2025.1.1 (64-bit)
+# SW Build 6233196 on Thu Sep 11 21:27:30 MDT 2025
+# IP Build 6232796 on Fri Sep 12 01:46:16 MDT 2025
+# SharedData Build 6233195 on Thu Sep 11 17:56:43 MDT 2025
+# Start of session at: Wed Nov 18 03:32:25 2026
+# Process ID         : 22860
+# Current directory  : C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/work
+# Command line       : vivado.exe -mode batch -source C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/scripts/run_phase6a_router.tcl -log ../router_console.log -journal router_final.jou -notrace
+# Log file           : C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/work/../router_console.log
+# Journal file       : C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/work\router_final.jou
+# Running On         : LAPTOP-B852K4P2
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i5-13420H
+# CPU Frequency      : 2611 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 12
+# Host memory        : 16802 MB
+# Swap memory        : 10206 MB
+# Total Virtual      : 27009 MB
+# Available Virtual  : 1746 MB
+#-----------------------------------------------------------
+source {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/scripts/run_phase6a_router.tcl} -notrace
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/work/project_safety'
+create_project: Time (s): cpu = 00:00:20 ; elapsed = 00:00:35 . Memory (MB): peak = 497.027 ; gain = 212.594
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_phase6a_misr_safety'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/work/project_safety/phase5a.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_phase6a_misr_safety' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/work/project_safety/phase5a.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_phase6a_misr_safety_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/misr_16.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'misr_16'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/lbist_test_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'lbist_test_controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/phase6a_safe_misr.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'phase6a_safe_misr'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_phase6a_misr_safety'
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/work/project_safety/phase5a.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_phase6a_misr_safety_behav xil_defaultlib.tb_phase6a_misr_safety -log elaborate.log"
+Vivado Simulator v2025.1.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_phase6a_misr_safety_behav xil_defaultlib.tb_phase6a_misr_safety -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture rtl of entity xil_defaultlib.lbist_test_controller [\lbist_test_controller(chain_len...]
+Compiling architecture rtl of entity xil_defaultlib.misr_16 [misr_16_default]
+Compiling architecture rtl of entity xil_defaultlib.phase6a_safe_misr [\phase6a_safe_misr(chain_length=...]
+Compiling architecture test of entity xil_defaultlib.tb_phase6a_misr_safety
+Built simulation snapshot tb_phase6a_misr_safety_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:12 . Memory (MB): peak = 503.949 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '11' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/work/project_safety/phase5a.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_phase6a_misr_safety_behav -key {Behavioral:sim_1:Functional:tb_phase6a_misr_safety} -tclbatch {tb_phase6a_misr_safety.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_phase6a_misr_safety.tcl
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_phase6a_misr_safety_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:21 . Memory (MB): peak = 503.949 ; gain = 6.922
+WARNING: HDL object /tb_phase6a_misr_safety/pos is of a type not supported for VCD or has zero size.
+WARNING: HDL object /tb_phase6a_misr_safety/patterns is of a type not supported for VCD or has zero size.
+WARNING: HDL object /tb_phase6a_misr_safety/scenario is of a type not supported for VCD or has zero size.
+Note: [SAFETY] 0,PASS
+Time: 220100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__17  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [SAFETY] 1,PASS
+Time: 270100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__17  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [SAFETY] 2,PASS
+Time: 360100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__17  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [SAFETY] 3,PASS
+Time: 460100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__17  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [SAFETY] 4,PASS
+Time: 680100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__17  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [SAFETY] 5,PASS
+Time: 730100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__17  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [SAFETY] 6,PASS
+Time: 821100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__17  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [SAFETY] 7,PASS
+Time: 1040100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__17  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [TB_COMPLETE] tb_phase6a_misr_safety at 1040100 ps
+Time: 1040100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__17  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+INFO: [Simtcl 6-16] Simulation closed
+PHASE 5A RESULT: PASS -- safety -- 1040100 ps
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_phase6a_router'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/work/project_safety/phase5a.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_phase6a_router' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/work/project_safety/phase5a.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_phase6a_router_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/packageWires.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/basic_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'basic_controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/lfsr_16.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'lfsr_16'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/phase_shifter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'phase_shifter'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/swap_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'swap_controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/moving_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'moving_controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/plpf_dynamic.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'plpf_dynamic'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/lbist_pattern_router.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'lbist_pattern_router'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase2_tb_pkg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/reg_IF_RF_scan.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_IF_RF_scan'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_router.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_phase6a_router'
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:39 . Memory (MB): peak = 509.453 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '38' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/work/project_safety/phase5a.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_phase6a_router_behav xil_defaultlib.tb_phase6a_router -log elaborate.log"
+Vivado Simulator v2025.1.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_phase6a_router_behav xil_defaultlib.tb_phase6a_router -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package xil_defaultlib.phase2_tb_pkg
+Compiling package xil_defaultlib.p_wires
+Compiling architecture rtl of entity xil_defaultlib.lfsr_16 [lfsr_16_default]
+Compiling architecture rtl of entity xil_defaultlib.phase_shifter [phase_shifter_default]
+Compiling architecture rtl of entity xil_defaultlib.basic_controller [basic_controller_default]
+Compiling architecture rtl of entity xil_defaultlib.swap_controller [\swap_controller(num_chains=1)\]
+Compiling architecture rtl of entity xil_defaultlib.moving_controller [\moving_controller(beta=20,num_c...]
+Compiling architecture rtl of entity xil_defaultlib.plpf_dynamic [plpf_dynamic_default]
+Compiling architecture rtl of entity xil_defaultlib.lbist_pattern_router [lbist_pattern_router_default]
+Compiling architecture rtl of entity xil_defaultlib.reg_IF_RF_scan [reg_if_rf_scan_default]
+Compiling architecture test of entity xil_defaultlib.tb_phase6a_router
+Built simulation snapshot tb_phase6a_router_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:20 . Memory (MB): peak = 509.453 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '21' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/work/project_safety/phase5a.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_phase6a_router_behav -key {Behavioral:sim_1:Functional:tb_phase6a_router} -tclbatch {tb_phase6a_router.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_phase6a_router.tcl
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_phase6a_router_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:01:03 . Memory (MB): peak = 509.453 ; gain = 0.000
+Note: [ROUTER] 0,36,4608,PASS
+Time: 46100200 ps  Iteration: 0  Process: /tb_phase6a_router/line__17  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_router.vhd
+Note: [ROUTER] 1,36,4608,PASS
+Time: 92200200 ps  Iteration: 0  Process: /tb_phase6a_router/line__17  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_router.vhd
+Note: [ROUTER] 2,36,4608,PASS
+Time: 138300200 ps  Iteration: 0  Process: /tb_phase6a_router/line__17  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_router.vhd
+Note: [ROUTER] 3,36,4608,PASS
+Time: 184400200 ps  Iteration: 0  Process: /tb_phase6a_router/line__17  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_router.vhd
+Note: [ROUTER] 4,36,4608,PASS
+Time: 230500200 ps  Iteration: 0  Process: /tb_phase6a_router/line__17  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_router.vhd
+Note: [TB_COMPLETE] tb_phase6a_router at 230503200 ps
+Time: 230503200 ps  Iteration: 0  Process: /tb_phase6a_router/line__17  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_router.vhd
+INFO: [Simtcl 6-16] Simulation closed
+PHASE 5A RESULT: PASS -- router -- 230503200 ps
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 18 03:34:44 2026...

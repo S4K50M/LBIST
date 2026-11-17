@@ -1,0 +1,21 @@
+Time resolution is 1 ps
+WARNING: HDL object /tb_phase6a_misr_safety/pos is of a type not supported for VCD or has zero size.
+WARNING: HDL object /tb_phase6a_misr_safety/patterns is of a type not supported for VCD or has zero size.
+Note: [SAFETY] 0,PASS
+Time: 220100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__21  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [SAFETY] 1,PASS
+Time: 270100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__21  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [SAFETY] 2,PASS
+Time: 360100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__21  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [SAFETY] 3,PASS
+Time: 460100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__21  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [SAFETY] 4,PASS
+Time: 680100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__21  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [SAFETY] 5,PASS
+Time: 730100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__21  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [SAFETY] 6,PASS
+Time: 821100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__21  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [SAFETY] 7,PASS
+Time: 1040100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__21  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [TB_COMPLETE] tb_phase6a_misr_safety at 1040100 ps
+Time: 1040100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__21  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd

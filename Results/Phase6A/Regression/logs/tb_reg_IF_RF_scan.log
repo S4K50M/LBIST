@@ -1,0 +1,27 @@
+Time resolution is 1 ps
+Note: [PASS] SCAN01 asynchronous active-low reset between edges
+Time: 300 ps  Iteration: 0  Process: /tb_reg_IF_RF_scan/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_reg_IF_RF_scan.vhd
+Note: [PASS] SCAN02 functional load and exact PC/instruction mapping
+Time: 4100 ps  Iteration: 0  Process: /tb_reg_IF_RF_scan/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_reg_IF_RF_scan.vhd
+Note: [PASS] SCAN03 functional hold
+Time: 6100 ps  Iteration: 0  Process: /tb_reg_IF_RF_scan/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_reg_IF_RF_scan.vhd
+Note: [PASS] SCAN11 256 deterministic functional load/hold cycles match original
+Time: 518100 ps  Iteration: 0  Process: /tb_reg_IF_RF_scan/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_reg_IF_RF_scan.vhd
+Note: [PASS] SCAN04/SCAN05 scan overrides active-low functional stall, 64 exact shifts
+Time: 646100 ps  Iteration: 0  Process: /tb_reg_IF_RF_scan/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_reg_IF_RF_scan.vhd
+Note: [PASS] SCAN06/SCAN07 scan-out ordering and real first-stage feedback on every shift
+Time: 774100 ps  Iteration: 0  Process: /tb_reg_IF_RF_scan/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_reg_IF_RF_scan.vhd
+Note: [PASS] SCAN08/SCAN09 one functional capture after scan
+Time: 778100 ps  Iteration: 0  Process: /tb_reg_IF_RF_scan/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_reg_IF_RF_scan.vhd
+Note: [PASS] SCAN10 captured response serialized correctly while loading next pattern
+Time: 906100 ps  Iteration: 0  Process: /tb_reg_IF_RF_scan/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_reg_IF_RF_scan.vhd
+Note: [PASS] SCAN13/SCAN14 at least 256 patterns: zero, one, alternating, walking one/zero and deterministic random
+Time: 33674100 ps  Iteration: 0  Process: /tb_reg_IF_RF_scan/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_reg_IF_RF_scan.vhd
+Note: [PASS] SCAN12 asynchronous reset during incomplete scan
+Time: 33676200 ps  Iteration: 0  Process: /tb_reg_IF_RF_scan/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_reg_IF_RF_scan.vhd
+Note: [PASS] SCAN15 clock/enable alignment, every pre/post-edge bit and no extra shifts
+Time: 33676200 ps  Iteration: 0  Process: /tb_reg_IF_RF_scan/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_reg_IF_RF_scan.vhd
+Note: [SCAN_METRIC] UNIT,256,16577
+Time: 33676200 ps  Iteration: 0  Process: /tb_reg_IF_RF_scan/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_reg_IF_RF_scan.vhd
+Note: [TB_COMPLETE] tb_reg_IF_RF_scan at 33676200 ps
+Time: 33676200 ps  Iteration: 0  Process: /tb_reg_IF_RF_scan/stimulus  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_reg_IF_RF_scan.vhd

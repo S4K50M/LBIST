@@ -1,0 +1,52 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/SDcard.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SdCardCtrl'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/cache.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'D_CACHE'
+INFO: [VRFC 10-3107] analyzing entity 'I_CACHE'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/disk.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'DISK'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/fpu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'special_values'
+INFO: [VRFC 10-3107] analyzing entity 'data_check_mult'
+INFO: [VRFC 10-3107] analyzing entity 'mult32float'
+INFO: [VRFC 10-3107] analyzing entity 'data_check_sum'
+INFO: [VRFC 10-3107] analyzing entity 'sum32float'
+INFO: [VRFC 10-3107] analyzing entity 'FPU'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/io.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'from_stdin'
+INFO: [VRFC 10-3107] analyzing entity 'print_data'
+INFO: [VRFC 10-3107] analyzing entity 'to_stdout'
+INFO: [VRFC 10-3107] analyzing entity 'write_data_file'
+INFO: [VRFC 10-3107] analyzing entity 'read_data_file'
+INFO: [VRFC 10-3107] analyzing entity 'do_interrupt'
+INFO: [VRFC 10-3107] analyzing entity 'simple_uart'
+INFO: [VRFC 10-3107] analyzing entity 'sys_stats'
+INFO: [VRFC 10-3107] analyzing entity 'to_7seg'
+INFO: [VRFC 10-3107] analyzing entity 'read_keys'
+INFO: [VRFC 10-3107] analyzing entity 'LCD_display'
+INFO: [VRFC 10-3107] analyzing entity 'SDcard'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/fault_injection/core_scan_fault.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'core_scan_fault'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'RAM'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/rom.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ROM'
+INFO: [VRFC 10-3107] analyzing entity 'single_port_rom'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/sdram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SDRAM_controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/uart.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'uart_int'
+INFO: [VRFC 10-3107] analyzing entity 'register8'
+INFO: [VRFC 10-3107] analyzing entity 'register2'
+INFO: [VRFC 10-3107] analyzing entity 'par_ser10'
+INFO: [VRFC 10-3107] analyzing entity 'ser_par10'
+INFO: [VRFC 10-3107] analyzing entity 'remota'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/tb_cMIPS.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_cMIPS'
+INFO: [VRFC 10-3107] analyzing entity 'inst_addr_decode'
+INFO: [VRFC 10-3107] analyzing entity 'ram_addr_decode'
+INFO: [VRFC 10-3107] analyzing entity 'busError_addr_decode'
+INFO: [VRFC 10-3107] analyzing entity 'io_addr_decode'
+INFO: [VRFC 10-3107] analyzing entity 'sdram_addr_decode'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_core_fault_regression.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_core_fault_regression'

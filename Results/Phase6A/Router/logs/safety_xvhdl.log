@@ -1,0 +1,8 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/misr_16.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'misr_16'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/lbist_test_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'lbist_test_controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/phase6a_safe_misr.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'phase6a_safe_misr'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_phase6a_misr_safety'

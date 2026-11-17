@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="574" viewBox="0 0 1600 574">
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="20" y="28" font-family="sans-serif" font-size="20">Completed faulty stream has a valid comparison</text>
+<text x="20" y="51" font-family="sans-serif" font-size="13">00 = PLPF n=3 (low toggle) | 11 = PLPF n=1 (unfiltered) | Edge capture uses PRE-edge mode; POST-edge mode prepares the next shift.</text>
+<line x1="820.0" x2="820.0" y1="110" y2="544" stroke="#a33" stroke-dasharray="4 4"/>
+<text x="20" y="76" font-family="sans-serif" font-size="13" fill="#922">expected 9C7F; actual 7907 @ 661150.000 ns</text>
+<line x1="220.0" x2="220.0" y1="110" y2="544" stroke="#e6eaf0"/>
+<text x="220.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">661140.00 ns</text>
+<line x1="385.0" x2="385.0" y1="110" y2="544" stroke="#e6eaf0"/>
+<text x="385.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">661142.75 ns</text>
+<line x1="550.0" x2="550.0" y1="110" y2="544" stroke="#e6eaf0"/>
+<text x="550.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">661145.50 ns</text>
+<line x1="715.0" x2="715.0" y1="110" y2="544" stroke="#e6eaf0"/>
+<text x="715.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">661148.25 ns</text>
+<line x1="880.0" x2="880.0" y1="110" y2="544" stroke="#e6eaf0"/>
+<text x="880.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">661151.00 ns</text>
+<line x1="1045.0" x2="1045.0" y1="110" y2="544" stroke="#e6eaf0"/>
+<text x="1045.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">661153.75 ns</text>
+<line x1="1210.0" x2="1210.0" y1="110" y2="544" stroke="#e6eaf0"/>
+<text x="1210.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">661156.50 ns</text>
+<line x1="1375.0" x2="1375.0" y1="110" y2="544" stroke="#e6eaf0"/>
+<text x="1375.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">661159.25 ns</text>
+<line x1="1540.0" x2="1540.0" y1="110" y2="544" stroke="#e6eaf0"/>
+<text x="1540.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">661162.00 ns</text>
+<text x="12" y="156" font-family="monospace" font-size="14">clk</text>
+<path d="M 220.000 163 H 820.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/clk = 0, 661140.000..661150.000 ns</title></path>
+<path d="M 820.000 139 H 1420.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/clk = 1, 661150.000..661160.000 ns</title></path>
+<path d="M 820.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1420.000 163 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/clk = 0, 661160.000..661162.000 ns</title></path>
+<path d="M 1420.000 139 V 163" stroke="#126e60" fill="none"/>
+<text x="12" y="204" font-family="monospace" font-size="14">scan_out</text>
+<path d="M 220.000 211 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/scan_out = 0, 661140.000..661162.000 ns</title></path>
+<text x="12" y="252" font-family="monospace" font-size="14">misr_enable</text>
+<path d="M 220.000 235 H 820.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/misr_enable = 1, 661140.000..661150.000 ns</title></path>
+<path d="M 820.000 259 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/misr_enable = 0, 661150.000..661162.000 ns</title></path>
+<path d="M 820.000 235 V 259" stroke="#126e60" fill="none"/>
+<text x="12" y="300" font-family="monospace" font-size="14">signature</text>
+<rect x="220.000" y="281" width="600.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/signature = 1011010010010011, 661140.000..661150.000 ns</title></rect>
+<text x="520.000" y="300" text-anchor="middle" font-family="monospace" font-size="13">B493</text>
+<rect x="820.000" y="281" width="720.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/signature = 111100100000111, 661150.000..661162.000 ns</title></rect>
+<text x="1180.000" y="300" text-anchor="middle" font-family="monospace" font-size="13">7907</text>
+<text x="12" y="348" font-family="monospace" font-size="14">signature_valid</text>
+<path d="M 220.000 355 H 820.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/signature_valid = 0, 661140.000..661150.000 ns</title></path>
+<path d="M 820.000 331 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/signature_valid = 1, 661150.000..661162.000 ns</title></path>
+<path d="M 820.000 355 V 331" stroke="#126e60" fill="none"/>
+<text x="12" y="396" font-family="monospace" font-size="14">signature_match</text>
+<path d="M 220.000 403 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/signature_match = 0, 661140.000..661162.000 ns</title></path>
+<text x="12" y="444" font-family="monospace" font-size="14">fault_detected</text>
+<path d="M 220.000 451 H 820.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/fault_detected = 0, 661140.000..661150.000 ns</title></path>
+<path d="M 820.000 427 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/fault_detected = 1, 661150.000..661162.000 ns</title></path>
+<path d="M 820.000 451 V 427" stroke="#126e60" fill="none"/>
+<text x="12" y="492" font-family="monospace" font-size="14">protected_equal</text>
+<path d="M 220.000 475 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/protected_equal = 1, 661140.000..661162.000 ns</title></path>
+<text x="20" y="564" font-family="sans-serif" font-size="11">Source: c3_f1.vcd; no expected-schedule signal reconstruction. Buses are hexadecimal; counters/region lengths are decimal.</text></svg>

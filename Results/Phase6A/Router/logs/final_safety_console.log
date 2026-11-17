@@ -1,0 +1,103 @@
+#-----------------------------------------------------------
+# Vivado v2025.1.1 (64-bit)
+# SW Build 6233196 on Thu Sep 11 21:27:30 MDT 2025
+# IP Build 6232796 on Fri Sep 12 01:46:16 MDT 2025
+# SharedData Build 6233195 on Thu Sep 11 17:56:43 MDT 2025
+# Start of session at: Wed Nov 18 04:03:26 2026
+# Process ID         : 25584
+# Current directory  : C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/work
+# Command line       : vivado.exe -mode batch -source safety_trace.tcl -log ../safety_trace.log -journal safety_trace.jou -notrace
+# Log file           : C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/work/../safety_trace.log
+# Journal file       : C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/work\safety_trace.jou
+# Running On         : LAPTOP-B852K4P2
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i5-13420H
+# CPU Frequency      : 2611 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 12
+# Host memory        : 16802 MB
+# Swap memory        : 9126 MB
+# Total Virtual      : 25929 MB
+# Available Virtual  : 6067 MB
+#-----------------------------------------------------------
+source safety_trace.tcl -notrace
+create_project: Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 499.070 ; gain = 215.246
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_phase6a_misr_safety'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/SAKSHA~1/AppData/Local/Temp/cmips_phase6a_cache/project_safety_trace/phase5a.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_phase6a_misr_safety' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/cmips_phase6a_cache/project_safety_trace/phase5a.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_phase6a_misr_safety_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/misr_16.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'misr_16'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/lbist_test_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'lbist_test_controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/phase6a_safe_misr.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'phase6a_safe_misr'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_phase6a_misr_safety'
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:19 . Memory (MB): peak = 506.352 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '19' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/cmips_phase6a_cache/project_safety_trace/phase5a.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_phase6a_misr_safety_behav xil_defaultlib.tb_phase6a_misr_safety -log elaborate.log"
+Vivado Simulator v2025.1.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_phase6a_misr_safety_behav xil_defaultlib.tb_phase6a_misr_safety -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture rtl of entity xil_defaultlib.lbist_test_controller [\lbist_test_controller(chain_len...]
+Compiling architecture rtl of entity xil_defaultlib.misr_16 [misr_16_default]
+Compiling architecture rtl of entity xil_defaultlib.phase6a_safe_misr [\phase6a_safe_misr(chain_length=...]
+Compiling architecture test of entity xil_defaultlib.tb_phase6a_misr_safety
+Built simulation snapshot tb_phase6a_misr_safety_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:32 . Memory (MB): peak = 506.352 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '32' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/cmips_phase6a_cache/project_safety_trace/phase5a.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_phase6a_misr_safety_behav -key {Behavioral:sim_1:Functional:tb_phase6a_misr_safety} -tclbatch {tb_phase6a_misr_safety.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_phase6a_misr_safety.tcl
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_phase6a_misr_safety_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:01:00 . Memory (MB): peak = 506.352 ; gain = 7.281
+WARNING: HDL object /tb_phase6a_misr_safety/pos is of a type not supported for VCD or has zero size.
+WARNING: HDL object /tb_phase6a_misr_safety/patterns is of a type not supported for VCD or has zero size.
+Note: [SAFETY] 0,PASS
+Time: 220100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__21  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [SAFETY] 1,PASS
+Time: 270100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__21  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [SAFETY] 2,PASS
+Time: 360100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__21  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [SAFETY] 3,PASS
+Time: 460100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__21  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [SAFETY] 4,PASS
+Time: 680100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__21  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [SAFETY] 5,PASS
+Time: 730100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__21  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [SAFETY] 6,PASS
+Time: 821100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__21  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [SAFETY] 7,PASS
+Time: 1040100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__21  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [TB_COMPLETE] tb_phase6a_misr_safety at 1040100 ps
+Time: 1040100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__21  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+INFO: [Simtcl 6-16] Simulation closed
+PHASE 5A RESULT: PASS -- safety -- 1040100 ps
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 18 04:05:11 2026...

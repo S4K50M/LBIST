@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="526" viewBox="0 0 1600 526">
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="20" y="28" font-family="sans-serif" font-size="20">Actual fault-1 capture at first detected pattern</text>
+<text x="20" y="51" font-family="sans-serif" font-size="13">00 = PLPF n=3 (low toggle) | 11 = PLPF n=1 (unfiltered) | Edge capture uses PRE-edge mode; POST-edge mode prepares the next shift.</text>
+<line x1="820.0" x2="820.0" y1="110" y2="496" stroke="#a33" stroke-dasharray="4 4"/>
+<text x="20" y="76" font-family="sans-serif" font-size="13" fill="#922">capture edge @ 9710.000 ns</text>
+<line x1="220.0" x2="220.0" y1="110" y2="496" stroke="#e6eaf0"/>
+<text x="220.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">9700.00 ns</text>
+<line x1="385.0" x2="385.0" y1="110" y2="496" stroke="#e6eaf0"/>
+<text x="385.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">9702.75 ns</text>
+<line x1="550.0" x2="550.0" y1="110" y2="496" stroke="#e6eaf0"/>
+<text x="550.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">9705.50 ns</text>
+<line x1="715.0" x2="715.0" y1="110" y2="496" stroke="#e6eaf0"/>
+<text x="715.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">9708.25 ns</text>
+<line x1="880.0" x2="880.0" y1="110" y2="496" stroke="#e6eaf0"/>
+<text x="880.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">9711.00 ns</text>
+<line x1="1045.0" x2="1045.0" y1="110" y2="496" stroke="#e6eaf0"/>
+<text x="1045.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">9713.75 ns</text>
+<line x1="1210.0" x2="1210.0" y1="110" y2="496" stroke="#e6eaf0"/>
+<text x="1210.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">9716.50 ns</text>
+<line x1="1375.0" x2="1375.0" y1="110" y2="496" stroke="#e6eaf0"/>
+<text x="1375.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">9719.25 ns</text>
+<line x1="1540.0" x2="1540.0" y1="110" y2="496" stroke="#e6eaf0"/>
+<text x="1540.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">9722.00 ns</text>
+<text x="12" y="156" font-family="monospace" font-size="14">clk</text>
+<path d="M 220.000 163 H 820.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/dut/clk = 0, 9700.000..9710.000 ns</title></path>
+<path d="M 820.000 139 H 1420.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/dut/clk = 1, 9710.000..9720.000 ns</title></path>
+<path d="M 820.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1420.000 163 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/dut/clk = 0, 9720.000..9722.000 ns</title></path>
+<path d="M 1420.000 139 V 163" stroke="#126e60" fill="none"/>
+<text x="12" y="204" font-family="monospace" font-size="14">legal_capture</text>
+<path d="M 220.000 187 H 820.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/dut/legal_capture = 1, 9700.000..9710.000 ns</title></path>
+<path d="M 820.000 211 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_phase6a_fault_comparison/engine/dut/legal_capture = 0, 9710.000..9722.000 ns</title></path>
+<path d="M 820.000 187 V 211" stroke="#126e60" fill="none"/>
+<text x="12" y="252" font-family="monospace" font-size="14">increment_operand</text>
+<rect x="220.000" y="233" width="600.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/dut/increment_operand = 00000000000000000000000000011000, 9700.000..9710.000 ns</title></rect>
+<text x="520.000" y="252" text-anchor="middle" font-family="monospace" font-size="13">18</text>
+<rect x="820.000" y="233" width="720.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/dut/increment_operand = 101100, 9710.000..9722.000 ns</title></rect>
+<text x="1180.000" y="252" text-anchor="middle" font-family="monospace" font-size="13">2C</text>
+<text x="12" y="300" font-family="monospace" font-size="14">PCincd</text>
+<rect x="220.000" y="281" width="600.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/dut/PCincd = 00000000000000000000000000011100, 9700.000..9710.000 ns</title></rect>
+<text x="520.000" y="300" text-anchor="middle" font-family="monospace" font-size="13">1C</text>
+<rect x="820.000" y="281" width="720.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/dut/PCincd = 110000, 9710.000..9722.000 ns</title></rect>
+<text x="1180.000" y="300" text-anchor="middle" font-family="monospace" font-size="13">30</text>
+<text x="12" y="348" font-family="monospace" font-size="14">capture_word</text>
+<rect x="220.000" y="329" width="1320.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/dut/capture_word = 00010100011000001111111111111010, 9700.000..9722.000 ns</title></rect>
+<text x="880.000" y="348" text-anchor="middle" font-family="monospace" font-size="13">1460FFFA</text>
+<text x="12" y="396" font-family="monospace" font-size="14">RF_PCincd</text>
+<rect x="220.000" y="377" width="600.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/dut/RF_PCincd = 00000000000000000000000000011111, 9700.000..9710.000 ns</title></rect>
+<text x="520.000" y="396" text-anchor="middle" font-family="monospace" font-size="13">1F</text>
+<rect x="820.000" y="377" width="720.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/dut/RF_PCincd = 11100, 9710.000..9722.000 ns</title></rect>
+<text x="1180.000" y="396" text-anchor="middle" font-family="monospace" font-size="13">1C</text>
+<text x="12" y="444" font-family="monospace" font-size="14">RF_instruction</text>
+<rect x="220.000" y="425" width="600.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/dut/RF_instruction = 11000000111111111111111111111111, 9700.000..9710.000 ns</title></rect>
+<text x="520.000" y="444" text-anchor="middle" font-family="monospace" font-size="13">C0FFFFFF</text>
+<rect x="820.000" y="425" width="720.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_phase6a_fault_comparison/engine/dut/RF_instruction = 10100011000001111111111111010, 9710.000..9722.000 ns</title></rect>
+<text x="1180.000" y="444" text-anchor="middle" font-family="monospace" font-size="13">1460FFFA</text>
+<text x="20" y="516" font-family="sans-serif" font-size="11">Source: c1_f1.vcd; no expected-schedule signal reconstruction. Buses are hexadecimal; counters/region lengths are decimal.</text></svg>

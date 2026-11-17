@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="safety.wdb" id="1">
+         <top_modules>
+            <top_module name="tb_phase6a_misr_safety" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns" />
+      <ZoomEndTime time="1050.000 ns" />
+   </zoom_setting>
+   <column_width_setting>
+   </column_width_setting>
+   <WVObjectSize size="22" />
+   <wvobject fp_name="/tb_phase6a_misr_safety/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_misr_safety/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_misr_safety/start" type="logic">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_misr_safety/pause" type="logic">
+      <obj_property name="ElementShortName">pause</obj_property>
+      <obj_property name="ObjectShortName">pause</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_misr_safety/abort_test" type="logic">
+      <obj_property name="ElementShortName">abort_test</obj_property>
+      <obj_property name="ObjectShortName">abort_test</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_misr_safety/tm" type="logic">
+      <obj_property name="ElementShortName">tm</obj_property>
+      <obj_property name="ObjectShortName">tm</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_misr_safety/se" type="logic">
+      <obj_property name="ElementShortName">se</obj_property>
+      <obj_property name="ObjectShortName">se</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_misr_safety/ce" type="logic">
+      <obj_property name="ElementShortName">ce</obj_property>
+      <obj_property name="ObjectShortName">ce</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_misr_safety/pd" type="logic">
+      <obj_property name="ElementShortName">pd</obj_property>
+      <obj_property name="ObjectShortName">pd</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_misr_safety/done" type="logic">
+      <obj_property name="ElementShortName">done</obj_property>
+      <obj_property name="ObjectShortName">done</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_misr_safety/err" type="logic">
+      <obj_property name="ElementShortName">err</obj_property>
+      <obj_property name="ObjectShortName">err</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_misr_safety/valid" type="logic">
+      <obj_property name="ElementShortName">valid</obj_property>
+      <obj_property name="ObjectShortName">valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_misr_safety/match" type="logic">
+      <obj_property name="ElementShortName">match</obj_property>
+      <obj_property name="ObjectShortName">match</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_misr_safety/detected" type="logic">
+      <obj_property name="ElementShortName">detected</obj_property>
+      <obj_property name="ObjectShortName">detected</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_misr_safety/unload" type="logic">
+      <obj_property name="ElementShortName">unload</obj_property>
+      <obj_property name="ObjectShortName">unload</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_misr_safety/response" type="logic">
+      <obj_property name="ElementShortName">response</obj_property>
+      <obj_property name="ObjectShortName">response</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_misr_safety/phase" type="array">
+      <obj_property name="ElementShortName">phase[2:0]</obj_property>
+      <obj_property name="ObjectShortName">phase[2:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_misr_safety/pos" type="other">
+      <obj_property name="ElementShortName">pos</obj_property>
+      <obj_property name="ObjectShortName">pos</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_misr_safety/patterns" type="other">
+      <obj_property name="ElementShortName">patterns</obj_property>
+      <obj_property name="ObjectShortName">patterns</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_misr_safety/q" type="array">
+      <obj_property name="ElementShortName">q[15:0]</obj_property>
+      <obj_property name="ObjectShortName">q[15:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_misr_safety/scenario" type="array">
+      <obj_property name="ElementShortName">scenario[3:0]</obj_property>
+      <obj_property name="ObjectShortName">scenario[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_phase6a_misr_safety/pattern_index" type="array">
+      <obj_property name="ElementShortName">pattern_index[15:0]</obj_property>
+      <obj_property name="ObjectShortName">pattern_index[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>

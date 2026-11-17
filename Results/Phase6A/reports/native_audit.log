@@ -1,0 +1,80 @@
+#-----------------------------------------------------------
+# Vivado v2025.1.1 (64-bit)
+# SW Build 6233196 on Thu Sep 11 21:27:30 MDT 2025
+# IP Build 6232796 on Fri Sep 12 01:46:16 MDT 2025
+# SharedData Build 6233195 on Thu Sep 11 17:56:43 MDT 2025
+# Start of session at: Wed Nov 18 04:55:58 2026
+# Process ID         : 5592
+# Current directory  : C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/work
+# Command line       : vivado.exe -mode batch -source C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/scripts/verify_phase6a_waveforms.tcl -log ../native_audit_final.log -journal native_final.jou -notrace
+# Log file           : C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/work/../native_audit_final.log
+# Journal file       : C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/work\native_final.jou
+# Running On         : LAPTOP-B852K4P2
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i5-13420H
+# CPU Frequency      : 2611 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 12
+# Host memory        : 16802 MB
+# Swap memory        : 9126 MB
+# Total Virtual      : 25929 MB
+# Available Virtual  : 7964 MB
+#-----------------------------------------------------------
+source {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/scripts/verify_phase6a_waveforms.tcl} -notrace
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/Router/waveforms\router.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+PHASE6A NATIVE WAVEFORM PASS: router
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/Router/waveforms\safety.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+PHASE6A NATIVE WAVEFORM PASS: safety
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/Faults/waveforms\c0_f0.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+PHASE6A NATIVE WAVEFORM PASS: c0_f0
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/Faults/waveforms\c0_f1.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+PHASE6A NATIVE WAVEFORM PASS: c0_f1
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/Faults/waveforms\c10_f0.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+PHASE6A NATIVE WAVEFORM PASS: c10_f0
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/Faults/waveforms\c11_f0.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+PHASE6A NATIVE WAVEFORM PASS: c11_f0
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/Faults/waveforms\c1_f0.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+PHASE6A NATIVE WAVEFORM PASS: c1_f0
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/Faults/waveforms\c1_f1.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+PHASE6A NATIVE WAVEFORM PASS: c1_f1
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/Faults/waveforms\c2_f0.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+PHASE6A NATIVE WAVEFORM PASS: c2_f0
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/Faults/waveforms\c2_f1.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+PHASE6A NATIVE WAVEFORM PASS: c2_f1
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/Faults/waveforms\c3_f0.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+PHASE6A NATIVE WAVEFORM PASS: c3_f0
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/Faults/waveforms\c3_f1.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+PHASE6A NATIVE WAVEFORM PASS: c3_f1
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/Faults/waveforms\c4_f0.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+PHASE6A NATIVE WAVEFORM PASS: c4_f0
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/Faults/waveforms\c5_f0.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+PHASE6A NATIVE WAVEFORM PASS: c5_f0
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/Faults/waveforms\c6_f0.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+PHASE6A NATIVE WAVEFORM PASS: c6_f0
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/Faults/waveforms\c7_f0.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+PHASE6A NATIVE WAVEFORM PASS: c7_f0
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/Faults/waveforms\c8_f0.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+PHASE6A NATIVE WAVEFORM PASS: c8_f0
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase6A/Faults/waveforms\c9_f0.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+PHASE6A NATIVE WAVEFORM PASS: c9_f0
+PHASE6A NATIVE CAPTURES VERIFIED: 18
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 18 04:56:04 2026...

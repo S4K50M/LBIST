@@ -1,0 +1,5 @@
+Target,Selection,Configurations,MinMeasuredWTM,MaxMeasuredWTM,SpreadPP,PairwiseTolerancePP,PairwiseMatched,AllWithinTargetTolerance,Status,Excluded
+10,optimizer,5;7;9,9.414778489332933,9.486600435697115,0.0718219463641816,0.5,True,False,PAIRWISE_ONLY_TARGET_MISSED,fixed references not targetable
+15,optimizer,6;8;10,14.666944650503305,15.01675532414363,0.3498106736403237,0.5,True,True,MATCHED_FEASIBLE,fixed references not targetable
+20,optimizer,2;11,19.108977684607872,19.976389958308292,0.8674122737004204,0.5,False,False,UNMATCHED_MEASURED,Swap 20% infeasible; fixed references not targetable
+20,measured_calibration,2;4,19.87010955810547,19.976389958308292,0.1062804002028237,0.5,True,True,MATCHED_FEASIBLE,Swap 20% infeasible; fixed references not targetable
