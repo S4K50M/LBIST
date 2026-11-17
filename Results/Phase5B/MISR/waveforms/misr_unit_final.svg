@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="478" viewBox="0 0 1600 478">
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="20" y="28" font-family="sans-serif" font-size="20">misr_unit final</text>
+<text x="20" y="51" font-family="sans-serif" font-size="13">00 = PLPF n=3 (low toggle) | 11 = PLPF n=1 (unfiltered) | Edge capture uses PRE-edge mode; POST-edge mode prepares the next shift.</text>
+<line x1="484.0" x2="484.0" y1="110" y2="448" stroke="#a33" stroke-dasharray="4 4"/>
+<text x="20" y="76" font-family="sans-serif" font-size="13" fill="#922">final @ 25225.000 ns</text>
+<line x1="220.0" x2="220.0" y1="110" y2="448" stroke="#e6eaf0"/>
+<text x="220.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">25215.00 ns</text>
+<line x1="385.0" x2="385.0" y1="110" y2="448" stroke="#e6eaf0"/>
+<text x="385.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">25221.25 ns</text>
+<line x1="550.0" x2="550.0" y1="110" y2="448" stroke="#e6eaf0"/>
+<text x="550.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">25227.50 ns</text>
+<line x1="715.0" x2="715.0" y1="110" y2="448" stroke="#e6eaf0"/>
+<text x="715.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">25233.75 ns</text>
+<line x1="880.0" x2="880.0" y1="110" y2="448" stroke="#e6eaf0"/>
+<text x="880.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">25240.00 ns</text>
+<line x1="1045.0" x2="1045.0" y1="110" y2="448" stroke="#e6eaf0"/>
+<text x="1045.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">25246.25 ns</text>
+<line x1="1210.0" x2="1210.0" y1="110" y2="448" stroke="#e6eaf0"/>
+<text x="1210.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">25252.50 ns</text>
+<line x1="1375.0" x2="1375.0" y1="110" y2="448" stroke="#e6eaf0"/>
+<text x="1375.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">25258.75 ns</text>
+<line x1="1540.0" x2="1540.0" y1="110" y2="448" stroke="#e6eaf0"/>
+<text x="1540.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">25265.00 ns</text>
+<text x="12" y="156" font-family="monospace" font-size="14">clk</text>
+<path d="M 220.000 139 H 352.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_misr_16/clk = 1, 25215.000..25220.000 ns</title></path>
+<path d="M 352.000 163 H 484.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_misr_16/clk = 0, 25220.000..25225.000 ns</title></path>
+<path d="M 352.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 484.000 139 H 616.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_misr_16/clk = 1, 25225.000..25230.000 ns</title></path>
+<path d="M 484.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 616.000 163 H 748.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_misr_16/clk = 0, 25230.000..25235.000 ns</title></path>
+<path d="M 616.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 748.000 139 H 880.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_misr_16/clk = 1, 25235.000..25240.000 ns</title></path>
+<path d="M 748.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 880.000 163 H 1012.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_misr_16/clk = 0, 25240.000..25245.000 ns</title></path>
+<path d="M 880.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1012.000 139 H 1144.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_misr_16/clk = 1, 25245.000..25250.000 ns</title></path>
+<path d="M 1012.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1144.000 163 H 1276.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_misr_16/clk = 0, 25250.000..25255.000 ns</title></path>
+<path d="M 1144.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1276.000 139 H 1408.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_misr_16/clk = 1, 25255.000..25260.000 ns</title></path>
+<path d="M 1276.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1408.000 163 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_misr_16/clk = 0, 25260.000..25265.000 ns</title></path>
+<path d="M 1408.000 139 V 163" stroke="#126e60" fill="none"/>
+<text x="12" y="204" font-family="monospace" font-size="14">rst</text>
+<path d="M 220.000 187 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_misr_16/rst = 1, 25215.000..25265.000 ns</title></path>
+<text x="12" y="252" font-family="monospace" font-size="14">enable</text>
+<path d="M 220.000 259 H 352.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_misr_16/enable = 0, 25215.000..25220.000 ns</title></path>
+<path d="M 352.000 235 H 616.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_misr_16/enable = 1, 25220.000..25230.000 ns</title></path>
+<path d="M 352.000 259 V 235" stroke="#126e60" fill="none"/>
+<path d="M 616.000 259 H 880.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_misr_16/enable = 0, 25230.000..25240.000 ns</title></path>
+<path d="M 616.000 235 V 259" stroke="#126e60" fill="none"/>
+<path d="M 880.000 235 H 1144.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_misr_16/enable = 1, 25240.000..25250.000 ns</title></path>
+<path d="M 880.000 259 V 235" stroke="#126e60" fill="none"/>
+<path d="M 1144.000 259 H 1408.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_misr_16/enable = 0, 25250.000..25260.000 ns</title></path>
+<path d="M 1144.000 235 V 259" stroke="#126e60" fill="none"/>
+<path d="M 1408.000 235 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_misr_16/enable = 1, 25260.000..25265.000 ns</title></path>
+<path d="M 1408.000 259 V 235" stroke="#126e60" fill="none"/>
+<text x="12" y="300" font-family="monospace" font-size="14">clear</text>
+<path d="M 220.000 307 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_misr_16/clear = 0, 25215.000..25265.000 ns</title></path>
+<text x="12" y="348" font-family="monospace" font-size="14">response_bit</text>
+<path d="M 220.000 355 H 880.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_misr_16/response_bit = 0, 25215.000..25240.000 ns</title></path>
+<path d="M 880.000 331 H 1408.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_misr_16/response_bit = 1, 25240.000..25260.000 ns</title></path>
+<path d="M 880.000 355 V 331" stroke="#126e60" fill="none"/>
+<path d="M 1408.000 355 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_misr_16/response_bit = 0, 25260.000..25265.000 ns</title></path>
+<path d="M 1408.000 331 V 355" stroke="#126e60" fill="none"/>
+<text x="12" y="396" font-family="monospace" font-size="14">signature</text>
+<rect x="220.000" y="377" width="264.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_misr_16/signature = 1110111111010110, 25215.000..25225.000 ns</title></rect>
+<text x="352.000" y="396" text-anchor="middle" font-family="monospace" font-size="13">EFD6</text>
+<rect x="484.000" y="377" width="528.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_misr_16/signature = 1100111110001101, 25225.000..25245.000 ns</title></rect>
+<text x="748.000" y="396" text-anchor="middle" font-family="monospace" font-size="13">CF8D</text>
+<rect x="1012.000" y="377" width="528.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_misr_16/signature = 1001111100011010, 25245.000..25265.000 ns</title></rect>
+<text x="1276.000" y="396" text-anchor="middle" font-family="monospace" font-size="13">9F1A</text>
+<text x="20" y="468" font-family="sans-serif" font-size="11">Source: misr_unit.vcd; no expected-schedule signal reconstruction. Buses are hexadecimal; counters/region lengths are decimal.</text></svg>

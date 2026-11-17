@@ -1,0 +1,4 @@
+Top,FF,LUT,Latches
+misr_16,16,18,0
+lbist_misr_top,16,18,0
+lbist_controlled_misr,39,61,0

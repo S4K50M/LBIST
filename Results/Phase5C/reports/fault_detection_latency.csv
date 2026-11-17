@@ -1,0 +1,17 @@
+FaultID,FaultType,FaultSite,Patterns,DirectDetected,MISRDetected,FirstDetectionPattern,FirstSignatureMismatch,GoldenSignature,FaultySignature,Aliasing,Result
+1,SA0,increment_operand[2],256,True,True,2,2,AFBC,A569,False,VALID
+2,SA1,increment_operand[2],256,True,True,1,1,AFBC,08A4,False,VALID
+3,SA0,increment_operand[3],256,True,True,4,4,AFBC,68C4,False,VALID
+4,SA1,increment_operand[3],256,True,True,1,1,AFBC,738E,False,VALID
+5,SA0,increment_operand[16],256,True,True,2,2,AFBC,A3D3,False,VALID
+6,SA1,increment_operand[16],256,True,True,1,1,AFBC,2CDB,False,VALID
+7,SA0,increment_operand[31],256,True,True,3,3,AFBC,3863,False,VALID
+8,SA1,increment_operand[31],256,True,True,1,1,AFBC,7D34,False,VALID
+9,SA0,instruction_input[0],256,False,False,,,AFBC,AFBC,False,VALID
+10,SA1,instruction_input[0],256,True,True,1,1,AFBC,2FC6,False,VALID
+11,SA0,instruction_input[1],256,True,True,1,1,AFBC,BF69,False,VALID
+12,SA1,instruction_input[1],256,False,False,,,AFBC,AFBC,False,VALID
+13,SA0,instruction_input[16],256,False,False,,,AFBC,AFBC,False,VALID
+14,SA1,instruction_input[16],256,True,True,1,1,AFBC,6BF9,False,VALID
+15,SA0,instruction_input[31],256,False,False,,,AFBC,AFBC,False,VALID
+16,SA1,instruction_input[31],256,True,True,1,1,AFBC,46D4,False,VALID

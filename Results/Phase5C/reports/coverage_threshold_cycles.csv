@@ -1,0 +1,5 @@
+Approach,CoverageTarget,Patterns,Cycles
+Basic22/20/22,25,1,129
+Basic22/20/22,50,1,129
+Basic22/20/22,75,4,516
+Basic22/20/22,100,UNREACHED,UNREACHED

@@ -1,0 +1,92 @@
+#-----------------------------------------------------------
+# Vivado v2025.1.1 (64-bit)
+# SW Build 6233196 on Thu Sep 11 21:27:30 MDT 2025
+# IP Build 6232796 on Fri Sep 12 01:46:16 MDT 2025
+# SharedData Build 6233195 on Thu Sep 11 17:56:43 MDT 2025
+# Start of session at: Wed Nov 18 02:22:48 2026
+# Process ID         : 26156
+# Current directory  : C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5B/work
+# Command line       : vivado.exe -mode batch -source C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/scripts/run_misr_unit.tcl -log ../misr_unit_console.log -journal unit.jou -notrace
+# Log file           : C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5B/work/../misr_unit_console.log
+# Journal file       : C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5B/work\unit.jou
+# Running On         : LAPTOP-B852K4P2
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i5-13420H
+# CPU Frequency      : 2611 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 12
+# Host memory        : 16802 MB
+# Swap memory        : 9126 MB
+# Total Virtual      : 25929 MB
+# Available Virtual  : 8803 MB
+#-----------------------------------------------------------
+source {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/scripts/run_misr_unit.tcl} -notrace
+PHASE 3 PYTHON: C:/Users/Saksham Setia/AppData/Local/Programs/Python/Python313/python.exe
+ROM: 20 original words; SHA256 fbb3da2760faf41147f751b857cb8b2c0105cec1e03fd824fa64387f45abae50
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5B/work/project_misr_unit'
+create_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:13 . Memory (MB): peak = 497.879 ; gain = 213.875
+CRITICAL WARNING: [Vivado 12-3645] Please note that adding or importing multiple files, one at a time, can be performance intensive.  Both add_files and import_files commands accept multiple files as input, and passing a collection of multiple files to a single add_files or import_files commands can offer significant performance improvement.
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_misr_16'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5B/work/project_misr_unit/phase5a.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_misr_16' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5B/work/project_misr_unit/phase5a.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_misr_16_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/misr_16.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'misr_16'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_misr_16.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_misr_16'
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5B/work/project_misr_unit/phase5a.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_misr_16_behav xil_defaultlib.tb_misr_16 -log elaborate.log"
+Vivado Simulator v2025.1.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_misr_16_behav xil_defaultlib.tb_misr_16 -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling architecture rtl of entity xil_defaultlib.misr_16 [misr_16_default]
+Compiling architecture test of entity xil_defaultlib.tb_misr_16
+Built simulation snapshot tb_misr_16_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5B/work/project_misr_unit/phase5a.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_misr_16_behav -key {Behavioral:sim_1:Functional:tb_misr_16} -tclbatch {tb_misr_16.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_misr_16.tcl
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_misr_16_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 502.605 ; gain = 0.000
+Note: [UNIT] 0,0000,256,PASS
+Time: 5140 ns  Iteration: 1  Process: /tb_misr_16/line__16  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_misr_16.vhd
+Note: [UNIT] 1,84B4,256,PASS
+Time: 10270 ns  Iteration: 1  Process: /tb_misr_16/line__16  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_misr_16.vhd
+Note: [UNIT] 2,8C73,256,PASS
+Time: 15400 ns  Iteration: 1  Process: /tb_misr_16/line__16  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_misr_16.vhd
+Note: [UNIT] 3,101A,256,PASS
+Time: 20530 ns  Iteration: 1  Process: /tb_misr_16/line__16  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_misr_16.vhd
+Note: [UNIT] 4,6868,256,PASS
+Time: 25660 ns  Iteration: 1  Process: /tb_misr_16/line__16  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_misr_16.vhd
+Note: [TB_COMPLETE] tb_misr_16 at 25670000 ps
+Time: 25670 ns  Iteration: 1  Process: /tb_misr_16/line__16  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_misr_16.vhd
+INFO: [Simtcl 6-16] Simulation closed
+PHASE 5A RESULT: PASS -- misr_unit -- 25670000 ps
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 18 02:23:21 2026...

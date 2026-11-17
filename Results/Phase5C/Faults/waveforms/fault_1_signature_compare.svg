@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="814" viewBox="0 0 1600 814">
+<rect width="100%" height="100%" fill="#fff"/>
+<text x="20" y="28" font-family="sans-serif" font-size="20">fault_1 signature_compare</text>
+<text x="20" y="51" font-family="sans-serif" font-size="13">00 = PLPF n=3 (low toggle) | 11 = PLPF n=1 (unfiltered) | Edge capture uses PRE-edge mode; POST-edge mode prepares the next shift.</text>
+<line x1="484.0" x2="484.0" y1="110" y2="784" stroke="#a33" stroke-dasharray="4 4"/>
+<text x="20" y="76" font-family="sans-serif" font-size="13" fill="#922">signature_compare @ 661150.000 ns</text>
+<line x1="220.0" x2="220.0" y1="110" y2="784" stroke="#e6eaf0"/>
+<text x="220.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">661140.00 ns</text>
+<line x1="385.0" x2="385.0" y1="110" y2="784" stroke="#e6eaf0"/>
+<text x="385.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">661146.25 ns</text>
+<line x1="550.0" x2="550.0" y1="110" y2="784" stroke="#e6eaf0"/>
+<text x="550.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">661152.50 ns</text>
+<line x1="715.0" x2="715.0" y1="110" y2="784" stroke="#e6eaf0"/>
+<text x="715.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">661158.75 ns</text>
+<line x1="880.0" x2="880.0" y1="110" y2="784" stroke="#e6eaf0"/>
+<text x="880.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">661165.00 ns</text>
+<line x1="1045.0" x2="1045.0" y1="110" y2="784" stroke="#e6eaf0"/>
+<text x="1045.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">661171.25 ns</text>
+<line x1="1210.0" x2="1210.0" y1="110" y2="784" stroke="#e6eaf0"/>
+<text x="1210.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">661177.50 ns</text>
+<line x1="1375.0" x2="1375.0" y1="110" y2="784" stroke="#e6eaf0"/>
+<text x="1375.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">661183.75 ns</text>
+<line x1="1540.0" x2="1540.0" y1="110" y2="784" stroke="#e6eaf0"/>
+<text x="1540.0" y="119" text-anchor="middle" font-family="sans-serif" font-size="11">661190.00 ns</text>
+<text x="12" y="156" font-family="monospace" font-size="14">clk</text>
+<path d="M 220.000 163 H 484.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_fault_injection/engine/clk = 0, 661140.000..661150.000 ns</title></path>
+<path d="M 484.000 139 H 748.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_fault_injection/engine/clk = 1, 661150.000..661160.000 ns</title></path>
+<path d="M 484.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 748.000 163 H 1012.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_fault_injection/engine/clk = 0, 661160.000..661170.000 ns</title></path>
+<path d="M 748.000 139 V 163" stroke="#126e60" fill="none"/>
+<path d="M 1012.000 139 H 1276.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_fault_injection/engine/clk = 1, 661170.000..661180.000 ns</title></path>
+<path d="M 1012.000 163 V 139" stroke="#126e60" fill="none"/>
+<path d="M 1276.000 163 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_fault_injection/engine/clk = 0, 661180.000..661190.000 ns</title></path>
+<path d="M 1276.000 139 V 163" stroke="#126e60" fill="none"/>
+<text x="12" y="204" font-family="monospace" font-size="14">rst</text>
+<path d="M 220.000 187 H 1281.280" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_fault_injection/engine/rst = 1, 661140.000..661180.200 ns</title></path>
+<path d="M 1281.280 211 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_fault_injection/engine/rst = 0, 661180.200..661190.000 ns</title></path>
+<path d="M 1281.280 187 V 211" stroke="#126e60" fill="none"/>
+<text x="12" y="252" font-family="monospace" font-size="14">test_phase</text>
+<rect x="220.000" y="233" width="264.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_lbist_fault_injection/engine/test_phase = 100, 661140.000..661150.000 ns</title></rect>
+<text x="352.000" y="252" text-anchor="middle" font-family="monospace" font-size="13">4</text>
+<rect x="484.000" y="233" width="797.280" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_lbist_fault_injection/engine/test_phase = 101, 661150.000..661180.200 ns</title></rect>
+<text x="882.640" y="252" text-anchor="middle" font-family="monospace" font-size="13">5</text>
+<rect x="1281.280" y="233" width="258.720" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_lbist_fault_injection/engine/test_phase = 0, 661180.200..661190.000 ns</title></rect>
+<text x="1410.640" y="252" text-anchor="middle" font-family="monospace" font-size="13">0</text>
+<text x="12" y="300" font-family="monospace" font-size="14">scan_enable</text>
+<path d="M 220.000 283 H 484.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_fault_injection/engine/scan_enable = 1, 661140.000..661150.000 ns</title></path>
+<path d="M 484.000 307 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_fault_injection/engine/scan_enable = 0, 661150.000..661190.000 ns</title></path>
+<path d="M 484.000 283 V 307" stroke="#126e60" fill="none"/>
+<text x="12" y="348" font-family="monospace" font-size="14">capture_enable</text>
+<path d="M 220.000 355 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_fault_injection/engine/capture_enable = 0, 661140.000..661190.000 ns</title></path>
+<text x="12" y="396" font-family="monospace" font-size="14">scan_out</text>
+<path d="M 220.000 403 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_fault_injection/engine/scan_out = 0, 661140.000..661190.000 ns</title></path>
+<text x="12" y="444" font-family="monospace" font-size="14">misr_enable</text>
+<path d="M 220.000 427 H 484.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_fault_injection/engine/misr_enable = 1, 661140.000..661150.000 ns</title></path>
+<path d="M 484.000 451 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_fault_injection/engine/misr_enable = 0, 661150.000..661190.000 ns</title></path>
+<path d="M 484.000 427 V 451" stroke="#126e60" fill="none"/>
+<text x="12" y="492" font-family="monospace" font-size="14">signature</text>
+<rect x="220.000" y="473" width="264.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_lbist_fault_injection/engine/signature = 1101101010100100, 661140.000..661150.000 ns</title></rect>
+<text x="352.000" y="492" text-anchor="middle" font-family="monospace" font-size="13">DAA4</text>
+<rect x="484.000" y="473" width="797.280" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_lbist_fault_injection/engine/signature = 1010010101101001, 661150.000..661180.200 ns</title></rect>
+<text x="882.640" y="492" text-anchor="middle" font-family="monospace" font-size="13">A569</text>
+<rect x="1281.280" y="473" width="258.720" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_lbist_fault_injection/engine/signature = 0, 661180.200..661190.000 ns</title></rect>
+<text x="1410.640" y="492" text-anchor="middle" font-family="monospace" font-size="13">0</text>
+<text x="12" y="540" font-family="monospace" font-size="14">signature_valid</text>
+<path d="M 220.000 547 H 484.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_fault_injection/engine/signature_valid = 0, 661140.000..661150.000 ns</title></path>
+<path d="M 484.000 523 H 1281.280" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_fault_injection/engine/signature_valid = 1, 661150.000..661180.200 ns</title></path>
+<path d="M 484.000 547 V 523" stroke="#126e60" fill="none"/>
+<path d="M 1281.280 547 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_fault_injection/engine/signature_valid = 0, 661180.200..661190.000 ns</title></path>
+<path d="M 1281.280 523 V 547" stroke="#126e60" fill="none"/>
+<text x="12" y="588" font-family="monospace" font-size="14">signature_match</text>
+<path d="M 220.000 595 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_fault_injection/engine/signature_match = 0, 661140.000..661190.000 ns</title></path>
+<text x="12" y="636" font-family="monospace" font-size="14">fault_detected</text>
+<path d="M 220.000 643 H 484.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_fault_injection/engine/fault_detected = 0, 661140.000..661150.000 ns</title></path>
+<path d="M 484.000 619 H 1281.280" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_fault_injection/engine/fault_detected = 1, 661150.000..661180.200 ns</title></path>
+<path d="M 484.000 643 V 619" stroke="#126e60" fill="none"/>
+<path d="M 1281.280 643 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_fault_injection/engine/fault_detected = 0, 661180.200..661190.000 ns</title></path>
+<path d="M 1281.280 619 V 643" stroke="#126e60" fill="none"/>
+<text x="12" y="684" font-family="monospace" font-size="14">scan_state</text>
+<rect x="220.000" y="665" width="264.000" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_lbist_fault_injection/engine/scan_state = 0001111111111111111110001001001000000001000111111000000000111111, 661140.000..661150.000 ns</title></rect>
+<text x="352.000" y="684" text-anchor="middle" font-family="monospace" font-size="13">1FFFF892011F803F</text>
+<rect x="484.000" y="665" width="797.280" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_lbist_fault_injection/engine/scan_state = 11111111111111111100010010010000000010001111110000000001111111, 661150.000..661180.200 ns</title></rect>
+<text x="882.640" y="684" text-anchor="middle" font-family="monospace" font-size="13">3FFFF124023F007F</text>
+<rect x="1281.280" y="665" width="258.720" height="28" fill="#edf3ff" stroke="#5e789c"><title>/tb_lbist_fault_injection/engine/scan_state = 0, 661180.200..661190.000 ns</title></rect>
+<text x="1410.640" y="684" text-anchor="middle" font-family="monospace" font-size="13">0</text>
+<text x="12" y="732" font-family="monospace" font-size="14">protected_equal</text>
+<path d="M 220.000 715 H 1540.000" stroke="#126e60" fill="none" stroke-width="1.6"><title>/tb_lbist_fault_injection/engine/protected_equal = 1, 661140.000..661190.000 ns</title></path>
+<text x="20" y="804" font-family="sans-serif" font-size="11">Source: fault_1.vcd; no expected-schedule signal reconstruction. Buses are hexadecimal; counters/region lengths are decimal.</text></svg>

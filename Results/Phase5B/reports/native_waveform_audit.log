@@ -1,0 +1,40 @@
+#-----------------------------------------------------------
+# Vivado v2025.1.1 (64-bit)
+# SW Build 6233196 on Thu Sep 11 21:27:30 MDT 2025
+# IP Build 6232796 on Fri Sep 12 01:46:16 MDT 2025
+# SharedData Build 6233195 on Thu Sep 11 17:56:43 MDT 2025
+# Start of session at: Wed Nov 18 02:36:44 2026
+# Process ID         : 19212
+# Current directory  : C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5B/work
+# Command line       : vivado.exe -mode batch -source C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/scripts/verify_phase5bc_waveforms.tcl -log ../native_waveform_audit.log -journal waves.jou -notrace
+# Log file           : C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5B/work/../native_waveform_audit.log
+# Journal file       : C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5B/work\waves.jou
+# Running On         : LAPTOP-B852K4P2
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i5-13420H
+# CPU Frequency      : 2611 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 12
+# Host memory        : 16802 MB
+# Swap memory        : 9126 MB
+# Total Virtual      : 25929 MB
+# Available Virtual  : 9492 MB
+#-----------------------------------------------------------
+source {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/scripts/verify_phase5bc_waveforms.tcl} -notrace
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5B/MISR/waveforms\misr_unit.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+NATIVE MISR WAVEFORM PASS: misr_unit
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5B/Integration/waveforms\fault_free.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+NATIVE MISR WAVEFORM PASS: fault_free
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5C/Faults/waveforms\fault_1.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+NATIVE MISR WAVEFORM PASS: fault_1
+open_wave_config {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5C/Faults/waveforms\fault_10.wcfg}
+INFO: [Simtcl 6-16] Simulation closed
+NATIVE MISR WAVEFORM PASS: fault_10
+PHASE 3 PYTHON: C:/Users/Saksham Setia/AppData/Local/Programs/Python/Python313/python.exe
+PASS: 5 unit streams; fault-free AFBC; 16 valid independent fault experiments; protected files 1211
+Final coverage: {'Patterns': 256, 'Eligible': 16, 'Invalid': 0, 'DirectDetected': 12, 'MISRDetected': 12, 'DirectCoverage': 75.0, 'MISRCoverage': 75.0, 'LBISTCycles': 33024} Aliases: 0
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 18 02:36:55 2026...

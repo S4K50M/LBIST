@@ -1,0 +1,2 @@
+Case,Testbench,Group,Result,CompletionTime,Capture,WDBBytes
+fault_12,tb_lbist_fault_injection,Faults,PASS,661600200 ps,0,0

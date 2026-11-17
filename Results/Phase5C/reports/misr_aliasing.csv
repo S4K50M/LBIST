@@ -1,0 +1,17 @@
+FaultID,DirectDetected,MISRDetected,Aliasing
+1,True,True,False
+2,True,True,False
+3,True,True,False
+4,True,True,False
+5,True,True,False
+6,True,True,False
+7,True,True,False
+8,True,True,False
+9,False,False,False
+10,True,True,False
+11,True,True,False
+12,False,False,False
+13,False,False,False
+14,True,True,False
+15,False,False,False
+16,True,True,False

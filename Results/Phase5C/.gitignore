@@ -1,0 +1,6 @@
+work/
+*.wdb
+*.vcd
+/*.log
+*.jou
+.Xil/

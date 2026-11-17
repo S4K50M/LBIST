@@ -1,0 +1,18 @@
+Time resolution is 1 ps
+fffffff6
+fffffff7
+Note: [PASS] 100 processor phase-edge comparisons, all functional outputs equal
+Time: 595001 ps  Iteration: 0  Process: /tb_core_fault_regression/differential  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_core_fault_regression.vhd
+fffffff8
+fffffff9
+fffffffa
+fffffffb
+fffffffc
+fffffffd
+fffffffe
+ffffffff
+Failure: 
+cMIPS BREAKPOINT at PC=00000038 opc=010000 fun=100000 brk=10000000000000000000
+SIMULATION ENDED (correctly?) AT exit();
+Time: 1730 ns  Iteration: 5  Process: /tb_core_fault_regression/U_CORE/RF_STOP_SIMULATION  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/core.vhd
+$finish called at time : 1730 ns : File "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/core.vhd" Line 856

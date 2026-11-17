@@ -1,0 +1,563 @@
+#-----------------------------------------------------------
+# Vivado v2025.1.1 (64-bit)
+# SW Build 6233196 on Thu Sep 11 21:27:30 MDT 2025
+# IP Build 6232796 on Fri Sep 12 01:46:16 MDT 2025
+# SharedData Build 6233195 on Thu Sep 11 17:56:43 MDT 2025
+# Start of session at: Wed Nov 18 02:26:04 2026
+# Process ID         : 25832
+# Current directory  : C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips
+# Command line       : vivado.exe -mode batch -source C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/scripts/run_phase5bc_functional.tcl -log ../functional_console.log -journal functional.jou -notrace
+# Log file           : C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/../functional_console.log
+# Journal file       : C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips\functional.jou
+# Running On         : LAPTOP-B852K4P2
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i5-13420H
+# CPU Frequency      : 2611 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 12
+# Host memory        : 16802 MB
+# Swap memory        : 9126 MB
+# Total Virtual      : 25929 MB
+# Available Virtual  : 5779 MB
+#-----------------------------------------------------------
+source {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/scripts/run_phase5bc_functional.tcl} -notrace
+PHASE 3 PYTHON: C:/Users/Saksham Setia/AppData/Local/Programs/Python/Python313/python.exe
+ROM: 20 original words; SHA256 fbb3da2760faf41147f751b857cb8b2c0105cec1e03fd824fa64387f45abae50
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5B/work/project_bc_functional'
+create_project: Time (s): cpu = 00:00:20 ; elapsed = 00:00:16 . Memory (MB): peak = 500.305 ; gain = 216.609
+CRITICAL WARNING: [Vivado 12-3645] Please note that adding or importing multiple files, one at a time, can be performance intensive.  Both add_files and import_files commands accept multiple files as input, and passing a collection of multiple files to a single add_files or import_files commands can offer significant performance improvement.
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_core_fault_regression'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5B/work/project_bc_functional/phase5a.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_core_fault_regression' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5B/work/project_bc_functional/phase5a.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_core_fault_regression_vhdl.prj"
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/packageWires.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/SDcard.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SdCardCtrl'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/packageMemory_simu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/altera.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'mf_alt_add_4'
+INFO: [VRFC 10-3107] analyzing entity 'mf_alt_adder'
+INFO: [VRFC 10-3107] analyzing entity 'mf_alt_add_sub'
+INFO: [VRFC 10-3107] analyzing entity 'mf_alt_add_sub_u'
+INFO: [VRFC 10-3107] analyzing entity 'mf_ram1port'
+INFO: [VRFC 10-3107] analyzing entity 'alt_mf_rom'
+INFO: [VRFC 10-3107] analyzing entity 'mf_altpll'
+INFO: [VRFC 10-3107] analyzing entity 'mf_altpll_io'
+INFO: [VRFC 10-3107] analyzing entity 'mf_altclkctrl'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/aux_module.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'register32'
+INFO: [VRFC 10-3107] analyzing entity 'registerN'
+INFO: [VRFC 10-3107] analyzing entity 'counter32'
+INFO: [VRFC 10-3107] analyzing entity 'countNup'
+INFO: [VRFC 10-3107] analyzing entity 'count4phases'
+INFO: [VRFC 10-3107] analyzing entity 'FFD'
+INFO: [VRFC 10-3107] analyzing entity 'FFDsimple'
+INFO: [VRFC 10-3107] analyzing entity 'FFT'
+INFO: [VRFC 10-3107] analyzing entity 'subtr32'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/cache.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'D_CACHE'
+INFO: [VRFC 10-3107] analyzing entity 'I_CACHE'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/packageExcp.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/core.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'core'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/disk.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'DISK'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/exception.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_IF_RF'
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_RF_EX'
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_EX_MM'
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_MM_WB'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/fpu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'special_values'
+INFO: [VRFC 10-3107] analyzing entity 'data_check_mult'
+INFO: [VRFC 10-3107] analyzing entity 'mult32float'
+INFO: [VRFC 10-3107] analyzing entity 'data_check_sum'
+INFO: [VRFC 10-3107] analyzing entity 'sum32float'
+INFO: [VRFC 10-3107] analyzing entity 'FPU'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/io.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'from_stdin'
+INFO: [VRFC 10-3107] analyzing entity 'print_data'
+INFO: [VRFC 10-3107] analyzing entity 'to_stdout'
+INFO: [VRFC 10-3107] analyzing entity 'write_data_file'
+INFO: [VRFC 10-3107] analyzing entity 'read_data_file'
+INFO: [VRFC 10-3107] analyzing entity 'do_interrupt'
+INFO: [VRFC 10-3107] analyzing entity 'simple_uart'
+INFO: [VRFC 10-3107] analyzing entity 'sys_stats'
+INFO: [VRFC 10-3107] analyzing entity 'to_7seg'
+INFO: [VRFC 10-3107] analyzing entity 'read_keys'
+INFO: [VRFC 10-3107] analyzing entity 'LCD_display'
+INFO: [VRFC 10-3107] analyzing entity 'SDcard'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/FFD_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'FFD_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'register32_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/rtl/reg_IF_RF_scan.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_IF_RF_scan'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/ram_dual_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ram_dual_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_bank_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_bank_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_RF_EX_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_RF_EX_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/alu_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'alu_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_EX_MM_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_EX_MM_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_MM_WB_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_MM_WB_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_excp_IF_RF_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_IF_RF_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_excp_RF_EX_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_RF_EX_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_excp_EX_MM_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_EX_MM_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/counter32_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'counter32_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'registerN_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_excp_MM_WB_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_MM_WB_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/fault_injection/core_scan_fault.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'core_scan_fault'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/pipestages.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_IF_RF'
+INFO: [VRFC 10-3107] analyzing entity 'reg_RF_EX'
+INFO: [VRFC 10-3107] analyzing entity 'reg_EX_MM'
+INFO: [VRFC 10-3107] analyzing entity 'reg_MM_WB'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/ram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'RAM'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/rom.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ROM'
+INFO: [VRFC 10-3107] analyzing entity 'single_port_rom'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/sdram.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'SDRAM_controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/uart.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'uart_int'
+INFO: [VRFC 10-3107] analyzing entity 'register8'
+INFO: [VRFC 10-3107] analyzing entity 'register2'
+INFO: [VRFC 10-3107] analyzing entity 'par_ser10'
+INFO: [VRFC 10-3107] analyzing entity 'ser_par10'
+INFO: [VRFC 10-3107] analyzing entity 'remota'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/tb_cMIPS.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_cMIPS'
+INFO: [VRFC 10-3107] analyzing entity 'inst_addr_decode'
+INFO: [VRFC 10-3107] analyzing entity 'ram_addr_decode'
+INFO: [VRFC 10-3107] analyzing entity 'busError_addr_decode'
+INFO: [VRFC 10-3107] analyzing entity 'io_addr_decode'
+INFO: [VRFC 10-3107] analyzing entity 'sdram_addr_decode'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/units.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ram_dual'
+INFO: [VRFC 10-3107] analyzing entity 'reg_bank'
+INFO: [VRFC 10-3107] analyzing entity 'alu'
+INFO: [VRFC 10-3107] analyzing entity 'mask_off_bits'
+INFO: [VRFC 10-3107] analyzing entity 'shift_left32'
+INFO: [VRFC 10-3107] analyzing entity 'shift_right32'
+INFO: [VRFC 10-3107] analyzing entity 'wait_states'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_core_fault_regression.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_core_fault_regression'
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:12 . Memory (MB): peak = 506.352 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '12' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5B/work/project_bc_functional/phase5a.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -generic_top "STALL_TEST=false" -L xil_defaultlib -L secureip --snapshot tb_core_fault_regression_behav xil_defaultlib.tb_core_fault_regression -log elaborate.log"
+Vivado Simulator v2025.1.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -generic_top STALL_TEST=false -L xil_defaultlib -L secureip --snapshot tb_core_fault_regression_behav xil_defaultlib.tb_core_fault_regression -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-4940] 'display_7seg' remains a black box since it has no binding entity [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/io.vhd:588]
+WARNING: [VRFC 10-4940] 'display_7seg' remains a black box since it has no binding entity [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/io.vhd:590]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package xil_defaultlib.p_wires
+Compiling package xil_defaultlib.p_memory
+Compiling package xil_defaultlib.p_exception
+Compiling package xil_defaultlib.p_uart
+Compiling package xil_defaultlib.commonpckg
+Compiling package xil_defaultlib.sdcardpckg
+Compiling architecture functional of entity xil_defaultlib.count4phases [count4phases_default]
+Compiling architecture functional of entity xil_defaultlib.mf_altpll [mf_altpll_default]
+Compiling architecture functional of entity xil_defaultlib.mf_altclkctrl [mf_altclkctrl_default]
+Compiling architecture functional of entity xil_defaultlib.FFD [ffd_default]
+Compiling architecture functional of entity xil_defaultlib.register32 [register32_default]
+Compiling architecture functional of entity xil_defaultlib.mf_alt_add_4 [mf_alt_add_4_default]
+Compiling architecture funcional of entity xil_defaultlib.reg_IF_RF [reg_if_rf_default]
+Compiling architecture rtl of entity xil_defaultlib.ram_dual [\ram_dual(n_words=32,width=32)\]
+Compiling architecture dual_port_ram of entity xil_defaultlib.reg_bank [reg_bank_default]
+Compiling architecture functional of entity xil_defaultlib.mf_alt_adder [mf_alt_adder_default]
+Compiling architecture funcional of entity xil_defaultlib.reg_RF_EX [reg_rf_ex_default]
+Compiling architecture functional of entity xil_defaultlib.mf_alt_add_sub [mf_alt_add_sub_default]
+Compiling architecture functional of entity xil_defaultlib.mf_alt_add_sub_u [mf_alt_add_sub_u_default]
+Compiling architecture functional of entity xil_defaultlib.shift_left32 [shift_left32_default]
+Compiling architecture functional of entity xil_defaultlib.shift_right32 [shift_right32_default]
+Compiling architecture table of entity xil_defaultlib.mask_off_bits [mask_off_bits_default]
+Compiling architecture functional of entity xil_defaultlib.alu [alu_default]
+Compiling architecture funcional of entity xil_defaultlib.reg_EX_MM [reg_ex_mm_default]
+Compiling architecture funcional of entity xil_defaultlib.reg_MM_WB [reg_mm_wb_default]
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_IF_RF [reg_excp_if_rf_default]
+Compiling architecture functional of entity xil_defaultlib.subtr32 [subtr32_default]
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_RF_EX [reg_excp_rf_ex_default]
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_EX_MM [reg_excp_ex_mm_default]
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00010...]
+Compiling architecture functional of entity xil_defaultlib.counter32 [\counter32(initial_value="000000...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(init_val="00000000000...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=12,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00111...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_MM_WB [reg_excp_mm_wb_default]
+Compiling architecture rtl of entity xil_defaultlib.core [core_default]
+Compiling architecture functional of entity xil_defaultlib.FFD_test [ffd_test_default]
+Compiling architecture functional of entity xil_defaultlib.register32_test [register32_test_default]
+Compiling architecture rtl of entity xil_defaultlib.reg_IF_RF_scan [reg_if_rf_scan_default]
+Compiling architecture rtl of entity xil_defaultlib.ram_dual_test [\ram_dual_test(n_words=32,width=...]
+Compiling architecture dual_port_ram of entity xil_defaultlib.reg_bank_test [reg_bank_test_default]
+Compiling architecture funcional of entity xil_defaultlib.reg_RF_EX_test [reg_rf_ex_test_default]
+Compiling architecture functional of entity xil_defaultlib.alu_test [alu_test_default]
+Compiling architecture funcional of entity xil_defaultlib.reg_EX_MM_test [reg_ex_mm_test_default]
+Compiling architecture funcional of entity xil_defaultlib.reg_MM_WB_test [reg_mm_wb_test_default]
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_IF_RF_test [reg_excp_if_rf_test_default]
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_RF_EX_test [reg_excp_rf_ex_test_default]
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_EX_MM_test [reg_excp_ex_mm_test_default]
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+Compiling architecture functional of entity xil_defaultlib.counter32_test [\counter32_test(initial_value="0...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(init_val="000000...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=12,init...]
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_MM_WB_test [reg_excp_mm_wb_test_default]
+Compiling architecture rtl of entity xil_defaultlib.core_scan_fault [core_scan_fault_default]
+Compiling architecture behavioral of entity xil_defaultlib.inst_addr_decode [inst_addr_decode_default]
+Compiling architecture fake of entity xil_defaultlib.I_CACHE [i_cache_default]
+Compiling architecture functional of entity xil_defaultlib.FFT [fft_default]
+Compiling architecture structural of entity xil_defaultlib.wait_states [wait_states_default]
+Compiling architecture simulation of entity xil_defaultlib.ROM [\ROM(1,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.busError_addr_decode [buserror_addr_decode_default]
+Compiling architecture behavioral of entity xil_defaultlib.io_addr_decode [io_addr_decode_default]
+Compiling architecture behavioral of entity xil_defaultlib.ram_addr_decode [ram_addr_decode_default]
+Compiling architecture fake of entity xil_defaultlib.sdram_addr_decode [sdram_addr_decode_default]
+Compiling architecture fake of entity xil_defaultlib.D_CACHE [d_cache_default]
+Compiling architecture simulation of entity xil_defaultlib.RAM [\RAM(1,8)(1,9)\]
+Compiling architecture fake of entity xil_defaultlib.DISK [disk_default]
+Compiling architecture fake of entity xil_defaultlib.SDRAM_controller [sdram_controller_default]
+Compiling architecture simulation of entity xil_defaultlib.to_stdout [\to_stdout(31,0)\]
+Compiling architecture simulation of entity xil_defaultlib.from_stdin [from_stdin_default]
+Compiling architecture simulation of entity xil_defaultlib.read_data_file [\read_data_file(1,10)\]
+Compiling architecture simulation of entity xil_defaultlib.write_data_file [\write_data_file(1,11)\]
+Compiling architecture simulation of entity xil_defaultlib.print_data [print_data_default]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=30,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.countNup [\countNup(num_bits=30)\]
+Compiling architecture functional of entity xil_defaultlib.FFDsimple [ffdsimple_default]
+Compiling architecture behavioral of entity xil_defaultlib.do_interrupt [\do_interrupt(31,0)(31,0)\]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=15,init_val=...]
+Compiling architecture behavioral of entity xil_defaultlib.to_7seg [\to_7seg(31,0)\]
+Compiling architecture functional of entity xil_defaultlib.countNup [countnup_default]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=4,init_val=(...]
+Compiling architecture behavioral of entity xil_defaultlib.read_keys [\read_keys(deb_cycles=6)\]
+Compiling architecture fake of entity xil_defaultlib.LCD_display [lcd_display_default]
+Compiling architecture functional of entity xil_defaultlib.register8 [register8_default]
+Compiling architecture functional of entity xil_defaultlib.register2 [register2_default]
+Compiling architecture functional of entity xil_defaultlib.par_ser10 [par_ser10_default]
+Compiling architecture functional of entity xil_defaultlib.ser_par10 [ser_par10_default]
+Compiling architecture rtl of entity xil_defaultlib.uart_int [uart_int_default]
+Compiling architecture behavioral of entity xil_defaultlib.simple_uart [\simple_uart(31,0)(31,0)(2,0)\]
+Compiling architecture simulation of entity xil_defaultlib.remota [\remota(1,10)(1,10)\]
+Compiling architecture fake of entity xil_defaultlib.SDcard [sdcard_default]
+Compiling architecture fake of entity xil_defaultlib.FPU [fpu_default]
+Compiling architecture tb of entity xil_defaultlib.tb_core_fault_regression
+Built simulation snapshot tb_core_fault_regression_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:25 . Memory (MB): peak = 506.352 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '25' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5B/work/project_bc_functional/phase5a.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_core_fault_regression_behav -key {Behavioral:sim_1:Functional:tb_core_fault_regression} -tclbatch {tb_core_fault_regression.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_core_fault_regression.tcl
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_core_fault_regression_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:44 . Memory (MB): peak = 506.352 ; gain = 0.000
+fffffff6
+fffffff7
+Note: [PASS] 100 processor phase-edge comparisons, all functional outputs equal
+Time: 595001 ps  Iteration: 0  Process: /tb_core_fault_regression/differential  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_core_fault_regression.vhd
+fffffff8
+fffffff9
+fffffffa
+fffffffb
+fffffffc
+fffffffd
+fffffffe
+ffffffff
+CORE DIFFERENTIAL: PASS (313 samples, 0 stalls; both wait decoders equal)
+Failure: 
+cMIPS BREAKPOINT at PC=00000038 opc=010000 fun=100000 brk=10000000000000000000
+SIMULATION ENDED (correctly?) AT exit();
+Time: 1670 ns  Iteration: 5  Process: /tb_core_fault_regression/U_CORE/RF_STOP_SIMULATION  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/core.vhd
+$finish called at time : 1670 ns : File "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/core.vhd" Line 856
+INFO: [Simtcl 6-16] Simulation closed
+PHASE 5A RESULT: PASS -- functional_lwsw -- 1670000 ps
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_core_fault_regression'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5B/work/project_bc_functional/phase5a.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_core_fault_regression' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5B/work/project_bc_functional/phase5a.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_core_fault_regression_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5B/work/project_bc_functional/phase5a.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -generic_top "STALL_TEST=true" -L xil_defaultlib -L secureip --snapshot tb_core_fault_regression_behav xil_defaultlib.tb_core_fault_regression -log elaborate.log"
+Vivado Simulator v2025.1.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -generic_top STALL_TEST=true -L xil_defaultlib -L secureip --snapshot tb_core_fault_regression_behav xil_defaultlib.tb_core_fault_regression -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-4940] 'display_7seg' remains a black box since it has no binding entity [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/io.vhd:588]
+WARNING: [VRFC 10-4940] 'display_7seg' remains a black box since it has no binding entity [C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/io.vhd:590]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package xil_defaultlib.p_wires
+Compiling package xil_defaultlib.p_memory
+Compiling package xil_defaultlib.p_exception
+Compiling package xil_defaultlib.p_uart
+Compiling package xil_defaultlib.commonpckg
+Compiling package xil_defaultlib.sdcardpckg
+Compiling architecture functional of entity xil_defaultlib.count4phases [count4phases_default]
+Compiling architecture functional of entity xil_defaultlib.mf_altpll [mf_altpll_default]
+Compiling architecture functional of entity xil_defaultlib.mf_altclkctrl [mf_altclkctrl_default]
+Compiling architecture functional of entity xil_defaultlib.FFD [ffd_default]
+Compiling architecture functional of entity xil_defaultlib.register32 [register32_default]
+Compiling architecture functional of entity xil_defaultlib.mf_alt_add_4 [mf_alt_add_4_default]
+Compiling architecture funcional of entity xil_defaultlib.reg_IF_RF [reg_if_rf_default]
+Compiling architecture rtl of entity xil_defaultlib.ram_dual [\ram_dual(n_words=32,width=32)\]
+Compiling architecture dual_port_ram of entity xil_defaultlib.reg_bank [reg_bank_default]
+Compiling architecture functional of entity xil_defaultlib.mf_alt_adder [mf_alt_adder_default]
+Compiling architecture funcional of entity xil_defaultlib.reg_RF_EX [reg_rf_ex_default]
+Compiling architecture functional of entity xil_defaultlib.mf_alt_add_sub [mf_alt_add_sub_default]
+Compiling architecture functional of entity xil_defaultlib.mf_alt_add_sub_u [mf_alt_add_sub_u_default]
+Compiling architecture functional of entity xil_defaultlib.shift_left32 [shift_left32_default]
+Compiling architecture functional of entity xil_defaultlib.shift_right32 [shift_right32_default]
+Compiling architecture table of entity xil_defaultlib.mask_off_bits [mask_off_bits_default]
+Compiling architecture functional of entity xil_defaultlib.alu [alu_default]
+Compiling architecture funcional of entity xil_defaultlib.reg_EX_MM [reg_ex_mm_default]
+Compiling architecture funcional of entity xil_defaultlib.reg_MM_WB [reg_mm_wb_default]
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_IF_RF [reg_excp_if_rf_default]
+Compiling architecture functional of entity xil_defaultlib.subtr32 [subtr32_default]
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_RF_EX [reg_excp_rf_ex_default]
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_EX_MM [reg_excp_ex_mm_default]
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00010...]
+Compiling architecture functional of entity xil_defaultlib.counter32 [\counter32(initial_value="000000...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(init_val="00000000000...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=12,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00111...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_MM_WB [reg_excp_mm_wb_default]
+Compiling architecture rtl of entity xil_defaultlib.core [core_default]
+Compiling architecture functional of entity xil_defaultlib.FFD_test [ffd_test_default]
+Compiling architecture functional of entity xil_defaultlib.register32_test [register32_test_default]
+Compiling architecture rtl of entity xil_defaultlib.reg_IF_RF_scan [reg_if_rf_scan_default]
+Compiling architecture rtl of entity xil_defaultlib.ram_dual_test [\ram_dual_test(n_words=32,width=...]
+Compiling architecture dual_port_ram of entity xil_defaultlib.reg_bank_test [reg_bank_test_default]
+Compiling architecture funcional of entity xil_defaultlib.reg_RF_EX_test [reg_rf_ex_test_default]
+Compiling architecture functional of entity xil_defaultlib.alu_test [alu_test_default]
+Compiling architecture funcional of entity xil_defaultlib.reg_EX_MM_test [reg_ex_mm_test_default]
+Compiling architecture funcional of entity xil_defaultlib.reg_MM_WB_test [reg_mm_wb_test_default]
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_IF_RF_test [reg_excp_if_rf_test_default]
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_RF_EX_test [reg_excp_rf_ex_test_default]
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_EX_MM_test [reg_excp_ex_mm_test_default]
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+Compiling architecture functional of entity xil_defaultlib.counter32_test [\counter32_test(initial_value="0...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(init_val="000000...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=12,init...]
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_MM_WB_test [reg_excp_mm_wb_test_default]
+Compiling architecture rtl of entity xil_defaultlib.core_scan_fault [core_scan_fault_default]
+Compiling architecture behavioral of entity xil_defaultlib.inst_addr_decode [inst_addr_decode_default]
+Compiling architecture fake of entity xil_defaultlib.I_CACHE [i_cache_default]
+Compiling architecture functional of entity xil_defaultlib.FFT [fft_default]
+Compiling architecture structural of entity xil_defaultlib.wait_states [wait_states_default]
+Compiling architecture simulation of entity xil_defaultlib.ROM [\ROM(1,8)\]
+Compiling architecture behavioral of entity xil_defaultlib.busError_addr_decode [buserror_addr_decode_default]
+Compiling architecture behavioral of entity xil_defaultlib.io_addr_decode [io_addr_decode_default]
+Compiling architecture behavioral of entity xil_defaultlib.ram_addr_decode [ram_addr_decode_default]
+Compiling architecture fake of entity xil_defaultlib.sdram_addr_decode [sdram_addr_decode_default]
+Compiling architecture fake of entity xil_defaultlib.D_CACHE [d_cache_default]
+Compiling architecture simulation of entity xil_defaultlib.RAM [\RAM(1,8)(1,9)\]
+Compiling architecture fake of entity xil_defaultlib.DISK [disk_default]
+Compiling architecture fake of entity xil_defaultlib.SDRAM_controller [sdram_controller_default]
+Compiling architecture simulation of entity xil_defaultlib.to_stdout [\to_stdout(31,0)\]
+Compiling architecture simulation of entity xil_defaultlib.from_stdin [from_stdin_default]
+Compiling architecture simulation of entity xil_defaultlib.read_data_file [\read_data_file(1,10)\]
+Compiling architecture simulation of entity xil_defaultlib.write_data_file [\write_data_file(1,11)\]
+Compiling architecture simulation of entity xil_defaultlib.print_data [print_data_default]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=30,init_val=...]
+Compiling architecture functional of entity xil_defaultlib.countNup [\countNup(num_bits=30)\]
+Compiling architecture functional of entity xil_defaultlib.FFDsimple [ffdsimple_default]
+Compiling architecture behavioral of entity xil_defaultlib.do_interrupt [\do_interrupt(31,0)(31,0)\]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=15,init_val=...]
+Compiling architecture behavioral of entity xil_defaultlib.to_7seg [\to_7seg(31,0)\]
+Compiling architecture functional of entity xil_defaultlib.countNup [countnup_default]
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=4,init_val=(...]
+Compiling architecture behavioral of entity xil_defaultlib.read_keys [\read_keys(deb_cycles=6)\]
+Compiling architecture fake of entity xil_defaultlib.LCD_display [lcd_display_default]
+Compiling architecture functional of entity xil_defaultlib.register8 [register8_default]
+Compiling architecture functional of entity xil_defaultlib.register2 [register2_default]
+Compiling architecture functional of entity xil_defaultlib.par_ser10 [par_ser10_default]
+Compiling architecture functional of entity xil_defaultlib.ser_par10 [ser_par10_default]
+Compiling architecture rtl of entity xil_defaultlib.uart_int [uart_int_default]
+Compiling architecture behavioral of entity xil_defaultlib.simple_uart [\simple_uart(31,0)(31,0)(2,0)\]
+Compiling architecture simulation of entity xil_defaultlib.remota [\remota(1,10)(1,10)\]
+Compiling architecture fake of entity xil_defaultlib.SDcard [sdcard_default]
+Compiling architecture fake of entity xil_defaultlib.FPU [fpu_default]
+Compiling architecture tb of entity xil_defaultlib.tb_core_fault_regression
+Built simulation snapshot tb_core_fault_regression_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:20 . Memory (MB): peak = 523.559 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '20' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Phase5B/work/project_bc_functional/phase5a.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_core_fault_regression_behav -key {Behavioral:sim_1:Functional:tb_core_fault_regression} -tclbatch {tb_core_fault_regression.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_core_fault_regression.tcl
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_core_fault_regression_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:26 . Memory (MB): peak = 523.559 ; gain = 0.000
+fffffff6
+fffffff7
+Note: [PASS] 100 processor phase-edge comparisons, all functional outputs equal
+Time: 595001 ps  Iteration: 0  Process: /tb_core_fault_regression/differential  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_core_fault_regression.vhd
+fffffff8
+fffffff9
+fffffffa
+fffffffb
+fffffffc
+fffffffd
+fffffffe
+ffffffff
+CORE DIFFERENTIAL: PASS (325 samples, 12 stalls; both wait decoders equal)
+Failure: 
+cMIPS BREAKPOINT at PC=00000038 opc=010000 fun=100000 brk=10000000000000000000
+SIMULATION ENDED (correctly?) AT exit();
+Time: 1730 ns  Iteration: 5  Process: /tb_core_fault_regression/U_CORE/RF_STOP_SIMULATION  File: C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/core.vhd
+$finish called at time : 1730 ns : File "C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/core.vhd" Line 856
+INFO: [Simtcl 6-16] Simulation closed
+PHASE 5A RESULT: PASS -- functional_stalls -- 1730000 ps
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 18 02:28:14 2026...

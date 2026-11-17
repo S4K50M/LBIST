@@ -1,0 +1,3 @@
+Case,Testbench,Group,Result,CompletionTime,Capture,WDBBytes
+functional_lwsw,tb_core_fault_regression,Integration,PASS,1670000 ps,0,0
+functional_stalls,tb_core_fault_regression,Integration,PASS,1730000 ps,0,0

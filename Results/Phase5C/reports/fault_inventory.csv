@@ -1,0 +1,17 @@
+FaultID,Module,Signal,Bit,FaultType,InjectionPoint,Eligible,Reason
+1,core_scan_fault,increment_operand,2,SA0,before original +4,True,enumerated input-net fault universe; capture only
+2,core_scan_fault,increment_operand,2,SA1,before original +4,True,enumerated input-net fault universe; capture only
+3,core_scan_fault,increment_operand,3,SA0,before original +4,True,enumerated input-net fault universe; capture only
+4,core_scan_fault,increment_operand,3,SA1,before original +4,True,enumerated input-net fault universe; capture only
+5,core_scan_fault,increment_operand,16,SA0,before original +4,True,enumerated input-net fault universe; capture only
+6,core_scan_fault,increment_operand,16,SA1,before original +4,True,enumerated input-net fault universe; capture only
+7,core_scan_fault,increment_operand,31,SA0,before original +4,True,enumerated input-net fault universe; capture only
+8,core_scan_fault,increment_operand,31,SA1,before original +4,True,enumerated input-net fault universe; capture only
+9,core_scan_fault,instruction_input,0,SA0,before actual IF/RF capture input,True,enumerated input-net fault universe; capture only
+10,core_scan_fault,instruction_input,0,SA1,before actual IF/RF capture input,True,enumerated input-net fault universe; capture only
+11,core_scan_fault,instruction_input,1,SA0,before actual IF/RF capture input,True,enumerated input-net fault universe; capture only
+12,core_scan_fault,instruction_input,1,SA1,before actual IF/RF capture input,True,enumerated input-net fault universe; capture only
+13,core_scan_fault,instruction_input,16,SA0,before actual IF/RF capture input,True,enumerated input-net fault universe; capture only
+14,core_scan_fault,instruction_input,16,SA1,before actual IF/RF capture input,True,enumerated input-net fault universe; capture only
+15,core_scan_fault,instruction_input,31,SA0,before actual IF/RF capture input,True,enumerated input-net fault universe; capture only
+16,core_scan_fault,instruction_input,31,SA1,before actual IF/RF capture input,True,enumerated input-net fault universe; capture only
