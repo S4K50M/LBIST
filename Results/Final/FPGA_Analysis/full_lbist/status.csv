@@ -1,0 +1,4 @@
+Configuration,Stage,Status,Detail
+full_lbist,synthesis,PASS,actual native synthesis
+full_lbist,implementation,PASS,placement and routing completed
+full_lbist,power,FAIL,ERROR: [Common 17-39] 'report_switching_activity' failed due to earlier errors. 

@@ -1,0 +1,9 @@
+Category,Passed,Total
+Fresh essential XSim,13,13
+Fresh production equivalence/activity,5,5
+Fresh original/production-scan functional activity,1,1
+Fresh representative original-universe fault,1,1
+Fresh native WDB/WCFG pairs reopened,6,6
+Archived processor experiments independently rechecked,204,204
+Archived waveform figures rechecked against VCD,45,45
+Earlier files unchanged by SHA-256,2486,2486

@@ -1,0 +1,3 @@
+Configuration,Approach,Stage,Status,Detail
+baseline,functional,SAIF_power,FAIL,ERROR: [Common 17-39] 'report_switching_activity' failed due to earlier errors. 
+scan_enabled,functional,SAIF_power,FAIL,ERROR: [Common 17-39] 'report_switching_activity' failed due to earlier errors. 

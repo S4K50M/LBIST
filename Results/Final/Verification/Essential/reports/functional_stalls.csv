@@ -1,0 +1,2 @@
+Case,Testbench,Group,Result,CompletionTime,Capture,WDBBytes
+functional_stalls,tb_core_fault_regression,Essential,PASS,1730000 ps,0,0

@@ -1,0 +1,282 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+(Final_Report.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cl
+s
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/base\size11.clo
+))
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.s
+ty)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/generic/pdftex\glypht
+ounicode.tex)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geomet
+ry.sty
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval
+.sty)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.
+sty
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.s
+ty))
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geomet
+ry.cfg))
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphi
+cx.sty
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphi
+cs.sty
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.s
+ty)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\gr
+aphics.cfg)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pd
+ftex.def)))
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperr
+ef.sty
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\inf
+warerr.sty)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvset
+keys.sty)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\
+kvdefinekeys.sty)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdf
+escape.sty
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcm
+ds.sty)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pd
+ftexcmds.sty))
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor
+.sty)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\let
+ltxmacro.sty)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook
+.sty)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\namere
+f.sty
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcou
+nt.sty)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestrin
+g\gettitlestring.sty
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvopt
+ions.sty)))
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolb
+ox.sty)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc
+.def)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intca
+lc.sty)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.
+def)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset
+.sty
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bi
+gintcalc.sty))
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-l
+tx.sty))
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdfte
+x.def
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-
+ltx.sty)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\
+rerunfilecheck.sty
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter
+\uniquecounter.sty)))
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3bac
+kend-pdftex.def)
+(C:\Users\Saksham Setia\OneDrive\Desktop\VLSI\cmips\Results\Final\work\pdf\Fina
+l_Report.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\sup
+p-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\ep
+stopdf-base.sty
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstop
+df-sys.cfg))
+(C:\Users\Saksham Setia\OneDrive\Desktop\VLSI\cmips\Results\Final\work\pdf\Fina
+l_Report.out)
+(C:\Users\Saksham Setia\OneDrive\Desktop\VLSI\cmips\Results\Final\work\pdf\Fina
+l_Report.out)
+(C:\Users\Saksham Setia\OneDrive\Desktop\VLSI\cmips\Results\Final\work\pdf\Fina
+l_Report.toc [1{C:/Users/Saksham Setia/AppData/Local/MiKTeX/fonts/map/pdftex/pd
+ftex.map}]) [2] [3] [4 <./figures/architecture.pdf>] [5] [6 <./figures/misr_abo
+rt_trace.pdf>] [7 <./figures/wtm_comparison.pdf>] [8 <./figures/target_vs_measu
+red.pdf>] [9 <./figures/fault_coverage.pdf>] [10 <./FPGA_Analysis/figures/area_
+comparison.pdf>] [11] [12 <./FPGA_Analysis/figures/dynamic_power.pdf> <./FPGA_A
+nalysis/figures/wtm_vs_power.pdf>] [13]
+Underfull \hbox (badness 1097) in paragraph at lines 350--351
+[]\OT1/cmr/m/n/10.95 2. R. A. Hexsel, cMIPS VHDL pro-ces-sor and doc-u-men-ta-t
+ion, sup-plied GPLv3 sources,
+
+Underfull \hbox (badness 2119) in paragraph at lines 356--357
+[]\OT1/cmr/m/n/10.95 5. Repos-i-tory ex-per-i-men-tal records, \OT1/cmtt/m/n/10
+.95 Results/Phase1 \OT1/cmr/m/n/10.95 (where present), \OT1/cmtt/m/n/10.95 Resu
+lts/Phase2\OT1/cmr/m/n/10.95 ,
+[14]
+(C:\Users\Saksham Setia\OneDrive\Desktop\VLSI\cmips\Results\Final\work\pdf\Fina
+l_Report.aux) )
+(see the transcript file for additional information)<C:/Users/Saksham Setia/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/
+Saksham Setia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx
+12.pfb><C:/Users/Saksham Setia/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmr10.pfb><C:/Users/Saksham Setia/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Saksham Setia/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Saksham Setia/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Use
+rs/Saksham Setia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
+msy8.pfb><C:/Users/Saksham Setia/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmtt10.pfb>
+Output written on "C:\Users\Saksham Setia\OneDrive\Desktop\VLSI\cmips\Results\F
+inal\work\pdf\Final_Report.pdf" (14 pages, 325605 bytes).
+Transcript written on "C:\Users\Saksham Setia\OneDrive\Desktop\VLSI\cmips\Resul
+ts\Final\work\pdf\Final_Report.log".
+pdflatex: critical issue: You are running MiKTeX on an unsupported version of Windows.
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+(Final_Report.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cl
+s
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/base\size11.clo
+))
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.s
+ty)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/generic/pdftex\glypht
+ounicode.tex)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geomet
+ry.sty
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval
+.sty)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.
+sty
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.s
+ty))
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geomet
+ry.cfg))
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphi
+cx.sty
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphi
+cs.sty
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.s
+ty)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\gr
+aphics.cfg)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pd
+ftex.def)))
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperr
+ef.sty
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\inf
+warerr.sty)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvset
+keys.sty)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\
+kvdefinekeys.sty)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdf
+escape.sty
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcm
+ds.sty)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pd
+ftexcmds.sty))
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor
+.sty)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\let
+ltxmacro.sty)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook
+.sty)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\namere
+f.sty
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcou
+nt.sty)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestrin
+g\gettitlestring.sty
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvopt
+ions.sty)))
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolb
+ox.sty)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc
+.def)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intca
+lc.sty)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.
+def)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset
+.sty
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bi
+gintcalc.sty))
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-l
+tx.sty))
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdfte
+x.def
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-
+ltx.sty)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\
+rerunfilecheck.sty
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter
+\uniquecounter.sty)))
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3bac
+kend-pdftex.def)
+(C:\Users\Saksham Setia\OneDrive\Desktop\VLSI\cmips\Results\Final\work\pdf\Fina
+l_Report.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\sup
+p-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+)
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\ep
+stopdf-base.sty
+(C:\Users\Saksham Setia\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstop
+df-sys.cfg))
+(C:\Users\Saksham Setia\OneDrive\Desktop\VLSI\cmips\Results\Final\work\pdf\Fina
+l_Report.out)
+(C:\Users\Saksham Setia\OneDrive\Desktop\VLSI\cmips\Results\Final\work\pdf\Fina
+l_Report.out)
+(C:\Users\Saksham Setia\OneDrive\Desktop\VLSI\cmips\Results\Final\work\pdf\Fina
+l_Report.toc [1{C:/Users/Saksham Setia/AppData/Local/MiKTeX/fonts/map/pdftex/pd
+ftex.map}]) [2] [3] [4 <./figures/architecture.pdf>] [5] [6 <./figures/misr_abo
+rt_trace.pdf>] [7 <./figures/wtm_comparison.pdf>] [8 <./figures/target_vs_measu
+red.pdf>] [9 <./figures/fault_coverage.pdf>] [10 <./FPGA_Analysis/figures/area_
+comparison.pdf>] [11] [12 <./FPGA_Analysis/figures/dynamic_power.pdf> <./FPGA_A
+nalysis/figures/wtm_vs_power.pdf>] [13]
+Underfull \hbox (badness 1097) in paragraph at lines 350--351
+[]\OT1/cmr/m/n/10.95 2. R. A. Hexsel, cMIPS VHDL pro-ces-sor and doc-u-men-ta-t
+ion, sup-plied GPLv3 sources,
+
+Underfull \hbox (badness 2119) in paragraph at lines 356--357
+[]\OT1/cmr/m/n/10.95 5. Repos-i-tory ex-per-i-men-tal records, \OT1/cmtt/m/n/10
+.95 Results/Phase1 \OT1/cmr/m/n/10.95 (where present), \OT1/cmtt/m/n/10.95 Resu
+lts/Phase2\OT1/cmr/m/n/10.95 ,
+[14]
+(C:\Users\Saksham Setia\OneDrive\Desktop\VLSI\cmips\Results\Final\work\pdf\Fina
+l_Report.aux) )
+(see the transcript file for additional information)<C:/Users/Saksham Setia/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/
+Saksham Setia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx
+12.pfb><C:/Users/Saksham Setia/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmr10.pfb><C:/Users/Saksham Setia/AppData/Local/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Saksham Setia/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Saksham Setia/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Use
+rs/Saksham Setia/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
+msy8.pfb><C:/Users/Saksham Setia/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmtt10.pfb>
+Output written on "C:\Users\Saksham Setia\OneDrive\Desktop\VLSI\cmips\Results\F
+inal\work\pdf\Final_Report.pdf" (14 pages, 325605 bytes).
+Transcript written on "C:\Users\Saksham Setia\OneDrive\Desktop\VLSI\cmips\Resul
+ts\Final\work\pdf\Final_Report.log".
+pdflatex: critical issue: You are running MiKTeX on an unsupported version of Windows.

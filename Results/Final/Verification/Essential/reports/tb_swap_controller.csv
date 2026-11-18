@@ -1,0 +1,2 @@
+Case,Testbench,Group,Result,CompletionTime,Capture,WDBBytes
+tb_swap_controller,tb_swap_controller,Essential,PASS,32801100 ps,0,0

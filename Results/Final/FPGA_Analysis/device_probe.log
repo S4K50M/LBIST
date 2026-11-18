@@ -1,0 +1,81 @@
+#-----------------------------------------------------------
+# Vivado v2025.1.1 (64-bit)
+# SW Build 6233196 on Thu Sep 11 21:27:30 MDT 2025
+# IP Build 6232796 on Fri Sep 12 01:46:16 MDT 2025
+# SharedData Build 6233195 on Thu Sep 11 17:56:43 MDT 2025
+# Start of session at: Wed Nov 18 09:17:14 2026
+# Process ID         : 3332
+# Current directory  : C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips
+# Command line       : vivado.exe -mode batch -source C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/scripts/probe_final_device.tcl -log Results/Final/device_probe.log -journal Results/Final/work/probe.jou -notrace
+# Log file           : C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/device_probe.log
+# Journal file       : C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips\Results/Final/work/probe.jou
+# Running On         : LAPTOP-B852K4P2
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i5-13420H
+# CPU Frequency      : 2611 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 12
+# Host memory        : 16802 MB
+# Swap memory        : 9126 MB
+# Total Virtual      : 25929 MB
+# Available Virtual  : 7601 MB
+#-----------------------------------------------------------
+source {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/lbist/scripts/probe_final_device.tcl} -notrace
+TOOL_VERSION: 2025.1.1
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+Property                   Type     Read-only  Value
+ARCHITECTURE               string   true       artix7
+ARCHITECTURE_FULL_NAME     string   true       Artix-7
+AVAILABLE_CONFIG_MODES     string*  true       
+AVAILABLE_IOBS             int      true       106
+BLOCK_RAMS                 int      true       50
+CLASS                      string   true       part
+COLS                       int      true       115
+COMPATIBLE_PARTS           string*  true       xc7a15tcpg236 xc7a50tcpg236
+C_FAMILY                   string   true       artix7
+DEVICE                     string   true       xc7a35t
+DSP                        int      true       90
+FAMILY                     string   true       artix7
+FE                         int      true       0
+FLIPFLOPS                  int      true       41600
+GB_TRANSCEIVERS            int      true       2
+GTPE2_TRANSCEIVERS         int      true       2
+GTP_TRANSCEIVERS           int      true       2
+IDCODE                     string   true       0x0362d093
+IO_PIN_COUNT               int      true       236
+IO_STANDARDS               string   true       LVTTL LVCMOS33 LVCMOS25 LVCMOS18 LVCMOS15 LVCMOS12 HSUL_12 HSTL_I HSTL_II HSTL_I_18 HSTL_II_18 SSTL18_I SSTL18_II SSTL15 SSTL15_R SSTL135 SSTL135_R DIFF_HSTL_I DIFF_HSTL_II DIFF_HSTL_I_18 DIFF_HSTL_II_18 DIFF_SSTL18_I DIFF_SSTL18_II DIFF_SSTL15 DIFF_SSTL15_R DIFF_SSTL135 DIFF_SSTL135_R DIFF_HSUL_12 PCI33_3 MOBILE_DDR DIFF_MOBILE_DDR BLVDS_25 LVDS_25 RSDS_25 TMDS_33 MINI_LVDS_25 PPDS_25
+LUT_ELEMENTS               int      true       20800
+MAX_OPERATING_TEMPERATURE  int      true       0
+MAX_OPERATING_VOLTAGE      double   true       1.050
+MCBS                       int      true       0
+MIN_OPERATING_TEMPERATURE  int      true       0
+MIN_OPERATING_VOLTAGE      double   true       0.950
+MMCM                       int      true       5
+NAME                       string   true       xc7a35tcpg236-1
+PACKAGE                    string   true       cpg236
+PACKAGE_PINOUT_VERSION     string   true       FINAL 2014-02-19
+PACKAGE_PIN_DELAY_VERSION  string   true       VERS. 2.0 2014-02-19
+PCI_BUSES                  int      true       1
+REF_OPERATING_TEMPERATURE  int      true       0
+REF_OPERATING_VOLTAGE      double   true       0.950
+ROWS                       int      true       157
+SLICES                     int      true       8150
+SLRS                       int      true       1
+SPEED                      string   true       -1
+SPEED_LABEL                string   true       PRODUCTION
+SPEED_LEVEL_ID             string   true       1.23
+SPEED_LEVEL_ID_DATE        string   true       2018-06-13
+SSN_REPORT                 bool     true       1
+SUPPORTS_NEXTGEN_VERSAL    bool     true       0
+TEMAC_NETWORK_CONTROLLERS  int      true       0
+TEMPERATURE_GRADE_LETTER   string   true       
+report_property: Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 503.273 ; gain = 218.691
+COMMAND read_saif: read_saif
+COMMAND report_switching_activity: report_switching_activity
+COMMAND report_power: report_power
+COMMAND open_saif: 
+COMMAND log_saif: 
+COMMAND close_saif: 
+FINAL_DEVICE_INSTALLED_SUPPORTED: PASS
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 18 09:17:31 2026...

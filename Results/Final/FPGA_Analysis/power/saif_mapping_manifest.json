@@ -1,0 +1,101 @@
+[
+  {
+    "Source": "Results\\Final\\FPGA_Analysis\\power\\activity\\approach_0.saif",
+    "Mapped": "Results\\Final\\FPGA_Analysis\\power\\activity\\mapped_approach_0.saif",
+    "SourceSHA256": "eae5bdb88f92250b878f8254837511aa6521ef7333237c1bfc44318b833fd042",
+    "MappedSHA256": "0ad97d7010eac7305342550120da3b70735f3cdacb558387e5f84c9b1cd59359",
+    "ActivityFingerprint": "bed97d1bc5fd6d7a37881706b9e69044ed4735ddbb198d1a0c92f13a5b25fc7b",
+    "NetRecords": 37208,
+    "InstanceSelection": "tb_final_activity/engine/system_copy",
+    "Rename": "u_system",
+    "CollapsedGenerates": [
+      "scan_cpu",
+      "lbist"
+    ],
+    "ActivityUnchanged": true
+  },
+  {
+    "Source": "Results\\Final\\FPGA_Analysis\\power\\activity\\approach_1.saif",
+    "Mapped": "Results\\Final\\FPGA_Analysis\\power\\activity\\mapped_approach_1.saif",
+    "SourceSHA256": "1778833ed67c1150c52981b2a813dc5fa79265322606f98d3f9e8416fa6d25c4",
+    "MappedSHA256": "f6be3cba0a9c8c4a87f01436fee236d34ae55c8da125ee6bb4de3d02b8b6f6a4",
+    "ActivityFingerprint": "d647af986aa54ab1afaa521aa4bf13678096953ae4358568700de1994870ea60",
+    "NetRecords": 37208,
+    "InstanceSelection": "tb_final_activity/engine/system_copy",
+    "Rename": "u_system",
+    "CollapsedGenerates": [
+      "scan_cpu",
+      "lbist"
+    ],
+    "ActivityUnchanged": true
+  },
+  {
+    "Source": "Results\\Final\\FPGA_Analysis\\power\\activity\\approach_2.saif",
+    "Mapped": "Results\\Final\\FPGA_Analysis\\power\\activity\\mapped_approach_2.saif",
+    "SourceSHA256": "193c1248ac0337a7545e87afdc8b29305afc8542ed2a7b9724664cf93b41fe0b",
+    "MappedSHA256": "c5517f013c5a96b661d7184c83cb5fac2be737147a73aed7c6a9cf81b61c3d08",
+    "ActivityFingerprint": "b696543e4d47e189683fd2f7a04ae1c9c6d90e1f9c5403d564cb1dc0aff5e791",
+    "NetRecords": 37208,
+    "InstanceSelection": "tb_final_activity/engine/system_copy",
+    "Rename": "u_system",
+    "CollapsedGenerates": [
+      "scan_cpu",
+      "lbist"
+    ],
+    "ActivityUnchanged": true
+  },
+  {
+    "Source": "Results\\Final\\FPGA_Analysis\\power\\activity\\approach_3.saif",
+    "Mapped": "Results\\Final\\FPGA_Analysis\\power\\activity\\mapped_approach_3.saif",
+    "SourceSHA256": "19b444c6d5cbaf7220280825ca946a67290e4d29d7d3b6b18d11cb7460bd2e08",
+    "MappedSHA256": "48ee2d3807046ab301b9b370f75216f9b6d46f35a7379f377747394edbc8ee72",
+    "ActivityFingerprint": "73e38d0ebe78c52753f3cd08ca83ee4218e345f62406ee2fa3b2305c6464d1f1",
+    "NetRecords": 37208,
+    "InstanceSelection": "tb_final_activity/engine/system_copy",
+    "Rename": "u_system",
+    "CollapsedGenerates": [
+      "scan_cpu",
+      "lbist"
+    ],
+    "ActivityUnchanged": true
+  },
+  {
+    "Source": "Results\\Final\\FPGA_Analysis\\power\\activity\\approach_4.saif",
+    "Mapped": "Results\\Final\\FPGA_Analysis\\power\\activity\\mapped_approach_4.saif",
+    "SourceSHA256": "5066226f6f5c1845f0838cbb51b0a42f8b76a7faf3fbbd9dc46638ff9d9bc4c4",
+    "MappedSHA256": "6ed5d2709b797d0b2b7d8ea5ebca2b48720994a7e46cb689efc3e7efc63db92d",
+    "ActivityFingerprint": "e5bafed003639dca76a3b1fcd5ed17e8e2632c4f26de59981d69b1a21cc5a7ae",
+    "NetRecords": 37208,
+    "InstanceSelection": "tb_final_activity/engine/system_copy",
+    "Rename": "u_system",
+    "CollapsedGenerates": [
+      "scan_cpu",
+      "lbist"
+    ],
+    "ActivityUnchanged": true
+  },
+  {
+    "Source": "Results\\Final\\FPGA_Analysis\\power\\activity\\functional.saif",
+    "Mapped": "Results\\Final\\FPGA_Analysis\\power\\activity\\mapped_baseline.saif",
+    "SourceSHA256": "23e528797f7605d057523a58ade447c0ab5d5002c4d6cb86780cec69056a0b11",
+    "MappedSHA256": "0d0eccb7c249dbad1a9c82a9f23e8c69e6cb41a5b4c145b242ca61a24ce085d8",
+    "ActivityFingerprint": "bbf1fe437846cc3081b85e264871ef8250e6a91f0764419eed08d0c1bcd9b929",
+    "NetRecords": 14939,
+    "InstanceSelection": "tb_final_functional_activity/U_CORE",
+    "Rename": "baseline.u_cpu",
+    "CollapsedGenerates": [],
+    "ActivityUnchanged": true
+  },
+  {
+    "Source": "Results\\Final\\FPGA_Analysis\\power\\activity\\functional.saif",
+    "Mapped": "Results\\Final\\FPGA_Analysis\\power\\activity\\mapped_scan_enabled.saif",
+    "SourceSHA256": "23e528797f7605d057523a58ade447c0ab5d5002c4d6cb86780cec69056a0b11",
+    "MappedSHA256": "1bc49743975b265c2fc4712cdf0c0797faa71d76d334c1c4158c6d2fcad2f6d9",
+    "ActivityFingerprint": "f73f0b9482b6c60cdc550e39948f0de17d5bd9c97366a977e54e971de9f2b6af",
+    "NetRecords": 36266,
+    "InstanceSelection": "tb_final_functional_activity/U_SCAN",
+    "Rename": "scan_cpu.u_cpu",
+    "CollapsedGenerates": [],
+    "ActivityUnchanged": true
+  }
+]

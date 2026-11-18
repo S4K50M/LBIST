@@ -1,0 +1,7 @@
+Time resolution is 1 ps
+Note: [PASS] continuous shifting, repeated transitions, invalid and unknown modes, no extra cycles
+Time: 8191100 ps  Iteration: 0  Process: /tb_plpf_dynamic/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_plpf_dynamic.vhd
+Note: [PASS] explicit 3->1 boundary and LFSR pause
+Time: 8199100 ps  Iteration: 0  Process: /tb_plpf_dynamic/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_plpf_dynamic.vhd
+Note: [TB_COMPLETE] tb_plpf_dynamic at 8199100 ps
+Time: 8199100 ps  Iteration: 0  Process: /tb_plpf_dynamic/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_plpf_dynamic.vhd

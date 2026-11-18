@@ -1,0 +1,8 @@
+work/
+*.backup.log
+**/*.wdb
+**/*.vcd
+**/*.saif
+**/*.dcp
+**/*.jou
+**/.Xil/

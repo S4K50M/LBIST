@@ -1,0 +1,4 @@
+Comparison,LUTDelta,LUTOverheadPercent,FFDelta,FFOverheadPercent,Stage
+Scan/isolation vs baseline,980,18.21561338289963,1066,52.383292383292385,Routed
+Complete LBIST vs baseline,1131,21.022304832713754,1205,59.21375921375921,Routed
+LBIST addition vs scan/isolation,151,2.3742138364779874,139,4.482425024185747,Routed

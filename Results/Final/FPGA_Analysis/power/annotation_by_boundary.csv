@@ -1,0 +1,26 @@
+Approach,Boundary,Simulation,Propagated,Default,Other,Total
+Direct,Whole design,7964,17353,73,89,25479
+Direct,IF_RF_native_hierarchy,364,1022,2,1,1389
+Direct,Router,31,154,7,6,198
+Direct,Controller,15,101,4,1,121
+Direct,MISR,70,138,5,2,215
+Constant n=3,Whole design,7964,17353,73,89,25479
+Constant n=3,IF_RF_native_hierarchy,364,1022,2,1,1389
+Constant n=3,Router,31,154,7,6,198
+Constant n=3,Controller,15,101,4,1,121
+Constant n=3,MISR,70,138,5,2,215
+Basic,Whole design,7964,17353,73,89,25479
+Basic,IF_RF_native_hierarchy,364,1022,2,1,1389
+Basic,Router,31,154,7,6,198
+Basic,Controller,15,101,4,1,121
+Basic,MISR,70,138,5,2,215
+Swap,Whole design,7964,17353,73,89,25479
+Swap,IF_RF_native_hierarchy,364,1022,2,1,1389
+Swap,Router,31,154,7,6,198
+Swap,Controller,15,101,4,1,121
+Swap,MISR,70,138,5,2,215
+Moving,Whole design,7964,17353,73,89,25479
+Moving,IF_RF_native_hierarchy,364,1022,2,1,1389
+Moving,Router,31,154,7,6,198
+Moving,Controller,15,101,4,1,121
+Moving,MISR,70,138,5,2,215

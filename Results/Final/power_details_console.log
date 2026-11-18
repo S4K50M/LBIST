@@ -1,0 +1,389 @@
+
+****** Vivado v2025.1.1 (64-bit)
+  **** SW Build 6233196 on Thu Sep 11 21:27:30 MDT 2025
+  **** IP Build 6232796 on Fri Sep 12 01:46:16 MDT 2025
+  **** SharedData Build 6233195 on Thu Sep 11 17:56:43 MDT 2025
+  **** Start of session at: Wed Nov 18 10:05:13 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source lbist/scripts/run_final_power_details.tcl
+# set root [file normalize [file join [file dirname [info script]] ../..]]
+# set out [file join $root Results Final FPGA_Analysis power]
+# cd [file join $root Results Final work]
+# if {[catch {
+#  open_checkpoint [file join $::env(TEMP) vl405_final_fpga full_lbist routed.dcp]
+#  puts [help reset_switching_activity]
+#  set expected_router [get_cells -hier -filter {REF_NAME =~ *lbist_pattern_router* || ORIG_REF_NAME =~ *lbist_pattern_router*}]
+#  if {[llength $expected_router]!=1} {error "Expected actual retained production router"}
+#  puts "RETAINED PRODUCTION ROUTER: $expected_router"
+#  foreach a {0 1 2 3 4} {
+#   if {[catch {reset_switching_activity -all} reason]} {
+#    # A fresh checkpoint is the safe fallback if reset is unsupported.
+#    puts "Activity reset fallback: $reason"
+#    close_design
+#    open_checkpoint [file join $::env(TEMP) vl405_final_fpga full_lbist routed.dcp]
+#   }
+#   set_operating_conditions -ambient_temp 25 -process typical
+#   read_saif -strip_path final_fpga_top -out_file [file join $out approach_$a unmatched_details.rpt] [file join $out activity mapped_approach_$a.saif]
+#   report_power -hier all -hierarchical_depth 5 -l 100 -file [file join $out approach_$a power_details.rpt]
+#   report_power -hier all -hierarchical_depth 5 -l 100 -format xml -file [file join $out approach_$a power_details.xml]
+#   puts "FINAL DETAILED POWER: approach_$a PASS"
+#  }
+#  close_design
+# } reason]} {puts stderr $reason;exit 1}
+Command: open_checkpoint C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_fpga/full_lbist/routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 295.684 ; gain = 0.000
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.162 . Memory (MB): peak = 704.980 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1214 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.1.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 809.246 ; gain = 0.848
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.041 . Memory (MB): peak = 1386.734 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 1386.734 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1386.734 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1386.734 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.495 . Memory (MB): peak = 1389.637 ; gain = 2.902
+Read Physdb Files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1389.637 ; gain = 2.902
+Restored from archive | CPU: 2.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1389.637 ; gain = 2.902
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1389.637 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.1.1 (64-bit) build 6233196
+open_checkpoint: Time (s): cpu = 00:00:46 ; elapsed = 00:00:56 . Memory (MB): peak = 1395.348 ; gain = 1108.195
+reset_switching_activity
+
+Description: 
+Reset switching activity on specified objects
+
+Syntax: 
+reset_switching_activity  [-default] [-type <args>] [-hier] [-all]
+                          [-no_deassert_resets] [-quiet] [-verbose]
+                          [<objects>...]
+
+Usage: 
+  Name                   Description
+  ----------------------------------
+  [-default]             Reset default static probability and default toggle 
+                         rate
+  [-type]                Specify nodes in a specific category.  List of valid
+                         type values: io_output, io_bidir_enable, register, 
+                         lut_ram, lut, dsp, bram_enable, bram_wr_enable, 
+                         gt_txdata, gt_rxdata.
+  [-hier]                Hierarchically resets the switching activity on a 
+                         hierarchical cells provided as <objects>.
+  [-all]                 Reset switching activity on all nets
+  [-no_deassert_resets]  A switch to undo the deassertion of resets via 
+                         command set_switching_activity -deassert_resets
+  [-quiet]               Ignore command errors
+  [-verbose]             Suspend message limits during command execution
+  [<objects>]            Objects to reset switching activity on
+
+Categories: 
+Power, XDC
+
+Description:
+
+  Resets the attributes of the switching activity on specified nets, ports,
+  pins, and cells in the design.
+
+  The switching activity is defined using the set_switching_activity command.
+  The current switching activity defined for a specific port, pin, net, or
+  cell can be found by using the report_switching_activity command.
+
+  Note: The reset_switching_activity is used to reset switching activity for
+  specified objects. Use set_switching_activity -default_toggle_rate or
+  -default_static_probability to change or reset the default values for the
+  current design.
+
+  This command operates silently and does not return direct feedback of its
+  operation.
+
+Arguments:
+
+  -default - (Optional) Reset the static probability and signal rate of the
+  specified object.
+
+  -type <arg> - (Optional) Reset the switching activity for the specified
+  type of logic entity. By default, the command is applied to the top-level
+  of the current design, or to the specified <objects>. The -type option
+  applies the command to the specified type of logic objects in the top-level
+  of the current design. The -all option, or -hier option, can be used to
+  modify the scope of objects the command applies to. Valid logic types
+  include:
+
+   *  io_output - Primary outputs.
+
+   *  io_bidir_enable - Enable pin of Bidir ports.
+
+   *  register - All register outputs in the design/hierarchy specified.
+
+   *  lut - All LUT outputs in the design/hierarchy specified.
+
+   *  lut_ram - All distributed ram outputs in the design/hierarchy specified.
+
+   *  dsp - All DSP outputs in the design/hierarchy specified.
+
+   *  bram_enable - Enable pins (ENARDEN/ENBWREN) of BRAMs.
+
+   *  bram_wr_enable - Write enables of BRAMs (WEA/WEBWE).
+
+   *  gt_txdata - Output TX data pins of all GTs.
+
+   *  gt_rxdata - Output RX data pins of all GTs.
+
+  -hier - (Optional) Reset the switching activity across all levels of the
+  specified hierarchical object. Without -hier, the switching activity is
+  applied to the specified <objects> at the current level of the hierarchy.
+
+  -all - (Optional) Must be used with -type, reset the switching activity on
+  nets within all instances of the specified -type of logic object.
+
+  -no_deassert_resets - (Optional) Disables the -deassert_resets option if it
+  was previously enabled using set_switching_activity.
+
+  -quiet - (Optional) Execute the command quietly, returning no messages from
+  the command. The command also returns TCL_OK regardless of any errors
+  encountered during execution.
+
+  Note: Any errors encountered on the command-line, while launching the
+  command, will be returned. Only errors occurring inside the command will be
+  trapped.
+
+  -verbose - (Optional) Temporarily override any message limits and return
+  all messages from this command.
+
+  Note: Message limits can be defined with the set_msg_config command.
+
+  <objects> - (Optional) The list of objects for which to reset the switching
+  activity. If not specified, the command resets the switching activity on
+  all objects.
+
+Examples:
+
+  The following example resets the signal_rate and static probability value
+  on all output ports:
+
+    reset_switching_activity -default [all_outputs] 
+    
+
+See Also:
+
+   *  power_opt_design
+   *  report_power
+   *  report_switching_activity
+   *  set_switching_activity
+
+RETAINED PRODUCTION ROUTER: u_system/lbist.u_router
+INFO: [Power 33-167] Parsing SAIF file C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/power/activity/mapped_approach_0.saif
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[31]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[30]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[29]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[28]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[27]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[26]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[25]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[24]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[23]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[22]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[21]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[20]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[19]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[18]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[17]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[16]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[15]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[14]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[13]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[12]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[11]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[10]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[9]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[8]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[7]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[6]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[5]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[21]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[20]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[19]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[18]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[17]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[16]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[15]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[14]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[13]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[12]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[11]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[10]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[9]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[8]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[7]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[6]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[5]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[31]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[30]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[29]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[28]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[27]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[26]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[25]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[24]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[23]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[22]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[21]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[20]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[19]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[18]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[17]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[16]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[15]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[14]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[13]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[12]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[11]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[10]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[9]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[8]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[7]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[6]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[5]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/shift_amnt[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/shift_amnt[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/shift_amnt[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/shift_amnt[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/shift_amnt[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/D[31]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/D[30]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/D[29]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/D[28]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/D[27]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/D[26]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/D[25]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/D[24]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/D[23]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+INFO: [Common 17-14] Message 'Power 33-288' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Power 33-330] Read_saif is trying to annotate activities on clock net and this will be ignored. Users shall manually specify clock net frequency using sdc timing constraints(e.g. create_clock)
+INFO: [Power 33-177] SAIF annotation done from file C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/power/activity/mapped_approach_0.saif
+INFO: [Power 33-26] Design nets matched = 1963 of 14106
+Command: report_power -hier all -hierarchical_depth 5 -l 100 -file {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/power/approach_0/power_details.rpt}
+14% of nets annotated
+Doing probabilistic computation for the remaining nets
+
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "board_clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+16 Infos, 102 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:13 ; elapsed = 00:00:10 . Memory (MB): peak = 1460.918 ; gain = 48.199
+Command: report_power -hier all -hierarchical_depth 5 -l 100 -format xml -file {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/power/approach_0/power_details.xml}
+14% of nets annotated
+Doing probabilistic computation for the remaining nets
+
+16 Infos, 102 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1488.379 ; gain = 27.461
+FINAL DETAILED POWER: approach_0 PASS
+INFO: [Power 33-167] Parsing SAIF file C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/power/activity/mapped_approach_1.saif
+WARNING: [Power 33-330] Read_saif is trying to annotate activities on clock net and this will be ignored. Users shall manually specify clock net frequency using sdc timing constraints(e.g. create_clock)
+INFO: [Power 33-177] SAIF annotation done from file C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/power/activity/mapped_approach_1.saif
+INFO: [Power 33-26] Design nets matched = 1963 of 14106
+read_saif: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1488.379 ; gain = 0.000
+Command: report_power -hier all -hierarchical_depth 5 -l 100 -file {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/power/approach_1/power_details.rpt}
+14% of nets annotated
+Doing probabilistic computation for the remaining nets
+
+19 Infos, 103 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1504.809 ; gain = 16.430
+Command: report_power -hier all -hierarchical_depth 5 -l 100 -format xml -file {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/power/approach_1/power_details.xml}
+14% of nets annotated
+Doing probabilistic computation for the remaining nets
+
+19 Infos, 103 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1504.820 ; gain = 0.012
+FINAL DETAILED POWER: approach_1 PASS
+INFO: [Power 33-167] Parsing SAIF file C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/power/activity/mapped_approach_2.saif
+WARNING: [Power 33-330] Read_saif is trying to annotate activities on clock net and this will be ignored. Users shall manually specify clock net frequency using sdc timing constraints(e.g. create_clock)
+INFO: [Power 33-177] SAIF annotation done from file C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/power/activity/mapped_approach_2.saif
+INFO: [Power 33-26] Design nets matched = 1963 of 14106
+Command: report_power -hier all -hierarchical_depth 5 -l 100 -file {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/power/approach_2/power_details.rpt}
+14% of nets annotated
+Doing probabilistic computation for the remaining nets
+
+22 Infos, 104 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 1508.848 ; gain = 4.027
+Command: report_power -hier all -hierarchical_depth 5 -l 100 -format xml -file {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/power/approach_2/power_details.xml}
+14% of nets annotated
+Doing probabilistic computation for the remaining nets
+
+22 Infos, 104 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+FINAL DETAILED POWER: approach_2 PASS
+INFO: [Power 33-167] Parsing SAIF file C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/power/activity/mapped_approach_3.saif
+WARNING: [Power 33-330] Read_saif is trying to annotate activities on clock net and this will be ignored. Users shall manually specify clock net frequency using sdc timing constraints(e.g. create_clock)
+INFO: [Power 33-177] SAIF annotation done from file C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/power/activity/mapped_approach_3.saif
+INFO: [Power 33-26] Design nets matched = 1963 of 14106
+Command: report_power -hier all -hierarchical_depth 5 -l 100 -file {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/power/approach_3/power_details.rpt}
+14% of nets annotated
+Doing probabilistic computation for the remaining nets
+
+25 Infos, 105 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+Command: report_power -hier all -hierarchical_depth 5 -l 100 -format xml -file {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/power/approach_3/power_details.xml}
+14% of nets annotated
+Doing probabilistic computation for the remaining nets
+
+25 Infos, 105 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+FINAL DETAILED POWER: approach_3 PASS
+INFO: [Power 33-167] Parsing SAIF file C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/power/activity/mapped_approach_4.saif
+WARNING: [Power 33-330] Read_saif is trying to annotate activities on clock net and this will be ignored. Users shall manually specify clock net frequency using sdc timing constraints(e.g. create_clock)
+INFO: [Power 33-177] SAIF annotation done from file C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/power/activity/mapped_approach_4.saif
+INFO: [Power 33-26] Design nets matched = 1963 of 14106
+Command: report_power -hier all -hierarchical_depth 5 -l 100 -file {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/power/approach_4/power_details.rpt}
+14% of nets annotated
+Doing probabilistic computation for the remaining nets
+
+28 Infos, 106 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1508.883 ; gain = 0.000
+Command: report_power -hier all -hierarchical_depth 5 -l 100 -format xml -file {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/power/approach_4/power_details.xml}
+14% of nets annotated
+Doing probabilistic computation for the remaining nets
+
+28 Infos, 106 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1508.895 ; gain = 0.012
+FINAL DETAILED POWER: approach_4 PASS
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 18 10:07:37 2026...

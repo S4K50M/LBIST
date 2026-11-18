@@ -1,0 +1,6 @@
+Approach,Detected,Undetected,FirstDirectMin,FirstDirectMax,FirstDirectMean,FirstPrefixMISRMin,FirstPrefixMISRMax,PatternsTo75,PayloadCyclesTo75,FullTestCycles
+Direct,12,4,1,4,1.75,1,4,4,516,33024
+Constant n=3,12,4,1,4,1.75,1,4,4,516,33024
+Basic,12,4,1,4,1.5833333333333333,1,4,4,516,33024
+Swap,12,4,1,4,1.5833333333333333,1,4,4,516,33024
+Moving,12,4,1,4,1.6666666666666667,1,4,4,516,33024

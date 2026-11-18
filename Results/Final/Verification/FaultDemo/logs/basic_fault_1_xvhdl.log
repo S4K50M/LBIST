@@ -1,0 +1,102 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/packageWires.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/packageMemory_simu.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/altera.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'mf_alt_add_4'
+INFO: [VRFC 10-3107] analyzing entity 'mf_alt_adder'
+INFO: [VRFC 10-3107] analyzing entity 'mf_alt_add_sub'
+INFO: [VRFC 10-3107] analyzing entity 'mf_alt_add_sub_u'
+INFO: [VRFC 10-3107] analyzing entity 'mf_ram1port'
+INFO: [VRFC 10-3107] analyzing entity 'alt_mf_rom'
+INFO: [VRFC 10-3107] analyzing entity 'mf_altpll'
+INFO: [VRFC 10-3107] analyzing entity 'mf_altpll_io'
+INFO: [VRFC 10-3107] analyzing entity 'mf_altclkctrl'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/aux_module.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'register32'
+INFO: [VRFC 10-3107] analyzing entity 'registerN'
+INFO: [VRFC 10-3107] analyzing entity 'counter32'
+INFO: [VRFC 10-3107] analyzing entity 'countNup'
+INFO: [VRFC 10-3107] analyzing entity 'count4phases'
+INFO: [VRFC 10-3107] analyzing entity 'FFD'
+INFO: [VRFC 10-3107] analyzing entity 'FFDsimple'
+INFO: [VRFC 10-3107] analyzing entity 'FFT'
+INFO: [VRFC 10-3107] analyzing entity 'subtr32'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/basic_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'basic_controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/packageExcp.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/core.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'core'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/exception.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_IF_RF'
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_RF_EX'
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_EX_MM'
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_MM_WB'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase2_tb_pkg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_rom_pkg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/misr_16.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'misr_16'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/phase6a_safe_misr.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'phase6a_safe_misr'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_golden_pkg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/lbist_test_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'lbist_test_controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/FFD_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'FFD_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'register32_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/reg_IF_RF_scan.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_IF_RF_scan'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/ram_dual_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ram_dual_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_bank_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_bank_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_RF_EX_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_RF_EX_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/alu_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'alu_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_EX_MM_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_EX_MM_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_MM_WB_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_MM_WB_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_excp_IF_RF_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_IF_RF_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_excp_RF_EX_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_RF_EX_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_excp_EX_MM_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_EX_MM_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/counter32_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'counter32_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'registerN_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_excp_MM_WB_test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_MM_WB_test'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/fault_injection/core_scan_fault.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'core_scan_fault'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/lfsr_16.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'lfsr_16'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/phase_shifter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'phase_shifter'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/swap_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'swap_controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/moving_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'moving_controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/plpf_dynamic.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'plpf_dynamic'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/lbist_pattern_router.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'lbist_pattern_router'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_processor_check.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'phase6a_processor_check'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/pipestages.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'reg_IF_RF'
+INFO: [VRFC 10-3107] analyzing entity 'reg_RF_EX'
+INFO: [VRFC 10-3107] analyzing entity 'reg_EX_MM'
+INFO: [VRFC 10-3107] analyzing entity 'reg_MM_WB'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/units.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'ram_dual'
+INFO: [VRFC 10-3107] analyzing entity 'reg_bank'
+INFO: [VRFC 10-3107] analyzing entity 'alu'
+INFO: [VRFC 10-3107] analyzing entity 'mask_off_bits'
+INFO: [VRFC 10-3107] analyzing entity 'shift_left32'
+INFO: [VRFC 10-3107] analyzing entity 'shift_right32'
+INFO: [VRFC 10-3107] analyzing entity 'wait_states'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_fault_comparison.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_phase6a_fault_comparison'

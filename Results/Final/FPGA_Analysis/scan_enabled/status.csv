@@ -1,0 +1,4 @@
+Configuration,Stage,Status,Detail
+scan_enabled,synthesis,PASS,actual native synthesis
+scan_enabled,implementation,PASS,placement and routing completed
+scan_enabled,power,FAIL,ERROR: [Common 17-39] 'report_switching_activity' failed due to earlier errors. 

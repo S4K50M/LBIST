@@ -1,0 +1,6 @@
+Approach,Boundary,DynamicW,WholeC_AssumptionDominatedDynamicW,MMCMW,ResolutionW,Status
+Direct,Routed PIPESTAGE_IF_RF hierarchy (includes absorbed decode/comb logic),0.002,0.124,0.106,0.001,PARTIAL_RTL_SAIF_AND_PROPAGATION; no reliable whole-processor saving claim
+Constant n=3,Routed PIPESTAGE_IF_RF hierarchy (includes absorbed decode/comb logic),NOT_REPORTED,0.123,0.106,0.001,PARTIAL_RTL_SAIF_AND_PROPAGATION; no reliable whole-processor saving claim
+Basic,Routed PIPESTAGE_IF_RF hierarchy (includes absorbed decode/comb logic),NOT_REPORTED,0.124,0.106,0.001,PARTIAL_RTL_SAIF_AND_PROPAGATION; no reliable whole-processor saving claim
+Swap,Routed PIPESTAGE_IF_RF hierarchy (includes absorbed decode/comb logic),NOT_REPORTED,0.123,0.106,0.001,PARTIAL_RTL_SAIF_AND_PROPAGATION; no reliable whole-processor saving claim
+Moving,Routed PIPESTAGE_IF_RF hierarchy (includes absorbed decode/comb logic),NOT_REPORTED,0.124,0.106,0.001,PARTIAL_RTL_SAIF_AND_PROPAGATION; no reliable whole-processor saving claim

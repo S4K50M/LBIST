@@ -1,0 +1,2 @@
+Case,Testbench,Group,Result,CompletionTime,Capture,WDBBytes
+tb_reg_IF_RF_scan,tb_reg_IF_RF_scan,Essential,PASS,33676200 ps,0,0

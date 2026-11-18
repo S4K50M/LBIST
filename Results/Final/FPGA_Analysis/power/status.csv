@@ -1,0 +1,8 @@
+Configuration,Approach,Stage,Status,Detail
+baseline,functional,SAIF_power,PASS,real own RTL SAIF on routed checkpoint; inspect annotation coverage
+scan_enabled,functional,SAIF_power,PASS,real own RTL SAIF on routed checkpoint; inspect annotation coverage
+full_lbist,0,SAIF_power,PASS,real own RTL SAIF on routed checkpoint; inspect annotation coverage
+full_lbist,1,SAIF_power,PASS,real own RTL SAIF on routed checkpoint; inspect annotation coverage
+full_lbist,2,SAIF_power,PASS,real own RTL SAIF on routed checkpoint; inspect annotation coverage
+full_lbist,3,SAIF_power,PASS,real own RTL SAIF on routed checkpoint; inspect annotation coverage
+full_lbist,4,SAIF_power,PASS,real own RTL SAIF on routed checkpoint; inspect annotation coverage

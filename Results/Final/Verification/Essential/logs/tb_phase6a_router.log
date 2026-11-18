@@ -1,0 +1,13 @@
+Time resolution is 1 ps
+Note: [ROUTER] 0,36,4608,PASS
+Time: 46100200 ps  Iteration: 0  Process: /tb_phase6a_router/line__17  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_router.vhd
+Note: [ROUTER] 1,36,4608,PASS
+Time: 92200200 ps  Iteration: 0  Process: /tb_phase6a_router/line__17  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_router.vhd
+Note: [ROUTER] 2,36,4608,PASS
+Time: 138300200 ps  Iteration: 0  Process: /tb_phase6a_router/line__17  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_router.vhd
+Note: [ROUTER] 3,36,4608,PASS
+Time: 184400200 ps  Iteration: 0  Process: /tb_phase6a_router/line__17  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_router.vhd
+Note: [ROUTER] 4,36,4608,PASS
+Time: 230500200 ps  Iteration: 0  Process: /tb_phase6a_router/line__17  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_router.vhd
+Note: [TB_COMPLETE] tb_phase6a_router at 230503200 ps
+Time: 230503200 ps  Iteration: 0  Process: /tb_phase6a_router/line__17  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_router.vhd

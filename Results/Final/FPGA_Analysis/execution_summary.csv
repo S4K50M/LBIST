@@ -1,0 +1,13 @@
+Configuration,Stage,Status,Evidence
+baseline,synthesis,PASS,baseline/status.csv
+baseline,implementation,PASS,baseline/status.csv
+baseline,final own-SAIF power exports,PASS,power/status.csv
+baseline,routed timing closure,FAIL,baseline/routed_timing.rpt
+scan_enabled,synthesis,PASS,scan_enabled/status.csv
+scan_enabled,implementation,PASS,scan_enabled/status.csv
+scan_enabled,final own-SAIF power exports,PASS,power/status.csv
+scan_enabled,routed timing closure,FAIL,scan_enabled/routed_timing.rpt
+full_lbist,synthesis,PASS,full_lbist/status.csv
+full_lbist,implementation,PASS,full_lbist/status.csv
+full_lbist,final own-SAIF power exports,PASS,power/status.csv
+full_lbist,routed timing closure,FAIL,full_lbist/routed_timing.rpt

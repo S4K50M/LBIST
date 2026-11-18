@@ -1,0 +1,2866 @@
+
+****** Vivado v2025.1.1 (64-bit)
+  **** SW Build 6233196 on Thu Sep 11 21:27:30 MDT 2025
+  **** IP Build 6232796 on Fri Sep 12 01:46:16 MDT 2025
+  **** SharedData Build 6233195 on Thu Sep 11 17:56:43 MDT 2025
+  **** Start of session at: Wed Nov 18 09:38:02 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source lbist/scripts/run_final_verification.tcl
+# source [file join [file dirname [file normalize [info script]]] final_common.tcl]
+## source [file join [file dirname [file normalize [info script]]] phase6a_common.tcl]
+### set phase5_scripts [file dirname [file normalize [info script]]]
+### source [file join $phase5_scripts phase3_common.tcl]
+#### set phase3_script_dir [file dirname [file normalize [info script]]]
+#### source [file join $phase3_script_dir waveforms_common.tcl]
+##### set waveform_script_dir [file dirname [file normalize [info script]]]
+##### proc generate_lbist_waveforms {selection} {
+#####     global waveform_script_dir
+#####     set root [file normalize [file join $waveform_script_dir ../..]]
+#####     set project_dir [file join $root Results Phase2 work waveform_project]
+#####     create_project -force lbist_waves $project_dir -part xc7a35tcpg236-1
+#####     set_property target_language VHDL [current_project]
+#####     foreach name {lfsr_16 phase_shifter plpf_optimized plpf_dynamic basic_controller} {
+#####         add_files -fileset sources_1 [list [file join $root lbist rtl $name.vhd]]
+#####     }
+#####     foreach name {phase2_tb_pkg tb_lfsr_16 tb_phase_shifter tb_plpf_optimized tb_plpf_dynamic tb_phase2_integration tb_basic_controller tb_basic_integration} {
+#####         add_files -fileset sim_1 [list [file join $root lbist tb $name.vhd]]
+#####     }
+#####     set_property file_type VHDL [get_files *.vhd]
+#####     set_property xsim.simulate.runtime 0ns [get_filesets sim_1]
+#####     set cases {}
+#####     if {$selection ne "basic"} {
+#####         foreach top {tb_lfsr_16 tb_phase_shifter tb_plpf_optimized tb_plpf_dynamic tb_phase2_integration} {
+#####             lappend cases [list phase2 $top $top {}]
+#####         }
+#####     }
+#####     if {$selection ne "phase2"} {
+#####         lappend cases {basic tb_basic_controller tb_basic_controller_L64_B20 20}
+#####         foreach beta {0 8 16 20 28 36} {
+#####             lappend cases [list basic tb_basic_integration tb_basic_integration_L64_B${beta} $beta]
+#####         }
+#####     }
+#####     set summaries [dict create]
+#####     foreach phase {phase2 basic} {
+#####         if {$phase eq "phase2"} {set folder [file join $root Results Phase2 waveforms]} else {
+#####             set folder [file join $root Results Phase3 Basic waveforms]
+#####         }
+#####         file mkdir $folder
+#####         if {($phase eq "phase2" && $selection ne "basic") || ($phase eq "basic" && $selection ne "phase2")} {
+#####             set channel [open [file join $folder waveform_summary.csv] w]
+#####             puts $channel "Case,Testbench,Beta,CompletionTime,WDBBytes,VCDWindow,Result"
+#####             dict set summaries $phase $channel
+#####         }
+#####     }
+#####     set failures 0
+#####     foreach case $cases {
+#####         lassign $case phase top tag beta
+#####         if {$phase eq "phase2"} {set folder [file join $root Results Phase2 waveforms]} else {
+#####             set folder [file join $root Results Phase3 Basic waveforms]
+#####         }
+#####         puts "=== WAVEFORM: $tag ==="
+#####         set_property top $top [get_filesets sim_1]
+#####         if {$beta ne ""} {set generics [list CHAIN_LENGTH=64 BETA=$beta]} else {set generics {}}
+#####         set_property generic $generics [get_filesets sim_1]
+#####         update_compile_order -fileset sim_1
+#####         set simdir [file join $project_dir lbist_waves.sim sim_1 behav xsim]
+#####         set simlog [file join $simdir simulate.log]
+#####         if {[file exists $simlog]} {file delete $simlog}
+#####         set wcfg [file join $folder $tag.wcfg]
+#####         set problem [catch {
+#####             launch_simulation -simset sim_1 -mode behavioral
+#####             create_wave_config $tag
+#####             switch $top {
+#####                 tb_lfsr_16 {set signals {clk rst en state bit_out zero_state custom_state test_done}}
+#####                 tb_phase_shifter {set signals {clk rst en state c f1 f2 manual selected test_done}}
+#####                 tb_plpf_optimized {set signals {clk mode manual c f1 f2 past y valid chain test_done}}
+#####                 tb_plpf_dynamic {set signals {clk rst en state c f1 f2 mode active valid chain y test_done}}
+#####                 tb_phase2_integration {set signals {clk rst scan_enable state c f1 f2 mode active valid y chain test_done}}
+#####                 tb_basic_controller {set signals {clk rst scan_enable count mode done test_done}}
+#####                 tb_basic_integration {set signals {clk rst scan_enable count mode done state c f1 f2 active valid scan_in chain test_done}}
+#####             }
+#####             foreach name $signals {
+#####                 set path /$top/$name
+#####                 if {[llength [get_objects $path]] != 1} {error "Missing waveform signal: $path"}
+#####                 set radix default
+#####                 if {$name in {state zero_state custom_state selected chain}} {set radix hex}
+#####                 if {$name in {mode active}} {set radix bin}
+#####                 if {$name eq "count"} {set radix unsigned}
+#####                 if {$radix eq "default"} {add_wave $path} else {add_wave -radix $radix $path}
+#####                 log_wave $path
+#####             }
+#####             # A compact portable trace covers the initial few complete patterns.
+#####             # Full-time activity remains available in the WDB.
+#####             open_vcd [file join $folder $tag.vcd]
+#####             foreach name $signals {if {$name ni {test_done manual count}} {log_vcd /$top/$name}}
+#####             run 512 ns
+#####             close_vcd
+#####             set finished 0
+#####             for {set step 0} {$step<2000} {incr step} {
+#####                 set done [string tolower [get_value /$top/test_done]]
+#####                 if {$done eq "true" || $done eq "1"} {set finished 1; break}
+#####                 run 1 us
+#####             }
+#####             if {!$finished} {error "Waveform simulation timeout"}
+#####             save_wave_config $wcfg
+#####         } message]
+#####         catch {close_vcd}
+#####         catch {close_sim}
+#####         set text ""
+#####         if {[file exists $simlog]} {
+#####             file copy -force $simlog [file join $folder $tag.log]
+#####             set f [open $simlog r]; set text [read $f]; close $f
+#####         }
+#####         set complete [regexp [format {[[]TB_COMPLETE[]] %s at ([^[:cntrl:]]+)} $top] $text whole duration]
+#####         set result FAIL
+#####         set size 0
+#####         if {!$problem && $complete && ![regexp {[[]FAIL[]]|Failure:|Fatal:|ERROR:} $text]} {
+#####             set database [file join $simdir ${top}_behav.wdb]
+#####             if {[file exists $database] && [file exists $wcfg]} {
+#####                 file copy -force $database [file join $folder $tag.wdb]
+#####                 set size [file size [file join $folder $tag.wdb]]
+#####                 # Keep the WCFG/WDB pair relocatable together.
+#####                 set f [open $wcfg r]; set cfg [read $f]; close $f
+#####                 regsub -all {(<db_ref path=")[^"]*(")} $cfg [format {\1%s.wdb\2} $tag] cfg
+#####                 # Full WDB is retained; start with a readable 300-ns view.
+#####                 regsub {<zoom_setting>[^<]*</zoom_setting>} $cfg {<zoom_setting>
+#####       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+#####       <ZoomEndTime time="300.000 ns"></ZoomEndTime>
+#####       <Cursor1Time time="0.000 ns"></Cursor1Time>
+#####    </zoom_setting>} cfg
+#####                 set f [open $wcfg w]; puts $f $cfg; close $f
+#####                 set result PASS
+#####             }
+#####         }
+#####         if {$result eq "FAIL"} {incr failures; set duration UNKNOWN; puts stderr "Waveform failed: $tag -- $message"}
+#####         if {$beta eq ""} {set beta NA}
+#####         set channel [dict get $summaries $phase]
+#####         puts $channel "$tag,$top,$beta,$duration,$size,0..512 ns,$result"
+#####         flush $channel
+#####         puts "WAVEFORM RESULT: $result -- $tag ($size bytes)"
+#####     }
+#####     dict for {phase channel} $summaries {close $channel}
+#####     close_project
+#####     if {$failures} {error "$failures waveform simulations failed"}
+#####     puts "WAVEFORM GENERATION: PASS ([llength $cases] captures)"
+##### }
+##### proc phase3_wave_begin {folder top tag} {
+#####     file mkdir $folder
+#####     create_wave_config $tag
+#####     if {$top eq "tb_phase3_comparison"} {
+#####         set prefixes [list /$top/direct_engine /$top/low_engine /$top/basic_engine /$top/swap_engine /$top/moving_engine]
+#####     } else {set prefixes [list /$top/engine]}
+#####     foreach prefix $prefixes {
+#####         foreach name {clk rst scan_enable shift_count_v pattern_index moving_position_v alpha_0 beta_v gamma_0 mode_0 mode_1 mode_2 mode_3 mode_select pattern_done alpha_debug gamma_debug state current_bits future1_bits future2_bits active_mode mode_valid scan_in past_bits chain_flat} {
+#####             set path $prefix/$name
+#####             if {[llength [get_objects $path]]==1} {
+#####                 set radix hex
+#####                 if {$name in {mode_0 mode_1 mode_2 mode_3 mode_select active_mode mode_valid}} {set radix bin}
+#####                 if {$name in {shift_count_v moving_position_v alpha_0 beta_v gamma_0 pattern_index}} {set radix unsigned}
+#####                 add_wave -radix $radix $path
+#####                 log_wave $path
+#####             }
+#####         }
+#####     }
+#####     open_vcd [file join $folder $tag.vcd]
+#####     foreach prefix $prefixes {
+#####         foreach name {clk rst scan_enable shift_count_v pattern_index moving_position_v alpha_0 beta_v gamma_0 mode_0 mode_1 mode_2 mode_3 mode_select pattern_done alpha_debug gamma_debug state current_bits future1_bits future2_bits active_mode mode_valid scan_in past_bits chain_flat} {
+#####             set path $prefix/$name
+#####             if {[llength [get_objects $path]]==1} {log_vcd $path}
+#####         }
+#####     }
+#####     run 12 us
+#####     close_vcd
+##### }
+##### proc phase3_wave_finish {folder top tag simdir} {
+#####     set dest [file join $folder $tag.wdb]
+#####     file copy -force [file join $simdir [format "%s_behav.wdb" $top]] $dest
+#####     set config [file join $folder $tag.wcfg]
+#####     set f [open $config r]; set text [read $f]; close $f
+#####     regsub -all {(<db_ref path=")[^"]*(")} $text [format {\1%s.wdb\2} $tag] text
+#####     regsub {<zoom_setting>[^<]*</zoom_setting>} $text {<zoom_setting>
+#####       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+#####       <ZoomEndTime time="180.000 ns"></ZoomEndTime>
+#####    </zoom_setting>} text
+#####     set f [open $config w]; puts $f $text; close $f
+#####     return [file size $dest]
+##### }
+#### proc phase3_python {} {
+####     if {[info exists ::phase3_selected_python]} {return $::phase3_selected_python}
+####     set candidates {}
+####     if {[info exists ::env(PHASE3_PYTHON)]} {
+####         lappend candidates $::env(PHASE3_PYTHON)
+####     } else {
+####         if {[info exists ::env(LOCALAPPDATA)]} {
+####             set installs [glob -nocomplain -directory [file join $::env(LOCALAPPDATA) Programs Python] Python*/python.exe]
+####             set candidates [lsort -decreasing $installs]
+####         }
+####         lappend candidates python3 python
+####     }
+####     foreach candidate $candidates {
+####         if {![catch {exec $candidate -E -c {import sys; assert sys.version_info >= (3,9); import matplotlib,numpy}}]} {
+####             set ::phase3_selected_python $candidate
+####             puts "PHASE 3 PYTHON: $candidate"
+####             return $candidate
+####         }
+####     }
+####     error "No Python 3.9+ with matplotlib/numpy found; install those packages and set PHASE3_PYTHON to its executable."
+#### }
+#### proc phase3_run {selection} {
+####     global phase3_script_dir
+####     set root [file normalize [file join $phase3_script_dir ../..]]
+####     set python [phase3_python]
+####     puts [exec $python -E [file join $phase3_script_dir make_phase3_plan.py]]
+####     source [file join $root Results Phase3 Comparison work experiment_plan.tcl]
+####     set project_dir [file join $root Results Phase3 Comparison work project_$selection]
+####     create_project -force phase3 $project_dir -part xc7a35tcpg236-1
+####     set_property target_language VHDL [current_project]
+####     foreach file [glob [file join $root lbist rtl *.vhd]] {add_files -fileset sources_1 [list $file]}
+####     foreach name {phase2_tb_pkg phase3_tb_pkg phase3_controller_check phase3_integration_check tb_swap_controller tb_moving_controller tb_swap_integration tb_moving_integration tb_phase3_comparison tb_lfsr_16 tb_phase_shifter tb_plpf_optimized tb_plpf_dynamic tb_phase2_integration tb_basic_controller tb_basic_integration} {
+####         set file [file join $root lbist tb $name.vhd]
+####         if {[file exists $file]} {add_files -fileset sim_1 [list $file]}
+####     }
+####     set_property file_type VHDL [get_files *.vhd]
+####     set_property xsim.simulate.runtime 0ns [get_filesets sim_1]
+####     set failed 0; set executed 0
+####     foreach case $phase3_cases {
+####         lassign $case group top tag generics negative capture regression
+####         set selected [expr {$selection eq "all" || ($selection eq "regression" && $regression) || ($selection eq "waveforms" && $capture) || ($selection eq $top && !$regression)}]
+####         if {!$selected} {continue}
+####         incr executed
+####         set out [file join $root Results Phase3 $group]
+####         file mkdir [file join $out logs] [file join $out reports cases]
+####         set_property top $top [get_filesets sim_1]
+####         set_property generic $generics [get_filesets sim_1]
+####         update_compile_order -fileset sim_1
+####         set simdir [file join $project_dir phase3.sim sim_1 behav xsim]
+####         set simlog [file join $simdir simulate.log]
+####         if {[file exists $simlog]} {file delete $simlog}
+####         puts "=== PHASE 3: $tag ==="
+####         set size 0
+####         set problem [catch {
+####             launch_simulation -simset sim_1 -mode behavioral
+####             if {!$negative} {
+####                 if {$capture} {phase3_wave_begin [file join $out waveforms] $top $tag}
+####                 set finished 0
+####                 for {set step 0} {$step<20000} {incr step} {
+####                     if {[string tolower [get_value /$top/test_done]] in {true 1}} {set finished 1; break}
+####                     run 1 us
+####                 }
+####                 if {!$finished} {error "Simulation timeout without test_done"}
+####                 if {$capture} {save_wave_config [file join $out waveforms $tag.wcfg]}
+####             }
+####         } message]
+####         catch {close_vcd}
+####         catch {close_sim}
+####         set text ""
+####         if {[file exists $simlog]} {
+####             file copy -force $simlog [file join $out logs $tag.log]
+####             if {$capture} {file copy -force $simlog [file join $out waveforms $tag.log]}
+####             set f [open $simlog r]; set text [read $f]; close $f
+####         }
+####         foreach filename {xvhdl.log elaborate.log} {
+####             set src [file join $simdir $filename]
+####             if {[file exists $src]} {file copy -force $src [file join $out logs [format "%s_%s" $tag $filename]]}
+####         }
+####         set complete [regexp [format {[[]TB_COMPLETE[]] %s at ([^[:cntrl:]]+)} $top] $text whole duration]
+####         set result FAIL
+####         if {$negative} {
+####             set duration {0 ns}
+####             if {[regexp {[[]CONFIG_ERROR[]]} $text] && !$complete && ![regexp {[[]FAIL[]]} $text]} {set result PASS}
+####         } elseif {!$problem && $complete && ![regexp {[[]FAIL[]]|Failure:|Fatal:|ERROR:} $text]} {
+####             set result PASS
+####             if {$capture} {
+####                 if {[catch {set size [phase3_wave_finish [file join $out waveforms] $top $tag $simdir]} why]} {
+####                     set result FAIL; set message $why
+####                 }
+####             }
+####         }
+####         if {$result eq "FAIL"} {
+####             incr failed; set duration UNKNOWN
+####             set f [open [file join $out logs [format "%s_runner_error.log" $tag]] w]
+####             puts $f $message; close $f
+####             puts stderr "[format {FAIL: %s -- %s} $tag $message]"
+####         }
+####         set f [open [file join $out reports cases $tag.csv] w]
+####         puts $f "Case,Testbench,ExpectedNegative,Regression,Capture,Result,CompletionTime,WDBBytes"
+####         puts $f "$tag,$top,$negative,$regression,$capture,$result,$duration,$size"
+####         close $f
+####         puts "RESULT: $result -- $tag -- $duration"
+####     }
+####     close_project
+####     if {$failed} {error "$failed of $executed Phase 3 cases failed"}
+####     puts "PHASE 3 RESULT: PASS ($executed cases)"
+#### }
+#### proc phase3_finalize {} {
+####     global phase3_script_dir
+####     set python [phase3_python]
+####     puts [exec $python -E [file join $phase3_script_dir collect_phase3_results.py] --require-all]
+####     puts [exec $python -E [file join $phase3_script_dir render_waveform_previews.py] --phase3]
+####     set ::WAVEFORM_VERIFY_SCOPE phase3
+####     source [file join $phase3_script_dir verify_waveforms.tcl]
+####     puts "PHASE 3 FINAL REPORTS AND WAVEFORM VERIFICATION: PASS"
+#### }
+### set phase5_root [file normalize [file join $phase5_scripts ../..]]
+### file mkdir [file join $phase5_root Results Phase6A work]
+### cd [file join $phase5_root Results Phase6A work]
+### proc phase5_project {selection} {
+###     global phase5_root phase5_scripts
+###     set python [phase3_python]
+###     puts [exec $python -E [file join $phase5_scripts prepare_phase5a_rom.py]]
+###     set dir [file join $phase5_root Results Phase6A work project_$selection]
+###     create_project -force phase5a $dir -part xc7a35tcpg236-1
+###     set_property target_language VHDL [current_project]
+###     foreach name {packageWires packageMemory_simu packageExcp altera units aux_module pipestages exception core cache instrcache rom ram io uart disk SDcard fpu sdram tb_cMIPS} {
+###         add_files -fileset sources_1 [list [file join $phase5_root cMIPS vhdl $name.vhd]]
+###     }
+###     foreach name {lfsr_16 phase_shifter plpf_dynamic basic_controller reg_IF_RF_scan lbist_test_controller} {
+###         add_files -fileset sources_1 [list [file join $phase5_root lbist rtl $name.vhd]]
+###     }
+###     foreach file [glob [file join $phase5_root lbist core_scan phase5a *.vhd]] {
+###         add_files -fileset sources_1 [list $file]
+###         set_property file_type {VHDL 2008} [get_files [list $file]]
+###     }
+###     set file [file join $phase5_root lbist core_scan core_scan_test.vhd]
+###     add_files -fileset sources_1 [list $file]
+###     set_property file_type {VHDL 2008} [get_files [list $file]]
+###     foreach name {phase2_tb_pkg phase5a_rom_pkg phase5a_processor_check tb_lbist_test_controller tb_core_scan_isolation tb_core_scan_shift_capture tb_core_fault_regression} {
+###         set file [file join $phase5_root lbist tb $name.vhd]
+###         if {[file exists $file]} {add_files -fileset sim_1 [list $file]}
+###     }
+### 
+###     foreach rel {lbist/rtl/misr_16.vhd lbist/rtl/misr_signature_checker.vhd lbist/rtl/lbist_misr_top.vhd lbist/core_scan/fault_injection/core_scan_fault.vhd} {
+###         set f [file join $phase5_root $rel];add_files -fileset sources_1 [list $f]
+###         set_property file_type {VHDL 2008} [get_files [list $f]]
+###     }
+###     foreach name {phase5bc_golden_pkg phase5bc_processor_check tb_misr_16 tb_misr_integration tb_lbist_fault_injection tb_phase6a_controller_integration tb_phase6a_fault_comparison} {
+###         add_files -fileset sim_1 [list [file join $phase5_root lbist tb $name.vhd]]
+###     }
+###     foreach n {swap_controller moving_controller lbist_pattern_router phase6a_safe_misr} {
+###       add_files -fileset sources_1 [list [file join $phase5_root lbist rtl $n.vhd]]
+###     }
+###     foreach n {phase6a_golden_pkg phase6a_processor_check tb_phase6a_controller_integration tb_phase6a_fault_comparison tb_phase6a_misr_safety} {
+###       add_files -fileset sim_1 [list [file join $phase5_root lbist tb $n.vhd]]
+###     }
+###     set_property xsim.simulate.runtime 0ns [get_filesets sim_1]
+### }
+### proc phase5_case {group top tag generics {capture 1} {cpu 0}} {
+###     global phase5_root
+###     set phase Phase6A;set out [file join $phase5_root Results $phase $group]
+###     set cpu_exit [expr {$top in {tb_core_fault_regression tb_cMIPS}}]
+###     file mkdir [file join $out logs] [file join $out reports] [file join $out waveforms]
+###     set_property top $top [get_filesets sim_1]
+###     set_property generic $generics [get_filesets sim_1]
+###     update_compile_order -fileset sim_1
+###     set project_dir [get_property DIRECTORY [current_project]]
+###     set simdir [file join $project_dir phase5a.sim sim_1 behav xsim]
+###     file mkdir $simdir
+###     if {$cpu} {
+###         foreach image {prog.bin data.bin input.data serial.inp} {
+###             file copy -force [file join $phase5_root cMIPS $image] [file join $simdir $image]
+###         }
+###     }
+###     set simlog [file join $simdir simulate.log]
+###     if {[file exists $simlog]} {file delete $simlog}
+###     set problem [catch {
+###         launch_simulation -mode behavioral
+###         if {$capture} {phase5_capture $out $top $tag}
+###         if {$cpu_exit} {
+###             phase5_cpu_run $top $tag $out
+###         } else {
+###             set done 0
+###             for {set k 0} {$k<20000} {incr k} {
+###                 set channel [open $simlog r];set progress [read $channel];close $channel
+###                 if {[regexp {[[]FAIL[]]|Failure:|Fatal:|ERROR:} $progress]} {error "XSim assertion/error; do not resume a failed simulation"}
+###                 if {[string tolower [get_value /$top/test_done]] in {true 1}} {set done 1;break}
+###                 run 1 us
+###             }
+###             if {!$done} {error "Timeout without completion"}
+###         }
+###         if {$capture} {save_wave_config [file join $out waveforms $tag.wcfg]}
+###     } message]
+###     catch {close_vcd};catch {close_sim}
+###     set text ""
+###     if {[file exists $simlog]} {
+###         set f [open $simlog r];set text [read $f];close $f
+###         file copy -force $simlog [file join $out logs $tag.log]
+###         if {$capture} {file copy -force $simlog [file join $out waveforms $tag.log]}
+###     }
+###     foreach name {xvhdl.log elaborate.log} {
+###         set file [file join $simdir $name]
+###         if {[file exists $file]} {file copy -force $file [file join $out logs [format "%s_%s" $tag $name]]}
+###     }
+###     set result FAIL;set duration UNKNOWN;set bytes 0
+###     if {!$problem && !$cpu_exit && [regexp [format {[[]TB_COMPLETE[]] %s at ([0-9]+ ps)} $top] $text m duration] && ![regexp {[[]FAIL[]]|Failure:|Fatal:|ERROR:} $text]} {set result PASS}
+###     if {!$problem && $cpu_exit && [regexp {Time: ([0-9]+) ns[^\n]*RF_STOP_SIMULATION} $text m ns] && [regexp {cMIPS BREAKPOINT at PC=00000038} $text] && ![regexp {[[]FAIL[]]|SIMULATION ABORTED|Fatal:|ERROR:} $text]} {
+###         set result PASS;set duration "[expr {$ns*1000}] ps"
+###     }
+###     if {$result eq "PASS" && $capture} {
+###         set bytes [phase3_wave_finish [file join $out waveforms] $top $tag $simdir]
+###     }
+###     set f [open [file join $out reports $tag.csv] w]
+###     puts $f "Case,Testbench,Group,Result,CompletionTime,Capture,WDBBytes"
+###     puts $f "$tag,$top,$group,$result,$duration,$capture,$bytes";close $f
+###     puts "PHASE 5A RESULT: $result -- $tag -- $duration"
+###     if {$result ne "PASS"} {error "$tag failed: $message"}
+### }
+### proc phase5_capture {out top tag} {
+###     create_wave_config $tag
+###     set paths [get_objects /$top/*]
+###     if {$top in {tb_core_scan_isolation tb_core_scan_shift_capture tb_misr_integration tb_lbist_fault_injection tb_phase6a_controller_integration tb_phase6a_fault_comparison}} {set paths [get_objects /$top/engine/*]}
+###     set selected {}
+###     foreach p $paths {
+###         # Scalars/vectors only; real RTL state probes are explicitly exported.
+###         set name [file tail $p]
+###         if {$name in {clk rst start pause abort_test ack ready tm se ce pd done error_status state shift_count_v pattern_index test_mode scan_enable capture_enable core_tm core_se core_ce bad_command exit_attempt isolation_ack protocol_error test_phase scan_in scan_out scan_feedback protected_state scan_state pc_observe mode_select active_mode generator_state current_bit future1 future2 pattern_done event_id i_addr d_addr i_aval d_aval wr memory_write_attempt register_write_attempt register_write_actual protected_equal enable clear response_bit capture_ready fabric_idle bsel busfree signature misr_enable signature_valid signature_match fault_detected phase pos patterns unload response q valid match detected scenario err}} {
+###             lappend selected $p
+###             set radix hex
+###             if {$name in {test_phase state mode_select active_mode}} {set radix bin}
+###             if {$name in {shift_count_v pattern_index}} {set radix unsigned}
+###             add_wave -radix $radix $p;log_wave $p
+###         }
+###     }
+###     if {$top in {tb_core_scan_isolation tb_core_scan_shift_capture tb_misr_integration tb_lbist_fault_injection tb_phase6a_controller_integration tb_phase6a_fault_comparison}} {
+###         foreach name {clk rst phi1 phi2 isolation_hold phi1_sync phi2_sync ack_sync isolation_ack legal_capture increment_operand PCincd capture_word RF_PCincd RF_instruction} {
+###             set p /$top/engine/dut/$name
+###             if {[llength [get_objects $p]]==1} {
+###                 lappend selected $p
+###                 add_wave -radix hex $p;log_wave $p
+###             }
+###         }
+###     }
+###     open_vcd [file join $out waveforms $tag.vcd]
+###     foreach p $selected {log_vcd $p}
+### }
+### proc phase5_cpu_run {top tag out} {
+###     set samples [open [file join $out reports [format "%s_samples.csv" $tag]] w]
+###     puts $samples "TimePS,PC,RF_PCincd,RF_instruction,IF_RF_ld,WB_wreg,MM_wrmem,Result"
+###     set checked 0;set stalled 0;set exit_seen 0
+###     for {set step 1} {$step<=1000} {incr step} {
+###         run 5 ns
+###         if {[get_value /$top/cpu_reset] ne "1"} {continue}
+###         if {$top eq "tb_core_fault_regression"} {
+###             set values {}
+###             foreach name {PC RF_PCincd RF_instruction IF_RF_ld WB_wreg MM_wrmem EX_A EX_B WB_C} {
+###                 set a [get_value -radix hex /$top/U_CORE/$name]
+###                 set b [get_value -radix hex /$top/U_SCAN/$name]
+###                 if {$a ne $b} {close $samples;error "Core pipeline mismatch $name at step $step"}
+###                 lappend values $a
+###             }
+###             if {[get_value /$top/U_CORE/IF_RF_ld] eq "1"} {incr stalled}
+###             puts $samples "[expr {$step*5000}],[join [lrange $values 0 5] ,],PASS"
+###             incr checked
+###         }
+###         set exception [string tolower [get_value /$top/U_CORE/exception]]
+###         set syscall [string tolower [get_value -radix hex /$top/U_CORE/syscall_n]]
+###         if {$exception eq "exwait" && $syscall eq "80000"} {
+###             set exit_seen 1
+###             if {$top eq "tb_core_fault_regression"} {
+###                 foreach name {RF_PC exception syscall_n} {
+###                     if {[get_value /$top/U_CORE/$name] ne [get_value /$top/U_SCAN/$name]} {close $samples;error "Exit decoder mismatch"}
+###                 }
+###                 if {$checked<100 || ($tag eq "functional_stalls" && $stalled<1)} {close $samples;error "Insufficient execution/stall comparisons"}
+###                 puts "CORE DIFFERENTIAL: PASS ($checked samples, $stalled stalls; both wait decoders equal)"
+###             }
+###             break
+###         }
+###     }
+###     close $samples
+###     if {!$exit_seen} {error "No expected wait decoder within 5 us"}
+###     # phi2 triggers the original assertion within the next half CPU cycle.
+###     run 10 ns
+### }
+### proc phase5_project {selection} {
+###  global phase5_root
+###  set dir [file join $phase5_root Results Phase6A work project_$selection]
+###  if {[info exists ::env(PHASE6A_NATIVE_ROOT)]} {set dir [file join $::env(PHASE6A_NATIVE_ROOT) project_$selection]}
+###  create_project -force phase5a $dir -part xc7a35tcpg236-1
+###  set sources {}
+###  foreach n {packageWires packageMemory_simu packageExcp altera units aux_module pipestages exception core cache instrcache rom ram io uart disk SDcard fpu sdram tb_cMIPS} {
+###   lappend sources [file join $phase5_root cMIPS vhdl $n.vhd]
+###  }
+###  foreach n {lfsr_16 phase_shifter plpf_dynamic basic_controller swap_controller moving_controller reg_IF_RF_scan lbist_test_controller misr_16 misr_signature_checker lbist_misr_top lbist_pattern_router phase6a_safe_misr} {
+###   lappend sources [file join $phase5_root lbist rtl $n.vhd]
+###  }
+###  set modern [concat [glob [file join $phase5_root lbist core_scan phase5a *.vhd]] [list [file join $phase5_root lbist core_scan core_scan_test.vhd] [file join $phase5_root lbist core_scan fault_injection core_scan_fault.vhd]]]
+###  add_files -fileset sources_1 [concat $sources $modern]
+###  set_property file_type {VHDL 2008} [get_files $modern]
+###  set benches {}
+###  foreach n {phase2_tb_pkg phase5a_rom_pkg phase6a_golden_pkg phase6a_processor_check tb_phase6a_controller_integration tb_phase6a_fault_comparison tb_phase6a_misr_safety tb_core_fault_regression tb_misr_16} {
+###   lappend benches [file join $phase5_root lbist tb $n.vhd]
+###  }
+###  add_files -fileset sim_1 $benches
+###  set_property xsim.simulate.runtime 0ns [get_filesets sim_1]
+### }
+## set final_scripts [file dirname [file normalize [info script]]]
+## set final_root $phase5_root
+## file mkdir [file join $final_root Results Final work]
+## cd [file join $final_root Results Final work]
+## set ::env(PHASE6A_NATIVE_ROOT) [file join $::env(TEMP) vl405_final_sim]
+## set final_case_body [string map {Phase6A Final/Verification {PHASE 5A RESULT} {FINAL VERIFICATION RESULT}} [info body phase5_case]]
+## proc phase5_case {group top tag generics {capture 1} {cpu 0}} $final_case_body
+## set final_capture_body [string map [list tb_phase6a_fault_comparison {tb_phase6a_fault_comparison tb_final_activity}] [info body phase5_capture]]
+## proc phase5_capture {out top tag} $final_capture_body
+## rename phase5_project final_base_project
+## proc phase5_project {selection} {
+##  global final_root
+##  final_base_project final_$selection
+##  add_files -fileset sources_1 [list [file join $final_root lbist final final_processor_system.vhd]]
+##  foreach n {final_activity_check tb_final_activity} {
+##   add_files -fileset sim_1 [list [file join $final_root lbist tb $n.vhd]]
+##  }
+## }
+# if {[catch {
+#  phase5_project essentials
+#  foreach n {phase3_tb_pkg phase3_controller_check tb_basic_controller tb_swap_controller tb_moving_controller tb_reg_IF_RF_scan phase5a_processor_check tb_core_scan_isolation tb_phase6a_router tb_lfsr_16 tb_phase_shifter tb_plpf_dynamic} {
+#   set file [file join $final_root lbist tb $n.vhd]
+#   if {[file exists $file]} {add_files -fileset sim_1 [list $file]}
+#  }
+#  foreach top {tb_lfsr_16 tb_phase_shifter tb_plpf_dynamic tb_basic_controller tb_swap_controller tb_moving_controller tb_reg_IF_RF_scan tb_core_scan_isolation tb_misr_16 tb_phase6a_misr_safety tb_phase6a_router} {
+#   phase5_case Essential $top $top {} 0 1
+#  }
+#  phase5_case Essential tb_core_fault_regression functional_lwsw {STALL_TEST=false} 0 1
+#  phase5_case Essential tb_core_fault_regression functional_stalls {STALL_TEST=true} 0 1
+#  close_project
+#  puts "FINAL ESSENTIAL VERIFICATION: PASS"
+# } message]} {puts stderr $message;exit 1}
+create_project: Time (s): cpu = 00:00:20 ; elapsed = 00:00:39 . Memory (MB): peak = 497.938 ; gain = 212.309
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_lfsr_16'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_lfsr_16' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_lfsr_16_vhdl.prj"
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase2_tb_pkg.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/lfsr_16.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'lfsr_16'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_lfsr_16.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'tb_lfsr_16'
+
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:51 . Memory (MB): peak = 505.555 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '52' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_lfsr_16_behav xil_defaultlib.tb_lfsr_16 -log elaborate.log"
+
+Vivado Simulator v2025.1.1
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_lfsr_16_behav xil_defaultlib.tb_lfsr_16 -log elaborate.log 
+
+Using 2 slave threads.
+
+Starting static elaboration
+
+Completed static elaboration
+
+Starting simulation data flow analysis
+
+Completed simulation data flow analysis
+
+Time Resolution for simulation is 1ps
+
+Compiling package std.standard
+
+Compiling package std.textio
+
+Compiling package ieee.std_logic_1164
+
+Compiling package ieee.numeric_std
+
+Compiling package xil_defaultlib.phase2_tb_pkg
+
+Compiling architecture rtl of entity xil_defaultlib.lfsr_16 [lfsr_16_default]
+
+Compiling architecture rtl of entity xil_defaultlib.lfsr_16 [\lfsr_16(seed="0000000000000000"...]
+
+Compiling architecture rtl of entity xil_defaultlib.lfsr_16 [\lfsr_16(seed="0000000000000001"...]
+
+Compiling architecture test of entity xil_defaultlib.tb_lfsr_16
+
+Built simulation snapshot tb_lfsr_16_behav
+
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:01:30 . Memory (MB): peak = 505.555 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '90' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_lfsr_16_behav -key {Behavioral:sim_1:Functional:tb_lfsr_16} -tclbatch {tb_lfsr_16.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_lfsr_16.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_lfsr_16_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:02:31 . Memory (MB): peak = 505.555 ; gain = 7.617
+Note: [PASS] reset, configurable seed, zero seed fallback
+Time: 100 ps  Iteration: 0  Process: /tb_lfsr_16/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_lfsr_16.vhd
+Note: [PASS] 65535 unique nonzero states, independent recurrence, output distribution 32768/65535
+Time: 131069100 ps  Iteration: 0  Process: /tb_lfsr_16/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_lfsr_16.vhd
+Note: [PASS] hold, resume, mid-sequence reset
+Time: 131081200 ps  Iteration: 0  Process: /tb_lfsr_16/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_lfsr_16.vhd
+Note: [TB_COMPLETE] tb_lfsr_16 at 131081200 ps
+Time: 131081200 ps  Iteration: 0  Process: /tb_lfsr_16/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_lfsr_16.vhd
+INFO: [Simtcl 6-16] Simulation closed
+FINAL VERIFICATION RESULT: PASS -- tb_lfsr_16 -- 131081200 ps
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_phase_shifter'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_phase_shifter' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_phase_shifter_vhdl.prj"
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/phase_shifter.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'phase_shifter'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase_shifter.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'tb_phase_shifter'
+
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:01:02 . Memory (MB): peak = 520.746 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '62' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_phase_shifter_behav xil_defaultlib.tb_phase_shifter -log elaborate.log"
+
+Vivado Simulator v2025.1.1
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_phase_shifter_behav xil_defaultlib.tb_phase_shifter -log elaborate.log 
+
+Using 2 slave threads.
+
+Starting static elaboration
+
+Completed static elaboration
+
+Starting simulation data flow analysis
+
+Completed simulation data flow analysis
+
+Time Resolution for simulation is 1ps
+
+Compiling package std.standard
+
+Compiling package std.textio
+
+Compiling package ieee.std_logic_1164
+
+Compiling package ieee.numeric_std
+
+Compiling package xil_defaultlib.phase2_tb_pkg
+
+Compiling architecture rtl of entity xil_defaultlib.lfsr_16 [lfsr_16_default]
+
+Compiling architecture rtl of entity xil_defaultlib.phase_shifter [phase_shifter_default]
+
+Compiling architecture test of entity xil_defaultlib.tb_phase_shifter
+
+Built simulation snapshot tb_phase_shifter_behav
+
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:21 . Memory (MB): peak = 520.746 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '21' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_phase_shifter_behav -key {Behavioral:sim_1:Functional:tb_phase_shifter} -tclbatch {tb_phase_shifter.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_phase_shifter.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_phase_shifter_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:01:27 . Memory (MB): peak = 520.746 ; gain = 0.000
+Note: [PASS] 4096 states, lookahead and consecutive-state relationship
+Time: 8191100 ps  Iteration: 0  Process: /tb_phase_shifter/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase_shifter.vhd
+Note: [PASS] reset, hold, all 65536 combinational inputs without a clock dependency
+Time: 8264736 ps  Iteration: 0  Process: /tb_phase_shifter/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase_shifter.vhd
+Note: [TB_COMPLETE] tb_phase_shifter at 8264736 ps
+Time: 8264736 ps  Iteration: 0  Process: /tb_phase_shifter/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase_shifter.vhd
+INFO: [Simtcl 6-16] Simulation closed
+FINAL VERIFICATION RESULT: PASS -- tb_phase_shifter -- 8264736 ps
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_plpf_dynamic'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_plpf_dynamic' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_plpf_dynamic_vhdl.prj"
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/plpf_dynamic.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'plpf_dynamic'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_plpf_dynamic.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'tb_plpf_dynamic'
+
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:29 . Memory (MB): peak = 520.746 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '28' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_plpf_dynamic_behav xil_defaultlib.tb_plpf_dynamic -log elaborate.log"
+
+Vivado Simulator v2025.1.1
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_plpf_dynamic_behav xil_defaultlib.tb_plpf_dynamic -log elaborate.log 
+
+Using 2 slave threads.
+
+Starting static elaboration
+
+Completed static elaboration
+
+Starting simulation data flow analysis
+
+Completed simulation data flow analysis
+
+Time Resolution for simulation is 1ps
+
+Compiling package std.standard
+
+Compiling package std.textio
+
+Compiling package ieee.std_logic_1164
+
+Compiling package ieee.numeric_std
+
+Compiling package xil_defaultlib.phase2_tb_pkg
+
+Compiling architecture rtl of entity xil_defaultlib.lfsr_16 [lfsr_16_default]
+
+Compiling architecture rtl of entity xil_defaultlib.phase_shifter [phase_shifter_default]
+
+Compiling architecture rtl of entity xil_defaultlib.plpf_dynamic [plpf_dynamic_default]
+
+Compiling architecture test of entity xil_defaultlib.tb_plpf_dynamic
+
+Built simulation snapshot tb_plpf_dynamic_behav
+
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:01:38 . Memory (MB): peak = 520.746 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '98' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_plpf_dynamic_behav -key {Behavioral:sim_1:Functional:tb_plpf_dynamic} -tclbatch {tb_plpf_dynamic.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_plpf_dynamic.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_plpf_dynamic_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:02:10 . Memory (MB): peak = 520.746 ; gain = 0.000
+Note: [PASS] continuous shifting, repeated transitions, invalid and unknown modes, no extra cycles
+Time: 8191100 ps  Iteration: 0  Process: /tb_plpf_dynamic/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_plpf_dynamic.vhd
+Note: [PASS] explicit 3->1 boundary and LFSR pause
+Time: 8199100 ps  Iteration: 0  Process: /tb_plpf_dynamic/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_plpf_dynamic.vhd
+Note: [TB_COMPLETE] tb_plpf_dynamic at 8199100 ps
+Time: 8199100 ps  Iteration: 0  Process: /tb_plpf_dynamic/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_plpf_dynamic.vhd
+INFO: [Simtcl 6-16] Simulation closed
+FINAL VERIFICATION RESULT: PASS -- tb_plpf_dynamic -- 8199100 ps
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_basic_controller'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_basic_controller' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_basic_controller_vhdl.prj"
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/basic_controller.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'basic_controller'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_basic_controller.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'tb_basic_controller'
+
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:33 . Memory (MB): peak = 520.746 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '33' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_basic_controller_behav xil_defaultlib.tb_basic_controller -log elaborate.log"
+
+Vivado Simulator v2025.1.1
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_basic_controller_behav xil_defaultlib.tb_basic_controller -log elaborate.log 
+
+Using 2 slave threads.
+
+Starting static elaboration
+
+Completed static elaboration
+
+Starting simulation data flow analysis
+
+Completed simulation data flow analysis
+
+Time Resolution for simulation is 1ps
+
+Compiling package std.standard
+
+Compiling package std.textio
+
+Compiling package ieee.std_logic_1164
+
+Compiling package ieee.numeric_std
+
+Compiling package xil_defaultlib.phase2_tb_pkg
+
+Compiling architecture rtl of entity xil_defaultlib.basic_controller [basic_controller_default]
+
+Compiling architecture test of entity xil_defaultlib.tb_basic_controller
+
+Built simulation snapshot tb_basic_controller_behav
+
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:37 . Memory (MB): peak = 520.746 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '37' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_basic_controller_behav -key {Behavioral:sim_1:Functional:tb_basic_controller} -tclbatch {tb_basic_controller.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_basic_controller.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_basic_controller_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:01:13 . Memory (MB): peak = 520.746 ; gain = 0.000
+Note: [PASS] BC01 Reset
+Time: 1100 ps  Iteration: 0  Process: /tb_basic_controller/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_basic_controller.vhd
+Note: [PASS] BC02 First low region; BC03 first boundary; BC04 high region; BC05 second boundary
+Time: 32787100 ps  Iteration: 0  Process: /tb_basic_controller/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_basic_controller.vhd
+Note: [PASS] BC06 exact completion; BC07 rollover; BC08 pause/resume; BC09 256 consecutive patterns
+Time: 32787100 ps  Iteration: 0  Process: /tb_basic_controller/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_basic_controller.vhd
+Note: [PASS] BC10 synchronous mid-pattern reset; BC11 legal boundary configuration; BC12 no latency or extra cycles
+Time: 32803100 ps  Iteration: 0  Process: /tb_basic_controller/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_basic_controller.vhd
+Note: [CONTROLLER] 64,22,20,22,256,16384
+Time: 32803100 ps  Iteration: 0  Process: /tb_basic_controller/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_basic_controller.vhd
+Note: [TB_COMPLETE] tb_basic_controller at 32803100 ps
+Time: 32803100 ps  Iteration: 0  Process: /tb_basic_controller/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_basic_controller.vhd
+INFO: [Simtcl 6-16] Simulation closed
+FINAL VERIFICATION RESULT: PASS -- tb_basic_controller -- 32803100 ps
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_swap_controller'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_swap_controller' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_swap_controller_vhdl.prj"
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/swap_controller.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'swap_controller'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/moving_controller.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'moving_controller'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_tb_pkg.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'phase3_controller_check'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_swap_controller.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'tb_swap_controller'
+
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:53 . Memory (MB): peak = 520.746 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '53' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_swap_controller_behav xil_defaultlib.tb_swap_controller -log elaborate.log"
+
+Vivado Simulator v2025.1.1
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_swap_controller_behav xil_defaultlib.tb_swap_controller -log elaborate.log 
+
+Using 2 slave threads.
+
+Starting static elaboration
+
+Completed static elaboration
+
+Starting simulation data flow analysis
+
+Completed simulation data flow analysis
+
+Time Resolution for simulation is 1ps
+
+Compiling package std.standard
+
+Compiling package std.textio
+
+Compiling package ieee.std_logic_1164
+
+Compiling package ieee.numeric_std
+
+Compiling package xil_defaultlib.phase2_tb_pkg
+
+Compiling package xil_defaultlib.phase3_tb_pkg
+
+Compiling architecture rtl of entity xil_defaultlib.swap_controller [swap_controller_default]
+
+Compiling architecture test of entity xil_defaultlib.phase3_controller_check [phase3_controller_check_default]
+
+Compiling architecture test of entity xil_defaultlib.tb_swap_controller
+
+Built simulation snapshot tb_swap_controller_behav
+
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 520.746 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_swap_controller_behav -key {Behavioral:sim_1:Functional:tb_swap_controller} -tclbatch {tb_swap_controller.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_swap_controller.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_swap_controller_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:01:02 . Memory (MB): peak = 520.746 ; gain = 0.000
+Note: [PASS] swap SC01/MC01 reset and initial region
+Time: 1100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [PASS] SC02..SC09 / MC02..MC08 all modes, regions, odd/even patterns/chains, movement and wrap
+Time: 32787100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [PASS] SC10..SC12/SC14/SC15 / MC09/MC11/MC12/MC14/MC15 pause, 256 patterns, no extra cycles
+Time: 32787100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [PASS] SC11/MC10 synchronous mid-pattern reset
+Time: 32801100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [UNIT_COMPLETE] swap at 32801100 ps
+Time: 32801100 ps  Iteration: 0  Process: /tb_swap_controller/engine/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [TB_COMPLETE] tb_swap_controller at 32801100 ps
+Time: 32801100 ps  Iteration: 2  Process: /tb_swap_controller/completion  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_swap_controller.vhd
+INFO: [Simtcl 6-16] Simulation closed
+FINAL VERIFICATION RESULT: PASS -- tb_swap_controller -- 32801100 ps
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_moving_controller'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_moving_controller' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_moving_controller_vhdl.prj"
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_moving_controller.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'tb_moving_controller'
+
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_moving_controller_behav xil_defaultlib.tb_moving_controller -log elaborate.log"
+
+Vivado Simulator v2025.1.1
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_moving_controller_behav xil_defaultlib.tb_moving_controller -log elaborate.log 
+
+Using 2 slave threads.
+
+Starting static elaboration
+
+Completed static elaboration
+
+Starting simulation data flow analysis
+
+Completed simulation data flow analysis
+
+Time Resolution for simulation is 1ps
+
+Compiling package std.standard
+
+Compiling package std.textio
+
+Compiling package ieee.std_logic_1164
+
+Compiling package ieee.numeric_std
+
+Compiling package xil_defaultlib.phase2_tb_pkg
+
+Compiling package xil_defaultlib.phase3_tb_pkg
+
+Compiling architecture rtl of entity xil_defaultlib.moving_controller [moving_controller_default]
+
+Compiling architecture test of entity xil_defaultlib.phase3_controller_check [\phase3_controller_check(app=4)\]
+
+Compiling architecture test of entity xil_defaultlib.tb_moving_controller
+
+Built simulation snapshot tb_moving_controller_behav
+
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 520.746 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '8' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_moving_controller_behav -key {Behavioral:sim_1:Functional:tb_moving_controller} -tclbatch {tb_moving_controller.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_moving_controller.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_moving_controller_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:14 . Memory (MB): peak = 520.746 ; gain = 0.000
+Note: [PASS] moving SC01/MC01 reset and initial region
+Time: 1100 ps  Iteration: 0  Process: /tb_moving_controller/engine/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [PASS] SC02..SC09 / MC02..MC08 all modes, regions, odd/even patterns/chains, movement and wrap
+Time: 32787100 ps  Iteration: 0  Process: /tb_moving_controller/engine/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [PASS] SC10..SC12/SC14/SC15 / MC09/MC11/MC12/MC14/MC15 pause, 256 patterns, no extra cycles
+Time: 32787100 ps  Iteration: 0  Process: /tb_moving_controller/engine/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [PASS] SC11/MC10 synchronous mid-pattern reset
+Time: 32801100 ps  Iteration: 0  Process: /tb_moving_controller/engine/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [UNIT_COMPLETE] moving at 32801100 ps
+Time: 32801100 ps  Iteration: 0  Process: /tb_moving_controller/engine/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase3_controller_check.vhd
+Note: [TB_COMPLETE] tb_moving_controller at 32801100 ps
+Time: 32801100 ps  Iteration: 2  Process: /tb_moving_controller/completion  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_moving_controller.vhd
+INFO: [Simtcl 6-16] Simulation closed
+FINAL VERIFICATION RESULT: PASS -- tb_moving_controller -- 32801100 ps
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_reg_IF_RF_scan'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_reg_IF_RF_scan' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_reg_IF_RF_scan_vhdl.prj"
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/packageWires.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/reg_IF_RF_scan.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'reg_IF_RF_scan'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/pipestages.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'reg_IF_RF'
+
+INFO: [VRFC 10-3107] analyzing entity 'reg_RF_EX'
+
+INFO: [VRFC 10-3107] analyzing entity 'reg_EX_MM'
+
+INFO: [VRFC 10-3107] analyzing entity 'reg_MM_WB'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_reg_IF_RF_scan.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'tb_reg_IF_RF_scan'
+
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_reg_IF_RF_scan_behav xil_defaultlib.tb_reg_IF_RF_scan -log elaborate.log"
+
+Vivado Simulator v2025.1.1
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_reg_IF_RF_scan_behav xil_defaultlib.tb_reg_IF_RF_scan -log elaborate.log 
+
+Using 2 slave threads.
+
+Starting static elaboration
+
+Completed static elaboration
+
+Starting simulation data flow analysis
+
+Completed simulation data flow analysis
+
+Time Resolution for simulation is 1ps
+
+Compiling package std.standard
+
+Compiling package std.textio
+
+Compiling package ieee.std_logic_1164
+
+Compiling package ieee.numeric_std
+
+Compiling package xil_defaultlib.p_wires
+
+Compiling package xil_defaultlib.phase2_tb_pkg
+
+Compiling architecture rtl of entity xil_defaultlib.reg_IF_RF_scan [reg_if_rf_scan_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_IF_RF [reg_if_rf_default]
+
+Compiling architecture test of entity xil_defaultlib.tb_reg_if_rf_scan
+
+Built simulation snapshot tb_reg_IF_RF_scan_behav
+
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_reg_IF_RF_scan_behav -key {Behavioral:sim_1:Functional:tb_reg_IF_RF_scan} -tclbatch {tb_reg_IF_RF_scan.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_reg_IF_RF_scan.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_reg_IF_RF_scan_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:12 . Memory (MB): peak = 520.746 ; gain = 0.000
+Note: [PASS] SCAN01 asynchronous active-low reset between edges
+Time: 300 ps  Iteration: 0  Process: /tb_reg_IF_RF_scan/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_reg_IF_RF_scan.vhd
+Note: [PASS] SCAN02 functional load and exact PC/instruction mapping
+Time: 4100 ps  Iteration: 0  Process: /tb_reg_IF_RF_scan/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_reg_IF_RF_scan.vhd
+Note: [PASS] SCAN03 functional hold
+Time: 6100 ps  Iteration: 0  Process: /tb_reg_IF_RF_scan/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_reg_IF_RF_scan.vhd
+Note: [PASS] SCAN11 256 deterministic functional load/hold cycles match original
+Time: 518100 ps  Iteration: 0  Process: /tb_reg_IF_RF_scan/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_reg_IF_RF_scan.vhd
+Note: [PASS] SCAN04/SCAN05 scan overrides active-low functional stall, 64 exact shifts
+Time: 646100 ps  Iteration: 0  Process: /tb_reg_IF_RF_scan/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_reg_IF_RF_scan.vhd
+Note: [PASS] SCAN06/SCAN07 scan-out ordering and real first-stage feedback on every shift
+Time: 774100 ps  Iteration: 0  Process: /tb_reg_IF_RF_scan/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_reg_IF_RF_scan.vhd
+Note: [PASS] SCAN08/SCAN09 one functional capture after scan
+Time: 778100 ps  Iteration: 0  Process: /tb_reg_IF_RF_scan/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_reg_IF_RF_scan.vhd
+Note: [PASS] SCAN10 captured response serialized correctly while loading next pattern
+Time: 906100 ps  Iteration: 0  Process: /tb_reg_IF_RF_scan/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_reg_IF_RF_scan.vhd
+Note: [PASS] SCAN13/SCAN14 at least 256 patterns: zero, one, alternating, walking one/zero and deterministic random
+Time: 33674100 ps  Iteration: 0  Process: /tb_reg_IF_RF_scan/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_reg_IF_RF_scan.vhd
+Note: [PASS] SCAN12 asynchronous reset during incomplete scan
+Time: 33676200 ps  Iteration: 0  Process: /tb_reg_IF_RF_scan/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_reg_IF_RF_scan.vhd
+Note: [PASS] SCAN15 clock/enable alignment, every pre/post-edge bit and no extra shifts
+Time: 33676200 ps  Iteration: 0  Process: /tb_reg_IF_RF_scan/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_reg_IF_RF_scan.vhd
+Note: [SCAN_METRIC] UNIT,256,16577
+Time: 33676200 ps  Iteration: 0  Process: /tb_reg_IF_RF_scan/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_reg_IF_RF_scan.vhd
+Note: [TB_COMPLETE] tb_reg_IF_RF_scan at 33676200 ps
+Time: 33676200 ps  Iteration: 0  Process: /tb_reg_IF_RF_scan/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_reg_IF_RF_scan.vhd
+INFO: [Simtcl 6-16] Simulation closed
+FINAL VERIFICATION RESULT: PASS -- tb_reg_IF_RF_scan -- 33676200 ps
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_core_scan_isolation'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_core_scan_isolation' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_core_scan_isolation_vhdl.prj"
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/packageMemory_simu.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/altera.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'mf_alt_add_4'
+
+INFO: [VRFC 10-3107] analyzing entity 'mf_alt_adder'
+
+INFO: [VRFC 10-3107] analyzing entity 'mf_alt_add_sub'
+
+INFO: [VRFC 10-3107] analyzing entity 'mf_alt_add_sub_u'
+
+INFO: [VRFC 10-3107] analyzing entity 'mf_ram1port'
+
+INFO: [VRFC 10-3107] analyzing entity 'alt_mf_rom'
+
+INFO: [VRFC 10-3107] analyzing entity 'mf_altpll'
+
+INFO: [VRFC 10-3107] analyzing entity 'mf_altpll_io'
+
+INFO: [VRFC 10-3107] analyzing entity 'mf_altclkctrl'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/aux_module.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'register32'
+
+INFO: [VRFC 10-3107] analyzing entity 'registerN'
+
+INFO: [VRFC 10-3107] analyzing entity 'counter32'
+
+INFO: [VRFC 10-3107] analyzing entity 'countNup'
+
+INFO: [VRFC 10-3107] analyzing entity 'count4phases'
+
+INFO: [VRFC 10-3107] analyzing entity 'FFD'
+
+INFO: [VRFC 10-3107] analyzing entity 'FFDsimple'
+
+INFO: [VRFC 10-3107] analyzing entity 'FFT'
+
+INFO: [VRFC 10-3107] analyzing entity 'subtr32'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/packageExcp.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/core.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'core'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/exception.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_IF_RF'
+
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_RF_EX'
+
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_EX_MM'
+
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_MM_WB'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_rom_pkg.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/lbist_test_controller.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'lbist_test_controller'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/FFD_test.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'FFD_test'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/register32_test.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'register32_test'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/ram_dual_test.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'ram_dual_test'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_bank_test.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'reg_bank_test'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_RF_EX_test.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'reg_RF_EX_test'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/alu_test.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'alu_test'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_EX_MM_test.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'reg_EX_MM_test'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_MM_WB_test.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'reg_MM_WB_test'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_excp_IF_RF_test.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_IF_RF_test'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_excp_RF_EX_test.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_RF_EX_test'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_excp_EX_MM_test.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_EX_MM_test'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/counter32_test.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'counter32_test'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/registerN_test.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'registerN_test'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/phase5a/reg_excp_MM_WB_test.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'reg_excp_MM_WB_test'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/core_scan_test.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'core_scan_test'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'phase5a_processor_check'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/units.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'ram_dual'
+
+INFO: [VRFC 10-3107] analyzing entity 'reg_bank'
+
+INFO: [VRFC 10-3107] analyzing entity 'alu'
+
+INFO: [VRFC 10-3107] analyzing entity 'mask_off_bits'
+
+INFO: [VRFC 10-3107] analyzing entity 'shift_left32'
+
+INFO: [VRFC 10-3107] analyzing entity 'shift_right32'
+
+INFO: [VRFC 10-3107] analyzing entity 'wait_states'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_core_scan_isolation.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'tb_core_scan_isolation'
+
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 520.746 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '6' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_core_scan_isolation_behav xil_defaultlib.tb_core_scan_isolation -log elaborate.log"
+
+Vivado Simulator v2025.1.1
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_core_scan_isolation_behav xil_defaultlib.tb_core_scan_isolation -log elaborate.log 
+
+Using 2 slave threads.
+
+Starting static elaboration
+
+Completed static elaboration
+
+Starting simulation data flow analysis
+
+Completed simulation data flow analysis
+
+Time Resolution for simulation is 1ps
+
+Compiling package std.standard
+
+Compiling package std.textio
+
+Compiling package ieee.std_logic_1164
+
+Compiling package ieee.numeric_std
+
+Compiling package xil_defaultlib.p_wires
+
+Compiling package xil_defaultlib.phase2_tb_pkg
+
+Compiling package xil_defaultlib.phase5a_rom_pkg
+
+Compiling package xil_defaultlib.p_memory
+
+Compiling package xil_defaultlib.p_exception
+
+Compiling architecture rtl of entity xil_defaultlib.lbist_test_controller [\lbist_test_controller(num_patte...]
+
+Compiling architecture functional of entity xil_defaultlib.FFD_test [ffd_test_default]
+
+Compiling architecture functional of entity xil_defaultlib.register32_test [register32_test_default]
+
+Compiling architecture functional of entity xil_defaultlib.mf_alt_add_4 [mf_alt_add_4_default]
+
+Compiling architecture rtl of entity xil_defaultlib.reg_IF_RF_scan [reg_if_rf_scan_default]
+
+Compiling architecture rtl of entity xil_defaultlib.ram_dual_test [\ram_dual_test(n_words=32,width=...]
+
+Compiling architecture dual_port_ram of entity xil_defaultlib.reg_bank_test [reg_bank_test_default]
+
+Compiling architecture functional of entity xil_defaultlib.mf_alt_adder [mf_alt_adder_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_RF_EX_test [reg_rf_ex_test_default]
+
+Compiling architecture functional of entity xil_defaultlib.mf_alt_add_sub [mf_alt_add_sub_default]
+
+Compiling architecture functional of entity xil_defaultlib.mf_alt_add_sub_u [mf_alt_add_sub_u_default]
+
+Compiling architecture functional of entity xil_defaultlib.shift_left32 [shift_left32_default]
+
+Compiling architecture functional of entity xil_defaultlib.shift_right32 [shift_right32_default]
+
+Compiling architecture table of entity xil_defaultlib.mask_off_bits [mask_off_bits_default]
+
+Compiling architecture functional of entity xil_defaultlib.alu_test [alu_test_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_EX_MM_test [reg_ex_mm_test_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_MM_WB_test [reg_mm_wb_test_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_IF_RF_test [reg_excp_if_rf_test_default]
+
+Compiling architecture functional of entity xil_defaultlib.subtr32 [subtr32_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_RF_EX_test [reg_excp_rf_ex_test_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_EX_MM_test [reg_excp_ex_mm_test_default]
+
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+
+Compiling architecture functional of entity xil_defaultlib.counter32_test [\counter32_test(initial_value="0...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(init_val="000000...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=12,init...]
+
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_MM_WB_test [reg_excp_mm_wb_test_default]
+
+Compiling architecture rtl of entity xil_defaultlib.core_scan_test [core_scan_test_default]
+
+Compiling architecture functional of entity xil_defaultlib.FFD [ffd_default]
+
+Compiling architecture functional of entity xil_defaultlib.register32 [register32_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_IF_RF [reg_if_rf_default]
+
+Compiling architecture rtl of entity xil_defaultlib.ram_dual [\ram_dual(n_words=32,width=32)\]
+
+Compiling architecture dual_port_ram of entity xil_defaultlib.reg_bank [reg_bank_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_RF_EX [reg_rf_ex_default]
+
+Compiling architecture functional of entity xil_defaultlib.alu [alu_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_EX_MM [reg_ex_mm_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_MM_WB [reg_mm_wb_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_IF_RF [reg_excp_if_rf_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_RF_EX [reg_excp_rf_ex_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_EX_MM [reg_excp_ex_mm_default]
+
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00010...]
+
+Compiling architecture functional of entity xil_defaultlib.counter32 [\counter32(initial_value="000000...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(init_val="00000000000...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=12,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00111...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_MM_WB [reg_excp_mm_wb_default]
+
+Compiling architecture rtl of entity xil_defaultlib.core [core_default]
+
+Compiling architecture rtl of entity xil_defaultlib.lfsr_16 [lfsr_16_default]
+
+Compiling architecture rtl of entity xil_defaultlib.phase_shifter [phase_shifter_default]
+
+Compiling architecture rtl of entity xil_defaultlib.basic_controller [basic_controller_default]
+
+Compiling architecture rtl of entity xil_defaultlib.plpf_dynamic [plpf_dynamic_default]
+
+Compiling architecture test of entity xil_defaultlib.phase5a_processor_check [\phase5a_processor_check(pattern...]
+
+Compiling architecture test of entity xil_defaultlib.tb_core_scan_isolation
+
+Built simulation snapshot tb_core_scan_isolation_behav
+
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:16 . Memory (MB): peak = 520.746 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '16' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_core_scan_isolation_behav -key {Behavioral:sim_1:Functional:tb_core_scan_isolation} -tclbatch {tb_core_scan_isolation.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_core_scan_isolation.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_core_scan_isolation_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:24 . Memory (MB): peak = 520.746 ; gain = 0.000
+Note: [CAPTURE] 1,00003e741460fffa,00003e741460fffa,00003e741460fffa,PASS
+Time: 3260200 ps  Iteration: 0  Process: /tb_core_scan_isolation/engine/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [CAPTURE] 2,001fff481460fffa,001fff481460fffa,001fff481460fffa,PASS
+Time: 5840200 ps  Iteration: 0  Process: /tb_core_scan_isolation/engine/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [CAPTURE] 3,ff8000681460fffa,ff8000681460fffa,ff8000681460fffa,PASS
+Time: 8420200 ps  Iteration: 0  Process: /tb_core_scan_isolation/engine/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [CAPTURE] 4,000000a01460fffa,000000a01460fffa,000000a01460fffa,PASS
+Time: 11000200 ps  Iteration: 0  Process: /tb_core_scan_isolation/engine/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [CAPTURE] 5,f83f1f0c1460fffa,f83f1f0c1460fffa,f83f1f0c1460fffa,PASS
+Time: 13580200 ps  Iteration: 0  Process: /tb_core_scan_isolation/engine/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [CAPTURE] 6,fffffc881460fffa,fffffc881460fffa,fffffc881460fffa,PASS
+Time: 16160200 ps  Iteration: 0  Process: /tb_core_scan_isolation/engine/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [CAPTURE] 7,07f000741460fffa,07f000741460fffa,07f000741460fffa,PASS
+Time: 18740200 ps  Iteration: 0  Process: /tb_core_scan_isolation/engine/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [CAPTURE] 8,ff8001141460fffa,ff8001141460fffa,ff8001141460fffa,PASS
+Time: 21320200 ps  Iteration: 0  Process: /tb_core_scan_isolation/engine/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [PASS] real core protected-state hold, all CPU phases, write suppression and interrupt/exception isolation
+Time: 21320200 ps  Iteration: 0  Process: /tb_core_scan_isolation/engine/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [ISOLATION] 4287,0,0,0,1033,0
+Time: 21320200 ps  Iteration: 0  Process: /tb_core_scan_isolation/engine/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [SEQUENCE] 512,8,512,8
+Time: 21320200 ps  Iteration: 0  Process: /tb_core_scan_isolation/engine/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [PASS] reset-only exit and functional restart against original core
+Time: 21780200 ps  Iteration: 0  Process: /tb_core_scan_isolation/engine/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [ENGINE_COMPLETE] processor at 21780200 ps
+Time: 21780200 ps  Iteration: 0  Process: /tb_core_scan_isolation/engine/stimulus  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_processor_check.vhd
+Note: [TB_COMPLETE] tb_core_scan_isolation at 21780200 ps
+Time: 21780200 ps  Iteration: 2  Process: /tb_core_scan_isolation/line__9  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_core_scan_isolation.vhd
+INFO: [Simtcl 6-16] Simulation closed
+FINAL VERIFICATION RESULT: PASS -- tb_core_scan_isolation -- 21780200 ps
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_misr_16'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_misr_16' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_misr_16_vhdl.prj"
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/misr_16.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'misr_16'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_misr_16.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'tb_misr_16'
+
+INFO: [USF-XSim-69] 'compile' step finished in '5' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_misr_16_behav xil_defaultlib.tb_misr_16 -log elaborate.log"
+
+Vivado Simulator v2025.1.1
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_misr_16_behav xil_defaultlib.tb_misr_16 -log elaborate.log 
+
+Using 2 slave threads.
+
+Starting static elaboration
+
+Completed static elaboration
+
+Starting simulation data flow analysis
+
+Completed simulation data flow analysis
+
+Time Resolution for simulation is 1ps
+
+Compiling package std.standard
+
+Compiling package std.textio
+
+Compiling package ieee.std_logic_1164
+
+Compiling package ieee.numeric_std
+
+Compiling architecture rtl of entity xil_defaultlib.misr_16 [misr_16_default]
+
+Compiling architecture test of entity xil_defaultlib.tb_misr_16
+
+Built simulation snapshot tb_misr_16_behav
+
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_misr_16_behav -key {Behavioral:sim_1:Functional:tb_misr_16} -tclbatch {tb_misr_16.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_misr_16.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_misr_16_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:12 . Memory (MB): peak = 522.586 ; gain = 1.840
+Note: [UNIT] 0,0000,256,PASS
+Time: 5140 ns  Iteration: 1  Process: /tb_misr_16/line__16  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_misr_16.vhd
+Note: [UNIT] 1,84B4,256,PASS
+Time: 10270 ns  Iteration: 1  Process: /tb_misr_16/line__16  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_misr_16.vhd
+Note: [UNIT] 2,8C73,256,PASS
+Time: 15400 ns  Iteration: 1  Process: /tb_misr_16/line__16  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_misr_16.vhd
+Note: [UNIT] 3,101A,256,PASS
+Time: 20530 ns  Iteration: 1  Process: /tb_misr_16/line__16  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_misr_16.vhd
+Note: [UNIT] 4,6868,256,PASS
+Time: 25660 ns  Iteration: 1  Process: /tb_misr_16/line__16  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_misr_16.vhd
+Note: [TB_COMPLETE] tb_misr_16 at 25670000 ps
+Time: 25670 ns  Iteration: 1  Process: /tb_misr_16/line__16  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_misr_16.vhd
+INFO: [Simtcl 6-16] Simulation closed
+FINAL VERIFICATION RESULT: PASS -- tb_misr_16 -- 25670000 ps
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_phase6a_misr_safety'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_phase6a_misr_safety' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_phase6a_misr_safety_vhdl.prj"
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/phase6a_safe_misr.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'phase6a_safe_misr'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'tb_phase6a_misr_safety'
+
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_phase6a_misr_safety_behav xil_defaultlib.tb_phase6a_misr_safety -log elaborate.log"
+
+Vivado Simulator v2025.1.1
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_phase6a_misr_safety_behav xil_defaultlib.tb_phase6a_misr_safety -log elaborate.log 
+
+Using 2 slave threads.
+
+Starting static elaboration
+
+Completed static elaboration
+
+Starting simulation data flow analysis
+
+Completed simulation data flow analysis
+
+Time Resolution for simulation is 1ps
+
+Compiling package std.standard
+
+Compiling package std.textio
+
+Compiling package ieee.std_logic_1164
+
+Compiling package ieee.numeric_std
+
+Compiling architecture rtl of entity xil_defaultlib.lbist_test_controller [\lbist_test_controller(chain_len...]
+
+Compiling architecture rtl of entity xil_defaultlib.misr_16 [misr_16_default]
+
+Compiling architecture rtl of entity xil_defaultlib.phase6a_safe_misr [\phase6a_safe_misr(chain_length=...]
+
+Compiling architecture test of entity xil_defaultlib.tb_phase6a_misr_safety
+
+Built simulation snapshot tb_phase6a_misr_safety_behav
+
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_phase6a_misr_safety_behav -key {Behavioral:sim_1:Functional:tb_phase6a_misr_safety} -tclbatch {tb_phase6a_misr_safety.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_phase6a_misr_safety.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_phase6a_misr_safety_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 525.840 ; gain = 2.750
+Note: [SAFETY] 0,PASS
+Time: 220100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__21  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [SAFETY] 1,PASS
+Time: 270100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__21  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [SAFETY] 2,PASS
+Time: 360100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__21  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [SAFETY] 3,PASS
+Time: 460100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__21  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [SAFETY] 4,PASS
+Time: 680100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__21  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [SAFETY] 5,PASS
+Time: 730100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__21  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [SAFETY] 6,PASS
+Time: 821100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__21  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [SAFETY] 7,PASS
+Time: 1040100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__21  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+Note: [TB_COMPLETE] tb_phase6a_misr_safety at 1040100 ps
+Time: 1040100 ps  Iteration: 0  Process: /tb_phase6a_misr_safety/line__21  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_misr_safety.vhd
+INFO: [Simtcl 6-16] Simulation closed
+FINAL VERIFICATION RESULT: PASS -- tb_phase6a_misr_safety -- 1040100 ps
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_phase6a_router'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_phase6a_router' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_phase6a_router_vhdl.prj"
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/lbist_pattern_router.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'lbist_pattern_router'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_router.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'tb_phase6a_router'
+
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_phase6a_router_behav xil_defaultlib.tb_phase6a_router -log elaborate.log"
+
+Vivado Simulator v2025.1.1
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot tb_phase6a_router_behav xil_defaultlib.tb_phase6a_router -log elaborate.log 
+
+Using 2 slave threads.
+
+Starting static elaboration
+
+Completed static elaboration
+
+Starting simulation data flow analysis
+
+Completed simulation data flow analysis
+
+Time Resolution for simulation is 1ps
+
+Compiling package std.standard
+
+Compiling package std.textio
+
+Compiling package ieee.std_logic_1164
+
+Compiling package ieee.numeric_std
+
+Compiling package xil_defaultlib.phase2_tb_pkg
+
+Compiling package xil_defaultlib.p_wires
+
+Compiling architecture rtl of entity xil_defaultlib.lfsr_16 [lfsr_16_default]
+
+Compiling architecture rtl of entity xil_defaultlib.phase_shifter [phase_shifter_default]
+
+Compiling architecture rtl of entity xil_defaultlib.basic_controller [basic_controller_default]
+
+Compiling architecture rtl of entity xil_defaultlib.swap_controller [\swap_controller(num_chains=1)\]
+
+Compiling architecture rtl of entity xil_defaultlib.moving_controller [\moving_controller(beta=20,num_c...]
+
+Compiling architecture rtl of entity xil_defaultlib.plpf_dynamic [plpf_dynamic_default]
+
+Compiling architecture rtl of entity xil_defaultlib.lbist_pattern_router [lbist_pattern_router_default]
+
+Compiling architecture rtl of entity xil_defaultlib.reg_IF_RF_scan [reg_if_rf_scan_default]
+
+Compiling architecture test of entity xil_defaultlib.tb_phase6a_router
+
+Built simulation snapshot tb_phase6a_router_behav
+
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 525.879 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '6' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_phase6a_router_behav -key {Behavioral:sim_1:Functional:tb_phase6a_router} -tclbatch {tb_phase6a_router.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_phase6a_router.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_phase6a_router_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:11 . Memory (MB): peak = 529.652 ; gain = 3.773
+Note: [ROUTER] 0,36,4608,PASS
+Time: 46100200 ps  Iteration: 0  Process: /tb_phase6a_router/line__17  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_router.vhd
+Note: [ROUTER] 1,36,4608,PASS
+Time: 92200200 ps  Iteration: 0  Process: /tb_phase6a_router/line__17  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_router.vhd
+Note: [ROUTER] 2,36,4608,PASS
+Time: 138300200 ps  Iteration: 0  Process: /tb_phase6a_router/line__17  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_router.vhd
+Note: [ROUTER] 3,36,4608,PASS
+Time: 184400200 ps  Iteration: 0  Process: /tb_phase6a_router/line__17  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_router.vhd
+Note: [ROUTER] 4,36,4608,PASS
+Time: 230500200 ps  Iteration: 0  Process: /tb_phase6a_router/line__17  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_router.vhd
+Note: [TB_COMPLETE] tb_phase6a_router at 230503200 ps
+Time: 230503200 ps  Iteration: 0  Process: /tb_phase6a_router/line__17  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_router.vhd
+INFO: [Simtcl 6-16] Simulation closed
+FINAL VERIFICATION RESULT: PASS -- tb_phase6a_router -- 230503200 ps
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_core_fault_regression'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_core_fault_regression' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_core_fault_regression_vhdl.prj"
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/SDcard.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'SdCardCtrl'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/cache.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'D_CACHE'
+
+INFO: [VRFC 10-3107] analyzing entity 'I_CACHE'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/disk.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'DISK'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/fault_injection/core_scan_fault.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'core_scan_fault'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/fpu.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'special_values'
+
+INFO: [VRFC 10-3107] analyzing entity 'data_check_mult'
+
+INFO: [VRFC 10-3107] analyzing entity 'mult32float'
+
+INFO: [VRFC 10-3107] analyzing entity 'data_check_sum'
+
+INFO: [VRFC 10-3107] analyzing entity 'sum32float'
+
+INFO: [VRFC 10-3107] analyzing entity 'FPU'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/io.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'from_stdin'
+
+INFO: [VRFC 10-3107] analyzing entity 'print_data'
+
+INFO: [VRFC 10-3107] analyzing entity 'to_stdout'
+
+INFO: [VRFC 10-3107] analyzing entity 'write_data_file'
+
+INFO: [VRFC 10-3107] analyzing entity 'read_data_file'
+
+INFO: [VRFC 10-3107] analyzing entity 'do_interrupt'
+
+INFO: [VRFC 10-3107] analyzing entity 'simple_uart'
+
+INFO: [VRFC 10-3107] analyzing entity 'sys_stats'
+
+INFO: [VRFC 10-3107] analyzing entity 'to_7seg'
+
+INFO: [VRFC 10-3107] analyzing entity 'read_keys'
+
+INFO: [VRFC 10-3107] analyzing entity 'LCD_display'
+
+INFO: [VRFC 10-3107] analyzing entity 'SDcard'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/ram.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'RAM'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/rom.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'ROM'
+
+INFO: [VRFC 10-3107] analyzing entity 'single_port_rom'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/sdram.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'SDRAM_controller'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/uart.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'uart_int'
+
+INFO: [VRFC 10-3107] analyzing entity 'register8'
+
+INFO: [VRFC 10-3107] analyzing entity 'register2'
+
+INFO: [VRFC 10-3107] analyzing entity 'par_ser10'
+
+INFO: [VRFC 10-3107] analyzing entity 'ser_par10'
+
+INFO: [VRFC 10-3107] analyzing entity 'remota'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/tb_cMIPS.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'tb_cMIPS'
+
+INFO: [VRFC 10-3107] analyzing entity 'inst_addr_decode'
+
+INFO: [VRFC 10-3107] analyzing entity 'ram_addr_decode'
+
+INFO: [VRFC 10-3107] analyzing entity 'busError_addr_decode'
+
+INFO: [VRFC 10-3107] analyzing entity 'io_addr_decode'
+
+INFO: [VRFC 10-3107] analyzing entity 'sdram_addr_decode'
+
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_core_fault_regression.vhd" into library xil_defaultlib
+
+INFO: [VRFC 10-3107] analyzing entity 'tb_core_fault_regression'
+
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -generic_top "STALL_TEST=false" -L xil_defaultlib -L secureip --snapshot tb_core_fault_regression_behav xil_defaultlib.tb_core_fault_regression -log elaborate.log"
+
+Vivado Simulator v2025.1.1
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -generic_top STALL_TEST=false -L xil_defaultlib -L secureip --snapshot tb_core_fault_regression_behav xil_defaultlib.tb_core_fault_regression -log elaborate.log 
+
+Using 2 slave threads.
+
+Starting static elaboration
+
+WARNING: [VRFC 10-4940] 'display_7seg' remains a black box since it has no binding entity [C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/io.vhd:588]
+
+WARNING: [VRFC 10-4940] 'display_7seg' remains a black box since it has no binding entity [C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/io.vhd:590]
+
+Completed static elaboration
+
+Starting simulation data flow analysis
+
+Completed simulation data flow analysis
+
+Time Resolution for simulation is 1ps
+
+Compiling package std.standard
+
+Compiling package std.textio
+
+Compiling package ieee.std_logic_1164
+
+Compiling package ieee.numeric_std
+
+Compiling package xil_defaultlib.p_wires
+
+Compiling package xil_defaultlib.p_memory
+
+Compiling package xil_defaultlib.p_exception
+
+Compiling package xil_defaultlib.p_uart
+
+Compiling package xil_defaultlib.commonpckg
+
+Compiling package xil_defaultlib.sdcardpckg
+
+Compiling architecture functional of entity xil_defaultlib.count4phases [count4phases_default]
+
+Compiling architecture functional of entity xil_defaultlib.mf_altpll [mf_altpll_default]
+
+Compiling architecture functional of entity xil_defaultlib.mf_altclkctrl [mf_altclkctrl_default]
+
+Compiling architecture functional of entity xil_defaultlib.FFD [ffd_default]
+
+Compiling architecture functional of entity xil_defaultlib.register32 [register32_default]
+
+Compiling architecture functional of entity xil_defaultlib.mf_alt_add_4 [mf_alt_add_4_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_IF_RF [reg_if_rf_default]
+
+Compiling architecture rtl of entity xil_defaultlib.ram_dual [\ram_dual(n_words=32,width=32)\]
+
+Compiling architecture dual_port_ram of entity xil_defaultlib.reg_bank [reg_bank_default]
+
+Compiling architecture functional of entity xil_defaultlib.mf_alt_adder [mf_alt_adder_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_RF_EX [reg_rf_ex_default]
+
+Compiling architecture functional of entity xil_defaultlib.mf_alt_add_sub [mf_alt_add_sub_default]
+
+Compiling architecture functional of entity xil_defaultlib.mf_alt_add_sub_u [mf_alt_add_sub_u_default]
+
+Compiling architecture functional of entity xil_defaultlib.shift_left32 [shift_left32_default]
+
+Compiling architecture functional of entity xil_defaultlib.shift_right32 [shift_right32_default]
+
+Compiling architecture table of entity xil_defaultlib.mask_off_bits [mask_off_bits_default]
+
+Compiling architecture functional of entity xil_defaultlib.alu [alu_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_EX_MM [reg_ex_mm_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_MM_WB [reg_mm_wb_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_IF_RF [reg_excp_if_rf_default]
+
+Compiling architecture functional of entity xil_defaultlib.subtr32 [subtr32_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_RF_EX [reg_excp_rf_ex_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_EX_MM [reg_excp_ex_mm_default]
+
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00010...]
+
+Compiling architecture functional of entity xil_defaultlib.counter32 [\counter32(initial_value="000000...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(init_val="00000000000...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=12,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00111...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_MM_WB [reg_excp_mm_wb_default]
+
+Compiling architecture rtl of entity xil_defaultlib.core [core_default]
+
+Compiling architecture functional of entity xil_defaultlib.FFD_test [ffd_test_default]
+
+Compiling architecture functional of entity xil_defaultlib.register32_test [register32_test_default]
+
+Compiling architecture rtl of entity xil_defaultlib.reg_IF_RF_scan [reg_if_rf_scan_default]
+
+Compiling architecture rtl of entity xil_defaultlib.ram_dual_test [\ram_dual_test(n_words=32,width=...]
+
+Compiling architecture dual_port_ram of entity xil_defaultlib.reg_bank_test [reg_bank_test_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_RF_EX_test [reg_rf_ex_test_default]
+
+Compiling architecture functional of entity xil_defaultlib.alu_test [alu_test_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_EX_MM_test [reg_ex_mm_test_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_MM_WB_test [reg_mm_wb_test_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_IF_RF_test [reg_excp_if_rf_test_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_RF_EX_test [reg_excp_rf_ex_test_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_EX_MM_test [reg_excp_ex_mm_test_default]
+
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+
+Compiling architecture functional of entity xil_defaultlib.counter32_test [\counter32_test(initial_value="0...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(init_val="000000...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=12,init...]
+
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_MM_WB_test [reg_excp_mm_wb_test_default]
+
+Compiling architecture rtl of entity xil_defaultlib.core_scan_fault [core_scan_fault_default]
+
+Compiling architecture behavioral of entity xil_defaultlib.inst_addr_decode [inst_addr_decode_default]
+
+Compiling architecture fake of entity xil_defaultlib.I_CACHE [i_cache_default]
+
+Compiling architecture functional of entity xil_defaultlib.FFT [fft_default]
+
+Compiling architecture structural of entity xil_defaultlib.wait_states [wait_states_default]
+
+Compiling architecture simulation of entity xil_defaultlib.ROM [\ROM(1,8)\]
+
+Compiling architecture behavioral of entity xil_defaultlib.busError_addr_decode [buserror_addr_decode_default]
+
+Compiling architecture behavioral of entity xil_defaultlib.io_addr_decode [io_addr_decode_default]
+
+Compiling architecture behavioral of entity xil_defaultlib.ram_addr_decode [ram_addr_decode_default]
+
+Compiling architecture fake of entity xil_defaultlib.sdram_addr_decode [sdram_addr_decode_default]
+
+Compiling architecture fake of entity xil_defaultlib.D_CACHE [d_cache_default]
+
+Compiling architecture simulation of entity xil_defaultlib.RAM [\RAM(1,8)(1,9)\]
+
+Compiling architecture fake of entity xil_defaultlib.DISK [disk_default]
+
+Compiling architecture fake of entity xil_defaultlib.SDRAM_controller [sdram_controller_default]
+
+Compiling architecture simulation of entity xil_defaultlib.to_stdout [\to_stdout(31,0)\]
+
+Compiling architecture simulation of entity xil_defaultlib.from_stdin [from_stdin_default]
+
+Compiling architecture simulation of entity xil_defaultlib.read_data_file [\read_data_file(1,10)\]
+
+Compiling architecture simulation of entity xil_defaultlib.write_data_file [\write_data_file(1,11)\]
+
+Compiling architecture simulation of entity xil_defaultlib.print_data [print_data_default]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=30,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.countNup [\countNup(num_bits=30)\]
+
+Compiling architecture functional of entity xil_defaultlib.FFDsimple [ffdsimple_default]
+
+Compiling architecture behavioral of entity xil_defaultlib.do_interrupt [\do_interrupt(31,0)(31,0)\]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=15,init_val=...]
+
+Compiling architecture behavioral of entity xil_defaultlib.to_7seg [\to_7seg(31,0)\]
+
+Compiling architecture functional of entity xil_defaultlib.countNup [countnup_default]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=4,init_val=(...]
+
+Compiling architecture behavioral of entity xil_defaultlib.read_keys [\read_keys(deb_cycles=6)\]
+
+Compiling architecture fake of entity xil_defaultlib.LCD_display [lcd_display_default]
+
+Compiling architecture functional of entity xil_defaultlib.register8 [register8_default]
+
+Compiling architecture functional of entity xil_defaultlib.register2 [register2_default]
+
+Compiling architecture functional of entity xil_defaultlib.par_ser10 [par_ser10_default]
+
+Compiling architecture functional of entity xil_defaultlib.ser_par10 [ser_par10_default]
+
+Compiling architecture rtl of entity xil_defaultlib.uart_int [uart_int_default]
+
+Compiling architecture behavioral of entity xil_defaultlib.simple_uart [\simple_uart(31,0)(31,0)(2,0)\]
+
+Compiling architecture simulation of entity xil_defaultlib.remota [\remota(1,10)(1,10)\]
+
+Compiling architecture fake of entity xil_defaultlib.SDcard [sdcard_default]
+
+Compiling architecture fake of entity xil_defaultlib.FPU [fpu_default]
+
+Compiling architecture tb of entity xil_defaultlib.tb_core_fault_regression
+
+Built simulation snapshot tb_core_fault_regression_behav
+
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:18 . Memory (MB): peak = 530.062 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '18' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_core_fault_regression_behav -key {Behavioral:sim_1:Functional:tb_core_fault_regression} -tclbatch {tb_core_fault_regression.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_core_fault_regression.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_core_fault_regression_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:23 . Memory (MB): peak = 535.543 ; gain = 5.480
+fffffff6
+fffffff7
+Note: [PASS] 100 processor phase-edge comparisons, all functional outputs equal
+Time: 595001 ps  Iteration: 0  Process: /tb_core_fault_regression/differential  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_core_fault_regression.vhd
+fffffff8
+fffffff9
+fffffffa
+fffffffb
+fffffffc
+fffffffd
+fffffffe
+ffffffff
+CORE DIFFERENTIAL: PASS (313 samples, 0 stalls; both wait decoders equal)
+Failure: 
+cMIPS BREAKPOINT at PC=00000038 opc=010000 fun=100000 brk=10000000000000000000
+SIMULATION ENDED (correctly?) AT exit();
+Time: 1670 ns  Iteration: 5  Process: /tb_core_fault_regression/U_CORE/RF_STOP_SIMULATION  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/core.vhd
+$finish called at time : 1670 ns : File "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/core.vhd" Line 856
+INFO: [Simtcl 6-16] Simulation closed
+FINAL VERIFICATION RESULT: PASS -- functional_lwsw -- 1670000 ps
+Command: launch_simulation  -mode behavioral
+INFO: [Vivado 12-12493] Simulation top is 'tb_core_fault_regression'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/2025.1.1/Vivado/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_core_fault_regression' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+"xvhdl --incr --relax -prj tb_core_fault_regression_vhdl.prj"
+
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -generic_top "STALL_TEST=true" -L xil_defaultlib -L secureip --snapshot tb_core_fault_regression_behav xil_defaultlib.tb_core_fault_regression -log elaborate.log"
+
+Vivado Simulator v2025.1.1
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+Running: E:/2025.1.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -generic_top STALL_TEST=true -L xil_defaultlib -L secureip --snapshot tb_core_fault_regression_behav xil_defaultlib.tb_core_fault_regression -log elaborate.log 
+
+Using 2 slave threads.
+
+Starting static elaboration
+
+WARNING: [VRFC 10-4940] 'display_7seg' remains a black box since it has no binding entity [C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/io.vhd:588]
+
+WARNING: [VRFC 10-4940] 'display_7seg' remains a black box since it has no binding entity [C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/io.vhd:590]
+
+Completed static elaboration
+
+Starting simulation data flow analysis
+
+Completed simulation data flow analysis
+
+Time Resolution for simulation is 1ps
+
+Compiling package std.standard
+
+Compiling package std.textio
+
+Compiling package ieee.std_logic_1164
+
+Compiling package ieee.numeric_std
+
+Compiling package xil_defaultlib.p_wires
+
+Compiling package xil_defaultlib.p_memory
+
+Compiling package xil_defaultlib.p_exception
+
+Compiling package xil_defaultlib.p_uart
+
+Compiling package xil_defaultlib.commonpckg
+
+Compiling package xil_defaultlib.sdcardpckg
+
+Compiling architecture functional of entity xil_defaultlib.count4phases [count4phases_default]
+
+Compiling architecture functional of entity xil_defaultlib.mf_altpll [mf_altpll_default]
+
+Compiling architecture functional of entity xil_defaultlib.mf_altclkctrl [mf_altclkctrl_default]
+
+Compiling architecture functional of entity xil_defaultlib.FFD [ffd_default]
+
+Compiling architecture functional of entity xil_defaultlib.register32 [register32_default]
+
+Compiling architecture functional of entity xil_defaultlib.mf_alt_add_4 [mf_alt_add_4_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_IF_RF [reg_if_rf_default]
+
+Compiling architecture rtl of entity xil_defaultlib.ram_dual [\ram_dual(n_words=32,width=32)\]
+
+Compiling architecture dual_port_ram of entity xil_defaultlib.reg_bank [reg_bank_default]
+
+Compiling architecture functional of entity xil_defaultlib.mf_alt_adder [mf_alt_adder_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_RF_EX [reg_rf_ex_default]
+
+Compiling architecture functional of entity xil_defaultlib.mf_alt_add_sub [mf_alt_add_sub_default]
+
+Compiling architecture functional of entity xil_defaultlib.mf_alt_add_sub_u [mf_alt_add_sub_u_default]
+
+Compiling architecture functional of entity xil_defaultlib.shift_left32 [shift_left32_default]
+
+Compiling architecture functional of entity xil_defaultlib.shift_right32 [shift_right32_default]
+
+Compiling architecture table of entity xil_defaultlib.mask_off_bits [mask_off_bits_default]
+
+Compiling architecture functional of entity xil_defaultlib.alu [alu_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_EX_MM [reg_ex_mm_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_MM_WB [reg_mm_wb_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_IF_RF [reg_excp_if_rf_default]
+
+Compiling architecture functional of entity xil_defaultlib.subtr32 [subtr32_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_RF_EX [reg_excp_rf_ex_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_EX_MM [reg_excp_ex_mm_default]
+
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00010...]
+
+Compiling architecture functional of entity xil_defaultlib.counter32 [\counter32(initial_value="000000...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(init_val="00000000000...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=12,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00111...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.register32 [\register32(initial_value="00000...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=26,init_val=...]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_MM_WB [reg_excp_mm_wb_default]
+
+Compiling architecture rtl of entity xil_defaultlib.core [core_default]
+
+Compiling architecture functional of entity xil_defaultlib.FFD_test [ffd_test_default]
+
+Compiling architecture functional of entity xil_defaultlib.register32_test [register32_test_default]
+
+Compiling architecture rtl of entity xil_defaultlib.reg_IF_RF_scan [reg_if_rf_scan_default]
+
+Compiling architecture rtl of entity xil_defaultlib.ram_dual_test [\ram_dual_test(n_words=32,width=...]
+
+Compiling architecture dual_port_ram of entity xil_defaultlib.reg_bank_test [reg_bank_test_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_RF_EX_test [reg_rf_ex_test_default]
+
+Compiling architecture functional of entity xil_defaultlib.alu_test [alu_test_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_EX_MM_test [reg_ex_mm_test_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_MM_WB_test [reg_mm_wb_test_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_IF_RF_test [reg_excp_if_rf_test_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_RF_EX_test [reg_excp_rf_ex_test_default]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_EX_MM_test [reg_excp_ex_mm_test_default]
+
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+
+Compiling architecture functional of entity xil_defaultlib.counter32_test [\counter32_test(initial_value="0...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(init_val="000000...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=12,init...]
+
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.register32_test [\register32_test(initial_value="...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture functional of entity xil_defaultlib.registerN_test [\registerN_test(num_bits=26,init...]
+
+Compiling architecture funcional of entity xil_defaultlib.reg_excp_MM_WB_test [reg_excp_mm_wb_test_default]
+
+Compiling architecture rtl of entity xil_defaultlib.core_scan_fault [core_scan_fault_default]
+
+Compiling architecture behavioral of entity xil_defaultlib.inst_addr_decode [inst_addr_decode_default]
+
+Compiling architecture fake of entity xil_defaultlib.I_CACHE [i_cache_default]
+
+Compiling architecture functional of entity xil_defaultlib.FFT [fft_default]
+
+Compiling architecture structural of entity xil_defaultlib.wait_states [wait_states_default]
+
+Compiling architecture simulation of entity xil_defaultlib.ROM [\ROM(1,8)\]
+
+Compiling architecture behavioral of entity xil_defaultlib.busError_addr_decode [buserror_addr_decode_default]
+
+Compiling architecture behavioral of entity xil_defaultlib.io_addr_decode [io_addr_decode_default]
+
+Compiling architecture behavioral of entity xil_defaultlib.ram_addr_decode [ram_addr_decode_default]
+
+Compiling architecture fake of entity xil_defaultlib.sdram_addr_decode [sdram_addr_decode_default]
+
+Compiling architecture fake of entity xil_defaultlib.D_CACHE [d_cache_default]
+
+Compiling architecture simulation of entity xil_defaultlib.RAM [\RAM(1,8)(1,9)\]
+
+Compiling architecture fake of entity xil_defaultlib.DISK [disk_default]
+
+Compiling architecture fake of entity xil_defaultlib.SDRAM_controller [sdram_controller_default]
+
+Compiling architecture simulation of entity xil_defaultlib.to_stdout [\to_stdout(31,0)\]
+
+Compiling architecture simulation of entity xil_defaultlib.from_stdin [from_stdin_default]
+
+Compiling architecture simulation of entity xil_defaultlib.read_data_file [\read_data_file(1,10)\]
+
+Compiling architecture simulation of entity xil_defaultlib.write_data_file [\write_data_file(1,11)\]
+
+Compiling architecture simulation of entity xil_defaultlib.print_data [print_data_default]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=30,init_val=...]
+
+Compiling architecture functional of entity xil_defaultlib.countNup [\countNup(num_bits=30)\]
+
+Compiling architecture functional of entity xil_defaultlib.FFDsimple [ffdsimple_default]
+
+Compiling architecture behavioral of entity xil_defaultlib.do_interrupt [\do_interrupt(31,0)(31,0)\]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=15,init_val=...]
+
+Compiling architecture behavioral of entity xil_defaultlib.to_7seg [\to_7seg(31,0)\]
+
+Compiling architecture functional of entity xil_defaultlib.countNup [countnup_default]
+
+Compiling architecture functional of entity xil_defaultlib.registerN [\registerN(num_bits=4,init_val=(...]
+
+Compiling architecture behavioral of entity xil_defaultlib.read_keys [\read_keys(deb_cycles=6)\]
+
+Compiling architecture fake of entity xil_defaultlib.LCD_display [lcd_display_default]
+
+Compiling architecture functional of entity xil_defaultlib.register8 [register8_default]
+
+Compiling architecture functional of entity xil_defaultlib.register2 [register2_default]
+
+Compiling architecture functional of entity xil_defaultlib.par_ser10 [par_ser10_default]
+
+Compiling architecture functional of entity xil_defaultlib.ser_par10 [ser_par10_default]
+
+Compiling architecture rtl of entity xil_defaultlib.uart_int [uart_int_default]
+
+Compiling architecture behavioral of entity xil_defaultlib.simple_uart [\simple_uart(31,0)(31,0)(2,0)\]
+
+Compiling architecture simulation of entity xil_defaultlib.remota [\remota(1,10)(1,10)\]
+
+Compiling architecture fake of entity xil_defaultlib.SDcard [sdcard_default]
+
+Compiling architecture fake of entity xil_defaultlib.FPU [fpu_default]
+
+Compiling architecture tb of entity xil_defaultlib.tb_core_fault_regression
+
+Built simulation snapshot tb_core_fault_regression_behav
+
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:17 . Memory (MB): peak = 535.715 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '17' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_sim/project_final_essentials/phase5a.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_core_fault_regression_behav -key {Behavioral:sim_1:Functional:tb_core_fault_regression} -tclbatch {tb_core_fault_regression.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_core_fault_regression.tcl
+## set curr_wave [current_wave_config]
+## if { [string length $curr_wave] == 0 } {
+##   if { [llength [get_objects]] > 0} {
+##     add_wave /
+##     set_property needs_save false [current_wave_config]
+##   } else {
+##      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+##   }
+## }
+## run 0ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_core_fault_regression_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 0ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:21 . Memory (MB): peak = 538.512 ; gain = 2.797
+fffffff6
+fffffff7
+Note: [PASS] 100 processor phase-edge comparisons, all functional outputs equal
+Time: 595001 ps  Iteration: 0  Process: /tb_core_fault_regression/differential  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_core_fault_regression.vhd
+fffffff8
+fffffff9
+fffffffa
+fffffffb
+fffffffc
+fffffffd
+fffffffe
+ffffffff
+CORE DIFFERENTIAL: PASS (325 samples, 12 stalls; both wait decoders equal)
+Failure: 
+cMIPS BREAKPOINT at PC=00000038 opc=010000 fun=100000 brk=10000000000000000000
+SIMULATION ENDED (correctly?) AT exit();
+Time: 1730 ns  Iteration: 5  Process: /tb_core_fault_regression/U_CORE/RF_STOP_SIMULATION  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/core.vhd
+$finish called at time : 1730 ns : File "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/cMIPS/vhdl/core.vhd" Line 856
+INFO: [Simtcl 6-16] Simulation closed
+FINAL VERIFICATION RESULT: PASS -- functional_stalls -- 1730000 ps
+FINAL ESSENTIAL VERIFICATION: PASS
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 18 09:50:31 2026...

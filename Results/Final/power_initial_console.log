@@ -1,0 +1,173 @@
+
+****** Vivado v2025.1.1 (64-bit)
+  **** SW Build 6233196 on Thu Sep 11 21:27:30 MDT 2025
+  **** IP Build 6232796 on Fri Sep 12 01:46:16 MDT 2025
+  **** SharedData Build 6233195 on Thu Sep 11 17:56:43 MDT 2025
+  **** Start of session at: Wed Nov 18 09:57:30 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source lbist/scripts/run_final_power.tcl
+# set root [file normalize [file join [file dirname [info script]] ../..]]
+# set out [file join $root Results Final FPGA_Analysis]
+# file mkdir [file join $root Results Final work]
+# cd [file join $root Results Final work]
+# set status [open [file join $out power status.csv] w]
+# puts $status "Configuration,Approach,Stage,Status,Detail"
+# flush $status
+# set failed 0
+# foreach config {baseline scan_enabled full_lbist} {
+#  set cases [expr {$config eq "full_lbist" ? {0 1 2 3 4} : {functional}}]
+#  foreach a $cases {
+#   set tag [expr {$a eq "functional" ? $config : "approach_$a"}]
+#   set folder [file join $out power $tag];file mkdir $folder
+#   if {[catch {
+#    open_checkpoint [file join $::env(TEMP) vl405_final_fpga $config routed.dcp]
+#    if {[get_property PART [current_design]] ne "xc7a35tcpg236-1"} {error "Incorrect part"}
+#    set_operating_conditions -ambient_temp 25 -process typical
+#    set saif [file join $out power activity mapped_$tag.saif]
+#    if {![file exists $saif]} {error "Missing own activity: $saif"}
+#    read_saif -strip_path final_fpga_top -out_file [file join $folder unmatched_nets.rpt] $saif
+#    report_power -file [file join $folder power.rpt]
+#    report_switching_activity -all -file [file join $folder switching.rpt]
+#    report_utilization -file [file join $out $config routed_utilization.rpt]
+#    report_timing_summary -report_unconstrained -file [file join $out $config routed_timing.rpt]
+#    set f [open [file join $folder activity_properties.txt] w]
+#    puts $f [list_property [lindex [get_nets -hier] 0]]
+#    close $f
+#    puts $status "$config,$a,SAIF_power,PASS,real own RTL SAIF on routed checkpoint; inspect annotation coverage"
+#    flush $status
+#    close_design
+#   } reason]} {
+#    set failed 1
+#    puts $status "$config,$a,SAIF_power,FAIL,[string map {, ; \n { }} $reason]";flush $status
+#    puts stderr "FINAL POWER $config/$a: $reason"
+#    catch {close_design}
+#   }
+#  }
+# }
+Command: open_checkpoint C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_fpga/baseline/routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.098 . Memory (MB): peak = 296.418 ; gain = 0.000
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.175 . Memory (MB): peak = 705.648 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 923 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.1.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 809.414 ; gain = 0.941
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 1388.426 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1388.426 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1388.426 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1388.426 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.281 . Memory (MB): peak = 1388.426 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1388.426 ; gain = 0.000
+Restored from archive | CPU: 2.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1388.426 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1388.426 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.1.1 (64-bit) build 6233196
+open_checkpoint: Time (s): cpu = 00:00:48 ; elapsed = 00:00:50 . Memory (MB): peak = 1388.598 ; gain = 1103.473
+INFO: [Power 33-167] Parsing SAIF file C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/power/activity/mapped_baseline.saif
+INFO: [Power 33-177] SAIF annotation done from file C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/power/activity/mapped_baseline.saif
+INFO: [Power 33-26] Design nets matched = 7 of 11466
+Command: report_power -file {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/power/baseline/power.rpt}
+0% of nets annotated
+Doing probabilistic computation for the remaining nets
+
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "board_clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+15 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 1442.914 ; gain = 54.316
+ERROR: [Vivado 12-1004] Please provide a list of objects.
+FINAL POWER baseline/functional: ERROR: [Common 17-39] 'report_switching_activity' failed due to earlier errors.
+
+Command: open_checkpoint C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_fpga/scan_enabled/routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1442.914 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.227 . Memory (MB): peak = 1442.914 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1204 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.1.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 1442.914 ; gain = 0.000
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 1442.914 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1442.914 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1442.914 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1442.914 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.333 . Memory (MB): peak = 1442.914 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1442.914 ; gain = 0.000
+Restored from archive | CPU: 2.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1442.914 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1442.914 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.1.1 (64-bit) build 6233196
+open_checkpoint: Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 1443.047 ; gain = 0.133
+INFO: [Power 33-167] Parsing SAIF file C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/power/activity/mapped_scan_enabled.saif
+INFO: [Power 33-177] SAIF annotation done from file C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/power/activity/mapped_scan_enabled.saif
+INFO: [Power 33-26] Design nets matched = 9 of 13739
+read_saif: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1443.047 ; gain = 0.000
+Command: report_power -file {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/power/scan_enabled/power.rpt}
+0% of nets annotated
+Doing probabilistic computation for the remaining nets
+
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "board_clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+14 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+ERROR: [Vivado 12-1004] Please provide a list of objects.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:15 ; elapsed = 00:00:11 . Memory (MB): peak = 1496.531 ; gain = 53.484
+FINAL POWER scan_enabled/functional: ERROR: [Common 17-39] 'report_switching_activity' failed due to earlier errors.
+
+Command: open_checkpoint C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_final_fpga/full_lbist/routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1496.531 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.203 . Memory (MB): peak = 1496.531 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1214 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.1.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 1496.531 ; gain = 0.000
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1496.531 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1496.531 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1496.531 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1496.531 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.503 . Memory (MB): peak = 1496.531 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1496.531 ; gain = 0.000
+Restored from archive | CPU: 2.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1496.531 ; gain = 0.000
