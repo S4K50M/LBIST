@@ -1,0 +1,297 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2025.1.1 (win64) Build 6233196 Thu Sep 11 21:27:30 MDT 2025
+| Date             : Wed Nov 18 12:48:16 2026
+| Host             : LAPTOP-B852K4P2 running 64-bit major release  (build 9200)
+| Command          : report_power -hier all -hierarchical_depth 5 -l 30 -file {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/Timing_Closure/power/m8_d82/scan_enabled/power.rpt}
+| Design           : final_fpga_top
+| Device           : xc7a35tcpg236-1
+| Design State     : routed
+| Grade            : commercial
+| Process          : typical
+| Characterization : Production
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+3.2 By Clock Domain
+3.3 By Resource Type
+3.3.1 Signals
+3.3.2 Slice Logic
+3.3.3 DSPs
+3.3.4 Clock Manager
+
+1. Summary
+----------
+
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+| Total On-Chip Power (W)  | 0.175                                                                                                                                  |
+| Design Power Budget (W)  | Unspecified*                                                                                                                           |
+| Power Budget Margin (W)  | NA                                                                                                                                     |
+| Dynamic (W)              | 0.106                                                                                                                                  |
+| Device Static (W)        | 0.069                                                                                                                                  |
+| Effective TJA (C/W)      | 5.0                                                                                                                                    |
+| Max Ambient (C)          | 84.1                                                                                                                                   |
+| Junction Temperature (C) | 25.9                                                                                                                                   |
+| Confidence Level         | Medium                                                                                                                                 |
+| Setting File             | ---                                                                                                                                    |
+| Simulation Activity File | C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/Timing_Closure/activity/m8_d82/mapped_scan_enabled.saif |
+| Design Nets Matched      | 14%   (1922/13690)                                                                                                                     |
++--------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+* Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
+
+
+1.1 On-Chip Components
+----------------------
+
++----------------+-----------+----------+-----------+-----------------+
+| On-Chip        | Power (W) | Used     | Available | Utilization (%) |
++----------------+-----------+----------+-----------+-----------------+
+| Clocks         |     0.002 |        8 |       --- |             --- |
+| Slice Logic    |     0.004 |    11023 |       --- |             --- |
+|   LUT as Logic |     0.004 |     6138 |     20800 |           29.51 |
+|   CARRY4       |    <0.001 |      715 |      8150 |            8.77 |
+|   F7/F8 Muxes  |    <0.001 |      481 |     32600 |            1.48 |
+|   Register     |    <0.001 |     3084 |     41600 |            7.41 |
+|   Others       |     0.000 |       54 |       --- |             --- |
+| Signals        |     0.005 |     9362 |       --- |             --- |
+| MMCM           |     0.095 |        1 |         5 |           20.00 |
+| DSPs           |    <0.001 |        7 |        90 |            7.78 |
+| Static Power   |     0.069 |          |           |                 |
+| Total          |     0.175 |          |           |                 |
++----------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
+| Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
++-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
+| Vccint    |       1.000 |     0.021 |       0.012 |      0.010 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.065 |       0.053 |      0.013 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |       NA    | Unspecified | NA         |
++-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                        | Action                                                                                                     |
++-----------------------------+------------+------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                               |                                                                                                            |
+| Clock nodes activity        | High       | User specified more than 95% of clocks         |                                                                                                            |
+| I/O nodes activity          | High       | User specified more than 95% of inputs         |                                                                                                            |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
+| Device models               | High       | Device models are Production                   |                                                                                                            |
+|                             |            |                                                |                                                                                                            |
+| Overall confidence level    | Medium     |                                                |                                                                                                            |
++-----------------------------+------------+------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+--------------------------+
+| Ambient Temp (C)      | 25.0                     |
+| ThetaJA (C/W)         | 5.0                      |
+| Airflow (LFM)         | 250                      |
+| Heat Sink             | medium (Medium Profile)  |
+| ThetaSA (C/W)         | 4.6                      |
+| Board Selection       | medium (10"x10")         |
+| # of Board Layers     | 12to15 (12 to 15 Layers) |
+| Board Temperature (C) | 25.0                     |
++-----------------------+--------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++-----------+------------+-----------------+
+| Clock     | Domain     | Constraint (ns) |
++-----------+------------+-----------------+
+| board_clk | board_clk  |            10.0 |
+| c0        | u_clock/c0 |           102.5 |
+| c1        | u_clock/c1 |           102.5 |
+| c2        | u_clock/c2 |           102.5 |
+| fb        | u_clock/fb |            10.0 |
++-----------+------------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++-----------------------+-----------+---------+-----------+----------+------------+---------+-----------+-------+---------+------------+--------------+
+| Name                  | Power (W) | Clock # | Clock (W) | Signal # | Signal (W) | Logic # | Logic (W) | Dsp # | Dsp (W) | Clock IP # | Clock IP (W) |
++-----------------------+-----------+---------+-----------+----------+------------+---------+-----------+-------+---------+------------+--------------+
+| final_fpga_top        |     0.106 |       8 |     0.002 |     9362 |      0.005 |   11023 |     0.004 |     7 |  <0.001 |          1 |        0.095 |
+|   u_clock             |     0.096 |       8 |    <0.001 |        5 |     <0.001 |       8 |    <0.001 |     0 |   0.000 |          1 |        0.095 |
+|   u_system            |     0.011 |       8 |    <0.001 |     9342 |      0.005 |   10999 |     0.004 |     7 |  <0.001 |          0 |        0.000 |
+|     scan_cpu.u_cpu    |     0.011 |       8 |    <0.001 |     9342 |      0.005 |   10999 |     0.004 |     7 |  <0.001 |          0 |        0.000 |
+|       PIPESTAGE_IF_RF |     0.001 |       8 |    <0.001 |      769 |     <0.001 |     968 |    <0.001 |     0 |   0.000 |          0 |        0.000 |
+|       PIPESTAGE_RF_EX |     0.006 |       8 |    <0.001 |     3488 |      0.003 |    3776 |     0.003 |     0 |   0.000 |          0 |        0.000 |
++-----------------------+-----------+---------+-----------+----------+------------+---------+-----------+-------+---------+------------+--------------+
+
+
+3.2 By Clock Domain
+-------------------
+
++---------------------------+-----------+-----------------+--------+-------------------------+---------------+------------+----------+-------------+--------+
+| Name                      | Power (W) | Frequency (MHz) | Buffer | Clock Buffer Enable (%) | Enable Signal | Bel Fanout | Sites    | Fanout/Site | Type   |
++---------------------------+-----------+-----------------+--------+-------------------------+---------------+------------+----------+-------------+--------+
+| board_clk                 |     0.000 |          100.00 | N/A    |                     N/A | N/A           |          1 |        1 |        1.00 | N/A    |
+|   board_clk               |     0.000 |          100.00 | N/A    |                     N/A | N/A           |          1 |        1 |        1.00 | N/A    |
+| u_clock/c0                |    <0.001 |            9.76 | N/A    |                     N/A | N/A           |       3017 |     1385 |        2.18 | N/A    |
+|   u_clock/c0              |    <0.001 |            9.76 | N/A    |                     N/A | N/A           |          1 |        1 |        1.00 | N/A    |
+|   u_clock/clk             |    <0.001 |            9.76 | BUFG   |                     N/A | N/A           |       3016 |     1384 |        2.18 | N/A    |
+|   u_clock/u_clk           |    <0.001 |            9.76 | BUFG   |                     N/A | N/A           |       3016 |     1384 |        2.18 | Global |
+| u_clock/c1                |    <0.001 |            9.76 | N/A    |                     N/A | N/A           |         67 |       27 |        2.48 | N/A    |
+|   u_clock/c1              |    <0.001 |            9.76 | N/A    |                     N/A | N/A           |          1 |        1 |        1.00 | N/A    |
+|   u_clock/phi1            |    <0.001 |            9.76 | BUFG   |                     N/A | N/A           |         66 |       26 |        2.54 | N/A    |
+|   u_clock/u_phi1          |    <0.001 |            9.76 | BUFG   |                     N/A | N/A           |         66 |       26 |        2.54 | Global |
+| u_clock/c2                |    <0.001 |            9.76 | N/A    |                     N/A | N/A           |          3 |        2 |        1.50 | N/A    |
+|   u_clock/c2              |    <0.001 |            9.76 | N/A    |                     N/A | N/A           |          1 |        1 |        1.00 | N/A    |
+|   u_clock/phi2            |    <0.001 |            9.76 | BUFG   |                     N/A | N/A           |          2 |        1 |        2.00 | N/A    |
+|   u_clock/u_phi2          |    <0.001 |            9.76 | BUFG   |                     N/A | N/A           |          2 |        1 |        2.00 | Global |
+| u_clock/fb                |    <0.001 |          100.00 | N/A    |                     N/A | N/A           |          2 |        2 |        1.00 | N/A    |
+|   u_clock/CLKFBIN         |    <0.001 |          100.00 | BUFG   |                     N/A | N/A           |          1 |        1 |        1.00 | N/A    |
+|   u_clock/fb              |    <0.001 |          100.00 | N/A    |                     N/A | N/A           |          1 |        1 |        1.00 | N/A    |
+|   u_clock/feedback_buffer |    <0.001 |          100.00 | BUFG   |                     N/A | N/A           |          1 |        1 |        1.00 | Global |
++---------------------------+-----------+-----------------+--------+-------------------------+---------------+------------+----------+-------------+--------+
+
+
+3.3 By Resource Type
+--------------------
+
+3.3.1 Signals
+-------------
+
++-------------------------------------------------------+-----------+---------------------+----------+----------+--------------+-------+------------+
+| Name                                                  | Power (W) | Signal Rate (Mtr/s) | % High   | Fanout   | Slice Fanout | Clock | Logic Type |
++-------------------------------------------------------+-----------+---------------------+----------+----------+--------------+-------+------------+
+| u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/a_rt[1]       |    <0.001 |                5.47 |    43.31 |      271 |          140 | c0    | N/A        |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/a_rs[1]       |    <0.001 |                5.22 |    64.97 |      267 |          138 | c0    | N/A        |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/a_rs[0]       |    <0.001 |                5.22 |    64.97 |      267 |          138 | c0    | N/A        |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/a_rs[2]       |    <0.001 |                5.22 |    39.49 |      139 |          138 | c0    | N/A        |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/alu_inp_B[2]  |    <0.001 |                6.59 |    42.04 |       83 |           80 | c0    | N/A        |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/a_rt[2]       |    <0.001 |                2.98 |    29.30 |      149 |          143 | c0    | N/A        |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/alu_inp_B[0]  |    <0.001 |                3.60 |    12.74 |       82 |           81 | c0    | N/A        |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/a_rt[0]       |    <0.001 |                5.47 |    43.31 |       91 |           46 | c0    | N/A        |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/alu_inp_B[4]  |    <0.001 |                2.86 |     2.55 |       84 |           80 | c0    | N/A        |
+| u_system/scan_cpu.u_cpu/U_VIR_ADDR_ADD/result[12]     |    <0.001 |                7.46 |    39.49 |       26 |           25 | c0    | N/A        |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/alu_inp_B[19] |    <0.001 |                2.61 |     1.27 |       80 |           77 | c0    | N/A        |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/alu_inp_B[12] |    <0.001 |                2.61 |     2.55 |       84 |           79 | c0    | N/A        |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/alu_inp_B[16] |    <0.001 |                2.61 |     1.27 |       83 |           79 | c0    | N/A        |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/alu_inp_B[13] |    <0.001 |                2.61 |     2.55 |       86 |           82 | c0    | N/A        |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/alu_inp_B[26] |    <0.001 |                2.61 |     1.27 |       82 |           79 | c0    | N/A        |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/alu_inp_B[25] |    <0.001 |                2.61 |     1.27 |       81 |           78 | c0    | N/A        |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/alu_inp_B[23] |    <0.001 |                2.61 |     1.27 |       81 |           78 | c0    | N/A        |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/alu_inp_B[27] |    <0.001 |                2.61 |     1.27 |       81 |           77 | c0    | N/A        |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/alu_inp_B[8]  |    <0.001 |                2.61 |     1.27 |       85 |           82 | c0    | N/A        |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/alu_inp_B[21] |    <0.001 |                2.61 |     1.27 |       82 |           77 | c0    | N/A        |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/alu_inp_B[22] |    <0.001 |                2.61 |     1.27 |       81 |           78 | c0    | N/A        |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/alu_inp_B[20] |    <0.001 |                2.61 |     1.27 |       85 |           78 | c0    | N/A        |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/alu_inp_B[14] |    <0.001 |                2.61 |     1.27 |       85 |           81 | c0    | N/A        |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/alu_inp_B[9]  |    <0.001 |                2.61 |     1.27 |       85 |           82 | c0    | N/A        |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/alu_inp_B[31] |    <0.001 |                2.61 |     1.27 |       79 |           86 | c0    | N/A        |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/alu_inp_B[17] |    <0.001 |                2.61 |     1.27 |       82 |           77 | c0    | N/A        |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/alu_inp_B[15] |    <0.001 |                2.61 |     1.27 |       84 |           81 | c0    | N/A        |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/alu_inp_B[10] |    <0.001 |                2.61 |     2.55 |       85 |           81 | c0    | N/A        |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/alu_inp_B[30] |    <0.001 |                2.61 |     1.27 |       79 |           76 | c0    | N/A        |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/alu_inp_B[29] |    <0.001 |                2.61 |     1.27 |       79 |           76 | c0    | N/A        |
++-------------------------------------------------------+-----------+---------------------+----------+----------+--------------+-------+------------+
+
+
+3.3.2 Slice Logic
+-----------------
+
++------------------------------------------------------------+-----------+------+-------------+------------+---------------------+----------+
+| Name                                                       | Power (W) | Type | Clock (MHz) | Clock Name | Signal Rate (Mtr/s) | % High   |
++------------------------------------------------------------+-----------+------+-------------+------------+---------------------+----------+
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/MM_alu_move_ok_i_3 |    <0.001 | LUT  |         N/A | Async      |                8.27 |    32.68 |
+| u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[26]_i_1__1         |    <0.001 | LUT  |         N/A | Async      |               11.06 |    37.95 |
+| u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[18]_i_1__1         |    <0.001 | LUT  |         N/A | Async      |               11.48 |    51.42 |
+| u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[29]_i_1__1         |    <0.001 | LUT  |         N/A | Async      |               11.06 |    37.95 |
+| u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[4]_i_1__1          |    <0.001 | LUT  |         N/A | Async      |               11.26 |    40.40 |
+| u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[5]_i_1__1          |    <0.001 | LUT  |         N/A | Async      |               10.59 |    41.63 |
+| u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[3]_i_1__1          |    <0.001 | LUT  |         N/A | Async      |               10.19 |    31.83 |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/state[29]_i_45     |    <0.001 | LUT  |         N/A | Async      |               16.34 |    50.00 |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/state[11]_i_175    |    <0.001 | LUT  |         N/A | Async      |                7.41 |    15.15 |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/state[31]_i_1020   |    <0.001 | LUT  |         N/A | Async      |               16.35 |    50.00 |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/state[31]_i_978    |    <0.001 | LUT  |         N/A | Async      |               16.34 |    50.00 |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/state[31]_i_936    |    <0.001 | LUT  |         N/A | Async      |               16.34 |    50.00 |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/state[24]_i_41     |    <0.001 | LUT  |         N/A | Async      |               16.34 |    50.00 |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/state[31]_i_894    |    <0.001 | LUT  |         N/A | Async      |               16.34 |    50.00 |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/state[23]_i_46     |    <0.001 | LUT  |         N/A | Async      |               16.34 |    50.00 |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/state[11]_i_41     |    <0.001 | LUT  |         N/A | Async      |               16.34 |    50.00 |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/state[12]_i_41     |    <0.001 | LUT  |         N/A | Async      |               16.34 |    50.00 |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/state[18]_i_41     |    <0.001 | LUT  |         N/A | Async      |               16.34 |    50.00 |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/state[19]_i_45     |    <0.001 | LUT  |         N/A | Async      |               16.34 |    50.00 |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/state[31]_i_600    |    <0.001 | LUT  |         N/A | Async      |               16.34 |    50.00 |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/state[4]_i_41      |    <0.001 | LUT  |         N/A | Async      |               16.34 |    50.00 |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/state[6]_i_10      |    <0.001 | LUT  |         N/A | Async      |               16.34 |    50.00 |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/state[8]_i_41      |    <0.001 | LUT  |         N/A | Async      |               16.34 |    50.00 |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/state[31]_i_852    |    <0.001 | LUT  |         N/A | Async      |               16.34 |    50.00 |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/state[31]_i_810    |    <0.001 | LUT  |         N/A | Async      |               16.34 |    50.00 |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/state[22]_i_41     |    <0.001 | LUT  |         N/A | Async      |               16.34 |    50.00 |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/state[14]_i_41     |    <0.001 | LUT  |         N/A | Async      |               16.34 |    50.00 |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/state[15]_i_41     |    <0.001 | LUT  |         N/A | Async      |               16.34 |    50.00 |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/state[26]_i_38     |    <0.001 | LUT  |         N/A | Async      |               16.34 |    50.00 |
+| u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/state[2]_i_5       |    <0.001 | LUT  |         N/A | Async      |               16.34 |    50.00 |
++------------------------------------------------------------+-----------+------+-------------+------------+---------------------+----------+
+
+
+3.3.3 DSPs
+----------
+
++----------------------------------------+-----------+---------------+------------+------------+------------+-----------------+-------------+
+| Name                                   | Power (W) | Clock A (MHz) | Clock Name | MULT Used? | MREG Used? | Pre-Adder Used? | Signal Rate |
++----------------------------------------+-----------+---------------+------------+------------+------------+-----------------+-------------+
+| u_system/scan_cpu.u_cpu/U_ALU/i_C0     |    <0.001 |           N/A | N/A        | Yes        | No         | No              |        2.75 |
+| u_system/scan_cpu.u_cpu/U_ALU/i_hi0__0 |    <0.001 |           N/A | N/A        | Yes        | No         | No              |        2.66 |
+| u_system/scan_cpu.u_cpu/U_ALU/i_C0__1  |    <0.001 |           N/A | N/A        | Yes        | No         | No              |        2.64 |
+| u_system/scan_cpu.u_cpu/U_ALU/i_hi0    |    <0.001 |           N/A | N/A        | Yes        | No         | No              |        1.73 |
+| u_system/scan_cpu.u_cpu/U_ALU/i_C0__0  |    <0.001 |           N/A | N/A        | Yes        | No         | No              |        1.51 |
+| u_system/scan_cpu.u_cpu/U_ALU/i_hi0__1 |    <0.001 |           N/A | N/A        | Yes        | No         | No              |        1.51 |
+| u_system/scan_cpu.u_cpu/U_ALU/i_hi0__2 |    <0.001 |           N/A | N/A        | Yes        | No         | No              |        1.45 |
++----------------------------------------+-----------+---------------+------------+------------+------------+-----------------+-------------+
+
+
+3.3.4 Clock Manager
+-------------------
+
++--------------+-----------+-------------+-------------+-------------+----------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+------------+------------+------------+
+| Name         | Power (W) | MMCM or PLL | Clock (MHz) | Phase Shift | Divide Counter | Multiply Counter | Clock 0 Divide | Clock 1 Divide | Clock 2 Divide | Clock 3 Divide | Clock 4 Divide | Clock 5 Divide | Clock 6 Divide | Power Down | Vccint (W) | Vccaux (W) |
++--------------+-----------+-------------+-------------+-------------+----------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+------------+------------+------------+
+| u_clock/mmcm |     0.095 | MMCM        |      100.00 | Fixed       |              1 |             8.00 |             82 |             82 |             82 |              0 |              0 |              0 |              0 |       0.00 |     <0.001 |      0.095 |
++--------------+-----------+-------------+-------------+-------------+----------------+------------------+----------------+----------------+----------------+----------------+----------------+----------------+----------------+------------+------------+------------+
+
+

@@ -1,0 +1,1087 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.1.1 (win64) Build 6233196 Thu Sep 11 21:27:30 MDT 2025
+| Date         : Wed Nov 18 11:55:35 2026
+| Host         : LAPTOP-B852K4P2 running 64-bit major release  (build 9200)
+| Command      : report_timing -delay_type min -max_paths 20 -file {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/Timing_Closure/sweep/m10_d96/full_lbist/hold_paths.rpt}
+| Design       : final_fpga_top
+| Device       : 7a35t-cpg236
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (VIOLATED) :        -0.196ns  (arrival time - required time)
+  Source:                 irq[0]
+                            (input port clocked by virtual_cpu_io  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - virtual_cpu_io rise@0.000ns)
+  Data Path Delay:        0.924ns  (logic 0.000ns (0.000%)  route 0.924ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            0.500ns
+  Clock Path Skew:        0.963ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.963ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.301ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.198ns
+    Phase Error              (PE):    0.099ns
+    User Uncertainty         (UU):    0.100ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock virtual_cpu_io rise edge)
+                                                      0.000     0.000 r  
+                         ideal clock network latency
+                                                      0.000     0.000    
+                         input delay                  0.500     0.500    
+                                                      0.000     0.500 r  irq[0] (IN)
+                         net (fo=1, unset)            0.924     1.424    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[5]_1[0]
+    SLICE_X21Y111        FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.973     0.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    -2.836 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    -0.867    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    -0.771 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.734     0.963    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/clk
+    SLICE_X21Y111        FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[0]/C
+                         clock pessimism              0.000     0.963    
+                         clock uncertainty            0.301     1.264    
+    SLICE_X21Y111        FDRE (Hold_fdre_C_D)         0.357     1.621    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[0]
+  -------------------------------------------------------------------
+                         required time                         -1.621    
+                         arrival time                           1.424    
+  -------------------------------------------------------------------
+                         slack                                 -0.196    
+
+Slack (VIOLATED) :        -0.196ns  (arrival time - required time)
+  Source:                 irq[2]
+                            (input port clocked by virtual_cpu_io  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[2]/D
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - virtual_cpu_io rise@0.000ns)
+  Data Path Delay:        0.924ns  (logic 0.000ns (0.000%)  route 0.924ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            0.500ns
+  Clock Path Skew:        0.963ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.963ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.301ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.198ns
+    Phase Error              (PE):    0.099ns
+    User Uncertainty         (UU):    0.100ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock virtual_cpu_io rise edge)
+                                                      0.000     0.000 r  
+                         ideal clock network latency
+                                                      0.000     0.000    
+                         input delay                  0.500     0.500    
+                                                      0.000     0.500 r  irq[2] (IN)
+                         net (fo=1, unset)            0.924     1.424    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[5]_1[2]
+    SLICE_X21Y111        FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.973     0.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    -2.836 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    -0.867    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    -0.771 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.734     0.963    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/clk
+    SLICE_X21Y111        FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[2]/C
+                         clock pessimism              0.000     0.963    
+                         clock uncertainty            0.301     1.264    
+    SLICE_X21Y111        FDRE (Hold_fdre_C_D)         0.357     1.621    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[2]
+  -------------------------------------------------------------------
+                         required time                         -1.621    
+                         arrival time                           1.424    
+  -------------------------------------------------------------------
+                         slack                                 -0.196    
+
+Slack (VIOLATED) :        -0.188ns  (arrival time - required time)
+  Source:                 irq[4]
+                            (input port clocked by virtual_cpu_io  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[4]/D
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - virtual_cpu_io rise@0.000ns)
+  Data Path Delay:        0.924ns  (logic 0.000ns (0.000%)  route 0.924ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            0.500ns
+  Clock Path Skew:        0.955ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.955ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.301ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.198ns
+    Phase Error              (PE):    0.099ns
+    User Uncertainty         (UU):    0.100ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock virtual_cpu_io rise edge)
+                                                      0.000     0.000 r  
+                         ideal clock network latency
+                                                      0.000     0.000    
+                         input delay                  0.500     0.500    
+                                                      0.000     0.500 r  irq[4] (IN)
+                         net (fo=1, unset)            0.924     1.424    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[5]_1[4]
+    SLICE_X20Y118        FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.973     0.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    -2.836 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    -0.867    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    -0.771 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.726     0.955    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/clk
+    SLICE_X20Y118        FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[4]/C
+                         clock pessimism              0.000     0.955    
+                         clock uncertainty            0.301     1.256    
+    SLICE_X20Y118        FDRE (Hold_fdre_C_D)         0.357     1.613    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[4]
+  -------------------------------------------------------------------
+                         required time                         -1.613    
+                         arrival time                           1.424    
+  -------------------------------------------------------------------
+                         slack                                 -0.188    
+
+Slack (VIOLATED) :        -0.070ns  (arrival time - required time)
+  Source:                 data_inp[12]
+                            (input port clocked by virtual_cpu_io  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[12]/D
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - virtual_cpu_io rise@0.000ns)
+  Data Path Delay:        1.024ns  (logic 0.100ns (9.762%)  route 0.924ns (90.238%))
+  Logic Levels:           1  (LUT6=1)
+  Input Delay:            0.500ns
+  Clock Path Skew:        0.963ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.963ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.301ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.198ns
+    Phase Error              (PE):    0.099ns
+    User Uncertainty         (UU):    0.100ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock virtual_cpu_io rise edge)
+                                                      0.000     0.000 r  
+                         ideal clock network latency
+                                                      0.000     0.000    
+                         input delay                  0.500     0.500    
+                                                      0.000     0.500 r  data_inp[12] (IN)
+                         net (fo=1, unset)            0.924     1.424    u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/data_inp[12]
+    SLICE_X30Y106        LUT6 (Prop_lut6_I4_O)        0.100     1.524 r  u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/WB_rd_data[12]_i_1/O
+                         net (fo=1, routed)           0.000     1.524    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/D[12]
+    SLICE_X30Y106        FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[12]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.973     0.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    -2.836 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    -0.867    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    -0.771 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.734     0.963    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/clk
+    SLICE_X30Y106        FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[12]/C
+                         clock pessimism              0.000     0.963    
+                         clock uncertainty            0.301     1.264    
+    SLICE_X30Y106        FDRE (Hold_fdre_C_D)         0.331     1.595    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[12]
+  -------------------------------------------------------------------
+                         required time                         -1.595    
+                         arrival time                           1.524    
+  -------------------------------------------------------------------
+                         slack                                 -0.070    
+
+Slack (VIOLATED) :        -0.070ns  (arrival time - required time)
+  Source:                 data_inp[7]
+                            (input port clocked by virtual_cpu_io  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[7]/D
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - virtual_cpu_io rise@0.000ns)
+  Data Path Delay:        1.024ns  (logic 0.100ns (9.762%)  route 0.924ns (90.238%))
+  Logic Levels:           1  (LUT5=1)
+  Input Delay:            0.500ns
+  Clock Path Skew:        0.963ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.963ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.301ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.198ns
+    Phase Error              (PE):    0.099ns
+    User Uncertainty         (UU):    0.100ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock virtual_cpu_io rise edge)
+                                                      0.000     0.000 r  
+                         ideal clock network latency
+                                                      0.000     0.000    
+                         input delay                  0.500     0.500    
+                                                      0.000     0.500 r  data_inp[7] (IN)
+                         net (fo=1, unset)            0.924     1.424    u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/data_inp[7]
+    SLICE_X30Y106        LUT5 (Prop_lut5_I4_O)        0.100     1.524 r  u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/WB_rd_data[7]_i_1/O
+                         net (fo=1, routed)           0.000     1.524    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/D[7]
+    SLICE_X30Y106        FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.973     0.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    -2.836 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    -0.867    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    -0.771 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.734     0.963    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/clk
+    SLICE_X30Y106        FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[7]/C
+                         clock pessimism              0.000     0.963    
+                         clock uncertainty            0.301     1.264    
+    SLICE_X30Y106        FDRE (Hold_fdre_C_D)         0.331     1.595    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[7]
+  -------------------------------------------------------------------
+                         required time                         -1.595    
+                         arrival time                           1.524    
+  -------------------------------------------------------------------
+                         slack                                 -0.070    
+
+Slack (VIOLATED) :        -0.069ns  (arrival time - required time)
+  Source:                 data_inp[5]
+                            (input port clocked by virtual_cpu_io  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[5]/D
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - virtual_cpu_io rise@0.000ns)
+  Data Path Delay:        1.024ns  (logic 0.100ns (9.762%)  route 0.924ns (90.238%))
+  Logic Levels:           1  (LUT5=1)
+  Input Delay:            0.500ns
+  Clock Path Skew:        0.963ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.963ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.301ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.198ns
+    Phase Error              (PE):    0.099ns
+    User Uncertainty         (UU):    0.100ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock virtual_cpu_io rise edge)
+                                                      0.000     0.000 r  
+                         ideal clock network latency
+                                                      0.000     0.000    
+                         input delay                  0.500     0.500    
+                                                      0.000     0.500 r  data_inp[5] (IN)
+                         net (fo=1, unset)            0.924     1.424    u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/data_inp[5]
+    SLICE_X30Y104        LUT5 (Prop_lut5_I2_O)        0.100     1.524 r  u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/WB_rd_data[5]_i_1/O
+                         net (fo=1, routed)           0.000     1.524    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/D[5]
+    SLICE_X30Y104        FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.973     0.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    -2.836 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    -0.867    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    -0.771 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.734     0.963    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/clk
+    SLICE_X30Y104        FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[5]/C
+                         clock pessimism              0.000     0.963    
+                         clock uncertainty            0.301     1.264    
+    SLICE_X30Y104        FDRE (Hold_fdre_C_D)         0.330     1.594    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[5]
+  -------------------------------------------------------------------
+                         required time                         -1.594    
+                         arrival time                           1.524    
+  -------------------------------------------------------------------
+                         slack                                 -0.069    
+
+Slack (VIOLATED) :        -0.032ns  (arrival time - required time)
+  Source:                 irq[1]
+                            (input port clocked by virtual_cpu_io  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[1]/D
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - virtual_cpu_io rise@0.000ns)
+  Data Path Delay:        0.924ns  (logic 0.000ns (0.000%)  route 0.924ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            0.500ns
+  Clock Path Skew:        0.957ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.957ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.301ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.198ns
+    Phase Error              (PE):    0.099ns
+    User Uncertainty         (UU):    0.100ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock virtual_cpu_io rise edge)
+                                                      0.000     0.000 r  
+                         ideal clock network latency
+                                                      0.000     0.000    
+                         input delay                  0.500     0.500    
+                                                      0.000     0.500 r  irq[1] (IN)
+                         net (fo=1, unset)            0.924     1.424    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[5]_1[1]
+    SLICE_X29Y115        FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.973     0.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    -2.836 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    -0.867    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    -0.771 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.728     0.957    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/clk
+    SLICE_X29Y115        FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[1]/C
+                         clock pessimism              0.000     0.957    
+                         clock uncertainty            0.301     1.258    
+    SLICE_X29Y115        FDRE (Hold_fdre_C_D)         0.199     1.457    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[1]
+  -------------------------------------------------------------------
+                         required time                         -1.457    
+                         arrival time                           1.424    
+  -------------------------------------------------------------------
+                         slack                                 -0.032    
+
+Slack (VIOLATED) :        -0.013ns  (arrival time - required time)
+  Source:                 data_inp[15]
+                            (input port clocked by virtual_cpu_io  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[15]/D
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - virtual_cpu_io rise@0.000ns)
+  Data Path Delay:        1.024ns  (logic 0.100ns (9.762%)  route 0.924ns (90.238%))
+  Logic Levels:           1  (LUT6=1)
+  Input Delay:            0.500ns
+  Clock Path Skew:        0.967ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.967ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.301ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.198ns
+    Phase Error              (PE):    0.099ns
+    User Uncertainty         (UU):    0.100ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock virtual_cpu_io rise edge)
+                                                      0.000     0.000 r  
+                         ideal clock network latency
+                                                      0.000     0.000    
+                         input delay                  0.500     0.500    
+                                                      0.000     0.500 r  data_inp[15] (IN)
+                         net (fo=2, unset)            0.924     1.424    u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/data_inp[15]
+    SLICE_X21Y102        LUT6 (Prop_lut6_I4_O)        0.100     1.524 r  u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/WB_rd_data[15]_i_2/O
+                         net (fo=1, routed)           0.000     1.524    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/D[15]
+    SLICE_X21Y102        FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[15]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.973     0.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    -2.836 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    -0.867    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    -0.771 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.738     0.967    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/clk
+    SLICE_X21Y102        FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[15]/C
+                         clock pessimism              0.000     0.967    
+                         clock uncertainty            0.301     1.268    
+    SLICE_X21Y102        FDRE (Hold_fdre_C_D)         0.270     1.538    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[15]
+  -------------------------------------------------------------------
+                         required time                         -1.538    
+                         arrival time                           1.524    
+  -------------------------------------------------------------------
+                         slack                                 -0.013    
+
+Slack (VIOLATED) :        -0.013ns  (arrival time - required time)
+  Source:                 data_inp[23]
+                            (input port clocked by virtual_cpu_io  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[23]/D
+                            (rising edge-triggered cell FDSE clocked by c0  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - virtual_cpu_io rise@0.000ns)
+  Data Path Delay:        1.024ns  (logic 0.100ns (9.762%)  route 0.924ns (90.238%))
+  Logic Levels:           1  (LUT6=1)
+  Input Delay:            0.500ns
+  Clock Path Skew:        0.967ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.967ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.301ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.198ns
+    Phase Error              (PE):    0.099ns
+    User Uncertainty         (UU):    0.100ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock virtual_cpu_io rise edge)
+                                                      0.000     0.000 r  
+                         ideal clock network latency
+                                                      0.000     0.000    
+                         input delay                  0.500     0.500    
+                                                      0.000     0.500 r  data_inp[23] (IN)
+                         net (fo=2, unset)            0.924     1.424    u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/data_inp[23]
+    SLICE_X21Y102        LUT6 (Prop_lut6_I5_O)        0.100     1.524 r  u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/WB_rd_data[23]_i_1/O
+                         net (fo=1, routed)           0.000     1.524    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[23]_0
+    SLICE_X21Y102        FDSE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[23]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.973     0.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    -2.836 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    -0.867    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    -0.771 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.738     0.967    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/clk
+    SLICE_X21Y102        FDSE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[23]/C
+                         clock pessimism              0.000     0.967    
+                         clock uncertainty            0.301     1.268    
+    SLICE_X21Y102        FDSE (Hold_fdse_C_D)         0.270     1.538    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[23]
+  -------------------------------------------------------------------
+                         required time                         -1.538    
+                         arrival time                           1.524    
+  -------------------------------------------------------------------
+                         slack                                 -0.013    
+
+Slack (VIOLATED) :        -0.012ns  (arrival time - required time)
+  Source:                 data_inp[13]
+                            (input port clocked by virtual_cpu_io  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[13]/D
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - virtual_cpu_io rise@0.000ns)
+  Data Path Delay:        1.024ns  (logic 0.100ns (9.762%)  route 0.924ns (90.238%))
+  Logic Levels:           1  (LUT6=1)
+  Input Delay:            0.500ns
+  Clock Path Skew:        0.966ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.966ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.301ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.198ns
+    Phase Error              (PE):    0.099ns
+    User Uncertainty         (UU):    0.100ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock virtual_cpu_io rise edge)
+                                                      0.000     0.000 r  
+                         ideal clock network latency
+                                                      0.000     0.000    
+                         input delay                  0.500     0.500    
+                                                      0.000     0.500 r  data_inp[13] (IN)
+                         net (fo=1, unset)            0.924     1.424    u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/data_inp[13]
+    SLICE_X23Y104        LUT6 (Prop_lut6_I4_O)        0.100     1.524 r  u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/WB_rd_data[13]_i_1/O
+                         net (fo=1, routed)           0.000     1.524    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/D[13]
+    SLICE_X23Y104        FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[13]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.973     0.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    -2.836 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    -0.867    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    -0.771 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.737     0.966    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/clk
+    SLICE_X23Y104        FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[13]/C
+                         clock pessimism              0.000     0.966    
+                         clock uncertainty            0.301     1.267    
+    SLICE_X23Y104        FDRE (Hold_fdre_C_D)         0.270     1.537    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[13]
+  -------------------------------------------------------------------
+                         required time                         -1.537    
+                         arrival time                           1.524    
+  -------------------------------------------------------------------
+                         slack                                 -0.012    
+
+Slack (VIOLATED) :        -0.012ns  (arrival time - required time)
+  Source:                 data_inp[22]
+                            (input port clocked by virtual_cpu_io  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[22]/D
+                            (rising edge-triggered cell FDSE clocked by c0  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - virtual_cpu_io rise@0.000ns)
+  Data Path Delay:        1.024ns  (logic 0.100ns (9.762%)  route 0.924ns (90.238%))
+  Logic Levels:           1  (LUT6=1)
+  Input Delay:            0.500ns
+  Clock Path Skew:        0.966ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.966ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.301ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.198ns
+    Phase Error              (PE):    0.099ns
+    User Uncertainty         (UU):    0.100ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock virtual_cpu_io rise edge)
+                                                      0.000     0.000 r  
+                         ideal clock network latency
+                                                      0.000     0.000    
+                         input delay                  0.500     0.500    
+                                                      0.000     0.500 r  data_inp[22] (IN)
+                         net (fo=2, unset)            0.924     1.424    u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/data_inp[22]
+    SLICE_X23Y106        LUT6 (Prop_lut6_I5_O)        0.100     1.524 r  u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/WB_rd_data[22]_i_1/O
+                         net (fo=1, routed)           0.000     1.524    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[22]_0
+    SLICE_X23Y106        FDSE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[22]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.973     0.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    -2.836 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    -0.867    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    -0.771 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.737     0.966    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/clk
+    SLICE_X23Y106        FDSE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[22]/C
+                         clock pessimism              0.000     0.966    
+                         clock uncertainty            0.301     1.267    
+    SLICE_X23Y106        FDSE (Hold_fdse_C_D)         0.270     1.537    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[22]
+  -------------------------------------------------------------------
+                         required time                         -1.537    
+                         arrival time                           1.524    
+  -------------------------------------------------------------------
+                         slack                                 -0.012    
+
+Slack (VIOLATED) :        -0.012ns  (arrival time - required time)
+  Source:                 instr[15]
+                            (input port clocked by virtual_cpu_io  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/q_reg[15]/D
+                            (rising edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - virtual_cpu_io rise@0.000ns)
+  Data Path Delay:        1.024ns  (logic 0.100ns (9.762%)  route 0.924ns (90.238%))
+  Logic Levels:           1  (LUT3=1)
+  Input Delay:            0.500ns
+  Clock Path Skew:        0.966ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.966ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.301ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.198ns
+    Phase Error              (PE):    0.099ns
+    User Uncertainty         (UU):    0.100ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock virtual_cpu_io rise edge)
+                                                      0.000     0.000 r  
+                         ideal clock network latency
+                                                      0.000     0.000    
+                         input delay                  0.500     0.500    
+                                                      0.000     0.500 r  instr[15] (IN)
+                         net (fo=0)                   0.924     1.424    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/instr[14]
+    SLICE_X48Y101        LUT3 (Prop_lut3_I2_O)        0.100     1.524 r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/q[15]_i_1/O
+                         net (fo=1, routed)           0.000     1.524    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/p_1_in[15]
+    SLICE_X48Y101        FDCE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/q_reg[15]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.973     0.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    -2.836 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    -0.867    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    -0.771 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.737     0.966    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/clk
+    SLICE_X48Y101        FDCE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/q_reg[15]/C
+                         clock pessimism              0.000     0.966    
+                         clock uncertainty            0.301     1.267    
+    SLICE_X48Y101        FDCE (Hold_fdce_C_D)         0.270     1.537    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/q_reg[15]
+  -------------------------------------------------------------------
+                         required time                         -1.537    
+                         arrival time                           1.524    
+  -------------------------------------------------------------------
+                         slack                                 -0.012    
+
+Slack (VIOLATED) :        -0.011ns  (arrival time - required time)
+  Source:                 irq[3]
+                            (input port clocked by virtual_cpu_io  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[3]/D
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - virtual_cpu_io rise@0.000ns)
+  Data Path Delay:        0.924ns  (logic 0.000ns (0.000%)  route 0.924ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            0.500ns
+  Clock Path Skew:        0.955ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.955ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.301ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.198ns
+    Phase Error              (PE):    0.099ns
+    User Uncertainty         (UU):    0.100ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock virtual_cpu_io rise edge)
+                                                      0.000     0.000 r  
+                         ideal clock network latency
+                                                      0.000     0.000    
+                         input delay                  0.500     0.500    
+                                                      0.000     0.500 r  irq[3] (IN)
+                         net (fo=1, unset)            0.924     1.424    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[5]_1[3]
+    SLICE_X33Y116        FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.973     0.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    -2.836 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    -0.867    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    -0.771 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.726     0.955    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/clk
+    SLICE_X33Y116        FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[3]/C
+                         clock pessimism              0.000     0.955    
+                         clock uncertainty            0.301     1.256    
+    SLICE_X33Y116        FDRE (Hold_fdre_C_D)         0.180     1.436    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[3]
+  -------------------------------------------------------------------
+                         required time                         -1.436    
+                         arrival time                           1.424    
+  -------------------------------------------------------------------
+                         slack                                 -0.011    
+
+Slack (VIOLATED) :        -0.011ns  (arrival time - required time)
+  Source:                 data_inp[21]
+                            (input port clocked by virtual_cpu_io  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[21]/D
+                            (rising edge-triggered cell FDSE clocked by c0  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - virtual_cpu_io rise@0.000ns)
+  Data Path Delay:        1.024ns  (logic 0.100ns (9.762%)  route 0.924ns (90.238%))
+  Logic Levels:           1  (LUT6=1)
+  Input Delay:            0.500ns
+  Clock Path Skew:        0.965ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.965ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.301ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.198ns
+    Phase Error              (PE):    0.099ns
+    User Uncertainty         (UU):    0.100ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock virtual_cpu_io rise edge)
+                                                      0.000     0.000 r  
+                         ideal clock network latency
+                                                      0.000     0.000    
+                         input delay                  0.500     0.500    
+                                                      0.000     0.500 r  data_inp[21] (IN)
+                         net (fo=2, unset)            0.924     1.424    u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/data_inp[21]
+    SLICE_X23Y108        LUT6 (Prop_lut6_I5_O)        0.100     1.524 r  u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/WB_rd_data[21]_i_1/O
+                         net (fo=1, routed)           0.000     1.524    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[21]_0
+    SLICE_X23Y108        FDSE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[21]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.973     0.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    -2.836 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    -0.867    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    -0.771 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.736     0.965    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/clk
+    SLICE_X23Y108        FDSE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[21]/C
+                         clock pessimism              0.000     0.965    
+                         clock uncertainty            0.301     1.266    
+    SLICE_X23Y108        FDSE (Hold_fdse_C_D)         0.270     1.536    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[21]
+  -------------------------------------------------------------------
+                         required time                         -1.536    
+                         arrival time                           1.524    
+  -------------------------------------------------------------------
+                         slack                                 -0.011    
+
+Slack (VIOLATED) :        -0.011ns  (arrival time - required time)
+  Source:                 instr[11]
+                            (input port clocked by virtual_cpu_io  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/q_reg[11]/D
+                            (rising edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - virtual_cpu_io rise@0.000ns)
+  Data Path Delay:        1.024ns  (logic 0.100ns (9.762%)  route 0.924ns (90.238%))
+  Logic Levels:           1  (LUT3=1)
+  Input Delay:            0.500ns
+  Clock Path Skew:        0.966ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.966ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.301ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.198ns
+    Phase Error              (PE):    0.099ns
+    User Uncertainty         (UU):    0.100ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock virtual_cpu_io rise edge)
+                                                      0.000     0.000 r  
+                         ideal clock network latency
+                                                      0.000     0.000    
+                         input delay                  0.500     0.500    
+                                                      0.000     0.500 r  instr[11] (IN)
+                         net (fo=0)                   0.924     1.424    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/instr[10]
+    SLICE_X48Y102        LUT3 (Prop_lut3_I2_O)        0.100     1.524 r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/q[11]_i_1/O
+                         net (fo=1, routed)           0.000     1.524    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/p_1_in[11]
+    SLICE_X48Y102        FDCE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/q_reg[11]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.973     0.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    -2.836 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    -0.867    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    -0.771 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.737     0.966    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/clk
+    SLICE_X48Y102        FDCE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/q_reg[11]/C
+                         clock pessimism              0.000     0.966    
+                         clock uncertainty            0.301     1.267    
+    SLICE_X48Y102        FDCE (Hold_fdce_C_D)         0.269     1.536    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/q_reg[11]
+  -------------------------------------------------------------------
+                         required time                         -1.536    
+                         arrival time                           1.524    
+  -------------------------------------------------------------------
+                         slack                                 -0.011    
+
+Slack (VIOLATED) :        -0.010ns  (arrival time - required time)
+  Source:                 data_inp[20]
+                            (input port clocked by virtual_cpu_io  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[20]/D
+                            (rising edge-triggered cell FDSE clocked by c0  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - virtual_cpu_io rise@0.000ns)
+  Data Path Delay:        1.024ns  (logic 0.100ns (9.762%)  route 0.924ns (90.238%))
+  Logic Levels:           1  (LUT6=1)
+  Input Delay:            0.500ns
+  Clock Path Skew:        0.963ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.963ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.301ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.198ns
+    Phase Error              (PE):    0.099ns
+    User Uncertainty         (UU):    0.100ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock virtual_cpu_io rise edge)
+                                                      0.000     0.000 r  
+                         ideal clock network latency
+                                                      0.000     0.000    
+                         input delay                  0.500     0.500    
+                                                      0.000     0.500 r  data_inp[20] (IN)
+                         net (fo=2, unset)            0.924     1.424    u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/data_inp[20]
+    SLICE_X28Y107        LUT6 (Prop_lut6_I5_O)        0.100     1.524 r  u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/WB_rd_data[20]_i_1/O
+                         net (fo=1, routed)           0.000     1.524    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[20]_0
+    SLICE_X28Y107        FDSE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[20]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.973     0.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    -2.836 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    -0.867    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    -0.771 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.734     0.963    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/clk
+    SLICE_X28Y107        FDSE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[20]/C
+                         clock pessimism              0.000     0.963    
+                         clock uncertainty            0.301     1.264    
+    SLICE_X28Y107        FDSE (Hold_fdse_C_D)         0.271     1.535    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[20]
+  -------------------------------------------------------------------
+                         required time                         -1.535    
+                         arrival time                           1.524    
+  -------------------------------------------------------------------
+                         slack                                 -0.010    
+
+Slack (VIOLATED) :        -0.010ns  (arrival time - required time)
+  Source:                 data_inp[30]
+                            (input port clocked by virtual_cpu_io  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[30]/D
+                            (rising edge-triggered cell FDSE clocked by c0  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - virtual_cpu_io rise@0.000ns)
+  Data Path Delay:        1.024ns  (logic 0.100ns (9.762%)  route 0.924ns (90.238%))
+  Logic Levels:           1  (LUT6=1)
+  Input Delay:            0.500ns
+  Clock Path Skew:        0.965ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.965ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.301ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.198ns
+    Phase Error              (PE):    0.099ns
+    User Uncertainty         (UU):    0.100ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock virtual_cpu_io rise edge)
+                                                      0.000     0.000 r  
+                         ideal clock network latency
+                                                      0.000     0.000    
+                         input delay                  0.500     0.500    
+                                                      0.000     0.500 r  data_inp[30] (IN)
+                         net (fo=2, unset)            0.924     1.424    u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/data_inp[30]
+    SLICE_X23Y107        LUT6 (Prop_lut6_I5_O)        0.100     1.524 r  u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/WB_rd_data[30]_i_1/O
+                         net (fo=1, routed)           0.000     1.524    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[30]_0
+    SLICE_X23Y107        FDSE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[30]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.973     0.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    -2.836 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    -0.867    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    -0.771 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.736     0.965    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/clk
+    SLICE_X23Y107        FDSE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[30]/C
+                         clock pessimism              0.000     0.965    
+                         clock uncertainty            0.301     1.266    
+    SLICE_X23Y107        FDSE (Hold_fdse_C_D)         0.269     1.535    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[30]
+  -------------------------------------------------------------------
+                         required time                         -1.535    
+                         arrival time                           1.524    
+  -------------------------------------------------------------------
+                         slack                                 -0.010    
+
+Slack (VIOLATED) :        -0.009ns  (arrival time - required time)
+  Source:                 data_inp[29]
+                            (input port clocked by virtual_cpu_io  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[29]/D
+                            (rising edge-triggered cell FDSE clocked by c0  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - virtual_cpu_io rise@0.000ns)
+  Data Path Delay:        1.024ns  (logic 0.100ns (9.762%)  route 0.924ns (90.238%))
+  Logic Levels:           1  (LUT6=1)
+  Input Delay:            0.500ns
+  Clock Path Skew:        0.963ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.963ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.301ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.198ns
+    Phase Error              (PE):    0.099ns
+    User Uncertainty         (UU):    0.100ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock virtual_cpu_io rise edge)
+                                                      0.000     0.000 r  
+                         ideal clock network latency
+                                                      0.000     0.000    
+                         input delay                  0.500     0.500    
+                                                      0.000     0.500 r  data_inp[29] (IN)
+                         net (fo=2, unset)            0.924     1.424    u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/data_inp[29]
+    SLICE_X27Y109        LUT6 (Prop_lut6_I5_O)        0.100     1.524 r  u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/WB_rd_data[29]_i_1/O
+                         net (fo=1, routed)           0.000     1.524    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[29]_0
+    SLICE_X27Y109        FDSE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[29]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.973     0.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    -2.836 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    -0.867    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    -0.771 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.734     0.963    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/clk
+    SLICE_X27Y109        FDSE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[29]/C
+                         clock pessimism              0.000     0.963    
+                         clock uncertainty            0.301     1.264    
+    SLICE_X27Y109        FDSE (Hold_fdse_C_D)         0.270     1.534    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_rd_data_reg[29]
+  -------------------------------------------------------------------
+                         required time                         -1.534    
+                         arrival time                           1.524    
+  -------------------------------------------------------------------
+                         slack                                 -0.009    
+
+Slack (VIOLATED) :        -0.009ns  (arrival time - required time)
+  Source:                 instr[12]
+                            (input port clocked by virtual_cpu_io  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/q_reg[12]/D
+                            (rising edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - virtual_cpu_io rise@0.000ns)
+  Data Path Delay:        1.046ns  (logic 0.122ns (11.660%)  route 0.924ns (88.340%))
+  Logic Levels:           1  (LUT3=1)
+  Input Delay:            0.500ns
+  Clock Path Skew:        0.966ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.966ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.301ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.198ns
+    Phase Error              (PE):    0.099ns
+    User Uncertainty         (UU):    0.100ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock virtual_cpu_io rise edge)
+                                                      0.000     0.000 r  
+                         ideal clock network latency
+                                                      0.000     0.000    
+                         input delay                  0.500     0.500    
+                                                      0.000     0.500 r  instr[12] (IN)
+                         net (fo=0)                   0.924     1.424    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/instr[11]
+    SLICE_X48Y102        LUT3 (Prop_lut3_I2_O)        0.122     1.546 r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/q[12]_i_1/O
+                         net (fo=1, routed)           0.000     1.546    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/p_1_in[12]
+    SLICE_X48Y102        FDCE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/q_reg[12]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.973     0.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    -2.836 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    -0.867    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    -0.771 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.737     0.966    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/clk
+    SLICE_X48Y102        FDCE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/q_reg[12]/C
+                         clock pessimism              0.000     0.966    
+                         clock uncertainty            0.301     1.267    
+    SLICE_X48Y102        FDCE (Hold_fdce_C_D)         0.289     1.556    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/q_reg[12]
+  -------------------------------------------------------------------
+                         required time                         -1.556    
+                         arrival time                           1.546    
+  -------------------------------------------------------------------
+                         slack                                 -0.009    
+
+Slack (VIOLATED) :        -0.009ns  (arrival time - required time)
+  Source:                 instr[16]
+                            (input port clocked by virtual_cpu_io  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/q_reg[16]/D
+                            (rising edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@48.000ns period=96.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - virtual_cpu_io rise@0.000ns)
+  Data Path Delay:        1.046ns  (logic 0.122ns (11.660%)  route 0.924ns (88.340%))
+  Logic Levels:           1  (LUT3=1)
+  Input Delay:            0.500ns
+  Clock Path Skew:        0.966ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.966ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.301ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.198ns
+    Phase Error              (PE):    0.099ns
+    User Uncertainty         (UU):    0.100ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock virtual_cpu_io rise edge)
+                                                      0.000     0.000 r  
+                         ideal clock network latency
+                                                      0.000     0.000    
+                         input delay                  0.500     0.500    
+                                                      0.000     0.500 r  instr[16] (IN)
+                         net (fo=0)                   0.924     1.424    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/instr[15]
+    SLICE_X48Y101        LUT3 (Prop_lut3_I2_O)        0.122     1.546 r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/q[16]_i_1/O
+                         net (fo=1, routed)           0.000     1.546    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/p_1_in[16]
+    SLICE_X48Y101        FDCE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/q_reg[16]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.973     0.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    -2.836 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    -0.867    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    -0.771 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.737     0.966    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/clk
+    SLICE_X48Y101        FDCE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/q_reg[16]/C
+                         clock pessimism              0.000     0.966    
+                         clock uncertainty            0.301     1.267    
+    SLICE_X48Y101        FDCE (Hold_fdce_C_D)         0.289     1.556    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/q_reg[16]
+  -------------------------------------------------------------------
+                         required time                         -1.556    
+                         arrival time                           1.546    
+  -------------------------------------------------------------------
+                         slack                                 -0.009    
+
+
+
+

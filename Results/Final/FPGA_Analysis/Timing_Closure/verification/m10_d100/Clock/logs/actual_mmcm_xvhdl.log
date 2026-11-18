@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/final/final_clock_tree.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'final_clock_tree'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_timing_clock_tree.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_timing_clock_tree'

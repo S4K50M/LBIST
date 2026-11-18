@@ -1,0 +1,2 @@
+Case,Testbench,Group,Result,CompletionTime,Capture,WDBBytes
+basic_fault_1,tb_phase6a_fault_comparison,Fault,PASS,3390701025 ps,1,3329593

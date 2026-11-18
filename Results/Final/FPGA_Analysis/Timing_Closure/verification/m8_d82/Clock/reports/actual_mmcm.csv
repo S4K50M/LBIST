@@ -1,0 +1,2 @@
+Case,Testbench,Group,Result,CompletionTime,Capture,WDBBytes
+actual_mmcm,tb_timing_clock_tree,Clock,PASS,1231975 ps,0,0

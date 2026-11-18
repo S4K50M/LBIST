@@ -1,0 +1,8 @@
+Configuration,Approach,Result,Detail
+baseline,functional,PASS,fresh own RTL SAIF; inspect coverage and confidence
+scan_enabled,functional,PASS,fresh own RTL SAIF; inspect coverage and confidence
+full_lbist,0,PASS,fresh own RTL SAIF; inspect coverage and confidence
+full_lbist,1,PASS,fresh own RTL SAIF; inspect coverage and confidence
+full_lbist,2,PASS,fresh own RTL SAIF; inspect coverage and confidence
+full_lbist,3,PASS,fresh own RTL SAIF; inspect coverage and confidence
+full_lbist,4,PASS,fresh own RTL SAIF; inspect coverage and confidence

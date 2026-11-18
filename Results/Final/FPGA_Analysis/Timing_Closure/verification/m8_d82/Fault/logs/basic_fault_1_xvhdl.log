@@ -1,0 +1,4 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/Timing_Closure/generated/m8_d82/phase6a_processor_check.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'phase6a_processor_check'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_phase6a_fault_comparison.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_phase6a_fault_comparison'

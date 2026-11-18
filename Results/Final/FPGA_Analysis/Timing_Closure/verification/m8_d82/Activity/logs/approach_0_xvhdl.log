@@ -1,0 +1,31 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/basic_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'basic_controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase2_tb_pkg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase5a_rom_pkg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/misr_16.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'misr_16'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/phase6a_safe_misr.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'phase6a_safe_misr'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/phase6a_golden_pkg.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/lbist_test_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'lbist_test_controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/core_scan/fault_injection/core_scan_fault.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'core_scan_fault'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/lfsr_16.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'lfsr_16'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/phase_shifter.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'phase_shifter'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/swap_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'swap_controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/moving_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'moving_controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/plpf_dynamic.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'plpf_dynamic'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/rtl/lbist_pattern_router.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'lbist_pattern_router'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/final/final_processor_system.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'final_processor_system'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/Timing_Closure/generated/m8_d82/final_activity_check.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'final_activity_check'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_final_activity.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tb_final_activity'

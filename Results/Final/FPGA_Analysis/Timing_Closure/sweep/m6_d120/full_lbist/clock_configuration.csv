@@ -1,0 +1,2 @@
+Configuration,InputMHz,Mult,InputDivide,OutputDivide,VCOMHz,CPUMHz,PeriodNS
+full_lbist,100,6,1,120,600,5.0,200.0

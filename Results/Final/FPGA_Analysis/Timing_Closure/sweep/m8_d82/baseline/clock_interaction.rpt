@@ -1,0 +1,28 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.1.1 (win64) Build 6233196 Thu Sep 11 21:27:30 MDT 2025
+| Date         : Wed Nov 18 12:25:38 2026
+| Host         : LAPTOP-B852K4P2 running 64-bit major release  (build 9200)
+| Command      : report_clock_interaction -file {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/Timing_Closure/sweep/m8_d82/baseline/clock_interaction.rpt}
+| Design       : final_fpga_top
+| Device       : 7a35t-cpg236
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Clock Interaction Report
+
+Clock Interaction Table
+-----------------------
+
+                                WNS                            TNS Failing  TNS Total    WNS Path         Clock-Pair           Inter-Clock  
+From Clock      To Clock        Clock Edges  WNS(ns)  TNS(ns)    Endpoints    Endpoints  Requirement(ns)  Classification       Constraints  
+--------------  --------------  -----------  -------  -------  -----------  -----------  ---------------  -------------------  -----------  
+c0              c0              rise - rise     0.05     0.00            0         5236           102.50  Clean                Timed        
+c0              c1              rise - rise    72.64     0.00            0           10            76.88  Clean                Timed        
+c0              virtual_cpu_io  rise - rise    70.17     0.00            0          103           102.50  Virtual Clock        Timed        
+c1              c0              rise - rise    12.62     0.00            0           97            25.62  Clean                Timed        
+virtual_cpu_io  c0              rise - rise    79.72     0.00            0         1557           102.50  Virtual Clock        Timed        
+virtual_cpu_io  virtual_cpu_io  rise - rise    90.67     0.00            0            1           102.50  Clean                Timed        
+
+

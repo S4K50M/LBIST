@@ -1,0 +1,14 @@
+full_lbist 10.0 PASS -0.421 -0.012 False
+full_lbist 20.0 PASS -47.041 -0.052 False
+full_lbist 10.416666666666666 PASS -2.387 -0.196 False
+full_lbist 5.0 PASS 35.942 -0.123 False
+full_lbist 10.0 PASS -2.186 -0.223 False
+baseline 9.75609756097561 PASS 0.054 -0.031 False
+full_lbist 9.75609756097561 PASS 0.494 -0.228 False
+scan_enabled 9.75609756097561 PASS 1.038 -0.185 False
+full_lbist 9.523809523809524 PASS 0.79 -0.228 False
+full_lbist 10.0 PASS -1.768 0.038 False
+baseline 9.75609756097561 PASS 0.154 0.069 True
+full_lbist 9.75609756097561 PASS 0.155 0.007 True
+scan_enabled 9.75609756097561 PASS 1.12 0.001 True
+Timing revision report generated: PASS: constrained OOC setup/hold/pulse and unconstrained-path checks

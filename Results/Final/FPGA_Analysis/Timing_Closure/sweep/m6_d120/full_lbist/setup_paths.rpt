@@ -1,0 +1,1267 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.1.1 (win64) Build 6233196 Thu Sep 11 21:27:30 MDT 2025
+| Date         : Wed Nov 18 10:52:35 2026
+| Host         : LAPTOP-B852K4P2 running 64-bit major release  (build 9200)
+| Command      : report_timing -delay_type max -max_paths 20 -file {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/Timing_Closure/sweep/m6_d120/full_lbist/setup_paths.rpt}
+| Design       : final_fpga_top
+| Device       : 7a35t-cpg236
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             35.942ns  (required time - arrival time)
+  Source:                 u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C
+                            (falling edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[16]/D
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@150.000ns fall@200.000ns period=200.000ns})
+  Path Group:             c1
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            50.000ns  (c1 rise@150.000ns - c0 fall@100.000ns)
+  Data Path Delay:        13.565ns  (logic 1.250ns (9.215%)  route 12.315ns (90.785%))
+  Logic Levels:           4  (LUT2=1 LUT6=2 MUXF7=1)
+  Clock Path Skew:        -0.216ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.738ns = ( 150.738 - 150.000 ) 
+    Source Clock Delay      (SCD):    0.778ns = ( 100.778 - 100.000 ) 
+    Clock Pessimism Removal (CPR):    -0.177ns
+  Clock Uncertainty:      0.358ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.266ns
+    Phase Error              (PE):    0.120ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 fall edge)       100.000   100.000 f  
+                                                      0.000   100.000 f  board_clk (IN)
+                         net (fo=0)                   0.973   100.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    97.164 f  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    99.133    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    99.229 f  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.549   100.778    u_system/scan_cpu.u_cpu/clk
+    SLICE_X45Y62         FDCE                                         r  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X45Y62         FDCE (Prop_fdce_C_Q)         0.459   101.237 f  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/Q
+                         net (fo=89, routed)          3.165   104.402    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_cop0_sel_reg[0][0]
+    SLICE_X57Y57         LUT2 (Prop_lut2_I1_O)        0.124   104.526 r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_exception[4]_i_7/O
+                         net (fo=269, routed)         8.210   112.736    u_system/scan_cpu.u_cpu/U_regs/PORT_A/a_rs[1]
+    SLICE_X47Y90         LUT6 (Prop_lut6_I2_O)        0.124   112.860 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[16]_i_7__0/O
+                         net (fo=1, routed)           0.000   112.860    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[16]_i_7__0_n_1601
+    SLICE_X47Y90         MUXF7 (Prop_muxf7_I1_O)      0.245   113.105 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[16]_i_2__0/O
+                         net (fo=1, routed)           0.939   114.045    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[16]_i_2__0_n_1601
+    SLICE_X46Y88         LUT6 (Prop_lut6_I0_O)        0.298   114.343 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[16]_i_1__1/O
+                         net (fo=1, routed)           0.000   114.343    u_system/scan_cpu.u_cpu/U_regs/PORT_A/ram[31]_1[16]
+    SLICE_X46Y88         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[16]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c1 rise edge)       150.000   150.000 r  
+                                                      0.000   150.000 r  board_clk (IN)
+                         net (fo=0)                   0.924   150.924    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.583   147.341 r  u_clock/mmcm/CLKOUT1
+                         net (fo=1, routed)           1.874   149.215    u_clock/c1
+    BUFGCTRL_X0Y18       BUFG (Prop_bufg_I_O)         0.091   149.306 r  u_clock/u_phi1/O
+                         net (fo=66, routed)          1.432   150.738    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[31]_1
+    SLICE_X46Y88         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[16]/C
+                         clock pessimism             -0.177   150.561    
+                         clock uncertainty           -0.358   150.203    
+    SLICE_X46Y88         FDRE (Setup_fdre_C_D)        0.081   150.284    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[16]
+  -------------------------------------------------------------------
+                         required time                        150.284    
+                         arrival time                        -114.343    
+  -------------------------------------------------------------------
+                         slack                                 35.942    
+
+Slack (MET) :             36.325ns  (required time - arrival time)
+  Source:                 u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C
+                            (falling edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[15]/D
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@150.000ns fall@200.000ns period=200.000ns})
+  Path Group:             c1
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            50.000ns  (c1 rise@150.000ns - c0 fall@100.000ns)
+  Data Path Delay:        13.195ns  (logic 1.243ns (9.420%)  route 11.952ns (90.580%))
+  Logic Levels:           4  (LUT2=1 LUT6=2 MUXF7=1)
+  Clock Path Skew:        -0.152ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.802ns = ( 150.802 - 150.000 ) 
+    Source Clock Delay      (SCD):    0.778ns = ( 100.778 - 100.000 ) 
+    Clock Pessimism Removal (CPR):    -0.177ns
+  Clock Uncertainty:      0.358ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.266ns
+    Phase Error              (PE):    0.120ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 fall edge)       100.000   100.000 f  
+                                                      0.000   100.000 f  board_clk (IN)
+                         net (fo=0)                   0.973   100.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    97.164 f  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    99.133    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    99.229 f  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.549   100.778    u_system/scan_cpu.u_cpu/clk
+    SLICE_X45Y62         FDCE                                         r  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X45Y62         FDCE (Prop_fdce_C_Q)         0.459   101.237 f  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/Q
+                         net (fo=89, routed)          3.165   104.402    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_cop0_sel_reg[0][0]
+    SLICE_X57Y57         LUT2 (Prop_lut2_I1_O)        0.124   104.526 r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_exception[4]_i_7/O
+                         net (fo=269, routed)         7.954   112.481    u_system/scan_cpu.u_cpu/U_regs/PORT_A/a_rs[1]
+    SLICE_X61Y80         LUT6 (Prop_lut6_I2_O)        0.124   112.605 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[15]_i_6__0/O
+                         net (fo=1, routed)           0.000   112.605    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[15]_i_6__0_n_1601
+    SLICE_X61Y80         MUXF7 (Prop_muxf7_I0_O)      0.238   112.843 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[15]_i_2__0/O
+                         net (fo=1, routed)           0.832   113.675    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[15]_i_2__0_n_1601
+    SLICE_X62Y81         LUT6 (Prop_lut6_I0_O)        0.298   113.973 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[15]_i_1__1/O
+                         net (fo=1, routed)           0.000   113.973    u_system/scan_cpu.u_cpu/U_regs/PORT_A/ram[31]_1[15]
+    SLICE_X62Y81         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[15]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c1 rise edge)       150.000   150.000 r  
+                                                      0.000   150.000 r  board_clk (IN)
+                         net (fo=0)                   0.924   150.924    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.583   147.341 r  u_clock/mmcm/CLKOUT1
+                         net (fo=1, routed)           1.874   149.215    u_clock/c1
+    BUFGCTRL_X0Y18       BUFG (Prop_bufg_I_O)         0.091   149.306 r  u_clock/u_phi1/O
+                         net (fo=66, routed)          1.496   150.802    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[31]_1
+    SLICE_X62Y81         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[15]/C
+                         clock pessimism             -0.177   150.625    
+                         clock uncertainty           -0.358   150.267    
+    SLICE_X62Y81         FDRE (Setup_fdre_C_D)        0.031   150.298    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[15]
+  -------------------------------------------------------------------
+                         required time                        150.298    
+                         arrival time                        -113.973    
+  -------------------------------------------------------------------
+                         slack                                 36.325    
+
+Slack (MET) :             36.341ns  (required time - arrival time)
+  Source:                 u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C
+                            (falling edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[24]/D
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@150.000ns fall@200.000ns period=200.000ns})
+  Path Group:             c1
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            50.000ns  (c1 rise@150.000ns - c0 fall@100.000ns)
+  Data Path Delay:        13.164ns  (logic 1.246ns (9.465%)  route 11.918ns (90.535%))
+  Logic Levels:           4  (LUT2=1 LUT6=2 MUXF7=1)
+  Clock Path Skew:        -0.216ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.738ns = ( 150.738 - 150.000 ) 
+    Source Clock Delay      (SCD):    0.778ns = ( 100.778 - 100.000 ) 
+    Clock Pessimism Removal (CPR):    -0.177ns
+  Clock Uncertainty:      0.358ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.266ns
+    Phase Error              (PE):    0.120ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 fall edge)       100.000   100.000 f  
+                                                      0.000   100.000 f  board_clk (IN)
+                         net (fo=0)                   0.973   100.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    97.164 f  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    99.133    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    99.229 f  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.549   100.778    u_system/scan_cpu.u_cpu/clk
+    SLICE_X45Y62         FDCE                                         r  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X45Y62         FDCE (Prop_fdce_C_Q)         0.459   101.237 f  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/Q
+                         net (fo=89, routed)          3.165   104.402    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_cop0_sel_reg[0][0]
+    SLICE_X57Y57         LUT2 (Prop_lut2_I1_O)        0.124   104.526 r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_exception[4]_i_7/O
+                         net (fo=269, routed)         7.996   112.522    u_system/scan_cpu.u_cpu/U_regs/PORT_A/a_rs[1]
+    SLICE_X46Y90         LUT6 (Prop_lut6_I2_O)        0.124   112.646 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[24]_i_6__0/O
+                         net (fo=1, routed)           0.000   112.646    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[24]_i_6__0_n_1601
+    SLICE_X46Y90         MUXF7 (Prop_muxf7_I0_O)      0.241   112.887 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[24]_i_2__0/O
+                         net (fo=1, routed)           0.756   113.644    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[24]_i_2__0_n_1601
+    SLICE_X46Y88         LUT6 (Prop_lut6_I0_O)        0.298   113.942 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[24]_i_1__1/O
+                         net (fo=1, routed)           0.000   113.942    u_system/scan_cpu.u_cpu/U_regs/PORT_A/ram[31]_1[24]
+    SLICE_X46Y88         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[24]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c1 rise edge)       150.000   150.000 r  
+                                                      0.000   150.000 r  board_clk (IN)
+                         net (fo=0)                   0.924   150.924    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.583   147.341 r  u_clock/mmcm/CLKOUT1
+                         net (fo=1, routed)           1.874   149.215    u_clock/c1
+    BUFGCTRL_X0Y18       BUFG (Prop_bufg_I_O)         0.091   149.306 r  u_clock/u_phi1/O
+                         net (fo=66, routed)          1.432   150.738    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[31]_1
+    SLICE_X46Y88         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[24]/C
+                         clock pessimism             -0.177   150.561    
+                         clock uncertainty           -0.358   150.203    
+    SLICE_X46Y88         FDRE (Setup_fdre_C_D)        0.079   150.282    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[24]
+  -------------------------------------------------------------------
+                         required time                        150.282    
+                         arrival time                        -113.942    
+  -------------------------------------------------------------------
+                         slack                                 36.341    
+
+Slack (MET) :             36.419ns  (required time - arrival time)
+  Source:                 u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C
+                            (falling edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[23]/D
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@150.000ns fall@200.000ns period=200.000ns})
+  Path Group:             c1
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            50.000ns  (c1 rise@150.000ns - c0 fall@100.000ns)
+  Data Path Delay:        13.086ns  (logic 1.250ns (9.552%)  route 11.836ns (90.448%))
+  Logic Levels:           4  (LUT2=1 LUT6=2 MUXF7=1)
+  Clock Path Skew:        -0.214ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.740ns = ( 150.740 - 150.000 ) 
+    Source Clock Delay      (SCD):    0.778ns = ( 100.778 - 100.000 ) 
+    Clock Pessimism Removal (CPR):    -0.177ns
+  Clock Uncertainty:      0.358ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.266ns
+    Phase Error              (PE):    0.120ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 fall edge)       100.000   100.000 f  
+                                                      0.000   100.000 f  board_clk (IN)
+                         net (fo=0)                   0.973   100.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    97.164 f  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    99.133    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    99.229 f  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.549   100.778    u_system/scan_cpu.u_cpu/clk
+    SLICE_X45Y62         FDCE                                         r  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X45Y62         FDCE (Prop_fdce_C_Q)         0.459   101.237 f  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/Q
+                         net (fo=89, routed)          3.165   104.402    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_cop0_sel_reg[0][0]
+    SLICE_X57Y57         LUT2 (Prop_lut2_I1_O)        0.124   104.526 r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_exception[4]_i_7/O
+                         net (fo=269, routed)         8.109   112.635    u_system/scan_cpu.u_cpu/U_regs/PORT_A/a_rs[1]
+    SLICE_X43Y92         LUT6 (Prop_lut6_I2_O)        0.124   112.759 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[23]_i_7__0/O
+                         net (fo=1, routed)           0.000   112.759    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[23]_i_7__0_n_1601
+    SLICE_X43Y92         MUXF7 (Prop_muxf7_I1_O)      0.245   113.004 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[23]_i_2__0/O
+                         net (fo=1, routed)           0.561   113.566    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[23]_i_2__0_n_1601
+    SLICE_X46Y92         LUT6 (Prop_lut6_I0_O)        0.298   113.864 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[23]_i_1__1/O
+                         net (fo=1, routed)           0.000   113.864    u_system/scan_cpu.u_cpu/U_regs/PORT_A/ram[31]_1[23]
+    SLICE_X46Y92         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[23]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c1 rise edge)       150.000   150.000 r  
+                                                      0.000   150.000 r  board_clk (IN)
+                         net (fo=0)                   0.924   150.924    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.583   147.341 r  u_clock/mmcm/CLKOUT1
+                         net (fo=1, routed)           1.874   149.215    u_clock/c1
+    BUFGCTRL_X0Y18       BUFG (Prop_bufg_I_O)         0.091   149.306 r  u_clock/u_phi1/O
+                         net (fo=66, routed)          1.434   150.740    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[31]_1
+    SLICE_X46Y92         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[23]/C
+                         clock pessimism             -0.177   150.563    
+                         clock uncertainty           -0.358   150.205    
+    SLICE_X46Y92         FDRE (Setup_fdre_C_D)        0.077   150.282    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[23]
+  -------------------------------------------------------------------
+                         required time                        150.282    
+                         arrival time                        -113.864    
+  -------------------------------------------------------------------
+                         slack                                 36.419    
+
+Slack (MET) :             36.432ns  (required time - arrival time)
+  Source:                 u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C
+                            (falling edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[26]/D
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@150.000ns fall@200.000ns period=200.000ns})
+  Path Group:             c1
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            50.000ns  (c1 rise@150.000ns - c0 fall@100.000ns)
+  Data Path Delay:        13.077ns  (logic 1.243ns (9.505%)  route 11.834ns (90.495%))
+  Logic Levels:           4  (LUT2=1 LUT5=1 LUT6=1 MUXF7=1)
+  Clock Path Skew:        -0.214ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.740ns = ( 150.740 - 150.000 ) 
+    Source Clock Delay      (SCD):    0.778ns = ( 100.778 - 100.000 ) 
+    Clock Pessimism Removal (CPR):    -0.177ns
+  Clock Uncertainty:      0.358ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.266ns
+    Phase Error              (PE):    0.120ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 fall edge)       100.000   100.000 f  
+                                                      0.000   100.000 f  board_clk (IN)
+                         net (fo=0)                   0.973   100.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    97.164 f  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    99.133    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    99.229 f  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.549   100.778    u_system/scan_cpu.u_cpu/clk
+    SLICE_X45Y62         FDCE                                         r  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X45Y62         FDCE (Prop_fdce_C_Q)         0.459   101.237 f  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/Q
+                         net (fo=89, routed)          3.165   104.402    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_cop0_sel_reg[0][0]
+    SLICE_X57Y57         LUT2 (Prop_lut2_I1_O)        0.124   104.526 r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_exception[4]_i_7/O
+                         net (fo=269, routed)         7.719   112.245    u_system/scan_cpu.u_cpu/U_regs/PORT_A/a_rs[1]
+    SLICE_X43Y91         LUT5 (Prop_lut5_I2_O)        0.124   112.369 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[26]_i_12__0/O
+                         net (fo=1, routed)           0.000   112.369    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[26]_i_12__0_n_1601
+    SLICE_X43Y91         MUXF7 (Prop_muxf7_I0_O)      0.238   112.607 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[26]_i_5__0/O
+                         net (fo=1, routed)           0.950   113.557    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[26]_i_5__0_n_1601
+    SLICE_X46Y92         LUT6 (Prop_lut6_I5_O)        0.298   113.855 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[26]_i_1__1/O
+                         net (fo=1, routed)           0.000   113.855    u_system/scan_cpu.u_cpu/U_regs/PORT_A/ram[31]_1[26]
+    SLICE_X46Y92         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[26]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c1 rise edge)       150.000   150.000 r  
+                                                      0.000   150.000 r  board_clk (IN)
+                         net (fo=0)                   0.924   150.924    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.583   147.341 r  u_clock/mmcm/CLKOUT1
+                         net (fo=1, routed)           1.874   149.215    u_clock/c1
+    BUFGCTRL_X0Y18       BUFG (Prop_bufg_I_O)         0.091   149.306 r  u_clock/u_phi1/O
+                         net (fo=66, routed)          1.434   150.740    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[31]_1
+    SLICE_X46Y92         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[26]/C
+                         clock pessimism             -0.177   150.563    
+                         clock uncertainty           -0.358   150.205    
+    SLICE_X46Y92         FDRE (Setup_fdre_C_D)        0.081   150.286    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[26]
+  -------------------------------------------------------------------
+                         required time                        150.286    
+                         arrival time                        -113.855    
+  -------------------------------------------------------------------
+                         slack                                 36.432    
+
+Slack (MET) :             36.596ns  (required time - arrival time)
+  Source:                 u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C
+                            (falling edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[31]/D
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@150.000ns fall@200.000ns period=200.000ns})
+  Path Group:             c1
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            50.000ns  (c1 rise@150.000ns - c0 fall@100.000ns)
+  Data Path Delay:        12.912ns  (logic 1.223ns (9.472%)  route 11.689ns (90.528%))
+  Logic Levels:           4  (LUT2=1 LUT6=2 MUXF7=1)
+  Clock Path Skew:        -0.213ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.741ns = ( 150.741 - 150.000 ) 
+    Source Clock Delay      (SCD):    0.778ns = ( 100.778 - 100.000 ) 
+    Clock Pessimism Removal (CPR):    -0.177ns
+  Clock Uncertainty:      0.358ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.266ns
+    Phase Error              (PE):    0.120ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 fall edge)       100.000   100.000 f  
+                                                      0.000   100.000 f  board_clk (IN)
+                         net (fo=0)                   0.973   100.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    97.164 f  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    99.133    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    99.229 f  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.549   100.778    u_system/scan_cpu.u_cpu/clk
+    SLICE_X45Y62         FDCE                                         r  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X45Y62         FDCE (Prop_fdce_C_Q)         0.459   101.237 f  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/Q
+                         net (fo=89, routed)          3.165   104.402    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_cop0_sel_reg[0][0]
+    SLICE_X57Y57         LUT2 (Prop_lut2_I1_O)        0.124   104.526 r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_exception[4]_i_7/O
+                         net (fo=269, routed)         7.675   112.201    u_system/scan_cpu.u_cpu/U_regs/PORT_A/a_rs[1]
+    SLICE_X58Y83         LUT6 (Prop_lut6_I2_O)        0.124   112.325 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[31]_i_14__0/O
+                         net (fo=1, routed)           0.000   112.325    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[31]_i_14__0_n_1601
+    SLICE_X58Y83         MUXF7 (Prop_muxf7_I1_O)      0.217   112.542 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[31]_i_5/O
+                         net (fo=1, routed)           0.848   113.390    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[31]_i_5_n_1601
+    SLICE_X56Y85         LUT6 (Prop_lut6_I3_O)        0.299   113.689 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[31]_i_1__0/O
+                         net (fo=1, routed)           0.000   113.689    u_system/scan_cpu.u_cpu/U_regs/PORT_A/ram[31]_1[31]
+    SLICE_X56Y85         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[31]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c1 rise edge)       150.000   150.000 r  
+                                                      0.000   150.000 r  board_clk (IN)
+                         net (fo=0)                   0.924   150.924    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.583   147.341 r  u_clock/mmcm/CLKOUT1
+                         net (fo=1, routed)           1.874   149.215    u_clock/c1
+    BUFGCTRL_X0Y18       BUFG (Prop_bufg_I_O)         0.091   149.306 r  u_clock/u_phi1/O
+                         net (fo=66, routed)          1.435   150.741    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[31]_1
+    SLICE_X56Y85         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[31]/C
+                         clock pessimism             -0.177   150.564    
+                         clock uncertainty           -0.358   150.206    
+    SLICE_X56Y85         FDRE (Setup_fdre_C_D)        0.079   150.285    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[31]
+  -------------------------------------------------------------------
+                         required time                        150.285    
+                         arrival time                        -113.689    
+  -------------------------------------------------------------------
+                         slack                                 36.596    
+
+Slack (MET) :             36.648ns  (required time - arrival time)
+  Source:                 u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C
+                            (falling edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[14]/D
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@150.000ns fall@200.000ns period=200.000ns})
+  Path Group:             c1
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            50.000ns  (c1 rise@150.000ns - c0 fall@100.000ns)
+  Data Path Delay:        12.871ns  (logic 1.243ns (9.658%)  route 11.628ns (90.342%))
+  Logic Levels:           4  (LUT2=1 LUT6=2 MUXF7=1)
+  Clock Path Skew:        -0.152ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.802ns = ( 150.802 - 150.000 ) 
+    Source Clock Delay      (SCD):    0.778ns = ( 100.778 - 100.000 ) 
+    Clock Pessimism Removal (CPR):    -0.177ns
+  Clock Uncertainty:      0.358ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.266ns
+    Phase Error              (PE):    0.120ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 fall edge)       100.000   100.000 f  
+                                                      0.000   100.000 f  board_clk (IN)
+                         net (fo=0)                   0.973   100.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    97.164 f  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    99.133    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    99.229 f  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.549   100.778    u_system/scan_cpu.u_cpu/clk
+    SLICE_X45Y62         FDCE                                         r  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X45Y62         FDCE (Prop_fdce_C_Q)         0.459   101.237 f  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/Q
+                         net (fo=89, routed)          3.165   104.402    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_cop0_sel_reg[0][0]
+    SLICE_X57Y57         LUT2 (Prop_lut2_I1_O)        0.124   104.526 r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_exception[4]_i_7/O
+                         net (fo=269, routed)         7.826   112.352    u_system/scan_cpu.u_cpu/U_regs/PORT_A/a_rs[1]
+    SLICE_X63Y81         LUT6 (Prop_lut6_I2_O)        0.124   112.476 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[14]_i_8__0/O
+                         net (fo=1, routed)           0.000   112.476    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[14]_i_8__0_n_1601
+    SLICE_X63Y81         MUXF7 (Prop_muxf7_I0_O)      0.238   112.714 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[14]_i_3__0/O
+                         net (fo=1, routed)           0.636   113.350    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[14]_i_3__0_n_1601
+    SLICE_X62Y81         LUT6 (Prop_lut6_I1_O)        0.298   113.648 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[14]_i_1__1/O
+                         net (fo=1, routed)           0.000   113.648    u_system/scan_cpu.u_cpu/U_regs/PORT_A/ram[31]_1[14]
+    SLICE_X62Y81         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[14]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c1 rise edge)       150.000   150.000 r  
+                                                      0.000   150.000 r  board_clk (IN)
+                         net (fo=0)                   0.924   150.924    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.583   147.341 r  u_clock/mmcm/CLKOUT1
+                         net (fo=1, routed)           1.874   149.215    u_clock/c1
+    BUFGCTRL_X0Y18       BUFG (Prop_bufg_I_O)         0.091   149.306 r  u_clock/u_phi1/O
+                         net (fo=66, routed)          1.496   150.802    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[31]_1
+    SLICE_X62Y81         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[14]/C
+                         clock pessimism             -0.177   150.625    
+                         clock uncertainty           -0.358   150.267    
+    SLICE_X62Y81         FDRE (Setup_fdre_C_D)        0.029   150.296    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[14]
+  -------------------------------------------------------------------
+                         required time                        150.296    
+                         arrival time                        -113.648    
+  -------------------------------------------------------------------
+                         slack                                 36.648    
+
+Slack (MET) :             36.662ns  (required time - arrival time)
+  Source:                 u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C
+                            (falling edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[18]/D
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@150.000ns fall@200.000ns period=200.000ns})
+  Path Group:             c1
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            50.000ns  (c1 rise@150.000ns - c0 fall@100.000ns)
+  Data Path Delay:        12.859ns  (logic 1.243ns (9.667%)  route 11.616ns (90.333%))
+  Logic Levels:           4  (LUT2=1 LUT6=2 MUXF7=1)
+  Clock Path Skew:        -0.150ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.804ns = ( 150.804 - 150.000 ) 
+    Source Clock Delay      (SCD):    0.778ns = ( 100.778 - 100.000 ) 
+    Clock Pessimism Removal (CPR):    -0.177ns
+  Clock Uncertainty:      0.358ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.266ns
+    Phase Error              (PE):    0.120ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 fall edge)       100.000   100.000 f  
+                                                      0.000   100.000 f  board_clk (IN)
+                         net (fo=0)                   0.973   100.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    97.164 f  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    99.133    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    99.229 f  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.549   100.778    u_system/scan_cpu.u_cpu/clk
+    SLICE_X45Y62         FDCE                                         r  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X45Y62         FDCE (Prop_fdce_C_Q)         0.459   101.237 f  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/Q
+                         net (fo=89, routed)          3.165   104.402    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_cop0_sel_reg[0][0]
+    SLICE_X57Y57         LUT2 (Prop_lut2_I1_O)        0.124   104.526 r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_exception[4]_i_7/O
+                         net (fo=269, routed)         7.649   112.175    u_system/scan_cpu.u_cpu/U_regs/PORT_A/a_rs[1]
+    SLICE_X61Y84         LUT6 (Prop_lut6_I2_O)        0.124   112.299 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[18]_i_10__0/O
+                         net (fo=1, routed)           0.000   112.299    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[18]_i_10__0_n_1601
+    SLICE_X61Y84         MUXF7 (Prop_muxf7_I0_O)      0.238   112.537 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[18]_i_4__0/O
+                         net (fo=1, routed)           0.802   113.338    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[18]_i_4__0_n_1601
+    SLICE_X61Y83         LUT6 (Prop_lut6_I3_O)        0.298   113.636 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[18]_i_1__1/O
+                         net (fo=1, routed)           0.000   113.636    u_system/scan_cpu.u_cpu/U_regs/PORT_A/ram[31]_1[18]
+    SLICE_X61Y83         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[18]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c1 rise edge)       150.000   150.000 r  
+                                                      0.000   150.000 r  board_clk (IN)
+                         net (fo=0)                   0.924   150.924    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.583   147.341 r  u_clock/mmcm/CLKOUT1
+                         net (fo=1, routed)           1.874   149.215    u_clock/c1
+    BUFGCTRL_X0Y18       BUFG (Prop_bufg_I_O)         0.091   149.306 r  u_clock/u_phi1/O
+                         net (fo=66, routed)          1.498   150.804    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[31]_1
+    SLICE_X61Y83         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[18]/C
+                         clock pessimism             -0.177   150.627    
+                         clock uncertainty           -0.358   150.269    
+    SLICE_X61Y83         FDRE (Setup_fdre_C_D)        0.029   150.298    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[18]
+  -------------------------------------------------------------------
+                         required time                        150.298    
+                         arrival time                        -113.636    
+  -------------------------------------------------------------------
+                         slack                                 36.662    
+
+Slack (MET) :             36.771ns  (required time - arrival time)
+  Source:                 u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C
+                            (falling edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[30]/D
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@150.000ns fall@200.000ns period=200.000ns})
+  Path Group:             c1
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            50.000ns  (c1 rise@150.000ns - c0 fall@100.000ns)
+  Data Path Delay:        12.751ns  (logic 1.250ns (9.803%)  route 11.501ns (90.197%))
+  Logic Levels:           4  (LUT2=1 LUT6=2 MUXF7=1)
+  Clock Path Skew:        -0.150ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.804ns = ( 150.804 - 150.000 ) 
+    Source Clock Delay      (SCD):    0.778ns = ( 100.778 - 100.000 ) 
+    Clock Pessimism Removal (CPR):    -0.177ns
+  Clock Uncertainty:      0.358ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.266ns
+    Phase Error              (PE):    0.120ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 fall edge)       100.000   100.000 f  
+                                                      0.000   100.000 f  board_clk (IN)
+                         net (fo=0)                   0.973   100.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    97.164 f  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    99.133    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    99.229 f  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.549   100.778    u_system/scan_cpu.u_cpu/clk
+    SLICE_X45Y62         FDCE                                         r  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X45Y62         FDCE (Prop_fdce_C_Q)         0.459   101.237 f  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/Q
+                         net (fo=89, routed)          3.165   104.402    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_cop0_sel_reg[0][0]
+    SLICE_X57Y57         LUT2 (Prop_lut2_I1_O)        0.124   104.526 r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_exception[4]_i_7/O
+                         net (fo=269, routed)         7.617   112.143    u_system/scan_cpu.u_cpu/U_regs/PORT_A/a_rs[1]
+    SLICE_X59Y82         LUT6 (Prop_lut6_I2_O)        0.124   112.267 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[30]_i_11__0/O
+                         net (fo=1, routed)           0.000   112.267    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[30]_i_11__0_n_1601
+    SLICE_X59Y82         MUXF7 (Prop_muxf7_I1_O)      0.245   112.512 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[30]_i_4__0/O
+                         net (fo=1, routed)           0.719   113.231    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[30]_i_4__0_n_1601
+    SLICE_X61Y83         LUT6 (Prop_lut6_I3_O)        0.298   113.529 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[30]_i_1__1/O
+                         net (fo=1, routed)           0.000   113.529    u_system/scan_cpu.u_cpu/U_regs/PORT_A/ram[31]_1[30]
+    SLICE_X61Y83         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[30]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c1 rise edge)       150.000   150.000 r  
+                                                      0.000   150.000 r  board_clk (IN)
+                         net (fo=0)                   0.924   150.924    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.583   147.341 r  u_clock/mmcm/CLKOUT1
+                         net (fo=1, routed)           1.874   149.215    u_clock/c1
+    BUFGCTRL_X0Y18       BUFG (Prop_bufg_I_O)         0.091   149.306 r  u_clock/u_phi1/O
+                         net (fo=66, routed)          1.498   150.804    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[31]_1
+    SLICE_X61Y83         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[30]/C
+                         clock pessimism             -0.177   150.627    
+                         clock uncertainty           -0.358   150.269    
+    SLICE_X61Y83         FDRE (Setup_fdre_C_D)        0.031   150.300    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[30]
+  -------------------------------------------------------------------
+                         required time                        150.300    
+                         arrival time                        -113.529    
+  -------------------------------------------------------------------
+                         slack                                 36.771    
+
+Slack (MET) :             36.822ns  (required time - arrival time)
+  Source:                 u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C
+                            (falling edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[21]/D
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@150.000ns fall@200.000ns period=200.000ns})
+  Path Group:             c1
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            50.000ns  (c1 rise@150.000ns - c0 fall@100.000ns)
+  Data Path Delay:        12.637ns  (logic 1.246ns (9.860%)  route 11.391ns (90.140%))
+  Logic Levels:           4  (LUT2=1 LUT5=1 LUT6=1 MUXF7=1)
+  Clock Path Skew:        -0.214ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.740ns = ( 150.740 - 150.000 ) 
+    Source Clock Delay      (SCD):    0.778ns = ( 100.778 - 100.000 ) 
+    Clock Pessimism Removal (CPR):    -0.177ns
+  Clock Uncertainty:      0.358ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.266ns
+    Phase Error              (PE):    0.120ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 fall edge)       100.000   100.000 f  
+                                                      0.000   100.000 f  board_clk (IN)
+                         net (fo=0)                   0.973   100.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    97.164 f  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    99.133    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    99.229 f  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.549   100.778    u_system/scan_cpu.u_cpu/clk
+    SLICE_X45Y62         FDCE                                         r  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X45Y62         FDCE (Prop_fdce_C_Q)         0.459   101.237 f  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/Q
+                         net (fo=89, routed)          3.165   104.402    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_cop0_sel_reg[0][0]
+    SLICE_X57Y57         LUT2 (Prop_lut2_I1_O)        0.124   104.526 r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_exception[4]_i_7/O
+                         net (fo=269, routed)         7.328   111.854    u_system/scan_cpu.u_cpu/U_regs/PORT_A/a_rs[1]
+    SLICE_X42Y88         LUT5 (Prop_lut5_I2_O)        0.124   111.978 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[21]_i_12__0/O
+                         net (fo=1, routed)           0.000   111.978    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[21]_i_12__0_n_1601
+    SLICE_X42Y88         MUXF7 (Prop_muxf7_I0_O)      0.241   112.219 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[21]_i_5__0/O
+                         net (fo=1, routed)           0.897   113.116    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[21]_i_5__0_n_1601
+    SLICE_X49Y87         LUT6 (Prop_lut6_I5_O)        0.298   113.414 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[21]_i_1__1/O
+                         net (fo=1, routed)           0.000   113.414    u_system/scan_cpu.u_cpu/U_regs/PORT_A/ram[31]_1[21]
+    SLICE_X49Y87         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[21]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c1 rise edge)       150.000   150.000 r  
+                                                      0.000   150.000 r  board_clk (IN)
+                         net (fo=0)                   0.924   150.924    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.583   147.341 r  u_clock/mmcm/CLKOUT1
+                         net (fo=1, routed)           1.874   149.215    u_clock/c1
+    BUFGCTRL_X0Y18       BUFG (Prop_bufg_I_O)         0.091   149.306 r  u_clock/u_phi1/O
+                         net (fo=66, routed)          1.434   150.740    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[31]_1
+    SLICE_X49Y87         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[21]/C
+                         clock pessimism             -0.177   150.563    
+                         clock uncertainty           -0.358   150.205    
+    SLICE_X49Y87         FDRE (Setup_fdre_C_D)        0.031   150.236    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[21]
+  -------------------------------------------------------------------
+                         required time                        150.236    
+                         arrival time                        -113.414    
+  -------------------------------------------------------------------
+                         slack                                 36.822    
+
+Slack (MET) :             37.145ns  (required time - arrival time)
+  Source:                 u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C
+                            (falling edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[17]/D
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@150.000ns fall@200.000ns period=200.000ns})
+  Path Group:             c1
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            50.000ns  (c1 rise@150.000ns - c0 fall@100.000ns)
+  Data Path Delay:        12.313ns  (logic 1.246ns (10.120%)  route 11.067ns (89.880%))
+  Logic Levels:           4  (LUT2=1 LUT6=2 MUXF7=1)
+  Clock Path Skew:        -0.215ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.739ns = ( 150.739 - 150.000 ) 
+    Source Clock Delay      (SCD):    0.778ns = ( 100.778 - 100.000 ) 
+    Clock Pessimism Removal (CPR):    -0.177ns
+  Clock Uncertainty:      0.358ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.266ns
+    Phase Error              (PE):    0.120ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 fall edge)       100.000   100.000 f  
+                                                      0.000   100.000 f  board_clk (IN)
+                         net (fo=0)                   0.973   100.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    97.164 f  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    99.133    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    99.229 f  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.549   100.778    u_system/scan_cpu.u_cpu/clk
+    SLICE_X45Y62         FDCE                                         r  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X45Y62         FDCE (Prop_fdce_C_Q)         0.459   101.237 f  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/Q
+                         net (fo=89, routed)          3.165   104.402    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_cop0_sel_reg[0][0]
+    SLICE_X57Y57         LUT2 (Prop_lut2_I1_O)        0.124   104.526 r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_exception[4]_i_7/O
+                         net (fo=269, routed)         6.960   111.486    u_system/scan_cpu.u_cpu/U_regs/PORT_A/a_rs[1]
+    SLICE_X54Y86         LUT6 (Prop_lut6_I2_O)        0.124   111.610 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[17]_i_8__0/O
+                         net (fo=1, routed)           0.000   111.610    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[17]_i_8__0_n_1601
+    SLICE_X54Y86         MUXF7 (Prop_muxf7_I0_O)      0.241   111.851 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[17]_i_3__0/O
+                         net (fo=1, routed)           0.941   112.792    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[17]_i_3__0_n_1601
+    SLICE_X55Y84         LUT6 (Prop_lut6_I1_O)        0.298   113.090 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[17]_i_1__1/O
+                         net (fo=1, routed)           0.000   113.090    u_system/scan_cpu.u_cpu/U_regs/PORT_A/ram[31]_1[17]
+    SLICE_X55Y84         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[17]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c1 rise edge)       150.000   150.000 r  
+                                                      0.000   150.000 r  board_clk (IN)
+                         net (fo=0)                   0.924   150.924    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.583   147.341 r  u_clock/mmcm/CLKOUT1
+                         net (fo=1, routed)           1.874   149.215    u_clock/c1
+    BUFGCTRL_X0Y18       BUFG (Prop_bufg_I_O)         0.091   149.306 r  u_clock/u_phi1/O
+                         net (fo=66, routed)          1.433   150.739    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[31]_1
+    SLICE_X55Y84         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[17]/C
+                         clock pessimism             -0.177   150.562    
+                         clock uncertainty           -0.358   150.204    
+    SLICE_X55Y84         FDRE (Setup_fdre_C_D)        0.031   150.235    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[17]
+  -------------------------------------------------------------------
+                         required time                        150.235    
+                         arrival time                        -113.090    
+  -------------------------------------------------------------------
+                         slack                                 37.145    
+
+Slack (MET) :             37.286ns  (required time - arrival time)
+  Source:                 u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C
+                            (falling edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[20]/D
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@150.000ns fall@200.000ns period=200.000ns})
+  Path Group:             c1
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            50.000ns  (c1 rise@150.000ns - c0 fall@100.000ns)
+  Data Path Delay:        12.172ns  (logic 1.250ns (10.269%)  route 10.922ns (89.731%))
+  Logic Levels:           4  (LUT2=1 LUT6=2 MUXF7=1)
+  Clock Path Skew:        -0.215ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.739ns = ( 150.739 - 150.000 ) 
+    Source Clock Delay      (SCD):    0.778ns = ( 100.778 - 100.000 ) 
+    Clock Pessimism Removal (CPR):    -0.177ns
+  Clock Uncertainty:      0.358ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.266ns
+    Phase Error              (PE):    0.120ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 fall edge)       100.000   100.000 f  
+                                                      0.000   100.000 f  board_clk (IN)
+                         net (fo=0)                   0.973   100.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    97.164 f  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    99.133    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    99.229 f  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.549   100.778    u_system/scan_cpu.u_cpu/clk
+    SLICE_X45Y62         FDCE                                         r  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X45Y62         FDCE (Prop_fdce_C_Q)         0.459   101.237 f  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/Q
+                         net (fo=89, routed)          3.165   104.402    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_cop0_sel_reg[0][0]
+    SLICE_X57Y57         LUT2 (Prop_lut2_I1_O)        0.124   104.526 r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_exception[4]_i_7/O
+                         net (fo=269, routed)         6.409   110.935    u_system/scan_cpu.u_cpu/U_regs/PORT_A/a_rs[1]
+    SLICE_X47Y85         LUT6 (Prop_lut6_I2_O)        0.124   111.059 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[20]_i_11__0/O
+                         net (fo=1, routed)           0.000   111.059    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[20]_i_11__0_n_1601
+    SLICE_X47Y85         MUXF7 (Prop_muxf7_I1_O)      0.245   111.304 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[20]_i_4__0/O
+                         net (fo=1, routed)           1.348   112.652    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[20]_i_4__0_n_1601
+    SLICE_X55Y84         LUT6 (Prop_lut6_I3_O)        0.298   112.950 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[20]_i_1__1/O
+                         net (fo=1, routed)           0.000   112.950    u_system/scan_cpu.u_cpu/U_regs/PORT_A/ram[31]_1[20]
+    SLICE_X55Y84         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[20]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c1 rise edge)       150.000   150.000 r  
+                                                      0.000   150.000 r  board_clk (IN)
+                         net (fo=0)                   0.924   150.924    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.583   147.341 r  u_clock/mmcm/CLKOUT1
+                         net (fo=1, routed)           1.874   149.215    u_clock/c1
+    BUFGCTRL_X0Y18       BUFG (Prop_bufg_I_O)         0.091   149.306 r  u_clock/u_phi1/O
+                         net (fo=66, routed)          1.433   150.739    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[31]_1
+    SLICE_X55Y84         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[20]/C
+                         clock pessimism             -0.177   150.562    
+                         clock uncertainty           -0.358   150.204    
+    SLICE_X55Y84         FDRE (Setup_fdre_C_D)        0.031   150.235    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[20]
+  -------------------------------------------------------------------
+                         required time                        150.235    
+                         arrival time                        -112.950    
+  -------------------------------------------------------------------
+                         slack                                 37.286    
+
+Slack (MET) :             37.440ns  (required time - arrival time)
+  Source:                 u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C
+                            (falling edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[27]/D
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@150.000ns fall@200.000ns period=200.000ns})
+  Path Group:             c1
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            50.000ns  (c1 rise@150.000ns - c0 fall@100.000ns)
+  Data Path Delay:        12.070ns  (logic 1.252ns (10.373%)  route 10.818ns (89.627%))
+  Logic Levels:           4  (LUT2=1 LUT6=2 MUXF7=1)
+  Clock Path Skew:        -0.211ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.743ns = ( 150.743 - 150.000 ) 
+    Source Clock Delay      (SCD):    0.778ns = ( 100.778 - 100.000 ) 
+    Clock Pessimism Removal (CPR):    -0.177ns
+  Clock Uncertainty:      0.358ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.266ns
+    Phase Error              (PE):    0.120ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 fall edge)       100.000   100.000 f  
+                                                      0.000   100.000 f  board_clk (IN)
+                         net (fo=0)                   0.973   100.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    97.164 f  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    99.133    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    99.229 f  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.549   100.778    u_system/scan_cpu.u_cpu/clk
+    SLICE_X45Y62         FDCE                                         r  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X45Y62         FDCE (Prop_fdce_C_Q)         0.459   101.237 f  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/Q
+                         net (fo=89, routed)          3.165   104.402    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_cop0_sel_reg[0][0]
+    SLICE_X57Y57         LUT2 (Prop_lut2_I1_O)        0.124   104.526 r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_exception[4]_i_7/O
+                         net (fo=269, routed)         6.670   111.196    u_system/scan_cpu.u_cpu/U_regs/PORT_A/a_rs[1]
+    SLICE_X50Y92         LUT6 (Prop_lut6_I2_O)        0.124   111.320 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[27]_i_9__0/O
+                         net (fo=1, routed)           0.000   111.320    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[27]_i_9__0_n_1601
+    SLICE_X50Y92         MUXF7 (Prop_muxf7_I1_O)      0.247   111.567 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[27]_i_3__0/O
+                         net (fo=1, routed)           0.982   112.549    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[27]_i_3__0_n_1601
+    SLICE_X54Y89         LUT6 (Prop_lut6_I1_O)        0.298   112.847 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[27]_i_1__1/O
+                         net (fo=1, routed)           0.000   112.847    u_system/scan_cpu.u_cpu/U_regs/PORT_A/ram[31]_1[27]
+    SLICE_X54Y89         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[27]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c1 rise edge)       150.000   150.000 r  
+                                                      0.000   150.000 r  board_clk (IN)
+                         net (fo=0)                   0.924   150.924    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.583   147.341 r  u_clock/mmcm/CLKOUT1
+                         net (fo=1, routed)           1.874   149.215    u_clock/c1
+    BUFGCTRL_X0Y18       BUFG (Prop_bufg_I_O)         0.091   149.306 r  u_clock/u_phi1/O
+                         net (fo=66, routed)          1.437   150.743    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[31]_1
+    SLICE_X54Y89         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[27]/C
+                         clock pessimism             -0.177   150.566    
+                         clock uncertainty           -0.358   150.208    
+    SLICE_X54Y89         FDRE (Setup_fdre_C_D)        0.079   150.287    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[27]
+  -------------------------------------------------------------------
+                         required time                        150.287    
+                         arrival time                        -112.847    
+  -------------------------------------------------------------------
+                         slack                                 37.440    
+
+Slack (MET) :             37.613ns  (required time - arrival time)
+  Source:                 u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C
+                            (falling edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[25]/D
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@150.000ns fall@200.000ns period=200.000ns})
+  Path Group:             c1
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            50.000ns  (c1 rise@150.000ns - c0 fall@100.000ns)
+  Data Path Delay:        11.899ns  (logic 1.252ns (10.522%)  route 10.647ns (89.478%))
+  Logic Levels:           4  (LUT2=1 LUT6=2 MUXF7=1)
+  Clock Path Skew:        -0.211ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.743ns = ( 150.743 - 150.000 ) 
+    Source Clock Delay      (SCD):    0.778ns = ( 100.778 - 100.000 ) 
+    Clock Pessimism Removal (CPR):    -0.177ns
+  Clock Uncertainty:      0.358ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.266ns
+    Phase Error              (PE):    0.120ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 fall edge)       100.000   100.000 f  
+                                                      0.000   100.000 f  board_clk (IN)
+                         net (fo=0)                   0.973   100.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    97.164 f  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    99.133    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    99.229 f  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.549   100.778    u_system/scan_cpu.u_cpu/clk
+    SLICE_X45Y62         FDCE                                         r  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X45Y62         FDCE (Prop_fdce_C_Q)         0.459   101.237 f  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/Q
+                         net (fo=89, routed)          3.165   104.402    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_cop0_sel_reg[0][0]
+    SLICE_X57Y57         LUT2 (Prop_lut2_I1_O)        0.124   104.526 r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_exception[4]_i_7/O
+                         net (fo=269, routed)         6.740   111.266    u_system/scan_cpu.u_cpu/U_regs/PORT_A/a_rs[1]
+    SLICE_X52Y90         LUT6 (Prop_lut6_I2_O)        0.124   111.390 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[25]_i_9__0/O
+                         net (fo=1, routed)           0.000   111.390    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[25]_i_9__0_n_1601
+    SLICE_X52Y90         MUXF7 (Prop_muxf7_I1_O)      0.247   111.637 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[25]_i_3__0/O
+                         net (fo=1, routed)           0.741   112.379    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[25]_i_3__0_n_1601
+    SLICE_X54Y89         LUT6 (Prop_lut6_I1_O)        0.298   112.677 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[25]_i_1__1/O
+                         net (fo=1, routed)           0.000   112.677    u_system/scan_cpu.u_cpu/U_regs/PORT_A/ram[31]_1[25]
+    SLICE_X54Y89         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[25]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c1 rise edge)       150.000   150.000 r  
+                                                      0.000   150.000 r  board_clk (IN)
+                         net (fo=0)                   0.924   150.924    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.583   147.341 r  u_clock/mmcm/CLKOUT1
+                         net (fo=1, routed)           1.874   149.215    u_clock/c1
+    BUFGCTRL_X0Y18       BUFG (Prop_bufg_I_O)         0.091   149.306 r  u_clock/u_phi1/O
+                         net (fo=66, routed)          1.437   150.743    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[31]_1
+    SLICE_X54Y89         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[25]/C
+                         clock pessimism             -0.177   150.566    
+                         clock uncertainty           -0.358   150.208    
+    SLICE_X54Y89         FDRE (Setup_fdre_C_D)        0.081   150.289    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[25]
+  -------------------------------------------------------------------
+                         required time                        150.289    
+                         arrival time                        -112.677    
+  -------------------------------------------------------------------
+                         slack                                 37.613    
+
+Slack (MET) :             37.787ns  (required time - arrival time)
+  Source:                 u_system/scan_cpu.u_cpu/isolation_hold_reg_rep__0/C
+                            (falling edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/U_regs/PORT_B/q_reg[20]/D
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@150.000ns fall@200.000ns period=200.000ns})
+  Path Group:             c1
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            50.000ns  (c1 rise@150.000ns - c0 fall@100.000ns)
+  Data Path Delay:        11.723ns  (logic 1.158ns (9.878%)  route 10.565ns (90.122%))
+  Logic Levels:           3  (LUT2=1 LUT6=1 MUXF7=1)
+  Clock Path Skew:        -0.213ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.741ns = ( 150.741 - 150.000 ) 
+    Source Clock Delay      (SCD):    0.778ns = ( 100.778 - 100.000 ) 
+    Clock Pessimism Removal (CPR):    -0.177ns
+  Clock Uncertainty:      0.358ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.266ns
+    Phase Error              (PE):    0.120ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 fall edge)       100.000   100.000 f  
+                                                      0.000   100.000 f  board_clk (IN)
+                         net (fo=0)                   0.973   100.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    97.164 f  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    99.133    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    99.229 f  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.549   100.778    u_system/scan_cpu.u_cpu/clk
+    SLICE_X45Y62         FDCE                                         r  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep__0/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X45Y62         FDCE (Prop_fdce_C_Q)         0.459   101.237 f  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep__0/Q
+                         net (fo=91, routed)          2.371   103.608    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_exception_reg[2]
+    SLICE_X62Y63         LUT2 (Prop_lut2_I1_O)        0.124   103.732 r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_a_c[2]_i_2/O
+                         net (fo=148, routed)         6.954   110.686    u_system/scan_cpu.u_cpu/U_regs/PORT_A/a_rt[2]
+    SLICE_X47Y85         MUXF7 (Prop_muxf7_S_O)       0.276   110.962 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[20]_i_4/O
+                         net (fo=1, routed)           1.240   112.202    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[20]_i_4_n_1601
+    SLICE_X56Y85         LUT6 (Prop_lut6_I3_O)        0.299   112.501 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[20]_i_1__0/O
+                         net (fo=1, routed)           0.000   112.501    u_system/scan_cpu.u_cpu/U_regs/PORT_B/D[20]
+    SLICE_X56Y85         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_B/q_reg[20]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c1 rise edge)       150.000   150.000 r  
+                                                      0.000   150.000 r  board_clk (IN)
+                         net (fo=0)                   0.924   150.924    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.583   147.341 r  u_clock/mmcm/CLKOUT1
+                         net (fo=1, routed)           1.874   149.215    u_clock/c1
+    BUFGCTRL_X0Y18       BUFG (Prop_bufg_I_O)         0.091   149.306 r  u_clock/u_phi1/O
+                         net (fo=66, routed)          1.435   150.741    u_system/scan_cpu.u_cpu/U_regs/PORT_B/q_reg[0]_0
+    SLICE_X56Y85         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_B/q_reg[20]/C
+                         clock pessimism             -0.177   150.564    
+                         clock uncertainty           -0.358   150.206    
+    SLICE_X56Y85         FDRE (Setup_fdre_C_D)        0.081   150.287    u_system/scan_cpu.u_cpu/U_regs/PORT_B/q_reg[20]
+  -------------------------------------------------------------------
+                         required time                        150.287    
+                         arrival time                        -112.501    
+  -------------------------------------------------------------------
+                         slack                                 37.787    
+
+Slack (MET) :             37.958ns  (required time - arrival time)
+  Source:                 u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C
+                            (falling edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[28]/D
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@150.000ns fall@200.000ns period=200.000ns})
+  Path Group:             c1
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            50.000ns  (c1 rise@150.000ns - c0 fall@100.000ns)
+  Data Path Delay:        11.618ns  (logic 1.246ns (10.725%)  route 10.372ns (89.275%))
+  Logic Levels:           4  (LUT2=1 LUT5=1 LUT6=1 MUXF7=1)
+  Clock Path Skew:        -0.145ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.809ns = ( 150.809 - 150.000 ) 
+    Source Clock Delay      (SCD):    0.778ns = ( 100.778 - 100.000 ) 
+    Clock Pessimism Removal (CPR):    -0.177ns
+  Clock Uncertainty:      0.358ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.266ns
+    Phase Error              (PE):    0.120ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 fall edge)       100.000   100.000 f  
+                                                      0.000   100.000 f  board_clk (IN)
+                         net (fo=0)                   0.973   100.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    97.164 f  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    99.133    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    99.229 f  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.549   100.778    u_system/scan_cpu.u_cpu/clk
+    SLICE_X45Y62         FDCE                                         r  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X45Y62         FDCE (Prop_fdce_C_Q)         0.459   101.237 f  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/Q
+                         net (fo=89, routed)          3.165   104.402    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_cop0_sel_reg[0][0]
+    SLICE_X57Y57         LUT2 (Prop_lut2_I1_O)        0.124   104.526 r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_exception[4]_i_7/O
+                         net (fo=269, routed)         6.116   110.642    u_system/scan_cpu.u_cpu/U_regs/PORT_A/a_rs[1]
+    SLICE_X54Y91         LUT5 (Prop_lut5_I2_O)        0.124   110.766 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[28]_i_12__0/O
+                         net (fo=1, routed)           0.000   110.766    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[28]_i_12__0_n_1601
+    SLICE_X54Y91         MUXF7 (Prop_muxf7_I0_O)      0.241   111.007 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[28]_i_5__0/O
+                         net (fo=1, routed)           1.091   112.098    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[28]_i_5__0_n_1601
+    SLICE_X60Y90         LUT6 (Prop_lut6_I5_O)        0.298   112.396 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[28]_i_1__1/O
+                         net (fo=1, routed)           0.000   112.396    u_system/scan_cpu.u_cpu/U_regs/PORT_A/ram[31]_1[28]
+    SLICE_X60Y90         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[28]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c1 rise edge)       150.000   150.000 r  
+                                                      0.000   150.000 r  board_clk (IN)
+                         net (fo=0)                   0.924   150.924    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.583   147.341 r  u_clock/mmcm/CLKOUT1
+                         net (fo=1, routed)           1.874   149.215    u_clock/c1
+    BUFGCTRL_X0Y18       BUFG (Prop_bufg_I_O)         0.091   149.306 r  u_clock/u_phi1/O
+                         net (fo=66, routed)          1.503   150.809    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[31]_1
+    SLICE_X60Y90         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[28]/C
+                         clock pessimism             -0.177   150.632    
+                         clock uncertainty           -0.358   150.274    
+    SLICE_X60Y90         FDRE (Setup_fdre_C_D)        0.079   150.353    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[28]
+  -------------------------------------------------------------------
+                         required time                        150.353    
+                         arrival time                        -112.396    
+  -------------------------------------------------------------------
+                         slack                                 37.958    
+
+Slack (MET) :             38.267ns  (required time - arrival time)
+  Source:                 u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C
+                            (falling edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[13]/D
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@150.000ns fall@200.000ns period=200.000ns})
+  Path Group:             c1
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            50.000ns  (c1 rise@150.000ns - c0 fall@100.000ns)
+  Data Path Delay:        11.295ns  (logic 1.177ns (10.420%)  route 10.118ns (89.579%))
+  Logic Levels:           3  (LUT2=1 LUT6=1 MUXF7=1)
+  Clock Path Skew:        -0.157ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.797ns = ( 150.797 - 150.000 ) 
+    Source Clock Delay      (SCD):    0.778ns = ( 100.778 - 100.000 ) 
+    Clock Pessimism Removal (CPR):    -0.177ns
+  Clock Uncertainty:      0.358ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.266ns
+    Phase Error              (PE):    0.120ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 fall edge)       100.000   100.000 f  
+                                                      0.000   100.000 f  board_clk (IN)
+                         net (fo=0)                   0.973   100.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    97.164 f  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    99.133    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    99.229 f  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.549   100.778    u_system/scan_cpu.u_cpu/clk
+    SLICE_X45Y62         FDCE                                         r  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X45Y62         FDCE (Prop_fdce_C_Q)         0.459   101.237 f  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/Q
+                         net (fo=89, routed)          3.082   104.319    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_cop0_sel_reg[0][0]
+    SLICE_X57Y56         LUT2 (Prop_lut2_I1_O)        0.124   104.443 r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/q[31]_i_8/O
+                         net (fo=140, routed)         6.393   110.836    u_system/scan_cpu.u_cpu/U_regs/PORT_A/a_rs[2]
+    SLICE_X61Y76         MUXF7 (Prop_muxf7_S_O)       0.296   111.132 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[13]_i_4__0/O
+                         net (fo=1, routed)           0.642   111.775    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[13]_i_4__0_n_1601
+    SLICE_X64Y73         LUT6 (Prop_lut6_I3_O)        0.298   112.073 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[13]_i_1__1/O
+                         net (fo=1, routed)           0.000   112.073    u_system/scan_cpu.u_cpu/U_regs/PORT_A/ram[31]_1[13]
+    SLICE_X64Y73         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[13]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c1 rise edge)       150.000   150.000 r  
+                                                      0.000   150.000 r  board_clk (IN)
+                         net (fo=0)                   0.924   150.924    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.583   147.341 r  u_clock/mmcm/CLKOUT1
+                         net (fo=1, routed)           1.874   149.215    u_clock/c1
+    BUFGCTRL_X0Y18       BUFG (Prop_bufg_I_O)         0.091   149.306 r  u_clock/u_phi1/O
+                         net (fo=66, routed)          1.491   150.797    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[31]_1
+    SLICE_X64Y73         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[13]/C
+                         clock pessimism             -0.177   150.620    
+                         clock uncertainty           -0.358   150.262    
+    SLICE_X64Y73         FDRE (Setup_fdre_C_D)        0.077   150.339    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[13]
+  -------------------------------------------------------------------
+                         required time                        150.339    
+                         arrival time                        -112.073    
+  -------------------------------------------------------------------
+                         slack                                 38.267    
+
+Slack (MET) :             38.375ns  (required time - arrival time)
+  Source:                 u_system/scan_cpu.u_cpu/isolation_hold_reg_rep__0/C
+                            (falling edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/U_regs/PORT_B/q_reg[21]/D
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@150.000ns fall@200.000ns period=200.000ns})
+  Path Group:             c1
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            50.000ns  (c1 rise@150.000ns - c0 fall@100.000ns)
+  Data Path Delay:        11.082ns  (logic 1.172ns (10.576%)  route 9.910ns (89.424%))
+  Logic Levels:           3  (LUT2=1 LUT6=1 MUXF7=1)
+  Clock Path Skew:        -0.214ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.740ns = ( 150.740 - 150.000 ) 
+    Source Clock Delay      (SCD):    0.778ns = ( 100.778 - 100.000 ) 
+    Clock Pessimism Removal (CPR):    -0.177ns
+  Clock Uncertainty:      0.358ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.266ns
+    Phase Error              (PE):    0.120ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 fall edge)       100.000   100.000 f  
+                                                      0.000   100.000 f  board_clk (IN)
+                         net (fo=0)                   0.973   100.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    97.164 f  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    99.133    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    99.229 f  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.549   100.778    u_system/scan_cpu.u_cpu/clk
+    SLICE_X45Y62         FDCE                                         r  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep__0/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X45Y62         FDCE (Prop_fdce_C_Q)         0.459   101.237 f  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep__0/Q
+                         net (fo=91, routed)          2.371   103.608    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_exception_reg[2]
+    SLICE_X62Y63         LUT2 (Prop_lut2_I1_O)        0.124   103.732 r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_a_c[2]_i_2/O
+                         net (fo=148, routed)         6.360   110.092    u_system/scan_cpu.u_cpu/U_regs/PORT_A/a_rt[2]
+    SLICE_X42Y88         MUXF7 (Prop_muxf7_S_O)       0.292   110.384 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[21]_i_5/O
+                         net (fo=1, routed)           1.178   111.562    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[21]_i_5_n_1601
+    SLICE_X49Y87         LUT6 (Prop_lut6_I5_O)        0.297   111.859 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[21]_i_1__0/O
+                         net (fo=1, routed)           0.000   111.859    u_system/scan_cpu.u_cpu/U_regs/PORT_B/D[21]
+    SLICE_X49Y87         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_B/q_reg[21]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c1 rise edge)       150.000   150.000 r  
+                                                      0.000   150.000 r  board_clk (IN)
+                         net (fo=0)                   0.924   150.924    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.583   147.341 r  u_clock/mmcm/CLKOUT1
+                         net (fo=1, routed)           1.874   149.215    u_clock/c1
+    BUFGCTRL_X0Y18       BUFG (Prop_bufg_I_O)         0.091   149.306 r  u_clock/u_phi1/O
+                         net (fo=66, routed)          1.434   150.740    u_system/scan_cpu.u_cpu/U_regs/PORT_B/q_reg[0]_0
+    SLICE_X49Y87         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_B/q_reg[21]/C
+                         clock pessimism             -0.177   150.563    
+                         clock uncertainty           -0.358   150.205    
+    SLICE_X49Y87         FDRE (Setup_fdre_C_D)        0.029   150.234    u_system/scan_cpu.u_cpu/U_regs/PORT_B/q_reg[21]
+  -------------------------------------------------------------------
+                         required time                        150.234    
+                         arrival time                        -111.859    
+  -------------------------------------------------------------------
+                         slack                                 38.375    
+
+Slack (MET) :             38.429ns  (required time - arrival time)
+  Source:                 u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C
+                            (falling edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[19]/D
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@150.000ns fall@200.000ns period=200.000ns})
+  Path Group:             c1
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            50.000ns  (c1 rise@150.000ns - c0 fall@100.000ns)
+  Data Path Delay:        11.094ns  (logic 1.177ns (10.610%)  route 9.917ns (89.390%))
+  Logic Levels:           3  (LUT2=1 LUT6=1 MUXF7=1)
+  Clock Path Skew:        -0.150ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.804ns = ( 150.804 - 150.000 ) 
+    Source Clock Delay      (SCD):    0.778ns = ( 100.778 - 100.000 ) 
+    Clock Pessimism Removal (CPR):    -0.177ns
+  Clock Uncertainty:      0.358ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.266ns
+    Phase Error              (PE):    0.120ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 fall edge)       100.000   100.000 f  
+                                                      0.000   100.000 f  board_clk (IN)
+                         net (fo=0)                   0.973   100.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    97.164 f  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    99.133    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    99.229 f  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.549   100.778    u_system/scan_cpu.u_cpu/clk
+    SLICE_X45Y62         FDCE                                         r  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X45Y62         FDCE (Prop_fdce_C_Q)         0.459   101.237 f  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/Q
+                         net (fo=89, routed)          3.082   104.319    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_cop0_sel_reg[0][0]
+    SLICE_X57Y56         LUT2 (Prop_lut2_I1_O)        0.124   104.443 r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/q[31]_i_8/O
+                         net (fo=140, routed)         5.876   110.319    u_system/scan_cpu.u_cpu/U_regs/PORT_A/a_rs[2]
+    SLICE_X63Y85         MUXF7 (Prop_muxf7_S_O)       0.296   110.615 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[19]_i_2__0/O
+                         net (fo=1, routed)           0.958   111.573    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[19]_i_2__0_n_1601
+    SLICE_X61Y83         LUT6 (Prop_lut6_I0_O)        0.298   111.871 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[19]_i_1__1/O
+                         net (fo=1, routed)           0.000   111.871    u_system/scan_cpu.u_cpu/U_regs/PORT_A/ram[31]_1[19]
+    SLICE_X61Y83         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[19]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c1 rise edge)       150.000   150.000 r  
+                                                      0.000   150.000 r  board_clk (IN)
+                         net (fo=0)                   0.924   150.924    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.583   147.341 r  u_clock/mmcm/CLKOUT1
+                         net (fo=1, routed)           1.874   149.215    u_clock/c1
+    BUFGCTRL_X0Y18       BUFG (Prop_bufg_I_O)         0.091   149.306 r  u_clock/u_phi1/O
+                         net (fo=66, routed)          1.498   150.804    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[31]_1
+    SLICE_X61Y83         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[19]/C
+                         clock pessimism             -0.177   150.627    
+                         clock uncertainty           -0.358   150.269    
+    SLICE_X61Y83         FDRE (Setup_fdre_C_D)        0.031   150.300    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[19]
+  -------------------------------------------------------------------
+                         required time                        150.300    
+                         arrival time                        -111.871    
+  -------------------------------------------------------------------
+                         slack                                 38.429    
+
+Slack (MET) :             38.438ns  (required time - arrival time)
+  Source:                 u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C
+                            (falling edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@100.000ns period=200.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[22]/D
+                            (rising edge-triggered cell FDRE clocked by c1  {rise@150.000ns fall@200.000ns period=200.000ns})
+  Path Group:             c1
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            50.000ns  (c1 rise@150.000ns - c0 fall@100.000ns)
+  Data Path Delay:        11.140ns  (logic 1.195ns (10.728%)  route 9.945ns (89.272%))
+  Logic Levels:           3  (LUT2=1 LUT6=1 MUXF7=1)
+  Clock Path Skew:        -0.145ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.809ns = ( 150.809 - 150.000 ) 
+    Source Clock Delay      (SCD):    0.778ns = ( 100.778 - 100.000 ) 
+    Clock Pessimism Removal (CPR):    -0.177ns
+  Clock Uncertainty:      0.358ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.266ns
+    Phase Error              (PE):    0.120ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 fall edge)       100.000   100.000 f  
+                                                      0.000   100.000 f  board_clk (IN)
+                         net (fo=0)                   0.973   100.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    97.164 f  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    99.133    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    99.229 f  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.549   100.778    u_system/scan_cpu.u_cpu/clk
+    SLICE_X45Y62         FDCE                                         r  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X45Y62         FDCE (Prop_fdce_C_Q)         0.459   101.237 f  u_system/scan_cpu.u_cpu/isolation_hold_reg_rep/Q
+                         net (fo=89, routed)          3.082   104.319    u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/EX_cop0_sel_reg[0][0]
+    SLICE_X57Y56         LUT2 (Prop_lut2_I1_O)        0.124   104.443 r  u_system/scan_cpu.u_cpu/PIPESTAGE_IF_RF/q[31]_i_8/O
+                         net (fo=140, routed)         6.043   110.486    u_system/scan_cpu.u_cpu/U_regs/PORT_A/a_rs[2]
+    SLICE_X64Y89         MUXF7 (Prop_muxf7_S_O)       0.314   110.800 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[22]_i_5__0/O
+                         net (fo=1, routed)           0.820   111.619    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[22]_i_5__0_n_1601
+    SLICE_X60Y90         LUT6 (Prop_lut6_I5_O)        0.298   111.917 r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q[22]_i_1__1/O
+                         net (fo=1, routed)           0.000   111.917    u_system/scan_cpu.u_cpu/U_regs/PORT_A/ram[31]_1[22]
+    SLICE_X60Y90         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[22]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c1 rise edge)       150.000   150.000 r  
+                                                      0.000   150.000 r  board_clk (IN)
+                         net (fo=0)                   0.924   150.924    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT1)
+                                                     -3.583   147.341 r  u_clock/mmcm/CLKOUT1
+                         net (fo=1, routed)           1.874   149.215    u_clock/c1
+    BUFGCTRL_X0Y18       BUFG (Prop_bufg_I_O)         0.091   149.306 r  u_clock/u_phi1/O
+                         net (fo=66, routed)          1.503   150.809    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[31]_1
+    SLICE_X60Y90         FDRE                                         r  u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[22]/C
+                         clock pessimism             -0.177   150.632    
+                         clock uncertainty           -0.358   150.274    
+    SLICE_X60Y90         FDRE (Setup_fdre_C_D)        0.081   150.355    u_system/scan_cpu.u_cpu/U_regs/PORT_A/q_reg[22]
+  -------------------------------------------------------------------
+                         required time                        150.355    
+                         arrival time                        -111.917    
+  -------------------------------------------------------------------
+                         slack                                 38.438    
+
+
+
+

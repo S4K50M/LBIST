@@ -1,5 +1,7 @@
 # VL405: Scan-Based Low-Switching LBIST for cMIPS32
 
+**Timing revision:** PASS: constrained OOC setup/hold/pulse and unconstrained-path checks. The latest analysis at 9.756097561 MHz is documented in [Timing_Closure](FPGA_Analysis/Timing_Closure/README.md). Earlier 50 MHz tables below remain labeled historical evidence.
+
 **Final submission report — repository S4K50M/LBIST.** Historical implementation baseline: commit `2c9b90c` (Phase 6A). Target: Basys 3 Artix-7 `xc7a35tcpg236-1`; tool: AMD Vivado/XSim 2025.1.1. All numerical experiment results below are derived from retained native logs/CSVs. FPGA figures use the final native reports, with analysis stage explicitly identified.
 
 ## 1. Abstract
@@ -60,7 +62,7 @@ The primary universe contains eight sites × SA0/SA1: increment_operand bits 2,3
 
 ## 13. Verification and experimental setup
 
-All accepted simulations remain below 100 ms simulated time. The full 256-pattern processor experiments finish at 661.6002 us. Original Phase 1–6A artifacts are retained. Finalization rechecks the archived 204 experiments against independent stimulus/response/MISR/activity models, rather than rewriting historical campaigns. Fresh native tests exercise generator/filter/controllers, scan, isolation, safe analyzer/router, functional equivalence, and production C against the verified reference. The production fixture checks functional ports, real scan interface and analyzer outputs at all CPU phases, while recording its own switching activity.
+All accepted simulations remain below 100 ms simulated time. The original 50 MHz, 256-pattern processor experiments finish at 661.6002 us. The fresh clock-revision experiments finish at 3.390701025 ms at 9.756097561 MHz; their nine-case summary is included in the timing revision below. Original Phase 1–6A artifacts are retained. Finalization rechecks the archived 204 experiments against independent stimulus/response/MISR/activity models, rather than rewriting historical campaigns. Fresh native tests exercise generator/filter/controllers, scan, isolation, safe analyzer/router, functional equivalence, and production C against the verified reference. The production fixture checks functional ports, real scan interface and analyzer outputs at all CPU phases, while recording its own switching activity.
 
 | Category | Passed | Total |
 | --- | --- | --- |
@@ -122,6 +124,8 @@ All five initial approaches reach 75% of the 16 eligible capture-input faults af
 Each test executes 256 × (64+1+64)=33,024 payload cycles:16,384 SHIFT,256 CAPTURE,16,384 UNLOAD. The native experiment has 33,080 rising edges, including 3 paused and 53 other setup/handshake/exit/reset/restart overhead edges. Completion is 200 ps after its final falling edge. Payload time at 50 MHz is 660.48 us; the full bench duration is 661.6002 us. The power window separately spans 610 ns–661150.001 ns, covering the complete payload plus the three pauses and excluding reset/restart. Threshold 516 cycles is an observed coverage prefix; the actual runs still execute all 256 patterns. The architecture uses non-overlapped unloading, so it does not claim an overlapped test-time improvement.
 
 ## 17. FPGA Implementation, Area Overhead and Power Estimation
+
+**Historical 50 MHz baseline:** The following original tables are preserved. The timing revision later in this section contains the current matched implementations.
 
 ### Comparable hardware and implementation boundary
 
@@ -195,9 +199,52 @@ WTM weights SHIFT transitions in 64 scanFFs. Vivado power includes clocks, proce
 
 All runs accept25°C ambient and typical process. Native supplies include 1.0 V Vccint / Vccbram and 1.8 V Vccaux. Generic Vivado thermal defaults (medium board/heatsink, 250 LFM airflow) are consistent across runs and are not a calibrated Basys3 thermal model. External memory, package I/O and regulator/board losses are excluded. Initial reporting-call failures were repaired using saved checkpoints; all final seven SAIF power exports and five detailed exports completed. The C synthesis log's obsolete CONFIGURATION generic warning is retained: actual elaboration binds DESIGN_CONFIG=2 and the post-route hierarchy check confirms the production router. The reproducible script uses the corrected generic name.
 
+### Final timing-closure revision
+
+9.756097561 MHz is the highest tested common timing-clean OOC point. Board reference 100 MHz; M=8, common divider=82, VCO=800 MHz; period=102.5 ns. Related quarter-duty phases remain unchanged. A virtual CPU I/O reference corrects the old external launch-latency model. Actual failing input hold paths are repaired with checked physical identity LUT delays; original processor/LBIST RTL is unchanged. Automatic MMCM/device uncertainty is used, with no false paths added beyond asynchronous reset assertion.
+
+| Configuration | LUT | FF | Latches | BRAM36Equivalent | DSP |
+| --- | --- | --- | --- | --- | --- |
+| baseline | 5220 | 2008 | 0 | 1 | 7 |
+| scan_enabled | 6138 | 3084 | 0 | 0 | 7 |
+| full_lbist | 6243 | 3215 | 0 | 0 | 7 |
+
+| Configuration | FrequencyMHz | WNS | TNS | WHS | THS | SetupFails | HoldFails | TimingClean |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| baseline | 9.756098 | 0.154 | 0 | 0.069 | 0 | 0 | 0 | True |
+| scan_enabled | 9.756098 | 1.12 | 0 | 0.001 | 0 | 0 | 0 | True |
+| full_lbist | 9.756098 | 0.155 | 0 | 0.007 | 0 | 0 | 0 | True |
+
+| Comparison | LUTPercent | FFPercent |
+| --- | --- | --- |
+| Scan/isolation vs original | 17.5862 | 53.5857 |
+| Full LBIST vs original | 19.5977 | 60.1096 |
+| LBIST addition vs scan | 1.7107 | 4.2477 |
+
+![Updated area](FPGA_Analysis/Timing_Closure/figures/area_comparison.png)
+
+The initial large-divider 5/10 MHz attempts were rejected by real MMCM duty/phase limits, despite ideal clock reports. The corrected legal sweep, cross-phase results, all failed attempts and exact clock attributes are retained in the [revision report](FPGA_Analysis/Timing_Closure/README.md). No frequency is inferred from 1/(20 ns−WNS). This is the highest tested common OOC point when all three rows are timing-clean, not a global or board-qualified maximum. Vivado warns about unlocated OOC ports without HD.PARTPIN_LOCS: external segments are not fully routed, and real external-interface timing is not established. The scan-enabled hold margin is only 0.001 ns. These results do not qualify a board implementation or supply additional timing margin.
+
+Nine fresh simulations passed at this clock: real UNISIM phase/duty verification, original/scan lwsw with and without stalls, all five complete production streams and the original Basic fault 1. Independent checking confirms all 256 captures, each prefix signature and measured activity counts. Original 50 MHz fault-campaign data remains historical; no expanded fault universe or new whole-processor coverage claim is introduced. Payload time is 3.384960000 ms for 33,024 cycles. Updated execution times and activity windows are recorded separately.
+
+| Approach | WTM | DynamicW | CommonLUT | CommonFF | AnnotationPercent | Confidence |
+| --- | --- | --- | --- | --- | --- | --- |
+| Direct | 50.1154 | 0.099 | 6243 | 3215 | 13.4087 | Medium |
+| Constant n=3 | 7.0665 | 0.099 | 6243 | 3215 | 13.4087 | Medium |
+| Basic | 19.9764 | 0.099 | 6243 | 3215 | 13.4087 | Medium |
+| Swap | 17.7531 | 0.099 | 6243 | 3215 | 13.4087 | Medium |
+| Moving | 19.8701 | 0.099 | 6243 | 3215 | 13.4087 | Medium |
+
+![Updated estimated power](FPGA_Analysis/Timing_Closure/figures/dynamic_power.png)
+
+![Fresh WTM versus estimated power](FPGA_Analysis/Timing_Closure/figures/wtm_power.png)
+
+Each power case uses fresh selected-clock activity on the same routed C netlist, not a 50 MHz SAIF reused with a new timing constraint. Partial matching and propagation/default assumptions remain visible; small 0.001 W report differences do not establish physical savings or a reliable ranking. Supply/ambient/process assumptions are consistent. All native utilization, timing, power, unmatched-net and register-Q annotation reports are available in Timing_Closure. Clock-only source changes, physical repair cells, unsupported 5 MHz quarter-duty generation and OOC interface assumptions are fully documented there.
+
+
 ## 18. Discussion and limitations
 
-The strongest result is reproducible control of scan switching with preserved capture ordering and safe completion handling on real cMIPS storage. The small fault universe saturates quickly and cannot distinguish coverage quality among the five approaches. It says little about random-pattern-resistant faults or broader datapath observability. The held instruction limits excitation, and only 64 of 720pipeline candidate bits are scanned. Other architectural state remains protected, not tested. A reset is required after destructive testing. Target quantization and finite sequence effects make measured WTM differ from theoretical targets. FPGA overhead depends on this virtual processor boundary and synthesis settings; timing failure and partial activity annotation must accompany any area/power figures. No 75% whole-processor coverage, measured energy savings, silicon measurement, post-route functional equivalence or successful board deployment is claimed.
+The strongest result is reproducible control of scan switching with preserved capture ordering and safe completion handling on real cMIPS storage. The small fault universe saturates quickly and cannot distinguish coverage quality among the five approaches. It says little about random-pattern-resistant faults or broader datapath observability. The held instruction limits excitation, and only 64 of 720pipeline candidate bits are scanned. Other architectural state remains protected, not tested. A reset is required after destructive testing. Target quantization and finite sequence effects make measured WTM differ from theoretical targets. FPGA overhead depends on this virtual processor boundary and synthesis settings; the historical 50 MHz timing failure, current narrow OOC timing margins, external-interface assumptions and partial activity annotation must accompany the corresponding area/power figures. No 75% whole-processor coverage, measured energy savings, silicon measurement, post-route functional equivalence or successful board deployment is claimed.
 
 ## 19. Conclusion
 

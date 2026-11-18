@@ -1,0 +1,1120 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.1.1 (win64) Build 6233196 Thu Sep 11 21:27:30 MDT 2025
+| Date         : Wed Nov 18 11:44:03 2026
+| Host         : LAPTOP-B852K4P2 running 64-bit major release  (build 9200)
+| Command      : report_timing -delay_type min -max_paths 20 -file {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/Timing_Closure/sweep/m10_d100/full_lbist/hold_paths.rpt}
+| Design       : final_fpga_top
+| Device       : 7a35t-cpg236
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (VIOLATED) :        -0.012ns  (arrival time - required time)
+  Source:                 irq[0]
+                            (input port clocked by virtual_cpu_io  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - virtual_cpu_io rise@0.000ns)
+  Data Path Delay:        0.924ns  (logic 0.000ns (0.000%)  route 0.924ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            0.500ns
+  Clock Path Skew:        0.778ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.778ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.302ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.200ns
+    Phase Error              (PE):    0.099ns
+    User Uncertainty         (UU):    0.100ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock virtual_cpu_io rise edge)
+                                                      0.000     0.000 r  
+                         ideal clock network latency
+                                                      0.000     0.000    
+                         input delay                  0.500     0.500    
+                                                      0.000     0.500 r  irq[0] (IN)
+                         net (fo=1, unset)            0.924     1.424    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[5]_1[0]
+    SLICE_X36Y89         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.973     0.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    -2.836 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    -0.867    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    -0.771 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.549     0.778    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/clk
+    SLICE_X36Y89         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[0]/C
+                         clock pessimism              0.000     0.778    
+                         clock uncertainty            0.302     1.079    
+    SLICE_X36Y89         FDRE (Hold_fdre_C_D)         0.357     1.436    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[0]
+  -------------------------------------------------------------------
+                         required time                         -1.436    
+                         arrival time                           1.424    
+  -------------------------------------------------------------------
+                         slack                                 -0.012    
+
+Slack (VIOLATED) :        -0.012ns  (arrival time - required time)
+  Source:                 irq[4]
+                            (input port clocked by virtual_cpu_io  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[4]/D
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - virtual_cpu_io rise@0.000ns)
+  Data Path Delay:        0.924ns  (logic 0.000ns (0.000%)  route 0.924ns (100.000%))
+  Logic Levels:           0  
+  Input Delay:            0.500ns
+  Clock Path Skew:        0.778ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.778ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.302ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.200ns
+    Phase Error              (PE):    0.099ns
+    User Uncertainty         (UU):    0.100ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock virtual_cpu_io rise edge)
+                                                      0.000     0.000 r  
+                         ideal clock network latency
+                                                      0.000     0.000    
+                         input delay                  0.500     0.500    
+                                                      0.000     0.500 r  irq[4] (IN)
+                         net (fo=1, unset)            0.924     1.424    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[5]_1[4]
+    SLICE_X37Y90         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.973     0.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    -2.836 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    -0.867    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    -0.771 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.549     0.778    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/clk
+    SLICE_X37Y90         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[4]/C
+                         clock pessimism              0.000     0.778    
+                         clock uncertainty            0.302     1.079    
+    SLICE_X37Y90         FDRE (Hold_fdre_C_D)         0.357     1.436    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[4]
+  -------------------------------------------------------------------
+                         required time                         -1.436    
+                         arrival time                           1.424    
+  -------------------------------------------------------------------
+                         slack                                 -0.012    
+
+Slack (MET) :             0.041ns  (arrival time - required time)
+  Source:                 start
+                            (input port clocked by virtual_cpu_io  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Destination:            u_system/lbist.u_ctrl/FSM_onehot_state_reg[3]/D
+                            (rising edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - virtual_cpu_io rise@0.000ns)
+  Data Path Delay:        1.024ns  (logic 0.100ns (9.762%)  route 0.924ns (90.238%))
+  Logic Levels:           1  (LUT6=1)
+  Input Delay:            0.500ns
+  Clock Path Skew:        0.852ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.852ns
+    Source Clock Delay      (SCD):    0.000ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+  Clock Uncertainty:      0.302ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.050ns
+    Discrete Jitter          (DJ):    0.200ns
+    Phase Error              (PE):    0.099ns
+    User Uncertainty         (UU):    0.100ns
+  Clock Domain Crossing:  Inter clock paths are considered valid unless explicitly excluded by timing constraints such as set_clock_groups or set_false_path.
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock virtual_cpu_io rise edge)
+                                                      0.000     0.000 r  
+                         ideal clock network latency
+                                                      0.000     0.000    
+                         input delay                  0.500     0.500    
+                                                      0.000     0.500 f  start (IN)
+                         net (fo=10, unset)           0.924     1.424    u_system/lbist.u_ctrl/start
+    SLICE_X60Y56         LUT6 (Prop_lut6_I1_O)        0.100     1.524 r  u_system/lbist.u_ctrl/FSM_onehot_state[3]_i_1/O
+                         net (fo=1, routed)           0.000     1.524    u_system/lbist.u_ctrl/FSM_onehot_state[3]_i_1_n_1601
+    SLICE_X60Y56         FDCE                                         r  u_system/lbist.u_ctrl/FSM_onehot_state_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.973     0.973    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.809    -2.836 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           1.968    -0.867    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.096    -0.771 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        1.623     0.852    u_system/lbist.u_ctrl/clk
+    SLICE_X60Y56         FDCE                                         r  u_system/lbist.u_ctrl/FSM_onehot_state_reg[3]/C
+                         clock pessimism              0.000     0.852    
+                         clock uncertainty            0.302     1.153    
+    SLICE_X60Y56         FDCE (Hold_fdce_C_D)         0.330     1.483    u_system/lbist.u_ctrl/FSM_onehot_state_reg[3]
+  -------------------------------------------------------------------
+                         required time                         -1.483    
+                         arrival time                           1.524    
+  -------------------------------------------------------------------
+                         slack                                  0.041    
+
+Slack (MET) :             0.050ns  (arrival time - required time)
+  Source:                 u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_B_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_B_data_reg[3]/D
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - c0 rise@0.000ns)
+  Data Path Delay:        0.254ns  (logic 0.186ns (73.136%)  route 0.068ns (26.864%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.345ns
+    Source Clock Delay      (SCD):    0.330ns
+    Clock Pessimism Removal (CPR):    0.002ns
+  Clock Uncertainty:      0.100ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.410     0.410    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.310    -0.899 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.656    -0.243    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.026    -0.217 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.547     0.330    u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/clk
+    SLICE_X36Y73         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_B_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X36Y73         FDRE (Prop_fdre_C_Q)         0.141     0.471 r  u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_B_reg[3]/Q
+                         net (fo=3, routed)           0.068     0.539    u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/Q[3]
+    SLICE_X37Y73         LUT5 (Prop_lut5_I3_O)        0.045     0.584 r  u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/WB_B_data[3]_i_1/O
+                         net (fo=1, routed)           0.000     0.584    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_B_data_reg[31]_0[3]
+    SLICE_X37Y73         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_B_data_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.432     0.432    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.638    -1.206 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.710    -0.496    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.029    -0.467 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.812     0.345    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/clk
+    SLICE_X37Y73         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_B_data_reg[3]/C
+                         clock pessimism             -0.002     0.343    
+                         clock uncertainty            0.100     0.443    
+    SLICE_X37Y73         FDRE (Hold_fdre_C_D)         0.091     0.534    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_B_data_reg[3]
+  -------------------------------------------------------------------
+                         required time                         -0.534    
+                         arrival time                           0.584    
+  -------------------------------------------------------------------
+                         slack                                  0.050    
+
+Slack (MET) :             0.054ns  (arrival time - required time)
+  Source:                 u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_pc_p8_reg[9]/C
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_pc_p8_reg[9]/D
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - c0 rise@0.000ns)
+  Data Path Delay:        0.263ns  (logic 0.141ns (53.597%)  route 0.122ns (46.403%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.033ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.349ns
+    Source Clock Delay      (SCD):    0.333ns
+    Clock Pessimism Removal (CPR):    -0.017ns
+  Clock Uncertainty:      0.100ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.410     0.410    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.310    -0.899 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.656    -0.243    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.026    -0.217 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.550     0.333    u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/clk
+    SLICE_X40Y70         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_pc_p8_reg[9]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y70         FDRE (Prop_fdre_C_Q)         0.141     0.474 r  u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_pc_p8_reg[9]/Q
+                         net (fo=1, routed)           0.122     0.596    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_pc_p8_reg[31]_0[9]
+    SLICE_X37Y70         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_pc_p8_reg[9]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.432     0.432    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.638    -1.206 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.710    -0.496    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.029    -0.467 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.817     0.349    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/clk
+    SLICE_X37Y70         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_pc_p8_reg[9]/C
+                         clock pessimism              0.017     0.366    
+                         clock uncertainty            0.100     0.466    
+    SLICE_X37Y70         FDRE (Hold_fdre_C_D)         0.076     0.542    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_pc_p8_reg[9]
+  -------------------------------------------------------------------
+                         required time                         -0.542    
+                         arrival time                           0.596    
+  -------------------------------------------------------------------
+                         slack                                  0.054    
+
+Slack (MET) :             0.055ns  (arrival time - required time)
+  Source:                 u_system/scan_cpu.u_cpu/U_ALU/U_HI/state_reg[29]/C
+                            (rising edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_HI_reg[29]/D
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - c0 rise@0.000ns)
+  Data Path Delay:        0.478ns  (logic 0.141ns (29.511%)  route 0.337ns (70.489%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.260ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.351ns
+    Source Clock Delay      (SCD):    0.337ns
+    Clock Pessimism Removal (CPR):    -0.245ns
+  Clock Uncertainty:      0.100ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.410     0.410    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.310    -0.899 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.656    -0.243    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.026    -0.217 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.554     0.337    u_system/scan_cpu.u_cpu/U_ALU/U_HI/clk
+    SLICE_X29Y66         FDCE                                         r  u_system/scan_cpu.u_cpu/U_ALU/U_HI/state_reg[29]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X29Y66         FDCE (Prop_fdce_C_Q)         0.141     0.478 r  u_system/scan_cpu.u_cpu/U_ALU/U_HI/state_reg[29]/Q
+                         net (fo=2, routed)           0.337     0.815    u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_HI_reg[31]_1[29]
+    SLICE_X42Y69         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_HI_reg[29]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.432     0.432    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.638    -1.206 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.710    -0.496    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.029    -0.467 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.819     0.351    u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/clk
+    SLICE_X42Y69         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_HI_reg[29]/C
+                         clock pessimism              0.245     0.597    
+                         clock uncertainty            0.100     0.697    
+    SLICE_X42Y69         FDRE (Hold_fdre_C_D)         0.063     0.760    u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_HI_reg[29]
+  -------------------------------------------------------------------
+                         required time                         -0.760    
+                         arrival time                           0.815    
+  -------------------------------------------------------------------
+                         slack                                  0.055    
+
+Slack (MET) :             0.056ns  (arrival time - required time)
+  Source:                 u_system/scan_cpu.u_cpu/U_ALU/U_HI/state_reg[24]/C
+                            (rising edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_HI_reg[24]/D
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - c0 rise@0.000ns)
+  Data Path Delay:        0.475ns  (logic 0.141ns (29.690%)  route 0.334ns (70.310%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.260ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.350ns
+    Source Clock Delay      (SCD):    0.336ns
+    Clock Pessimism Removal (CPR):    -0.245ns
+  Clock Uncertainty:      0.100ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.410     0.410    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.310    -0.899 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.656    -0.243    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.026    -0.217 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.553     0.336    u_system/scan_cpu.u_cpu/U_ALU/U_HI/clk
+    SLICE_X33Y67         FDCE                                         r  u_system/scan_cpu.u_cpu/U_ALU/U_HI/state_reg[24]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X33Y67         FDCE (Prop_fdce_C_Q)         0.141     0.477 r  u_system/scan_cpu.u_cpu/U_ALU/U_HI/state_reg[24]/Q
+                         net (fo=2, routed)           0.334     0.811    u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_HI_reg[31]_1[24]
+    SLICE_X42Y70         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_HI_reg[24]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.432     0.432    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.638    -1.206 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.710    -0.496    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.029    -0.467 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.818     0.350    u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/clk
+    SLICE_X42Y70         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_HI_reg[24]/C
+                         clock pessimism              0.245     0.596    
+                         clock uncertainty            0.100     0.696    
+    SLICE_X42Y70         FDRE (Hold_fdre_C_D)         0.059     0.755    u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_HI_reg[24]
+  -------------------------------------------------------------------
+                         required time                         -0.755    
+                         arrival time                           0.811    
+  -------------------------------------------------------------------
+                         slack                                  0.056    
+
+Slack (MET) :             0.057ns  (arrival time - required time)
+  Source:                 u_system/scan_cpu.u_cpu/PIPESTAGE_PC/state_reg[5]/C
+                            (rising edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_IF_RF/RF_PC_reg[5]/D
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - c0 rise@0.000ns)
+  Data Path Delay:        0.488ns  (logic 0.141ns (28.907%)  route 0.347ns (71.093%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.268ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.356ns
+    Source Clock Delay      (SCD):    0.334ns
+    Clock Pessimism Removal (CPR):    -0.245ns
+  Clock Uncertainty:      0.100ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.410     0.410    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.310    -0.899 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.656    -0.243    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.026    -0.217 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.551     0.334    u_system/scan_cpu.u_cpu/PIPESTAGE_PC/clk
+    SLICE_X39Y80         FDCE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_PC/state_reg[5]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X39Y80         FDCE (Prop_fdce_C_Q)         0.141     0.475 r  u_system/scan_cpu.u_cpu/PIPESTAGE_PC/state_reg[5]/Q
+                         net (fo=3, routed)           0.347     0.822    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_IF_RF/RF_PC_reg[31]_1[5]
+    SLICE_X14Y82         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_IF_RF/RF_PC_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.432     0.432    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.638    -1.206 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.710    -0.496    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.029    -0.467 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.823     0.356    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_IF_RF/clk
+    SLICE_X14Y82         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_IF_RF/RF_PC_reg[5]/C
+                         clock pessimism              0.245     0.602    
+                         clock uncertainty            0.100     0.702    
+    SLICE_X14Y82         FDRE (Hold_fdre_C_D)         0.063     0.765    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_IF_RF/RF_PC_reg[5]
+  -------------------------------------------------------------------
+                         required time                         -0.765    
+                         arrival time                           0.822    
+  -------------------------------------------------------------------
+                         slack                                  0.057    
+
+Slack (MET) :             0.060ns  (arrival time - required time)
+  Source:                 u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_IF_RF/RF_PC_reg[22]/C
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_RF_EX/EX_PC_reg[22]/D
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - c0 rise@0.000ns)
+  Data Path Delay:        0.272ns  (logic 0.141ns (51.800%)  route 0.131ns (48.200%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.037ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.361ns
+    Source Clock Delay      (SCD):    0.341ns
+    Clock Pessimism Removal (CPR):    -0.017ns
+  Clock Uncertainty:      0.100ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.410     0.410    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.310    -0.899 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.656    -0.243    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.026    -0.217 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.558     0.341    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_IF_RF/clk
+    SLICE_X43Y91         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_IF_RF/RF_PC_reg[22]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y91         FDRE (Prop_fdre_C_Q)         0.141     0.482 r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_IF_RF/RF_PC_reg[22]/Q
+                         net (fo=3, routed)           0.131     0.613    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_RF_EX/EX_PC_reg[31]_1[22]
+    SLICE_X44Y92         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_RF_EX/EX_PC_reg[22]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.432     0.432    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.638    -1.206 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.710    -0.496    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.029    -0.467 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.829     0.361    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_RF_EX/clk
+    SLICE_X44Y92         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_RF_EX/EX_PC_reg[22]/C
+                         clock pessimism              0.017     0.378    
+                         clock uncertainty            0.100     0.478    
+    SLICE_X44Y92         FDRE (Hold_fdre_C_D)         0.075     0.553    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_RF_EX/EX_PC_reg[22]
+  -------------------------------------------------------------------
+                         required time                         -0.553    
+                         arrival time                           0.613    
+  -------------------------------------------------------------------
+                         slack                                  0.060    
+
+Slack (MET) :             0.061ns  (arrival time - required time)
+  Source:                 u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_pc_p8_reg[26]/C
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_pc_p8_reg[26]/D
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - c0 rise@0.000ns)
+  Data Path Delay:        0.241ns  (logic 0.141ns (58.505%)  route 0.100ns (41.495%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.014ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.355ns
+    Source Clock Delay      (SCD):    0.338ns
+    Clock Pessimism Removal (CPR):    0.003ns
+  Clock Uncertainty:      0.100ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.410     0.410    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.310    -0.899 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.656    -0.243    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.026    -0.217 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.555     0.338    u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/clk
+    SLICE_X47Y83         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_pc_p8_reg[26]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X47Y83         FDRE (Prop_fdre_C_Q)         0.141     0.479 r  u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_pc_p8_reg[26]/Q
+                         net (fo=1, routed)           0.100     0.579    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_pc_p8_reg[31]_0[26]
+    SLICE_X45Y83         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_pc_p8_reg[26]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.432     0.432    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.638    -1.206 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.710    -0.496    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.029    -0.467 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.823     0.355    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/clk
+    SLICE_X45Y83         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_pc_p8_reg[26]/C
+                         clock pessimism             -0.003     0.352    
+                         clock uncertainty            0.100     0.452    
+    SLICE_X45Y83         FDRE (Hold_fdre_C_D)         0.066     0.518    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_pc_p8_reg[26]
+  -------------------------------------------------------------------
+                         required time                         -0.518    
+                         arrival time                           0.579    
+  -------------------------------------------------------------------
+                         slack                                  0.061    
+
+Slack (MET) :             0.063ns  (arrival time - required time)
+  Source:                 u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_mem_t_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_oper_reg[1]/D
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - c0 rise@0.000ns)
+  Data Path Delay:        0.255ns  (logic 0.141ns (55.264%)  route 0.114ns (44.736%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.032ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.344ns
+    Source Clock Delay      (SCD):    0.329ns
+    Clock Pessimism Removal (CPR):    -0.017ns
+  Clock Uncertainty:      0.100ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.410     0.410    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.310    -0.899 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.656    -0.243    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.026    -0.217 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.546     0.329    u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/clk
+    SLICE_X33Y75         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_mem_t_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X33Y75         FDRE (Prop_fdre_C_Q)         0.141     0.470 r  u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_mem_t_reg[3]/Q
+                         net (fo=1, routed)           0.114     0.584    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_oper_reg[1]_0[1]
+    SLICE_X34Y76         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_oper_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.432     0.432    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.638    -1.206 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.710    -0.496    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.029    -0.467 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.811     0.344    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/clk
+    SLICE_X34Y76         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_oper_reg[1]/C
+                         clock pessimism              0.017     0.361    
+                         clock uncertainty            0.100     0.461    
+    SLICE_X34Y76         FDRE (Hold_fdre_C_D)         0.060     0.521    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_oper_reg[1]
+  -------------------------------------------------------------------
+                         required time                         -0.521    
+                         arrival time                           0.584    
+  -------------------------------------------------------------------
+                         slack                                  0.063    
+
+Slack (MET) :             0.067ns  (arrival time - required time)
+  Source:                 u_system/scan_cpu.u_cpu/PIPESTAGE_PC/state_reg[8]/C
+                            (rising edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_IF_RF/RF_PC_reg[8]/D
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - c0 rise@0.000ns)
+  Data Path Delay:        0.493ns  (logic 0.141ns (28.627%)  route 0.352ns (71.373%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.267ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.354ns
+    Source Clock Delay      (SCD):    0.333ns
+    Clock Pessimism Removal (CPR):    -0.245ns
+  Clock Uncertainty:      0.100ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.410     0.410    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.310    -0.899 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.656    -0.243    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.026    -0.217 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.550     0.333    u_system/scan_cpu.u_cpu/PIPESTAGE_PC/clk
+    SLICE_X40Y79         FDCE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_PC/state_reg[8]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X40Y79         FDCE (Prop_fdce_C_Q)         0.141     0.474 r  u_system/scan_cpu.u_cpu/PIPESTAGE_PC/state_reg[8]/Q
+                         net (fo=3, routed)           0.352     0.825    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_IF_RF/RF_PC_reg[31]_1[8]
+    SLICE_X14Y80         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_IF_RF/RF_PC_reg[8]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.432     0.432    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.638    -1.206 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.710    -0.496    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.029    -0.467 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.822     0.354    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_IF_RF/clk
+    SLICE_X14Y80         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_IF_RF/RF_PC_reg[8]/C
+                         clock pessimism              0.245     0.600    
+                         clock uncertainty            0.100     0.700    
+    SLICE_X14Y80         FDRE (Hold_fdre_C_D)         0.059     0.759    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_IF_RF/RF_PC_reg[8]
+  -------------------------------------------------------------------
+                         required time                         -0.759    
+                         arrival time                           0.825    
+  -------------------------------------------------------------------
+                         slack                                  0.067    
+
+Slack (MET) :             0.067ns  (arrival time - required time)
+  Source:                 u_system/lbist.u_ctrl/position_reg[3]/C
+                            (rising edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Destination:            u_system/lbist.u_ctrl/position_reg[4]/D
+                            (rising edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - c0 rise@0.000ns)
+  Data Path Delay:        0.272ns  (logic 0.186ns (68.315%)  route 0.086ns (31.685%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.391ns
+    Source Clock Delay      (SCD):    0.372ns
+    Clock Pessimism Removal (CPR):    0.006ns
+  Clock Uncertainty:      0.100ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.410     0.410    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.310    -0.899 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.656    -0.243    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.026    -0.217 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.589     0.372    u_system/lbist.u_ctrl/clk
+    SLICE_X58Y57         FDCE                                         r  u_system/lbist.u_ctrl/position_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X58Y57         FDCE (Prop_fdce_C_Q)         0.141     0.513 r  u_system/lbist.u_ctrl/position_reg[3]/Q
+                         net (fo=4, routed)           0.086     0.599    u_system/lbist.u_ctrl/position_reg_n_1601_[3]
+    SLICE_X59Y57         LUT6 (Prop_lut6_I4_O)        0.045     0.644 r  u_system/lbist.u_ctrl/position[4]_i_1__4/O
+                         net (fo=1, routed)           0.000     0.644    u_system/lbist.u_ctrl/position[4]_i_1__4_n_1601
+    SLICE_X59Y57         FDCE                                         r  u_system/lbist.u_ctrl/position_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.432     0.432    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.638    -1.206 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.710    -0.496    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.029    -0.467 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.859     0.391    u_system/lbist.u_ctrl/clk
+    SLICE_X59Y57         FDCE                                         r  u_system/lbist.u_ctrl/position_reg[4]/C
+                         clock pessimism             -0.006     0.385    
+                         clock uncertainty            0.100     0.485    
+    SLICE_X59Y57         FDCE (Hold_fdce_C_D)         0.092     0.577    u_system/lbist.u_ctrl/position_reg[4]
+  -------------------------------------------------------------------
+                         required time                         -0.577    
+                         arrival time                           0.644    
+  -------------------------------------------------------------------
+                         slack                                  0.067    
+
+Slack (MET) :             0.068ns  (arrival time - required time)
+  Source:                 u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_IF_RF/RF_PC_abort_reg/C
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_RF_EX/EX_PC_abort_reg/D
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - c0 rise@0.000ns)
+  Data Path Delay:        0.238ns  (logic 0.141ns (59.277%)  route 0.097ns (40.723%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.356ns
+    Source Clock Delay      (SCD):    0.338ns
+    Clock Pessimism Removal (CPR):    0.005ns
+  Clock Uncertainty:      0.100ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.410     0.410    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.310    -0.899 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.656    -0.243    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.026    -0.217 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.555     0.338    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_IF_RF/clk
+    SLICE_X29Y85         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_IF_RF/RF_PC_abort_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X29Y85         FDRE (Prop_fdre_C_Q)         0.141     0.479 r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_IF_RF/RF_PC_abort_reg/Q
+                         net (fo=1, routed)           0.097     0.576    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_RF_EX/EX_PC_abort_reg_1
+    SLICE_X28Y85         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_RF_EX/EX_PC_abort_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.432     0.432    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.638    -1.206 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.710    -0.496    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.029    -0.467 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.824     0.356    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_RF_EX/clk
+    SLICE_X28Y85         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_RF_EX/EX_PC_abort_reg/C
+                         clock pessimism             -0.005     0.351    
+                         clock uncertainty            0.100     0.451    
+    SLICE_X28Y85         FDRE (Hold_fdre_C_D)         0.057     0.508    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_RF_EX/EX_PC_abort_reg
+  -------------------------------------------------------------------
+                         required time                         -0.508    
+                         arrival time                           0.576    
+  -------------------------------------------------------------------
+                         slack                                  0.068    
+
+Slack (MET) :             0.068ns  (arrival time - required time)
+  Source:                 u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_A_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_A_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - c0 rise@0.000ns)
+  Data Path Delay:        0.238ns  (logic 0.141ns (59.277%)  route 0.097ns (40.723%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.349ns
+    Source Clock Delay      (SCD):    0.332ns
+    Clock Pessimism Removal (CPR):    0.004ns
+  Clock Uncertainty:      0.100ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.410     0.410    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.310    -0.899 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.656    -0.243    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.026    -0.217 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.549     0.332    u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/clk
+    SLICE_X41Y71         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_A_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y71         FDRE (Prop_fdre_C_Q)         0.141     0.473 r  u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_A_reg[0]/Q
+                         net (fo=1, routed)           0.097     0.570    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_A_reg[31]_0[0]
+    SLICE_X40Y71         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_A_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.432     0.432    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.638    -1.206 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.710    -0.496    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.029    -0.467 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.817     0.349    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/clk
+    SLICE_X40Y71         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_A_reg[0]/C
+                         clock pessimism             -0.004     0.345    
+                         clock uncertainty            0.100     0.445    
+    SLICE_X40Y71         FDRE (Hold_fdre_C_D)         0.057     0.502    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_A_reg[0]
+  -------------------------------------------------------------------
+                         required time                         -0.502    
+                         arrival time                           0.570    
+  -------------------------------------------------------------------
+                         slack                                  0.068    
+
+Slack (MET) :             0.073ns  (arrival time - required time)
+  Source:                 u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_MM_WB/WB_PC_reg[23]/C
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/COP0_EPC/state_reg[23]/D
+                            (rising edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - c0 rise@0.000ns)
+  Data Path Delay:        0.299ns  (logic 0.186ns (62.115%)  route 0.113ns (37.885%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.035ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.360ns
+    Source Clock Delay      (SCD):    0.342ns
+    Clock Pessimism Removal (CPR):    -0.017ns
+  Clock Uncertainty:      0.100ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.410     0.410    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.310    -0.899 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.656    -0.243    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.026    -0.217 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.559     0.342    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_MM_WB/clk
+    SLICE_X44Y92         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_MM_WB/WB_PC_reg[23]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X44Y92         FDRE (Prop_fdre_C_Q)         0.141     0.483 r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_MM_WB/WB_PC_reg[23]/Q
+                         net (fo=1, routed)           0.113     0.596    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/state_reg[31]_1[23]
+    SLICE_X43Y92         LUT5 (Prop_lut5_I0_O)        0.045     0.641 r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/state[23]_i_1__2/O
+                         net (fo=1, routed)           0.000     0.641    u_system/scan_cpu.u_cpu/COP0_EPC/D[23]
+    SLICE_X43Y92         FDCE                                         r  u_system/scan_cpu.u_cpu/COP0_EPC/state_reg[23]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.432     0.432    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.638    -1.206 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.710    -0.496    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.029    -0.467 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.828     0.360    u_system/scan_cpu.u_cpu/COP0_EPC/clk
+    SLICE_X43Y92         FDCE                                         r  u_system/scan_cpu.u_cpu/COP0_EPC/state_reg[23]/C
+                         clock pessimism              0.017     0.377    
+                         clock uncertainty            0.100     0.477    
+    SLICE_X43Y92         FDCE (Hold_fdce_C_D)         0.091     0.568    u_system/scan_cpu.u_cpu/COP0_EPC/state_reg[23]
+  -------------------------------------------------------------------
+                         required time                         -0.568    
+                         arrival time                           0.641    
+  -------------------------------------------------------------------
+                         slack                                  0.073    
+
+Slack (MET) :             0.080ns  (arrival time - required time)
+  Source:                 u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_A_reg[26]/C
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_A_reg[26]/D
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - c0 rise@0.000ns)
+  Data Path Delay:        0.263ns  (logic 0.141ns (53.592%)  route 0.122ns (46.408%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.357ns
+    Source Clock Delay      (SCD):    0.341ns
+    Clock Pessimism Removal (CPR):    0.003ns
+  Clock Uncertainty:      0.100ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.410     0.410    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.310    -0.899 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.656    -0.243    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.026    -0.217 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.558     0.341    u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/clk
+    SLICE_X49Y85         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_A_reg[26]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X49Y85         FDRE (Prop_fdre_C_Q)         0.141     0.482 r  u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_A_reg[26]/Q
+                         net (fo=1, routed)           0.122     0.604    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_A_reg[31]_0[26]
+    SLICE_X48Y83         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_A_reg[26]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.432     0.432    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.638    -1.206 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.710    -0.496    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.029    -0.467 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.825     0.357    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/clk
+    SLICE_X48Y83         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_A_reg[26]/C
+                         clock pessimism             -0.003     0.354    
+                         clock uncertainty            0.100     0.454    
+    SLICE_X48Y83         FDRE (Hold_fdre_C_D)         0.070     0.524    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_A_reg[26]
+  -------------------------------------------------------------------
+                         required time                         -0.524    
+                         arrival time                           0.604    
+  -------------------------------------------------------------------
+                         slack                                  0.080    
+
+Slack (MET) :             0.081ns  (arrival time - required time)
+  Source:                 u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_result_reg[5]/C
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_result_reg[5]/D
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - c0 rise@0.000ns)
+  Data Path Delay:        0.271ns  (logic 0.141ns (52.124%)  route 0.130ns (47.876%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.012ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.344ns
+    Source Clock Delay      (SCD):    0.330ns
+    Clock Pessimism Removal (CPR):    0.002ns
+  Clock Uncertainty:      0.100ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.410     0.410    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.310    -0.899 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.656    -0.243    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.026    -0.217 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.547     0.330    u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/clk
+    SLICE_X39Y76         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_result_reg[5]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X39Y76         FDRE (Prop_fdre_C_Q)         0.141     0.471 r  u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_result_reg[5]/Q
+                         net (fo=6, routed)           0.130     0.600    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_result_reg[31]_0[5]
+    SLICE_X36Y75         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_result_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.432     0.432    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.638    -1.206 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.710    -0.496    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.029    -0.467 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.811     0.344    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/clk
+    SLICE_X36Y75         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_result_reg[5]/C
+                         clock pessimism             -0.002     0.342    
+                         clock uncertainty            0.100     0.442    
+    SLICE_X36Y75         FDRE (Hold_fdre_C_D)         0.078     0.520    u_system/scan_cpu.u_cpu/PIPESTAGE_MM_WB/WB_result_reg[5]
+  -------------------------------------------------------------------
+                         required time                         -0.520    
+                         arrival time                           0.600    
+  -------------------------------------------------------------------
+                         slack                                  0.081    
+
+Slack (MET) :             0.081ns  (arrival time - required time)
+  Source:                 u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_MM_WB/WB_PC_reg[24]/C
+                            (rising edge-triggered cell FDRE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Destination:            u_system/scan_cpu.u_cpu/COP0_EPC/state_reg[24]/D
+                            (rising edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - c0 rise@0.000ns)
+  Data Path Delay:        0.317ns  (logic 0.209ns (65.895%)  route 0.108ns (34.105%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.015ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.361ns
+    Source Clock Delay      (SCD):    0.343ns
+    Clock Pessimism Removal (CPR):    0.003ns
+  Clock Uncertainty:      0.100ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.410     0.410    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.310    -0.899 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.656    -0.243    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.026    -0.217 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.560     0.343    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_MM_WB/clk
+    SLICE_X46Y93         FDRE                                         r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_MM_WB/WB_PC_reg[24]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X46Y93         FDRE (Prop_fdre_C_Q)         0.164     0.507 r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_MM_WB/WB_PC_reg[24]/Q
+                         net (fo=1, routed)           0.108     0.615    u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/state_reg[31]_1[24]
+    SLICE_X46Y92         LUT5 (Prop_lut5_I0_O)        0.045     0.660 r  u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/state[24]_i_1__2/O
+                         net (fo=1, routed)           0.000     0.660    u_system/scan_cpu.u_cpu/COP0_EPC/D[24]
+    SLICE_X46Y92         FDCE                                         r  u_system/scan_cpu.u_cpu/COP0_EPC/state_reg[24]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.432     0.432    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.638    -1.206 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.710    -0.496    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.029    -0.467 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.829     0.361    u_system/scan_cpu.u_cpu/COP0_EPC/clk
+    SLICE_X46Y92         FDCE                                         r  u_system/scan_cpu.u_cpu/COP0_EPC/state_reg[24]/C
+                         clock pessimism             -0.003     0.358    
+                         clock uncertainty            0.100     0.458    
+    SLICE_X46Y92         FDCE (Hold_fdce_C_D)         0.121     0.579    u_system/scan_cpu.u_cpu/COP0_EPC/state_reg[24]
+  -------------------------------------------------------------------
+                         required time                         -0.579    
+                         arrival time                           0.660    
+  -------------------------------------------------------------------
+                         slack                                  0.081    
+
+Slack (MET) :             0.082ns  (arrival time - required time)
+  Source:                 u_system/lbist.u_router/l/state_reg[6]/C
+                            (rising edge-triggered cell FDCE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Destination:            u_system/lbist.u_router/l/state_reg[5]/D
+                            (rising edge-triggered cell FDPE clocked by c0  {rise@0.000ns fall@50.000ns period=100.000ns})
+  Path Group:             c0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (c0 rise@0.000ns - c0 rise@0.000ns)
+  Data Path Delay:        0.302ns  (logic 0.192ns (63.615%)  route 0.110ns (36.385%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.390ns
+    Source Clock Delay      (SCD):    0.371ns
+    Clock Pessimism Removal (CPR):    0.006ns
+  Clock Uncertainty:      0.100ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.100ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.410     0.410    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.310    -0.899 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.656    -0.243    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.026    -0.217 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.588     0.371    u_system/lbist.u_router/l/clk
+    SLICE_X63Y62         FDCE                                         r  u_system/lbist.u_router/l/state_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X63Y62         FDCE (Prop_fdce_C_Q)         0.141     0.512 r  u_system/lbist.u_router/l/state_reg[6]/Q
+                         net (fo=2, routed)           0.110     0.622    u_system/lbist.u_router/l/state[6]
+    SLICE_X62Y62         LUT2 (Prop_lut2_I0_O)        0.051     0.673 r  u_system/lbist.u_router/l/state[5]_i_1__9/O
+                         net (fo=1, routed)           0.000     0.673    u_system/lbist.u_router/l/state_0[5]
+    SLICE_X62Y62         FDPE                                         r  u_system/lbist.u_router/l/state_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock c0 rise edge)         0.000     0.000 r  
+                                                      0.000     0.000 r  board_clk (IN)
+                         net (fo=0)                   0.432     0.432    u_clock/board_clk
+    MMCME2_ADV_X0Y2      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -1.638    -1.206 r  u_clock/mmcm/CLKOUT0
+                         net (fo=1, routed)           0.710    -0.496    u_clock/c0
+    BUFGCTRL_X0Y17       BUFG (Prop_bufg_I_O)         0.029    -0.467 r  u_clock/u_clk/O
+                         net (fo=3147, routed)        0.858     0.390    u_system/lbist.u_router/l/clk
+    SLICE_X62Y62         FDPE                                         r  u_system/lbist.u_router/l/state_reg[5]/C
+                         clock pessimism             -0.006     0.384    
+                         clock uncertainty            0.100     0.484    
+    SLICE_X62Y62         FDPE (Hold_fdpe_C_D)         0.107     0.591    u_system/lbist.u_router/l/state_reg[5]
+  -------------------------------------------------------------------
+                         required time                         -0.591    
+                         arrival time                           0.673    
+  -------------------------------------------------------------------
+                         slack                                  0.082    
+
+
+
+

@@ -1,0 +1,2 @@
+Configuration,InputMHz,Mult,InputDivide,OutputDivide,VCOMHz,CPUMHz,PeriodNS,IRQHoldBuffers
+scan_enabled,100,8,1,82,800,9.75609756097561,102.5,0

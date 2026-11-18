@@ -1,3 +1,5 @@
+**Latest timing revision:** PASS: constrained OOC setup/hold/pulse and unconstrained-path checks; see [Timing_Closure](Timing_Closure/README.md) for the matched 9.756097561 MHz results. The tables below are the retained original 50 MHz baseline.
+
 # FPGA implementation, area and estimated power
 
 All three actual processor configurations synthesized, placed and routed using **Vivado 2025.1.1**, installed **xc7a35tcpg236-1** device support and the Artix-7 license. No board, paid IP or paid-only target was used. **None meets the requested 50 MHz setup/hold constraints.**

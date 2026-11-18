@@ -1,0 +1,122 @@
+
+****** Vivado v2025.1.1 (64-bit)
+  **** SW Build 6233196 on Thu Sep 11 21:27:30 MDT 2025
+  **** IP Build 6232796 on Fri Sep 12 01:46:16 MDT 2025
+  **** SharedData Build 6233195 on Thu Sep 11 17:56:43 MDT 2025
+  **** Start of session at: Wed Nov 18 12:19:41 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source lbist/scripts/close_timing_io.tcl
+# set root [file normalize [file join [file dirname [info script]] ../..]]
+# lassign $argv config m d
+# set tag m${m}_d${d}
+# set base [file join $root Results Final FPGA_Analysis Timing_Closure]
+# set out [file join $base closed $tag $config]
+# file mkdir $out
+# set cache [file join $::env(TEMP) vl405_timing_closed $tag $config]
+# file mkdir $cache
+# cd [file join $base work]
+# if {[catch {
+#  open_checkpoint [file join $::env(TEMP) vl405_timing $tag $config routed.dcp]
+#  # Remove only disconnected trial cells; no functional sink may be removed.
+#  foreach cell [get_cells -quiet irq_hold_delay_*] {
+#   set net [get_nets -of_objects [get_pins $cell/O]]
+#   if {![llength [get_pins -quiet -leaf -of_objects $net -filter {DIRECTION == IN}]]} {
+#    set_property DONT_TOUCH false $cell
+#    remove_cell $cell
+#    if {[llength [get_nets -quiet $net]]} {remove_net $net}
+#   }
+#  }
+#  # Let Vivado derive MMCM jitter/phase uncertainty. The old blanket0.1ns
+#  # override produced Timing38-195 warnings on paths to the virtual clock.
+#  reset_clock_uncertainty [get_clocks]
+#  set proof [open [file join $out hold_buffer_connectivity.csv] w]
+#  puts $proof "Iteration,Port,Cell,Function,Sinks,ConnectivityChecked"
+#  set serial 0
+#  for {set iteration 0} {$iteration<4} {incr iteration} {
+#   set paths [get_timing_paths -delay_type min -slack_lesser_than 0 -max_paths 1000 -nworst 1]
+#   set ports {}
+#   foreach path $paths {
+#    set start [get_property STARTPOINT_PIN $path]
+#    if {[llength [get_ports -quiet [list $start]]]} {lappend ports $start}
+#   }
+#   set ports [lsort -unique $ports]
+#   puts "INPUT HOLD REPAIR ITERATION $iteration: $ports"
+#   if {![llength $ports]} {break}
+#   foreach name $ports {
+#    set port [get_ports [list $name]];set net [get_nets -of_objects $port]
+#    set loads [get_pins -leaf -of_objects $net -filter {DIRECTION == IN}]
+#    if {![llength $loads]} {error "No actual loads on $name"}
+#    # Each leaf pin has its own hierarchy-local segment. Disconnect that
+#    # segment, then explicitly request a cross-hierarchy connection.
+#    foreach pin $loads {
+#     disconnect_net -net [get_nets -of_objects $pin] -objects $pin
+#     if {[llength [get_nets -quiet -of_objects $pin]]} {error "Failed disconnect $pin"}
+#    }
+#    set cell physical_hold_$serial;set delayed physical_hold_net_$serial;incr serial
+#    create_cell -reference LUT1 $cell;set_property INIT 2'h2 [get_cells $cell]
+#    set_property DONT_TOUCH true [get_cells $cell]
+#    create_net $delayed
+#    connect_net -net $net -objects [get_pins $cell/I0]
+#    connect_net -net $delayed -objects [get_pins $cell/O]
+#    connect_net -hierarchical -net $delayed -objects $loads
+#    set connected [get_pins -leaf -of_objects [get_nets -segments -of_objects [get_pins $cell/O]] -filter {DIRECTION == IN}]
+#    foreach pin $loads {if {[lsearch -exact $connected $pin]<0} {error "Failed reconnect $pin"}}
+#    puts $proof "$iteration,$name,$cell,identity_LUT1_INIT_2,[llength $loads],PASS";flush $proof
+#   }
+#   place_design
+#   route_design
+#  }
+#  close $proof
+#  phys_opt_design -aggressive_hold_fix
+#  route_design
+#  write_checkpoint -force [file join $cache routed.dcp]
+#  report_utilization -file [file join $out routed_utilization.rpt]
+#  report_timing_summary -report_unconstrained -file [file join $out routed_timing.rpt]
+#  report_timing -delay_type min -max_paths 20 -file [file join $out hold_paths.rpt]
+#  report_timing -delay_type max -max_paths 20 -file [file join $out setup_paths.rpt]
+#  report_clock_interaction -file [file join $out clock_interaction.rpt]
+#  report_clocks -file [file join $out clocks.rpt]
+#  report_route_status -file [file join $out route_status.rpt]
+#  report_drc -file [file join $out drc.rpt]
+#  write_xdc -force [file join $out applied_constraints.xdc]
+#  puts "FINAL PHYSICAL REPAIR FINISHED: $config $tag; inspect setup AND hold"
+#  close_design
+# } reason]} {puts stderr $reason;exit 1}
+Command: open_checkpoint C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_timing/m8_d82/full_lbist/routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.112 . Memory (MB): peak = 295.695 ; gain = 0.000
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.239 . Memory (MB): peak = 703.992 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1161 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.1.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 809.523 ; gain = 1.098
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.044 . Memory (MB): peak = 1382.801 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 1382.801 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1383.473 ; gain = 0.672
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1383.473 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.411 . Memory (MB): peak = 1389.859 ; gain = 6.387
+Read Physdb Files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1389.859 ; gain = 7.059
+Restored from archive | CPU: 2.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1389.859 ; gain = 7.059
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1389.859 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.1.1 (64-bit) build 6233196
+open_checkpoint: Time (s): cpu = 00:00:57 ; elapsed = 00:00:53 . Memory (MB): peak = 1395.547 ; gain = 1111.363
+invalid command name "reset_clock_uncertainty"
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 18 12:20:40 2026...

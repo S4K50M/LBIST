@@ -1,0 +1,142 @@
+[
+  {
+    "Source": "Results\\Final\\FPGA_Analysis\\Timing_Closure\\activity\\m8_d82\\approach_0.saif",
+    "Mapped": "Results\\Final\\FPGA_Analysis\\Timing_Closure\\activity\\m8_d82\\mapped_approach_0.saif",
+    "SourceSHA256": "daca7e66fc9e6178ba03a51f15951444caab08934e07f1d04803dc3a329d299d",
+    "MappedSHA256": "accca136ffdad12f5452633e49dce2cdc699d59ef304cb640c10da3649cc156d",
+    "ActivityFingerprint": "583900370c7e23715bf67553a1156a83e49a6aad16705d26592812260582dc9e",
+    "NetRecords": 37208,
+    "InstanceSelection": "tb_final_activity/engine/system_copy",
+    "Rename": "u_system",
+    "CollapsedGenerates": [
+      "scan_cpu",
+      "lbist"
+    ],
+    "ActivityUnchanged": true,
+    "DurationPS": 3385267505,
+    "ClockMHz": 9.75609756097561,
+    "Patterns": 256,
+    "ActualFreshCapture": true,
+    "PhysicalIdentityBufferAliases": 4,
+    "UnmappedBufferedInputs": [],
+    "OriginalActivityUnchanged": true
+  },
+  {
+    "Source": "Results\\Final\\FPGA_Analysis\\Timing_Closure\\activity\\m8_d82\\approach_1.saif",
+    "Mapped": "Results\\Final\\FPGA_Analysis\\Timing_Closure\\activity\\m8_d82\\mapped_approach_1.saif",
+    "SourceSHA256": "cdc4beaca4503b6f93cb52f5c37fd706aadd907fb45d3c225626ecd83021b614",
+    "MappedSHA256": "110f38e9c5a236f30894d8411a79a89e220ba128d1175401478761e267d3c95d",
+    "ActivityFingerprint": "4e63d90b92637711dd77a349bad063557faa88b8ce051c9fd8038df684b6abb6",
+    "NetRecords": 37208,
+    "InstanceSelection": "tb_final_activity/engine/system_copy",
+    "Rename": "u_system",
+    "CollapsedGenerates": [
+      "scan_cpu",
+      "lbist"
+    ],
+    "ActivityUnchanged": true,
+    "DurationPS": 3385267505,
+    "ClockMHz": 9.75609756097561,
+    "Patterns": 256,
+    "ActualFreshCapture": true,
+    "PhysicalIdentityBufferAliases": 4,
+    "UnmappedBufferedInputs": [],
+    "OriginalActivityUnchanged": true
+  },
+  {
+    "Source": "Results\\Final\\FPGA_Analysis\\Timing_Closure\\activity\\m8_d82\\approach_2.saif",
+    "Mapped": "Results\\Final\\FPGA_Analysis\\Timing_Closure\\activity\\m8_d82\\mapped_approach_2.saif",
+    "SourceSHA256": "cef4803c3e7c29dee12a3a71ff3df21ff0484765122461cb9ba35c48f7e3799f",
+    "MappedSHA256": "bda158fdf6e111c6e7bf47f031759cddf9738baa39ee2b7d33c66e83cfd56f9f",
+    "ActivityFingerprint": "1884bec5d9c898066659c16fbd0358e1da5de5d7c1bb0945e64886769d9e2f9c",
+    "NetRecords": 37208,
+    "InstanceSelection": "tb_final_activity/engine/system_copy",
+    "Rename": "u_system",
+    "CollapsedGenerates": [
+      "scan_cpu",
+      "lbist"
+    ],
+    "ActivityUnchanged": true,
+    "DurationPS": 3385267505,
+    "ClockMHz": 9.75609756097561,
+    "Patterns": 256,
+    "ActualFreshCapture": true,
+    "PhysicalIdentityBufferAliases": 4,
+    "UnmappedBufferedInputs": [],
+    "OriginalActivityUnchanged": true
+  },
+  {
+    "Source": "Results\\Final\\FPGA_Analysis\\Timing_Closure\\activity\\m8_d82\\approach_3.saif",
+    "Mapped": "Results\\Final\\FPGA_Analysis\\Timing_Closure\\activity\\m8_d82\\mapped_approach_3.saif",
+    "SourceSHA256": "b3cf22889d8908206d5b73ff21d44b26cf8c1ad8cca717ffa67aea6c492aad42",
+    "MappedSHA256": "bad30a6c20361c3b450da57dbaab5d003a10a3e459f47dd30d5a8ab2f20593ee",
+    "ActivityFingerprint": "3454e2d7f35cdd493917b4fc960bcd47d7945adf2fcd12434ad29ec9c00c4b91",
+    "NetRecords": 37208,
+    "InstanceSelection": "tb_final_activity/engine/system_copy",
+    "Rename": "u_system",
+    "CollapsedGenerates": [
+      "scan_cpu",
+      "lbist"
+    ],
+    "ActivityUnchanged": true,
+    "DurationPS": 3385267505,
+    "ClockMHz": 9.75609756097561,
+    "Patterns": 256,
+    "ActualFreshCapture": true,
+    "PhysicalIdentityBufferAliases": 4,
+    "UnmappedBufferedInputs": [],
+    "OriginalActivityUnchanged": true
+  },
+  {
+    "Source": "Results\\Final\\FPGA_Analysis\\Timing_Closure\\activity\\m8_d82\\approach_4.saif",
+    "Mapped": "Results\\Final\\FPGA_Analysis\\Timing_Closure\\activity\\m8_d82\\mapped_approach_4.saif",
+    "SourceSHA256": "d1f29ad39d3d640b6382c28d4c9bfaa24eaf6f417fae9a07c85670908b056528",
+    "MappedSHA256": "9f624e69161f115d6fbbdb592e993e041a57370f46063281f28078e596202800",
+    "ActivityFingerprint": "067faf687e2271905175b9dc02cad4b953b344965fd029440f3b27a529df671e",
+    "NetRecords": 37208,
+    "InstanceSelection": "tb_final_activity/engine/system_copy",
+    "Rename": "u_system",
+    "CollapsedGenerates": [
+      "scan_cpu",
+      "lbist"
+    ],
+    "ActivityUnchanged": true,
+    "DurationPS": 3385267505,
+    "ClockMHz": 9.75609756097561,
+    "Patterns": 256,
+    "ActualFreshCapture": true,
+    "PhysicalIdentityBufferAliases": 4,
+    "UnmappedBufferedInputs": [],
+    "OriginalActivityUnchanged": true
+  },
+  {
+    "Source": "Results\\Final\\FPGA_Analysis\\Timing_Closure\\activity\\m8_d82\\functional.saif",
+    "Mapped": "Results\\Final\\FPGA_Analysis\\Timing_Closure\\activity\\m8_d82\\mapped_baseline.saif",
+    "SourceSHA256": "84272cc0e8a2ad6b309f73dbd2780f13953060ba58cae8f6169e2660391a1395",
+    "MappedSHA256": "8d7c55f2a110be6cede1fa3be41d6c80a21b7c0078adca479f16e36f1d5867fc",
+    "ActivityFingerprint": "d7dec16451ffebc8e0e194de860960f9d668595b7370b6c2604bdb448d33731f",
+    "NetRecords": 14939,
+    "InstanceSelection": "tb_final_functional_activity/U_CORE",
+    "Rename": "baseline.u_cpu",
+    "CollapsedGenerates": [],
+    "ActivityUnchanged": true,
+    "PhysicalIdentityBufferAliases": 0,
+    "UnmappedBufferedInputs": [],
+    "OriginalActivityUnchanged": true
+  },
+  {
+    "Source": "Results\\Final\\FPGA_Analysis\\Timing_Closure\\activity\\m8_d82\\functional.saif",
+    "Mapped": "Results\\Final\\FPGA_Analysis\\Timing_Closure\\activity\\m8_d82\\mapped_scan_enabled.saif",
+    "SourceSHA256": "84272cc0e8a2ad6b309f73dbd2780f13953060ba58cae8f6169e2660391a1395",
+    "MappedSHA256": "62ca7477c6334faec644d65492710ae3ba59cb5b7ac5937e00e077add63aa380",
+    "ActivityFingerprint": "b21279d7455a7de749d941af390586522e123098a245bc4f9f092da028167d0b",
+    "NetRecords": 36266,
+    "InstanceSelection": "tb_final_functional_activity/U_SCAN",
+    "Rename": "scan_cpu.u_cpu",
+    "CollapsedGenerates": [],
+    "ActivityUnchanged": true,
+    "PhysicalIdentityBufferAliases": 15,
+    "UnmappedBufferedInputs": [],
+    "OriginalActivityUnchanged": true
+  }
+]

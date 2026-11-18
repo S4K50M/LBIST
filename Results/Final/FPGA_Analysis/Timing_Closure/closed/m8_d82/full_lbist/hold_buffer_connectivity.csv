@@ -1,0 +1,5 @@
+Iteration,Port,Cell,Function,Sinks,ConnectivityChecked
+0,instr[24],physical_hold_0,identity_LUT1_INIT_2,1,PASS
+0,irq[0],physical_hold_1,identity_LUT1_INIT_2,2,PASS
+0,irq[2],physical_hold_2,identity_LUT1_INIT_2,2,PASS
+0,irq[3],physical_hold_3,identity_LUT1_INIT_2,2,PASS

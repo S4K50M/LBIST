@@ -1,0 +1,93 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.1.1 (win64) Build 6233196 Thu Sep 11 21:27:30 MDT 2025
+| Date         : Wed Nov 18 10:45:46 2026
+| Host         : LAPTOP-B852K4P2 running 64-bit major release  (build 9200)
+| Command      : report_clocks -file {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/Timing_Closure/sweep/m10_d100/full_lbist/clocks.rpt}
+| Design       : final_fpga_top
+| Device       : 7a35t-cpg236
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Synthesized
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Clock Report
+
+
+Attributes
+  P: Propagated
+  G: Generated
+  A: Auto-derived
+  R: Renamed
+  V: Virtual
+  I: Inverted
+  S: Pin phase-shifted with Latency mode
+
+Clock           Period(ns)  Waveform(ns)      Attributes  Sources
+board_clk       10.000      {0.000 5.000}     P           {board_clk}
+virtual_cpu_io  100.000     {0.000 50.000}    V           {}
+c0              100.000     {0.000 50.000}    P,G,A       {u_clock/mmcm/CLKOUT0}
+c1              100.000     {75.000 100.000}  P,G,A       {u_clock/mmcm/CLKOUT1}
+c2              100.000     {0.000 25.000}    P,G,A       {u_clock/mmcm/CLKOUT2}
+c3              100.000     {25.000 50.000}   P,G,A       {u_clock/mmcm/CLKOUT3}
+fb              10.000      {0.000 5.000}     P,G,A       {u_clock/mmcm/CLKFBOUT}
+
+
+====================================================
+Generated Clocks
+====================================================
+
+Generated Clock     : c0
+Master Source       : u_clock/mmcm/CLKIN1
+Master Clock        : board_clk
+Edges               : {1 2 3}
+Edge Shifts(ns)     : {0.000 45.000 90.000}
+Generated Sources   : {u_clock/mmcm/CLKOUT0}
+
+Generated Clock     : c1
+Master Source       : u_clock/mmcm/CLKIN1
+Master Clock        : board_clk
+Edges               : {1 2 3}
+Edge Shifts(ns)     : {75.000 95.000 165.000}
+Generated Sources   : {u_clock/mmcm/CLKOUT1}
+
+Generated Clock     : c2
+Master Source       : u_clock/mmcm/CLKIN1
+Master Clock        : board_clk
+Edges               : {1 2 3}
+Edge Shifts(ns)     : {0.000 20.000 90.000}
+Generated Sources   : {u_clock/mmcm/CLKOUT2}
+
+Generated Clock     : c3
+Master Source       : u_clock/mmcm/CLKIN1
+Master Clock        : board_clk
+Edges               : {1 2 3}
+Edge Shifts(ns)     : {25.000 45.000 115.000}
+Generated Sources   : {u_clock/mmcm/CLKOUT3}
+
+Generated Clock     : fb
+Master Source       : u_clock/mmcm/CLKIN1
+Master Clock        : board_clk
+Multiply By         : 1
+Generated Sources   : {u_clock/mmcm/CLKFBOUT}
+
+
+
+====================================================
+User Uncertainty
+====================================================
+
+From Clock      To Clock        Setup(ns)  Hold(ns)  Edges
+board_clk       board_clk       0.100      0.100     rf -> rf
+c0              c0              0.100      0.100     rf -> rf
+c1              c1              0.100      0.100     rf -> rf
+c2              c2              0.100      0.100     rf -> rf
+c3              c3              0.100      0.100     rf -> rf
+fb              fb              0.100      0.100     rf -> rf
+virtual_cpu_io  virtual_cpu_io  0.100      0.100     rf -> rf
+
+
+====================================================
+User Jitter
+====================================================
+
+

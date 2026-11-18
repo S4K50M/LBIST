@@ -1,0 +1,4 @@
+Stage,Status,Detail
+synthesis,PASS,native completed
+implementation,PASS,native placement and routing completed
+reports,PASS,read timing summary separately; successful routing does not imply closure

@@ -1,0 +1,11 @@
+{
+  "Status": "PASS",
+  "TimingCleanConfigurations": 3,
+  "ClockMHz": 9.75609756097561,
+  "FreshSimulationCases": 9,
+  "NativeWaveformPairs": 6,
+  "FreshPowerCases": 7,
+  "PreservedTrackedFiles": 2505,
+  "PDFPages": 17,
+  "Scope": "Conditional OOC timing; partial SAIF; no board qualification or physical power claim"
+}

@@ -1,0 +1,1095 @@
+
+****** Vivado v2025.1.1 (64-bit)
+  **** SW Build 6233196 on Thu Sep 11 21:27:30 MDT 2025
+  **** IP Build 6232796 on Fri Sep 12 01:46:16 MDT 2025
+  **** SharedData Build 6233195 on Thu Sep 11 17:56:43 MDT 2025
+  **** Start of session at: Wed Nov 18 12:46:29 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source lbist/scripts/run_timing_power.tcl
+# set root [file normalize [file join [file dirname [info script]] ../..]]
+# if {[llength $argv]!=2} {error "Arguments: VCO_MULT CPU_DIVIDE"}
+# lassign $argv m d
+# set tag m${m}_d${d}
+# set period [expr {10.0*$d/$m}]
+# set base [file join $root Results Final FPGA_Analysis Timing_Closure]
+# set out [file join $base power $tag]
+# file mkdir $out
+# cd [file join $base work]
+# set status [open [file join $out status.csv] w]
+# puts $status "Configuration,Approach,Result,Detail"
+# flush $status
+# set failed 0
+# foreach config {baseline scan_enabled full_lbist} {
+#  foreach a [expr {$config eq "full_lbist" ? {0 1 2 3 4} : {functional}}] {
+#   set name [expr {$a eq "functional" ? $config : "approach_$a"}]
+#   set folder [file join $out $name];file mkdir $folder
+#   if {[catch {
+#    open_checkpoint [file join $::env(TEMP) vl405_timing_closed $tag $config routed.dcp]
+#    if {abs([get_property PERIOD [get_clocks c0]]-$period)>0.002} {error "Wrong checkpoint clock"}
+#    if {[llength [get_cells -quiet irq_hold_delay_*]]} {error "Orphan trial cells remain in production checkpoint"}
+#    set buffers [get_cells -quiet physical_hold_*]
+#    foreach cell $buffers {
+#     if {[get_property REF_NAME $cell] ne "LUT1" || ![string equal -nocase [get_property INIT $cell] "2'h2"]} {error "Non-identity physical repair: $cell"}
+#     set loads [get_pins -leaf -of_objects [get_nets -segments -of_objects [get_pins $cell/O]] -filter {DIRECTION == IN}]
+#     if {![llength $loads]} {error "Unconnected repair cell: $cell"}
+#    }
+#    puts "ROUTED IDENTITY ECO CHECK PASS: $config, [llength $buffers] connected LUT1 identity delays"
+#    set_operating_conditions -ambient_temp 25 -process typical
+#    read_saif -strip_path final_fpga_top -out_file [file join $folder unmatched_nets.rpt] [file join $base activity $tag mapped_$name.saif]
+#    report_power -hier all -hierarchical_depth 5 -l 30 -file [file join $folder power.rpt]
+#    report_switching_activity -file [file join $folder switching.rpt] [get_nets -hier]
+#    set ffs [get_cells -hier -filter {REF_NAME =~ FD*}]
+#    set qs [get_pins -of_objects $ffs -filter {REF_PIN_NAME == Q}]
+#    report_switching_activity -file [file join $folder register_switching.rpt] [get_nets -of_objects $qs]
+#    puts $status "$config,$a,PASS,fresh own RTL SAIF; inspect coverage and confidence";flush $status
+#    close_design
+#   } reason]} {
+#    set failed 1;puts $status "$config,$a,FAIL,[string map {, ; \n { }} $reason]";flush $status
+#    puts stderr $reason;catch {close_design}
+#   }
+#  }
+# }
+Command: open_checkpoint C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_timing_closed/m8_d82/baseline/routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.136 . Memory (MB): peak = 295.129 ; gain = 0.000
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.200 . Memory (MB): peak = 702.930 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 923 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.1.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 805.473 ; gain = 0.688
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.043 . Memory (MB): peak = 1375.078 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 1375.078 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1375.078 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1375.078 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.385 . Memory (MB): peak = 1378.242 ; gain = 3.164
+Read Physdb Files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1378.242 ; gain = 3.164
+Restored from archive | CPU: 2.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1378.242 ; gain = 3.164
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1378.242 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.1.1 (64-bit) build 6233196
+open_checkpoint: Time (s): cpu = 00:00:51 ; elapsed = 00:00:47 . Memory (MB): peak = 1383.945 ; gain = 1100.672
+ROUTED IDENTITY ECO CHECK PASS: baseline, 0 connected LUT1 identity delays
+INFO: [Power 33-167] Parsing SAIF file C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/Timing_Closure/activity/m8_d82/mapped_baseline.saif
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_EX_MM/d_addr[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_EX_MM/d_addr[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[31]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[30]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[29]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[28]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[27]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[26]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[25]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[24]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[23]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[22]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[21]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[20]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[19]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[18]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[17]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[16]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[15]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[14]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[13]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[12]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[11]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[10]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[9]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[8]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[7]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[6]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[5]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_EX_MM/MM_addr_reg[1]_0[7]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_EX_MM/MM_addr_reg[1]_0[6]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_EX_MM/MM_addr_reg[1]_0[5]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_EX_MM/MM_addr_reg[1]_0[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_EX_MM/MM_addr_reg[1]_0[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_EX_MM/MM_addr_reg[1]_0[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_EX_MM/MM_addr_reg[1]_0[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_EX_MM/MM_addr_reg[1]_0[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/U_ALU/U_sh_left/sh_left[21]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/U_ALU/U_sh_left/sh_left[20]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/U_ALU/U_sh_left/sh_left[19]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/U_ALU/U_sh_left/sh_left[18]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/U_ALU/U_sh_left/sh_left[17]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/U_ALU/U_sh_left/sh_left[16]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/U_ALU/U_sh_left/sh_left[15]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/U_ALU/U_sh_left/sh_left[14]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/U_ALU/U_sh_left/sh_left[13]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/U_ALU/U_sh_left/sh_left[12]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/U_ALU/U_sh_left/sh_left[11]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/U_ALU/U_sh_left/sh_left[10]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/U_ALU/U_sh_left/sh_left[9]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/U_ALU/U_sh_left/sh_left[8]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/U_ALU/U_sh_left/sh_left[7]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/U_ALU/U_sh_left/sh_left[6]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/U_ALU/U_sh_left/sh_left[5]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/U_ALU/U_sh_left/sh_left[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/U_ALU/U_sh_left/sh_left[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/U_ALU/U_sh_left/sh_left[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/U_ALU/U_sh_left/sh_left[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/U_ALU/U_sh_left/sh_left[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[31]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[30]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[29]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[28]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[27]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[26]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[25]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[24]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[23]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[22]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[21]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[20]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[19]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[18]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[17]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[16]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[15]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[14]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[13]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[12]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[11]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[10]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[9]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[8]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[7]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[6]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[5]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/sh_inp[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/shift_amnt[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/shift_amnt[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/shift_amnt[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/baseline.u_cpu/PIPESTAGE_RF_EX/shift_amnt[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+INFO: [Common 17-14] Message 'Power 33-288' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Power 33-330] Read_saif is trying to annotate activities on clock net and this will be ignored. Users shall manually specify clock net frequency using sdc timing constraints(e.g. create_clock)
+INFO: [Power 33-177] SAIF annotation done from file C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/Timing_Closure/activity/m8_d82/mapped_baseline.saif
+INFO: [Power 33-26] Design nets matched = 2473 of 11395
+Command: report_power -hier all -hierarchical_depth 5 -l 30 -file {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/Timing_Closure/power/m8_d82/baseline/power.rpt}
+22% of nets annotated
+Doing probabilistic computation for the remaining nets
+
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "board_clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+16 Infos, 102 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:11 ; elapsed = 00:00:08 . Memory (MB): peak = 1443.336 ; gain = 50.262
+Command: open_checkpoint C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_timing_closed/m8_d82/scan_enabled/routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1443.336 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.212 . Memory (MB): peak = 1443.336 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1204 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.1.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 1443.336 ; gain = 0.000
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.038 . Memory (MB): peak = 1443.336 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1443.336 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1443.336 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1443.336 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.357 . Memory (MB): peak = 1443.336 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1443.336 ; gain = 0.000
+Restored from archive | CPU: 2.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1443.336 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1443.336 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.1.1 (64-bit) build 6233196
+open_checkpoint: Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 1443.992 ; gain = 0.656
+ROUTED IDENTITY ECO CHECK PASS: scan_enabled, 15 connected LUT1 identity delays
+INFO: [Power 33-167] Parsing SAIF file C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/Timing_Closure/activity/m8_d82/mapped_scan_enabled.saif
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/d_addr[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/d_addr[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[31]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[30]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[29]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[28]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[27]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[26]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[25]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[24]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[23]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[22]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[21]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[20]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[19]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[18]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[17]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[16]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[15]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[14]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[13]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[12]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[11]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[10]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[9]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[8]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[7]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[6]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[5]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'data_inp[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_addr_reg[1]_1[15]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_addr_reg[1]_1[14]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_addr_reg[1]_1[13]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_addr_reg[1]_1[12]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_addr_reg[1]_1[11]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_addr_reg[1]_1[10]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_addr_reg[1]_1[9]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_addr_reg[1]_1[8]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_addr_reg[1]_1[7]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_addr_reg[1]_1[6]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_addr_reg[1]_1[5]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_addr_reg[1]_1[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_addr_reg[1]_1[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_addr_reg[1]_1[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_addr_reg[1]_1[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_EX_MM/MM_addr_reg[1]_1[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[21]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[20]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[19]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[18]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[17]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[16]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[15]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[14]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[13]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[12]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[11]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[10]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[9]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[8]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[7]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[6]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[5]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[31]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[30]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[29]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[28]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[27]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[26]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[25]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[24]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[23]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[22]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[21]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[20]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[19]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[18]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[17]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[16]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[15]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[14]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[13]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[12]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[11]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[10]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[9]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[8]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[7]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[6]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[5]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+INFO: [Common 17-14] Message 'Power 33-288' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Power 33-330] Read_saif is trying to annotate activities on clock net and this will be ignored. Users shall manually specify clock net frequency using sdc timing constraints(e.g. create_clock)
+INFO: [Power 33-177] SAIF annotation done from file C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/Timing_Closure/activity/m8_d82/mapped_scan_enabled.saif
+INFO: [Power 33-26] Design nets matched = 1922 of 13690
+Command: report_power -hier all -hierarchical_depth 5 -l 30 -file {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/Timing_Closure/power/m8_d82/scan_enabled/power.rpt}
+14% of nets annotated
+Doing probabilistic computation for the remaining nets
+
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "board_clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+15 Infos, 102 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:15 ; elapsed = 00:00:09 . Memory (MB): peak = 1503.129 ; gain = 48.152
+Command: open_checkpoint C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_timing_closed/m8_d82/full_lbist/routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1503.129 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.231 . Memory (MB): peak = 1503.129 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1161 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.1.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.040 . Memory (MB): peak = 1503.129 ; gain = 0.000
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 1503.129 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 1503.129 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1503.129 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1503.129 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.398 . Memory (MB): peak = 1503.129 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1503.129 ; gain = 0.000
+Restored from archive | CPU: 2.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1503.129 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1503.129 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.1.1 (64-bit) build 6233196
+open_checkpoint: Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 1503.129 ; gain = 0.000
+ROUTED IDENTITY ECO CHECK PASS: full_lbist, 4 connected LUT1 identity delays
+INFO: [Power 33-167] Parsing SAIF file C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/Timing_Closure/activity/m8_d82/mapped_approach_0.saif
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[31]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[30]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[29]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[28]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[27]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[26]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[25]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[24]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[23]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[22]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[21]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[20]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[19]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[18]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[17]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[16]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[15]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[14]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[13]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[12]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[11]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[10]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[9]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[8]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[7]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[6]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[5]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[20]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[19]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[18]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[17]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[16]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[15]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[14]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[13]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[12]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[11]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[10]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[9]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[8]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[7]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[6]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[5]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[31]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[30]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[29]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[28]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[27]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[26]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[25]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[24]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[23]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[22]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[21]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[20]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[19]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[18]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[17]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[16]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[15]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[14]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[13]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[12]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[11]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[10]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[9]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[8]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[7]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[6]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[5]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/shift_amnt[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/shift_amnt[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/shift_amnt[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/shift_amnt[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/shift_amnt[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[31]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[30]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[29]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[28]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[27]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[26]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[25]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[24]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[23]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[22]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+INFO: [Common 17-14] Message 'Power 33-288' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Power 33-330] Read_saif is trying to annotate activities on clock net and this will be ignored. Users shall manually specify clock net frequency using sdc timing constraints(e.g. create_clock)
+INFO: [Power 33-177] SAIF annotation done from file C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/Timing_Closure/activity/m8_d82/mapped_approach_0.saif
+INFO: [Power 33-26] Design nets matched = 1863 of 13894
+Command: report_power -hier all -hierarchical_depth 5 -l 30 -file {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/Timing_Closure/power/m8_d82/approach_0/power.rpt}
+13% of nets annotated
+Doing probabilistic computation for the remaining nets
+
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "board_clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+15 Infos, 102 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:14 ; elapsed = 00:00:09 . Memory (MB): peak = 1549.164 ; gain = 46.035
+Command: open_checkpoint C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_timing_closed/m8_d82/full_lbist/routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1549.164 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.248 . Memory (MB): peak = 1549.164 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1161 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.1.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.050 . Memory (MB): peak = 1549.164 ; gain = 0.000
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.038 . Memory (MB): peak = 1549.164 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 1549.164 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1549.164 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1549.164 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.389 . Memory (MB): peak = 1549.164 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1549.164 ; gain = 0.000
+Restored from archive | CPU: 2.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1549.164 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1549.164 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.1.1 (64-bit) build 6233196
+open_checkpoint: Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 1549.164 ; gain = 0.000
+ROUTED IDENTITY ECO CHECK PASS: full_lbist, 4 connected LUT1 identity delays
+INFO: [Power 33-167] Parsing SAIF file C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/Timing_Closure/activity/m8_d82/mapped_approach_1.saif
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[31]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[30]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[29]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[28]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[27]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[26]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[25]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[24]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[23]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[22]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[21]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[20]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[19]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[18]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[17]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[16]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[15]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[14]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[13]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[12]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[11]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[10]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[9]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[8]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[7]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[6]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[5]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[20]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[19]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[18]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[17]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[16]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[15]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[14]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[13]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[12]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[11]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[10]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[9]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[8]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[7]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[6]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[5]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[31]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[30]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[29]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[28]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[27]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[26]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[25]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[24]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[23]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[22]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[21]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[20]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[19]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[18]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[17]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[16]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[15]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[14]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[13]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[12]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[11]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[10]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[9]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[8]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[7]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[6]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[5]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/shift_amnt[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/shift_amnt[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/shift_amnt[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/shift_amnt[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/shift_amnt[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[31]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[30]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[29]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[28]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[27]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[26]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[25]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[24]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[23]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[22]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+INFO: [Common 17-14] Message 'Power 33-288' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Power 33-330] Read_saif is trying to annotate activities on clock net and this will be ignored. Users shall manually specify clock net frequency using sdc timing constraints(e.g. create_clock)
+INFO: [Power 33-177] SAIF annotation done from file C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/Timing_Closure/activity/m8_d82/mapped_approach_1.saif
+INFO: [Power 33-26] Design nets matched = 1863 of 13894
+Command: report_power -hier all -hierarchical_depth 5 -l 30 -file {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/Timing_Closure/power/m8_d82/approach_1/power.rpt}
+13% of nets annotated
+Doing probabilistic computation for the remaining nets
+
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "board_clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+15 Infos, 102 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:15 ; elapsed = 00:00:09 . Memory (MB): peak = 1589.086 ; gain = 39.922
+Command: open_checkpoint C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_timing_closed/m8_d82/full_lbist/routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1589.086 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.309 . Memory (MB): peak = 1589.086 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1161 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.1.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 1589.086 ; gain = 0.000
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.038 . Memory (MB): peak = 1589.086 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1589.086 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1589.086 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1589.086 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.392 . Memory (MB): peak = 1589.086 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1589.086 ; gain = 0.000
+Restored from archive | CPU: 2.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1589.086 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1589.086 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.1.1 (64-bit) build 6233196
+open_checkpoint: Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1589.086 ; gain = 0.000
+ROUTED IDENTITY ECO CHECK PASS: full_lbist, 4 connected LUT1 identity delays
+INFO: [Power 33-167] Parsing SAIF file C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/Timing_Closure/activity/m8_d82/mapped_approach_2.saif
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[31]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[30]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[29]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[28]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[27]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[26]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[25]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[24]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[23]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[22]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[21]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[20]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[19]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[18]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[17]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[16]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[15]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[14]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[13]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[12]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[11]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[10]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[9]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[8]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[7]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[6]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[5]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[20]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[19]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[18]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[17]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[16]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[15]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[14]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[13]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[12]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[11]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[10]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[9]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[8]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[7]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[6]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[5]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[31]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[30]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[29]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[28]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[27]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[26]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[25]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[24]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[23]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[22]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[21]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[20]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[19]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[18]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[17]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[16]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[15]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[14]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[13]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[12]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[11]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[10]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[9]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[8]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[7]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[6]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[5]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/shift_amnt[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/shift_amnt[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/shift_amnt[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/shift_amnt[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/shift_amnt[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[31]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[30]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[29]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[28]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[27]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[26]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[25]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[24]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[23]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[22]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+INFO: [Common 17-14] Message 'Power 33-288' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Power 33-330] Read_saif is trying to annotate activities on clock net and this will be ignored. Users shall manually specify clock net frequency using sdc timing constraints(e.g. create_clock)
+INFO: [Power 33-177] SAIF annotation done from file C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/Timing_Closure/activity/m8_d82/mapped_approach_2.saif
+INFO: [Power 33-26] Design nets matched = 1863 of 13894
+Command: report_power -hier all -hierarchical_depth 5 -l 30 -file {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/Timing_Closure/power/m8_d82/approach_2/power.rpt}
+13% of nets annotated
+Doing probabilistic computation for the remaining nets
+
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "board_clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+15 Infos, 102 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:15 ; elapsed = 00:00:10 . Memory (MB): peak = 1620.074 ; gain = 30.988
+Command: open_checkpoint C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_timing_closed/m8_d82/full_lbist/routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1620.074 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.196 . Memory (MB): peak = 1620.074 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1161 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.1.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 1620.074 ; gain = 0.000
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.038 . Memory (MB): peak = 1620.074 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 1620.074 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1620.074 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1620.074 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.360 . Memory (MB): peak = 1620.074 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1620.074 ; gain = 0.000
+Restored from archive | CPU: 2.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1620.074 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1620.074 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.1.1 (64-bit) build 6233196
+open_checkpoint: Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1620.074 ; gain = 0.000
+ROUTED IDENTITY ECO CHECK PASS: full_lbist, 4 connected LUT1 identity delays
+INFO: [Power 33-167] Parsing SAIF file C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/Timing_Closure/activity/m8_d82/mapped_approach_3.saif
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[31]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[30]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[29]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[28]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[27]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[26]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[25]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[24]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[23]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[22]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[21]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[20]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[19]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[18]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[17]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[16]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[15]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[14]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[13]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[12]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[11]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[10]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[9]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[8]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[7]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[6]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[5]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[20]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[19]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[18]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[17]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[16]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[15]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[14]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[13]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[12]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[11]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[10]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[9]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[8]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[7]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[6]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[5]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[31]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[30]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[29]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[28]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[27]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[26]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[25]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[24]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[23]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[22]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[21]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[20]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[19]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[18]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[17]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[16]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[15]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[14]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[13]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[12]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[11]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[10]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[9]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[8]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[7]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[6]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[5]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/shift_amnt[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/shift_amnt[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/shift_amnt[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/shift_amnt[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/shift_amnt[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[31]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[30]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[29]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[28]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[27]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[26]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[25]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[24]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[23]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[22]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+INFO: [Common 17-14] Message 'Power 33-288' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Power 33-330] Read_saif is trying to annotate activities on clock net and this will be ignored. Users shall manually specify clock net frequency using sdc timing constraints(e.g. create_clock)
+INFO: [Power 33-177] SAIF annotation done from file C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/Timing_Closure/activity/m8_d82/mapped_approach_3.saif
+INFO: [Power 33-26] Design nets matched = 1863 of 13894
+Command: report_power -hier all -hierarchical_depth 5 -l 30 -file {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/Timing_Closure/power/m8_d82/approach_3/power.rpt}
+13% of nets annotated
+Doing probabilistic computation for the remaining nets
+
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "board_clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+15 Infos, 102 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:15 ; elapsed = 00:00:09 . Memory (MB): peak = 1648.023 ; gain = 27.949
+Command: open_checkpoint C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_timing_closed/m8_d82/full_lbist/routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1648.023 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.226 . Memory (MB): peak = 1648.023 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1161 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.1.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.041 . Memory (MB): peak = 1648.023 ; gain = 0.000
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 1648.023 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1648.023 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1648.023 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1648.023 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.327 . Memory (MB): peak = 1648.023 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1648.023 ; gain = 0.000
+Restored from archive | CPU: 1.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1648.023 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1648.023 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.1.1 (64-bit) build 6233196
+open_checkpoint: Time (s): cpu = 00:00:27 ; elapsed = 00:00:29 . Memory (MB): peak = 1648.023 ; gain = 0.000
+ROUTED IDENTITY ECO CHECK PASS: full_lbist, 4 connected LUT1 identity delays
+INFO: [Power 33-167] Parsing SAIF file C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/Timing_Closure/activity/m8_d82/mapped_approach_4.saif
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[31]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[30]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[29]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[28]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[27]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[26]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[25]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[24]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[23]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[22]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[21]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[20]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[19]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[18]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[17]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[16]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[15]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[14]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[13]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[12]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[11]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[10]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[9]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[8]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[7]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[6]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[5]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_regs/PORT_B/Q[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[20]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[19]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[18]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[17]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[16]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[15]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[14]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[13]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[12]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[11]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[10]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[9]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[8]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[7]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[6]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[5]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/U_ALU/U_sh_left/sh_left[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[31]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[30]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[29]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[28]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[27]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[26]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[25]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[24]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[23]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[22]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[21]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[20]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[19]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[18]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[17]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[16]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[15]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[14]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[13]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[12]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[11]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[10]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[9]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[8]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[7]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[6]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[5]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/sh_inp[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/shift_amnt[4]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/shift_amnt[3]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/shift_amnt[2]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/shift_amnt[1]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/shift_amnt[0]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[31]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[30]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[29]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[28]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[27]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[26]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[25]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[24]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[23]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+WARNING: [Power 33-288] Design net 'u_system/scan_cpu.u_cpu/PIPESTAGE_RF_EX/EX_oper_reg[4]_0[22]' is in 'X' state more than 50% of simulation time.  If this is not desired, please provide correct activity rates for better power accuracy.
+INFO: [Common 17-14] Message 'Power 33-288' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Power 33-330] Read_saif is trying to annotate activities on clock net and this will be ignored. Users shall manually specify clock net frequency using sdc timing constraints(e.g. create_clock)
+INFO: [Power 33-177] SAIF annotation done from file C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/Timing_Closure/activity/m8_d82/mapped_approach_4.saif
+INFO: [Power 33-26] Design nets matched = 1863 of 13894
+Command: report_power -hier all -hierarchical_depth 5 -l 30 -file {C:/Users/Saksham Setia/OneDrive/Desktop/VLSI/cmips/Results/Final/FPGA_Analysis/Timing_Closure/power/m8_d82/approach_4/power.rpt}
+13% of nets annotated
+Doing probabilistic computation for the remaining nets
+
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "board_clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+Resolution: Set the HD.CLK_SRC property of the out-of-context port to the location of the clock buffer instance in the top-level design
+15 Infos, 102 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:15 ; elapsed = 00:00:09 . Memory (MB): peak = 1682.750 ; gain = 34.727
+# close $status
+# if {$failed} {exit 1}
+# puts "UPDATED TIMING-CONSISTENT POWER EXPORTS: PASS"
+UPDATED TIMING-CONSISTENT POWER EXPORTS: PASS
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 18 12:51:58 2026...

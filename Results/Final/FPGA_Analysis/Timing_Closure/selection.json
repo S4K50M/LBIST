@@ -1,0 +1,8 @@
+{
+  "Mult": 8,
+  "Divide": 82,
+  "FrequencyMHz": 9.75609756097561,
+  "PeriodNS": 102.5,
+  "AllThreeTimingClean": true,
+  "Selection": "9.756097561 MHz is the highest tested common timing-clean OOC point"
+}

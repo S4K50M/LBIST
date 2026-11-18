@@ -1,0 +1,7 @@
+Port,Cell,Function,SinkCount
+irq_0,irq_hold_delay_0,identity_LUT1_INIT_2,2
+irq_1,irq_hold_delay_1,identity_LUT1_INIT_2,2
+irq_2,irq_hold_delay_2,identity_LUT1_INIT_2,2
+irq_3,irq_hold_delay_3,identity_LUT1_INIT_2,2
+irq_4,irq_hold_delay_4,identity_LUT1_INIT_2,2
+irq_5,irq_hold_delay_5,identity_LUT1_INIT_2,2

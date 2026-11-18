@@ -1,0 +1,2 @@
+Configuration,InputMHz,Mult,InputDivide,OutputDivide,VCOMHz,CPUMHz,PeriodNS,IRQHoldBuffers
+full_lbist,100,8,1,82,800,9.75609756097561,102.5,6

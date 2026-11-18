@@ -1,0 +1,99 @@
+
+****** Vivado v2025.1.1 (64-bit)
+  **** SW Build 6233196 on Thu Sep 11 21:27:30 MDT 2025
+  **** IP Build 6232796 on Fri Sep 12 01:46:16 MDT 2025
+  **** SharedData Build 6233195 on Thu Sep 11 17:56:43 MDT 2025
+  **** Start of session at: Wed Nov 18 12:15:36 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source lbist/scripts/probe_timing_connections.tcl
+# set root [file normalize [file join [file dirname [info script]] ../..]]
+# cd [file join $root Results Final FPGA_Analysis Timing_Closure work]
+# open_checkpoint [file join $::env(TEMP) vl405_timing m8_d82 full_lbist routed.dcp]
+Command: open_checkpoint C:/Users/SAKSHA~1/AppData/Local/Temp/vl405_timing/m8_d82/full_lbist/routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.142 . Memory (MB): peak = 295.289 ; gain = 0.000
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.231 . Memory (MB): peak = 702.719 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1161 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.1.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.074 . Memory (MB): peak = 810.129 ; gain = 0.945
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.045 . Memory (MB): peak = 1383.965 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 1383.965 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1384.875 ; gain = 0.910
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1384.875 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.411 . Memory (MB): peak = 1390.336 ; gain = 5.461
+Read Physdb Files: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1390.336 ; gain = 6.371
+Restored from archive | CPU: 2.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1390.336 ; gain = 6.371
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1390.336 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.1.1 (64-bit) build 6233196
+open_checkpoint: Time (s): cpu = 00:00:59 ; elapsed = 00:00:55 . Memory (MB): peak = 1396.043 ; gain = 1112.469
+# foreach c [get_cells irq_hold_delay_*] {
+#  puts "CELL $c INIT=[get_property INIT $c]"
+#  foreach pin {I0 O} {
+#   set net [get_nets -of_objects [get_pins $c/$pin]]
+#   puts "PIN $c/$pin NET=$net"
+#   puts "SINKS [get_pins -leaf -of_objects $net -filter {DIRECTION == IN}]"
+#  }
+# }
+CELL irq_hold_delay_0 INIT=2'h2
+PIN irq_hold_delay_0/I0 NET=irq[0]
+SINKS irq_hold_delay_0/I0 u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[0]/D u_system/scan_cpu.u_cpu/COP0_COUNT_INTERRUPT/MM_is_exception[5]_i_14/I4
+PIN irq_hold_delay_0/O NET=irq_delayed_0
+WARNING: [Vivado 12-508] No pins matched 'get_pins -leaf -of_objects [get_nets -of_objects [get_pins irq_hold_delay_0/O]] -filter {DIRECTION == IN}'.
+SINKS 
+CELL irq_hold_delay_1 INIT=2'h2
+PIN irq_hold_delay_1/I0 NET=irq[1]
+SINKS irq_hold_delay_1/I0 u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[1]/D u_system/scan_cpu.u_cpu/COP0_COUNT_INTERRUPT/MM_is_exception[5]_i_11/I4
+PIN irq_hold_delay_1/O NET=irq_delayed_1
+WARNING: [Vivado 12-508] No pins matched 'get_pins -leaf -of_objects [get_nets -of_objects [get_pins irq_hold_delay_1/O]] -filter {DIRECTION == IN}'.
+SINKS 
+CELL irq_hold_delay_2 INIT=2'h2
+PIN irq_hold_delay_2/I0 NET=irq[2]
+SINKS irq_hold_delay_2/I0 u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[2]/D u_system/scan_cpu.u_cpu/COP0_COUNT_INTERRUPT/MM_is_exception[5]_i_11/I2
+PIN irq_hold_delay_2/O NET=irq_delayed_2
+WARNING: [Vivado 12-508] No pins matched 'get_pins -leaf -of_objects [get_nets -of_objects [get_pins irq_hold_delay_2/O]] -filter {DIRECTION == IN}'.
+SINKS 
+CELL irq_hold_delay_3 INIT=2'h2
+PIN irq_hold_delay_3/I0 NET=irq[3]
+SINKS irq_hold_delay_3/I0 u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[3]/D u_system/scan_cpu.u_cpu/COP0_COUNT_INTERRUPT/MM_is_exception[5]_i_11/I3
+PIN irq_hold_delay_3/O NET=irq_delayed_3
+WARNING: [Vivado 12-508] No pins matched 'get_pins -leaf -of_objects [get_nets -of_objects [get_pins irq_hold_delay_3/O]] -filter {DIRECTION == IN}'.
+SINKS 
+CELL irq_hold_delay_4 INIT=2'h2
+PIN irq_hold_delay_4/I0 NET=irq[4]
+SINKS irq_hold_delay_4/I0 u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[4]/D u_system/scan_cpu.u_cpu/COP0_COUNT_INTERRUPT/MM_is_exception[5]_i_11/I0
+PIN irq_hold_delay_4/O NET=irq_delayed_4
+WARNING: [Vivado 12-508] No pins matched 'get_pins -leaf -of_objects [get_nets -of_objects [get_pins irq_hold_delay_4/O]] -filter {DIRECTION == IN}'.
+SINKS 
+CELL irq_hold_delay_5 INIT=2'h2
+PIN irq_hold_delay_5/I0 NET=irq[5]
+SINKS irq_hold_delay_5/I0 u_system/scan_cpu.u_cpu/COP0_COUNT_INTERRUPT/MM_is_exception[5]_i_14/I0 u_system/scan_cpu.u_cpu/COP0_COUNT_INTERRUPT/MM_int_req[5]_i_1/I1
+PIN irq_hold_delay_5/O NET=irq_delayed_5
+WARNING: [Vivado 12-508] No pins matched 'get_pins -leaf -of_objects [get_nets -of_objects [get_pins irq_hold_delay_5/O]] -filter {DIRECTION == IN}'.
+SINKS 
+# puts "IRQ3 SEGMENTS [get_nets -segments -of_objects [get_ports {irq[3]}]]"
+IRQ3 SEGMENTS irq[3] u_system/irq[3] u_system/scan_cpu.u_cpu/irq[3] u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[5]_1[3] u_system/scan_cpu.u_cpu/COP0_COUNT_INTERRUPT/irq[3]
+# puts "IRQ3 ACTUAL REG NET [get_nets -of_objects [get_pins {u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[3]/D}]]"
+IRQ3 ACTUAL REG NET u_system/scan_cpu.u_cpu/PIPESTAGE_EXCP_EX_MM/MM_int_req_reg[5]_1[3]
+# puts "INSERT BUFFER COMMANDS [info commands *buffer*]"
+INSERT BUFFER COMMANDS 
+# close_design
+INFO: [Common 17-206] Exiting Vivado at Wed Nov 18 12:16:38 2026...

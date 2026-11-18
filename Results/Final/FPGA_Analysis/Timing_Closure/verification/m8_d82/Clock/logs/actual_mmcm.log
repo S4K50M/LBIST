@@ -1,0 +1,5 @@
+Time resolution is 1 ps
+Note: [PASS] actual UNISIM MMCM period, duty cycles and all relative phases
+Time: 1231975 ps  Iteration: 0  Process: /tb_timing_clock_tree/line__10  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_timing_clock_tree.vhd
+Note: [TB_COMPLETE] tb_timing_clock_tree at 1231975 ps
+Time: 1231975 ps  Iteration: 0  Process: /tb_timing_clock_tree/line__10  File: C:/Users/SAKSHA~1/OneDrive/Desktop/VLSI/cmips/lbist/tb/tb_timing_clock_tree.vhd
